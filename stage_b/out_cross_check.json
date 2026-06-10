@@ -1,0 +1,523 @@
+{
+ "cells": [
+  {
+   "slug": "Qwen3-8B-4bit",
+   "bench": "anli_r1",
+   "note": "backstop: null_ratio dead -> RPV should win geom",
+   "primary": {
+    "winner": "Readout fisher_eff_rank @ step 0",
+    "oob_auroc_median": 0.8521094887373957,
+    "oob_auroc_ci_lo": 0.7695123007623007,
+    "oob_auroc_ci_hi": 0.9220653886554622,
+    "winner_stability": 0.994,
+    "winner_counts": {
+     "Readout fisher_eff_rank @ step 0": 1988,
+     "Readout spectral_entropy @ step 0": 1,
+     "Readout surprise @ step 0": 11
+    },
+    "oob_n_bootstrap_used": 2000,
+    "n_cells": 6,
+    "deployable": true,
+    "full_sample_marginals": {
+     "Readout fisher_eff_rank @ step 0": {
+      "auroc": 0.8508,
+      "sign": -1
+     },
+     "Readout spectral_entropy @ step 0": {
+      "auroc": 0.8127,
+      "sign": -1
+     },
+     "Readout neg_shadow_logvol_r1 @ step 0": {
+      "auroc": 0.6601,
+      "sign": -1
+     },
+     "Readout null_ratio_post_rank1 @ step 0": {
+      "auroc": 0.5174,
+      "sign": -1
+     },
+     "Readout surprise @ step 0": {
+      "auroc": 0.7438,
+      "sign": 1
+     },
+     "Readout p_max @ step 0": {
+      "auroc": 0.6597,
+      "sign": 1
+     }
+    }
+   },
+   "geometric": {
+    "winner": "Readout fisher_eff_rank @ step 0",
+    "oob_auroc_median": 0.8524604911800033,
+    "oob_auroc_ci_lo": 0.7736415928956252,
+    "oob_auroc_ci_hi": 0.9223783162173727,
+    "winner_stability": 0.9995,
+    "winner_counts": {
+     "Readout fisher_eff_rank @ step 0": 1999,
+     "Readout spectral_entropy @ step 0": 1
+    },
+    "oob_n_bootstrap_used": 2000,
+    "n_cells": 4,
+    "deployable": true,
+    "full_sample_marginals": {
+     "Readout fisher_eff_rank @ step 0": {
+      "auroc": 0.8508,
+      "sign": -1
+     },
+     "Readout spectral_entropy @ step 0": {
+      "auroc": 0.8127,
+      "sign": -1
+     },
+     "Readout neg_shadow_logvol_r1 @ step 0": {
+      "auroc": 0.6601,
+      "sign": -1
+     },
+     "Readout null_ratio_post_rank1 @ step 0": {
+      "auroc": 0.5174,
+      "sign": -1
+     }
+    }
+   },
+   "marg_fisher_mine": 0.8508,
+   "marg_fisher_theirs": 0.8508,
+   "marg_match": true
+  },
+  {
+   "slug": "Mistral-7B-Instruct-v0.3-4bit",
+   "bench": "anli_r1",
+   "note": "all strong",
+   "primary": {
+    "winner": "Readout null_ratio_post_rank1 @ step 0",
+    "oob_auroc_median": 0.762013199614006,
+    "oob_auroc_ci_lo": 0.6688995675276165,
+    "oob_auroc_ci_hi": 0.8476181974657582,
+    "winner_stability": 0.4705,
+    "winner_counts": {
+     "Readout fisher_eff_rank @ step 0": 296,
+     "Readout spectral_entropy @ step 0": 411,
+     "Readout neg_shadow_logvol_r1 @ step 0": 3,
+     "Readout null_ratio_post_rank1 @ step 0": 941,
+     "Readout p_max @ step 0": 349
+    },
+    "oob_n_bootstrap_used": 2000,
+    "n_cells": 6,
+    "deployable": true,
+    "full_sample_marginals": {
+     "Readout fisher_eff_rank @ step 0": {
+      "auroc": 0.7703,
+      "sign": 1
+     },
+     "Readout spectral_entropy @ step 0": {
+      "auroc": 0.7718,
+      "sign": 1
+     },
+     "Readout neg_shadow_logvol_r1 @ step 0": {
+      "auroc": 0.7326,
+      "sign": 1
+     },
+     "Readout null_ratio_post_rank1 @ step 0": {
+      "auroc": 0.7788,
+      "sign": 1
+     },
+     "Readout surprise @ step 0": {
+      "auroc": 0.5249,
+      "sign": -1
+     },
+     "Readout p_max @ step 0": {
+      "auroc": 0.7686,
+      "sign": -1
+     }
+    }
+   },
+   "geometric": {
+    "winner": "Readout null_ratio_post_rank1 @ step 0",
+    "oob_auroc_median": 0.7669858463976111,
+    "oob_auroc_ci_lo": 0.6714211420061711,
+    "oob_auroc_ci_hi": 0.8525678294573643,
+    "winner_stability": 0.569,
+    "winner_counts": {
+     "Readout fisher_eff_rank @ step 0": 315,
+     "Readout spectral_entropy @ step 0": 542,
+     "Readout neg_shadow_logvol_r1 @ step 0": 5,
+     "Readout null_ratio_post_rank1 @ step 0": 1138
+    },
+    "oob_n_bootstrap_used": 2000,
+    "n_cells": 4,
+    "deployable": true,
+    "full_sample_marginals": {
+     "Readout fisher_eff_rank @ step 0": {
+      "auroc": 0.7703,
+      "sign": 1
+     },
+     "Readout spectral_entropy @ step 0": {
+      "auroc": 0.7718,
+      "sign": 1
+     },
+     "Readout neg_shadow_logvol_r1 @ step 0": {
+      "auroc": 0.7326,
+      "sign": 1
+     },
+     "Readout null_ratio_post_rank1 @ step 0": {
+      "auroc": 0.7788,
+      "sign": 1
+     }
+    }
+   },
+   "marg_fisher_mine": 0.7703,
+   "marg_fisher_theirs": 0.7703,
+   "marg_match": true
+  },
+  {
+   "slug": "Phi-3.5-mini-instruct-4bit",
+   "bench": "anli_r1",
+   "note": "null_ratio strongest -> null_ratio should win geom",
+   "primary": {
+    "winner": "Readout null_ratio_post_rank1 @ step 0",
+    "oob_auroc_median": 0.8193067226890756,
+    "oob_auroc_ci_lo": 0.7335709586466165,
+    "oob_auroc_ci_hi": 0.8992165814463111,
+    "winner_stability": 0.997,
+    "winner_counts": {
+     "Readout fisher_eff_rank @ step 0": 6,
+     "Readout null_ratio_post_rank1 @ step 0": 1994
+    },
+    "oob_n_bootstrap_used": 2000,
+    "n_cells": 6,
+    "deployable": true,
+    "full_sample_marginals": {
+     "Readout fisher_eff_rank @ step 0": {
+      "auroc": 0.7411,
+      "sign": 1
+     },
+     "Readout spectral_entropy @ step 0": {
+      "auroc": 0.6907,
+      "sign": 1
+     },
+     "Readout neg_shadow_logvol_r1 @ step 0": {
+      "auroc": 0.7326,
+      "sign": 1
+     },
+     "Readout null_ratio_post_rank1 @ step 0": {
+      "auroc": 0.8199,
+      "sign": 1
+     },
+     "Readout surprise @ step 0": {
+      "auroc": 0.6627,
+      "sign": -1
+     },
+     "Readout p_max @ step 0": {
+      "auroc": 0.5875,
+      "sign": 1
+     }
+    }
+   },
+   "geometric": {
+    "winner": "Readout null_ratio_post_rank1 @ step 0",
+    "oob_auroc_median": 0.8193067226890756,
+    "oob_auroc_ci_lo": 0.7335709586466165,
+    "oob_auroc_ci_hi": 0.8992165814463111,
+    "winner_stability": 0.997,
+    "winner_counts": {
+     "Readout fisher_eff_rank @ step 0": 6,
+     "Readout null_ratio_post_rank1 @ step 0": 1994
+    },
+    "oob_n_bootstrap_used": 2000,
+    "n_cells": 4,
+    "deployable": true,
+    "full_sample_marginals": {
+     "Readout fisher_eff_rank @ step 0": {
+      "auroc": 0.7411,
+      "sign": 1
+     },
+     "Readout spectral_entropy @ step 0": {
+      "auroc": 0.6907,
+      "sign": 1
+     },
+     "Readout neg_shadow_logvol_r1 @ step 0": {
+      "auroc": 0.7326,
+      "sign": 1
+     },
+     "Readout null_ratio_post_rank1 @ step 0": {
+      "auroc": 0.8199,
+      "sign": 1
+     }
+    }
+   },
+   "marg_fisher_mine": 0.7411,
+   "marg_fisher_theirs": 0.7411,
+   "marg_match": true
+  },
+  {
+   "slug": "Qwen2.5-7B-Instruct-4bit",
+   "bench": "anli_r1",
+   "note": "null_ratio strong",
+   "primary": {
+    "winner": "Readout null_ratio_post_rank1 @ step 0",
+    "oob_auroc_median": 0.8173267393081635,
+    "oob_auroc_ci_lo": 0.7391552897570228,
+    "oob_auroc_ci_hi": 0.8886246612466124,
+    "winner_stability": 0.494,
+    "winner_counts": {
+     "Readout spectral_entropy @ step 0": 477,
+     "Readout neg_shadow_logvol_r1 @ step 0": 535,
+     "Readout null_ratio_post_rank1 @ step 0": 988
+    },
+    "oob_n_bootstrap_used": 2000,
+    "n_cells": 6,
+    "deployable": true,
+    "full_sample_marginals": {
+     "Readout fisher_eff_rank @ step 0": {
+      "auroc": 0.6787,
+      "sign": 1
+     },
+     "Readout spectral_entropy @ step 0": {
+      "auroc": 0.824,
+      "sign": 1
+     },
+     "Readout neg_shadow_logvol_r1 @ step 0": {
+      "auroc": 0.8298,
+      "sign": 1
+     },
+     "Readout null_ratio_post_rank1 @ step 0": {
+      "auroc": 0.8349,
+      "sign": 1
+     },
+     "Readout surprise @ step 0": {
+      "auroc": 0.5859,
+      "sign": 1
+     },
+     "Readout p_max @ step 0": {
+      "auroc": 0.7265,
+      "sign": -1
+     }
+    }
+   },
+   "geometric": {
+    "winner": "Readout null_ratio_post_rank1 @ step 0",
+    "oob_auroc_median": 0.8173267393081635,
+    "oob_auroc_ci_lo": 0.7391552897570228,
+    "oob_auroc_ci_hi": 0.8886246612466124,
+    "winner_stability": 0.494,
+    "winner_counts": {
+     "Readout spectral_entropy @ step 0": 477,
+     "Readout neg_shadow_logvol_r1 @ step 0": 535,
+     "Readout null_ratio_post_rank1 @ step 0": 988
+    },
+    "oob_n_bootstrap_used": 2000,
+    "n_cells": 4,
+    "deployable": true,
+    "full_sample_marginals": {
+     "Readout fisher_eff_rank @ step 0": {
+      "auroc": 0.6787,
+      "sign": 1
+     },
+     "Readout spectral_entropy @ step 0": {
+      "auroc": 0.824,
+      "sign": 1
+     },
+     "Readout neg_shadow_logvol_r1 @ step 0": {
+      "auroc": 0.8298,
+      "sign": 1
+     },
+     "Readout null_ratio_post_rank1 @ step 0": {
+      "auroc": 0.8349,
+      "sign": 1
+     }
+    }
+   },
+   "marg_fisher_mine": 0.6787,
+   "marg_fisher_theirs": 0.6787,
+   "marg_match": true
+  },
+  {
+   "slug": "Llama-3.1-8B-Instruct-4bit",
+   "bench": "triviaqa_paired",
+   "note": "RPV strong (0.876)",
+   "primary": {
+    "winner": "Readout fisher_eff_rank @ step 0",
+    "oob_auroc_median": 0.8692996137849078,
+    "oob_auroc_ci_lo": 0.7058554314174182,
+    "oob_auroc_ci_hi": 0.9611174242424242,
+    "winner_stability": 0.9165,
+    "winner_counts": {
+     "Readout fisher_eff_rank @ step 0": 1833,
+     "Readout spectral_entropy @ step 0": 85,
+     "Readout neg_shadow_logvol_r1 @ step 0": 1,
+     "Readout surprise @ step 0": 25,
+     "Readout p_max @ step 0": 56
+    },
+    "oob_n_bootstrap_used": 2000,
+    "n_cells": 6,
+    "deployable": true,
+    "full_sample_marginals": {
+     "Readout fisher_eff_rank @ step 0": {
+      "auroc": 0.8756,
+      "sign": -1
+     },
+     "Readout spectral_entropy @ step 0": {
+      "auroc": 0.8496,
+      "sign": -1
+     },
+     "Readout neg_shadow_logvol_r1 @ step 0": {
+      "auroc": 0.8176,
+      "sign": -1
+     },
+     "Readout null_ratio_post_rank1 @ step 0": {
+      "auroc": 0.5844,
+      "sign": -1
+     },
+     "Readout surprise @ step 0": {
+      "auroc": 0.7488,
+      "sign": -1
+     },
+     "Readout p_max @ step 0": {
+      "auroc": 0.774,
+      "sign": -1
+     }
+    }
+   },
+   "geometric": {
+    "winner": "Readout fisher_eff_rank @ step 0",
+    "oob_auroc_median": 0.8745950554134697,
+    "oob_auroc_ci_lo": 0.7647058823529411,
+    "oob_auroc_ci_hi": 0.9632142857142857,
+    "winner_stability": 0.955,
+    "winner_counts": {
+     "Readout fisher_eff_rank @ step 0": 1910,
+     "Readout spectral_entropy @ step 0": 89,
+     "Readout neg_shadow_logvol_r1 @ step 0": 1
+    },
+    "oob_n_bootstrap_used": 2000,
+    "n_cells": 4,
+    "deployable": true,
+    "full_sample_marginals": {
+     "Readout fisher_eff_rank @ step 0": {
+      "auroc": 0.8756,
+      "sign": -1
+     },
+     "Readout spectral_entropy @ step 0": {
+      "auroc": 0.8496,
+      "sign": -1
+     },
+     "Readout neg_shadow_logvol_r1 @ step 0": {
+      "auroc": 0.8176,
+      "sign": -1
+     },
+     "Readout null_ratio_post_rank1 @ step 0": {
+      "auroc": 0.5844,
+      "sign": -1
+     }
+    }
+   },
+   "marg_fisher_mine": 0.8756,
+   "marg_fisher_theirs": 0.8756,
+   "marg_match": true
+  },
+  {
+   "slug": "gemma-3-4b-it-4bit",
+   "bench": "anli_r1",
+   "note": "the gap: geom NOT deployable, full survives via surprise",
+   "primary": {
+    "winner": "Readout surprise @ step 0",
+    "oob_auroc_median": 0.5924280090237537,
+    "oob_auroc_ci_lo": 0.45262335526315794,
+    "oob_auroc_ci_hi": 0.6850198718938106,
+    "winner_stability": 0.594,
+    "winner_counts": {
+     "Readout spectral_entropy @ step 0": 714,
+     "Readout neg_shadow_logvol_r1 @ step 0": 59,
+     "Readout null_ratio_post_rank1 @ step 0": 9,
+     "Readout surprise @ step 0": 1188,
+     "Readout p_max @ step 0": 30
+    },
+    "oob_n_bootstrap_used": 2000,
+    "n_cells": 6,
+    "deployable": false,
+    "full_sample_marginals": {
+     "Readout fisher_eff_rank @ step 0": {
+      "auroc": 0.5583,
+      "sign": 1
+     },
+     "Readout spectral_entropy @ step 0": {
+      "auroc": 0.6048,
+      "sign": 1
+     },
+     "Readout neg_shadow_logvol_r1 @ step 0": {
+      "auroc": 0.5238,
+      "sign": -1
+     },
+     "Readout null_ratio_post_rank1 @ step 0": {
+      "auroc": 0.5156,
+      "sign": -1
+     },
+     "Readout surprise @ step 0": {
+      "auroc": 0.6207,
+      "sign": 1
+     },
+     "Readout p_max @ step 0": {
+      "auroc": 0.5339,
+      "sign": 1
+     }
+    }
+   },
+   "geometric": {
+    "winner": "Readout spectral_entropy @ step 0",
+    "oob_auroc_median": 0.5868286185359357,
+    "oob_auroc_ci_lo": 0.41266440656684555,
+    "oob_auroc_ci_hi": 0.6882814575694777,
+    "winner_stability": 0.8365,
+    "winner_counts": {
+     "Readout spectral_entropy @ step 0": 1673,
+     "Readout neg_shadow_logvol_r1 @ step 0": 259,
+     "Readout null_ratio_post_rank1 @ step 0": 68
+    },
+    "oob_n_bootstrap_used": 2000,
+    "n_cells": 4,
+    "deployable": false,
+    "full_sample_marginals": {
+     "Readout fisher_eff_rank @ step 0": {
+      "auroc": 0.5583,
+      "sign": 1
+     },
+     "Readout spectral_entropy @ step 0": {
+      "auroc": 0.6048,
+      "sign": 1
+     },
+     "Readout neg_shadow_logvol_r1 @ step 0": {
+      "auroc": 0.5238,
+      "sign": -1
+     },
+     "Readout null_ratio_post_rank1 @ step 0": {
+      "auroc": 0.5156,
+      "sign": -1
+     }
+    }
+   },
+   "marg_fisher_mine": 0.5583,
+   "marg_fisher_theirs": 0.5583,
+   "marg_match": true
+  }
+ ],
+ "checks": [
+  {
+   "desc": "Qwen3-8B/anli geom winner is RPV (fisher_eff_rank), not null_ratio",
+   "ok": true
+  },
+  {
+   "desc": "gemma-3-4b/anli geometric-only NOT deployable (the documented gap)",
+   "ok": true
+  },
+  {
+   "desc": "gemma-3-4b/anli NOT deployable even with confidence under nested-OOB (stricter than Stage-A marginal; the allowed <=1/20 orphan)",
+   "ok": true
+  },
+  {
+   "desc": "Phi-3.5/anli geom winner is null_ratio (where v3 is strongest)",
+   "ok": true
+  },
+  {
+   "desc": "all fisher_eff_rank marginals match comprehensive run within 0.05",
+   "ok": true
+  }
+ ],
+ "pass": true
+}
