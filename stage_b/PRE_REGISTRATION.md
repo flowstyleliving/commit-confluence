@@ -9,7 +9,9 @@ review in `stage_b/REVIEW.md`.
 ## Question
 
 When a single dispatcher fits **all in-house geometric families plus the confidence base at a
-common t=0 commit locus**, and a per-(model, task) **nested-OOB** selector chooses the operating
+commit moment** (ACE at t=0 prefill-last position; readout at gen_step=1, the first generated
+token - adjacent commit-moment positions, per-sample aligned, NOT identical), and a per-(model,
+task) **nested-OOB** selector chooses the operating
 cell **without oracle knowledge** (train-fold selection + sign-lock only), is at least one panel
 cell deployable on every model in the cohort - and does that coverage replicate out-of-sample under
 a fresh seed? This is a test of the *dispatcher*, not a search for a universal cell (retired).
@@ -21,10 +23,12 @@ must not edit `t0-morphology-furnace` (the frozen ACE/T0 core). Contract:
 
 1. **Attention pass** (ACE): collect per-sample scores for `ATTENTION_PANEL_T0` via the sealed
    calibrator's collection path. -> score sub-matrix `A` (n x 21), panel labels.
-2. **Readout pass** (RPV + residual + confidence, ONE source) [R3]: from the same t=0 commit locus,
-   compute `{null_ratio_post_rank1, fisher_eff_rank, spectral_entropy, neg_shadow_logvol_r1,
+2. **Readout pass** (RPV + residual + confidence, ONE source) [R3]: at the gen_step=1 commit instant
+   (the readout's native locus, via the imported `trace_pair_features`), compute
+   `{null_ratio_post_rank1, fisher_eff_rank, spectral_entropy, neg_shadow_logvol_r1,
    surprise, p_max}`. -> score sub-matrix `B` (n x 6). null_ratio is sourced HERE only, never
-   also from the attention pass, to avoid a double definition.
+   also from the attention pass, to avoid a double definition. (ACE's t=0 and the readout's
+   gen_step=1 are adjacent commit-moment positions; the merge aligns them per-sample.)
 3. **Merge** by `sample_idx` with a hard label-alignment assert (same data file hash, same order,
    identical label vector). hstack -> merged `M` (n x ~27 after dropping non-finite columns),
    merged panel list.

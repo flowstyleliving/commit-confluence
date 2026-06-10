@@ -50,11 +50,8 @@ CONFIDENCE_KEYS = {"surprise", "p_max"}
 # ──────────────────────────────────────────────────────────────────────────────
 # loaders
 # ──────────────────────────────────────────────────────────────────────────────
-def load_readout_matrix(rpv_json_path: str) -> Dict[str, Any]:
-    """Per-sample readout features + labels from an existing RPV comprehensive run.
-    Drops rows with any non-finite feature so the merged matrix is clean."""
-    d = json.load(open(rpv_json_path))
-    rows = d.get("rows", [])
+def _rows_to_readout(rows: List[Dict[str, Any]]):
+    """Parse per-sample readout rows -> (X, y, sample_idx), dropping any non-finite row."""
     keys = [READOUT_KEYS[c] for c in READOUT_PANEL]
     X, y, idx = [], [], []
     for r in rows:
@@ -65,13 +62,41 @@ def load_readout_matrix(rpv_json_path: str) -> Dict[str, Any]:
         if not all(np.isfinite(fv)):
             continue
         X.append(fv); y.append(int(r["label"])); idx.append(int(r.get("sample_idx", len(idx))))
+    return (np.array(X, dtype=np.float64), np.array(y, dtype=np.int64), np.array(idx, dtype=np.int64))
+
+
+def load_readout_matrix(rpv_json_path: str) -> Dict[str, Any]:
+    """Per-sample readout features from an EXISTING RPV comprehensive run (sealed-seed reuse)."""
+    d = json.load(open(rpv_json_path))
+    X, y, idx = _rows_to_readout(d.get("rows", []))
     return {
         "model": d.get("model"), "slug": (d.get("model") or "").split("/")[-1],
         "benchmark": d.get("benchmark"), "data_path": d.get("data_path"),
         "data_hash": d.get("diagnostics", {}).get("data_hash_sha256"),
-        "score_matrix": np.array(X, dtype=np.float64), "labels": np.array(y, dtype=np.int64),
-        "sample_idx": np.array(idx, dtype=np.int64), "panel": list(READOUT_PANEL),
-        "n": len(y),
+        "score_matrix": X, "labels": y, "sample_idx": idx, "panel": list(READOUT_PANEL), "n": len(y),
+    }
+
+
+def collect_readout_matrix_fresh(model_id: str, benchmark: str, data_path: str, *,
+                                 seed: int, limit: int | None = None) -> Dict[str, Any]:
+    """FRESH readout pass (RPV + null_ratio + surprise + p_max) at the gen_step=1 commit instant,
+    computed by importing the sealed-grade shadow-ambiguity compute (trace_pair_features) - NOT by
+    reusing existing rows. This is the readout arm for the fresh-seed seal."""
+    from pathlib import Path
+    SHADOW = os.path.join(T0_REPO, "exploratory/shadow-ambiguity")
+    if SHADOW not in sys.path:
+        sys.path.insert(0, SHADOW)
+    import comprehensive_run as CR
+    fr = CR.trace_pair_features(model_id, benchmark, Path(data_path),
+                                limit=(limit or 0), max_new_tokens=1,
+                                k_support=CR.K_SUPPORT_DEFAULT, seed=seed)
+    X, y, idx = _rows_to_readout(fr.rows)
+    dh = (fr.diagnostics or {}).get("data_hash_sha256")
+    return {
+        "model": model_id, "slug": model_id.split("/")[-1], "benchmark": benchmark,
+        "data_path": str(data_path), "data_hash": dh,
+        "score_matrix": X, "labels": y, "sample_idx": idx, "panel": list(READOUT_PANEL),
+        "n": len(y), "drops": fr.drops,
     }
 
 
