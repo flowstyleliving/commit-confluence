@@ -26,3 +26,25 @@ AND prove a sealed winner reproduces on full n=200.
 Must-fix before launching the fresh-seed sealed run: **S1** (21-cell panel) and **S2** (full-200
 ACE-reproduction on >=1 model). Should-fix: S3 (wording), S5 (show multiplicity behaviour). Then
 let Codex corroborate (or extend) before the irreversible seal.
+
+## Resolution status (2026-06-10, post-S2)
+
+- **S1 - RESOLVED.** `collect_ace_matrix` now uses the sealed 21-cell `ATTENTION_PANEL_T0_WITH_V_NORMS`
+  + the v-norm capture path. Unified panel = 27 cells.
+- **S2 - RESOLVED (byte-exact).** `stage_b/validate_ace.py` on Qwen2.5-7B/anli full n=200
+  (max_new_tokens=1, sealed provenance): all 21 ACE cell AUROCs reproduce the sealed profile to 4 dp,
+  **max abs diff 0.0000**; winner `final_v_norm_lastq_weighted` reproduces (0.7903); data hash matches.
+  The ACE arm is the sealed instrument, not an approximation. See `VALIDATE_ACE.md`.
+- **S3 - RESOLVED (wording).** Precise statement: the two INPUT marginals (ACE cells + readout cells)
+  are now verified exact against their sealed sources; the nested-OOB SELECTION logic is *inherited*
+  from the sealed `_nested_bootstrap_oob_auroc` (imported, not independently re-derived), so its OOB
+  CIs are trusted-because-sealed, not separately reproduced here.
+- **S4 - CONFIRMED NON-IMPACTFUL.** Stage A surprise AUROCs are all >= 0.50 (min 0.514), so the
+  full-sample-fit sign was +1 everywhere = the canonical orientation; hard-locking would change nothing.
+  Loose in code, null in effect. (Will hard-lock in the Stage B confidence cells regardless.)
+- **S5 - DEFERRED to the run.** winner_stability + OOB CI_lo behaviour on the real 27-cell merged panel
+  to be reported per cell during the fresh seal (pre-registered as expected/non-fatal).
+- **S6 - reporting convention.** Lead results with the geometric-only endpoint, not the product number.
+
+**Must-fixes (S1, S2) are both resolved.** Remaining are should-fix/reporting. Seal still HELD for the
+independent Codex pass (quota resets 2026-06-11 13:55).

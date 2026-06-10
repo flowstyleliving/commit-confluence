@@ -1,0 +1,160 @@
+{
+ "model": "mlx-community/Qwen2.5-7B-Instruct-4bit",
+ "task": "anli_r1",
+ "n": 200,
+ "tol": 0.01,
+ "max_abs_auroc_diff": 0.0,
+ "winner_label": "final_v_norm_lastq_weighted",
+ "winner_reproduces": true,
+ "data_hash_match": true,
+ "pass": true,
+ "cells": [
+  {
+   "cell": "final_js",
+   "mine": 0.6033,
+   "sealed": 0.6033,
+   "diff": 0.0,
+   "is_winner": false
+  },
+  {
+   "cell": "final_js_kv_groups",
+   "mine": 0.5901,
+   "sealed": 0.5901000000000001,
+   "diff": 0.0,
+   "is_winner": false
+  },
+  {
+   "cell": "final_js_no_bos",
+   "mine": 0.7049,
+   "sealed": 0.7049000000000001,
+   "diff": 0.0,
+   "is_winner": false
+  },
+  {
+   "cell": "final_bos_mass",
+   "mine": 0.7796,
+   "sealed": 0.7796000000000001,
+   "diff": 0.0,
+   "is_winner": false
+  },
+  {
+   "cell": "final_v_norm_bos",
+   "mine": 0.5,
+   "sealed": 0.5,
+   "diff": 0.0,
+   "is_winner": false
+  },
+  {
+   "cell": "final_v_norm_max",
+   "mine": 0.5134,
+   "sealed": 0.5134,
+   "diff": 0.0,
+   "is_winner": false
+  },
+  {
+   "cell": "final_v_norm_lastq_weighted",
+   "mine": 0.7903,
+   "sealed": 0.7903,
+   "diff": 0.0,
+   "is_winner": true
+  },
+  {
+   "cell": "mid_js",
+   "mine": 0.5473,
+   "sealed": 0.5473,
+   "diff": 0.0,
+   "is_winner": false
+  },
+  {
+   "cell": "mid_js_kv_groups",
+   "mine": 0.5698,
+   "sealed": 0.5698,
+   "diff": 0.0,
+   "is_winner": false
+  },
+  {
+   "cell": "mid_js_no_bos",
+   "mine": 0.5235,
+   "sealed": 0.5235000000000001,
+   "diff": 0.0,
+   "is_winner": false
+  },
+  {
+   "cell": "mid_bos_mass",
+   "mine": 0.5118,
+   "sealed": 0.5118,
+   "diff": 0.0,
+   "is_winner": false
+  },
+  {
+   "cell": "mid_v_norm_bos",
+   "mine": 0.5,
+   "sealed": 0.5,
+   "diff": 0.0,
+   "is_winner": false
+  },
+  {
+   "cell": "mid_v_norm_max",
+   "mine": 0.5551,
+   "sealed": 0.5550999999999999,
+   "diff": 0.0,
+   "is_winner": false
+  },
+  {
+   "cell": "mid_v_norm_lastq_weighted",
+   "mine": 0.508,
+   "sealed": 0.508,
+   "diff": 0.0,
+   "is_winner": false
+  },
+  {
+   "cell": "last_minus_1_js",
+   "mine": 0.6281,
+   "sealed": 0.6281,
+   "diff": 0.0,
+   "is_winner": false
+  },
+  {
+   "cell": "last_minus_1_js_kv_groups",
+   "mine": 0.6956,
+   "sealed": 0.6956,
+   "diff": 0.0,
+   "is_winner": false
+  },
+  {
+   "cell": "last_minus_1_js_no_bos",
+   "mine": 0.6379,
+   "sealed": 0.6379,
+   "diff": 0.0,
+   "is_winner": false
+  },
+  {
+   "cell": "last_minus_1_bos_mass",
+   "mine": 0.5214,
+   "sealed": 0.5214,
+   "diff": 0.0,
+   "is_winner": false
+  },
+  {
+   "cell": "last_minus_1_v_norm_bos",
+   "mine": 0.5,
+   "sealed": 0.5,
+   "diff": 0.0,
+   "is_winner": false
+  },
+  {
+   "cell": "last_minus_1_v_norm_max",
+   "mine": 0.5026,
+   "sealed": 0.5025999999999999,
+   "diff": 0.0,
+   "is_winner": false
+  },
+  {
+   "cell": "last_minus_1_v_norm_lastq_weighted",
+   "mine": 0.5238,
+   "sealed": 0.5238,
+   "diff": 0.0,
+   "is_winner": false
+  }
+ ]
+}
