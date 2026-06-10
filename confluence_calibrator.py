@@ -144,9 +144,14 @@ def calibrate_cell(loaded: Dict[str, Any], *, n_bootstrap: int = 2000,
 # sealed profile's AUROC for the same (model, data); that is the wiring correctness gate.
 # ──────────────────────────────────────────────────────────────────────────────
 def collect_ace_matrix(model_slug: str, jsonl_path: str, *, seed: int,
-                       max_new_tokens: int = 8, limit: int | None = None) -> Dict[str, Any]:
-    from diagnose_inter_head_disagreement import _find_layers, _target_layer_map, attention_capture
-    panel = list(SEAL.ATTENTION_PANEL_T0)  # 12 t=0 attention cells
+                       max_new_tokens: int = 8, limit: int | None = None,
+                       panel: List[PanelCell] | None = None) -> Dict[str, Any]:
+    # S1 fix: default to the SEALED ACE instrument (21-cell, with v-norms) so the unified
+    # panel can actually select the sealed per-model winners (some are v_norm cells).
+    from diagnose_inter_head_disagreement import (
+        _find_layers, _target_layer_map, attention_capture, attention_capture_with_values)
+    panel = list(panel or SEAL.ATTENTION_PANEL_T0_WITH_V_NORMS)
+    capture_v_norms = SEAL._requires_v_norm_capture(panel)
     state = SEAL.load_calibration_state(model_slug, layer_name="final", seed=seed)
     prompts, labels, data_hash = SEAL._load_calibration_jsonl(jsonl_path)
     if limit is not None:
@@ -163,15 +168,24 @@ def collect_ace_matrix(model_slug: str, jsonl_path: str, *, seed: int,
     n = len(prompts)
     sm = np.full((n, len(panel)), np.nan, dtype=np.float64)
     for i, prompt in enumerate(prompts):
-        with attention_capture(decoder_layers, target_map) as caps:
-            trace = SEAL._trace_one_prompt(state.model, state.tokenizer, state.projection,
-                                           state.layer_indices, prompt, state.prompt_strategy,
-                                           max_new_tokens)
-            sample_caps = {tag: list(caps[tag]) for tag in caps}
+        v_caps_snap = None
+        if capture_v_norms:
+            with attention_capture_with_values(decoder_layers, target_map) as (caps, v_caps):
+                trace = SEAL._trace_one_prompt(state.model, state.tokenizer, state.projection,
+                                               state.layer_indices, prompt, state.prompt_strategy,
+                                               max_new_tokens)
+                sample_caps = {tag: list(caps[tag]) for tag in caps}
+                v_caps_snap = {tag: list(v_caps[tag]) for tag in v_caps}
+        else:
+            with attention_capture(decoder_layers, target_map) as caps:
+                trace = SEAL._trace_one_prompt(state.model, state.tokenizer, state.projection,
+                                               state.layer_indices, prompt, state.prompt_strategy,
+                                               max_new_tokens)
+                sample_caps = {tag: list(caps[tag]) for tag in caps}
         per_cell = SEAL._compute_panel_scores_for_sample(
             state.pri_computer, trace, state.layer_name, panel, alpha=1.0,
             attention_captures=sample_caps, attention_n_kv_heads=n_kv,
-            attention_v_norm_captures=None)
+            attention_v_norm_captures=v_caps_snap)
         for j, cell in enumerate(panel):
             v = per_cell.get(cell)
             if v is not None:
