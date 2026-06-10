@@ -138,6 +138,85 @@ def calibrate_cell(loaded: Dict[str, Any], *, n_bootstrap: int = 2000,
     }
 
 
+# ──────────────────────────────────────────────────────────────────────────────
+# ACE attention pass - replicates the sealed collection loop by IMPORT (R2: no edits
+# to pri_calibrator). Identical code path -> per-sample ACE scores must reproduce the
+# sealed profile's AUROC for the same (model, data); that is the wiring correctness gate.
+# ──────────────────────────────────────────────────────────────────────────────
+def collect_ace_matrix(model_slug: str, jsonl_path: str, *, seed: int,
+                       max_new_tokens: int = 8, limit: int | None = None) -> Dict[str, Any]:
+    from diagnose_inter_head_disagreement import _find_layers, _target_layer_map, attention_capture
+    panel = list(SEAL.ATTENTION_PANEL_T0)  # 12 t=0 attention cells
+    state = SEAL.load_calibration_state(model_slug, layer_name="final", seed=seed)
+    prompts, labels, data_hash = SEAL._load_calibration_jsonl(jsonl_path)
+    if limit is not None:
+        prompts, labels = prompts[:limit], labels[:limit]
+    decoder_layers = _find_layers(state.model)
+    target_map = _target_layer_map(len(decoder_layers))
+    n_kv: Dict[str, int] = {}
+    for tag, idx in target_map.items():
+        k = getattr(decoder_layers[idx].self_attn, "n_kv_heads", None)
+        if k is None:
+            k = getattr(decoder_layers[idx].self_attn, "n_heads", None)
+        if k is not None:
+            n_kv[tag] = int(k)
+    n = len(prompts)
+    sm = np.full((n, len(panel)), np.nan, dtype=np.float64)
+    for i, prompt in enumerate(prompts):
+        with attention_capture(decoder_layers, target_map) as caps:
+            trace = SEAL._trace_one_prompt(state.model, state.tokenizer, state.projection,
+                                           state.layer_indices, prompt, state.prompt_strategy,
+                                           max_new_tokens)
+            sample_caps = {tag: list(caps[tag]) for tag in caps}
+        per_cell = SEAL._compute_panel_scores_for_sample(
+            state.pri_computer, trace, state.layer_name, panel, alpha=1.0,
+            attention_captures=sample_caps, attention_n_kv_heads=n_kv,
+            attention_v_norm_captures=None)
+        for j, cell in enumerate(panel):
+            v = per_cell.get(cell)
+            if v is not None:
+                sm[i, j] = float(v)
+        if (i + 1) % 25 == 0 or i + 1 == n:
+            print(f"[ace] {model_slug.split('/')[-1]} {i+1}/{n}", flush=True)
+    return {"score_matrix": sm, "labels": np.asarray(labels, dtype=np.int64),
+            "panel": panel, "data_hash": data_hash, "slug": model_slug.split("/")[-1],
+            "sample_idx": np.arange(n, dtype=np.int64), "n": n}
+
+
+def merge_and_calibrate(ace: Dict[str, Any], readout: Dict[str, Any], *,
+                        n_bootstrap: int = 2000, seed: int = 20260610) -> Dict[str, Any]:
+    """Merge the ACE attention sub-matrix with the readout sub-matrix (R3: one source per
+    family), aligning by sample_idx (robust to the readout run dropping non-finite rows),
+    with a HARD label-alignment assert on the intersection, then run the dual-endpoint
+    dispatcher over the full merged panel."""
+    ia = {int(s): k for k, s in enumerate(ace["sample_idx"])}
+    ib = {int(s): k for k, s in enumerate(readout["sample_idx"])}
+    common = sorted(set(ia) & set(ib))
+    if len(common) < 4:
+        raise AssertionError(f"too few aligned samples: |common|={len(common)}")
+    ra = [ia[s] for s in common]; rb = [ib[s] for s in common]
+    ya = ace["labels"][ra]; yb = readout["labels"][rb]
+    if not np.array_equal(ya, yb):
+        raise AssertionError(f"label misalignment on {len(common)} shared sample_idx: "
+                             f"{int((ya != yb).sum())} disagree")
+    M = np.hstack([ace["score_matrix"][ra], readout["score_matrix"][rb]])
+    panel = list(ace["panel"]) + list(readout["panel"])
+    ya_dropped = len(ace["labels"]) - len(common)
+    full = run_selection(M, ya, panel, n_bootstrap=n_bootstrap, seed=seed)
+    geom_keys = {c[2] for c in panel if c[2] not in CONFIDENCE_KEYS}
+    geom = run_selection(M, ya, panel, n_bootstrap=n_bootstrap, seed=seed, restrict_keys=geom_keys)
+    return {
+        "schema_version": "confluence/0.1-unified",
+        "slug": ace.get("slug"), "n": len(ya), "n_aligned": len(common),
+        "n_dropped_unaligned": ya_dropped, "n_cells_total": len(panel),
+        "n_ace_cells": len(ace["panel"]), "n_readout_cells": len(readout["panel"]),
+        "ace_data_hash": ace.get("data_hash"), "readout_data_hash": readout.get("data_hash"),
+        "primary_full_panel": full, "secondary_geometric_only": geom,
+        "provenance": {"seed": seed, "n_bootstrap": n_bootstrap,
+                       "sealed_selector": "_nested_bootstrap_oob_auroc (imported, not modified)"},
+    }
+
+
 if __name__ == "__main__":
     import argparse
     p = argparse.ArgumentParser(description="confluence calibrator (readout-only path / cross-check)")
