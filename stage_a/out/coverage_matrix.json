@@ -1,0 +1,1588 @@
+{
+ "seed": 20260610,
+ "n_boot": 2000,
+ "deploy_bar": 0.5,
+ "n_usable_cells": 26,
+ "n_excluded": 2,
+ "excluded_cells": [
+  "gpt-oss-20b-MXFP4-Q4/anli_r1 (no rows)",
+  "gpt-oss-20b-MXFP4-Q4/triviaqa_paired (no rows)"
+ ],
+ "covered_any": 23,
+ "covered_geom": 22,
+ "gap_free_any": false,
+ "gap_free_geom": false,
+ "measurement_orphans": [
+  "DeepSeek-R1-Distill-Qwen-7B-4bit/triviaqa_paired",
+  "dolphin-2.9.3-mistral-nemo-12b-4bit/anli_r1",
+  "gemma-3-1b-it-4bit/anli_r1"
+ ],
+ "detector_gaps": [
+  "gemma-3-4b-it-4bit/anli_r1"
+ ],
+ "ace_cohort_cells": 18,
+ "ace_cohort_covered": 18,
+ "ace_cohort_geom": 17,
+ "cells": [
+  {
+   "model": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit",
+   "slug": "DeepSeek-R1-Distill-Qwen-7B-4bit",
+   "benchmark": "anli_r1",
+   "n": 200,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.6166,
+     "ci_lo": 0.5394,
+     "ci_hi": 0.6919,
+     "sign": 1,
+     "cv_marginal": 0.6166,
+     "n": 200,
+     "deployable": true
+    },
+    "RPV": {
+     "auroc": 0.5302,
+     "ci_lo": 0.4436,
+     "ci_hi": 0.609,
+     "sign": -1,
+     "cv_marginal": 0.5058,
+     "n": 200,
+     "deployable": false
+    },
+    "surprise": {
+     "auroc": 0.6033,
+     "ci_lo": 0.5246,
+     "ci_hi": 0.6824,
+     "sign": 1,
+     "cv_marginal": 0.6033,
+     "n": 200,
+     "deployable": true
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 4.16163992156271e-10
+   },
+   "errors": [],
+   "ace": null,
+   "deployable_families": [
+    "null_ratio",
+    "surprise"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit",
+   "slug": "DeepSeek-R1-Distill-Qwen-7B-4bit",
+   "benchmark": "triviaqa_paired",
+   "n": 100,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.5288,
+     "ci_lo": 0.4163,
+     "ci_hi": 0.64,
+     "sign": -1,
+     "cv_marginal": 0.4912,
+     "n": 100,
+     "deployable": false
+    },
+    "RPV": {
+     "auroc": 0.574,
+     "ci_lo": 0.4562,
+     "ci_hi": 0.684,
+     "sign": -1,
+     "cv_marginal": 0.574,
+     "n": 100,
+     "deployable": false
+    },
+    "surprise": {
+     "auroc": 0.5292,
+     "ci_lo": 0.4158,
+     "ci_hi": 0.6395,
+     "sign": -1,
+     "cv_marginal": 0.4768,
+     "n": 100,
+     "deployable": false
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 4.183018376124892e-10
+   },
+   "errors": [],
+   "ace": null,
+   "deployable_families": [],
+   "covered_geom": false,
+   "covered_any": false,
+   "orphan_type": "measurement-orphan"
+  },
+  {
+   "model": "mlx-community/Llama-3.1-8B-Instruct-4bit",
+   "slug": "Llama-3.1-8B-Instruct-4bit",
+   "benchmark": "anli_r1",
+   "n": 200,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.5084,
+     "ci_lo": 0.426,
+     "ci_hi": 0.5924,
+     "sign": -1,
+     "cv_marginal": 0.4959,
+     "n": 200,
+     "deployable": false
+    },
+    "RPV": {
+     "auroc": 0.6739,
+     "ci_lo": 0.5961,
+     "ci_hi": 0.745,
+     "sign": -1,
+     "cv_marginal": 0.6739,
+     "n": 200,
+     "deployable": true
+    },
+    "surprise": {
+     "auroc": 0.6885,
+     "ci_lo": 0.6118,
+     "ci_hi": 0.7588,
+     "sign": -1,
+     "cv_marginal": 0.6885,
+     "n": 200,
+     "deployable": true
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 2.6199753477840204e-10
+   },
+   "errors": [],
+   "ace": null,
+   "deployable_families": [
+    "RPV",
+    "surprise"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/Llama-3.1-8B-Instruct-4bit",
+   "slug": "Llama-3.1-8B-Instruct-4bit",
+   "benchmark": "triviaqa_paired",
+   "n": 100,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.5844,
+     "ci_lo": 0.4679,
+     "ci_hi": 0.6932,
+     "sign": -1,
+     "cv_marginal": 0.5844,
+     "n": 100,
+     "deployable": false
+    },
+    "RPV": {
+     "auroc": 0.8756,
+     "ci_lo": 0.7967,
+     "ci_hi": 0.9415,
+     "sign": -1,
+     "cv_marginal": 0.8756,
+     "n": 100,
+     "deployable": true
+    },
+    "surprise": {
+     "auroc": 0.7488,
+     "ci_lo": 0.6518,
+     "ci_hi": 0.8391,
+     "sign": -1,
+     "cv_marginal": 0.7488,
+     "n": 100,
+     "deployable": true
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 3.318936236951231e-10
+   },
+   "errors": [],
+   "ace": null,
+   "deployable_families": [
+    "RPV",
+    "surprise"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/Llama-3.2-3B-Instruct-4bit",
+   "slug": "Llama-3.2-3B-Instruct-4bit",
+   "benchmark": "anli_r1",
+   "n": 200,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.6302,
+     "ci_lo": 0.5564,
+     "ci_hi": 0.7054,
+     "sign": 1,
+     "cv_marginal": 0.6302,
+     "n": 200,
+     "deployable": true
+    },
+    "RPV": {
+     "auroc": 0.6973,
+     "ci_lo": 0.6239,
+     "ci_hi": 0.7686,
+     "sign": -1,
+     "cv_marginal": 0.6973,
+     "n": 200,
+     "deployable": true
+    },
+    "surprise": {
+     "auroc": 0.5689,
+     "ci_lo": 0.4907,
+     "ci_hi": 0.652,
+     "sign": -1,
+     "cv_marginal": 0.5689,
+     "n": 200,
+     "deployable": false
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 3.709432760956588e-10
+   },
+   "errors": [],
+   "ace": {
+    "metric": {
+     "column_name": "attention::mid_bos_mass",
+     "derivation": null,
+     "family": "Attention",
+     "label": "mid_bos_mass"
+    },
+    "gen_step": 0,
+    "layer": "final",
+    "oob_median": 0.5969518390571023,
+    "oob_ci_lo": 0.4026882110869039,
+    "oob_ci_hi": 0.7052109464609464,
+    "winner_stability": 0.629,
+    "warnings": [
+     "low_auroc (best=0.635; <0.65 likely not deployable)",
+     "oob_low_auroc (oob_median=0.597; <0.60 means the cell selection didn't generalize beyond the calibration sample)",
+     "winner_unstable (winner_stability=0.63; a different panel cell wins on >30% of bootstrap resamples \u2014 the chosen cell is noise-driven at this n)"
+    ],
+    "deployable": false
+   },
+   "deployable_families": [
+    "null_ratio",
+    "RPV"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/Llama-3.2-3B-Instruct-4bit",
+   "slug": "Llama-3.2-3B-Instruct-4bit",
+   "benchmark": "triviaqa_paired",
+   "n": 100,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.7124,
+     "ci_lo": 0.605,
+     "ci_hi": 0.8121,
+     "sign": -1,
+     "cv_marginal": 0.7124,
+     "n": 100,
+     "deployable": true
+    },
+    "RPV": {
+     "auroc": 0.702,
+     "ci_lo": 0.5907,
+     "ci_hi": 0.8028,
+     "sign": -1,
+     "cv_marginal": 0.702,
+     "n": 100,
+     "deployable": true
+    },
+    "surprise": {
+     "auroc": 0.5144,
+     "ci_lo": 0.4006,
+     "ci_hi": 0.6348,
+     "sign": -1,
+     "cv_marginal": 0.4756,
+     "n": 100,
+     "deployable": false
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 4.2389824983501967e-10
+   },
+   "errors": [],
+   "ace": {
+    "metric": {
+     "column_name": "attention::last_minus_1_js",
+     "derivation": null,
+     "family": "Attention",
+     "label": "last_minus_1_js"
+    },
+    "gen_step": 0,
+    "layer": "final",
+    "oob_median": 0.8297453703703704,
+    "oob_ci_lo": 0.6471947738252086,
+    "oob_ci_hi": 0.928273923444976,
+    "winner_stability": 0.963,
+    "warnings": [],
+    "deployable": true
+   },
+   "deployable_families": [
+    "ACE",
+    "null_ratio",
+    "RPV"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/Mistral-7B-Instruct-v0.3-4bit",
+   "slug": "Mistral-7B-Instruct-v0.3-4bit",
+   "benchmark": "anli_r1",
+   "n": 200,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.7788,
+     "ci_lo": 0.7111,
+     "ci_hi": 0.8444,
+     "sign": 1,
+     "cv_marginal": 0.7788,
+     "n": 200,
+     "deployable": true
+    },
+    "RPV": {
+     "auroc": 0.7703,
+     "ci_lo": 0.7039,
+     "ci_hi": 0.837,
+     "sign": 1,
+     "cv_marginal": 0.7703,
+     "n": 200,
+     "deployable": true
+    },
+    "surprise": {
+     "auroc": 0.5249,
+     "ci_lo": 0.446,
+     "ci_hi": 0.6015,
+     "sign": -1,
+     "cv_marginal": 0.5343,
+     "n": 200,
+     "deployable": false
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 3.1041835768519377e-12
+   },
+   "errors": [],
+   "ace": {
+    "metric": {
+     "column_name": "attention::last_minus_1_js_no_bos",
+     "derivation": null,
+     "family": "Attention",
+     "label": "last_minus_1_js_no_bos"
+    },
+    "gen_step": 0,
+    "layer": "final",
+    "oob_median": 0.784343655396287,
+    "oob_ci_lo": 0.6519144144144143,
+    "oob_ci_hi": 0.865337614039731,
+    "winner_stability": 0.943,
+    "warnings": [],
+    "deployable": true
+   },
+   "deployable_families": [
+    "ACE",
+    "null_ratio",
+    "RPV"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/Mistral-7B-Instruct-v0.3-4bit",
+   "slug": "Mistral-7B-Instruct-v0.3-4bit",
+   "benchmark": "triviaqa_paired",
+   "n": 100,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.8744,
+     "ci_lo": 0.7803,
+     "ci_hi": 0.9567,
+     "sign": 1,
+     "cv_marginal": 0.8744,
+     "n": 100,
+     "deployable": true
+    },
+    "RPV": {
+     "auroc": 0.8756,
+     "ci_lo": 0.7826,
+     "ci_hi": 0.9577,
+     "sign": 1,
+     "cv_marginal": 0.8756,
+     "n": 100,
+     "deployable": true
+    },
+    "surprise": {
+     "auroc": 0.786,
+     "ci_lo": 0.6852,
+     "ci_hi": 0.867,
+     "sign": -1,
+     "cv_marginal": 0.786,
+     "n": 100,
+     "deployable": true
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 3.5491609651217004e-12
+   },
+   "errors": [],
+   "ace": {
+    "metric": {
+     "column_name": "attention::last_minus_1_js_no_bos",
+     "derivation": null,
+     "family": "Attention",
+     "label": "last_minus_1_js_no_bos"
+    },
+    "gen_step": 0,
+    "layer": "final",
+    "oob_median": 0.9889196675900277,
+    "oob_ci_lo": 0.9699924242424243,
+    "oob_ci_hi": 1.0,
+    "winner_stability": 0.388,
+    "warnings": [
+     "winner_unstable (winner_stability=0.39; a different panel cell wins on >30% of bootstrap resamples \u2014 the chosen cell is noise-driven at this n)"
+    ],
+    "deployable": true
+   },
+   "deployable_families": [
+    "ACE",
+    "null_ratio",
+    "RPV",
+    "surprise"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/Mistral-Nemo-Instruct-2407-4bit",
+   "slug": "Mistral-Nemo-Instruct-2407-4bit",
+   "benchmark": "anli_r1",
+   "n": 200,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.6258,
+     "ci_lo": 0.5468,
+     "ci_hi": 0.7024,
+     "sign": 1,
+     "cv_marginal": 0.6258,
+     "n": 200,
+     "deployable": true
+    },
+    "RPV": {
+     "auroc": 0.7727,
+     "ci_lo": 0.701,
+     "ci_hi": 0.84,
+     "sign": -1,
+     "cv_marginal": 0.7727,
+     "n": 200,
+     "deployable": true
+    },
+    "surprise": {
+     "auroc": 0.6849,
+     "ci_lo": 0.6027,
+     "ci_hi": 0.7606,
+     "sign": 1,
+     "cv_marginal": 0.6849,
+     "n": 200,
+     "deployable": true
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 1.0590728294346263e-10
+   },
+   "errors": [],
+   "ace": {
+    "metric": {
+     "column_name": "attention::last_minus_1_bos_mass",
+     "derivation": null,
+     "family": "Attention",
+     "label": "last_minus_1_bos_mass"
+    },
+    "gen_step": 0,
+    "layer": "final",
+    "oob_median": 0.8866568798510721,
+    "oob_ci_lo": 0.8163626441567617,
+    "oob_ci_hi": 0.9464705882352942,
+    "winner_stability": 1.0,
+    "warnings": [],
+    "deployable": true
+   },
+   "deployable_families": [
+    "ACE",
+    "null_ratio",
+    "RPV",
+    "surprise"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/Mistral-Nemo-Instruct-2407-4bit",
+   "slug": "Mistral-Nemo-Instruct-2407-4bit",
+   "benchmark": "triviaqa_paired",
+   "n": 100,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.8332,
+     "ci_lo": 0.7391,
+     "ci_hi": 0.9137,
+     "sign": 1,
+     "cv_marginal": 0.8332,
+     "n": 100,
+     "deployable": true
+    },
+    "RPV": {
+     "auroc": 0.8112,
+     "ci_lo": 0.7151,
+     "ci_hi": 0.8976,
+     "sign": 1,
+     "cv_marginal": 0.8112,
+     "n": 100,
+     "deployable": true
+    },
+    "surprise": {
+     "auroc": 0.6644,
+     "ci_lo": 0.5475,
+     "ci_hi": 0.7748,
+     "sign": 1,
+     "cv_marginal": 0.6644,
+     "n": 100,
+     "deployable": true
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 2.6152413568070187e-11
+   },
+   "errors": [],
+   "ace": {
+    "metric": {
+     "column_name": "attention::last_minus_1_bos_mass",
+     "derivation": null,
+     "family": "Attention",
+     "label": "last_minus_1_bos_mass"
+    },
+    "gen_step": 0,
+    "layer": "final",
+    "oob_median": 0.9797101449275363,
+    "oob_ci_lo": 0.9294013226592411,
+    "oob_ci_hi": 1.0,
+    "winner_stability": 0.484,
+    "warnings": [
+     "winner_unstable (winner_stability=0.48; a different panel cell wins on >30% of bootstrap resamples \u2014 the chosen cell is noise-driven at this n)"
+    ],
+    "deployable": true
+   },
+   "deployable_families": [
+    "ACE",
+    "null_ratio",
+    "RPV",
+    "surprise"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/Phi-3.5-mini-instruct-4bit",
+   "slug": "Phi-3.5-mini-instruct-4bit",
+   "benchmark": "anli_r1",
+   "n": 200,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.8199,
+     "ci_lo": 0.7559,
+     "ci_hi": 0.877,
+     "sign": 1,
+     "cv_marginal": 0.8199,
+     "n": 200,
+     "deployable": true
+    },
+    "RPV": {
+     "auroc": 0.7411,
+     "ci_lo": 0.6688,
+     "ci_hi": 0.8073,
+     "sign": 1,
+     "cv_marginal": 0.7411,
+     "n": 200,
+     "deployable": true
+    },
+    "surprise": {
+     "auroc": 0.6627,
+     "ci_lo": 0.5876,
+     "ci_hi": 0.7369,
+     "sign": -1,
+     "cv_marginal": 0.6627,
+     "n": 200,
+     "deployable": true
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 9.998100125585552e-10
+   },
+   "errors": [],
+   "ace": {
+    "metric": {
+     "column_name": "attention::final_bos_mass",
+     "derivation": null,
+     "family": "Attention",
+     "label": "final_bos_mass"
+    },
+    "gen_step": 0,
+    "layer": "final",
+    "oob_median": 0.7400446665152548,
+    "oob_ci_lo": 0.6010908681961313,
+    "oob_ci_hi": 0.8265536492374729,
+    "winner_stability": 0.812,
+    "warnings": [],
+    "deployable": true
+   },
+   "deployable_families": [
+    "ACE",
+    "null_ratio",
+    "RPV",
+    "surprise"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/Phi-3.5-mini-instruct-4bit",
+   "slug": "Phi-3.5-mini-instruct-4bit",
+   "benchmark": "triviaqa_paired",
+   "n": 100,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.8424,
+     "ci_lo": 0.7543,
+     "ci_hi": 0.9176,
+     "sign": 1,
+     "cv_marginal": 0.8424,
+     "n": 100,
+     "deployable": true
+    },
+    "RPV": {
+     "auroc": 0.5512,
+     "ci_lo": 0.4279,
+     "ci_hi": 0.6699,
+     "sign": 1,
+     "cv_marginal": 0.49,
+     "n": 100,
+     "deployable": false
+    },
+    "surprise": {
+     "auroc": 0.5368,
+     "ci_lo": 0.4153,
+     "ci_hi": 0.6534,
+     "sign": -1,
+     "cv_marginal": 0.5228,
+     "n": 100,
+     "deployable": false
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 2.9043345506352125e-10
+   },
+   "errors": [],
+   "ace": {
+    "metric": {
+     "column_name": "attention::final_js_no_bos",
+     "derivation": null,
+     "family": "Attention",
+     "label": "final_js_no_bos"
+    },
+    "gen_step": 0,
+    "layer": "final",
+    "oob_median": 0.8433838383838383,
+    "oob_ci_lo": 0.7124183006535948,
+    "oob_ci_hi": 0.9375413359788359,
+    "winner_stability": 0.544,
+    "warnings": [
+     "winner_unstable (winner_stability=0.54; a different panel cell wins on >30% of bootstrap resamples \u2014 the chosen cell is noise-driven at this n)"
+    ],
+    "deployable": true
+   },
+   "deployable_families": [
+    "ACE",
+    "null_ratio"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/Phi-4-mini-instruct-4bit",
+   "slug": "Phi-4-mini-instruct-4bit",
+   "benchmark": "anli_r1",
+   "n": 200,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.7069,
+     "ci_lo": 0.6339,
+     "ci_hi": 0.7781,
+     "sign": -1,
+     "cv_marginal": 0.7069,
+     "n": 200,
+     "deployable": true
+    },
+    "RPV": {
+     "auroc": 0.669,
+     "ci_lo": 0.59,
+     "ci_hi": 0.7383,
+     "sign": 1,
+     "cv_marginal": 0.669,
+     "n": 200,
+     "deployable": true
+    },
+    "surprise": {
+     "auroc": 0.733,
+     "ci_lo": 0.6594,
+     "ci_hi": 0.7982,
+     "sign": -1,
+     "cv_marginal": 0.733,
+     "n": 200,
+     "deployable": true
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 1.1080835804477829e-08
+   },
+   "errors": [],
+   "ace": {
+    "metric": {
+     "column_name": "attention::mid_v_norm_lastq_weighted",
+     "derivation": null,
+     "family": "Attention",
+     "label": "mid_v_norm_lastq_weighted"
+    },
+    "gen_step": 0,
+    "layer": "final",
+    "oob_median": 0.6902033365447999,
+    "oob_ci_lo": 0.5539382239382239,
+    "oob_ci_hi": 0.7918386467012841,
+    "winner_stability": 0.559,
+    "warnings": [
+     "winner_unstable (winner_stability=0.56; a different panel cell wins on >30% of bootstrap resamples \u2014 the chosen cell is noise-driven at this n)"
+    ],
+    "deployable": true
+   },
+   "deployable_families": [
+    "ACE",
+    "null_ratio",
+    "RPV",
+    "surprise"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/Phi-4-mini-instruct-4bit",
+   "slug": "Phi-4-mini-instruct-4bit",
+   "benchmark": "triviaqa_paired",
+   "n": 100,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.7212,
+     "ci_lo": 0.6189,
+     "ci_hi": 0.815,
+     "sign": 1,
+     "cv_marginal": 0.7212,
+     "n": 100,
+     "deployable": true
+    },
+    "RPV": {
+     "auroc": 0.5532,
+     "ci_lo": 0.4311,
+     "ci_hi": 0.6632,
+     "sign": 1,
+     "cv_marginal": 0.5116,
+     "n": 100,
+     "deployable": false
+    },
+    "surprise": {
+     "auroc": 0.7924,
+     "ci_lo": 0.6838,
+     "ci_hi": 0.8854,
+     "sign": -1,
+     "cv_marginal": 0.7924,
+     "n": 100,
+     "deployable": true
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 9.18321774179276e-09
+   },
+   "errors": [],
+   "ace": {
+    "metric": {
+     "column_name": "attention::mid_bos_mass",
+     "derivation": null,
+     "family": "Attention",
+     "label": "mid_bos_mass"
+    },
+    "gen_step": 0,
+    "layer": "final",
+    "oob_median": 0.9331550802139037,
+    "oob_ci_lo": 0.850865650969529,
+    "oob_ci_hi": 0.985728179143511,
+    "winner_stability": 0.784,
+    "warnings": [],
+    "deployable": true
+   },
+   "deployable_families": [
+    "ACE",
+    "null_ratio",
+    "surprise"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/Qwen2.5-7B-Instruct-4bit",
+   "slug": "Qwen2.5-7B-Instruct-4bit",
+   "benchmark": "anli_r1",
+   "n": 200,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.8349,
+     "ci_lo": 0.7796,
+     "ci_hi": 0.887,
+     "sign": 1,
+     "cv_marginal": 0.8349,
+     "n": 200,
+     "deployable": true
+    },
+    "RPV": {
+     "auroc": 0.6787,
+     "ci_lo": 0.6028,
+     "ci_hi": 0.7486,
+     "sign": 1,
+     "cv_marginal": 0.6787,
+     "n": 200,
+     "deployable": true
+    },
+    "surprise": {
+     "auroc": 0.5859,
+     "ci_lo": 0.509,
+     "ci_hi": 0.6646,
+     "sign": 1,
+     "cv_marginal": 0.5859,
+     "n": 200,
+     "deployable": true
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 7.65849605954827e-11
+   },
+   "errors": [],
+   "ace": {
+    "metric": {
+     "column_name": "attention::final_v_norm_lastq_weighted",
+     "derivation": null,
+     "family": "Attention",
+     "label": "final_v_norm_lastq_weighted"
+    },
+    "gen_step": 0,
+    "layer": "final",
+    "oob_median": 0.7797826204802949,
+    "oob_ci_lo": 0.662672951466055,
+    "oob_ci_hi": 0.8602120035775487,
+    "winner_stability": 0.691,
+    "warnings": [
+     "winner_unstable (winner_stability=0.69; a different panel cell wins on >30% of bootstrap resamples \u2014 the chosen cell is noise-driven at this n)"
+    ],
+    "deployable": true
+   },
+   "deployable_families": [
+    "ACE",
+    "null_ratio",
+    "RPV",
+    "surprise"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/Qwen2.5-7B-Instruct-4bit",
+   "slug": "Qwen2.5-7B-Instruct-4bit",
+   "benchmark": "triviaqa_paired",
+   "n": 100,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.6576,
+     "ci_lo": 0.5467,
+     "ci_hi": 0.7644,
+     "sign": -1,
+     "cv_marginal": 0.6576,
+     "n": 100,
+     "deployable": true
+    },
+    "RPV": {
+     "auroc": 0.896,
+     "ci_lo": 0.8238,
+     "ci_hi": 0.9542,
+     "sign": 1,
+     "cv_marginal": 0.896,
+     "n": 100,
+     "deployable": true
+    },
+    "surprise": {
+     "auroc": 0.7828,
+     "ci_lo": 0.6815,
+     "ci_hi": 0.868,
+     "sign": 1,
+     "cv_marginal": 0.7828,
+     "n": 100,
+     "deployable": true
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 2.8904434401511025e-10
+   },
+   "errors": [],
+   "ace": {
+    "metric": {
+     "column_name": "attention::final_v_norm_lastq_weighted",
+     "derivation": null,
+     "family": "Attention",
+     "label": "final_v_norm_lastq_weighted"
+    },
+    "gen_step": 0,
+    "layer": "final",
+    "oob_median": 0.9243060860707919,
+    "oob_ci_lo": 0.8088394185390377,
+    "oob_ci_hi": 0.9967572550905884,
+    "winner_stability": 0.916,
+    "warnings": [],
+    "deployable": true
+   },
+   "deployable_families": [
+    "ACE",
+    "null_ratio",
+    "RPV",
+    "surprise"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/Qwen3-1.7B-4bit",
+   "slug": "Qwen3-1.7B-4bit",
+   "benchmark": "anli_r1",
+   "n": 200,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.5629,
+     "ci_lo": 0.4821,
+     "ci_hi": 0.6441,
+     "sign": 1,
+     "cv_marginal": 0.5629,
+     "n": 200,
+     "deployable": false
+    },
+    "RPV": {
+     "auroc": 0.522,
+     "ci_lo": 0.4421,
+     "ci_hi": 0.6037,
+     "sign": -1,
+     "cv_marginal": 0.48595,
+     "n": 200,
+     "deployable": false
+    },
+    "surprise": {
+     "auroc": 0.7328,
+     "ci_lo": 0.6601,
+     "ci_hi": 0.8021,
+     "sign": -1,
+     "cv_marginal": 0.7328,
+     "n": 200,
+     "deployable": true
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 3.9267256113362237e-10
+   },
+   "errors": [],
+   "ace": {
+    "metric": {
+     "column_name": "attention::final_js_kv_groups",
+     "derivation": null,
+     "family": "Attention",
+     "label": "final_js_kv_groups"
+    },
+    "gen_step": 0,
+    "layer": "final",
+    "oob_median": 0.6414267834793492,
+    "oob_ci_lo": 0.5016966966966968,
+    "oob_ci_hi": 0.7366968916968917,
+    "winner_stability": 0.652,
+    "warnings": [
+     "winner_unstable (winner_stability=0.65; a different panel cell wins on >30% of bootstrap resamples \u2014 the chosen cell is noise-driven at this n)"
+    ],
+    "deployable": true
+   },
+   "deployable_families": [
+    "ACE",
+    "surprise"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/Qwen3-1.7B-4bit",
+   "slug": "Qwen3-1.7B-4bit",
+   "benchmark": "triviaqa_paired",
+   "n": 100,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.6208,
+     "ci_lo": 0.5089,
+     "ci_hi": 0.7308,
+     "sign": 1,
+     "cv_marginal": 0.6208,
+     "n": 100,
+     "deployable": true
+    },
+    "RPV": {
+     "auroc": 0.7588,
+     "ci_lo": 0.6516,
+     "ci_hi": 0.8611,
+     "sign": 1,
+     "cv_marginal": 0.7588,
+     "n": 100,
+     "deployable": true
+    },
+    "surprise": {
+     "auroc": 0.851,
+     "ci_lo": 0.7669,
+     "ci_hi": 0.9223,
+     "sign": -1,
+     "cv_marginal": 0.851,
+     "n": 100,
+     "deployable": true
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 2.454108027905022e-10
+   },
+   "errors": [],
+   "ace": {
+    "metric": {
+     "column_name": "attention::final_bos_mass",
+     "derivation": null,
+     "family": "Attention",
+     "label": "final_bos_mass"
+    },
+    "gen_step": 0,
+    "layer": "final",
+    "oob_median": 0.6799470899470899,
+    "oob_ci_lo": 0.4705340557275542,
+    "oob_ci_hi": 0.8117476851851853,
+    "winner_stability": 0.438,
+    "warnings": [
+     "winner_unstable (winner_stability=0.44; a different panel cell wins on >30% of bootstrap resamples \u2014 the chosen cell is noise-driven at this n)"
+    ],
+    "deployable": false
+   },
+   "deployable_families": [
+    "null_ratio",
+    "RPV",
+    "surprise"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/Qwen3-8B-4bit",
+   "slug": "Qwen3-8B-4bit",
+   "benchmark": "anli_r1",
+   "n": 200,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.5174,
+     "ci_lo": 0.4369,
+     "ci_hi": 0.6014,
+     "sign": -1,
+     "cv_marginal": 0.5099,
+     "n": 200,
+     "deployable": false
+    },
+    "RPV": {
+     "auroc": 0.8508,
+     "ci_lo": 0.7933,
+     "ci_hi": 0.9037,
+     "sign": -1,
+     "cv_marginal": 0.8508,
+     "n": 200,
+     "deployable": true
+    },
+    "surprise": {
+     "auroc": 0.7438,
+     "ci_lo": 0.6703,
+     "ci_hi": 0.8141,
+     "sign": 1,
+     "cv_marginal": 0.7438,
+     "n": 200,
+     "deployable": true
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 2.6719249035522807e-10
+   },
+   "errors": [],
+   "ace": {
+    "metric": {
+     "column_name": "attention::final_js",
+     "derivation": null,
+     "family": "Attention",
+     "label": "final_js"
+    },
+    "gen_step": 0,
+    "layer": "final",
+    "oob_median": 0.823046744014486,
+    "oob_ci_lo": 0.7380848285260049,
+    "oob_ci_hi": 0.8961828841256366,
+    "winner_stability": 0.613,
+    "warnings": [
+     "winner_unstable (winner_stability=0.61; a different panel cell wins on >30% of bootstrap resamples \u2014 the chosen cell is noise-driven at this n)"
+    ],
+    "deployable": true
+   },
+   "deployable_families": [
+    "ACE",
+    "RPV",
+    "surprise"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/Qwen3-8B-4bit",
+   "slug": "Qwen3-8B-4bit",
+   "benchmark": "triviaqa_paired",
+   "n": 100,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.8108,
+     "ci_lo": 0.7201,
+     "ci_hi": 0.895,
+     "sign": -1,
+     "cv_marginal": 0.8108,
+     "n": 100,
+     "deployable": true
+    },
+    "RPV": {
+     "auroc": 0.8848,
+     "ci_lo": 0.8087,
+     "ci_hi": 0.9468,
+     "sign": -1,
+     "cv_marginal": 0.8848,
+     "n": 100,
+     "deployable": true
+    },
+    "surprise": {
+     "auroc": 0.766,
+     "ci_lo": 0.6635,
+     "ci_hi": 0.8551,
+     "sign": 1,
+     "cv_marginal": 0.766,
+     "n": 100,
+     "deployable": true
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 2.964801737448397e-10
+   },
+   "errors": [],
+   "ace": {
+    "metric": {
+     "column_name": "attention::last_minus_1_js_no_bos",
+     "derivation": null,
+     "family": "Attention",
+     "label": "last_minus_1_js_no_bos"
+    },
+    "gen_step": 0,
+    "layer": "final",
+    "oob_median": 0.7777777777777778,
+    "oob_ci_lo": 0.638216911764706,
+    "oob_ci_hi": 0.8999999999999999,
+    "winner_stability": 0.544,
+    "warnings": [
+     "winner_unstable (winner_stability=0.54; a different panel cell wins on >30% of bootstrap resamples \u2014 the chosen cell is noise-driven at this n)"
+    ],
+    "deployable": true
+   },
+   "deployable_families": [
+    "ACE",
+    "null_ratio",
+    "RPV",
+    "surprise"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit",
+   "slug": "dolphin-2.9.3-mistral-nemo-12b-4bit",
+   "benchmark": "anli_r1",
+   "n": 200,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.5189,
+     "ci_lo": 0.4371,
+     "ci_hi": 0.5985,
+     "sign": -1,
+     "cv_marginal": 0.4928,
+     "n": 200,
+     "deployable": false
+    },
+    "RPV": {
+     "auroc": 0.5594,
+     "ci_lo": 0.4803,
+     "ci_hi": 0.6355,
+     "sign": 1,
+     "cv_marginal": 0.5594,
+     "n": 200,
+     "deployable": false
+    },
+    "surprise": {
+     "auroc": 0.5343,
+     "ci_lo": 0.451,
+     "ci_hi": 0.6187,
+     "sign": 1,
+     "cv_marginal": 0.5315,
+     "n": 200,
+     "deployable": false
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 1.4149836857768605e-10
+   },
+   "errors": [],
+   "ace": null,
+   "deployable_families": [],
+   "covered_geom": false,
+   "covered_any": false,
+   "orphan_type": "measurement-orphan"
+  },
+  {
+   "model": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit",
+   "slug": "dolphin-2.9.3-mistral-nemo-12b-4bit",
+   "benchmark": "triviaqa_paired",
+   "n": 100,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.6332,
+     "ci_lo": 0.5219,
+     "ci_hi": 0.7429,
+     "sign": 1,
+     "cv_marginal": 0.6332,
+     "n": 100,
+     "deployable": true
+    },
+    "RPV": {
+     "auroc": 0.6376,
+     "ci_lo": 0.5272,
+     "ci_hi": 0.7472,
+     "sign": 1,
+     "cv_marginal": 0.6376,
+     "n": 100,
+     "deployable": true
+    },
+    "surprise": {
+     "auroc": 0.5508,
+     "ci_lo": 0.4344,
+     "ci_hi": 0.6663,
+     "sign": 1,
+     "cv_marginal": 0.5252,
+     "n": 100,
+     "deployable": false
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 9.591349936499682e-11
+   },
+   "errors": [],
+   "ace": null,
+   "deployable_families": [
+    "null_ratio",
+    "RPV"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/gemma-3-1b-it-4bit",
+   "slug": "gemma-3-1b-it-4bit",
+   "benchmark": "anli_r1",
+   "n": 200,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.5282,
+     "ci_lo": 0.4443,
+     "ci_hi": 0.6077,
+     "sign": 1,
+     "cv_marginal": 0.5074,
+     "n": 200,
+     "deployable": false
+    },
+    "RPV": {
+     "auroc": 0.5539,
+     "ci_lo": 0.478,
+     "ci_hi": 0.6329,
+     "sign": 1,
+     "cv_marginal": 0.5539,
+     "n": 200,
+     "deployable": false
+    },
+    "surprise": {
+     "auroc": 0.538,
+     "ci_lo": 0.4553,
+     "ci_hi": 0.6216,
+     "sign": 1,
+     "cv_marginal": 0.5378,
+     "n": 200,
+     "deployable": false
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 1.234941038319448e-10
+   },
+   "errors": [],
+   "ace": null,
+   "deployable_families": [],
+   "covered_geom": false,
+   "covered_any": false,
+   "orphan_type": "measurement-orphan"
+  },
+  {
+   "model": "mlx-community/gemma-3-1b-it-4bit",
+   "slug": "gemma-3-1b-it-4bit",
+   "benchmark": "triviaqa_paired",
+   "n": 100,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.6572,
+     "ci_lo": 0.551,
+     "ci_hi": 0.7599,
+     "sign": 1,
+     "cv_marginal": 0.6572,
+     "n": 100,
+     "deployable": true
+    },
+    "RPV": {
+     "auroc": 0.5284,
+     "ci_lo": 0.4109,
+     "ci_hi": 0.6483,
+     "sign": 1,
+     "cv_marginal": 0.5068,
+     "n": 100,
+     "deployable": false
+    },
+    "surprise": {
+     "auroc": 0.549,
+     "ci_lo": 0.4387,
+     "ci_hi": 0.6624,
+     "sign": 1,
+     "cv_marginal": 0.5458,
+     "n": 100,
+     "deployable": false
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 1.1560565837953618e-09
+   },
+   "errors": [],
+   "ace": null,
+   "deployable_families": [
+    "null_ratio"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  },
+  {
+   "model": "mlx-community/gemma-3-4b-it-4bit",
+   "slug": "gemma-3-4b-it-4bit",
+   "benchmark": "anli_r1",
+   "n": 200,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.5156,
+     "ci_lo": 0.434,
+     "ci_hi": 0.5928,
+     "sign": -1,
+     "cv_marginal": 0.50235,
+     "n": 200,
+     "deployable": false
+    },
+    "RPV": {
+     "auroc": 0.5583,
+     "ci_lo": 0.4809,
+     "ci_hi": 0.637,
+     "sign": 1,
+     "cv_marginal": 0.5583,
+     "n": 200,
+     "deployable": false
+    },
+    "surprise": {
+     "auroc": 0.6207,
+     "ci_lo": 0.5463,
+     "ci_hi": 0.6972,
+     "sign": 1,
+     "cv_marginal": 0.6207,
+     "n": 200,
+     "deployable": true
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 9.905853914915497e-11
+   },
+   "errors": [],
+   "ace": {
+    "metric": {
+     "column_name": "attention::last_minus_1_js_kv_groups",
+     "derivation": null,
+     "family": "Attention",
+     "label": "last_minus_1_js_kv_groups"
+    },
+    "gen_step": 0,
+    "layer": "final",
+    "oob_median": 0.6561069095024952,
+    "oob_ci_lo": 0.4879941860465116,
+    "oob_ci_hi": 0.7558958115639149,
+    "winner_stability": 0.378,
+    "warnings": [
+     "winner_unstable (winner_stability=0.38; a different panel cell wins on >30% of bootstrap resamples \u2014 the chosen cell is noise-driven at this n)"
+    ],
+    "deployable": false
+   },
+   "deployable_families": [
+    "surprise"
+   ],
+   "covered_geom": false,
+   "covered_any": true,
+   "orphan_type": "detector-gap"
+  },
+  {
+   "model": "mlx-community/gemma-3-4b-it-4bit",
+   "slug": "gemma-3-4b-it-4bit",
+   "benchmark": "triviaqa_paired",
+   "n": 100,
+   "families": {
+    "null_ratio": {
+     "auroc": 0.8452,
+     "ci_lo": 0.7655,
+     "ci_hi": 0.9176,
+     "sign": -1,
+     "cv_marginal": 0.8452,
+     "n": 100,
+     "deployable": true
+    },
+    "RPV": {
+     "auroc": 0.8028,
+     "ci_lo": 0.7052,
+     "ci_hi": 0.8876,
+     "sign": 1,
+     "cv_marginal": 0.8028,
+     "n": 100,
+     "deployable": true
+    },
+    "surprise": {
+     "auroc": 0.758,
+     "ci_lo": 0.6623,
+     "ci_hi": 0.8542,
+     "sign": 1,
+     "cv_marginal": 0.758,
+     "n": 100,
+     "deployable": true
+    }
+   },
+   "controls": {
+    "rotation_max_abs_delta_median": 7.743494734313572e-11
+   },
+   "errors": [],
+   "ace": {
+    "metric": {
+     "column_name": "attention::final_js_kv_groups",
+     "derivation": null,
+     "family": "Attention",
+     "label": "final_js_kv_groups"
+    },
+    "gen_step": 0,
+    "layer": "final",
+    "oob_median": 0.8613787906466934,
+    "oob_ci_lo": 0.7221014492753624,
+    "oob_ci_hi": 0.9553651810447171,
+    "winner_stability": 0.7,
+    "warnings": [],
+    "deployable": true
+   },
+   "deployable_families": [
+    "ACE",
+    "null_ratio",
+    "RPV",
+    "surprise"
+   ],
+   "covered_geom": true,
+   "covered_any": true,
+   "orphan_type": null
+  }
+ ],
+ "excluded": [
+  {
+   "model": "mlx-community/gpt-oss-20b-MXFP4-Q4",
+   "slug": "gpt-oss-20b-MXFP4-Q4",
+   "benchmark": "anli_r1",
+   "n": 0,
+   "families": {},
+   "controls": {},
+   "errors": [
+    "no rows"
+   ],
+   "ace": null,
+   "deployable_families": [],
+   "covered_geom": false,
+   "covered_any": false
+  },
+  {
+   "model": "mlx-community/gpt-oss-20b-MXFP4-Q4",
+   "slug": "gpt-oss-20b-MXFP4-Q4",
+   "benchmark": "triviaqa_paired",
+   "n": 0,
+   "families": {},
+   "controls": {},
+   "errors": [
+    "no rows"
+   ],
+   "ace": null,
+   "deployable_families": [],
+   "covered_geom": false,
+   "covered_any": false
+  }
+ ]
+}
