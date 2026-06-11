@@ -1,0 +1,13 @@
+{
+ "fresh": "/Users/msrk/Documents/commit-confluence/stage_b/data/anli_R1_seed20260612_n200.jsonl",
+ "sealed": "/Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
+ "task": "anli",
+ "n": 200,
+ "label_balance": 0.5,
+ "n_intra_dup": 0,
+ "n_overlap_with_sealed": 0,
+ "fresh_sha256": "57ad341f2c29c886a726b7c62b7371be8c064b04b9b96e98324c931157d4f55b",
+ "hard_failures": [],
+ "warnings": [],
+ "pass": true
+}

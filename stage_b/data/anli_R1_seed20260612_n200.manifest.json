@@ -1,0 +1,17 @@
+{
+  "data_hash_sha256": "57ad341f2c29c886a726b7c62b7371be8c064b04b9b96e98324c931157d4f55b",
+  "hf_dataset": "facebook/anli",
+  "label_convention": {
+    "0": "entailment - YES",
+    "1": "contradiction - NO"
+  },
+  "n_per_class": 100,
+  "n_rows": 200,
+  "n_sealed_excluded_during_sampling": 82,
+  "output": "/Users/msrk/Documents/commit-confluence/stage_b/data/anli_R1_seed20260612_n200.jsonl",
+  "prompt_template": "Instruction: Read the premise and decide whether the hypothesis is entailed by the premise. Answer YES if the premise entails the hypothesis, NO if the premise contradicts the hypothesis.\n\nPremise: {premise}\nHypothesis: {hypothesis}\nAnswer:",
+  "sealed_exclusion_source": "/Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
+  "seed": 20260612,
+  "split": "dev_r1",
+  "task": "anli_r1"
+}

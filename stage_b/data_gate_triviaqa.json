@@ -1,0 +1,13 @@
+{
+ "fresh": "/Users/msrk/Documents/commit-confluence/stage_b/data/triviaqa_paired_seed20260612_n200.jsonl",
+ "sealed": "/Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
+ "task": "triviaqa",
+ "n": 200,
+ "label_balance": 0.5,
+ "n_intra_dup": 0,
+ "n_overlap_with_sealed": 0,
+ "fresh_sha256": "7e0a2e2e049c83d5fe1aaccffa52c25885c0e5457362e91055c680905a68b6c7",
+ "hard_failures": [],
+ "warnings": [],
+ "pass": true
+}

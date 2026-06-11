@@ -1,0 +1,20 @@
+{
+  "data_hash_sha256": "7e0a2e2e049c83d5fe1aaccffa52c25885c0e5457362e91055c680905a68b6c7",
+  "hf_config": "rc.wikipedia",
+  "hf_dataset": "trivia_qa",
+  "label_convention": {
+    "0": "correct_answer - model should answer YES",
+    "1": "wrong_answer - model should answer NO (contradiction analog)"
+  },
+  "n_questions": 100,
+  "n_samples": 200,
+  "n_sealed_excluded_during_sampling": 0,
+  "output": "/Users/msrk/Documents/commit-confluence/stage_b/data/triviaqa_paired_seed20260612_n200.jsonl",
+  "prompt_template": "Instruction: Read the question and proposed answer, then decide whether the proposed answer is correct. Answer YES if the proposed answer is correct, NO if the proposed answer is incorrect.\n\nQuestion: {question}\nProposed answer: {answer}\nAnswer:",
+  "schema_version": "triviaqa_paired_v1",
+  "sealed_exclusion_source": "/Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
+  "seed": 20260612,
+  "shuffled": true,
+  "split": "validation",
+  "task": "triviaqa_paired"
+}
