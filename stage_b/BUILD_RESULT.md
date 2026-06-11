@@ -12,8 +12,10 @@
   honest OOB CI + winner + per-cell full-sample marginals;
 - `calibrate_cell()` emits BOTH endpoints (PRIMARY incl. confidence; SECONDARY geometric-only).
 
-The ACE attention-pass collection (12 `ATTENTION_PANEL_T0` cells) is the remaining wire-in for the
-fresh run; the selection/merge/emit spine is done and verified.
+The ACE attention-pass collection (21 `ATTENTION_PANEL_T0_WITH_V_NORMS` cells — the sealed
+instrument, S1 fix) is wired in and validated byte-exact (S2); the selection/merge/emit spine is
+done and verified. (Historical note: an early draft said "12 `ATTENTION_PANEL_T0` cells" — that
+routing-only panel was the S1 blocker, since replaced by the 21-cell with-v-norms panel.)
 
 ## Cross-check (no model run; sealed rows only) - PASS
 

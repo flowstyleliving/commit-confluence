@@ -21,8 +21,9 @@ a fresh seed? This is a test of the *dispatcher*, not a search for a universal c
 `confluence_calibrator.py` lives in THIS repo and **imports the sealed machinery read-only** - it
 must not edit `t0-morphology-furnace` (the frozen ACE/T0 core). Contract:
 
-1. **Attention pass** (ACE): collect per-sample scores for `ATTENTION_PANEL_T0` via the sealed
-   calibrator's collection path. -> score sub-matrix `A` (n x 21), panel labels.
+1. **Attention pass** (ACE): collect per-sample scores for `ATTENTION_PANEL_T0_WITH_V_NORMS`
+   (the sealed 21-cell instrument, incl. v-norm cells; S1 fix) via the sealed calibrator's
+   collection path. -> score sub-matrix `A` (n x 21), panel labels.
 2. **Readout pass** (RPV + residual + confidence, ONE source) [R3]: at the gen_step=1 commit instant
    (the readout's native locus, via the imported `trace_pair_features`), compute
    `{null_ratio_post_rank1, fisher_eff_rank, spectral_entropy, neg_shadow_logvol_r1,
@@ -208,3 +209,51 @@ The harness persists each cell's merged score matrix (`<slug>.matrix.npz`);
   of per-deployment calibration.
 
 All three are descriptive; none gate the seal. None require model forwards beyond the run.
+
+---
+
+## Amendments v4 (2026-06-11, Codex adversarial pass — BEFORE the registered run)
+
+The independent Codex review (agent `ab4bdeaf5328c8481`, over commit `59a6833`) returned
+**NO-GO** with 5 harness/provenance must-fixes that BOTH prior passes (S1–S8, C1–C7) missed.
+All are now closed in code; none touch the sealed selector or the science. The fresh
+seed-20260612 data was already committed and gate-PASS before these fixes (the fixes are in
+the launch harness, not the data), so no data was regenerated under the new code.
+
+- **M1 — launch harness now ENFORCES the fresh-data gate.** `check_fresh_data.py` is refactored
+  to expose `run_gate(fresh, sealed, task, expect_n)`; `run_seal.py` calls it in-process for
+  every task file on a strict (non-preview, non-smoke) run and refuses to launch on any hard
+  failure. The gate was previously doc/CLI-only — a reserialized sealed file or a
+  partially-overlapping fresh file could have launched as a registered cohort.
+- **M2 — an incomplete cohort can never certify a registered PASS.** `primary_pass` /
+  `geometric_pass` now require `not incomplete` in addition to the deployable bar. A4 counted an
+  errored cell as not-deployable, but a crashed cell was also never *evaluated*; the procedure
+  cannot be certified on partial evidence.
+- **M3 — `--resume` validates provenance before trusting a profile.** A resumed profile is only
+  counted if its seed, n_bootstrap, model, task, data-file sha256, and module/spec hashes match
+  the current run AND its matrix npz exists; any drift raises (→ cell error → forces FAIL),
+  so a smoke/preview/old-seed/old-code profile can no longer be folded into the 20-cell cohort.
+- **M4 — no silent sample-denominator shrink.** The readout pass drops non-finite rows;
+  `merge_matrices(..., max_dropped=0)` on a strict run requires every planned sample to score and
+  raises otherwise. A registered n=200 cell may not certify on a survivor subset (which could
+  exclude exactly the hard examples). Previews/smokes stay lenient.
+- **M5 — provenance covers the whole hot path + the loaded snapshot.** `module_hashes()` now also
+  hashes `pri_runtime`, `pri_v2_io_plugins`, `pri_v2_mlx_pipeline`, `model_adapters` (every module
+  the forward executes); `model_snapshot_sha()` resolves `refs/main` (the revision a default load
+  actually uses) instead of guessing from the snapshot-dir listing, and reports `cached_snapshots`
+  as an ambiguity tripwire.
+
+Should-fixes also landed: **SF1** — the TriviaQA data gate additionally rejects any sealed
+`question_id` reappearing in the fresh file (a reused question with a different injected answer
+has zero prompt-hash overlap but is not a fresh example); **SF2** — E1 now reports
+`fixed_cell_max_survival` (does ONE cell survive across holdouts) alongside the
+holdout-specific-winner survival, which alone could read high with no universal cell; **SF3
+(noted, not a code change)** — if a fusion cell wins, its OOB CI does not include the
+rank-transform-fitting variability (the transform is precomputed over the full fresh matrix);
+this is pre-registered and not label leakage, but the paper must state it when reporting any
+fusion winner.
+
+Confirmed-clean by Codex (no change needed): fusion component signs are genuinely a priori
+(sealed-era paths only, runtime loads the frozen `fusion_signs.json`); in-bag sign-lock + OOB
+evaluation in the sealed selector; data-gate normalization matches the generator byte-for-byte;
+multiplicity is pre-registered as priced in by nested OOB.

@@ -54,9 +54,15 @@ cohort** (A4: errored cells count as NOT deployable; `incomplete` flagged):
 - **PRIMARY** (full 29-cell panel incl. confidence + fusion): deployable on >= 19/20.
 - **SECONDARY** (geometric-only): deployable on >= 17/20.
 
-Guards (A5): sealed-CONTENT files (sha256) and pilot seeds {20260512, 20260526, 20260610,
-20260611} are refused without `--allow-sealed-data`, which forces `is_preview`. `--resume`
-skips cells whose profile already exists (multi-hour-run crash safety).
+Guards: sealed-CONTENT files (sha256) and pilot seeds {20260512, 20260526, 20260610, 20260611}
+are refused without `--allow-sealed-data`, which forces `is_preview` (C3). On a strict run the
+harness ALSO runs the fresh-data gate in-process for every task file and refuses to launch on
+any hard failure (M1, A5), and requires a zero-drop sample denominator (M4: every planned
+sample must score, else the cell errors). `--resume` skips cells whose profile already exists,
+but **only resume the exact same registered command** (same seed, nboot, data files, code):
+a resumed profile is provenance-validated (seed / nboot / model / task / data-sha256 /
+module-hashes / matrix presence) and any drift turns that cell into an error → forces FAIL,
+so a stale/preview/old-code profile can never be folded into the registered cohort (M3).
 
 ## After the run - pre-registered descriptive analyses (A7, zero new forwards)
 

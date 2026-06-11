@@ -111,9 +111,17 @@ def lomo(cells, task):
                                "modal_sign": 1 if signs.count(1) >= signs.count(-1) else -1}
     surv = {lab: sum(1 for v in d.values() if v is not None and v > 0.55)
             for lab, d in landscape.items()}
+    # SF2: `holdout_winner_survival` below counts holdouts where the (possibly DIFFERENT each
+    # time) pooled winner cleared 0.55 - it can read high even if no single cell generalizes.
+    # The honest universality number is whether ONE fixed cell survives across holdouts: the max
+    # over cells of its >0.55 count. That is the metric the LOMO interpretation guide (A7) keys on.
+    fixed_lab = max(surv, key=surv.get) if surv else None
     return {"holdout_winners": winners,
-            "winner_survival": sum(1 for w in winners
-                                   if w["holdout_auroc"] is not None and w["holdout_auroc"] > 0.55),
+            "holdout_winner_survival": sum(1 for w in winners
+                                           if w["holdout_auroc"] is not None and w["holdout_auroc"] > 0.55),
+            "fixed_cell_max_survival": {"cell": fixed_lab,
+                                        "n_holdouts_gt055": surv.get(fixed_lab, 0) if fixed_lab else 0,
+                                        "of_n_holdouts": len(slugs)},
             "n_holdouts": len(slugs),
             "landscape_cells_gt055": {k: v for k, v in sorted(surv.items(), key=lambda kv: -kv[1])
                                       if v >= max(1, len(slugs) - 2)},
@@ -217,7 +225,10 @@ def main():
         for t in tasks:
             r = report["E1_lomo"][t]
             if "holdout_winners" in r:
-                print(f"\n[E1 {t}] LOMO winner survival: {r['winner_survival']}/{r['n_holdouts']} "
+                fx = r["fixed_cell_max_survival"]
+                print(f"\n[E1 {t}] LOMO holdout-winner survival: "
+                      f"{r['holdout_winner_survival']}/{r['n_holdouts']} > 0.55 | "
+                      f"best FIXED cell {fx['cell']}: {fx['n_holdouts_gt055']}/{fx['of_n_holdouts']} "
                       f"holdouts > 0.55", flush=True)
                 for w in r["holdout_winners"]:
                     print(f"   {w['holdout']:42s} {str(w['winner']):46s} "

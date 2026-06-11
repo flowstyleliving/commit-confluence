@@ -268,6 +268,13 @@ def module_hashes() -> Dict[str, str]:
         "pri_calibrator": os.path.join(T0_REPO, "pri_calibrator.py"),
         "comprehensive_run": os.path.join(T0_REPO, "exploratory/shadow-ambiguity/comprehensive_run.py"),
         "diagnose_inter_head_disagreement": os.path.join(T0_REPO, "scripts/diagnose_inter_head_disagreement.py"),
+        # M5: the readout/ACE hot path also executes the sealed runtime + IO/MLX plugins +
+        # model adapters. Hashing only the top-level modules let unrecorded runtime code drift
+        # while the drift hashes still matched. Cover every module the forward path touches.
+        "pri_runtime": os.path.join(T0_REPO, "pri_runtime.py"),
+        "pri_v2_io_plugins": os.path.join(T0_REPO, "pri_v2_io_plugins.py"),
+        "pri_v2_mlx_pipeline": os.path.join(T0_REPO, "pri_v2_mlx_pipeline.py"),
+        "model_adapters": os.path.join(T0_REPO, "model_adapters.py"),
     }
     out = {}
     for mod, exp in expected.items():
@@ -282,14 +289,30 @@ def module_hashes() -> Dict[str, str]:
 
 
 def model_snapshot_sha(model_id: str):
-    """HF-cache snapshot revision(s) for the local weights (provenance; no network)."""
-    base = os.path.expanduser(
-        f"~/.cache/huggingface/hub/models--{model_id.replace('/', '--')}/snapshots")
+    """HF-cache snapshot revision ACTUALLY resolved for the local weights (provenance; no
+    network). M5: a bare `from_pretrained`/`mlx_load` with no explicit revision resolves
+    `refs/main`, so the honest provenance is that commit - not the lexicographically-first of
+    however many snapshot dirs happen to be cached. We read refs/main and confirm its snapshot
+    dir exists; the raw dir listing is kept only as a fallback + a multi-snapshot tripwire."""
+    repo = os.path.expanduser(
+        f"~/.cache/huggingface/hub/models--{model_id.replace('/', '--')}")
+    snap_dir = os.path.join(repo, "snapshots")
     try:
-        revs = sorted(os.listdir(base))
+        cached = sorted(os.listdir(snap_dir))
     except OSError:
         return None
-    return revs[0] if len(revs) == 1 else revs
+    resolved = None
+    ref_main = os.path.join(repo, "refs", "main")
+    if os.path.exists(ref_main):
+        with open(ref_main) as f:
+            rev = f.read().strip()
+        if rev and os.path.isdir(os.path.join(snap_dir, rev)):
+            resolved = rev
+    return {
+        "resolved_revision": resolved,            # refs/main -> the snapshot a default load uses
+        "resolved_source": "refs/main" if resolved else "unresolved",
+        "cached_snapshots": cached,               # tripwire: >1 means an ambiguous local cache
+    }
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -351,16 +374,29 @@ def collect_ace_matrix(model_slug: str, jsonl_path: str, *, seed: int,
             "sample_idx": np.arange(n, dtype=np.int64), "n": n}
 
 
-def merge_matrices(ace: Dict[str, Any], readout: Dict[str, Any]) -> Dict[str, Any]:
+def merge_matrices(ace: Dict[str, Any], readout: Dict[str, Any], *,
+                   max_dropped: int | None = None) -> Dict[str, Any]:
     """Merge the ACE attention sub-matrix with the readout sub-matrix (R3: one source per
     family), aligning by sample_idx (robust to the readout run dropping non-finite rows),
     with a HARD label-alignment assert on the intersection. Returns the merged matrix dict
-    (also what the harness persists to .npz for the pre-registered E1-E3 analyses)."""
+    (also what the harness persists to .npz for the pre-registered E1-E3 analyses).
+
+    M4: the readout pass drops rows with non-finite features, so |common| can be < the planned
+    n - silently certifying a "registered n=200" cell on a survivor subset that may exclude
+    exactly the hard examples. `max_dropped` caps the allowed shrink: a registered run passes
+    max_dropped=0 (every planned sample must score) and any drop raises rather than calibrating
+    on fewer rows. Previews/smokes pass None (lenient)."""
     ia = {int(s): k for k, s in enumerate(ace["sample_idx"])}
     ib = {int(s): k for k, s in enumerate(readout["sample_idx"])}
     common = sorted(set(ia) & set(ib))
     if len(common) < 4:
         raise AssertionError(f"too few aligned samples: |common|={len(common)}")
+    n_dropped = len(ace["labels"]) - len(common)
+    if max_dropped is not None and n_dropped > max_dropped:
+        raise AssertionError(
+            f"sample-denominator shrink: {n_dropped} of {len(ace['labels'])} planned samples "
+            f"dropped (readout non-finite or unaligned), exceeds max_dropped={max_dropped}. A "
+            f"registered cell must calibrate on every planned sample; do NOT certify on a subset.")
     ra = [ia[s] for s in common]; rb = [ib[s] for s in common]
     ya = ace["labels"][ra]; yb = readout["labels"][rb]
     if not np.array_equal(ya, yb):

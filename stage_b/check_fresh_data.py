@@ -46,6 +46,25 @@ def norm_hash(text):
     return hashlib.sha256(" ".join(str(text).split()).encode()).hexdigest()
 
 
+def _question_ids(rows):
+    out = set()
+    for _, d in rows:
+        meta = d.get("meta") or {}
+        if meta.get("question_id"):
+            out.add(meta["question_id"])
+    return out
+
+
+def run_gate(fresh, sealed, task, expect_n=200):
+    """The fresh-data gate as a callable (used by the CLI AND by run_seal.py at launch).
+    Returns the report dict; `report['pass']` is the launch-eligibility verdict."""
+    class _A:  # lightweight namespace so the body below is unchanged
+        pass
+    a = _A()
+    a.fresh, a.sealed, a.task, a.expect_n, a.out = fresh, sealed, task, expect_n, None
+    return _gate_body(a)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--fresh", required=True)
@@ -54,7 +73,14 @@ def main():
     ap.add_argument("--expect-n", type=int, default=200)
     ap.add_argument("--out", default=None)
     a = ap.parse_args()
+    report = _gate_body(a)
+    print(json.dumps(report, indent=1))
+    print(f"\n{'PASS' if report['pass'] else 'FAIL'} - "
+          f"{'fresh file is launch-eligible' if report['pass'] else 'DO NOT LAUNCH; fix the data'}")
+    sys.exit(0 if report["pass"] else 1)
 
+
+def _gate_body(a):
     hard_fail, warns = [], []
     rows, err = load_jsonl(a.fresh)
     if err:
@@ -97,6 +123,17 @@ def main():
         hard_fail.append(f"overlap: {len(overlap)} fresh prompts also in the sealed file "
                          f"(must be 0; regenerate excluding sealed examples)")
 
+    # SF1: for TriviaQA, prompt-hash overlap can be 0 while the SAME question reappears with a
+    # different injected answer (the generator excludes sealed question_ids; the gate must too).
+    qid_overlap = 0
+    if a.task == "triviaqa" and rows and not serr:
+        fresh_qids = _question_ids(rows)
+        sealed_qids = _question_ids(sealed_rows)
+        qid_overlap = len(fresh_qids & sealed_qids)
+        if qid_overlap:
+            hard_fail.append(f"qid-overlap: {qid_overlap} fresh question_ids also in the sealed "
+                             f"file (must be 0; a reused question is not a fresh example)")
+
     if a.task == "triviaqa" and rows:
         qcounts = collections.Counter()
         parsed = 0
@@ -116,15 +153,13 @@ def main():
         "fresh": os.path.abspath(a.fresh), "sealed": os.path.abspath(a.sealed),
         "task": a.task, "n": n, "label_balance": round(bal, 4) if n else None,
         "n_intra_dup": len(dup), "n_overlap_with_sealed": len(overlap),
+        "n_qid_overlap_with_sealed": qid_overlap,
         "fresh_sha256": hashlib.sha256(open(a.fresh, "rb").read()).hexdigest() if os.path.exists(a.fresh) else None,
         "hard_failures": hard_fail, "warnings": warns, "pass": not hard_fail,
     }
     if a.out:
         json.dump(report, open(a.out, "w"), indent=1)
-    print(json.dumps(report, indent=1))
-    print(f"\n{'PASS' if report['pass'] else 'FAIL'} - "
-          f"{'fresh file is launch-eligible' if report['pass'] else 'DO NOT LAUNCH; fix the data'}")
-    sys.exit(0 if report["pass"] else 1)
+    return report
 
 
 if __name__ == "__main__":

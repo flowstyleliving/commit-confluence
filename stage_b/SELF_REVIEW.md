@@ -82,3 +82,32 @@ Enhancements registered pre-data (amendments A6-A7; all zero new forwards):
 
 Verdict after second pass: build is now contract-complete against its own registration.
 Seal remains HELD for the independent Codex pass + gated fresh data.
+
+---
+
+# Third pass — independent Codex adversarial review (2026-06-11) → NO-GO, all fixed
+
+Codex (agent `ab4bdeaf5328c8481`, over commit `59a6833`) returned **NO-GO** with 5 must-fixes
+that S1–S8 and C1–C7 BOTH missed — all in the launch harness / provenance plumbing, none in the
+science. Fixed in code + behaviorally verified; pre-registered as Amendments v4.
+
+| # | Finding | File | Status |
+|---|---|---|---|
+| M1 | Fresh-data gate not enforced by the launcher (doc/CLI-only) — a reserialized sealed file could launch as registered. | run_seal.py | **RESOLVED** — `check_fresh_data.run_gate()` called in-process on every strict run; hard-fail → refuse launch. Verified PASS on fresh, FAIL on sealed-vs-self. |
+| M2 | An incomplete cohort (crashed cell) could still print PASS at 19/20. | run_seal.py | **RESOLVED** — `primary/geometric_pass` require `not incomplete`. Verified 20/20-but-incomplete → FAIL. |
+| M3 | `--resume` trusted stale profiles blind. | run_seal.py | **RESOLVED** — `_validate_resumed_profile` checks seed/nboot/model/task/data-sha/module-hashes + matrix presence; any drift raises. Verified reject on all 5 drift axes, accept on match. |
+| M4 | Readout drops shrank the sample denominator silently (certify on a survivor subset). | confluence_calibrator.py | **RESOLVED** — `merge_matrices(max_dropped=0)` on strict runs; any drop raises. Verified raise-on-1-drop, lenient subset for preview. |
+| M5 | Provenance missed runtime modules + guessed the snapshot dir. | confluence_calibrator.py | **RESOLVED** — `module_hashes()` covers pri_runtime/io_plugins/mlx_pipeline/model_adapters; `model_snapshot_sha()` resolves `refs/main` + reports cached_snapshots tripwire. Verified. |
+
+Should-fixes: **SF1** sealed-question_id rejection added to the TriviaQA gate (verified: fires
+qid_overlap=50 on sealed-vs-self); **SF2** `fixed_cell_max_survival` added to E1; **SF3** fusion
+OOB-CI-excludes-transform-variability noted in Amendments v4 (paper caveat, no code change).
+Nits: PRE_REGISTRATION panel name corrected to `ATTENTION_PANEL_T0_WITH_V_NORMS`; RUN_README
+`--resume` note hardened.
+
+Codex-confirmed clean (no change): fusion signs genuinely a priori; in-bag sign-lock + OOB eval;
+gate normalization matches the generator; multiplicity pre-registered.
+
+**Verdict after the third pass:** all 5 NO-GO must-fixes closed and verified. The build is again
+contract-complete against its registration, now including the launch-harness/provenance surface
+Codex exposed. A Codex re-verify of the fixes is the clean final step before the seal launches.

@@ -47,10 +47,12 @@ def sealed_content_hashes():
     return {CC._sha256_file(p) for p in SEALED_DATA.values() if os.path.exists(p)}
 
 
-def run_cell(model, benchmark, data_path, seed, nboot, limit, npz_path):
+def run_cell(model, benchmark, data_path, seed, nboot, limit, npz_path, strict):
     ace = CC.collect_ace_matrix(model, data_path, seed=seed, max_new_tokens=1, limit=limit)
     ro = CC.collect_readout_matrix_fresh(model, benchmark, data_path, seed=seed, limit=limit)
-    mm = CC.merge_matrices(ace, ro)
+    # M4: a registered cell must score every planned sample (max_dropped=0); previews/smokes
+    # stay lenient so a stray non-finite row does not abort a sanity check.
+    mm = CC.merge_matrices(ace, ro, max_dropped=0 if strict else None)
     # persist the merged matrix BEFORE selection (E1-E3 inputs survive a selection crash)
     os.makedirs(os.path.dirname(npz_path), exist_ok=True)
     np.savez_compressed(npz_path, score_matrix=mm["score_matrix"], labels=mm["labels"],
@@ -62,7 +64,38 @@ def run_cell(model, benchmark, data_path, seed, nboot, limit, npz_path):
     prof = CC.calibrate_merged(mm, n_bootstrap=nboot, seed=seed,
                                model_id=model, benchmark=benchmark)
     prof["data_path"] = str(data_path)
+    # M3: stamp the exact data-file bytes + nboot so --resume can validate provenance.
+    prof["data_file_sha256"] = CC._sha256_file(data_path)
+    prof.setdefault("provenance", {})["n_bootstrap"] = nboot
     return prof
+
+
+def _validate_resumed_profile(prof, *, model, benchmark, data_path, seed, nboot, npz_path):
+    """M3: a resumed profile may only count toward the registered denominator if its provenance
+    matches the CURRENT run exactly. Any drift (seed, nboot, model, task, data bytes, code/spec
+    hashes, or a missing matrix) raises -> the cell is treated as an error (forces FAIL) rather
+    than silently mixing a smoke/preview/old-seed/old-code result into the 20-cell cohort."""
+    prov = prof.get("provenance") or {}
+    mismatches = []
+    if prof.get("model") != model:
+        mismatches.append(f"model {prof.get('model')!r} != {model!r}")
+    if prof.get("benchmark") != benchmark:
+        mismatches.append(f"benchmark {prof.get('benchmark')!r} != {benchmark!r}")
+    if prov.get("seed") != seed:
+        mismatches.append(f"seed {prov.get('seed')!r} != {seed!r}")
+    if prov.get("n_bootstrap") != nboot:
+        mismatches.append(f"n_bootstrap {prov.get('n_bootstrap')!r} != {nboot!r}")
+    cur_data = CC._sha256_file(data_path)
+    if prof.get("data_file_sha256") != cur_data:
+        mismatches.append(f"data_file_sha256 {prof.get('data_file_sha256')!r} != {cur_data!r}")
+    cur_mods = CC.module_hashes()
+    if prov.get("module_hashes") != cur_mods:
+        mismatches.append("module_hashes drift (code or fusion_signs.json changed since the profile)")
+    if not os.path.exists(npz_path):
+        mismatches.append(f"missing matrix npz {npz_path}")
+    if mismatches:
+        raise RuntimeError("refusing to resume a stale/mismatched profile: " + "; ".join(mismatches)
+                           + ". Delete it to recompute, or resume the original registered command.")
 
 
 def main():
@@ -103,6 +136,29 @@ def main():
     models = [m for m in COHORT if (not a.models or any(s in m for s in a.models.split(",")))]
     planned = [(m, b, p) for m in models for b, p in tasks.items()]
     is_registered_cohort = (len(planned) == 20 and not a.limit and not is_preview)
+    # `strict` = this is a real fresh-data run (not a preview, not a smoke). Strict runs enforce
+    # the fresh-data gate (M1) AND a zero-drop sample denominator (M4).
+    strict = (not is_preview) and (not a.limit)
+
+    # ---- M1: the launch harness ENFORCES the fresh-data gate (A5), not just the docs/CLI ----
+    # check_fresh_data.py existed but run_seal never called it: a reserialized sealed file or a
+    # partially-overlapping fresh file could launch as a registered cohort. Gate every fresh task
+    # file against its sealed counterpart IN-PROCESS before any model forward.
+    if strict:
+        import check_fresh_data as GATE
+        gate_task = {"anli_r1": "anli", "triviaqa_paired": "triviaqa"}
+        gate_reports = {}
+        for b, p in tasks.items():
+            sealed_ref = SEALED_DATA.get(b)
+            rep = GATE.run_gate(p, sealed_ref, gate_task[b], expect_n=200)
+            gate_reports[b] = rep
+            verdict = "PASS" if rep["pass"] else "FAIL"
+            print(f"[gate] {b}: {verdict} (n={rep['n']} overlap={rep['n_overlap_with_sealed']} "
+                  f"qid_overlap={rep.get('n_qid_overlap_with_sealed')})", flush=True)
+        failed = {b: r["hard_failures"] for b, r in gate_reports.items() if not r["pass"]}
+        if failed:
+            sys.exit(f"ERROR: fresh-data gate FAILED, refusing to launch a registered run: {failed}. "
+                     "Fix the data (stage_b/check_fresh_data.py) before launch.")
     os.makedirs(a.out_dir, exist_ok=True)
 
     results, errors = {}, []
@@ -114,10 +170,14 @@ def main():
         try:
             if a.resume and os.path.exists(outp):
                 prof = json.load(open(outp))
+                if strict:  # M3: only trust a resumed profile whose provenance matches this run
+                    _validate_resumed_profile(prof, model=model, benchmark=benchmark,
+                                              data_path=data_path, seed=a.seed, nboot=a.nboot,
+                                              npz_path=npzp)
                 print(f"[{tag}] resumed from existing profile", flush=True)
             else:
                 prof = run_cell(model, benchmark, data_path, a.seed, a.nboot,
-                                a.limit if a.limit > 0 else None, npzp)
+                                a.limit if a.limit > 0 else None, npzp, strict)
                 os.makedirs(os.path.dirname(outp), exist_ok=True)
                 json.dump(prof, open(outp, "w"), indent=1)
             pr, ge = prof["primary_full_panel"], prof["secondary_geometric_only"]
@@ -156,6 +216,11 @@ def main():
     geom_bar = 17 if n_planned == 20 else int(np.ceil(0.85 * n_planned))
     incomplete = any(c["status"] != "ok" for c in cell_rows)
     control_failures = [c["tag"] for c in cell_rows if c["controls_pass"] is False]
+    # M2: an incomplete cohort can never certify a registered PASS. A4 already counts an errored
+    # cell as not-deployable, but a crash also means that cell was never EVALUATED - we cannot
+    # certify the procedure on partial evidence. `not incomplete` is an explicit pass precondition.
+    primary_pass = bool(prim_dep >= prim_bar and not incomplete)
+    geometric_pass = bool(geom_dep >= geom_bar and not incomplete)
     from collections import Counter
     winmap = Counter(c["geom_winner"] for c in cell_rows if c["geom_winner"])
     summary = {
@@ -163,8 +228,8 @@ def main():
         "incomplete": incomplete, "seed": a.seed,
         "n_planned": n_planned, "n_ok": sum(c["status"] == "ok" for c in cell_rows),
         "n_errors": len(errors),
-        "primary_deployable": prim_dep, "primary_bar": prim_bar, "primary_pass": prim_dep >= prim_bar,
-        "geometric_deployable": geom_dep, "geometric_bar": geom_bar, "geometric_pass": geom_dep >= geom_bar,
+        "primary_deployable": prim_dep, "primary_bar": prim_bar, "primary_pass": primary_pass,
+        "geometric_deployable": geom_dep, "geometric_bar": geom_bar, "geometric_pass": geometric_pass,
         "control_failures": control_failures,
         "geometric_winmap": dict(winmap), "errors": errors, "cells": cell_rows,
         "module_hashes": CC.module_hashes(),
