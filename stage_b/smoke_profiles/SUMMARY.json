@@ -1,0 +1,51 @@
+{
+ "is_preview": true,
+ "is_registered_cohort": false,
+ "incomplete": false,
+ "seed": 20260610,
+ "n_planned": 2,
+ "n_ok": 2,
+ "n_errors": 0,
+ "primary_deployable": 0,
+ "primary_bar": 2,
+ "primary_pass": false,
+ "geometric_deployable": 0,
+ "geometric_bar": 2,
+ "geometric_pass": false,
+ "control_failures": [],
+ "geometric_winmap": {
+  "attention[final_js] @ step 0": 1
+ },
+ "errors": [],
+ "cells": [
+  {
+   "tag": "Llama-3.2-3B-Instruct-4bit/anli_r1",
+   "status": "ok",
+   "primary_winner": "attention[final_js] @ step 0",
+   "primary_ci_lo": 0.2625,
+   "primary_dep": false,
+   "geom_winner": "attention[final_js] @ step 0",
+   "geom_ci_lo": 0.2625,
+   "geom_dep": false,
+   "controls_pass": true
+  },
+  {
+   "tag": "Llama-3.2-3B-Instruct-4bit/triviaqa_paired",
+   "status": "ok",
+   "primary_winner": null,
+   "primary_ci_lo": NaN,
+   "primary_dep": false,
+   "geom_winner": null,
+   "geom_ci_lo": NaN,
+   "geom_dep": false,
+   "controls_pass": true
+  }
+ ],
+ "module_hashes": {
+  "pri_calibrator.py": "78c4f098295fe600cc4f6f1a14cc7b496ac93d8d70dd65743c1504eb20931101",
+  "comprehensive_run.py": "f6f5958bae5b035f07f034b9f4f5784b1a86c1ab00ab0f9c9ef4a5584776e8f8",
+  "diagnose_inter_head_disagreement.py": "b996ed923ac3eefeb0550901b2bf8ce5c5e0ae6486c8d41efdc2de9fb9567c99",
+  "confluence_calibrator.py": "80affcd5da56e4f128628c35ef353f15167ce5ef963e55239e31b816fc133120",
+  "fusion_signs.json": "92b5468bd241b517dd2d5cf70ad28556157424deb54b5f85f88af0305ff35372"
+ }
+}

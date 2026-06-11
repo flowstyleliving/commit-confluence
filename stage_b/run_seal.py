@@ -3,12 +3,16 @@
 Stage B launch harness - the fresh-seed sealed unified-panel run.
 
 For each cohort (model, task): collect ACE (t=0, 21 cells, validated byte-exact) + the FRESH
-readout pass (gen_step=1: RPV + null_ratio + surprise + p_max) + merge by sample_idx + run the
-sealed nested-OOB dispatcher over the unified 27-cell panel. Emit one CalibrationProfile per cell
-and evaluate the two pre-registered endpoints.
+readout pass (gen_step=1: RPV + null_ratio + surprise + p_max) + merge by sample_idx + append
+the two pre-registered fusion cells + run the sealed nested-OOB dispatcher over the unified
+29-cell panel with per-cell shuffled-label controls. Persists the merged score matrix per cell
+(.npz) for the pre-registered descriptive analyses (LOMO / transfer / label-efficiency:
+stage_b/analyze_universality.py). Emits one CalibrationProfile per cell and evaluates the two
+registered endpoints over the PLANNED cohort (errored/missing cells count as NOT deployable -
+amendment A4; the denominator never shrinks).
 
-Run with the t0 venv. Data files must be FRESH-seed (see stage_b/RUN_README.md); reusing the
-sealed 20260526 files makes this a preview, not the registered seal (pass --allow-sealed-data).
+Run with the t0 venv. Data files must be FRESH-seed and pass stage_b/check_fresh_data.py;
+sealed-content files and pilot seeds are refused unless --allow-sealed-data (= preview).
 
     /Users/msrk/Documents/t0-morphology-furnace/.venv/bin/python stage_b/run_seal.py \
         --seed <FRESH> --anli <fresh_anli.jsonl> --triviaqa <fresh_triviaqa.jsonl> \
@@ -35,14 +39,29 @@ SEALED_DATA = {  # 20260526 sealed-seed files - PREVIEW only (data reuse); fresh
     "anli_r1": "/Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
     "triviaqa_paired": "/Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
 }
+# C3: pilot/sealed-era seeds may never stamp a registered run
+PILOT_SEEDS = {20260512, 20260526, 20260610, 20260611}
 
 
-def run_cell(model, benchmark, data_path, seed, nboot, limit):
+def sealed_content_hashes():
+    return {CC._sha256_file(p) for p in SEALED_DATA.values() if os.path.exists(p)}
+
+
+def run_cell(model, benchmark, data_path, seed, nboot, limit, npz_path):
     ace = CC.collect_ace_matrix(model, data_path, seed=seed, max_new_tokens=1, limit=limit)
     ro = CC.collect_readout_matrix_fresh(model, benchmark, data_path, seed=seed, limit=limit)
-    prof = CC.merge_and_calibrate(ace, ro, n_bootstrap=nboot, seed=seed)
-    prof["benchmark"] = benchmark
-    prof["data_path"] = data_path
+    mm = CC.merge_matrices(ace, ro)
+    # persist the merged matrix BEFORE selection (E1-E3 inputs survive a selection crash)
+    os.makedirs(os.path.dirname(npz_path), exist_ok=True)
+    np.savez_compressed(npz_path, score_matrix=mm["score_matrix"], labels=mm["labels"],
+                        sample_idx=mm["sample_idx"], panel=json.dumps(mm["panel"]),
+                        meta=json.dumps({"model": model, "benchmark": benchmark,
+                                         "data_path": str(data_path), "seed": seed,
+                                         "ace_data_hash": mm.get("ace_data_hash"),
+                                         "readout_data_hash": mm.get("readout_data_hash")}))
+    prof = CC.calibrate_merged(mm, n_bootstrap=nboot, seed=seed,
+                               model_id=model, benchmark=benchmark)
+    prof["data_path"] = str(data_path)
     return prof
 
 
@@ -55,8 +74,10 @@ def main():
     ap.add_argument("--nboot", type=int, default=2000)
     ap.add_argument("--limit", type=int, default=0, help=">0 = smoke on first N samples")
     ap.add_argument("--models", default=None, help="comma-substr filter for a smoke subset")
+    ap.add_argument("--resume", action="store_true",
+                    help="skip cells whose profile json already exists (multi-hour run safety)")
     ap.add_argument("--allow-sealed-data", action="store_true",
-                    help="permit the 20260526 sealed files = PREVIEW, not the registered seal")
+                    help="permit sealed-content files / pilot seeds = PREVIEW, not the registered seal")
     a = ap.parse_args()
 
     tasks = {}
@@ -66,54 +87,98 @@ def main():
     if missing:
         sys.exit(f"ERROR: no data file for {missing}. Provide --anli/--triviaqa (fresh seed) or "
                  f"--allow-sealed-data for a preview. See stage_b/RUN_README.md.")
-    is_preview = not (a.anli and a.triviaqa)
+
+    # ---- C3 provenance guards: CONTENT-based, not path-based ----
+    sealed_hashes = sealed_content_hashes()
+    sealed_content_used = any(
+        os.path.exists(p) and CC._sha256_file(p) in sealed_hashes for p in tasks.values())
+    pilot_seed_used = a.seed in PILOT_SEEDS
+    if (sealed_content_used or pilot_seed_used) and not a.allow_sealed_data:
+        sys.exit("ERROR: sealed-content data file or pilot seed detected "
+                 f"(sealed_content={sealed_content_used}, pilot_seed={pilot_seed_used}). "
+                 "A registered run needs FRESH data + a fresh seed (run stage_b/check_fresh_data.py "
+                 "first). Pass --allow-sealed-data only for an explicit preview.")
+    is_preview = sealed_content_used or pilot_seed_used or not (a.anli and a.triviaqa)
+
     models = [m for m in COHORT if (not a.models or any(s in m for s in a.models.split(",")))]
+    planned = [(m, b, p) for m in models for b, p in tasks.items()]
+    is_registered_cohort = (len(planned) == 20 and not a.limit and not is_preview)
     os.makedirs(a.out_dir, exist_ok=True)
 
-    cells, errors = [], []
-    for model in models:
-        for benchmark, data_path in tasks.items():
-            tag = f"{model.split('/')[-1]}/{benchmark}"
-            print(f"\n===== {tag} =====", flush=True)
-            try:
+    results, errors = {}, []
+    for model, benchmark, data_path in planned:
+        tag = f"{model.split('/')[-1]}/{benchmark}"
+        outp = os.path.join(a.out_dir, benchmark, f"{model.split('/')[-1]}.profile.json")
+        npzp = os.path.join(a.out_dir, benchmark, f"{model.split('/')[-1]}.matrix.npz")
+        print(f"\n===== {tag} =====", flush=True)
+        try:
+            if a.resume and os.path.exists(outp):
+                prof = json.load(open(outp))
+                print(f"[{tag}] resumed from existing profile", flush=True)
+            else:
                 prof = run_cell(model, benchmark, data_path, a.seed, a.nboot,
-                                a.limit if a.limit > 0 else None)
-                outp = os.path.join(a.out_dir, benchmark, f"{model.split('/')[-1]}.profile.json")
+                                a.limit if a.limit > 0 else None, npzp)
                 os.makedirs(os.path.dirname(outp), exist_ok=True)
                 json.dump(prof, open(outp, "w"), indent=1)
-                pr, ge = prof["primary_full_panel"], prof["secondary_geometric_only"]
-                print(f"[{tag}] PRIMARY {pr['winner']} CI_lo={pr['oob_auroc_ci_lo']} dep={pr['deployable']} "
-                      f"| GEOM {ge['winner']} CI_lo={ge['oob_auroc_ci_lo']} dep={ge['deployable']}")
-                cells.append({"tag": tag, "model": model, "benchmark": benchmark,
-                              "primary": pr, "geometric": ge})
-            except Exception as e:
-                print(f"[{tag}] ERROR: {e}", flush=True)
-                traceback.print_exc()
-                errors.append({"tag": tag, "error": str(e)})
+            pr, ge = prof["primary_full_panel"], prof["secondary_geometric_only"]
+            ctrl = (prof.get("controls") or {}).get("pass")
+            print(f"[{tag}] PRIMARY {pr['winner']} CI_lo={pr['oob_auroc_ci_lo']} dep={pr['deployable']} "
+                  f"| GEOM {ge['winner']} CI_lo={ge['oob_auroc_ci_lo']} dep={ge['deployable']} "
+                  f"| controls_pass={ctrl}")
+            results[tag] = {"status": "ok", "primary": pr, "geometric": ge, "controls_pass": ctrl}
+        except Exception as e:
+            print(f"[{tag}] ERROR: {e}", flush=True)
+            traceback.print_exc()
+            errors.append({"tag": tag, "error": str(e)})
+            results[tag] = {"status": "error", "error": str(e)}
 
-    # ---- endpoints ----
-    n = len(cells)
-    prim_dep = sum(c["primary"]["deployable"] for c in cells)
-    geom_dep = sum(c["geometric"]["deployable"] for c in cells)
-    # registered thresholds are absolute for the 20-cell cohort; scale otherwise
-    prim_bar = 19 if n == 20 else int(np.ceil(0.95 * n))
-    geom_bar = 17 if n == 20 else int(np.ceil(0.85 * n))
+    # ---- endpoints over the PLANNED cohort (A4: errors count as NOT deployable) ----
+    n_planned = len(planned)
+    cell_rows = []
+    for model, benchmark, _ in planned:
+        tag = f"{model.split('/')[-1]}/{benchmark}"
+        r = results.get(tag, {"status": "missing"})
+        ok = r.get("status") == "ok"
+        cell_rows.append({
+            "tag": tag, "status": r.get("status"),
+            "primary_winner": r["primary"]["winner"] if ok else None,
+            "primary_ci_lo": r["primary"]["oob_auroc_ci_lo"] if ok else None,
+            "primary_dep": bool(ok and r["primary"]["deployable"]),
+            "geom_winner": r["geometric"]["winner"] if ok else None,
+            "geom_ci_lo": r["geometric"]["oob_auroc_ci_lo"] if ok else None,
+            "geom_dep": bool(ok and r["geometric"]["deployable"]),
+            "controls_pass": r.get("controls_pass") if ok else None,
+        })
+    prim_dep = sum(c["primary_dep"] for c in cell_rows)
+    geom_dep = sum(c["geom_dep"] for c in cell_rows)
+    # registered bars are absolute for the 20-cell cohort; scale otherwise (smokes/subsets)
+    prim_bar = 19 if n_planned == 20 else int(np.ceil(0.95 * n_planned))
+    geom_bar = 17 if n_planned == 20 else int(np.ceil(0.85 * n_planned))
+    incomplete = any(c["status"] != "ok" for c in cell_rows)
+    control_failures = [c["tag"] for c in cell_rows if c["controls_pass"] is False]
     from collections import Counter
-    winmap = Counter(c["geometric"]["winner"] for c in cells if c["geometric"]["winner"])
+    winmap = Counter(c["geom_winner"] for c in cell_rows if c["geom_winner"])
     summary = {
-        "is_preview": is_preview, "seed": a.seed, "n_cells": n, "n_errors": len(errors),
+        "is_preview": is_preview, "is_registered_cohort": is_registered_cohort,
+        "incomplete": incomplete, "seed": a.seed,
+        "n_planned": n_planned, "n_ok": sum(c["status"] == "ok" for c in cell_rows),
+        "n_errors": len(errors),
         "primary_deployable": prim_dep, "primary_bar": prim_bar, "primary_pass": prim_dep >= prim_bar,
         "geometric_deployable": geom_dep, "geometric_bar": geom_bar, "geometric_pass": geom_dep >= geom_bar,
-        "geometric_winmap": dict(winmap), "errors": errors,
-        "cells": [{"tag": c["tag"], "primary_winner": c["primary"]["winner"],
-                   "primary_ci_lo": c["primary"]["oob_auroc_ci_lo"], "primary_dep": c["primary"]["deployable"],
-                   "geom_winner": c["geometric"]["winner"], "geom_ci_lo": c["geometric"]["oob_auroc_ci_lo"],
-                   "geom_dep": c["geometric"]["deployable"]} for c in cells],
+        "control_failures": control_failures,
+        "geometric_winmap": dict(winmap), "errors": errors, "cells": cell_rows,
+        "module_hashes": CC.module_hashes(),
     }
     json.dump(summary, open(os.path.join(a.out_dir, "SUMMARY.json"), "w"), indent=1)
-    print(f"\n{'='*60}\n{'PREVIEW' if is_preview else 'SEALED'} run | seed {a.seed} | cells {n} errors {len(errors)}")
-    print(f"PRIMARY (full panel):    {prim_dep}/{n} deployable (bar {prim_bar}) -> {'PASS' if summary['primary_pass'] else 'FAIL'}")
-    print(f"SECONDARY (geom-only):   {geom_dep}/{n} deployable (bar {geom_bar}) -> {'PASS' if summary['geometric_pass'] else 'FAIL'}")
+    kind = "PREVIEW" if is_preview else ("SEALED" if is_registered_cohort else "SUBSET")
+    print(f"\n{'='*60}\n{kind} run | seed {a.seed} | planned {n_planned} ok {summary['n_ok']} "
+          f"errors {len(errors)}{' | INCOMPLETE' if incomplete else ''}")
+    print(f"PRIMARY (full panel):    {prim_dep}/{n_planned} deployable (bar {prim_bar}) -> "
+          f"{'PASS' if summary['primary_pass'] else 'FAIL'}")
+    print(f"SECONDARY (geom-only):   {geom_dep}/{n_planned} deployable (bar {geom_bar}) -> "
+          f"{'PASS' if summary['geometric_pass'] else 'FAIL'}")
+    if control_failures:
+        print(f"!! shuffled-label CONTROL FAILURES (>=2/3 perms exclude 0.5): {control_failures}")
     print(f"geometric win-map: {dict(winmap)}")
     print(f"summary -> {os.path.join(a.out_dir, 'SUMMARY.json')}")
 

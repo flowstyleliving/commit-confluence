@@ -45,6 +45,10 @@ READOUT_KEYS = {c: c[2] for c in READOUT_PANEL}  # cell -> row dict key
 GEOMETRIC_FAMILIES = {"fisher_eff_rank", "spectral_entropy", "neg_shadow_logvol_r1",
                       "null_ratio_post_rank1"}  # ACE attention cells are geometric too
 CONFIDENCE_KEYS = {"surprise", "p_max"}
+# E4: full fusion contains surprise -> excluded from the geometric endpoint alongside confidence
+NON_GEOMETRIC_KEYS = CONFIDENCE_KEYS | {"fusion_rank_mean_full"}
+FUSION_SPEC_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                "stage_b", "fusion_signs.json")
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -61,7 +65,9 @@ def _rows_to_readout(rows: List[Dict[str, Any]]):
         fv = [float(v) for v in vals]
         if not all(np.isfinite(fv)):
             continue
-        X.append(fv); y.append(int(r["label"])); idx.append(int(r.get("sample_idx", len(idx))))
+        # C6: sample_idx is REQUIRED (KeyError if absent). The old `len(idx)` fallback would
+        # silently compact indices and misalign with the ACE pass exactly when rows drop.
+        X.append(fv); y.append(int(r["label"])); idx.append(int(r["sample_idx"]))
     return (np.array(X, dtype=np.float64), np.array(y, dtype=np.int64), np.array(idx, dtype=np.int64))
 
 
@@ -130,6 +136,12 @@ def run_selection(score_matrix: np.ndarray, labels: np.ndarray, panel: List[Pane
     ci_lo = oob.get("oob_auroc_ci_lo")
     return {
         "winner": winner,
+        # C5: the OOB CI aggregates resamples whose in-bag winners may DIFFER; `winner` is the
+        # modal in-bag pick. `deployable` therefore certifies the selection PROCEDURE on this
+        # panel, not the named cell in isolation. winner_marginal = that cell's own full-sample
+        # marginal, for reference only.
+        "ci_semantics": "procedure-level OOB CI (in-bag winners vary across resamples); winner = modal in-bag pick",
+        "winner_marginal": marg.get(winner),
         "oob_auroc_median": oob.get("oob_auroc_median"),
         "oob_auroc_ci_lo": ci_lo, "oob_auroc_ci_hi": oob.get("oob_auroc_ci_hi"),
         "winner_stability": oob.get("winner_stability"),
@@ -144,7 +156,7 @@ def calibrate_cell(loaded: Dict[str, Any], *, n_bootstrap: int = 2000,
     """Produce both endpoints for one (model, task) cell from a loaded score matrix."""
     sm, y, pn = loaded["score_matrix"], loaded["labels"], loaded["panel"]
     full = run_selection(sm, y, pn, n_bootstrap=n_bootstrap, seed=seed)              # PRIMARY (incl. confidence)
-    geom_keys = {c[2] for c in pn if c[2] not in CONFIDENCE_KEYS}
+    geom_keys = {c[2] for c in pn if c[2] not in NON_GEOMETRIC_KEYS}
     geom = run_selection(sm, y, pn, n_bootstrap=n_bootstrap, seed=seed,
                          restrict_keys=geom_keys)                                     # SECONDARY (geometric-only)
     return {
@@ -161,6 +173,123 @@ def calibrate_cell(loaded: Dict[str, Any], *, n_bootstrap: int = 2000,
             "panel_keys": [c[2] for c in pn],
         },
     }
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# E4 fusion cells - pre-registered cross-locus candidates (spec: stage_b/fusion_signs.json,
+# frozen from SEALED-ERA artifacts only; see stage_b/build_fusion_spec.py). The fusion
+# columns are PRECOMPUTED before the bootstrap, so orientations must be a priori - never
+# fit on the data being calibrated.
+# ──────────────────────────────────────────────────────────────────────────────
+def _rank01(v: np.ndarray) -> np.ndarray:
+    """NaN-aware rank transform to (0,1): (avg_rank - 0.5)/n_finite; NaN stays NaN."""
+    from scipy.stats import rankdata
+    out = np.full(v.shape, np.nan, dtype=np.float64)
+    f = np.isfinite(v)
+    n = int(f.sum())
+    if n == 0:
+        return out
+    out[f] = (rankdata(v[f], method="average") - 0.5) / n
+    return out
+
+
+def append_fusion_columns(M: np.ndarray, panel: List[PanelCell], slug: str, benchmark: str,
+                          spec: Dict[str, Any] | None = None):
+    """Append the two pre-registered fusion cells. Component orientations locked per
+    (model, task) from sealed-era artifacts; missing entries -> cohort-modal fallback.
+    Fusion = mean of oriented component ranks; NaN if ANY component non-finite."""
+    if spec is None:
+        spec = json.load(open(FUSION_SPEC_PATH))
+    key = f"{slug}|{benchmark}"
+    bylabel = {c[2]: j for j, c in enumerate(panel)}
+    ace_detail = spec["ace_component"]["column_name"].split("::")[-1]
+    ace_sign = spec["ace_component"]["per_cell_sign"].get(key,
+               spec["ace_component"]["modal_sign_fallback"])
+    ro_sign = spec["readout_per_cell_sign"].get(key, {})
+    comp_cols: Dict[str, Tuple[str, int]] = {"ACE_modal": (ace_detail, int(ace_sign))}
+    for comp in spec["readout_components"]:
+        s = ro_sign.get(comp) or spec["readout_modal_sign_fallback"][comp]  # 0/missing -> modal
+        comp_cols[comp] = (comp, int(s))
+    ranked, used = {}, {}
+    for name, (detail, sgn) in comp_cols.items():
+        j = bylabel.get(detail)
+        if j is None:
+            raise KeyError(f"fusion component '{detail}' not in merged panel")
+        ranked[name] = _rank01(M[:, j] * float(sgn))
+        used[name] = {"column": detail, "sign": sgn,
+                      "source": "per_cell" if (name == "ACE_modal" and key in spec["ace_component"]["per_cell_sign"])
+                                or (name != "ACE_modal" and bool(ro_sign.get(name))) else "modal_fallback"}
+    cols, pan = [], list(panel)
+    for fname, fdef in sorted(spec["fusion_cells"].items()):
+        cols.append(np.vstack([ranked[c] for c in fdef["components"]]).mean(axis=0))
+        pan.append((0, "Fusion", fname))
+    return np.hstack([M, np.column_stack(cols)]), pan, {"key": key, "components": used}
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# C2 controls + provenance
+# ──────────────────────────────────────────────────────────────────────────────
+def shuffled_label_control(M: np.ndarray, y: np.ndarray, panel: List[PanelCell], *,
+                           n_bootstrap: int, seed: int, restrict_keys: set | None = None,
+                           k_perms: int = 3) -> Dict[str, Any]:
+    """Pre-registered per-cell control: re-run the FULL nested-OOB selection on permuted
+    labels. A single permutation's 95% CI excludes 0.5 upward ~2.5% of the time by chance,
+    so the FLAG requires >=2 of k_perms permutations with CI_lo > 0.50 (amendment A3)."""
+    perms = []
+    for k in range(k_perms):
+        rng = np.random.RandomState(seed + 90210 + k)
+        yp = y[rng.permutation(len(y))]
+        r = run_selection(M, yp, panel, n_bootstrap=n_bootstrap, seed=seed,
+                          restrict_keys=restrict_keys)
+        lo = r.get("oob_auroc_ci_lo")
+        perms.append({"oob_auroc_median": r.get("oob_auroc_median"), "oob_auroc_ci_lo": lo,
+                      "oob_auroc_ci_hi": r.get("oob_auroc_ci_hi"),
+                      "excludes_null_upward": bool(lo is not None and np.isfinite(lo) and lo > 0.50)})
+    n_excl = sum(p["excludes_null_upward"] for p in perms)
+    return {"k_perms": k_perms, "n_excluding_null_upward": n_excl,
+            "pass": bool(n_excl < 2), "perms": perms}
+
+
+def _sha256_file(path: str) -> str:
+    import hashlib
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def module_hashes() -> Dict[str, str]:
+    """Drift hashes for every imported/composed module + the frozen fusion spec (pre-reg
+    Controls: recorded per profile; must match the cross-check-era artifacts). Prefers the
+    ACTUALLY-IMPORTED module's __file__ (sys.modules) over the expected path - hashing a
+    different file than the one executed would be a provenance bug."""
+    expected = {
+        "pri_calibrator": os.path.join(T0_REPO, "pri_calibrator.py"),
+        "comprehensive_run": os.path.join(T0_REPO, "exploratory/shadow-ambiguity/comprehensive_run.py"),
+        "diagnose_inter_head_disagreement": os.path.join(T0_REPO, "scripts/diagnose_inter_head_disagreement.py"),
+    }
+    out = {}
+    for mod, exp in expected.items():
+        m = sys.modules.get(mod)
+        p = os.path.abspath(getattr(m, "__file__", None) or exp)
+        if os.path.exists(p):
+            out[f"{mod}.py"] = _sha256_file(p)
+    out["confluence_calibrator.py"] = _sha256_file(os.path.abspath(__file__))
+    if os.path.exists(FUSION_SPEC_PATH):
+        out["fusion_signs.json"] = _sha256_file(FUSION_SPEC_PATH)
+    return out
+
+
+def model_snapshot_sha(model_id: str):
+    """HF-cache snapshot revision(s) for the local weights (provenance; no network)."""
+    base = os.path.expanduser(
+        f"~/.cache/huggingface/hub/models--{model_id.replace('/', '--')}/snapshots")
+    try:
+        revs = sorted(os.listdir(base))
+    except OSError:
+        return None
+    return revs[0] if len(revs) == 1 else revs
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -222,12 +351,11 @@ def collect_ace_matrix(model_slug: str, jsonl_path: str, *, seed: int,
             "sample_idx": np.arange(n, dtype=np.int64), "n": n}
 
 
-def merge_and_calibrate(ace: Dict[str, Any], readout: Dict[str, Any], *,
-                        n_bootstrap: int = 2000, seed: int = 20260610) -> Dict[str, Any]:
+def merge_matrices(ace: Dict[str, Any], readout: Dict[str, Any]) -> Dict[str, Any]:
     """Merge the ACE attention sub-matrix with the readout sub-matrix (R3: one source per
     family), aligning by sample_idx (robust to the readout run dropping non-finite rows),
-    with a HARD label-alignment assert on the intersection, then run the dual-endpoint
-    dispatcher over the full merged panel."""
+    with a HARD label-alignment assert on the intersection. Returns the merged matrix dict
+    (also what the harness persists to .npz for the pre-registered E1-E3 analyses)."""
     ia = {int(s): k for k, s in enumerate(ace["sample_idx"])}
     ib = {int(s): k for k, s in enumerate(readout["sample_idx"])}
     common = sorted(set(ia) & set(ib))
@@ -240,20 +368,64 @@ def merge_and_calibrate(ace: Dict[str, Any], readout: Dict[str, Any], *,
                              f"{int((ya != yb).sum())} disagree")
     M = np.hstack([ace["score_matrix"][ra], readout["score_matrix"][rb]])
     panel = list(ace["panel"]) + list(readout["panel"])
-    ya_dropped = len(ace["labels"]) - len(common)
-    full = run_selection(M, ya, panel, n_bootstrap=n_bootstrap, seed=seed)
-    geom_keys = {c[2] for c in panel if c[2] not in CONFIDENCE_KEYS}
-    geom = run_selection(M, ya, panel, n_bootstrap=n_bootstrap, seed=seed, restrict_keys=geom_keys)
     return {
-        "schema_version": "confluence/0.1-unified",
+        "score_matrix": M, "labels": ya, "panel": panel,
+        "sample_idx": np.array(common, dtype=np.int64),
         "slug": ace.get("slug"), "n": len(ya), "n_aligned": len(common),
-        "n_dropped_unaligned": ya_dropped, "n_cells_total": len(panel),
+        "n_dropped_unaligned": len(ace["labels"]) - len(common),
         "n_ace_cells": len(ace["panel"]), "n_readout_cells": len(readout["panel"]),
         "ace_data_hash": ace.get("data_hash"), "readout_data_hash": readout.get("data_hash"),
-        "primary_full_panel": full, "secondary_geometric_only": geom,
-        "provenance": {"seed": seed, "n_bootstrap": n_bootstrap,
-                       "sealed_selector": "_nested_bootstrap_oob_auroc (imported, not modified)"},
     }
+
+
+def calibrate_merged(mm: Dict[str, Any], *, n_bootstrap: int = 2000, seed: int = 20260610,
+                     model_id: str | None = None, benchmark: str | None = None,
+                     with_fusion: bool = True, with_controls: bool = True) -> Dict[str, Any]:
+    """Dual-endpoint dispatcher over a merged matrix + pre-registered fusion cells (E4) +
+    per-cell shuffled-label controls (A3) + drift/provenance hashes (C2)."""
+    M, ya, panel = mm["score_matrix"], mm["labels"], list(mm["panel"])
+    fusion_meta = None
+    if with_fusion:
+        M, panel, fusion_meta = append_fusion_columns(
+            M, panel, mm.get("slug") or "", benchmark or "")
+    full = run_selection(M, ya, panel, n_bootstrap=n_bootstrap, seed=seed)
+    geom_keys = {c[2] for c in panel if c[2] not in NON_GEOMETRIC_KEYS}
+    geom = run_selection(M, ya, panel, n_bootstrap=n_bootstrap, seed=seed, restrict_keys=geom_keys)
+    controls = None
+    if with_controls:
+        controls = {
+            "shuffled_label_full": shuffled_label_control(
+                M, ya, panel, n_bootstrap=n_bootstrap, seed=seed),
+            "shuffled_label_geometric": shuffled_label_control(
+                M, ya, panel, n_bootstrap=n_bootstrap, seed=seed, restrict_keys=geom_keys),
+        }
+        controls["pass"] = bool(controls["shuffled_label_full"]["pass"]
+                                and controls["shuffled_label_geometric"]["pass"])
+    return {
+        "schema_version": "confluence/0.2-unified",
+        "model": model_id, "slug": mm.get("slug"), "benchmark": benchmark,
+        "n": mm["n"], "n_aligned": mm["n_aligned"],
+        "n_dropped_unaligned": mm["n_dropped_unaligned"], "n_cells_total": len(panel),
+        "n_ace_cells": mm["n_ace_cells"], "n_readout_cells": mm["n_readout_cells"],
+        "n_fusion_cells": len(panel) - mm["n_ace_cells"] - mm["n_readout_cells"],
+        "ace_data_hash": mm.get("ace_data_hash"), "readout_data_hash": mm.get("readout_data_hash"),
+        "primary_full_panel": full, "secondary_geometric_only": geom,
+        "controls": controls, "fusion": fusion_meta,
+        "provenance": {"seed": seed, "n_bootstrap": n_bootstrap,
+                       "sealed_selector": "_nested_bootstrap_oob_auroc (imported, not modified)",
+                       "module_hashes": module_hashes(),
+                       "model_snapshot_sha": model_snapshot_sha(model_id) if model_id else None},
+    }
+
+
+def merge_and_calibrate(ace: Dict[str, Any], readout: Dict[str, Any], *,
+                        n_bootstrap: int = 2000, seed: int = 20260610,
+                        model_id: str | None = None, benchmark: str | None = None,
+                        with_fusion: bool = True, with_controls: bool = True) -> Dict[str, Any]:
+    """Back-compatible wrapper: merge, then calibrate (fusion + controls on by default)."""
+    return calibrate_merged(merge_matrices(ace, readout), n_bootstrap=n_bootstrap, seed=seed,
+                            model_id=model_id, benchmark=benchmark,
+                            with_fusion=with_fusion, with_controls=with_controls)
 
 
 if __name__ == "__main__":

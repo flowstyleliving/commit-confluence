@@ -1,0 +1,302 @@
+{
+ "ace_component": {
+  "column_name": "attention::last_minus_1_js_no_bos",
+  "modal_sign_fallback": -1,
+  "per_cell_sign": {
+   "Llama-3.2-3B-Instruct-4bit|anli_r1": -1,
+   "Llama-3.2-3B-Instruct-4bit|triviaqa_paired": -1,
+   "Mistral-7B-Instruct-v0.3-4bit|anli_r1": -1,
+   "Mistral-7B-Instruct-v0.3-4bit|triviaqa_paired": -1,
+   "Mistral-Nemo-Instruct-2407-4bit|anli_r1": -1,
+   "Mistral-Nemo-Instruct-2407-4bit|triviaqa_paired": 1,
+   "Phi-3.5-mini-instruct-4bit|anli_r1": 1,
+   "Phi-3.5-mini-instruct-4bit|triviaqa_paired": -1,
+   "Phi-4-mini-instruct-4bit|anli_r1": -1,
+   "Phi-4-mini-instruct-4bit|triviaqa_paired": 1,
+   "Qwen2.5-7B-Instruct-4bit|anli_r1": -1,
+   "Qwen2.5-7B-Instruct-4bit|triviaqa_paired": 1,
+   "Qwen3-1.7B-4bit|anli_r1": 1,
+   "Qwen3-1.7B-4bit|triviaqa_paired": 1,
+   "Qwen3-8B-4bit|anli_r1": 1,
+   "Qwen3-8B-4bit|triviaqa_paired": -1,
+   "gemma-3-4b-it-4bit|anli_r1": -1,
+   "gemma-3-4b-it-4bit|triviaqa_paired": -1
+  },
+  "winner_tally": {
+   "attention::final_bos_mass": 2,
+   "attention::final_js": 1,
+   "attention::final_js_kv_groups": 2,
+   "attention::final_js_no_bos": 1,
+   "attention::final_v_norm_lastq_weighted": 2,
+   "attention::last_minus_1_bos_mass": 2,
+   "attention::last_minus_1_js": 1,
+   "attention::last_minus_1_js_kv_groups": 1,
+   "attention::last_minus_1_js_no_bos": 3,
+   "attention::mid_bos_mass": 2,
+   "attention::mid_v_norm_lastq_weighted": 1
+  }
+ },
+ "built_from": "SEALED-ERA artifacts only (2026-05-26 ACE profiles + 20260526 RPV rows); predates fresh data",
+ "definition": "per cell: rank-transform each oriented component to (rank-0.5)/n_finite in [0,1] over the cell's samples; fusion score = mean of component ranks; NaN if ANY component is non-finite for that sample",
+ "fusion_cells": {
+  "fusion_rank_mean_full": {
+   "components": [
+    "ACE_modal",
+    "surprise",
+    "null_ratio_post_rank1",
+    "fisher_eff_rank"
+   ],
+   "endpoints": [
+    "primary"
+   ],
+   "note": "includes surprise -> excluded from geometric endpoint"
+  },
+  "fusion_rank_mean_geom": {
+   "components": [
+    "ACE_modal",
+    "null_ratio_post_rank1",
+    "fisher_eff_rank"
+   ],
+   "endpoints": [
+    "primary",
+    "geometric"
+   ]
+  }
+ },
+ "readout_components": [
+  "surprise",
+  "null_ratio_post_rank1",
+  "fisher_eff_rank"
+ ],
+ "readout_modal_sign_fallback": {
+  "fisher_eff_rank": 1,
+  "null_ratio_post_rank1": 1,
+  "surprise": 1
+ },
+ "readout_per_cell_sign": {
+  "DeepSeek-R1-Distill-Qwen-7B-4bit|anli_r1": {
+   "fisher_eff_rank": -1,
+   "null_ratio_post_rank1": 1,
+   "surprise": 1
+  },
+  "DeepSeek-R1-Distill-Qwen-7B-4bit|triviaqa_paired": {
+   "fisher_eff_rank": -1,
+   "null_ratio_post_rank1": -1,
+   "surprise": 1
+  },
+  "Llama-3.1-8B-Instruct-4bit|anli_r1": {
+   "fisher_eff_rank": -1,
+   "null_ratio_post_rank1": -1,
+   "surprise": 1
+  },
+  "Llama-3.1-8B-Instruct-4bit|triviaqa_paired": {
+   "fisher_eff_rank": -1,
+   "null_ratio_post_rank1": -1,
+   "surprise": 1
+  },
+  "Llama-3.2-3B-Instruct-4bit|anli_r1": {
+   "fisher_eff_rank": -1,
+   "null_ratio_post_rank1": 1,
+   "surprise": 1
+  },
+  "Llama-3.2-3B-Instruct-4bit|triviaqa_paired": {
+   "fisher_eff_rank": -1,
+   "null_ratio_post_rank1": -1,
+   "surprise": 1
+  },
+  "Mistral-7B-Instruct-v0.3-4bit|anli_r1": {
+   "fisher_eff_rank": 1,
+   "null_ratio_post_rank1": 1,
+   "surprise": 1
+  },
+  "Mistral-7B-Instruct-v0.3-4bit|triviaqa_paired": {
+   "fisher_eff_rank": 1,
+   "null_ratio_post_rank1": 1,
+   "surprise": 1
+  },
+  "Mistral-Nemo-Instruct-2407-4bit|anli_r1": {
+   "fisher_eff_rank": -1,
+   "null_ratio_post_rank1": 1,
+   "surprise": 1
+  },
+  "Mistral-Nemo-Instruct-2407-4bit|triviaqa_paired": {
+   "fisher_eff_rank": 1,
+   "null_ratio_post_rank1": 1,
+   "surprise": 1
+  },
+  "Phi-3.5-mini-instruct-4bit|anli_r1": {
+   "fisher_eff_rank": 1,
+   "null_ratio_post_rank1": 1,
+   "surprise": 1
+  },
+  "Phi-3.5-mini-instruct-4bit|triviaqa_paired": {
+   "fisher_eff_rank": 1,
+   "null_ratio_post_rank1": 1,
+   "surprise": 1
+  },
+  "Phi-4-mini-instruct-4bit|anli_r1": {
+   "fisher_eff_rank": 1,
+   "null_ratio_post_rank1": -1,
+   "surprise": 1
+  },
+  "Phi-4-mini-instruct-4bit|triviaqa_paired": {
+   "fisher_eff_rank": 1,
+   "null_ratio_post_rank1": 1,
+   "surprise": 1
+  },
+  "Qwen2.5-7B-Instruct-4bit|anli_r1": {
+   "fisher_eff_rank": 1,
+   "null_ratio_post_rank1": 1,
+   "surprise": 1
+  },
+  "Qwen2.5-7B-Instruct-4bit|triviaqa_paired": {
+   "fisher_eff_rank": 1,
+   "null_ratio_post_rank1": -1,
+   "surprise": 1
+  },
+  "Qwen3-1.7B-4bit|anli_r1": {
+   "fisher_eff_rank": -1,
+   "null_ratio_post_rank1": 1,
+   "surprise": 1
+  },
+  "Qwen3-1.7B-4bit|triviaqa_paired": {
+   "fisher_eff_rank": 1,
+   "null_ratio_post_rank1": 1,
+   "surprise": 1
+  },
+  "Qwen3-8B-4bit|anli_r1": {
+   "fisher_eff_rank": -1,
+   "null_ratio_post_rank1": -1,
+   "surprise": 1
+  },
+  "Qwen3-8B-4bit|triviaqa_paired": {
+   "fisher_eff_rank": -1,
+   "null_ratio_post_rank1": -1,
+   "surprise": 1
+  },
+  "dolphin-2.9.3-mistral-nemo-12b-4bit|anli_r1": {
+   "fisher_eff_rank": 1,
+   "null_ratio_post_rank1": -1,
+   "surprise": 1
+  },
+  "dolphin-2.9.3-mistral-nemo-12b-4bit|triviaqa_paired": {
+   "fisher_eff_rank": 1,
+   "null_ratio_post_rank1": 1,
+   "surprise": 1
+  },
+  "gemma-3-1b-it-4bit|anli_r1": {
+   "fisher_eff_rank": 1,
+   "null_ratio_post_rank1": 1,
+   "surprise": 1
+  },
+  "gemma-3-1b-it-4bit|triviaqa_paired": {
+   "fisher_eff_rank": 1,
+   "null_ratio_post_rank1": 1,
+   "surprise": 1
+  },
+  "gemma-3-4b-it-4bit|anli_r1": {
+   "fisher_eff_rank": 1,
+   "null_ratio_post_rank1": -1,
+   "surprise": 1
+  },
+  "gemma-3-4b-it-4bit|triviaqa_paired": {
+   "fisher_eff_rank": 1,
+   "null_ratio_post_rank1": -1,
+   "surprise": 1
+  }
+ },
+ "spec_version": "fusion/1.0",
+ "surprise_clamp_disagreements": [
+  {
+   "comp": "surprise",
+   "kept": 1,
+   "sealed_sign": -1,
+   "slug": "DeepSeek-R1-Distill-Qwen-7B-4bit",
+   "task": "triviaqa_paired"
+  },
+  {
+   "comp": "surprise",
+   "kept": 1,
+   "sealed_sign": -1,
+   "slug": "Llama-3.1-8B-Instruct-4bit",
+   "task": "anli_r1"
+  },
+  {
+   "comp": "surprise",
+   "kept": 1,
+   "sealed_sign": -1,
+   "slug": "Llama-3.1-8B-Instruct-4bit",
+   "task": "triviaqa_paired"
+  },
+  {
+   "comp": "surprise",
+   "kept": 1,
+   "sealed_sign": -1,
+   "slug": "Llama-3.2-3B-Instruct-4bit",
+   "task": "anli_r1"
+  },
+  {
+   "comp": "surprise",
+   "kept": 1,
+   "sealed_sign": -1,
+   "slug": "Llama-3.2-3B-Instruct-4bit",
+   "task": "triviaqa_paired"
+  },
+  {
+   "comp": "surprise",
+   "kept": 1,
+   "sealed_sign": -1,
+   "slug": "Mistral-7B-Instruct-v0.3-4bit",
+   "task": "anli_r1"
+  },
+  {
+   "comp": "surprise",
+   "kept": 1,
+   "sealed_sign": -1,
+   "slug": "Mistral-7B-Instruct-v0.3-4bit",
+   "task": "triviaqa_paired"
+  },
+  {
+   "comp": "surprise",
+   "kept": 1,
+   "sealed_sign": -1,
+   "slug": "Phi-3.5-mini-instruct-4bit",
+   "task": "anli_r1"
+  },
+  {
+   "comp": "surprise",
+   "kept": 1,
+   "sealed_sign": -1,
+   "slug": "Phi-3.5-mini-instruct-4bit",
+   "task": "triviaqa_paired"
+  },
+  {
+   "comp": "surprise",
+   "kept": 1,
+   "sealed_sign": -1,
+   "slug": "Phi-4-mini-instruct-4bit",
+   "task": "anli_r1"
+  },
+  {
+   "comp": "surprise",
+   "kept": 1,
+   "sealed_sign": -1,
+   "slug": "Phi-4-mini-instruct-4bit",
+   "task": "triviaqa_paired"
+  },
+  {
+   "comp": "surprise",
+   "kept": 1,
+   "sealed_sign": -1,
+   "slug": "Qwen3-1.7B-4bit",
+   "task": "anli_r1"
+  },
+  {
+   "comp": "surprise",
+   "kept": 1,
+   "sealed_sign": -1,
+   "slug": "Qwen3-1.7B-4bit",
+   "task": "triviaqa_paired"
+  }
+ ]
+}

@@ -48,3 +48,37 @@ let Codex corroborate (or extend) before the irreversible seal.
 
 **Must-fixes (S1, S2) are both resolved.** Remaining are should-fix/reporting. Seal still HELD for the
 independent Codex pass (quota resets 2026-06-11 13:55).
+
+---
+
+# Second adversarial pass (Opus, 2026-06-10) - findings C1-C7 + enhancements E1-E4
+
+Fresh hostile pass over the whole build (calibrator, harness, pre-reg, selector internals, row
+schemas), beyond the resolved S1-S8. The composition core SURVIVED attack (sealed selector
+imported verbatim, both input arms verified exact, hard label-assert). What didn't:
+
+| # | Finding | Severity | Status |
+|---|---|---|---|
+| C1 | **Endpoint denominator leak.** `n = len(cells)` counted only SUCCESSFUL cells; 2 crashes -> "PASS 18/18" while the registered endpoint is over the 20-cell cohort (pre-reg could call the same state NO-GO). | **Must-fix** | **RESOLVED** - endpoints over PLANNED cells; errored = NOT deployable; `incomplete` flag (amendment A4) |
+| C2 | **Pre-reg/harness contract gaps.** Shuffled-label control, module drift hashes, model snapshot SHA all promised by the registration, none implemented; rotation "re-assert" not in the fresh path. | **Must-fix** | **RESOLVED** - K=3 permutation control (A3, with honest false-alarm math), `module_hashes()` hashing the ACTUALLY-imported files, HF snapshot SHA; rotation wording amended pre-data |
+| C3 | **"SEALED" stamp was path-based.** Passing the sealed files explicitly via --anli/--triviaqa with a fresh seed would stamp SEALED on sealed-era data. | **Must-fix** | **RESOLVED** - content-sha256 guard + pilot-seed guard {20260512, 20260526, 20260610, 20260611}; verified to refuse (exit 1) |
+| C4 | **Pre-reg "n=200" vs TriviaQA n=100 rows.** Registration numbers must be exact; n=100 also has ~37-sample OOB sets (power asymmetry). | **Must-fix** | **RESOLVED** - A1: fresh TriviaQA = 100 pairs = 200 rows |
+| C5 | **Winner != what the CI measures.** OOB CI is procedure-level (in-bag winners vary); `winner` is the modal pick. One misread from overclaiming. | Should-fix | **RESOLVED** - `ci_semantics` + `winner_marginal` in profiles; A2 |
+| C6 | **Silent sample_idx fallback** (`len(idx)`) would compact indices exactly when rows drop. Never fires today (comprehensive_run always emits it) - the worst kind of fallback. | Should-fix | **RESOLVED** - hard KeyError |
+| C7 | **Fresh seed != fresh examples.** Nothing enforced disjointness from the sealed 20260526 examples (ANLI dev-pool overlap could reach ~20%). | **Must-fix (data step)** | **RESOLVED** - `check_fresh_data.py` gate: schema/n/balance/intra-dup/zero-overlap; smoked both directions (sealed-vs-itself FAILS with overlap=200; disjoint synthetic PASSES) |
+
+Enhancements registered pre-data (amendments A6-A7; all zero new forwards):
+
+- **E1 LOMO universality probe** (9/10) - the direct test of "true universal vs per-deployment":
+  pool-select on 9 models, evaluate on the holdout; + sign-stability audit (sign-universal cells
+  would license a fixed-orientation screener with per-deployment thresholds - a registered
+  middle-ground hypothesis). `stage_b/analyze_universality.py`.
+- **E2 Task-transfer matrix** (9/10) - does per-MODEL calibration suffice (the "/task type" clause)?
+- **E3 Label-efficiency curve** (8/10) - prices the labeling cost of per-deployment calibration.
+- **E4 Cross-locus fusion cells** (8/10) - 2 pre-registered rank-mean candidates (panel 27 -> 29),
+  orientations frozen from SEALED-ERA artifacts only (`fusion_signs.json`); honest finding en route:
+  the sealed ACE winner tally is DISPERSED (11 distinct winners / 18 profiles) - itself
+  per-deployment evidence, noted in A6.
+
+Verdict after second pass: build is now contract-complete against its own registration.
+Seal remains HELD for the independent Codex pass + gated fresh data.
