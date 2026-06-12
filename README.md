@@ -21,7 +21,7 @@ for hallucination-risk readout at (or before) the first generated token.
 
 Clean run: 20/20 cells computed, zero errors, all shuffled-label controls passed, registered (not preview). Two pre-registered endpoints (lead with the geometric one):
 
-- **Geometric-only dispatcher — PASS, 18/20** (bar ≥17). A confidence-free panel (ACE attention + null_ratio + RPV) under the honest nested-OOB selector is deployable (OOB CI lower bound > 0.50) on 18 of 20 cohort cells. The registered geometric claim **holds**.
+- **Geometric-only dispatcher — PASS, 18/20** (bar ≥17). A confidence-free panel (ACE attention + PRI + RPV) under the honest nested-OOB selector is deployable (OOB CI lower bound > 0.50) on 18 of 20 cohort cells. The registered geometric claim **holds**.
 - **Full-panel (incl. confidence + fusion) — FAIL, 18/20** (bar ≥19). The strict product claim allowed ≤1 non-deployable cell and predicted exactly one (`gemma-3-4b/anli`); a second appeared, so it misses by one → the strict claim is **falsified** (the honest, registered outcome).
 
 **Both endpoints fail the identical two ANLI cells** (`gemma-3-4b/anli`, predicted; `Llama-3.1-8B/anli`, the one model with no prior ACE seal). Confidence and fusion rescued neither — coverage is 18/20 *with or without* confidence, so those two are genuine epistemic blind spots no panel cell covers (TriviaQA 10/10, ANLI 8/10).
@@ -45,7 +45,7 @@ commitment pathway*. Three independent research lines walked into the same room:
 | Stream | Signal | Organ | Timing | Needs |
 |---|---|---|---|---|
 | attention | **ACE** panel (js, bos_mass, v-norm, …) | attention routing | t=0, pre-generation | nothing (W_u-free, single pass) |
-| residual  | **null_ratio** (v3) | residual-stream motion Δh | gen_step ≈ 1 | Δh + W_u |
+| residual  | **PRI** (v3 `null_ratio`) | residual-stream motion Δh | gen_step ≈ 1 | Δh + W_u |
 | readout   | **RPV** (fisher_eff_rank) | readout geometry of the state | any t, Δh-free | W_u only |
 | base      | **surprise / p_max** | the output distribution | every token | logits |
 
@@ -59,9 +59,9 @@ deployability rails) picks the deployable cell without oracle knowledge.
 1. No universal *champion* cell — per-(model, distribution) selection yields 12 distinct winners.
    (But E1 finds a universal above-chance *floor* in the fusion aggregate — see Results.)
 2. Stacking gains are small — the signals overlap (corroborate), they don't add orthogonally.
-3. But the overlap has holes, and the holes are covered (e.g. null_ratio dies on
+3. But the overlap has holes, and the holes are covered (e.g. PRI dies on
    Qwen3-8B where RPV is alive).
-4. The streams fire at different *times* — ACE exists before generation; null_ratio cannot.
+4. The streams fire at different *times* — ACE exists before generation; PRI cannot.
 
 ## Plan
 
@@ -76,7 +76,7 @@ deployability rails) picks the deployable cell without oracle knowledge.
 
 - ACE sealed profiles — `t0-morphology-furnace/experiments/t0-sealed/2026-05-26/profiles/`
 - RPV comprehensive run — `t0-morphology-furnace/exploratory/shadow-ambiguity/comprehensive_outputs/`
-- v3 null_ratio — carried inside the RPV run as `null_ratio_post_rank1` (same cells, same data)
+- PRI (v3) — carried inside the RPV run as `null_ratio_post_rank1` (same cells, same data)
 
 This repo holds the *integration layer* only. It does not re-run or vendor the source
 experiments; it reads their sealed outputs and composes them. The dependency-repo root is
