@@ -1,0 +1,384 @@
+{
+ "schema_version": "confluence/0.2-unified",
+ "model": "mlx-community/Mistral-Nemo-Instruct-2407-4bit",
+ "slug": "Mistral-Nemo-Instruct-2407-4bit",
+ "benchmark": "anli_r1",
+ "n": 200,
+ "n_aligned": 200,
+ "n_dropped_unaligned": 0,
+ "n_cells_total": 29,
+ "n_ace_cells": 21,
+ "n_readout_cells": 6,
+ "n_fusion_cells": 2,
+ "ace_data_hash": "d73a23a426a7551126a6dc9304b0458d6f89fd659eda78817ec466309a248963",
+ "readout_data_hash": "d73a23a426a7551126a6dc9304b0458d6f89fd659eda78817ec466309a248963",
+ "primary_full_panel": {
+  "winner": "attention[last_minus_1_bos_mass] @ step 0",
+  "ci_semantics": "procedure-level OOB CI (in-bag winners vary across resamples); winner = modal in-bag pick",
+  "winner_marginal": {
+   "auroc": 0.8333,
+   "sign": -1
+  },
+  "oob_auroc_median": 0.834059580770107,
+  "oob_auroc_ci_lo": 0.7490698312560051,
+  "oob_auroc_ci_hi": 0.9079425428708068,
+  "winner_stability": 0.993,
+  "winner_counts": {
+   "attention[final_v_norm_lastq_weighted] @ step 0": 12,
+   "attention[mid_js_no_bos] @ step 0": 1,
+   "attention[last_minus_1_bos_mass] @ step 0": 1986,
+   "Fusion fusion_rank_mean_full @ step 0": 1
+  },
+  "oob_n_bootstrap_used": 2000,
+  "n_cells": 29,
+  "deployable": true,
+  "full_sample_marginals": {
+   "attention[final_js] @ step 0": {
+    "auroc": 0.6016,
+    "sign": -1
+   },
+   "attention[final_js_kv_groups] @ step 0": {
+    "auroc": 0.5372,
+    "sign": -1
+   },
+   "attention[final_js_no_bos] @ step 0": {
+    "auroc": 0.5614,
+    "sign": -1
+   },
+   "attention[final_bos_mass] @ step 0": {
+    "auroc": 0.739,
+    "sign": -1
+   },
+   "attention[final_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[final_v_norm_max] @ step 0": {
+    "auroc": 0.5257,
+    "sign": -1
+   },
+   "attention[final_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.7695,
+    "sign": 1
+   },
+   "attention[mid_js] @ step 0": {
+    "auroc": 0.6294,
+    "sign": -1
+   },
+   "attention[mid_js_kv_groups] @ step 0": {
+    "auroc": 0.5072,
+    "sign": -1
+   },
+   "attention[mid_js_no_bos] @ step 0": {
+    "auroc": 0.69,
+    "sign": -1
+   },
+   "attention[mid_bos_mass] @ step 0": {
+    "auroc": 0.5867,
+    "sign": 1
+   },
+   "attention[mid_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[mid_v_norm_max] @ step 0": {
+    "auroc": 0.5257,
+    "sign": 1
+   },
+   "attention[mid_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.5773,
+    "sign": -1
+   },
+   "attention[last_minus_1_js] @ step 0": {
+    "auroc": 0.604,
+    "sign": -1
+   },
+   "attention[last_minus_1_js_kv_groups] @ step 0": {
+    "auroc": 0.5146,
+    "sign": 1
+   },
+   "attention[last_minus_1_js_no_bos] @ step 0": {
+    "auroc": 0.5507,
+    "sign": -1
+   },
+   "attention[last_minus_1_bos_mass] @ step 0": {
+    "auroc": 0.8333,
+    "sign": -1
+   },
+   "attention[last_minus_1_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[last_minus_1_v_norm_max] @ step 0": {
+    "auroc": 0.5199,
+    "sign": -1
+   },
+   "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.674,
+    "sign": 1
+   },
+   "Readout fisher_eff_rank @ step 0": {
+    "auroc": 0.6851,
+    "sign": -1
+   },
+   "Readout spectral_entropy @ step 0": {
+    "auroc": 0.6745,
+    "sign": 1
+   },
+   "Readout neg_shadow_logvol_r1 @ step 0": {
+    "auroc": 0.7172,
+    "sign": 1
+   },
+   "Readout null_ratio_post_rank1 @ step 0": {
+    "auroc": 0.6039,
+    "sign": 1
+   },
+   "Readout surprise @ step 0": {
+    "auroc": 0.6266,
+    "sign": 1
+   },
+   "Readout p_max @ step 0": {
+    "auroc": 0.5699,
+    "sign": 1
+   },
+   "Fusion fusion_rank_mean_full @ step 0": {
+    "auroc": 0.7238,
+    "sign": 1
+   },
+   "Fusion fusion_rank_mean_geom @ step 0": {
+    "auroc": 0.7165,
+    "sign": 1
+   }
+  }
+ },
+ "secondary_geometric_only": {
+  "winner": "attention[last_minus_1_bos_mass] @ step 0",
+  "ci_semantics": "procedure-level OOB CI (in-bag winners vary across resamples); winner = modal in-bag pick",
+  "winner_marginal": {
+   "auroc": 0.8333,
+   "sign": -1
+  },
+  "oob_auroc_median": 0.8341894387637161,
+  "oob_auroc_ci_lo": 0.7491535423290939,
+  "oob_auroc_ci_hi": 0.9079425428708068,
+  "winner_stability": 0.9935,
+  "winner_counts": {
+   "attention[final_v_norm_lastq_weighted] @ step 0": 12,
+   "attention[mid_js_no_bos] @ step 0": 1,
+   "attention[last_minus_1_bos_mass] @ step 0": 1987
+  },
+  "oob_n_bootstrap_used": 2000,
+  "n_cells": 26,
+  "deployable": true,
+  "full_sample_marginals": {
+   "attention[final_js] @ step 0": {
+    "auroc": 0.6016,
+    "sign": -1
+   },
+   "attention[final_js_kv_groups] @ step 0": {
+    "auroc": 0.5372,
+    "sign": -1
+   },
+   "attention[final_js_no_bos] @ step 0": {
+    "auroc": 0.5614,
+    "sign": -1
+   },
+   "attention[final_bos_mass] @ step 0": {
+    "auroc": 0.739,
+    "sign": -1
+   },
+   "attention[final_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[final_v_norm_max] @ step 0": {
+    "auroc": 0.5257,
+    "sign": -1
+   },
+   "attention[final_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.7695,
+    "sign": 1
+   },
+   "attention[mid_js] @ step 0": {
+    "auroc": 0.6294,
+    "sign": -1
+   },
+   "attention[mid_js_kv_groups] @ step 0": {
+    "auroc": 0.5072,
+    "sign": -1
+   },
+   "attention[mid_js_no_bos] @ step 0": {
+    "auroc": 0.69,
+    "sign": -1
+   },
+   "attention[mid_bos_mass] @ step 0": {
+    "auroc": 0.5867,
+    "sign": 1
+   },
+   "attention[mid_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[mid_v_norm_max] @ step 0": {
+    "auroc": 0.5257,
+    "sign": 1
+   },
+   "attention[mid_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.5773,
+    "sign": -1
+   },
+   "attention[last_minus_1_js] @ step 0": {
+    "auroc": 0.604,
+    "sign": -1
+   },
+   "attention[last_minus_1_js_kv_groups] @ step 0": {
+    "auroc": 0.5146,
+    "sign": 1
+   },
+   "attention[last_minus_1_js_no_bos] @ step 0": {
+    "auroc": 0.5507,
+    "sign": -1
+   },
+   "attention[last_minus_1_bos_mass] @ step 0": {
+    "auroc": 0.8333,
+    "sign": -1
+   },
+   "attention[last_minus_1_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[last_minus_1_v_norm_max] @ step 0": {
+    "auroc": 0.5199,
+    "sign": -1
+   },
+   "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.674,
+    "sign": 1
+   },
+   "Readout fisher_eff_rank @ step 0": {
+    "auroc": 0.6851,
+    "sign": -1
+   },
+   "Readout spectral_entropy @ step 0": {
+    "auroc": 0.6745,
+    "sign": 1
+   },
+   "Readout neg_shadow_logvol_r1 @ step 0": {
+    "auroc": 0.7172,
+    "sign": 1
+   },
+   "Readout null_ratio_post_rank1 @ step 0": {
+    "auroc": 0.6039,
+    "sign": 1
+   },
+   "Fusion fusion_rank_mean_geom @ step 0": {
+    "auroc": 0.7165,
+    "sign": 1
+   }
+  }
+ },
+ "controls": {
+  "shuffled_label_full": {
+   "k_perms": 3,
+   "n_excluding_null_upward": 0,
+   "pass": true,
+   "perms": [
+    {
+     "oob_auroc_median": 0.4899138931888545,
+     "oob_auroc_ci_lo": 0.37173770595155226,
+     "oob_auroc_ci_hi": 0.593586461275457,
+     "excludes_null_upward": false
+    },
+    {
+     "oob_auroc_median": 0.5751833253626655,
+     "oob_auroc_ci_lo": 0.4051812141347025,
+     "oob_auroc_ci_hi": 0.6789967565973758,
+     "excludes_null_upward": false
+    },
+    {
+     "oob_auroc_median": 0.4680090377458799,
+     "oob_auroc_ci_lo": 0.34951831623591517,
+     "oob_auroc_ci_hi": 0.5686334289813486,
+     "excludes_null_upward": false
+    }
+   ]
+  },
+  "shuffled_label_geometric": {
+   "k_perms": 3,
+   "n_excluding_null_upward": 0,
+   "pass": true,
+   "perms": [
+    {
+     "oob_auroc_median": 0.4918065252416756,
+     "oob_auroc_ci_lo": 0.3790495216578808,
+     "oob_auroc_ci_hi": 0.5941745691079068,
+     "excludes_null_upward": false
+    },
+    {
+     "oob_auroc_median": 0.5428571428571429,
+     "oob_auroc_ci_lo": 0.3819125860745101,
+     "oob_auroc_ci_hi": 0.6608712557603684,
+     "excludes_null_upward": false
+    },
+    {
+     "oob_auroc_median": 0.47092518572351416,
+     "oob_auroc_ci_lo": 0.35471938775510203,
+     "oob_auroc_ci_hi": 0.5758262242143821,
+     "excludes_null_upward": false
+    }
+   ]
+  },
+  "pass": true
+ },
+ "fusion": {
+  "key": "Mistral-Nemo-Instruct-2407-4bit|anli_r1",
+  "components": {
+   "ACE_modal": {
+    "column": "last_minus_1_js_no_bos",
+    "sign": -1,
+    "source": "per_cell"
+   },
+   "surprise": {
+    "column": "surprise",
+    "sign": 1,
+    "source": "per_cell"
+   },
+   "null_ratio_post_rank1": {
+    "column": "null_ratio_post_rank1",
+    "sign": 1,
+    "source": "per_cell"
+   },
+   "fisher_eff_rank": {
+    "column": "fisher_eff_rank",
+    "sign": -1,
+    "source": "per_cell"
+   }
+  }
+ },
+ "provenance": {
+  "seed": 20260612,
+  "n_bootstrap": 2000,
+  "sealed_selector": "_nested_bootstrap_oob_auroc (imported, not modified)",
+  "module_hashes": {
+   "pri_calibrator.py": "78c4f098295fe600cc4f6f1a14cc7b496ac93d8d70dd65743c1504eb20931101",
+   "comprehensive_run.py": "f6f5958bae5b035f07f034b9f4f5784b1a86c1ab00ab0f9c9ef4a5584776e8f8",
+   "diagnose_inter_head_disagreement.py": "b996ed923ac3eefeb0550901b2bf8ce5c5e0ae6486c8d41efdc2de9fb9567c99",
+   "pri_runtime.py": "cf56a2607b94666ab092647a764b1b73c7974b38445caa6a4b252a9cdf240784",
+   "pri_v2_io_plugins.py": "6c56be1888abc6ad44150583b869bac06366fa70a7d8e13230da3703064eb7b7",
+   "pri_v2_mlx_pipeline.py": "abb0debd8b7b3f0503418e09a21050fad968d88a6ea10fd4412983c6ba6e4a5c",
+   "model_adapters.py": "5ce42c7f8de787e6f301c4542ebbb5057bc8b1702758702095f62cc720743137",
+   "test_shadow_ambiguity.py": "12046a3ff98ddaba207396b943415dd5360f4cb4a942462994889d0aa8771961",
+   "confluence_calibrator.py": "6142217f7608dc7c790649e7d26fe99c115f439c5390d70c5128cf4c89808aa6",
+   "fusion_signs.json": "92b5468bd241b517dd2d5cf70ad28556157424deb54b5f85f88af0305ff35372"
+  },
+  "model_snapshot_sha": {
+   "resolved_revision": "647ca0751669b21a364c86ccc5df54c4d7e4e91c",
+   "resolved_source": "refs/main",
+   "cached_snapshots": [
+    "647ca0751669b21a364c86ccc5df54c4d7e4e91c"
+   ]
+  }
+ },
+ "data_path": "stage_b/data/anli_R1_seed20260612_n200.jsonl",
+ "data_file_sha256": "57ad341f2c29c886a726b7c62b7371be8c064b04b9b96e98324c931157d4f55b"
+}

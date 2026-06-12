@@ -1,0 +1,307 @@
+{
+ "n_cells_loaded": 20,
+ "cells": [
+  "Llama-3.1-8B-Instruct-4bit|anli_r1",
+  "Llama-3.1-8B-Instruct-4bit|triviaqa_paired",
+  "Llama-3.2-3B-Instruct-4bit|anli_r1",
+  "Llama-3.2-3B-Instruct-4bit|triviaqa_paired",
+  "Mistral-7B-Instruct-v0.3-4bit|anli_r1",
+  "Mistral-7B-Instruct-v0.3-4bit|triviaqa_paired",
+  "Mistral-Nemo-Instruct-2407-4bit|anli_r1",
+  "Mistral-Nemo-Instruct-2407-4bit|triviaqa_paired",
+  "Phi-3.5-mini-instruct-4bit|anli_r1",
+  "Phi-3.5-mini-instruct-4bit|triviaqa_paired",
+  "Phi-4-mini-instruct-4bit|anli_r1",
+  "Phi-4-mini-instruct-4bit|triviaqa_paired",
+  "Qwen2.5-7B-Instruct-4bit|anli_r1",
+  "Qwen2.5-7B-Instruct-4bit|triviaqa_paired",
+  "Qwen3-1.7B-4bit|anli_r1",
+  "Qwen3-1.7B-4bit|triviaqa_paired",
+  "Qwen3-8B-4bit|anli_r1",
+  "Qwen3-8B-4bit|triviaqa_paired",
+  "gemma-3-4b-it-4bit|anli_r1",
+  "gemma-3-4b-it-4bit|triviaqa_paired"
+ ],
+ "E3_label_efficiency": {
+  "Llama-3.1-8B-Instruct-4bit|anli_r1": {
+   "50": {
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "150": {
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   }
+  },
+  "Llama-3.1-8B-Instruct-4bit|triviaqa_paired": {
+   "50": {
+    "frac_deployable_full": 0.333,
+    "frac_deployable_geom": 0.333
+   },
+   "100": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Llama-3.2-3B-Instruct-4bit|anli_r1": {
+   "50": {
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.333
+   },
+   "150": {
+    "frac_deployable_full": 0.333,
+    "frac_deployable_geom": 0.667
+   }
+  },
+  "Llama-3.2-3B-Instruct-4bit|triviaqa_paired": {
+   "50": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "100": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Mistral-7B-Instruct-v0.3-4bit|anli_r1": {
+   "50": {
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "frac_deployable_full": 0.333,
+    "frac_deployable_geom": 0.333
+   },
+   "150": {
+    "frac_deployable_full": 0.667,
+    "frac_deployable_geom": 0.667
+   }
+  },
+  "Mistral-7B-Instruct-v0.3-4bit|triviaqa_paired": {
+   "50": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "100": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Mistral-Nemo-Instruct-2407-4bit|anli_r1": {
+   "50": {
+    "frac_deployable_full": 0.667,
+    "frac_deployable_geom": 0.667
+   },
+   "100": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Mistral-Nemo-Instruct-2407-4bit|triviaqa_paired": {
+   "50": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "100": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Phi-3.5-mini-instruct-4bit|anli_r1": {
+   "50": {
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "150": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Phi-3.5-mini-instruct-4bit|triviaqa_paired": {
+   "50": {
+    "frac_deployable_full": 0.667,
+    "frac_deployable_geom": 0.667
+   },
+   "100": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Phi-4-mini-instruct-4bit|anli_r1": {
+   "50": {
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "frac_deployable_full": 0.667,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Phi-4-mini-instruct-4bit|triviaqa_paired": {
+   "50": {
+    "frac_deployable_full": 0.667,
+    "frac_deployable_geom": 1.0
+   },
+   "100": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Qwen2.5-7B-Instruct-4bit|anli_r1": {
+   "50": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "100": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 0.667
+   },
+   "150": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Qwen2.5-7B-Instruct-4bit|triviaqa_paired": {
+   "50": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "100": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Qwen3-1.7B-4bit|anli_r1": {
+   "50": {
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "frac_deployable_full": 0.333,
+    "frac_deployable_geom": 0.333
+   },
+   "150": {
+    "frac_deployable_full": 0.333,
+    "frac_deployable_geom": 0.333
+   }
+  },
+  "Qwen3-1.7B-4bit|triviaqa_paired": {
+   "50": {
+    "frac_deployable_full": 0.333,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 0.333
+   },
+   "150": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Qwen3-8B-4bit|anli_r1": {
+   "50": {
+    "frac_deployable_full": 0.667,
+    "frac_deployable_geom": 0.667
+   },
+   "100": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Qwen3-8B-4bit|triviaqa_paired": {
+   "50": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "100": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "gemma-3-4b-it-4bit|anli_r1": {
+   "50": {
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "150": {
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   }
+  },
+  "gemma-3-4b-it-4bit|triviaqa_paired": {
+   "50": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 0.667
+   },
+   "100": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  }
+ }
+}

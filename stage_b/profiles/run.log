@@ -1,0 +1,4489 @@
+[gate] anli_r1: PASS (n=200 overlap=0 qid_overlap=0)
+[gate] triviaqa_paired: PASS (n=200 overlap=0 qid_overlap=0)
+
+===== Llama-3.2-3B-Instruct-4bit/anli_r1 =====
+
+  Loading model: mlx-community/Llama-3.2-3B-Instruct-4bit
+Fetching 6 files:   0%|          | 0/6 [00:00<?, ?it/s]Fetching 6 files: 100%|██████████| 6/6 [00:00<00:00, 69905.07it/s]
+     Layers: 28 | Probed: {'final': 27} | Output projection: tied_embed (V=128256, D=3072)
+[ace] Llama-3.2-3B-Instruct-4bit 25/200
+[ace] Llama-3.2-3B-Instruct-4bit 50/200
+[ace] Llama-3.2-3B-Instruct-4bit 75/200
+[ace] Llama-3.2-3B-Instruct-4bit 100/200
+[ace] Llama-3.2-3B-Instruct-4bit 125/200
+[ace] Llama-3.2-3B-Instruct-4bit 150/200
+[ace] Llama-3.2-3B-Instruct-4bit 175/200
+[ace] Llama-3.2-3B-Instruct-4bit 200/200
+
+  Loading model: mlx-community/Llama-3.2-3B-Instruct-4bit
+Fetching 6 files:   0%|          | 0/6 [00:00<?, ?it/s]Fetching 6 files: 100%|██████████| 6/6 [00:00<00:00, 90851.35it/s]
+     Layers: 28 | Probed: {'final': 27} | Output projection: tied_embed (V=128256, D=3072)
+[inventory] benchmark=anli_r1 path=stage_b/data/anli_R1_seed20260612_n200.jsonl
+[trace] model=mlx-community/Llama-3.2-3B-Instruct-4bit
+[trace] samples=200 K=512 final_layer=final d=3072 V=128256
+[trace] commit instant: gen_step=1; pinned aggregate = final 25% block logit lens plus readout
+[trace] n_layers=28; pinned_late_layers=[21, 22, 23, 24, 25, 26, 27]
+[trace]   1/200 processed; usable=1
+[trace]   2/200 processed; usable=2
+[trace]   3/200 processed; usable=3
+[trace]   4/200 processed; usable=4
+[trace]   5/200 processed; usable=5
+[trace]   6/200 processed; usable=6
+[trace]   7/200 processed; usable=7
+[trace]   8/200 processed; usable=8
+[trace]   9/200 processed; usable=9
+[trace]   10/200 processed; usable=10
+[trace]   11/200 processed; usable=11
+[trace]   12/200 processed; usable=12
+[trace]   13/200 processed; usable=13
+[trace]   14/200 processed; usable=14
+[trace]   15/200 processed; usable=15
+[trace]   16/200 processed; usable=16
+[trace]   17/200 processed; usable=17
+[trace]   18/200 processed; usable=18
+[trace]   19/200 processed; usable=19
+[trace]   20/200 processed; usable=20
+[trace]   21/200 processed; usable=21
+[trace]   22/200 processed; usable=22
+[trace]   23/200 processed; usable=23
+[trace]   24/200 processed; usable=24
+[trace]   25/200 processed; usable=25
+[trace]   26/200 processed; usable=26
+[trace]   27/200 processed; usable=27
+[trace]   28/200 processed; usable=28
+[trace]   29/200 processed; usable=29
+[trace]   30/200 processed; usable=30
+[trace]   31/200 processed; usable=31
+[trace]   32/200 processed; usable=32
+[trace]   33/200 processed; usable=33
+[trace]   34/200 processed; usable=34
+[trace]   35/200 processed; usable=35
+[trace]   36/200 processed; usable=36
+[trace]   37/200 processed; usable=37
+[trace]   38/200 processed; usable=38
+[trace]   39/200 processed; usable=39
+[trace]   40/200 processed; usable=40
+[trace]   41/200 processed; usable=41
+[trace]   42/200 processed; usable=42
+[trace]   43/200 processed; usable=43
+[trace]   44/200 processed; usable=44
+[trace]   45/200 processed; usable=45
+[trace]   46/200 processed; usable=46
+[trace]   47/200 processed; usable=47
+[trace]   48/200 processed; usable=48
+[trace]   49/200 processed; usable=49
+[trace]   50/200 processed; usable=50
+[trace]   51/200 processed; usable=51
+[trace]   52/200 processed; usable=52
+[trace]   53/200 processed; usable=53
+[trace]   54/200 processed; usable=54
+[trace]   55/200 processed; usable=55
+[trace]   56/200 processed; usable=56
+[trace]   57/200 processed; usable=57
+[trace]   58/200 processed; usable=58
+[trace]   59/200 processed; usable=59
+[trace]   60/200 processed; usable=60
+[trace]   61/200 processed; usable=61
+[trace]   62/200 processed; usable=62
+[trace]   63/200 processed; usable=63
+[trace]   64/200 processed; usable=64
+[trace]   65/200 processed; usable=65
+[trace]   66/200 processed; usable=66
+[trace]   67/200 processed; usable=67
+[trace]   68/200 processed; usable=68
+[trace]   69/200 processed; usable=69
+[trace]   70/200 processed; usable=70
+[trace]   71/200 processed; usable=71
+[trace]   72/200 processed; usable=72
+[trace]   73/200 processed; usable=73
+[trace]   74/200 processed; usable=74
+[trace]   75/200 processed; usable=75
+[trace]   76/200 processed; usable=76
+[trace]   77/200 processed; usable=77
+[trace]   78/200 processed; usable=78
+[trace]   79/200 processed; usable=79
+[trace]   80/200 processed; usable=80
+[trace]   81/200 processed; usable=81
+[trace]   82/200 processed; usable=82
+[trace]   83/200 processed; usable=83
+[trace]   84/200 processed; usable=84
+[trace]   85/200 processed; usable=85
+[trace]   86/200 processed; usable=86
+[trace]   87/200 processed; usable=87
+[trace]   88/200 processed; usable=88
+[trace]   89/200 processed; usable=89
+[trace]   90/200 processed; usable=90
+[trace]   91/200 processed; usable=91
+[trace]   92/200 processed; usable=92
+[trace]   93/200 processed; usable=93
+[trace]   94/200 processed; usable=94
+[trace]   95/200 processed; usable=95
+[trace]   96/200 processed; usable=96
+[trace]   97/200 processed; usable=97
+[trace]   98/200 processed; usable=98
+[trace]   99/200 processed; usable=99
+[trace]   100/200 processed; usable=100
+[trace]   101/200 processed; usable=101
+[trace]   102/200 processed; usable=102
+[trace]   103/200 processed; usable=103
+[trace]   104/200 processed; usable=104
+[trace]   105/200 processed; usable=105
+[trace]   106/200 processed; usable=106
+[trace]   107/200 processed; usable=107
+[trace]   108/200 processed; usable=108
+[trace]   109/200 processed; usable=109
+[trace]   110/200 processed; usable=110
+[trace]   111/200 processed; usable=111
+[trace]   112/200 processed; usable=112
+[trace]   113/200 processed; usable=113
+[trace]   114/200 processed; usable=114
+[trace]   115/200 processed; usable=115
+[trace]   116/200 processed; usable=116
+[trace]   117/200 processed; usable=117
+[trace]   118/200 processed; usable=118
+[trace]   119/200 processed; usable=119
+[trace]   120/200 processed; usable=120
+[trace]   121/200 processed; usable=121
+[trace]   122/200 processed; usable=122
+[trace]   123/200 processed; usable=123
+[trace]   124/200 processed; usable=124
+[trace]   125/200 processed; usable=125
+[trace]   126/200 processed; usable=126
+[trace]   127/200 processed; usable=127
+[trace]   128/200 processed; usable=128
+[trace]   129/200 processed; usable=129
+[trace]   130/200 processed; usable=130
+[trace]   131/200 processed; usable=131
+[trace]   132/200 processed; usable=132
+[trace]   133/200 processed; usable=133
+[trace]   134/200 processed; usable=134
+[trace]   135/200 processed; usable=135
+[trace]   136/200 processed; usable=136
+[trace]   137/200 processed; usable=137
+[trace]   138/200 processed; usable=138
+[trace]   139/200 processed; usable=139
+[trace]   140/200 processed; usable=140
+[trace]   141/200 processed; usable=141
+[trace]   142/200 processed; usable=142
+[trace]   143/200 processed; usable=143
+[trace]   144/200 processed; usable=144
+[trace]   145/200 processed; usable=145
+[trace]   146/200 processed; usable=146
+[trace]   147/200 processed; usable=147
+[trace]   148/200 processed; usable=148
+[trace]   149/200 processed; usable=149
+[trace]   150/200 processed; usable=150
+[trace]   151/200 processed; usable=151
+[trace]   152/200 processed; usable=152
+[trace]   153/200 processed; usable=153
+[trace]   154/200 processed; usable=154
+[trace]   155/200 processed; usable=155
+[trace]   156/200 processed; usable=156
+[trace]   157/200 processed; usable=157
+[trace]   158/200 processed; usable=158
+[trace]   159/200 processed; usable=159
+[trace]   160/200 processed; usable=160
+[trace]   161/200 processed; usable=161
+[trace]   162/200 processed; usable=162
+[trace]   163/200 processed; usable=163
+[trace]   164/200 processed; usable=164
+[trace]   165/200 processed; usable=165
+[trace]   166/200 processed; usable=166
+[trace]   167/200 processed; usable=167
+[trace]   168/200 processed; usable=168
+[trace]   169/200 processed; usable=169
+[trace]   170/200 processed; usable=170
+[trace]   171/200 processed; usable=171
+[trace]   172/200 processed; usable=172
+[trace]   173/200 processed; usable=173
+[trace]   174/200 processed; usable=174
+[trace]   175/200 processed; usable=175
+[trace]   176/200 processed; usable=176
+[trace]   177/200 processed; usable=177
+[trace]   178/200 processed; usable=178
+[trace]   179/200 processed; usable=179
+[trace]   180/200 processed; usable=180
+[trace]   181/200 processed; usable=181
+[trace]   182/200 processed; usable=182
+[trace]   183/200 processed; usable=183
+[trace]   184/200 processed; usable=184
+[trace]   185/200 processed; usable=185
+[trace]   186/200 processed; usable=186
+[trace]   187/200 processed; usable=187
+[trace]   188/200 processed; usable=188
+[trace]   189/200 processed; usable=189
+[trace]   190/200 processed; usable=190
+[trace]   191/200 processed; usable=191
+[trace]   192/200 processed; usable=192
+[trace]   193/200 processed; usable=193
+[trace]   194/200 processed; usable=194
+[trace]   195/200 processed; usable=195
+[trace]   196/200 processed; usable=196
+[trace]   197/200 processed; usable=197
+[trace]   198/200 processed; usable=198
+[trace]   199/200 processed; usable=199
+[trace]   200/200 processed; usable=200
+[Llama-3.2-3B-Instruct-4bit/anli_r1] PRIMARY Readout spectral_entropy @ step 0 CI_lo=0.5195164995822891 dep=True | GEOM Readout spectral_entropy @ step 0 CI_lo=0.5298647632129775 dep=True | controls_pass=True
+
+===== Llama-3.2-3B-Instruct-4bit/triviaqa_paired =====
+
+  Loading model: mlx-community/Llama-3.2-3B-Instruct-4bit
+Fetching 6 files:   0%|          | 0/6 [00:00<?, ?it/s]Fetching 6 files: 100%|██████████| 6/6 [00:00<00:00, 36366.80it/s]
+     Layers: 28 | Probed: {'final': 27} | Output projection: tied_embed (V=128256, D=3072)
+[ace] Llama-3.2-3B-Instruct-4bit 25/200
+[ace] Llama-3.2-3B-Instruct-4bit 50/200
+[ace] Llama-3.2-3B-Instruct-4bit 75/200
+[ace] Llama-3.2-3B-Instruct-4bit 100/200
+[ace] Llama-3.2-3B-Instruct-4bit 125/200
+[ace] Llama-3.2-3B-Instruct-4bit 150/200
+[ace] Llama-3.2-3B-Instruct-4bit 175/200
+[ace] Llama-3.2-3B-Instruct-4bit 200/200
+
+  Loading model: mlx-community/Llama-3.2-3B-Instruct-4bit
+Fetching 6 files:   0%|          | 0/6 [00:00<?, ?it/s]Fetching 6 files: 100%|██████████| 6/6 [00:00<00:00, 25420.02it/s]
+     Layers: 28 | Probed: {'final': 27} | Output projection: tied_embed (V=128256, D=3072)
+[inventory] benchmark=triviaqa_paired path=stage_b/data/triviaqa_paired_seed20260612_n200.jsonl
+[trace] model=mlx-community/Llama-3.2-3B-Instruct-4bit
+[trace] samples=200 K=512 final_layer=final d=3072 V=128256
+[trace] commit instant: gen_step=1; pinned aggregate = final 25% block logit lens plus readout
+[trace] n_layers=28; pinned_late_layers=[21, 22, 23, 24, 25, 26, 27]
+[trace]   1/200 processed; usable=1
+[trace]   2/200 processed; usable=2
+[trace]   3/200 processed; usable=3
+[trace]   4/200 processed; usable=4
+[trace]   5/200 processed; usable=5
+[trace]   6/200 processed; usable=6
+[trace]   7/200 processed; usable=7
+[trace]   8/200 processed; usable=8
+[trace]   9/200 processed; usable=9
+[trace]   10/200 processed; usable=10
+[trace]   11/200 processed; usable=11
+[trace]   12/200 processed; usable=12
+[trace]   13/200 processed; usable=13
+[trace]   14/200 processed; usable=14
+[trace]   15/200 processed; usable=15
+[trace]   16/200 processed; usable=16
+[trace]   17/200 processed; usable=17
+[trace]   18/200 processed; usable=18
+[trace]   19/200 processed; usable=19
+[trace]   20/200 processed; usable=20
+[trace]   21/200 processed; usable=21
+[trace]   22/200 processed; usable=22
+[trace]   23/200 processed; usable=23
+[trace]   24/200 processed; usable=24
+[trace]   25/200 processed; usable=25
+[trace]   26/200 processed; usable=26
+[trace]   27/200 processed; usable=27
+[trace]   28/200 processed; usable=28
+[trace]   29/200 processed; usable=29
+[trace]   30/200 processed; usable=30
+[trace]   31/200 processed; usable=31
+[trace]   32/200 processed; usable=32
+[trace]   33/200 processed; usable=33
+[trace]   34/200 processed; usable=34
+[trace]   35/200 processed; usable=35
+[trace]   36/200 processed; usable=36
+[trace]   37/200 processed; usable=37
+[trace]   38/200 processed; usable=38
+[trace]   39/200 processed; usable=39
+[trace]   40/200 processed; usable=40
+[trace]   41/200 processed; usable=41
+[trace]   42/200 processed; usable=42
+[trace]   43/200 processed; usable=43
+[trace]   44/200 processed; usable=44
+[trace]   45/200 processed; usable=45
+[trace]   46/200 processed; usable=46
+[trace]   47/200 processed; usable=47
+[trace]   48/200 processed; usable=48
+[trace]   49/200 processed; usable=49
+[trace]   50/200 processed; usable=50
+[trace]   51/200 processed; usable=51
+[trace]   52/200 processed; usable=52
+[trace]   53/200 processed; usable=53
+[trace]   54/200 processed; usable=54
+[trace]   55/200 processed; usable=55
+[trace]   56/200 processed; usable=56
+[trace]   57/200 processed; usable=57
+[trace]   58/200 processed; usable=58
+[trace]   59/200 processed; usable=59
+[trace]   60/200 processed; usable=60
+[trace]   61/200 processed; usable=61
+[trace]   62/200 processed; usable=62
+[trace]   63/200 processed; usable=63
+[trace]   64/200 processed; usable=64
+[trace]   65/200 processed; usable=65
+[trace]   66/200 processed; usable=66
+[trace]   67/200 processed; usable=67
+[trace]   68/200 processed; usable=68
+[trace]   69/200 processed; usable=69
+[trace]   70/200 processed; usable=70
+[trace]   71/200 processed; usable=71
+[trace]   72/200 processed; usable=72
+[trace]   73/200 processed; usable=73
+[trace]   74/200 processed; usable=74
+[trace]   75/200 processed; usable=75
+[trace]   76/200 processed; usable=76
+[trace]   77/200 processed; usable=77
+[trace]   78/200 processed; usable=78
+[trace]   79/200 processed; usable=79
+[trace]   80/200 processed; usable=80
+[trace]   81/200 processed; usable=81
+[trace]   82/200 processed; usable=82
+[trace]   83/200 processed; usable=83
+[trace]   84/200 processed; usable=84
+[trace]   85/200 processed; usable=85
+[trace]   86/200 processed; usable=86
+[trace]   87/200 processed; usable=87
+[trace]   88/200 processed; usable=88
+[trace]   89/200 processed; usable=89
+[trace]   90/200 processed; usable=90
+[trace]   91/200 processed; usable=91
+[trace]   92/200 processed; usable=92
+[trace]   93/200 processed; usable=93
+[trace]   94/200 processed; usable=94
+[trace]   95/200 processed; usable=95
+[trace]   96/200 processed; usable=96
+[trace]   97/200 processed; usable=97
+[trace]   98/200 processed; usable=98
+[trace]   99/200 processed; usable=99
+[trace]   100/200 processed; usable=100
+[trace]   101/200 processed; usable=101
+[trace]   102/200 processed; usable=102
+[trace]   103/200 processed; usable=103
+[trace]   104/200 processed; usable=104
+[trace]   105/200 processed; usable=105
+[trace]   106/200 processed; usable=106
+[trace]   107/200 processed; usable=107
+[trace]   108/200 processed; usable=108
+[trace]   109/200 processed; usable=109
+[trace]   110/200 processed; usable=110
+[trace]   111/200 processed; usable=111
+[trace]   112/200 processed; usable=112
+[trace]   113/200 processed; usable=113
+[trace]   114/200 processed; usable=114
+[trace]   115/200 processed; usable=115
+[trace]   116/200 processed; usable=116
+[trace]   117/200 processed; usable=117
+[trace]   118/200 processed; usable=118
+[trace]   119/200 processed; usable=119
+[trace]   120/200 processed; usable=120
+[trace]   121/200 processed; usable=121
+[trace]   122/200 processed; usable=122
+[trace]   123/200 processed; usable=123
+[trace]   124/200 processed; usable=124
+[trace]   125/200 processed; usable=125
+[trace]   126/200 processed; usable=126
+[trace]   127/200 processed; usable=127
+[trace]   128/200 processed; usable=128
+[trace]   129/200 processed; usable=129
+[trace]   130/200 processed; usable=130
+[trace]   131/200 processed; usable=131
+[trace]   132/200 processed; usable=132
+[trace]   133/200 processed; usable=133
+[trace]   134/200 processed; usable=134
+[trace]   135/200 processed; usable=135
+[trace]   136/200 processed; usable=136
+[trace]   137/200 processed; usable=137
+[trace]   138/200 processed; usable=138
+[trace]   139/200 processed; usable=139
+[trace]   140/200 processed; usable=140
+[trace]   141/200 processed; usable=141
+[trace]   142/200 processed; usable=142
+[trace]   143/200 processed; usable=143
+[trace]   144/200 processed; usable=144
+[trace]   145/200 processed; usable=145
+[trace]   146/200 processed; usable=146
+[trace]   147/200 processed; usable=147
+[trace]   148/200 processed; usable=148
+[trace]   149/200 processed; usable=149
+[trace]   150/200 processed; usable=150
+[trace]   151/200 processed; usable=151
+[trace]   152/200 processed; usable=152
+[trace]   153/200 processed; usable=153
+[trace]   154/200 processed; usable=154
+[trace]   155/200 processed; usable=155
+[trace]   156/200 processed; usable=156
+[trace]   157/200 processed; usable=157
+[trace]   158/200 processed; usable=158
+[trace]   159/200 processed; usable=159
+[trace]   160/200 processed; usable=160
+[trace]   161/200 processed; usable=161
+[trace]   162/200 processed; usable=162
+[trace]   163/200 processed; usable=163
+[trace]   164/200 processed; usable=164
+[trace]   165/200 processed; usable=165
+[trace]   166/200 processed; usable=166
+[trace]   167/200 processed; usable=167
+[trace]   168/200 processed; usable=168
+[trace]   169/200 processed; usable=169
+[trace]   170/200 processed; usable=170
+[trace]   171/200 processed; usable=171
+[trace]   172/200 processed; usable=172
+[trace]   173/200 processed; usable=173
+[trace]   174/200 processed; usable=174
+[trace]   175/200 processed; usable=175
+[trace]   176/200 processed; usable=176
+[trace]   177/200 processed; usable=177
+[trace]   178/200 processed; usable=178
+[trace]   179/200 processed; usable=179
+[trace]   180/200 processed; usable=180
+[trace]   181/200 processed; usable=181
+[trace]   182/200 processed; usable=182
+[trace]   183/200 processed; usable=183
+[trace]   184/200 processed; usable=184
+[trace]   185/200 processed; usable=185
+[trace]   186/200 processed; usable=186
+[trace]   187/200 processed; usable=187
+[trace]   188/200 processed; usable=188
+[trace]   189/200 processed; usable=189
+[trace]   190/200 processed; usable=190
+[trace]   191/200 processed; usable=191
+[trace]   192/200 processed; usable=192
+[trace]   193/200 processed; usable=193
+[trace]   194/200 processed; usable=194
+[trace]   195/200 processed; usable=195
+[trace]   196/200 processed; usable=196
+[trace]   197/200 processed; usable=197
+[trace]   198/200 processed; usable=198
+[trace]   199/200 processed; usable=199
+[trace]   200/200 processed; usable=200
+[Llama-3.2-3B-Instruct-4bit/triviaqa_paired] PRIMARY Readout neg_shadow_logvol_r1 @ step 0 CI_lo=0.7703123905812326 dep=True | GEOM Readout neg_shadow_logvol_r1 @ step 0 CI_lo=0.7703123905812326 dep=True | controls_pass=True
+
+===== Llama-3.1-8B-Instruct-4bit/anli_r1 =====
+
+  Loading model: mlx-community/Llama-3.1-8B-Instruct-4bit
+Fetching 6 files:   0%|          | 0/6 [00:00<?, ?it/s]Fetching 6 files: 100%|██████████| 6/6 [00:00<00:00, 10472.67it/s]
+     Layers: 32 | Probed: {'final': 31} | Output projection: lm_head (V=128256, D=4096)
+[ace] Llama-3.1-8B-Instruct-4bit 25/200
+[ace] Llama-3.1-8B-Instruct-4bit 50/200
+[ace] Llama-3.1-8B-Instruct-4bit 75/200
+[ace] Llama-3.1-8B-Instruct-4bit 100/200
+[ace] Llama-3.1-8B-Instruct-4bit 125/200
+[ace] Llama-3.1-8B-Instruct-4bit 150/200
+[ace] Llama-3.1-8B-Instruct-4bit 175/200
+[ace] Llama-3.1-8B-Instruct-4bit 200/200
+
+  Loading model: mlx-community/Llama-3.1-8B-Instruct-4bit
+Fetching 6 files:   0%|          | 0/6 [00:00<?, ?it/s]Fetching 6 files: 100%|██████████| 6/6 [00:00<00:00, 26915.32it/s]
+     Layers: 32 | Probed: {'final': 31} | Output projection: lm_head (V=128256, D=4096)
+[inventory] benchmark=anli_r1 path=stage_b/data/anli_R1_seed20260612_n200.jsonl
+[trace] model=mlx-community/Llama-3.1-8B-Instruct-4bit
+[trace] samples=200 K=512 final_layer=final d=4096 V=128256
+[trace] commit instant: gen_step=1; pinned aggregate = final 25% block logit lens plus readout
+[trace] n_layers=32; pinned_late_layers=[24, 25, 26, 27, 28, 29, 30, 31]
+[trace]   1/200 processed; usable=1
+[trace]   2/200 processed; usable=2
+[trace]   3/200 processed; usable=3
+[trace]   4/200 processed; usable=4
+[trace]   5/200 processed; usable=5
+[trace]   6/200 processed; usable=6
+[trace]   7/200 processed; usable=7
+[trace]   8/200 processed; usable=8
+[trace]   9/200 processed; usable=9
+[trace]   10/200 processed; usable=10
+[trace]   11/200 processed; usable=11
+[trace]   12/200 processed; usable=12
+[trace]   13/200 processed; usable=13
+[trace]   14/200 processed; usable=14
+[trace]   15/200 processed; usable=15
+[trace]   16/200 processed; usable=16
+[trace]   17/200 processed; usable=17
+[trace]   18/200 processed; usable=18
+[trace]   19/200 processed; usable=19
+[trace]   20/200 processed; usable=20
+[trace]   21/200 processed; usable=21
+[trace]   22/200 processed; usable=22
+[trace]   23/200 processed; usable=23
+[trace]   24/200 processed; usable=24
+[trace]   25/200 processed; usable=25
+[trace]   26/200 processed; usable=26
+[trace]   27/200 processed; usable=27
+[trace]   28/200 processed; usable=28
+[trace]   29/200 processed; usable=29
+[trace]   30/200 processed; usable=30
+[trace]   31/200 processed; usable=31
+[trace]   32/200 processed; usable=32
+[trace]   33/200 processed; usable=33
+[trace]   34/200 processed; usable=34
+[trace]   35/200 processed; usable=35
+[trace]   36/200 processed; usable=36
+[trace]   37/200 processed; usable=37
+[trace]   38/200 processed; usable=38
+[trace]   39/200 processed; usable=39
+[trace]   40/200 processed; usable=40
+[trace]   41/200 processed; usable=41
+[trace]   42/200 processed; usable=42
+[trace]   43/200 processed; usable=43
+[trace]   44/200 processed; usable=44
+[trace]   45/200 processed; usable=45
+[trace]   46/200 processed; usable=46
+[trace]   47/200 processed; usable=47
+[trace]   48/200 processed; usable=48
+[trace]   49/200 processed; usable=49
+[trace]   50/200 processed; usable=50
+[trace]   51/200 processed; usable=51
+[trace]   52/200 processed; usable=52
+[trace]   53/200 processed; usable=53
+[trace]   54/200 processed; usable=54
+[trace]   55/200 processed; usable=55
+[trace]   56/200 processed; usable=56
+[trace]   57/200 processed; usable=57
+[trace]   58/200 processed; usable=58
+[trace]   59/200 processed; usable=59
+[trace]   60/200 processed; usable=60
+[trace]   61/200 processed; usable=61
+[trace]   62/200 processed; usable=62
+[trace]   63/200 processed; usable=63
+[trace]   64/200 processed; usable=64
+[trace]   65/200 processed; usable=65
+[trace]   66/200 processed; usable=66
+[trace]   67/200 processed; usable=67
+[trace]   68/200 processed; usable=68
+[trace]   69/200 processed; usable=69
+[trace]   70/200 processed; usable=70
+[trace]   71/200 processed; usable=71
+[trace]   72/200 processed; usable=72
+[trace]   73/200 processed; usable=73
+[trace]   74/200 processed; usable=74
+[trace]   75/200 processed; usable=75
+[trace]   76/200 processed; usable=76
+[trace]   77/200 processed; usable=77
+[trace]   78/200 processed; usable=78
+[trace]   79/200 processed; usable=79
+[trace]   80/200 processed; usable=80
+[trace]   81/200 processed; usable=81
+[trace]   82/200 processed; usable=82
+[trace]   83/200 processed; usable=83
+[trace]   84/200 processed; usable=84
+[trace]   85/200 processed; usable=85
+[trace]   86/200 processed; usable=86
+[trace]   87/200 processed; usable=87
+[trace]   88/200 processed; usable=88
+[trace]   89/200 processed; usable=89
+[trace]   90/200 processed; usable=90
+[trace]   91/200 processed; usable=91
+[trace]   92/200 processed; usable=92
+[trace]   93/200 processed; usable=93
+[trace]   94/200 processed; usable=94
+[trace]   95/200 processed; usable=95
+[trace]   96/200 processed; usable=96
+[trace]   97/200 processed; usable=97
+[trace]   98/200 processed; usable=98
+[trace]   99/200 processed; usable=99
+[trace]   100/200 processed; usable=100
+[trace]   101/200 processed; usable=101
+[trace]   102/200 processed; usable=102
+[trace]   103/200 processed; usable=103
+[trace]   104/200 processed; usable=104
+[trace]   105/200 processed; usable=105
+[trace]   106/200 processed; usable=106
+[trace]   107/200 processed; usable=107
+[trace]   108/200 processed; usable=108
+[trace]   109/200 processed; usable=109
+[trace]   110/200 processed; usable=110
+[trace]   111/200 processed; usable=111
+[trace]   112/200 processed; usable=112
+[trace]   113/200 processed; usable=113
+[trace]   114/200 processed; usable=114
+[trace]   115/200 processed; usable=115
+[trace]   116/200 processed; usable=116
+[trace]   117/200 processed; usable=117
+[trace]   118/200 processed; usable=118
+[trace]   119/200 processed; usable=119
+[trace]   120/200 processed; usable=120
+[trace]   121/200 processed; usable=121
+[trace]   122/200 processed; usable=122
+[trace]   123/200 processed; usable=123
+[trace]   124/200 processed; usable=124
+[trace]   125/200 processed; usable=125
+[trace]   126/200 processed; usable=126
+[trace]   127/200 processed; usable=127
+[trace]   128/200 processed; usable=128
+[trace]   129/200 processed; usable=129
+[trace]   130/200 processed; usable=130
+[trace]   131/200 processed; usable=131
+[trace]   132/200 processed; usable=132
+[trace]   133/200 processed; usable=133
+[trace]   134/200 processed; usable=134
+[trace]   135/200 processed; usable=135
+[trace]   136/200 processed; usable=136
+[trace]   137/200 processed; usable=137
+[trace]   138/200 processed; usable=138
+[trace]   139/200 processed; usable=139
+[trace]   140/200 processed; usable=140
+[trace]   141/200 processed; usable=141
+[trace]   142/200 processed; usable=142
+[trace]   143/200 processed; usable=143
+[trace]   144/200 processed; usable=144
+[trace]   145/200 processed; usable=145
+[trace]   146/200 processed; usable=146
+[trace]   147/200 processed; usable=147
+[trace]   148/200 processed; usable=148
+[trace]   149/200 processed; usable=149
+[trace]   150/200 processed; usable=150
+[trace]   151/200 processed; usable=151
+[trace]   152/200 processed; usable=152
+[trace]   153/200 processed; usable=153
+[trace]   154/200 processed; usable=154
+[trace]   155/200 processed; usable=155
+[trace]   156/200 processed; usable=156
+[trace]   157/200 processed; usable=157
+[trace]   158/200 processed; usable=158
+[trace]   159/200 processed; usable=159
+[trace]   160/200 processed; usable=160
+[trace]   161/200 processed; usable=161
+[trace]   162/200 processed; usable=162
+[trace]   163/200 processed; usable=163
+[trace]   164/200 processed; usable=164
+[trace]   165/200 processed; usable=165
+[trace]   166/200 processed; usable=166
+[trace]   167/200 processed; usable=167
+[trace]   168/200 processed; usable=168
+[trace]   169/200 processed; usable=169
+[trace]   170/200 processed; usable=170
+[trace]   171/200 processed; usable=171
+[trace]   172/200 processed; usable=172
+[trace]   173/200 processed; usable=173
+[trace]   174/200 processed; usable=174
+[trace]   175/200 processed; usable=175
+[trace]   176/200 processed; usable=176
+[trace]   177/200 processed; usable=177
+[trace]   178/200 processed; usable=178
+[trace]   179/200 processed; usable=179
+[trace]   180/200 processed; usable=180
+[trace]   181/200 processed; usable=181
+[trace]   182/200 processed; usable=182
+[trace]   183/200 processed; usable=183
+[trace]   184/200 processed; usable=184
+[trace]   185/200 processed; usable=185
+[trace]   186/200 processed; usable=186
+[trace]   187/200 processed; usable=187
+[trace]   188/200 processed; usable=188
+[trace]   189/200 processed; usable=189
+[trace]   190/200 processed; usable=190
+[trace]   191/200 processed; usable=191
+[trace]   192/200 processed; usable=192
+[trace]   193/200 processed; usable=193
+[trace]   194/200 processed; usable=194
+[trace]   195/200 processed; usable=195
+[trace]   196/200 processed; usable=196
+[trace]   197/200 processed; usable=197
+[trace]   198/200 processed; usable=198
+[trace]   199/200 processed; usable=199
+[trace]   200/200 processed; usable=200
+[Llama-3.1-8B-Instruct-4bit/anli_r1] PRIMARY attention[mid_v_norm_lastq_weighted] @ step 0 CI_lo=0.46794172932330824 dep=False | GEOM attention[mid_v_norm_lastq_weighted] @ step 0 CI_lo=0.4791000729793833 dep=False | controls_pass=True
+
+===== Llama-3.1-8B-Instruct-4bit/triviaqa_paired =====
+
+  Loading model: mlx-community/Llama-3.1-8B-Instruct-4bit
+Fetching 6 files:   0%|          | 0/6 [00:00<?, ?it/s]Fetching 6 files: 100%|██████████| 6/6 [00:00<00:00, 63230.71it/s]
+     Layers: 32 | Probed: {'final': 31} | Output projection: lm_head (V=128256, D=4096)
+[ace] Llama-3.1-8B-Instruct-4bit 25/200
+[ace] Llama-3.1-8B-Instruct-4bit 50/200
+[ace] Llama-3.1-8B-Instruct-4bit 75/200
+[ace] Llama-3.1-8B-Instruct-4bit 100/200
+[ace] Llama-3.1-8B-Instruct-4bit 125/200
+[ace] Llama-3.1-8B-Instruct-4bit 150/200
+[ace] Llama-3.1-8B-Instruct-4bit 175/200
+[ace] Llama-3.1-8B-Instruct-4bit 200/200
+
+  Loading model: mlx-community/Llama-3.1-8B-Instruct-4bit
+Fetching 6 files:   0%|          | 0/6 [00:00<?, ?it/s]Fetching 6 files: 100%|██████████| 6/6 [00:00<00:00, 17355.74it/s]
+     Layers: 32 | Probed: {'final': 31} | Output projection: lm_head (V=128256, D=4096)
+[inventory] benchmark=triviaqa_paired path=stage_b/data/triviaqa_paired_seed20260612_n200.jsonl
+[trace] model=mlx-community/Llama-3.1-8B-Instruct-4bit
+[trace] samples=200 K=512 final_layer=final d=4096 V=128256
+[trace] commit instant: gen_step=1; pinned aggregate = final 25% block logit lens plus readout
+[trace] n_layers=32; pinned_late_layers=[24, 25, 26, 27, 28, 29, 30, 31]
+[trace]   1/200 processed; usable=1
+[trace]   2/200 processed; usable=2
+[trace]   3/200 processed; usable=3
+[trace]   4/200 processed; usable=4
+[trace]   5/200 processed; usable=5
+[trace]   6/200 processed; usable=6
+[trace]   7/200 processed; usable=7
+[trace]   8/200 processed; usable=8
+[trace]   9/200 processed; usable=9
+[trace]   10/200 processed; usable=10
+[trace]   11/200 processed; usable=11
+[trace]   12/200 processed; usable=12
+[trace]   13/200 processed; usable=13
+[trace]   14/200 processed; usable=14
+[trace]   15/200 processed; usable=15
+[trace]   16/200 processed; usable=16
+[trace]   17/200 processed; usable=17
+[trace]   18/200 processed; usable=18
+[trace]   19/200 processed; usable=19
+[trace]   20/200 processed; usable=20
+[trace]   21/200 processed; usable=21
+[trace]   22/200 processed; usable=22
+[trace]   23/200 processed; usable=23
+[trace]   24/200 processed; usable=24
+[trace]   25/200 processed; usable=25
+[trace]   26/200 processed; usable=26
+[trace]   27/200 processed; usable=27
+[trace]   28/200 processed; usable=28
+[trace]   29/200 processed; usable=29
+[trace]   30/200 processed; usable=30
+[trace]   31/200 processed; usable=31
+[trace]   32/200 processed; usable=32
+[trace]   33/200 processed; usable=33
+[trace]   34/200 processed; usable=34
+[trace]   35/200 processed; usable=35
+[trace]   36/200 processed; usable=36
+[trace]   37/200 processed; usable=37
+[trace]   38/200 processed; usable=38
+[trace]   39/200 processed; usable=39
+[trace]   40/200 processed; usable=40
+[trace]   41/200 processed; usable=41
+[trace]   42/200 processed; usable=42
+[trace]   43/200 processed; usable=43
+[trace]   44/200 processed; usable=44
+[trace]   45/200 processed; usable=45
+[trace]   46/200 processed; usable=46
+[trace]   47/200 processed; usable=47
+[trace]   48/200 processed; usable=48
+[trace]   49/200 processed; usable=49
+[trace]   50/200 processed; usable=50
+[trace]   51/200 processed; usable=51
+[trace]   52/200 processed; usable=52
+[trace]   53/200 processed; usable=53
+[trace]   54/200 processed; usable=54
+[trace]   55/200 processed; usable=55
+[trace]   56/200 processed; usable=56
+[trace]   57/200 processed; usable=57
+[trace]   58/200 processed; usable=58
+[trace]   59/200 processed; usable=59
+[trace]   60/200 processed; usable=60
+[trace]   61/200 processed; usable=61
+[trace]   62/200 processed; usable=62
+[trace]   63/200 processed; usable=63
+[trace]   64/200 processed; usable=64
+[trace]   65/200 processed; usable=65
+[trace]   66/200 processed; usable=66
+[trace]   67/200 processed; usable=67
+[trace]   68/200 processed; usable=68
+[trace]   69/200 processed; usable=69
+[trace]   70/200 processed; usable=70
+[trace]   71/200 processed; usable=71
+[trace]   72/200 processed; usable=72
+[trace]   73/200 processed; usable=73
+[trace]   74/200 processed; usable=74
+[trace]   75/200 processed; usable=75
+[trace]   76/200 processed; usable=76
+[trace]   77/200 processed; usable=77
+[trace]   78/200 processed; usable=78
+[trace]   79/200 processed; usable=79
+[trace]   80/200 processed; usable=80
+[trace]   81/200 processed; usable=81
+[trace]   82/200 processed; usable=82
+[trace]   83/200 processed; usable=83
+[trace]   84/200 processed; usable=84
+[trace]   85/200 processed; usable=85
+[trace]   86/200 processed; usable=86
+[trace]   87/200 processed; usable=87
+[trace]   88/200 processed; usable=88
+[trace]   89/200 processed; usable=89
+[trace]   90/200 processed; usable=90
+[trace]   91/200 processed; usable=91
+[trace]   92/200 processed; usable=92
+[trace]   93/200 processed; usable=93
+[trace]   94/200 processed; usable=94
+[trace]   95/200 processed; usable=95
+[trace]   96/200 processed; usable=96
+[trace]   97/200 processed; usable=97
+[trace]   98/200 processed; usable=98
+[trace]   99/200 processed; usable=99
+[trace]   100/200 processed; usable=100
+[trace]   101/200 processed; usable=101
+[trace]   102/200 processed; usable=102
+[trace]   103/200 processed; usable=103
+[trace]   104/200 processed; usable=104
+[trace]   105/200 processed; usable=105
+[trace]   106/200 processed; usable=106
+[trace]   107/200 processed; usable=107
+[trace]   108/200 processed; usable=108
+[trace]   109/200 processed; usable=109
+[trace]   110/200 processed; usable=110
+[trace]   111/200 processed; usable=111
+[trace]   112/200 processed; usable=112
+[trace]   113/200 processed; usable=113
+[trace]   114/200 processed; usable=114
+[trace]   115/200 processed; usable=115
+[trace]   116/200 processed; usable=116
+[trace]   117/200 processed; usable=117
+[trace]   118/200 processed; usable=118
+[trace]   119/200 processed; usable=119
+[trace]   120/200 processed; usable=120
+[trace]   121/200 processed; usable=121
+[trace]   122/200 processed; usable=122
+[trace]   123/200 processed; usable=123
+[trace]   124/200 processed; usable=124
+[trace]   125/200 processed; usable=125
+[trace]   126/200 processed; usable=126
+[trace]   127/200 processed; usable=127
+[trace]   128/200 processed; usable=128
+[trace]   129/200 processed; usable=129
+[trace]   130/200 processed; usable=130
+[trace]   131/200 processed; usable=131
+[trace]   132/200 processed; usable=132
+[trace]   133/200 processed; usable=133
+[trace]   134/200 processed; usable=134
+[trace]   135/200 processed; usable=135
+[trace]   136/200 processed; usable=136
+[trace]   137/200 processed; usable=137
+[trace]   138/200 processed; usable=138
+[trace]   139/200 processed; usable=139
+[trace]   140/200 processed; usable=140
+[trace]   141/200 processed; usable=141
+[trace]   142/200 processed; usable=142
+[trace]   143/200 processed; usable=143
+[trace]   144/200 processed; usable=144
+[trace]   145/200 processed; usable=145
+[trace]   146/200 processed; usable=146
+[trace]   147/200 processed; usable=147
+[trace]   148/200 processed; usable=148
+[trace]   149/200 processed; usable=149
+[trace]   150/200 processed; usable=150
+[trace]   151/200 processed; usable=151
+[trace]   152/200 processed; usable=152
+[trace]   153/200 processed; usable=153
+[trace]   154/200 processed; usable=154
+[trace]   155/200 processed; usable=155
+[trace]   156/200 processed; usable=156
+[trace]   157/200 processed; usable=157
+[trace]   158/200 processed; usable=158
+[trace]   159/200 processed; usable=159
+[trace]   160/200 processed; usable=160
+[trace]   161/200 processed; usable=161
+[trace]   162/200 processed; usable=162
+[trace]   163/200 processed; usable=163
+[trace]   164/200 processed; usable=164
+[trace]   165/200 processed; usable=165
+[trace]   166/200 processed; usable=166
+[trace]   167/200 processed; usable=167
+[trace]   168/200 processed; usable=168
+[trace]   169/200 processed; usable=169
+[trace]   170/200 processed; usable=170
+[trace]   171/200 processed; usable=171
+[trace]   172/200 processed; usable=172
+[trace]   173/200 processed; usable=173
+[trace]   174/200 processed; usable=174
+[trace]   175/200 processed; usable=175
+[trace]   176/200 processed; usable=176
+[trace]   177/200 processed; usable=177
+[trace]   178/200 processed; usable=178
+[trace]   179/200 processed; usable=179
+[trace]   180/200 processed; usable=180
+[trace]   181/200 processed; usable=181
+[trace]   182/200 processed; usable=182
+[trace]   183/200 processed; usable=183
+[trace]   184/200 processed; usable=184
+[trace]   185/200 processed; usable=185
+[trace]   186/200 processed; usable=186
+[trace]   187/200 processed; usable=187
+[trace]   188/200 processed; usable=188
+[trace]   189/200 processed; usable=189
+[trace]   190/200 processed; usable=190
+[trace]   191/200 processed; usable=191
+[trace]   192/200 processed; usable=192
+[trace]   193/200 processed; usable=193
+[trace]   194/200 processed; usable=194
+[trace]   195/200 processed; usable=195
+[trace]   196/200 processed; usable=196
+[trace]   197/200 processed; usable=197
+[trace]   198/200 processed; usable=198
+[trace]   199/200 processed; usable=199
+[trace]   200/200 processed; usable=200
+[Llama-3.1-8B-Instruct-4bit/triviaqa_paired] PRIMARY Readout fisher_eff_rank @ step 0 CI_lo=0.6534142463841172 dep=True | GEOM Readout fisher_eff_rank @ step 0 CI_lo=0.6694904157404157 dep=True | controls_pass=True
+
+===== Mistral-7B-Instruct-v0.3-4bit/anli_r1 =====
+
+  Loading model: mlx-community/Mistral-7B-Instruct-v0.3-4bit
+Fetching 7 files:   0%|          | 0/7 [00:00<?, ?it/s]Fetching 7 files: 100%|██████████| 7/7 [00:00<00:00, 17538.91it/s]
+     Layers: 32 | Probed: {'final': 31} | Output projection: lm_head (V=32768, D=4096)
+[ace] Mistral-7B-Instruct-v0.3-4bit 25/200
+[ace] Mistral-7B-Instruct-v0.3-4bit 50/200
+[ace] Mistral-7B-Instruct-v0.3-4bit 75/200
+[ace] Mistral-7B-Instruct-v0.3-4bit 100/200
+[ace] Mistral-7B-Instruct-v0.3-4bit 125/200
+[ace] Mistral-7B-Instruct-v0.3-4bit 150/200
+[ace] Mistral-7B-Instruct-v0.3-4bit 175/200
+[ace] Mistral-7B-Instruct-v0.3-4bit 200/200
+
+  Loading model: mlx-community/Mistral-7B-Instruct-v0.3-4bit
+Fetching 7 files:   0%|          | 0/7 [00:00<?, ?it/s]Fetching 7 files: 100%|██████████| 7/7 [00:00<00:00, 41883.21it/s]
+     Layers: 32 | Probed: {'final': 31} | Output projection: lm_head (V=32768, D=4096)
+[inventory] benchmark=anli_r1 path=stage_b/data/anli_R1_seed20260612_n200.jsonl
+[trace] model=mlx-community/Mistral-7B-Instruct-v0.3-4bit
+[trace] samples=200 K=512 final_layer=final d=4096 V=32768
+[trace] commit instant: gen_step=1; pinned aggregate = final 25% block logit lens plus readout
+[trace] n_layers=32; pinned_late_layers=[24, 25, 26, 27, 28, 29, 30, 31]
+[trace]   1/200 processed; usable=1
+[trace]   2/200 processed; usable=2
+[trace]   3/200 processed; usable=3
+[trace]   4/200 processed; usable=4
+[trace]   5/200 processed; usable=5
+[trace]   6/200 processed; usable=6
+[trace]   7/200 processed; usable=7
+[trace]   8/200 processed; usable=8
+[trace]   9/200 processed; usable=9
+[trace]   10/200 processed; usable=10
+[trace]   11/200 processed; usable=11
+[trace]   12/200 processed; usable=12
+[trace]   13/200 processed; usable=13
+[trace]   14/200 processed; usable=14
+[trace]   15/200 processed; usable=15
+[trace]   16/200 processed; usable=16
+[trace]   17/200 processed; usable=17
+[trace]   18/200 processed; usable=18
+[trace]   19/200 processed; usable=19
+[trace]   20/200 processed; usable=20
+[trace]   21/200 processed; usable=21
+[trace]   22/200 processed; usable=22
+[trace]   23/200 processed; usable=23
+[trace]   24/200 processed; usable=24
+[trace]   25/200 processed; usable=25
+[trace]   26/200 processed; usable=26
+[trace]   27/200 processed; usable=27
+[trace]   28/200 processed; usable=28
+[trace]   29/200 processed; usable=29
+[trace]   30/200 processed; usable=30
+[trace]   31/200 processed; usable=31
+[trace]   32/200 processed; usable=32
+[trace]   33/200 processed; usable=33
+[trace]   34/200 processed; usable=34
+[trace]   35/200 processed; usable=35
+[trace]   36/200 processed; usable=36
+[trace]   37/200 processed; usable=37
+[trace]   38/200 processed; usable=38
+[trace]   39/200 processed; usable=39
+[trace]   40/200 processed; usable=40
+[trace]   41/200 processed; usable=41
+[trace]   42/200 processed; usable=42
+[trace]   43/200 processed; usable=43
+[trace]   44/200 processed; usable=44
+[trace]   45/200 processed; usable=45
+[trace]   46/200 processed; usable=46
+[trace]   47/200 processed; usable=47
+[trace]   48/200 processed; usable=48
+[trace]   49/200 processed; usable=49
+[trace]   50/200 processed; usable=50
+[trace]   51/200 processed; usable=51
+[trace]   52/200 processed; usable=52
+[trace]   53/200 processed; usable=53
+[trace]   54/200 processed; usable=54
+[trace]   55/200 processed; usable=55
+[trace]   56/200 processed; usable=56
+[trace]   57/200 processed; usable=57
+[trace]   58/200 processed; usable=58
+[trace]   59/200 processed; usable=59
+[trace]   60/200 processed; usable=60
+[trace]   61/200 processed; usable=61
+[trace]   62/200 processed; usable=62
+[trace]   63/200 processed; usable=63
+[trace]   64/200 processed; usable=64
+[trace]   65/200 processed; usable=65
+[trace]   66/200 processed; usable=66
+[trace]   67/200 processed; usable=67
+[trace]   68/200 processed; usable=68
+[trace]   69/200 processed; usable=69
+[trace]   70/200 processed; usable=70
+[trace]   71/200 processed; usable=71
+[trace]   72/200 processed; usable=72
+[trace]   73/200 processed; usable=73
+[trace]   74/200 processed; usable=74
+[trace]   75/200 processed; usable=75
+[trace]   76/200 processed; usable=76
+[trace]   77/200 processed; usable=77
+[trace]   78/200 processed; usable=78
+[trace]   79/200 processed; usable=79
+[trace]   80/200 processed; usable=80
+[trace]   81/200 processed; usable=81
+[trace]   82/200 processed; usable=82
+[trace]   83/200 processed; usable=83
+[trace]   84/200 processed; usable=84
+[trace]   85/200 processed; usable=85
+[trace]   86/200 processed; usable=86
+[trace]   87/200 processed; usable=87
+[trace]   88/200 processed; usable=88
+[trace]   89/200 processed; usable=89
+[trace]   90/200 processed; usable=90
+[trace]   91/200 processed; usable=91
+[trace]   92/200 processed; usable=92
+[trace]   93/200 processed; usable=93
+[trace]   94/200 processed; usable=94
+[trace]   95/200 processed; usable=95
+[trace]   96/200 processed; usable=96
+[trace]   97/200 processed; usable=97
+[trace]   98/200 processed; usable=98
+[trace]   99/200 processed; usable=99
+[trace]   100/200 processed; usable=100
+[trace]   101/200 processed; usable=101
+[trace]   102/200 processed; usable=102
+[trace]   103/200 processed; usable=103
+[trace]   104/200 processed; usable=104
+[trace]   105/200 processed; usable=105
+[trace]   106/200 processed; usable=106
+[trace]   107/200 processed; usable=107
+[trace]   108/200 processed; usable=108
+[trace]   109/200 processed; usable=109
+[trace]   110/200 processed; usable=110
+[trace]   111/200 processed; usable=111
+[trace]   112/200 processed; usable=112
+[trace]   113/200 processed; usable=113
+[trace]   114/200 processed; usable=114
+[trace]   115/200 processed; usable=115
+[trace]   116/200 processed; usable=116
+[trace]   117/200 processed; usable=117
+[trace]   118/200 processed; usable=118
+[trace]   119/200 processed; usable=119
+[trace]   120/200 processed; usable=120
+[trace]   121/200 processed; usable=121
+[trace]   122/200 processed; usable=122
+[trace]   123/200 processed; usable=123
+[trace]   124/200 processed; usable=124
+[trace]   125/200 processed; usable=125
+[trace]   126/200 processed; usable=126
+[trace]   127/200 processed; usable=127
+[trace]   128/200 processed; usable=128
+[trace]   129/200 processed; usable=129
+[trace]   130/200 processed; usable=130
+[trace]   131/200 processed; usable=131
+[trace]   132/200 processed; usable=132
+[trace]   133/200 processed; usable=133
+[trace]   134/200 processed; usable=134
+[trace]   135/200 processed; usable=135
+[trace]   136/200 processed; usable=136
+[trace]   137/200 processed; usable=137
+[trace]   138/200 processed; usable=138
+[trace]   139/200 processed; usable=139
+[trace]   140/200 processed; usable=140
+[trace]   141/200 processed; usable=141
+[trace]   142/200 processed; usable=142
+[trace]   143/200 processed; usable=143
+[trace]   144/200 processed; usable=144
+[trace]   145/200 processed; usable=145
+[trace]   146/200 processed; usable=146
+[trace]   147/200 processed; usable=147
+[trace]   148/200 processed; usable=148
+[trace]   149/200 processed; usable=149
+[trace]   150/200 processed; usable=150
+[trace]   151/200 processed; usable=151
+[trace]   152/200 processed; usable=152
+[trace]   153/200 processed; usable=153
+[trace]   154/200 processed; usable=154
+[trace]   155/200 processed; usable=155
+[trace]   156/200 processed; usable=156
+[trace]   157/200 processed; usable=157
+[trace]   158/200 processed; usable=158
+[trace]   159/200 processed; usable=159
+[trace]   160/200 processed; usable=160
+[trace]   161/200 processed; usable=161
+[trace]   162/200 processed; usable=162
+[trace]   163/200 processed; usable=163
+[trace]   164/200 processed; usable=164
+[trace]   165/200 processed; usable=165
+[trace]   166/200 processed; usable=166
+[trace]   167/200 processed; usable=167
+[trace]   168/200 processed; usable=168
+[trace]   169/200 processed; usable=169
+[trace]   170/200 processed; usable=170
+[trace]   171/200 processed; usable=171
+[trace]   172/200 processed; usable=172
+[trace]   173/200 processed; usable=173
+[trace]   174/200 processed; usable=174
+[trace]   175/200 processed; usable=175
+[trace]   176/200 processed; usable=176
+[trace]   177/200 processed; usable=177
+[trace]   178/200 processed; usable=178
+[trace]   179/200 processed; usable=179
+[trace]   180/200 processed; usable=180
+[trace]   181/200 processed; usable=181
+[trace]   182/200 processed; usable=182
+[trace]   183/200 processed; usable=183
+[trace]   184/200 processed; usable=184
+[trace]   185/200 processed; usable=185
+[trace]   186/200 processed; usable=186
+[trace]   187/200 processed; usable=187
+[trace]   188/200 processed; usable=188
+[trace]   189/200 processed; usable=189
+[trace]   190/200 processed; usable=190
+[trace]   191/200 processed; usable=191
+[trace]   192/200 processed; usable=192
+[trace]   193/200 processed; usable=193
+[trace]   194/200 processed; usable=194
+[trace]   195/200 processed; usable=195
+[trace]   196/200 processed; usable=196
+[trace]   197/200 processed; usable=197
+[trace]   198/200 processed; usable=198
+[trace]   199/200 processed; usable=199
+[trace]   200/200 processed; usable=200
+[Mistral-7B-Instruct-v0.3-4bit/anli_r1] PRIMARY Readout fisher_eff_rank @ step 0 CI_lo=0.5835037878787879 dep=True | GEOM Readout fisher_eff_rank @ step 0 CI_lo=0.594583217849224 dep=True | controls_pass=True
+
+===== Mistral-7B-Instruct-v0.3-4bit/triviaqa_paired =====
+
+  Loading model: mlx-community/Mistral-7B-Instruct-v0.3-4bit
+Fetching 7 files:   0%|          | 0/7 [00:00<?, ?it/s]Fetching 7 files: 100%|██████████| 7/7 [00:00<00:00, 41704.73it/s]
+     Layers: 32 | Probed: {'final': 31} | Output projection: lm_head (V=32768, D=4096)
+[ace] Mistral-7B-Instruct-v0.3-4bit 25/200
+[ace] Mistral-7B-Instruct-v0.3-4bit 50/200
+[ace] Mistral-7B-Instruct-v0.3-4bit 75/200
+[ace] Mistral-7B-Instruct-v0.3-4bit 100/200
+[ace] Mistral-7B-Instruct-v0.3-4bit 125/200
+[ace] Mistral-7B-Instruct-v0.3-4bit 150/200
+[ace] Mistral-7B-Instruct-v0.3-4bit 175/200
+[ace] Mistral-7B-Instruct-v0.3-4bit 200/200
+
+  Loading model: mlx-community/Mistral-7B-Instruct-v0.3-4bit
+Fetching 7 files:   0%|          | 0/7 [00:00<?, ?it/s]Fetching 7 files: 100%|██████████| 7/7 [00:00<00:00, 16550.24it/s]
+     Layers: 32 | Probed: {'final': 31} | Output projection: lm_head (V=32768, D=4096)
+[inventory] benchmark=triviaqa_paired path=stage_b/data/triviaqa_paired_seed20260612_n200.jsonl
+[trace] model=mlx-community/Mistral-7B-Instruct-v0.3-4bit
+[trace] samples=200 K=512 final_layer=final d=4096 V=32768
+[trace] commit instant: gen_step=1; pinned aggregate = final 25% block logit lens plus readout
+[trace] n_layers=32; pinned_late_layers=[24, 25, 26, 27, 28, 29, 30, 31]
+[trace]   1/200 processed; usable=1
+[trace]   2/200 processed; usable=2
+[trace]   3/200 processed; usable=3
+[trace]   4/200 processed; usable=4
+[trace]   5/200 processed; usable=5
+[trace]   6/200 processed; usable=6
+[trace]   7/200 processed; usable=7
+[trace]   8/200 processed; usable=8
+[trace]   9/200 processed; usable=9
+[trace]   10/200 processed; usable=10
+[trace]   11/200 processed; usable=11
+[trace]   12/200 processed; usable=12
+[trace]   13/200 processed; usable=13
+[trace]   14/200 processed; usable=14
+[trace]   15/200 processed; usable=15
+[trace]   16/200 processed; usable=16
+[trace]   17/200 processed; usable=17
+[trace]   18/200 processed; usable=18
+[trace]   19/200 processed; usable=19
+[trace]   20/200 processed; usable=20
+[trace]   21/200 processed; usable=21
+[trace]   22/200 processed; usable=22
+[trace]   23/200 processed; usable=23
+[trace]   24/200 processed; usable=24
+[trace]   25/200 processed; usable=25
+[trace]   26/200 processed; usable=26
+[trace]   27/200 processed; usable=27
+[trace]   28/200 processed; usable=28
+[trace]   29/200 processed; usable=29
+[trace]   30/200 processed; usable=30
+[trace]   31/200 processed; usable=31
+[trace]   32/200 processed; usable=32
+[trace]   33/200 processed; usable=33
+[trace]   34/200 processed; usable=34
+[trace]   35/200 processed; usable=35
+[trace]   36/200 processed; usable=36
+[trace]   37/200 processed; usable=37
+[trace]   38/200 processed; usable=38
+[trace]   39/200 processed; usable=39
+[trace]   40/200 processed; usable=40
+[trace]   41/200 processed; usable=41
+[trace]   42/200 processed; usable=42
+[trace]   43/200 processed; usable=43
+[trace]   44/200 processed; usable=44
+[trace]   45/200 processed; usable=45
+[trace]   46/200 processed; usable=46
+[trace]   47/200 processed; usable=47
+[trace]   48/200 processed; usable=48
+[trace]   49/200 processed; usable=49
+[trace]   50/200 processed; usable=50
+[trace]   51/200 processed; usable=51
+[trace]   52/200 processed; usable=52
+[trace]   53/200 processed; usable=53
+[trace]   54/200 processed; usable=54
+[trace]   55/200 processed; usable=55
+[trace]   56/200 processed; usable=56
+[trace]   57/200 processed; usable=57
+[trace]   58/200 processed; usable=58
+[trace]   59/200 processed; usable=59
+[trace]   60/200 processed; usable=60
+[trace]   61/200 processed; usable=61
+[trace]   62/200 processed; usable=62
+[trace]   63/200 processed; usable=63
+[trace]   64/200 processed; usable=64
+[trace]   65/200 processed; usable=65
+[trace]   66/200 processed; usable=66
+[trace]   67/200 processed; usable=67
+[trace]   68/200 processed; usable=68
+[trace]   69/200 processed; usable=69
+[trace]   70/200 processed; usable=70
+[trace]   71/200 processed; usable=71
+[trace]   72/200 processed; usable=72
+[trace]   73/200 processed; usable=73
+[trace]   74/200 processed; usable=74
+[trace]   75/200 processed; usable=75
+[trace]   76/200 processed; usable=76
+[trace]   77/200 processed; usable=77
+[trace]   78/200 processed; usable=78
+[trace]   79/200 processed; usable=79
+[trace]   80/200 processed; usable=80
+[trace]   81/200 processed; usable=81
+[trace]   82/200 processed; usable=82
+[trace]   83/200 processed; usable=83
+[trace]   84/200 processed; usable=84
+[trace]   85/200 processed; usable=85
+[trace]   86/200 processed; usable=86
+[trace]   87/200 processed; usable=87
+[trace]   88/200 processed; usable=88
+[trace]   89/200 processed; usable=89
+[trace]   90/200 processed; usable=90
+[trace]   91/200 processed; usable=91
+[trace]   92/200 processed; usable=92
+[trace]   93/200 processed; usable=93
+[trace]   94/200 processed; usable=94
+[trace]   95/200 processed; usable=95
+[trace]   96/200 processed; usable=96
+[trace]   97/200 processed; usable=97
+[trace]   98/200 processed; usable=98
+[trace]   99/200 processed; usable=99
+[trace]   100/200 processed; usable=100
+[trace]   101/200 processed; usable=101
+[trace]   102/200 processed; usable=102
+[trace]   103/200 processed; usable=103
+[trace]   104/200 processed; usable=104
+[trace]   105/200 processed; usable=105
+[trace]   106/200 processed; usable=106
+[trace]   107/200 processed; usable=107
+[trace]   108/200 processed; usable=108
+[trace]   109/200 processed; usable=109
+[trace]   110/200 processed; usable=110
+[trace]   111/200 processed; usable=111
+[trace]   112/200 processed; usable=112
+[trace]   113/200 processed; usable=113
+[trace]   114/200 processed; usable=114
+[trace]   115/200 processed; usable=115
+[trace]   116/200 processed; usable=116
+[trace]   117/200 processed; usable=117
+[trace]   118/200 processed; usable=118
+[trace]   119/200 processed; usable=119
+[trace]   120/200 processed; usable=120
+[trace]   121/200 processed; usable=121
+[trace]   122/200 processed; usable=122
+[trace]   123/200 processed; usable=123
+[trace]   124/200 processed; usable=124
+[trace]   125/200 processed; usable=125
+[trace]   126/200 processed; usable=126
+[trace]   127/200 processed; usable=127
+[trace]   128/200 processed; usable=128
+[trace]   129/200 processed; usable=129
+[trace]   130/200 processed; usable=130
+[trace]   131/200 processed; usable=131
+[trace]   132/200 processed; usable=132
+[trace]   133/200 processed; usable=133
+[trace]   134/200 processed; usable=134
+[trace]   135/200 processed; usable=135
+[trace]   136/200 processed; usable=136
+[trace]   137/200 processed; usable=137
+[trace]   138/200 processed; usable=138
+[trace]   139/200 processed; usable=139
+[trace]   140/200 processed; usable=140
+[trace]   141/200 processed; usable=141
+[trace]   142/200 processed; usable=142
+[trace]   143/200 processed; usable=143
+[trace]   144/200 processed; usable=144
+[trace]   145/200 processed; usable=145
+[trace]   146/200 processed; usable=146
+[trace]   147/200 processed; usable=147
+[trace]   148/200 processed; usable=148
+[trace]   149/200 processed; usable=149
+[trace]   150/200 processed; usable=150
+[trace]   151/200 processed; usable=151
+[trace]   152/200 processed; usable=152
+[trace]   153/200 processed; usable=153
+[trace]   154/200 processed; usable=154
+[trace]   155/200 processed; usable=155
+[trace]   156/200 processed; usable=156
+[trace]   157/200 processed; usable=157
+[trace]   158/200 processed; usable=158
+[trace]   159/200 processed; usable=159
+[trace]   160/200 processed; usable=160
+[trace]   161/200 processed; usable=161
+[trace]   162/200 processed; usable=162
+[trace]   163/200 processed; usable=163
+[trace]   164/200 processed; usable=164
+[trace]   165/200 processed; usable=165
+[trace]   166/200 processed; usable=166
+[trace]   167/200 processed; usable=167
+[trace]   168/200 processed; usable=168
+[trace]   169/200 processed; usable=169
+[trace]   170/200 processed; usable=170
+[trace]   171/200 processed; usable=171
+[trace]   172/200 processed; usable=172
+[trace]   173/200 processed; usable=173
+[trace]   174/200 processed; usable=174
+[trace]   175/200 processed; usable=175
+[trace]   176/200 processed; usable=176
+[trace]   177/200 processed; usable=177
+[trace]   178/200 processed; usable=178
+[trace]   179/200 processed; usable=179
+[trace]   180/200 processed; usable=180
+[trace]   181/200 processed; usable=181
+[trace]   182/200 processed; usable=182
+[trace]   183/200 processed; usable=183
+[trace]   184/200 processed; usable=184
+[trace]   185/200 processed; usable=185
+[trace]   186/200 processed; usable=186
+[trace]   187/200 processed; usable=187
+[trace]   188/200 processed; usable=188
+[trace]   189/200 processed; usable=189
+[trace]   190/200 processed; usable=190
+[trace]   191/200 processed; usable=191
+[trace]   192/200 processed; usable=192
+[trace]   193/200 processed; usable=193
+[trace]   194/200 processed; usable=194
+[trace]   195/200 processed; usable=195
+[trace]   196/200 processed; usable=196
+[trace]   197/200 processed; usable=197
+[trace]   198/200 processed; usable=198
+[trace]   199/200 processed; usable=199
+[trace]   200/200 processed; usable=200
+[Mistral-7B-Instruct-v0.3-4bit/triviaqa_paired] PRIMARY Readout p_max @ step 0 CI_lo=0.920624804197995 dep=True | GEOM attention[last_minus_1_js] @ step 0 CI_lo=0.9191703718430693 dep=True | controls_pass=True
+
+===== Mistral-Nemo-Instruct-2407-4bit/anli_r1 =====
+
+  Loading model: mlx-community/Mistral-Nemo-Instruct-2407-4bit
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 11522.81it/s]
+     Layers: 40 | Probed: {'final': 39} | Output projection: lm_head (V=131072, D=5120)
+[ace] Mistral-Nemo-Instruct-2407-4bit 25/200
+[ace] Mistral-Nemo-Instruct-2407-4bit 50/200
+[ace] Mistral-Nemo-Instruct-2407-4bit 75/200
+[ace] Mistral-Nemo-Instruct-2407-4bit 100/200
+[ace] Mistral-Nemo-Instruct-2407-4bit 125/200
+[ace] Mistral-Nemo-Instruct-2407-4bit 150/200
+[ace] Mistral-Nemo-Instruct-2407-4bit 175/200
+[ace] Mistral-Nemo-Instruct-2407-4bit 200/200
+
+  Loading model: mlx-community/Mistral-Nemo-Instruct-2407-4bit
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 14402.42it/s]
+     Layers: 40 | Probed: {'final': 39} | Output projection: lm_head (V=131072, D=5120)
+[inventory] benchmark=anli_r1 path=stage_b/data/anli_R1_seed20260612_n200.jsonl
+[trace] model=mlx-community/Mistral-Nemo-Instruct-2407-4bit
+[trace] samples=200 K=512 final_layer=final d=5120 V=131072
+[trace] commit instant: gen_step=1; pinned aggregate = final 25% block logit lens plus readout
+[trace] n_layers=40; pinned_late_layers=[30, 31, 32, 33, 34, 35, 36, 37, 38, 39]
+[trace]   1/200 processed; usable=1
+[trace]   2/200 processed; usable=2
+[trace]   3/200 processed; usable=3
+[trace]   4/200 processed; usable=4
+[trace]   5/200 processed; usable=5
+[trace]   6/200 processed; usable=6
+[trace]   7/200 processed; usable=7
+[trace]   8/200 processed; usable=8
+[trace]   9/200 processed; usable=9
+[trace]   10/200 processed; usable=10
+[trace]   11/200 processed; usable=11
+[trace]   12/200 processed; usable=12
+[trace]   13/200 processed; usable=13
+[trace]   14/200 processed; usable=14
+[trace]   15/200 processed; usable=15
+[trace]   16/200 processed; usable=16
+[trace]   17/200 processed; usable=17
+[trace]   18/200 processed; usable=18
+[trace]   19/200 processed; usable=19
+[trace]   20/200 processed; usable=20
+[trace]   21/200 processed; usable=21
+[trace]   22/200 processed; usable=22
+[trace]   23/200 processed; usable=23
+[trace]   24/200 processed; usable=24
+[trace]   25/200 processed; usable=25
+[trace]   26/200 processed; usable=26
+[trace]   27/200 processed; usable=27
+[trace]   28/200 processed; usable=28
+[trace]   29/200 processed; usable=29
+[trace]   30/200 processed; usable=30
+[trace]   31/200 processed; usable=31
+[trace]   32/200 processed; usable=32
+[trace]   33/200 processed; usable=33
+[trace]   34/200 processed; usable=34
+[trace]   35/200 processed; usable=35
+[trace]   36/200 processed; usable=36
+[trace]   37/200 processed; usable=37
+[trace]   38/200 processed; usable=38
+[trace]   39/200 processed; usable=39
+[trace]   40/200 processed; usable=40
+[trace]   41/200 processed; usable=41
+[trace]   42/200 processed; usable=42
+[trace]   43/200 processed; usable=43
+[trace]   44/200 processed; usable=44
+[trace]   45/200 processed; usable=45
+[trace]   46/200 processed; usable=46
+[trace]   47/200 processed; usable=47
+[trace]   48/200 processed; usable=48
+[trace]   49/200 processed; usable=49
+[trace]   50/200 processed; usable=50
+[trace]   51/200 processed; usable=51
+[trace]   52/200 processed; usable=52
+[trace]   53/200 processed; usable=53
+[trace]   54/200 processed; usable=54
+[trace]   55/200 processed; usable=55
+[trace]   56/200 processed; usable=56
+[trace]   57/200 processed; usable=57
+[trace]   58/200 processed; usable=58
+[trace]   59/200 processed; usable=59
+[trace]   60/200 processed; usable=60
+[trace]   61/200 processed; usable=61
+[trace]   62/200 processed; usable=62
+[trace]   63/200 processed; usable=63
+[trace]   64/200 processed; usable=64
+[trace]   65/200 processed; usable=65
+[trace]   66/200 processed; usable=66
+[trace]   67/200 processed; usable=67
+[trace]   68/200 processed; usable=68
+[trace]   69/200 processed; usable=69
+[trace]   70/200 processed; usable=70
+[trace]   71/200 processed; usable=71
+[trace]   72/200 processed; usable=72
+[trace]   73/200 processed; usable=73
+[trace]   74/200 processed; usable=74
+[trace]   75/200 processed; usable=75
+[trace]   76/200 processed; usable=76
+[trace]   77/200 processed; usable=77
+[trace]   78/200 processed; usable=78
+[trace]   79/200 processed; usable=79
+[trace]   80/200 processed; usable=80
+[trace]   81/200 processed; usable=81
+[trace]   82/200 processed; usable=82
+[trace]   83/200 processed; usable=83
+[trace]   84/200 processed; usable=84
+[trace]   85/200 processed; usable=85
+[trace]   86/200 processed; usable=86
+[trace]   87/200 processed; usable=87
+[trace]   88/200 processed; usable=88
+[trace]   89/200 processed; usable=89
+[trace]   90/200 processed; usable=90
+[trace]   91/200 processed; usable=91
+[trace]   92/200 processed; usable=92
+[trace]   93/200 processed; usable=93
+[trace]   94/200 processed; usable=94
+[trace]   95/200 processed; usable=95
+[trace]   96/200 processed; usable=96
+[trace]   97/200 processed; usable=97
+[trace]   98/200 processed; usable=98
+[trace]   99/200 processed; usable=99
+[trace]   100/200 processed; usable=100
+[trace]   101/200 processed; usable=101
+[trace]   102/200 processed; usable=102
+[trace]   103/200 processed; usable=103
+[trace]   104/200 processed; usable=104
+[trace]   105/200 processed; usable=105
+[trace]   106/200 processed; usable=106
+[trace]   107/200 processed; usable=107
+[trace]   108/200 processed; usable=108
+[trace]   109/200 processed; usable=109
+[trace]   110/200 processed; usable=110
+[trace]   111/200 processed; usable=111
+[trace]   112/200 processed; usable=112
+[trace]   113/200 processed; usable=113
+[trace]   114/200 processed; usable=114
+[trace]   115/200 processed; usable=115
+[trace]   116/200 processed; usable=116
+[trace]   117/200 processed; usable=117
+[trace]   118/200 processed; usable=118
+[trace]   119/200 processed; usable=119
+[trace]   120/200 processed; usable=120
+[trace]   121/200 processed; usable=121
+[trace]   122/200 processed; usable=122
+[trace]   123/200 processed; usable=123
+[trace]   124/200 processed; usable=124
+[trace]   125/200 processed; usable=125
+[trace]   126/200 processed; usable=126
+[trace]   127/200 processed; usable=127
+[trace]   128/200 processed; usable=128
+[trace]   129/200 processed; usable=129
+[trace]   130/200 processed; usable=130
+[trace]   131/200 processed; usable=131
+[trace]   132/200 processed; usable=132
+[trace]   133/200 processed; usable=133
+[trace]   134/200 processed; usable=134
+[trace]   135/200 processed; usable=135
+[trace]   136/200 processed; usable=136
+[trace]   137/200 processed; usable=137
+[trace]   138/200 processed; usable=138
+[trace]   139/200 processed; usable=139
+[trace]   140/200 processed; usable=140
+[trace]   141/200 processed; usable=141
+[trace]   142/200 processed; usable=142
+[trace]   143/200 processed; usable=143
+[trace]   144/200 processed; usable=144
+[trace]   145/200 processed; usable=145
+[trace]   146/200 processed; usable=146
+[trace]   147/200 processed; usable=147
+[trace]   148/200 processed; usable=148
+[trace]   149/200 processed; usable=149
+[trace]   150/200 processed; usable=150
+[trace]   151/200 processed; usable=151
+[trace]   152/200 processed; usable=152
+[trace]   153/200 processed; usable=153
+[trace]   154/200 processed; usable=154
+[trace]   155/200 processed; usable=155
+[trace]   156/200 processed; usable=156
+[trace]   157/200 processed; usable=157
+[trace]   158/200 processed; usable=158
+[trace]   159/200 processed; usable=159
+[trace]   160/200 processed; usable=160
+[trace]   161/200 processed; usable=161
+[trace]   162/200 processed; usable=162
+[trace]   163/200 processed; usable=163
+[trace]   164/200 processed; usable=164
+[trace]   165/200 processed; usable=165
+[trace]   166/200 processed; usable=166
+[trace]   167/200 processed; usable=167
+[trace]   168/200 processed; usable=168
+[trace]   169/200 processed; usable=169
+[trace]   170/200 processed; usable=170
+[trace]   171/200 processed; usable=171
+[trace]   172/200 processed; usable=172
+[trace]   173/200 processed; usable=173
+[trace]   174/200 processed; usable=174
+[trace]   175/200 processed; usable=175
+[trace]   176/200 processed; usable=176
+[trace]   177/200 processed; usable=177
+[trace]   178/200 processed; usable=178
+[trace]   179/200 processed; usable=179
+[trace]   180/200 processed; usable=180
+[trace]   181/200 processed; usable=181
+[trace]   182/200 processed; usable=182
+[trace]   183/200 processed; usable=183
+[trace]   184/200 processed; usable=184
+[trace]   185/200 processed; usable=185
+[trace]   186/200 processed; usable=186
+[trace]   187/200 processed; usable=187
+[trace]   188/200 processed; usable=188
+[trace]   189/200 processed; usable=189
+[trace]   190/200 processed; usable=190
+[trace]   191/200 processed; usable=191
+[trace]   192/200 processed; usable=192
+[trace]   193/200 processed; usable=193
+[trace]   194/200 processed; usable=194
+[trace]   195/200 processed; usable=195
+[trace]   196/200 processed; usable=196
+[trace]   197/200 processed; usable=197
+[trace]   198/200 processed; usable=198
+[trace]   199/200 processed; usable=199
+[trace]   200/200 processed; usable=200
+[Mistral-Nemo-Instruct-2407-4bit/anli_r1] PRIMARY attention[last_minus_1_bos_mass] @ step 0 CI_lo=0.7490698312560051 dep=True | GEOM attention[last_minus_1_bos_mass] @ step 0 CI_lo=0.7491535423290939 dep=True | controls_pass=True
+
+===== Mistral-Nemo-Instruct-2407-4bit/triviaqa_paired =====
+
+  Loading model: mlx-community/Mistral-Nemo-Instruct-2407-4bit
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 13003.35it/s]
+     Layers: 40 | Probed: {'final': 39} | Output projection: lm_head (V=131072, D=5120)
+[ace] Mistral-Nemo-Instruct-2407-4bit 25/200
+[ace] Mistral-Nemo-Instruct-2407-4bit 50/200
+[ace] Mistral-Nemo-Instruct-2407-4bit 75/200
+[ace] Mistral-Nemo-Instruct-2407-4bit 100/200
+[ace] Mistral-Nemo-Instruct-2407-4bit 125/200
+[ace] Mistral-Nemo-Instruct-2407-4bit 150/200
+[ace] Mistral-Nemo-Instruct-2407-4bit 175/200
+[ace] Mistral-Nemo-Instruct-2407-4bit 200/200
+
+  Loading model: mlx-community/Mistral-Nemo-Instruct-2407-4bit
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 7892.27it/s]
+     Layers: 40 | Probed: {'final': 39} | Output projection: lm_head (V=131072, D=5120)
+[inventory] benchmark=triviaqa_paired path=stage_b/data/triviaqa_paired_seed20260612_n200.jsonl
+[trace] model=mlx-community/Mistral-Nemo-Instruct-2407-4bit
+[trace] samples=200 K=512 final_layer=final d=5120 V=131072
+[trace] commit instant: gen_step=1; pinned aggregate = final 25% block logit lens plus readout
+[trace] n_layers=40; pinned_late_layers=[30, 31, 32, 33, 34, 35, 36, 37, 38, 39]
+[trace]   1/200 processed; usable=1
+[trace]   2/200 processed; usable=2
+[trace]   3/200 processed; usable=3
+[trace]   4/200 processed; usable=4
+[trace]   5/200 processed; usable=5
+[trace]   6/200 processed; usable=6
+[trace]   7/200 processed; usable=7
+[trace]   8/200 processed; usable=8
+[trace]   9/200 processed; usable=9
+[trace]   10/200 processed; usable=10
+[trace]   11/200 processed; usable=11
+[trace]   12/200 processed; usable=12
+[trace]   13/200 processed; usable=13
+[trace]   14/200 processed; usable=14
+[trace]   15/200 processed; usable=15
+[trace]   16/200 processed; usable=16
+[trace]   17/200 processed; usable=17
+[trace]   18/200 processed; usable=18
+[trace]   19/200 processed; usable=19
+[trace]   20/200 processed; usable=20
+[trace]   21/200 processed; usable=21
+[trace]   22/200 processed; usable=22
+[trace]   23/200 processed; usable=23
+[trace]   24/200 processed; usable=24
+[trace]   25/200 processed; usable=25
+[trace]   26/200 processed; usable=26
+[trace]   27/200 processed; usable=27
+[trace]   28/200 processed; usable=28
+[trace]   29/200 processed; usable=29
+[trace]   30/200 processed; usable=30
+[trace]   31/200 processed; usable=31
+[trace]   32/200 processed; usable=32
+[trace]   33/200 processed; usable=33
+[trace]   34/200 processed; usable=34
+[trace]   35/200 processed; usable=35
+[trace]   36/200 processed; usable=36
+[trace]   37/200 processed; usable=37
+[trace]   38/200 processed; usable=38
+[trace]   39/200 processed; usable=39
+[trace]   40/200 processed; usable=40
+[trace]   41/200 processed; usable=41
+[trace]   42/200 processed; usable=42
+[trace]   43/200 processed; usable=43
+[trace]   44/200 processed; usable=44
+[trace]   45/200 processed; usable=45
+[trace]   46/200 processed; usable=46
+[trace]   47/200 processed; usable=47
+[trace]   48/200 processed; usable=48
+[trace]   49/200 processed; usable=49
+[trace]   50/200 processed; usable=50
+[trace]   51/200 processed; usable=51
+[trace]   52/200 processed; usable=52
+[trace]   53/200 processed; usable=53
+[trace]   54/200 processed; usable=54
+[trace]   55/200 processed; usable=55
+[trace]   56/200 processed; usable=56
+[trace]   57/200 processed; usable=57
+[trace]   58/200 processed; usable=58
+[trace]   59/200 processed; usable=59
+[trace]   60/200 processed; usable=60
+[trace]   61/200 processed; usable=61
+[trace]   62/200 processed; usable=62
+[trace]   63/200 processed; usable=63
+[trace]   64/200 processed; usable=64
+[trace]   65/200 processed; usable=65
+[trace]   66/200 processed; usable=66
+[trace]   67/200 processed; usable=67
+[trace]   68/200 processed; usable=68
+[trace]   69/200 processed; usable=69
+[trace]   70/200 processed; usable=70
+[trace]   71/200 processed; usable=71
+[trace]   72/200 processed; usable=72
+[trace]   73/200 processed; usable=73
+[trace]   74/200 processed; usable=74
+[trace]   75/200 processed; usable=75
+[trace]   76/200 processed; usable=76
+[trace]   77/200 processed; usable=77
+[trace]   78/200 processed; usable=78
+[trace]   79/200 processed; usable=79
+[trace]   80/200 processed; usable=80
+[trace]   81/200 processed; usable=81
+[trace]   82/200 processed; usable=82
+[trace]   83/200 processed; usable=83
+[trace]   84/200 processed; usable=84
+[trace]   85/200 processed; usable=85
+[trace]   86/200 processed; usable=86
+[trace]   87/200 processed; usable=87
+[trace]   88/200 processed; usable=88
+[trace]   89/200 processed; usable=89
+[trace]   90/200 processed; usable=90
+[trace]   91/200 processed; usable=91
+[trace]   92/200 processed; usable=92
+[trace]   93/200 processed; usable=93
+[trace]   94/200 processed; usable=94
+[trace]   95/200 processed; usable=95
+[trace]   96/200 processed; usable=96
+[trace]   97/200 processed; usable=97
+[trace]   98/200 processed; usable=98
+[trace]   99/200 processed; usable=99
+[trace]   100/200 processed; usable=100
+[trace]   101/200 processed; usable=101
+[trace]   102/200 processed; usable=102
+[trace]   103/200 processed; usable=103
+[trace]   104/200 processed; usable=104
+[trace]   105/200 processed; usable=105
+[trace]   106/200 processed; usable=106
+[trace]   107/200 processed; usable=107
+[trace]   108/200 processed; usable=108
+[trace]   109/200 processed; usable=109
+[trace]   110/200 processed; usable=110
+[trace]   111/200 processed; usable=111
+[trace]   112/200 processed; usable=112
+[trace]   113/200 processed; usable=113
+[trace]   114/200 processed; usable=114
+[trace]   115/200 processed; usable=115
+[trace]   116/200 processed; usable=116
+[trace]   117/200 processed; usable=117
+[trace]   118/200 processed; usable=118
+[trace]   119/200 processed; usable=119
+[trace]   120/200 processed; usable=120
+[trace]   121/200 processed; usable=121
+[trace]   122/200 processed; usable=122
+[trace]   123/200 processed; usable=123
+[trace]   124/200 processed; usable=124
+[trace]   125/200 processed; usable=125
+[trace]   126/200 processed; usable=126
+[trace]   127/200 processed; usable=127
+[trace]   128/200 processed; usable=128
+[trace]   129/200 processed; usable=129
+[trace]   130/200 processed; usable=130
+[trace]   131/200 processed; usable=131
+[trace]   132/200 processed; usable=132
+[trace]   133/200 processed; usable=133
+[trace]   134/200 processed; usable=134
+[trace]   135/200 processed; usable=135
+[trace]   136/200 processed; usable=136
+[trace]   137/200 processed; usable=137
+[trace]   138/200 processed; usable=138
+[trace]   139/200 processed; usable=139
+[trace]   140/200 processed; usable=140
+[trace]   141/200 processed; usable=141
+[trace]   142/200 processed; usable=142
+[trace]   143/200 processed; usable=143
+[trace]   144/200 processed; usable=144
+[trace]   145/200 processed; usable=145
+[trace]   146/200 processed; usable=146
+[trace]   147/200 processed; usable=147
+[trace]   148/200 processed; usable=148
+[trace]   149/200 processed; usable=149
+[trace]   150/200 processed; usable=150
+[trace]   151/200 processed; usable=151
+[trace]   152/200 processed; usable=152
+[trace]   153/200 processed; usable=153
+[trace]   154/200 processed; usable=154
+[trace]   155/200 processed; usable=155
+[trace]   156/200 processed; usable=156
+[trace]   157/200 processed; usable=157
+[trace]   158/200 processed; usable=158
+[trace]   159/200 processed; usable=159
+[trace]   160/200 processed; usable=160
+[trace]   161/200 processed; usable=161
+[trace]   162/200 processed; usable=162
+[trace]   163/200 processed; usable=163
+[trace]   164/200 processed; usable=164
+[trace]   165/200 processed; usable=165
+[trace]   166/200 processed; usable=166
+[trace]   167/200 processed; usable=167
+[trace]   168/200 processed; usable=168
+[trace]   169/200 processed; usable=169
+[trace]   170/200 processed; usable=170
+[trace]   171/200 processed; usable=171
+[trace]   172/200 processed; usable=172
+[trace]   173/200 processed; usable=173
+[trace]   174/200 processed; usable=174
+[trace]   175/200 processed; usable=175
+[trace]   176/200 processed; usable=176
+[trace]   177/200 processed; usable=177
+[trace]   178/200 processed; usable=178
+[trace]   179/200 processed; usable=179
+[trace]   180/200 processed; usable=180
+[trace]   181/200 processed; usable=181
+[trace]   182/200 processed; usable=182
+[trace]   183/200 processed; usable=183
+[trace]   184/200 processed; usable=184
+[trace]   185/200 processed; usable=185
+[trace]   186/200 processed; usable=186
+[trace]   187/200 processed; usable=187
+[trace]   188/200 processed; usable=188
+[trace]   189/200 processed; usable=189
+[trace]   190/200 processed; usable=190
+[trace]   191/200 processed; usable=191
+[trace]   192/200 processed; usable=192
+[trace]   193/200 processed; usable=193
+[trace]   194/200 processed; usable=194
+[trace]   195/200 processed; usable=195
+[trace]   196/200 processed; usable=196
+[trace]   197/200 processed; usable=197
+[trace]   198/200 processed; usable=198
+[trace]   199/200 processed; usable=199
+[trace]   200/200 processed; usable=200
+[Mistral-Nemo-Instruct-2407-4bit/triviaqa_paired] PRIMARY attention[final_v_norm_lastq_weighted] @ step 0 CI_lo=0.9411739948504654 dep=True | GEOM attention[final_v_norm_lastq_weighted] @ step 0 CI_lo=0.9419479763326513 dep=True | controls_pass=True
+
+===== Phi-3.5-mini-instruct-4bit/anli_r1 =====
+
+  Loading model: mlx-community/Phi-3.5-mini-instruct-4bit
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Fetching 11 files: 100%|██████████| 11/11 [00:00<00:00, 11534.34it/s]
+     Layers: 32 | Probed: {'final': 31} | Output projection: lm_head (V=32064, D=3072)
+[ace] Phi-3.5-mini-instruct-4bit 25/200
+[ace] Phi-3.5-mini-instruct-4bit 50/200
+[ace] Phi-3.5-mini-instruct-4bit 75/200
+[ace] Phi-3.5-mini-instruct-4bit 100/200
+[ace] Phi-3.5-mini-instruct-4bit 125/200
+[ace] Phi-3.5-mini-instruct-4bit 150/200
+[ace] Phi-3.5-mini-instruct-4bit 175/200
+[ace] Phi-3.5-mini-instruct-4bit 200/200
+
+  Loading model: mlx-community/Phi-3.5-mini-instruct-4bit
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Fetching 11 files: 100%|██████████| 11/11 [00:00<00:00, 37663.14it/s]
+     Layers: 32 | Probed: {'final': 31} | Output projection: lm_head (V=32064, D=3072)
+[inventory] benchmark=anli_r1 path=stage_b/data/anli_R1_seed20260612_n200.jsonl
+[trace] model=mlx-community/Phi-3.5-mini-instruct-4bit
+[trace] samples=200 K=512 final_layer=final d=3072 V=32064
+[trace] commit instant: gen_step=1; pinned aggregate = final 25% block logit lens plus readout
+[trace] n_layers=32; pinned_late_layers=[24, 25, 26, 27, 28, 29, 30, 31]
+[trace]   1/200 processed; usable=1
+[trace]   2/200 processed; usable=2
+[trace]   3/200 processed; usable=3
+[trace]   4/200 processed; usable=4
+[trace]   5/200 processed; usable=5
+[trace]   6/200 processed; usable=6
+[trace]   7/200 processed; usable=7
+[trace]   8/200 processed; usable=8
+[trace]   9/200 processed; usable=9
+[trace]   10/200 processed; usable=10
+[trace]   11/200 processed; usable=11
+[trace]   12/200 processed; usable=12
+[trace]   13/200 processed; usable=13
+[trace]   14/200 processed; usable=14
+[trace]   15/200 processed; usable=15
+[trace]   16/200 processed; usable=16
+[trace]   17/200 processed; usable=17
+[trace]   18/200 processed; usable=18
+[trace]   19/200 processed; usable=19
+[trace]   20/200 processed; usable=20
+[trace]   21/200 processed; usable=21
+[trace]   22/200 processed; usable=22
+[trace]   23/200 processed; usable=23
+[trace]   24/200 processed; usable=24
+[trace]   25/200 processed; usable=25
+[trace]   26/200 processed; usable=26
+[trace]   27/200 processed; usable=27
+[trace]   28/200 processed; usable=28
+[trace]   29/200 processed; usable=29
+[trace]   30/200 processed; usable=30
+[trace]   31/200 processed; usable=31
+[trace]   32/200 processed; usable=32
+[trace]   33/200 processed; usable=33
+[trace]   34/200 processed; usable=34
+[trace]   35/200 processed; usable=35
+[trace]   36/200 processed; usable=36
+[trace]   37/200 processed; usable=37
+[trace]   38/200 processed; usable=38
+[trace]   39/200 processed; usable=39
+[trace]   40/200 processed; usable=40
+[trace]   41/200 processed; usable=41
+[trace]   42/200 processed; usable=42
+[trace]   43/200 processed; usable=43
+[trace]   44/200 processed; usable=44
+[trace]   45/200 processed; usable=45
+[trace]   46/200 processed; usable=46
+[trace]   47/200 processed; usable=47
+[trace]   48/200 processed; usable=48
+[trace]   49/200 processed; usable=49
+[trace]   50/200 processed; usable=50
+[trace]   51/200 processed; usable=51
+[trace]   52/200 processed; usable=52
+[trace]   53/200 processed; usable=53
+[trace]   54/200 processed; usable=54
+[trace]   55/200 processed; usable=55
+[trace]   56/200 processed; usable=56
+[trace]   57/200 processed; usable=57
+[trace]   58/200 processed; usable=58
+[trace]   59/200 processed; usable=59
+[trace]   60/200 processed; usable=60
+[trace]   61/200 processed; usable=61
+[trace]   62/200 processed; usable=62
+[trace]   63/200 processed; usable=63
+[trace]   64/200 processed; usable=64
+[trace]   65/200 processed; usable=65
+[trace]   66/200 processed; usable=66
+[trace]   67/200 processed; usable=67
+[trace]   68/200 processed; usable=68
+[trace]   69/200 processed; usable=69
+[trace]   70/200 processed; usable=70
+[trace]   71/200 processed; usable=71
+[trace]   72/200 processed; usable=72
+[trace]   73/200 processed; usable=73
+[trace]   74/200 processed; usable=74
+[trace]   75/200 processed; usable=75
+[trace]   76/200 processed; usable=76
+[trace]   77/200 processed; usable=77
+[trace]   78/200 processed; usable=78
+[trace]   79/200 processed; usable=79
+[trace]   80/200 processed; usable=80
+[trace]   81/200 processed; usable=81
+[trace]   82/200 processed; usable=82
+[trace]   83/200 processed; usable=83
+[trace]   84/200 processed; usable=84
+[trace]   85/200 processed; usable=85
+[trace]   86/200 processed; usable=86
+[trace]   87/200 processed; usable=87
+[trace]   88/200 processed; usable=88
+[trace]   89/200 processed; usable=89
+[trace]   90/200 processed; usable=90
+[trace]   91/200 processed; usable=91
+[trace]   92/200 processed; usable=92
+[trace]   93/200 processed; usable=93
+[trace]   94/200 processed; usable=94
+[trace]   95/200 processed; usable=95
+[trace]   96/200 processed; usable=96
+[trace]   97/200 processed; usable=97
+[trace]   98/200 processed; usable=98
+[trace]   99/200 processed; usable=99
+[trace]   100/200 processed; usable=100
+[trace]   101/200 processed; usable=101
+[trace]   102/200 processed; usable=102
+[trace]   103/200 processed; usable=103
+[trace]   104/200 processed; usable=104
+[trace]   105/200 processed; usable=105
+[trace]   106/200 processed; usable=106
+[trace]   107/200 processed; usable=107
+[trace]   108/200 processed; usable=108
+[trace]   109/200 processed; usable=109
+[trace]   110/200 processed; usable=110
+[trace]   111/200 processed; usable=111
+[trace]   112/200 processed; usable=112
+[trace]   113/200 processed; usable=113
+[trace]   114/200 processed; usable=114
+[trace]   115/200 processed; usable=115
+[trace]   116/200 processed; usable=116
+[trace]   117/200 processed; usable=117
+[trace]   118/200 processed; usable=118
+[trace]   119/200 processed; usable=119
+[trace]   120/200 processed; usable=120
+[trace]   121/200 processed; usable=121
+[trace]   122/200 processed; usable=122
+[trace]   123/200 processed; usable=123
+[trace]   124/200 processed; usable=124
+[trace]   125/200 processed; usable=125
+[trace]   126/200 processed; usable=126
+[trace]   127/200 processed; usable=127
+[trace]   128/200 processed; usable=128
+[trace]   129/200 processed; usable=129
+[trace]   130/200 processed; usable=130
+[trace]   131/200 processed; usable=131
+[trace]   132/200 processed; usable=132
+[trace]   133/200 processed; usable=133
+[trace]   134/200 processed; usable=134
+[trace]   135/200 processed; usable=135
+[trace]   136/200 processed; usable=136
+[trace]   137/200 processed; usable=137
+[trace]   138/200 processed; usable=138
+[trace]   139/200 processed; usable=139
+[trace]   140/200 processed; usable=140
+[trace]   141/200 processed; usable=141
+[trace]   142/200 processed; usable=142
+[trace]   143/200 processed; usable=143
+[trace]   144/200 processed; usable=144
+[trace]   145/200 processed; usable=145
+[trace]   146/200 processed; usable=146
+[trace]   147/200 processed; usable=147
+[trace]   148/200 processed; usable=148
+[trace]   149/200 processed; usable=149
+[trace]   150/200 processed; usable=150
+[trace]   151/200 processed; usable=151
+[trace]   152/200 processed; usable=152
+[trace]   153/200 processed; usable=153
+[trace]   154/200 processed; usable=154
+[trace]   155/200 processed; usable=155
+[trace]   156/200 processed; usable=156
+[trace]   157/200 processed; usable=157
+[trace]   158/200 processed; usable=158
+[trace]   159/200 processed; usable=159
+[trace]   160/200 processed; usable=160
+[trace]   161/200 processed; usable=161
+[trace]   162/200 processed; usable=162
+[trace]   163/200 processed; usable=163
+[trace]   164/200 processed; usable=164
+[trace]   165/200 processed; usable=165
+[trace]   166/200 processed; usable=166
+[trace]   167/200 processed; usable=167
+[trace]   168/200 processed; usable=168
+[trace]   169/200 processed; usable=169
+[trace]   170/200 processed; usable=170
+[trace]   171/200 processed; usable=171
+[trace]   172/200 processed; usable=172
+[trace]   173/200 processed; usable=173
+[trace]   174/200 processed; usable=174
+[trace]   175/200 processed; usable=175
+[trace]   176/200 processed; usable=176
+[trace]   177/200 processed; usable=177
+[trace]   178/200 processed; usable=178
+[trace]   179/200 processed; usable=179
+[trace]   180/200 processed; usable=180
+[trace]   181/200 processed; usable=181
+[trace]   182/200 processed; usable=182
+[trace]   183/200 processed; usable=183
+[trace]   184/200 processed; usable=184
+[trace]   185/200 processed; usable=185
+[trace]   186/200 processed; usable=186
+[trace]   187/200 processed; usable=187
+[trace]   188/200 processed; usable=188
+[trace]   189/200 processed; usable=189
+[trace]   190/200 processed; usable=190
+[trace]   191/200 processed; usable=191
+[trace]   192/200 processed; usable=192
+[trace]   193/200 processed; usable=193
+[trace]   194/200 processed; usable=194
+[trace]   195/200 processed; usable=195
+[trace]   196/200 processed; usable=196
+[trace]   197/200 processed; usable=197
+[trace]   198/200 processed; usable=198
+[trace]   199/200 processed; usable=199
+[trace]   200/200 processed; usable=200
+[Phi-3.5-mini-instruct-4bit/anli_r1] PRIMARY attention[final_bos_mass] @ step 0 CI_lo=0.5443347224242272 dep=True | GEOM attention[final_bos_mass] @ step 0 CI_lo=0.5516682901793196 dep=True | controls_pass=True
+
+===== Phi-3.5-mini-instruct-4bit/triviaqa_paired =====
+
+  Loading model: mlx-community/Phi-3.5-mini-instruct-4bit
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Fetching 11 files: 100%|██████████| 11/11 [00:00<00:00, 19533.17it/s]
+     Layers: 32 | Probed: {'final': 31} | Output projection: lm_head (V=32064, D=3072)
+[ace] Phi-3.5-mini-instruct-4bit 25/200
+[ace] Phi-3.5-mini-instruct-4bit 50/200
+[ace] Phi-3.5-mini-instruct-4bit 75/200
+[ace] Phi-3.5-mini-instruct-4bit 100/200
+[ace] Phi-3.5-mini-instruct-4bit 125/200
+[ace] Phi-3.5-mini-instruct-4bit 150/200
+[ace] Phi-3.5-mini-instruct-4bit 175/200
+[ace] Phi-3.5-mini-instruct-4bit 200/200
+
+  Loading model: mlx-community/Phi-3.5-mini-instruct-4bit
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Fetching 11 files: 100%|██████████| 11/11 [00:00<00:00, 19096.58it/s]
+     Layers: 32 | Probed: {'final': 31} | Output projection: lm_head (V=32064, D=3072)
+[inventory] benchmark=triviaqa_paired path=stage_b/data/triviaqa_paired_seed20260612_n200.jsonl
+[trace] model=mlx-community/Phi-3.5-mini-instruct-4bit
+[trace] samples=200 K=512 final_layer=final d=3072 V=32064
+[trace] commit instant: gen_step=1; pinned aggregate = final 25% block logit lens plus readout
+[trace] n_layers=32; pinned_late_layers=[24, 25, 26, 27, 28, 29, 30, 31]
+[trace]   1/200 processed; usable=1
+[trace]   2/200 processed; usable=2
+[trace]   3/200 processed; usable=3
+[trace]   4/200 processed; usable=4
+[trace]   5/200 processed; usable=5
+[trace]   6/200 processed; usable=6
+[trace]   7/200 processed; usable=7
+[trace]   8/200 processed; usable=8
+[trace]   9/200 processed; usable=9
+[trace]   10/200 processed; usable=10
+[trace]   11/200 processed; usable=11
+[trace]   12/200 processed; usable=12
+[trace]   13/200 processed; usable=13
+[trace]   14/200 processed; usable=14
+[trace]   15/200 processed; usable=15
+[trace]   16/200 processed; usable=16
+[trace]   17/200 processed; usable=17
+[trace]   18/200 processed; usable=18
+[trace]   19/200 processed; usable=19
+[trace]   20/200 processed; usable=20
+[trace]   21/200 processed; usable=21
+[trace]   22/200 processed; usable=22
+[trace]   23/200 processed; usable=23
+[trace]   24/200 processed; usable=24
+[trace]   25/200 processed; usable=25
+[trace]   26/200 processed; usable=26
+[trace]   27/200 processed; usable=27
+[trace]   28/200 processed; usable=28
+[trace]   29/200 processed; usable=29
+[trace]   30/200 processed; usable=30
+[trace]   31/200 processed; usable=31
+[trace]   32/200 processed; usable=32
+[trace]   33/200 processed; usable=33
+[trace]   34/200 processed; usable=34
+[trace]   35/200 processed; usable=35
+[trace]   36/200 processed; usable=36
+[trace]   37/200 processed; usable=37
+[trace]   38/200 processed; usable=38
+[trace]   39/200 processed; usable=39
+[trace]   40/200 processed; usable=40
+[trace]   41/200 processed; usable=41
+[trace]   42/200 processed; usable=42
+[trace]   43/200 processed; usable=43
+[trace]   44/200 processed; usable=44
+[trace]   45/200 processed; usable=45
+[trace]   46/200 processed; usable=46
+[trace]   47/200 processed; usable=47
+[trace]   48/200 processed; usable=48
+[trace]   49/200 processed; usable=49
+[trace]   50/200 processed; usable=50
+[trace]   51/200 processed; usable=51
+[trace]   52/200 processed; usable=52
+[trace]   53/200 processed; usable=53
+[trace]   54/200 processed; usable=54
+[trace]   55/200 processed; usable=55
+[trace]   56/200 processed; usable=56
+[trace]   57/200 processed; usable=57
+[trace]   58/200 processed; usable=58
+[trace]   59/200 processed; usable=59
+[trace]   60/200 processed; usable=60
+[trace]   61/200 processed; usable=61
+[trace]   62/200 processed; usable=62
+[trace]   63/200 processed; usable=63
+[trace]   64/200 processed; usable=64
+[trace]   65/200 processed; usable=65
+[trace]   66/200 processed; usable=66
+[trace]   67/200 processed; usable=67
+[trace]   68/200 processed; usable=68
+[trace]   69/200 processed; usable=69
+[trace]   70/200 processed; usable=70
+[trace]   71/200 processed; usable=71
+[trace]   72/200 processed; usable=72
+[trace]   73/200 processed; usable=73
+[trace]   74/200 processed; usable=74
+[trace]   75/200 processed; usable=75
+[trace]   76/200 processed; usable=76
+[trace]   77/200 processed; usable=77
+[trace]   78/200 processed; usable=78
+[trace]   79/200 processed; usable=79
+[trace]   80/200 processed; usable=80
+[trace]   81/200 processed; usable=81
+[trace]   82/200 processed; usable=82
+[trace]   83/200 processed; usable=83
+[trace]   84/200 processed; usable=84
+[trace]   85/200 processed; usable=85
+[trace]   86/200 processed; usable=86
+[trace]   87/200 processed; usable=87
+[trace]   88/200 processed; usable=88
+[trace]   89/200 processed; usable=89
+[trace]   90/200 processed; usable=90
+[trace]   91/200 processed; usable=91
+[trace]   92/200 processed; usable=92
+[trace]   93/200 processed; usable=93
+[trace]   94/200 processed; usable=94
+[trace]   95/200 processed; usable=95
+[trace]   96/200 processed; usable=96
+[trace]   97/200 processed; usable=97
+[trace]   98/200 processed; usable=98
+[trace]   99/200 processed; usable=99
+[trace]   100/200 processed; usable=100
+[trace]   101/200 processed; usable=101
+[trace]   102/200 processed; usable=102
+[trace]   103/200 processed; usable=103
+[trace]   104/200 processed; usable=104
+[trace]   105/200 processed; usable=105
+[trace]   106/200 processed; usable=106
+[trace]   107/200 processed; usable=107
+[trace]   108/200 processed; usable=108
+[trace]   109/200 processed; usable=109
+[trace]   110/200 processed; usable=110
+[trace]   111/200 processed; usable=111
+[trace]   112/200 processed; usable=112
+[trace]   113/200 processed; usable=113
+[trace]   114/200 processed; usable=114
+[trace]   115/200 processed; usable=115
+[trace]   116/200 processed; usable=116
+[trace]   117/200 processed; usable=117
+[trace]   118/200 processed; usable=118
+[trace]   119/200 processed; usable=119
+[trace]   120/200 processed; usable=120
+[trace]   121/200 processed; usable=121
+[trace]   122/200 processed; usable=122
+[trace]   123/200 processed; usable=123
+[trace]   124/200 processed; usable=124
+[trace]   125/200 processed; usable=125
+[trace]   126/200 processed; usable=126
+[trace]   127/200 processed; usable=127
+[trace]   128/200 processed; usable=128
+[trace]   129/200 processed; usable=129
+[trace]   130/200 processed; usable=130
+[trace]   131/200 processed; usable=131
+[trace]   132/200 processed; usable=132
+[trace]   133/200 processed; usable=133
+[trace]   134/200 processed; usable=134
+[trace]   135/200 processed; usable=135
+[trace]   136/200 processed; usable=136
+[trace]   137/200 processed; usable=137
+[trace]   138/200 processed; usable=138
+[trace]   139/200 processed; usable=139
+[trace]   140/200 processed; usable=140
+[trace]   141/200 processed; usable=141
+[trace]   142/200 processed; usable=142
+[trace]   143/200 processed; usable=143
+[trace]   144/200 processed; usable=144
+[trace]   145/200 processed; usable=145
+[trace]   146/200 processed; usable=146
+[trace]   147/200 processed; usable=147
+[trace]   148/200 processed; usable=148
+[trace]   149/200 processed; usable=149
+[trace]   150/200 processed; usable=150
+[trace]   151/200 processed; usable=151
+[trace]   152/200 processed; usable=152
+[trace]   153/200 processed; usable=153
+[trace]   154/200 processed; usable=154
+[trace]   155/200 processed; usable=155
+[trace]   156/200 processed; usable=156
+[trace]   157/200 processed; usable=157
+[trace]   158/200 processed; usable=158
+[trace]   159/200 processed; usable=159
+[trace]   160/200 processed; usable=160
+[trace]   161/200 processed; usable=161
+[trace]   162/200 processed; usable=162
+[trace]   163/200 processed; usable=163
+[trace]   164/200 processed; usable=164
+[trace]   165/200 processed; usable=165
+[trace]   166/200 processed; usable=166
+[trace]   167/200 processed; usable=167
+[trace]   168/200 processed; usable=168
+[trace]   169/200 processed; usable=169
+[trace]   170/200 processed; usable=170
+[trace]   171/200 processed; usable=171
+[trace]   172/200 processed; usable=172
+[trace]   173/200 processed; usable=173
+[trace]   174/200 processed; usable=174
+[trace]   175/200 processed; usable=175
+[trace]   176/200 processed; usable=176
+[trace]   177/200 processed; usable=177
+[trace]   178/200 processed; usable=178
+[trace]   179/200 processed; usable=179
+[trace]   180/200 processed; usable=180
+[trace]   181/200 processed; usable=181
+[trace]   182/200 processed; usable=182
+[trace]   183/200 processed; usable=183
+[trace]   184/200 processed; usable=184
+[trace]   185/200 processed; usable=185
+[trace]   186/200 processed; usable=186
+[trace]   187/200 processed; usable=187
+[trace]   188/200 processed; usable=188
+[trace]   189/200 processed; usable=189
+[trace]   190/200 processed; usable=190
+[trace]   191/200 processed; usable=191
+[trace]   192/200 processed; usable=192
+[trace]   193/200 processed; usable=193
+[trace]   194/200 processed; usable=194
+[trace]   195/200 processed; usable=195
+[trace]   196/200 processed; usable=196
+[trace]   197/200 processed; usable=197
+[trace]   198/200 processed; usable=198
+[trace]   199/200 processed; usable=199
+[trace]   200/200 processed; usable=200
+[Phi-3.5-mini-instruct-4bit/triviaqa_paired] PRIMARY attention[final_js_no_bos] @ step 0 CI_lo=0.7191166413373861 dep=True | GEOM attention[final_js_no_bos] @ step 0 CI_lo=0.7191166413373861 dep=True | controls_pass=True
+
+===== Phi-4-mini-instruct-4bit/anli_r1 =====
+
+  Loading model: mlx-community/Phi-4-mini-instruct-4bit
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 16085.54it/s]
+     Layers: 32 | Probed: {'final': 31} | Output projection: tied_embed (V=200064, D=3072)
+[ace] Phi-4-mini-instruct-4bit 25/200
+[ace] Phi-4-mini-instruct-4bit 50/200
+[ace] Phi-4-mini-instruct-4bit 75/200
+[ace] Phi-4-mini-instruct-4bit 100/200
+[ace] Phi-4-mini-instruct-4bit 125/200
+[ace] Phi-4-mini-instruct-4bit 150/200
+[ace] Phi-4-mini-instruct-4bit 175/200
+[ace] Phi-4-mini-instruct-4bit 200/200
+
+  Loading model: mlx-community/Phi-4-mini-instruct-4bit
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 27761.53it/s]
+     Layers: 32 | Probed: {'final': 31} | Output projection: tied_embed (V=200064, D=3072)
+[inventory] benchmark=anli_r1 path=stage_b/data/anli_R1_seed20260612_n200.jsonl
+[trace] model=mlx-community/Phi-4-mini-instruct-4bit
+[trace] samples=200 K=512 final_layer=final d=3072 V=200064
+[trace] commit instant: gen_step=1; pinned aggregate = final 25% block logit lens plus readout
+[trace] n_layers=32; pinned_late_layers=[24, 25, 26, 27, 28, 29, 30, 31]
+[trace]   1/200 processed; usable=1
+[trace]   2/200 processed; usable=2
+[trace]   3/200 processed; usable=3
+[trace]   4/200 processed; usable=4
+[trace]   5/200 processed; usable=5
+[trace]   6/200 processed; usable=6
+[trace]   7/200 processed; usable=7
+[trace]   8/200 processed; usable=8
+[trace]   9/200 processed; usable=9
+[trace]   10/200 processed; usable=10
+[trace]   11/200 processed; usable=11
+[trace]   12/200 processed; usable=12
+[trace]   13/200 processed; usable=13
+[trace]   14/200 processed; usable=14
+[trace]   15/200 processed; usable=15
+[trace]   16/200 processed; usable=16
+[trace]   17/200 processed; usable=17
+[trace]   18/200 processed; usable=18
+[trace]   19/200 processed; usable=19
+[trace]   20/200 processed; usable=20
+[trace]   21/200 processed; usable=21
+[trace]   22/200 processed; usable=22
+[trace]   23/200 processed; usable=23
+[trace]   24/200 processed; usable=24
+[trace]   25/200 processed; usable=25
+[trace]   26/200 processed; usable=26
+[trace]   27/200 processed; usable=27
+[trace]   28/200 processed; usable=28
+[trace]   29/200 processed; usable=29
+[trace]   30/200 processed; usable=30
+[trace]   31/200 processed; usable=31
+[trace]   32/200 processed; usable=32
+[trace]   33/200 processed; usable=33
+[trace]   34/200 processed; usable=34
+[trace]   35/200 processed; usable=35
+[trace]   36/200 processed; usable=36
+[trace]   37/200 processed; usable=37
+[trace]   38/200 processed; usable=38
+[trace]   39/200 processed; usable=39
+[trace]   40/200 processed; usable=40
+[trace]   41/200 processed; usable=41
+[trace]   42/200 processed; usable=42
+[trace]   43/200 processed; usable=43
+[trace]   44/200 processed; usable=44
+[trace]   45/200 processed; usable=45
+[trace]   46/200 processed; usable=46
+[trace]   47/200 processed; usable=47
+[trace]   48/200 processed; usable=48
+[trace]   49/200 processed; usable=49
+[trace]   50/200 processed; usable=50
+[trace]   51/200 processed; usable=51
+[trace]   52/200 processed; usable=52
+[trace]   53/200 processed; usable=53
+[trace]   54/200 processed; usable=54
+[trace]   55/200 processed; usable=55
+[trace]   56/200 processed; usable=56
+[trace]   57/200 processed; usable=57
+[trace]   58/200 processed; usable=58
+[trace]   59/200 processed; usable=59
+[trace]   60/200 processed; usable=60
+[trace]   61/200 processed; usable=61
+[trace]   62/200 processed; usable=62
+[trace]   63/200 processed; usable=63
+[trace]   64/200 processed; usable=64
+[trace]   65/200 processed; usable=65
+[trace]   66/200 processed; usable=66
+[trace]   67/200 processed; usable=67
+[trace]   68/200 processed; usable=68
+[trace]   69/200 processed; usable=69
+[trace]   70/200 processed; usable=70
+[trace]   71/200 processed; usable=71
+[trace]   72/200 processed; usable=72
+[trace]   73/200 processed; usable=73
+[trace]   74/200 processed; usable=74
+[trace]   75/200 processed; usable=75
+[trace]   76/200 processed; usable=76
+[trace]   77/200 processed; usable=77
+[trace]   78/200 processed; usable=78
+[trace]   79/200 processed; usable=79
+[trace]   80/200 processed; usable=80
+[trace]   81/200 processed; usable=81
+[trace]   82/200 processed; usable=82
+[trace]   83/200 processed; usable=83
+[trace]   84/200 processed; usable=84
+[trace]   85/200 processed; usable=85
+[trace]   86/200 processed; usable=86
+[trace]   87/200 processed; usable=87
+[trace]   88/200 processed; usable=88
+[trace]   89/200 processed; usable=89
+[trace]   90/200 processed; usable=90
+[trace]   91/200 processed; usable=91
+[trace]   92/200 processed; usable=92
+[trace]   93/200 processed; usable=93
+[trace]   94/200 processed; usable=94
+[trace]   95/200 processed; usable=95
+[trace]   96/200 processed; usable=96
+[trace]   97/200 processed; usable=97
+[trace]   98/200 processed; usable=98
+[trace]   99/200 processed; usable=99
+[trace]   100/200 processed; usable=100
+[trace]   101/200 processed; usable=101
+[trace]   102/200 processed; usable=102
+[trace]   103/200 processed; usable=103
+[trace]   104/200 processed; usable=104
+[trace]   105/200 processed; usable=105
+[trace]   106/200 processed; usable=106
+[trace]   107/200 processed; usable=107
+[trace]   108/200 processed; usable=108
+[trace]   109/200 processed; usable=109
+[trace]   110/200 processed; usable=110
+[trace]   111/200 processed; usable=111
+[trace]   112/200 processed; usable=112
+[trace]   113/200 processed; usable=113
+[trace]   114/200 processed; usable=114
+[trace]   115/200 processed; usable=115
+[trace]   116/200 processed; usable=116
+[trace]   117/200 processed; usable=117
+[trace]   118/200 processed; usable=118
+[trace]   119/200 processed; usable=119
+[trace]   120/200 processed; usable=120
+[trace]   121/200 processed; usable=121
+[trace]   122/200 processed; usable=122
+[trace]   123/200 processed; usable=123
+[trace]   124/200 processed; usable=124
+[trace]   125/200 processed; usable=125
+[trace]   126/200 processed; usable=126
+[trace]   127/200 processed; usable=127
+[trace]   128/200 processed; usable=128
+[trace]   129/200 processed; usable=129
+[trace]   130/200 processed; usable=130
+[trace]   131/200 processed; usable=131
+[trace]   132/200 processed; usable=132
+[trace]   133/200 processed; usable=133
+[trace]   134/200 processed; usable=134
+[trace]   135/200 processed; usable=135
+[trace]   136/200 processed; usable=136
+[trace]   137/200 processed; usable=137
+[trace]   138/200 processed; usable=138
+[trace]   139/200 processed; usable=139
+[trace]   140/200 processed; usable=140
+[trace]   141/200 processed; usable=141
+[trace]   142/200 processed; usable=142
+[trace]   143/200 processed; usable=143
+[trace]   144/200 processed; usable=144
+[trace]   145/200 processed; usable=145
+[trace]   146/200 processed; usable=146
+[trace]   147/200 processed; usable=147
+[trace]   148/200 processed; usable=148
+[trace]   149/200 processed; usable=149
+[trace]   150/200 processed; usable=150
+[trace]   151/200 processed; usable=151
+[trace]   152/200 processed; usable=152
+[trace]   153/200 processed; usable=153
+[trace]   154/200 processed; usable=154
+[trace]   155/200 processed; usable=155
+[trace]   156/200 processed; usable=156
+[trace]   157/200 processed; usable=157
+[trace]   158/200 processed; usable=158
+[trace]   159/200 processed; usable=159
+[trace]   160/200 processed; usable=160
+[trace]   161/200 processed; usable=161
+[trace]   162/200 processed; usable=162
+[trace]   163/200 processed; usable=163
+[trace]   164/200 processed; usable=164
+[trace]   165/200 processed; usable=165
+[trace]   166/200 processed; usable=166
+[trace]   167/200 processed; usable=167
+[trace]   168/200 processed; usable=168
+[trace]   169/200 processed; usable=169
+[trace]   170/200 processed; usable=170
+[trace]   171/200 processed; usable=171
+[trace]   172/200 processed; usable=172
+[trace]   173/200 processed; usable=173
+[trace]   174/200 processed; usable=174
+[trace]   175/200 processed; usable=175
+[trace]   176/200 processed; usable=176
+[trace]   177/200 processed; usable=177
+[trace]   178/200 processed; usable=178
+[trace]   179/200 processed; usable=179
+[trace]   180/200 processed; usable=180
+[trace]   181/200 processed; usable=181
+[trace]   182/200 processed; usable=182
+[trace]   183/200 processed; usable=183
+[trace]   184/200 processed; usable=184
+[trace]   185/200 processed; usable=185
+[trace]   186/200 processed; usable=186
+[trace]   187/200 processed; usable=187
+[trace]   188/200 processed; usable=188
+[trace]   189/200 processed; usable=189
+[trace]   190/200 processed; usable=190
+[trace]   191/200 processed; usable=191
+[trace]   192/200 processed; usable=192
+[trace]   193/200 processed; usable=193
+[trace]   194/200 processed; usable=194
+[trace]   195/200 processed; usable=195
+[trace]   196/200 processed; usable=196
+[trace]   197/200 processed; usable=197
+[trace]   198/200 processed; usable=198
+[trace]   199/200 processed; usable=199
+[trace]   200/200 processed; usable=200
+[Phi-4-mini-instruct-4bit/anli_r1] PRIMARY Fusion fusion_rank_mean_geom @ step 0 CI_lo=0.5679632981876694 dep=True | GEOM Fusion fusion_rank_mean_geom @ step 0 CI_lo=0.5791280631544323 dep=True | controls_pass=True
+
+===== Phi-4-mini-instruct-4bit/triviaqa_paired =====
+
+  Loading model: mlx-community/Phi-4-mini-instruct-4bit
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 20004.63it/s]
+     Layers: 32 | Probed: {'final': 31} | Output projection: tied_embed (V=200064, D=3072)
+[ace] Phi-4-mini-instruct-4bit 25/200
+[ace] Phi-4-mini-instruct-4bit 50/200
+[ace] Phi-4-mini-instruct-4bit 75/200
+[ace] Phi-4-mini-instruct-4bit 100/200
+[ace] Phi-4-mini-instruct-4bit 125/200
+[ace] Phi-4-mini-instruct-4bit 150/200
+[ace] Phi-4-mini-instruct-4bit 175/200
+[ace] Phi-4-mini-instruct-4bit 200/200
+
+  Loading model: mlx-community/Phi-4-mini-instruct-4bit
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 23853.86it/s]
+     Layers: 32 | Probed: {'final': 31} | Output projection: tied_embed (V=200064, D=3072)
+[inventory] benchmark=triviaqa_paired path=stage_b/data/triviaqa_paired_seed20260612_n200.jsonl
+[trace] model=mlx-community/Phi-4-mini-instruct-4bit
+[trace] samples=200 K=512 final_layer=final d=3072 V=200064
+[trace] commit instant: gen_step=1; pinned aggregate = final 25% block logit lens plus readout
+[trace] n_layers=32; pinned_late_layers=[24, 25, 26, 27, 28, 29, 30, 31]
+[trace]   1/200 processed; usable=1
+[trace]   2/200 processed; usable=2
+[trace]   3/200 processed; usable=3
+[trace]   4/200 processed; usable=4
+[trace]   5/200 processed; usable=5
+[trace]   6/200 processed; usable=6
+[trace]   7/200 processed; usable=7
+[trace]   8/200 processed; usable=8
+[trace]   9/200 processed; usable=9
+[trace]   10/200 processed; usable=10
+[trace]   11/200 processed; usable=11
+[trace]   12/200 processed; usable=12
+[trace]   13/200 processed; usable=13
+[trace]   14/200 processed; usable=14
+[trace]   15/200 processed; usable=15
+[trace]   16/200 processed; usable=16
+[trace]   17/200 processed; usable=17
+[trace]   18/200 processed; usable=18
+[trace]   19/200 processed; usable=19
+[trace]   20/200 processed; usable=20
+[trace]   21/200 processed; usable=21
+[trace]   22/200 processed; usable=22
+[trace]   23/200 processed; usable=23
+[trace]   24/200 processed; usable=24
+[trace]   25/200 processed; usable=25
+[trace]   26/200 processed; usable=26
+[trace]   27/200 processed; usable=27
+[trace]   28/200 processed; usable=28
+[trace]   29/200 processed; usable=29
+[trace]   30/200 processed; usable=30
+[trace]   31/200 processed; usable=31
+[trace]   32/200 processed; usable=32
+[trace]   33/200 processed; usable=33
+[trace]   34/200 processed; usable=34
+[trace]   35/200 processed; usable=35
+[trace]   36/200 processed; usable=36
+[trace]   37/200 processed; usable=37
+[trace]   38/200 processed; usable=38
+[trace]   39/200 processed; usable=39
+[trace]   40/200 processed; usable=40
+[trace]   41/200 processed; usable=41
+[trace]   42/200 processed; usable=42
+[trace]   43/200 processed; usable=43
+[trace]   44/200 processed; usable=44
+[trace]   45/200 processed; usable=45
+[trace]   46/200 processed; usable=46
+[trace]   47/200 processed; usable=47
+[trace]   48/200 processed; usable=48
+[trace]   49/200 processed; usable=49
+[trace]   50/200 processed; usable=50
+[trace]   51/200 processed; usable=51
+[trace]   52/200 processed; usable=52
+[trace]   53/200 processed; usable=53
+[trace]   54/200 processed; usable=54
+[trace]   55/200 processed; usable=55
+[trace]   56/200 processed; usable=56
+[trace]   57/200 processed; usable=57
+[trace]   58/200 processed; usable=58
+[trace]   59/200 processed; usable=59
+[trace]   60/200 processed; usable=60
+[trace]   61/200 processed; usable=61
+[trace]   62/200 processed; usable=62
+[trace]   63/200 processed; usable=63
+[trace]   64/200 processed; usable=64
+[trace]   65/200 processed; usable=65
+[trace]   66/200 processed; usable=66
+[trace]   67/200 processed; usable=67
+[trace]   68/200 processed; usable=68
+[trace]   69/200 processed; usable=69
+[trace]   70/200 processed; usable=70
+[trace]   71/200 processed; usable=71
+[trace]   72/200 processed; usable=72
+[trace]   73/200 processed; usable=73
+[trace]   74/200 processed; usable=74
+[trace]   75/200 processed; usable=75
+[trace]   76/200 processed; usable=76
+[trace]   77/200 processed; usable=77
+[trace]   78/200 processed; usable=78
+[trace]   79/200 processed; usable=79
+[trace]   80/200 processed; usable=80
+[trace]   81/200 processed; usable=81
+[trace]   82/200 processed; usable=82
+[trace]   83/200 processed; usable=83
+[trace]   84/200 processed; usable=84
+[trace]   85/200 processed; usable=85
+[trace]   86/200 processed; usable=86
+[trace]   87/200 processed; usable=87
+[trace]   88/200 processed; usable=88
+[trace]   89/200 processed; usable=89
+[trace]   90/200 processed; usable=90
+[trace]   91/200 processed; usable=91
+[trace]   92/200 processed; usable=92
+[trace]   93/200 processed; usable=93
+[trace]   94/200 processed; usable=94
+[trace]   95/200 processed; usable=95
+[trace]   96/200 processed; usable=96
+[trace]   97/200 processed; usable=97
+[trace]   98/200 processed; usable=98
+[trace]   99/200 processed; usable=99
+[trace]   100/200 processed; usable=100
+[trace]   101/200 processed; usable=101
+[trace]   102/200 processed; usable=102
+[trace]   103/200 processed; usable=103
+[trace]   104/200 processed; usable=104
+[trace]   105/200 processed; usable=105
+[trace]   106/200 processed; usable=106
+[trace]   107/200 processed; usable=107
+[trace]   108/200 processed; usable=108
+[trace]   109/200 processed; usable=109
+[trace]   110/200 processed; usable=110
+[trace]   111/200 processed; usable=111
+[trace]   112/200 processed; usable=112
+[trace]   113/200 processed; usable=113
+[trace]   114/200 processed; usable=114
+[trace]   115/200 processed; usable=115
+[trace]   116/200 processed; usable=116
+[trace]   117/200 processed; usable=117
+[trace]   118/200 processed; usable=118
+[trace]   119/200 processed; usable=119
+[trace]   120/200 processed; usable=120
+[trace]   121/200 processed; usable=121
+[trace]   122/200 processed; usable=122
+[trace]   123/200 processed; usable=123
+[trace]   124/200 processed; usable=124
+[trace]   125/200 processed; usable=125
+[trace]   126/200 processed; usable=126
+[trace]   127/200 processed; usable=127
+[trace]   128/200 processed; usable=128
+[trace]   129/200 processed; usable=129
+[trace]   130/200 processed; usable=130
+[trace]   131/200 processed; usable=131
+[trace]   132/200 processed; usable=132
+[trace]   133/200 processed; usable=133
+[trace]   134/200 processed; usable=134
+[trace]   135/200 processed; usable=135
+[trace]   136/200 processed; usable=136
+[trace]   137/200 processed; usable=137
+[trace]   138/200 processed; usable=138
+[trace]   139/200 processed; usable=139
+[trace]   140/200 processed; usable=140
+[trace]   141/200 processed; usable=141
+[trace]   142/200 processed; usable=142
+[trace]   143/200 processed; usable=143
+[trace]   144/200 processed; usable=144
+[trace]   145/200 processed; usable=145
+[trace]   146/200 processed; usable=146
+[trace]   147/200 processed; usable=147
+[trace]   148/200 processed; usable=148
+[trace]   149/200 processed; usable=149
+[trace]   150/200 processed; usable=150
+[trace]   151/200 processed; usable=151
+[trace]   152/200 processed; usable=152
+[trace]   153/200 processed; usable=153
+[trace]   154/200 processed; usable=154
+[trace]   155/200 processed; usable=155
+[trace]   156/200 processed; usable=156
+[trace]   157/200 processed; usable=157
+[trace]   158/200 processed; usable=158
+[trace]   159/200 processed; usable=159
+[trace]   160/200 processed; usable=160
+[trace]   161/200 processed; usable=161
+[trace]   162/200 processed; usable=162
+[trace]   163/200 processed; usable=163
+[trace]   164/200 processed; usable=164
+[trace]   165/200 processed; usable=165
+[trace]   166/200 processed; usable=166
+[trace]   167/200 processed; usable=167
+[trace]   168/200 processed; usable=168
+[trace]   169/200 processed; usable=169
+[trace]   170/200 processed; usable=170
+[trace]   171/200 processed; usable=171
+[trace]   172/200 processed; usable=172
+[trace]   173/200 processed; usable=173
+[trace]   174/200 processed; usable=174
+[trace]   175/200 processed; usable=175
+[trace]   176/200 processed; usable=176
+[trace]   177/200 processed; usable=177
+[trace]   178/200 processed; usable=178
+[trace]   179/200 processed; usable=179
+[trace]   180/200 processed; usable=180
+[trace]   181/200 processed; usable=181
+[trace]   182/200 processed; usable=182
+[trace]   183/200 processed; usable=183
+[trace]   184/200 processed; usable=184
+[trace]   185/200 processed; usable=185
+[trace]   186/200 processed; usable=186
+[trace]   187/200 processed; usable=187
+[trace]   188/200 processed; usable=188
+[trace]   189/200 processed; usable=189
+[trace]   190/200 processed; usable=190
+[trace]   191/200 processed; usable=191
+[trace]   192/200 processed; usable=192
+[trace]   193/200 processed; usable=193
+[trace]   194/200 processed; usable=194
+[trace]   195/200 processed; usable=195
+[trace]   196/200 processed; usable=196
+[trace]   197/200 processed; usable=197
+[trace]   198/200 processed; usable=198
+[trace]   199/200 processed; usable=199
+[trace]   200/200 processed; usable=200
+[Phi-4-mini-instruct-4bit/triviaqa_paired] PRIMARY attention[mid_v_norm_lastq_weighted] @ step 0 CI_lo=0.8201576224198507 dep=True | GEOM attention[mid_v_norm_lastq_weighted] @ step 0 CI_lo=0.8213091216216216 dep=True | controls_pass=True
+
+===== Qwen2.5-7B-Instruct-4bit/anli_r1 =====
+
+  Loading model: mlx-community/Qwen2.5-7B-Instruct-4bit
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 32486.00it/s]
+     Layers: 28 | Probed: {'final': 27} | Output projection: lm_head (V=152064, D=3584)
+[ace] Qwen2.5-7B-Instruct-4bit 25/200
+[ace] Qwen2.5-7B-Instruct-4bit 50/200
+[ace] Qwen2.5-7B-Instruct-4bit 75/200
+[ace] Qwen2.5-7B-Instruct-4bit 100/200
+[ace] Qwen2.5-7B-Instruct-4bit 125/200
+[ace] Qwen2.5-7B-Instruct-4bit 150/200
+[ace] Qwen2.5-7B-Instruct-4bit 175/200
+[ace] Qwen2.5-7B-Instruct-4bit 200/200
+
+  Loading model: mlx-community/Qwen2.5-7B-Instruct-4bit
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 6131.03it/s]
+     Layers: 28 | Probed: {'final': 27} | Output projection: lm_head (V=152064, D=3584)
+[inventory] benchmark=anli_r1 path=stage_b/data/anli_R1_seed20260612_n200.jsonl
+[trace] model=mlx-community/Qwen2.5-7B-Instruct-4bit
+[trace] samples=200 K=512 final_layer=final d=3584 V=152064
+[trace] commit instant: gen_step=1; pinned aggregate = final 25% block logit lens plus readout
+[trace] n_layers=28; pinned_late_layers=[21, 22, 23, 24, 25, 26, 27]
+[trace]   1/200 processed; usable=1
+[trace]   2/200 processed; usable=2
+[trace]   3/200 processed; usable=3
+[trace]   4/200 processed; usable=4
+[trace]   5/200 processed; usable=5
+[trace]   6/200 processed; usable=6
+[trace]   7/200 processed; usable=7
+[trace]   8/200 processed; usable=8
+[trace]   9/200 processed; usable=9
+[trace]   10/200 processed; usable=10
+[trace]   11/200 processed; usable=11
+[trace]   12/200 processed; usable=12
+[trace]   13/200 processed; usable=13
+[trace]   14/200 processed; usable=14
+[trace]   15/200 processed; usable=15
+[trace]   16/200 processed; usable=16
+[trace]   17/200 processed; usable=17
+[trace]   18/200 processed; usable=18
+[trace]   19/200 processed; usable=19
+[trace]   20/200 processed; usable=20
+[trace]   21/200 processed; usable=21
+[trace]   22/200 processed; usable=22
+[trace]   23/200 processed; usable=23
+[trace]   24/200 processed; usable=24
+[trace]   25/200 processed; usable=25
+[trace]   26/200 processed; usable=26
+[trace]   27/200 processed; usable=27
+[trace]   28/200 processed; usable=28
+[trace]   29/200 processed; usable=29
+[trace]   30/200 processed; usable=30
+[trace]   31/200 processed; usable=31
+[trace]   32/200 processed; usable=32
+[trace]   33/200 processed; usable=33
+[trace]   34/200 processed; usable=34
+[trace]   35/200 processed; usable=35
+[trace]   36/200 processed; usable=36
+[trace]   37/200 processed; usable=37
+[trace]   38/200 processed; usable=38
+[trace]   39/200 processed; usable=39
+[trace]   40/200 processed; usable=40
+[trace]   41/200 processed; usable=41
+[trace]   42/200 processed; usable=42
+[trace]   43/200 processed; usable=43
+[trace]   44/200 processed; usable=44
+[trace]   45/200 processed; usable=45
+[trace]   46/200 processed; usable=46
+[trace]   47/200 processed; usable=47
+[trace]   48/200 processed; usable=48
+[trace]   49/200 processed; usable=49
+[trace]   50/200 processed; usable=50
+[trace]   51/200 processed; usable=51
+[trace]   52/200 processed; usable=52
+[trace]   53/200 processed; usable=53
+[trace]   54/200 processed; usable=54
+[trace]   55/200 processed; usable=55
+[trace]   56/200 processed; usable=56
+[trace]   57/200 processed; usable=57
+[trace]   58/200 processed; usable=58
+[trace]   59/200 processed; usable=59
+[trace]   60/200 processed; usable=60
+[trace]   61/200 processed; usable=61
+[trace]   62/200 processed; usable=62
+[trace]   63/200 processed; usable=63
+[trace]   64/200 processed; usable=64
+[trace]   65/200 processed; usable=65
+[trace]   66/200 processed; usable=66
+[trace]   67/200 processed; usable=67
+[trace]   68/200 processed; usable=68
+[trace]   69/200 processed; usable=69
+[trace]   70/200 processed; usable=70
+[trace]   71/200 processed; usable=71
+[trace]   72/200 processed; usable=72
+[trace]   73/200 processed; usable=73
+[trace]   74/200 processed; usable=74
+[trace]   75/200 processed; usable=75
+[trace]   76/200 processed; usable=76
+[trace]   77/200 processed; usable=77
+[trace]   78/200 processed; usable=78
+[trace]   79/200 processed; usable=79
+[trace]   80/200 processed; usable=80
+[trace]   81/200 processed; usable=81
+[trace]   82/200 processed; usable=82
+[trace]   83/200 processed; usable=83
+[trace]   84/200 processed; usable=84
+[trace]   85/200 processed; usable=85
+[trace]   86/200 processed; usable=86
+[trace]   87/200 processed; usable=87
+[trace]   88/200 processed; usable=88
+[trace]   89/200 processed; usable=89
+[trace]   90/200 processed; usable=90
+[trace]   91/200 processed; usable=91
+[trace]   92/200 processed; usable=92
+[trace]   93/200 processed; usable=93
+[trace]   94/200 processed; usable=94
+[trace]   95/200 processed; usable=95
+[trace]   96/200 processed; usable=96
+[trace]   97/200 processed; usable=97
+[trace]   98/200 processed; usable=98
+[trace]   99/200 processed; usable=99
+[trace]   100/200 processed; usable=100
+[trace]   101/200 processed; usable=101
+[trace]   102/200 processed; usable=102
+[trace]   103/200 processed; usable=103
+[trace]   104/200 processed; usable=104
+[trace]   105/200 processed; usable=105
+[trace]   106/200 processed; usable=106
+[trace]   107/200 processed; usable=107
+[trace]   108/200 processed; usable=108
+[trace]   109/200 processed; usable=109
+[trace]   110/200 processed; usable=110
+[trace]   111/200 processed; usable=111
+[trace]   112/200 processed; usable=112
+[trace]   113/200 processed; usable=113
+[trace]   114/200 processed; usable=114
+[trace]   115/200 processed; usable=115
+[trace]   116/200 processed; usable=116
+[trace]   117/200 processed; usable=117
+[trace]   118/200 processed; usable=118
+[trace]   119/200 processed; usable=119
+[trace]   120/200 processed; usable=120
+[trace]   121/200 processed; usable=121
+[trace]   122/200 processed; usable=122
+[trace]   123/200 processed; usable=123
+[trace]   124/200 processed; usable=124
+[trace]   125/200 processed; usable=125
+[trace]   126/200 processed; usable=126
+[trace]   127/200 processed; usable=127
+[trace]   128/200 processed; usable=128
+[trace]   129/200 processed; usable=129
+[trace]   130/200 processed; usable=130
+[trace]   131/200 processed; usable=131
+[trace]   132/200 processed; usable=132
+[trace]   133/200 processed; usable=133
+[trace]   134/200 processed; usable=134
+[trace]   135/200 processed; usable=135
+[trace]   136/200 processed; usable=136
+[trace]   137/200 processed; usable=137
+[trace]   138/200 processed; usable=138
+[trace]   139/200 processed; usable=139
+[trace]   140/200 processed; usable=140
+[trace]   141/200 processed; usable=141
+[trace]   142/200 processed; usable=142
+[trace]   143/200 processed; usable=143
+[trace]   144/200 processed; usable=144
+[trace]   145/200 processed; usable=145
+[trace]   146/200 processed; usable=146
+[trace]   147/200 processed; usable=147
+[trace]   148/200 processed; usable=148
+[trace]   149/200 processed; usable=149
+[trace]   150/200 processed; usable=150
+[trace]   151/200 processed; usable=151
+[trace]   152/200 processed; usable=152
+[trace]   153/200 processed; usable=153
+[trace]   154/200 processed; usable=154
+[trace]   155/200 processed; usable=155
+[trace]   156/200 processed; usable=156
+[trace]   157/200 processed; usable=157
+[trace]   158/200 processed; usable=158
+[trace]   159/200 processed; usable=159
+[trace]   160/200 processed; usable=160
+[trace]   161/200 processed; usable=161
+[trace]   162/200 processed; usable=162
+[trace]   163/200 processed; usable=163
+[trace]   164/200 processed; usable=164
+[trace]   165/200 processed; usable=165
+[trace]   166/200 processed; usable=166
+[trace]   167/200 processed; usable=167
+[trace]   168/200 processed; usable=168
+[trace]   169/200 processed; usable=169
+[trace]   170/200 processed; usable=170
+[trace]   171/200 processed; usable=171
+[trace]   172/200 processed; usable=172
+[trace]   173/200 processed; usable=173
+[trace]   174/200 processed; usable=174
+[trace]   175/200 processed; usable=175
+[trace]   176/200 processed; usable=176
+[trace]   177/200 processed; usable=177
+[trace]   178/200 processed; usable=178
+[trace]   179/200 processed; usable=179
+[trace]   180/200 processed; usable=180
+[trace]   181/200 processed; usable=181
+[trace]   182/200 processed; usable=182
+[trace]   183/200 processed; usable=183
+[trace]   184/200 processed; usable=184
+[trace]   185/200 processed; usable=185
+[trace]   186/200 processed; usable=186
+[trace]   187/200 processed; usable=187
+[trace]   188/200 processed; usable=188
+[trace]   189/200 processed; usable=189
+[trace]   190/200 processed; usable=190
+[trace]   191/200 processed; usable=191
+[trace]   192/200 processed; usable=192
+[trace]   193/200 processed; usable=193
+[trace]   194/200 processed; usable=194
+[trace]   195/200 processed; usable=195
+[trace]   196/200 processed; usable=196
+[trace]   197/200 processed; usable=197
+[trace]   198/200 processed; usable=198
+[trace]   199/200 processed; usable=199
+[trace]   200/200 processed; usable=200
+[Qwen2.5-7B-Instruct-4bit/anli_r1] PRIMARY attention[final_bos_mass] @ step 0 CI_lo=0.6498648847016121 dep=True | GEOM attention[final_bos_mass] @ step 0 CI_lo=0.6576791865394807 dep=True | controls_pass=True
+
+===== Qwen2.5-7B-Instruct-4bit/triviaqa_paired =====
+
+  Loading model: mlx-community/Qwen2.5-7B-Instruct-4bit
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 12216.42it/s]
+     Layers: 28 | Probed: {'final': 27} | Output projection: lm_head (V=152064, D=3584)
+[ace] Qwen2.5-7B-Instruct-4bit 25/200
+[ace] Qwen2.5-7B-Instruct-4bit 50/200
+[ace] Qwen2.5-7B-Instruct-4bit 75/200
+[ace] Qwen2.5-7B-Instruct-4bit 100/200
+[ace] Qwen2.5-7B-Instruct-4bit 125/200
+[ace] Qwen2.5-7B-Instruct-4bit 150/200
+[ace] Qwen2.5-7B-Instruct-4bit 175/200
+[ace] Qwen2.5-7B-Instruct-4bit 200/200
+
+  Loading model: mlx-community/Qwen2.5-7B-Instruct-4bit
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 20549.12it/s]
+     Layers: 28 | Probed: {'final': 27} | Output projection: lm_head (V=152064, D=3584)
+[inventory] benchmark=triviaqa_paired path=stage_b/data/triviaqa_paired_seed20260612_n200.jsonl
+[trace] model=mlx-community/Qwen2.5-7B-Instruct-4bit
+[trace] samples=200 K=512 final_layer=final d=3584 V=152064
+[trace] commit instant: gen_step=1; pinned aggregate = final 25% block logit lens plus readout
+[trace] n_layers=28; pinned_late_layers=[21, 22, 23, 24, 25, 26, 27]
+[trace]   1/200 processed; usable=1
+[trace]   2/200 processed; usable=2
+[trace]   3/200 processed; usable=3
+[trace]   4/200 processed; usable=4
+[trace]   5/200 processed; usable=5
+[trace]   6/200 processed; usable=6
+[trace]   7/200 processed; usable=7
+[trace]   8/200 processed; usable=8
+[trace]   9/200 processed; usable=9
+[trace]   10/200 processed; usable=10
+[trace]   11/200 processed; usable=11
+[trace]   12/200 processed; usable=12
+[trace]   13/200 processed; usable=13
+[trace]   14/200 processed; usable=14
+[trace]   15/200 processed; usable=15
+[trace]   16/200 processed; usable=16
+[trace]   17/200 processed; usable=17
+[trace]   18/200 processed; usable=18
+[trace]   19/200 processed; usable=19
+[trace]   20/200 processed; usable=20
+[trace]   21/200 processed; usable=21
+[trace]   22/200 processed; usable=22
+[trace]   23/200 processed; usable=23
+[trace]   24/200 processed; usable=24
+[trace]   25/200 processed; usable=25
+[trace]   26/200 processed; usable=26
+[trace]   27/200 processed; usable=27
+[trace]   28/200 processed; usable=28
+[trace]   29/200 processed; usable=29
+[trace]   30/200 processed; usable=30
+[trace]   31/200 processed; usable=31
+[trace]   32/200 processed; usable=32
+[trace]   33/200 processed; usable=33
+[trace]   34/200 processed; usable=34
+[trace]   35/200 processed; usable=35
+[trace]   36/200 processed; usable=36
+[trace]   37/200 processed; usable=37
+[trace]   38/200 processed; usable=38
+[trace]   39/200 processed; usable=39
+[trace]   40/200 processed; usable=40
+[trace]   41/200 processed; usable=41
+[trace]   42/200 processed; usable=42
+[trace]   43/200 processed; usable=43
+[trace]   44/200 processed; usable=44
+[trace]   45/200 processed; usable=45
+[trace]   46/200 processed; usable=46
+[trace]   47/200 processed; usable=47
+[trace]   48/200 processed; usable=48
+[trace]   49/200 processed; usable=49
+[trace]   50/200 processed; usable=50
+[trace]   51/200 processed; usable=51
+[trace]   52/200 processed; usable=52
+[trace]   53/200 processed; usable=53
+[trace]   54/200 processed; usable=54
+[trace]   55/200 processed; usable=55
+[trace]   56/200 processed; usable=56
+[trace]   57/200 processed; usable=57
+[trace]   58/200 processed; usable=58
+[trace]   59/200 processed; usable=59
+[trace]   60/200 processed; usable=60
+[trace]   61/200 processed; usable=61
+[trace]   62/200 processed; usable=62
+[trace]   63/200 processed; usable=63
+[trace]   64/200 processed; usable=64
+[trace]   65/200 processed; usable=65
+[trace]   66/200 processed; usable=66
+[trace]   67/200 processed; usable=67
+[trace]   68/200 processed; usable=68
+[trace]   69/200 processed; usable=69
+[trace]   70/200 processed; usable=70
+[trace]   71/200 processed; usable=71
+[trace]   72/200 processed; usable=72
+[trace]   73/200 processed; usable=73
+[trace]   74/200 processed; usable=74
+[trace]   75/200 processed; usable=75
+[trace]   76/200 processed; usable=76
+[trace]   77/200 processed; usable=77
+[trace]   78/200 processed; usable=78
+[trace]   79/200 processed; usable=79
+[trace]   80/200 processed; usable=80
+[trace]   81/200 processed; usable=81
+[trace]   82/200 processed; usable=82
+[trace]   83/200 processed; usable=83
+[trace]   84/200 processed; usable=84
+[trace]   85/200 processed; usable=85
+[trace]   86/200 processed; usable=86
+[trace]   87/200 processed; usable=87
+[trace]   88/200 processed; usable=88
+[trace]   89/200 processed; usable=89
+[trace]   90/200 processed; usable=90
+[trace]   91/200 processed; usable=91
+[trace]   92/200 processed; usable=92
+[trace]   93/200 processed; usable=93
+[trace]   94/200 processed; usable=94
+[trace]   95/200 processed; usable=95
+[trace]   96/200 processed; usable=96
+[trace]   97/200 processed; usable=97
+[trace]   98/200 processed; usable=98
+[trace]   99/200 processed; usable=99
+[trace]   100/200 processed; usable=100
+[trace]   101/200 processed; usable=101
+[trace]   102/200 processed; usable=102
+[trace]   103/200 processed; usable=103
+[trace]   104/200 processed; usable=104
+[trace]   105/200 processed; usable=105
+[trace]   106/200 processed; usable=106
+[trace]   107/200 processed; usable=107
+[trace]   108/200 processed; usable=108
+[trace]   109/200 processed; usable=109
+[trace]   110/200 processed; usable=110
+[trace]   111/200 processed; usable=111
+[trace]   112/200 processed; usable=112
+[trace]   113/200 processed; usable=113
+[trace]   114/200 processed; usable=114
+[trace]   115/200 processed; usable=115
+[trace]   116/200 processed; usable=116
+[trace]   117/200 processed; usable=117
+[trace]   118/200 processed; usable=118
+[trace]   119/200 processed; usable=119
+[trace]   120/200 processed; usable=120
+[trace]   121/200 processed; usable=121
+[trace]   122/200 processed; usable=122
+[trace]   123/200 processed; usable=123
+[trace]   124/200 processed; usable=124
+[trace]   125/200 processed; usable=125
+[trace]   126/200 processed; usable=126
+[trace]   127/200 processed; usable=127
+[trace]   128/200 processed; usable=128
+[trace]   129/200 processed; usable=129
+[trace]   130/200 processed; usable=130
+[trace]   131/200 processed; usable=131
+[trace]   132/200 processed; usable=132
+[trace]   133/200 processed; usable=133
+[trace]   134/200 processed; usable=134
+[trace]   135/200 processed; usable=135
+[trace]   136/200 processed; usable=136
+[trace]   137/200 processed; usable=137
+[trace]   138/200 processed; usable=138
+[trace]   139/200 processed; usable=139
+[trace]   140/200 processed; usable=140
+[trace]   141/200 processed; usable=141
+[trace]   142/200 processed; usable=142
+[trace]   143/200 processed; usable=143
+[trace]   144/200 processed; usable=144
+[trace]   145/200 processed; usable=145
+[trace]   146/200 processed; usable=146
+[trace]   147/200 processed; usable=147
+[trace]   148/200 processed; usable=148
+[trace]   149/200 processed; usable=149
+[trace]   150/200 processed; usable=150
+[trace]   151/200 processed; usable=151
+[trace]   152/200 processed; usable=152
+[trace]   153/200 processed; usable=153
+[trace]   154/200 processed; usable=154
+[trace]   155/200 processed; usable=155
+[trace]   156/200 processed; usable=156
+[trace]   157/200 processed; usable=157
+[trace]   158/200 processed; usable=158
+[trace]   159/200 processed; usable=159
+[trace]   160/200 processed; usable=160
+[trace]   161/200 processed; usable=161
+[trace]   162/200 processed; usable=162
+[trace]   163/200 processed; usable=163
+[trace]   164/200 processed; usable=164
+[trace]   165/200 processed; usable=165
+[trace]   166/200 processed; usable=166
+[trace]   167/200 processed; usable=167
+[trace]   168/200 processed; usable=168
+[trace]   169/200 processed; usable=169
+[trace]   170/200 processed; usable=170
+[trace]   171/200 processed; usable=171
+[trace]   172/200 processed; usable=172
+[trace]   173/200 processed; usable=173
+[trace]   174/200 processed; usable=174
+[trace]   175/200 processed; usable=175
+[trace]   176/200 processed; usable=176
+[trace]   177/200 processed; usable=177
+[trace]   178/200 processed; usable=178
+[trace]   179/200 processed; usable=179
+[trace]   180/200 processed; usable=180
+[trace]   181/200 processed; usable=181
+[trace]   182/200 processed; usable=182
+[trace]   183/200 processed; usable=183
+[trace]   184/200 processed; usable=184
+[trace]   185/200 processed; usable=185
+[trace]   186/200 processed; usable=186
+[trace]   187/200 processed; usable=187
+[trace]   188/200 processed; usable=188
+[trace]   189/200 processed; usable=189
+[trace]   190/200 processed; usable=190
+[trace]   191/200 processed; usable=191
+[trace]   192/200 processed; usable=192
+[trace]   193/200 processed; usable=193
+[trace]   194/200 processed; usable=194
+[trace]   195/200 processed; usable=195
+[trace]   196/200 processed; usable=196
+[trace]   197/200 processed; usable=197
+[trace]   198/200 processed; usable=198
+[trace]   199/200 processed; usable=199
+[trace]   200/200 processed; usable=200
+[Qwen2.5-7B-Instruct-4bit/triviaqa_paired] PRIMARY attention[final_v_norm_lastq_weighted] @ step 0 CI_lo=0.7848256106774112 dep=True | GEOM attention[final_v_norm_lastq_weighted] @ step 0 CI_lo=0.7848256106774112 dep=True | controls_pass=True
+
+===== Qwen3-1.7B-4bit/anli_r1 =====
+
+  Loading model: mlx-community/Qwen3-1.7B-4bit
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 25082.22it/s]
+     Layers: 28 | Probed: {'final': 27} | Output projection: tied_embed (V=151936, D=2048)
+[ace] Qwen3-1.7B-4bit 25/200
+[ace] Qwen3-1.7B-4bit 50/200
+[ace] Qwen3-1.7B-4bit 75/200
+[ace] Qwen3-1.7B-4bit 100/200
+[ace] Qwen3-1.7B-4bit 125/200
+[ace] Qwen3-1.7B-4bit 150/200
+[ace] Qwen3-1.7B-4bit 175/200
+[ace] Qwen3-1.7B-4bit 200/200
+
+  Loading model: mlx-community/Qwen3-1.7B-4bit
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 204047.22it/s]
+     Layers: 28 | Probed: {'final': 27} | Output projection: tied_embed (V=151936, D=2048)
+[inventory] benchmark=anli_r1 path=stage_b/data/anli_R1_seed20260612_n200.jsonl
+[trace] model=mlx-community/Qwen3-1.7B-4bit
+[trace] samples=200 K=512 final_layer=final d=2048 V=151936
+[trace] commit instant: gen_step=1; pinned aggregate = final 25% block logit lens plus readout
+[trace] n_layers=28; pinned_late_layers=[21, 22, 23, 24, 25, 26, 27]
+[trace]   1/200 processed; usable=1
+[trace]   2/200 processed; usable=2
+[trace]   3/200 processed; usable=3
+[trace]   4/200 processed; usable=4
+[trace]   5/200 processed; usable=5
+[trace]   6/200 processed; usable=6
+[trace]   7/200 processed; usable=7
+[trace]   8/200 processed; usable=8
+[trace]   9/200 processed; usable=9
+[trace]   10/200 processed; usable=10
+[trace]   11/200 processed; usable=11
+[trace]   12/200 processed; usable=12
+[trace]   13/200 processed; usable=13
+[trace]   14/200 processed; usable=14
+[trace]   15/200 processed; usable=15
+[trace]   16/200 processed; usable=16
+[trace]   17/200 processed; usable=17
+[trace]   18/200 processed; usable=18
+[trace]   19/200 processed; usable=19
+[trace]   20/200 processed; usable=20
+[trace]   21/200 processed; usable=21
+[trace]   22/200 processed; usable=22
+[trace]   23/200 processed; usable=23
+[trace]   24/200 processed; usable=24
+[trace]   25/200 processed; usable=25
+[trace]   26/200 processed; usable=26
+[trace]   27/200 processed; usable=27
+[trace]   28/200 processed; usable=28
+[trace]   29/200 processed; usable=29
+[trace]   30/200 processed; usable=30
+[trace]   31/200 processed; usable=31
+[trace]   32/200 processed; usable=32
+[trace]   33/200 processed; usable=33
+[trace]   34/200 processed; usable=34
+[trace]   35/200 processed; usable=35
+[trace]   36/200 processed; usable=36
+[trace]   37/200 processed; usable=37
+[trace]   38/200 processed; usable=38
+[trace]   39/200 processed; usable=39
+[trace]   40/200 processed; usable=40
+[trace]   41/200 processed; usable=41
+[trace]   42/200 processed; usable=42
+[trace]   43/200 processed; usable=43
+[trace]   44/200 processed; usable=44
+[trace]   45/200 processed; usable=45
+[trace]   46/200 processed; usable=46
+[trace]   47/200 processed; usable=47
+[trace]   48/200 processed; usable=48
+[trace]   49/200 processed; usable=49
+[trace]   50/200 processed; usable=50
+[trace]   51/200 processed; usable=51
+[trace]   52/200 processed; usable=52
+[trace]   53/200 processed; usable=53
+[trace]   54/200 processed; usable=54
+[trace]   55/200 processed; usable=55
+[trace]   56/200 processed; usable=56
+[trace]   57/200 processed; usable=57
+[trace]   58/200 processed; usable=58
+[trace]   59/200 processed; usable=59
+[trace]   60/200 processed; usable=60
+[trace]   61/200 processed; usable=61
+[trace]   62/200 processed; usable=62
+[trace]   63/200 processed; usable=63
+[trace]   64/200 processed; usable=64
+[trace]   65/200 processed; usable=65
+[trace]   66/200 processed; usable=66
+[trace]   67/200 processed; usable=67
+[trace]   68/200 processed; usable=68
+[trace]   69/200 processed; usable=69
+[trace]   70/200 processed; usable=70
+[trace]   71/200 processed; usable=71
+[trace]   72/200 processed; usable=72
+[trace]   73/200 processed; usable=73
+[trace]   74/200 processed; usable=74
+[trace]   75/200 processed; usable=75
+[trace]   76/200 processed; usable=76
+[trace]   77/200 processed; usable=77
+[trace]   78/200 processed; usable=78
+[trace]   79/200 processed; usable=79
+[trace]   80/200 processed; usable=80
+[trace]   81/200 processed; usable=81
+[trace]   82/200 processed; usable=82
+[trace]   83/200 processed; usable=83
+[trace]   84/200 processed; usable=84
+[trace]   85/200 processed; usable=85
+[trace]   86/200 processed; usable=86
+[trace]   87/200 processed; usable=87
+[trace]   88/200 processed; usable=88
+[trace]   89/200 processed; usable=89
+[trace]   90/200 processed; usable=90
+[trace]   91/200 processed; usable=91
+[trace]   92/200 processed; usable=92
+[trace]   93/200 processed; usable=93
+[trace]   94/200 processed; usable=94
+[trace]   95/200 processed; usable=95
+[trace]   96/200 processed; usable=96
+[trace]   97/200 processed; usable=97
+[trace]   98/200 processed; usable=98
+[trace]   99/200 processed; usable=99
+[trace]   100/200 processed; usable=100
+[trace]   101/200 processed; usable=101
+[trace]   102/200 processed; usable=102
+[trace]   103/200 processed; usable=103
+[trace]   104/200 processed; usable=104
+[trace]   105/200 processed; usable=105
+[trace]   106/200 processed; usable=106
+[trace]   107/200 processed; usable=107
+[trace]   108/200 processed; usable=108
+[trace]   109/200 processed; usable=109
+[trace]   110/200 processed; usable=110
+[trace]   111/200 processed; usable=111
+[trace]   112/200 processed; usable=112
+[trace]   113/200 processed; usable=113
+[trace]   114/200 processed; usable=114
+[trace]   115/200 processed; usable=115
+[trace]   116/200 processed; usable=116
+[trace]   117/200 processed; usable=117
+[trace]   118/200 processed; usable=118
+[trace]   119/200 processed; usable=119
+[trace]   120/200 processed; usable=120
+[trace]   121/200 processed; usable=121
+[trace]   122/200 processed; usable=122
+[trace]   123/200 processed; usable=123
+[trace]   124/200 processed; usable=124
+[trace]   125/200 processed; usable=125
+[trace]   126/200 processed; usable=126
+[trace]   127/200 processed; usable=127
+[trace]   128/200 processed; usable=128
+[trace]   129/200 processed; usable=129
+[trace]   130/200 processed; usable=130
+[trace]   131/200 processed; usable=131
+[trace]   132/200 processed; usable=132
+[trace]   133/200 processed; usable=133
+[trace]   134/200 processed; usable=134
+[trace]   135/200 processed; usable=135
+[trace]   136/200 processed; usable=136
+[trace]   137/200 processed; usable=137
+[trace]   138/200 processed; usable=138
+[trace]   139/200 processed; usable=139
+[trace]   140/200 processed; usable=140
+[trace]   141/200 processed; usable=141
+[trace]   142/200 processed; usable=142
+[trace]   143/200 processed; usable=143
+[trace]   144/200 processed; usable=144
+[trace]   145/200 processed; usable=145
+[trace]   146/200 processed; usable=146
+[trace]   147/200 processed; usable=147
+[trace]   148/200 processed; usable=148
+[trace]   149/200 processed; usable=149
+[trace]   150/200 processed; usable=150
+[trace]   151/200 processed; usable=151
+[trace]   152/200 processed; usable=152
+[trace]   153/200 processed; usable=153
+[trace]   154/200 processed; usable=154
+[trace]   155/200 processed; usable=155
+[trace]   156/200 processed; usable=156
+[trace]   157/200 processed; usable=157
+[trace]   158/200 processed; usable=158
+[trace]   159/200 processed; usable=159
+[trace]   160/200 processed; usable=160
+[trace]   161/200 processed; usable=161
+[trace]   162/200 processed; usable=162
+[trace]   163/200 processed; usable=163
+[trace]   164/200 processed; usable=164
+[trace]   165/200 processed; usable=165
+[trace]   166/200 processed; usable=166
+[trace]   167/200 processed; usable=167
+[trace]   168/200 processed; usable=168
+[trace]   169/200 processed; usable=169
+[trace]   170/200 processed; usable=170
+[trace]   171/200 processed; usable=171
+[trace]   172/200 processed; usable=172
+[trace]   173/200 processed; usable=173
+[trace]   174/200 processed; usable=174
+[trace]   175/200 processed; usable=175
+[trace]   176/200 processed; usable=176
+[trace]   177/200 processed; usable=177
+[trace]   178/200 processed; usable=178
+[trace]   179/200 processed; usable=179
+[trace]   180/200 processed; usable=180
+[trace]   181/200 processed; usable=181
+[trace]   182/200 processed; usable=182
+[trace]   183/200 processed; usable=183
+[trace]   184/200 processed; usable=184
+[trace]   185/200 processed; usable=185
+[trace]   186/200 processed; usable=186
+[trace]   187/200 processed; usable=187
+[trace]   188/200 processed; usable=188
+[trace]   189/200 processed; usable=189
+[trace]   190/200 processed; usable=190
+[trace]   191/200 processed; usable=191
+[trace]   192/200 processed; usable=192
+[trace]   193/200 processed; usable=193
+[trace]   194/200 processed; usable=194
+[trace]   195/200 processed; usable=195
+[trace]   196/200 processed; usable=196
+[trace]   197/200 processed; usable=197
+[trace]   198/200 processed; usable=198
+[trace]   199/200 processed; usable=199
+[trace]   200/200 processed; usable=200
+[Qwen3-1.7B-4bit/anli_r1] PRIMARY attention[final_js_kv_groups] @ step 0 CI_lo=0.535021645021645 dep=True | GEOM attention[final_js_kv_groups] @ step 0 CI_lo=0.5669438058829506 dep=True | controls_pass=True
+
+===== Qwen3-1.7B-4bit/triviaqa_paired =====
+
+  Loading model: mlx-community/Qwen3-1.7B-4bit
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 4702.13it/s]
+     Layers: 28 | Probed: {'final': 27} | Output projection: tied_embed (V=151936, D=2048)
+[ace] Qwen3-1.7B-4bit 25/200
+[ace] Qwen3-1.7B-4bit 50/200
+[ace] Qwen3-1.7B-4bit 75/200
+[ace] Qwen3-1.7B-4bit 100/200
+[ace] Qwen3-1.7B-4bit 125/200
+[ace] Qwen3-1.7B-4bit 150/200
+[ace] Qwen3-1.7B-4bit 175/200
+[ace] Qwen3-1.7B-4bit 200/200
+
+  Loading model: mlx-community/Qwen3-1.7B-4bit
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 17865.00it/s]
+     Layers: 28 | Probed: {'final': 27} | Output projection: tied_embed (V=151936, D=2048)
+[inventory] benchmark=triviaqa_paired path=stage_b/data/triviaqa_paired_seed20260612_n200.jsonl
+[trace] model=mlx-community/Qwen3-1.7B-4bit
+[trace] samples=200 K=512 final_layer=final d=2048 V=151936
+[trace] commit instant: gen_step=1; pinned aggregate = final 25% block logit lens plus readout
+[trace] n_layers=28; pinned_late_layers=[21, 22, 23, 24, 25, 26, 27]
+[trace]   1/200 processed; usable=1
+[trace]   2/200 processed; usable=2
+[trace]   3/200 processed; usable=3
+[trace]   4/200 processed; usable=4
+[trace]   5/200 processed; usable=5
+[trace]   6/200 processed; usable=6
+[trace]   7/200 processed; usable=7
+[trace]   8/200 processed; usable=8
+[trace]   9/200 processed; usable=9
+[trace]   10/200 processed; usable=10
+[trace]   11/200 processed; usable=11
+[trace]   12/200 processed; usable=12
+[trace]   13/200 processed; usable=13
+[trace]   14/200 processed; usable=14
+[trace]   15/200 processed; usable=15
+[trace]   16/200 processed; usable=16
+[trace]   17/200 processed; usable=17
+[trace]   18/200 processed; usable=18
+[trace]   19/200 processed; usable=19
+[trace]   20/200 processed; usable=20
+[trace]   21/200 processed; usable=21
+[trace]   22/200 processed; usable=22
+[trace]   23/200 processed; usable=23
+[trace]   24/200 processed; usable=24
+[trace]   25/200 processed; usable=25
+[trace]   26/200 processed; usable=26
+[trace]   27/200 processed; usable=27
+[trace]   28/200 processed; usable=28
+[trace]   29/200 processed; usable=29
+[trace]   30/200 processed; usable=30
+[trace]   31/200 processed; usable=31
+[trace]   32/200 processed; usable=32
+[trace]   33/200 processed; usable=33
+[trace]   34/200 processed; usable=34
+[trace]   35/200 processed; usable=35
+[trace]   36/200 processed; usable=36
+[trace]   37/200 processed; usable=37
+[trace]   38/200 processed; usable=38
+[trace]   39/200 processed; usable=39
+[trace]   40/200 processed; usable=40
+[trace]   41/200 processed; usable=41
+[trace]   42/200 processed; usable=42
+[trace]   43/200 processed; usable=43
+[trace]   44/200 processed; usable=44
+[trace]   45/200 processed; usable=45
+[trace]   46/200 processed; usable=46
+[trace]   47/200 processed; usable=47
+[trace]   48/200 processed; usable=48
+[trace]   49/200 processed; usable=49
+[trace]   50/200 processed; usable=50
+[trace]   51/200 processed; usable=51
+[trace]   52/200 processed; usable=52
+[trace]   53/200 processed; usable=53
+[trace]   54/200 processed; usable=54
+[trace]   55/200 processed; usable=55
+[trace]   56/200 processed; usable=56
+[trace]   57/200 processed; usable=57
+[trace]   58/200 processed; usable=58
+[trace]   59/200 processed; usable=59
+[trace]   60/200 processed; usable=60
+[trace]   61/200 processed; usable=61
+[trace]   62/200 processed; usable=62
+[trace]   63/200 processed; usable=63
+[trace]   64/200 processed; usable=64
+[trace]   65/200 processed; usable=65
+[trace]   66/200 processed; usable=66
+[trace]   67/200 processed; usable=67
+[trace]   68/200 processed; usable=68
+[trace]   69/200 processed; usable=69
+[trace]   70/200 processed; usable=70
+[trace]   71/200 processed; usable=71
+[trace]   72/200 processed; usable=72
+[trace]   73/200 processed; usable=73
+[trace]   74/200 processed; usable=74
+[trace]   75/200 processed; usable=75
+[trace]   76/200 processed; usable=76
+[trace]   77/200 processed; usable=77
+[trace]   78/200 processed; usable=78
+[trace]   79/200 processed; usable=79
+[trace]   80/200 processed; usable=80
+[trace]   81/200 processed; usable=81
+[trace]   82/200 processed; usable=82
+[trace]   83/200 processed; usable=83
+[trace]   84/200 processed; usable=84
+[trace]   85/200 processed; usable=85
+[trace]   86/200 processed; usable=86
+[trace]   87/200 processed; usable=87
+[trace]   88/200 processed; usable=88
+[trace]   89/200 processed; usable=89
+[trace]   90/200 processed; usable=90
+[trace]   91/200 processed; usable=91
+[trace]   92/200 processed; usable=92
+[trace]   93/200 processed; usable=93
+[trace]   94/200 processed; usable=94
+[trace]   95/200 processed; usable=95
+[trace]   96/200 processed; usable=96
+[trace]   97/200 processed; usable=97
+[trace]   98/200 processed; usable=98
+[trace]   99/200 processed; usable=99
+[trace]   100/200 processed; usable=100
+[trace]   101/200 processed; usable=101
+[trace]   102/200 processed; usable=102
+[trace]   103/200 processed; usable=103
+[trace]   104/200 processed; usable=104
+[trace]   105/200 processed; usable=105
+[trace]   106/200 processed; usable=106
+[trace]   107/200 processed; usable=107
+[trace]   108/200 processed; usable=108
+[trace]   109/200 processed; usable=109
+[trace]   110/200 processed; usable=110
+[trace]   111/200 processed; usable=111
+[trace]   112/200 processed; usable=112
+[trace]   113/200 processed; usable=113
+[trace]   114/200 processed; usable=114
+[trace]   115/200 processed; usable=115
+[trace]   116/200 processed; usable=116
+[trace]   117/200 processed; usable=117
+[trace]   118/200 processed; usable=118
+[trace]   119/200 processed; usable=119
+[trace]   120/200 processed; usable=120
+[trace]   121/200 processed; usable=121
+[trace]   122/200 processed; usable=122
+[trace]   123/200 processed; usable=123
+[trace]   124/200 processed; usable=124
+[trace]   125/200 processed; usable=125
+[trace]   126/200 processed; usable=126
+[trace]   127/200 processed; usable=127
+[trace]   128/200 processed; usable=128
+[trace]   129/200 processed; usable=129
+[trace]   130/200 processed; usable=130
+[trace]   131/200 processed; usable=131
+[trace]   132/200 processed; usable=132
+[trace]   133/200 processed; usable=133
+[trace]   134/200 processed; usable=134
+[trace]   135/200 processed; usable=135
+[trace]   136/200 processed; usable=136
+[trace]   137/200 processed; usable=137
+[trace]   138/200 processed; usable=138
+[trace]   139/200 processed; usable=139
+[trace]   140/200 processed; usable=140
+[trace]   141/200 processed; usable=141
+[trace]   142/200 processed; usable=142
+[trace]   143/200 processed; usable=143
+[trace]   144/200 processed; usable=144
+[trace]   145/200 processed; usable=145
+[trace]   146/200 processed; usable=146
+[trace]   147/200 processed; usable=147
+[trace]   148/200 processed; usable=148
+[trace]   149/200 processed; usable=149
+[trace]   150/200 processed; usable=150
+[trace]   151/200 processed; usable=151
+[trace]   152/200 processed; usable=152
+[trace]   153/200 processed; usable=153
+[trace]   154/200 processed; usable=154
+[trace]   155/200 processed; usable=155
+[trace]   156/200 processed; usable=156
+[trace]   157/200 processed; usable=157
+[trace]   158/200 processed; usable=158
+[trace]   159/200 processed; usable=159
+[trace]   160/200 processed; usable=160
+[trace]   161/200 processed; usable=161
+[trace]   162/200 processed; usable=162
+[trace]   163/200 processed; usable=163
+[trace]   164/200 processed; usable=164
+[trace]   165/200 processed; usable=165
+[trace]   166/200 processed; usable=166
+[trace]   167/200 processed; usable=167
+[trace]   168/200 processed; usable=168
+[trace]   169/200 processed; usable=169
+[trace]   170/200 processed; usable=170
+[trace]   171/200 processed; usable=171
+[trace]   172/200 processed; usable=172
+[trace]   173/200 processed; usable=173
+[trace]   174/200 processed; usable=174
+[trace]   175/200 processed; usable=175
+[trace]   176/200 processed; usable=176
+[trace]   177/200 processed; usable=177
+[trace]   178/200 processed; usable=178
+[trace]   179/200 processed; usable=179
+[trace]   180/200 processed; usable=180
+[trace]   181/200 processed; usable=181
+[trace]   182/200 processed; usable=182
+[trace]   183/200 processed; usable=183
+[trace]   184/200 processed; usable=184
+[trace]   185/200 processed; usable=185
+[trace]   186/200 processed; usable=186
+[trace]   187/200 processed; usable=187
+[trace]   188/200 processed; usable=188
+[trace]   189/200 processed; usable=189
+[trace]   190/200 processed; usable=190
+[trace]   191/200 processed; usable=191
+[trace]   192/200 processed; usable=192
+[trace]   193/200 processed; usable=193
+[trace]   194/200 processed; usable=194
+[trace]   195/200 processed; usable=195
+[trace]   196/200 processed; usable=196
+[trace]   197/200 processed; usable=197
+[trace]   198/200 processed; usable=198
+[trace]   199/200 processed; usable=199
+[trace]   200/200 processed; usable=200
+[Qwen3-1.7B-4bit/triviaqa_paired] PRIMARY Readout surprise @ step 0 CI_lo=0.7821614583333335 dep=True | GEOM attention[final_bos_mass] @ step 0 CI_lo=0.5285185288536667 dep=True | controls_pass=True
+
+===== Qwen3-8B-4bit/anli_r1 =====
+
+  Loading model: mlx-community/Qwen3-8B-4bit
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 18333.53it/s]
+     Layers: 36 | Probed: {'final': 35} | Output projection: lm_head (V=151936, D=4096)
+[ace] Qwen3-8B-4bit 25/200
+[ace] Qwen3-8B-4bit 50/200
+[ace] Qwen3-8B-4bit 75/200
+[ace] Qwen3-8B-4bit 100/200
+[ace] Qwen3-8B-4bit 125/200
+[ace] Qwen3-8B-4bit 150/200
+[ace] Qwen3-8B-4bit 175/200
+[ace] Qwen3-8B-4bit 200/200
+
+  Loading model: mlx-community/Qwen3-8B-4bit
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 49998.33it/s]
+     Layers: 36 | Probed: {'final': 35} | Output projection: lm_head (V=151936, D=4096)
+[inventory] benchmark=anli_r1 path=stage_b/data/anli_R1_seed20260612_n200.jsonl
+[trace] model=mlx-community/Qwen3-8B-4bit
+[trace] samples=200 K=512 final_layer=final d=4096 V=151936
+[trace] commit instant: gen_step=1; pinned aggregate = final 25% block logit lens plus readout
+[trace] n_layers=36; pinned_late_layers=[27, 28, 29, 30, 31, 32, 33, 34, 35]
+[trace]   1/200 processed; usable=1
+[trace]   2/200 processed; usable=2
+[trace]   3/200 processed; usable=3
+[trace]   4/200 processed; usable=4
+[trace]   5/200 processed; usable=5
+[trace]   6/200 processed; usable=6
+[trace]   7/200 processed; usable=7
+[trace]   8/200 processed; usable=8
+[trace]   9/200 processed; usable=9
+[trace]   10/200 processed; usable=10
+[trace]   11/200 processed; usable=11
+[trace]   12/200 processed; usable=12
+[trace]   13/200 processed; usable=13
+[trace]   14/200 processed; usable=14
+[trace]   15/200 processed; usable=15
+[trace]   16/200 processed; usable=16
+[trace]   17/200 processed; usable=17
+[trace]   18/200 processed; usable=18
+[trace]   19/200 processed; usable=19
+[trace]   20/200 processed; usable=20
+[trace]   21/200 processed; usable=21
+[trace]   22/200 processed; usable=22
+[trace]   23/200 processed; usable=23
+[trace]   24/200 processed; usable=24
+[trace]   25/200 processed; usable=25
+[trace]   26/200 processed; usable=26
+[trace]   27/200 processed; usable=27
+[trace]   28/200 processed; usable=28
+[trace]   29/200 processed; usable=29
+[trace]   30/200 processed; usable=30
+[trace]   31/200 processed; usable=31
+[trace]   32/200 processed; usable=32
+[trace]   33/200 processed; usable=33
+[trace]   34/200 processed; usable=34
+[trace]   35/200 processed; usable=35
+[trace]   36/200 processed; usable=36
+[trace]   37/200 processed; usable=37
+[trace]   38/200 processed; usable=38
+[trace]   39/200 processed; usable=39
+[trace]   40/200 processed; usable=40
+[trace]   41/200 processed; usable=41
+[trace]   42/200 processed; usable=42
+[trace]   43/200 processed; usable=43
+[trace]   44/200 processed; usable=44
+[trace]   45/200 processed; usable=45
+[trace]   46/200 processed; usable=46
+[trace]   47/200 processed; usable=47
+[trace]   48/200 processed; usable=48
+[trace]   49/200 processed; usable=49
+[trace]   50/200 processed; usable=50
+[trace]   51/200 processed; usable=51
+[trace]   52/200 processed; usable=52
+[trace]   53/200 processed; usable=53
+[trace]   54/200 processed; usable=54
+[trace]   55/200 processed; usable=55
+[trace]   56/200 processed; usable=56
+[trace]   57/200 processed; usable=57
+[trace]   58/200 processed; usable=58
+[trace]   59/200 processed; usable=59
+[trace]   60/200 processed; usable=60
+[trace]   61/200 processed; usable=61
+[trace]   62/200 processed; usable=62
+[trace]   63/200 processed; usable=63
+[trace]   64/200 processed; usable=64
+[trace]   65/200 processed; usable=65
+[trace]   66/200 processed; usable=66
+[trace]   67/200 processed; usable=67
+[trace]   68/200 processed; usable=68
+[trace]   69/200 processed; usable=69
+[trace]   70/200 processed; usable=70
+[trace]   71/200 processed; usable=71
+[trace]   72/200 processed; usable=72
+[trace]   73/200 processed; usable=73
+[trace]   74/200 processed; usable=74
+[trace]   75/200 processed; usable=75
+[trace]   76/200 processed; usable=76
+[trace]   77/200 processed; usable=77
+[trace]   78/200 processed; usable=78
+[trace]   79/200 processed; usable=79
+[trace]   80/200 processed; usable=80
+[trace]   81/200 processed; usable=81
+[trace]   82/200 processed; usable=82
+[trace]   83/200 processed; usable=83
+[trace]   84/200 processed; usable=84
+[trace]   85/200 processed; usable=85
+[trace]   86/200 processed; usable=86
+[trace]   87/200 processed; usable=87
+[trace]   88/200 processed; usable=88
+[trace]   89/200 processed; usable=89
+[trace]   90/200 processed; usable=90
+[trace]   91/200 processed; usable=91
+[trace]   92/200 processed; usable=92
+[trace]   93/200 processed; usable=93
+[trace]   94/200 processed; usable=94
+[trace]   95/200 processed; usable=95
+[trace]   96/200 processed; usable=96
+[trace]   97/200 processed; usable=97
+[trace]   98/200 processed; usable=98
+[trace]   99/200 processed; usable=99
+[trace]   100/200 processed; usable=100
+[trace]   101/200 processed; usable=101
+[trace]   102/200 processed; usable=102
+[trace]   103/200 processed; usable=103
+[trace]   104/200 processed; usable=104
+[trace]   105/200 processed; usable=105
+[trace]   106/200 processed; usable=106
+[trace]   107/200 processed; usable=107
+[trace]   108/200 processed; usable=108
+[trace]   109/200 processed; usable=109
+[trace]   110/200 processed; usable=110
+[trace]   111/200 processed; usable=111
+[trace]   112/200 processed; usable=112
+[trace]   113/200 processed; usable=113
+[trace]   114/200 processed; usable=114
+[trace]   115/200 processed; usable=115
+[trace]   116/200 processed; usable=116
+[trace]   117/200 processed; usable=117
+[trace]   118/200 processed; usable=118
+[trace]   119/200 processed; usable=119
+[trace]   120/200 processed; usable=120
+[trace]   121/200 processed; usable=121
+[trace]   122/200 processed; usable=122
+[trace]   123/200 processed; usable=123
+[trace]   124/200 processed; usable=124
+[trace]   125/200 processed; usable=125
+[trace]   126/200 processed; usable=126
+[trace]   127/200 processed; usable=127
+[trace]   128/200 processed; usable=128
+[trace]   129/200 processed; usable=129
+[trace]   130/200 processed; usable=130
+[trace]   131/200 processed; usable=131
+[trace]   132/200 processed; usable=132
+[trace]   133/200 processed; usable=133
+[trace]   134/200 processed; usable=134
+[trace]   135/200 processed; usable=135
+[trace]   136/200 processed; usable=136
+[trace]   137/200 processed; usable=137
+[trace]   138/200 processed; usable=138
+[trace]   139/200 processed; usable=139
+[trace]   140/200 processed; usable=140
+[trace]   141/200 processed; usable=141
+[trace]   142/200 processed; usable=142
+[trace]   143/200 processed; usable=143
+[trace]   144/200 processed; usable=144
+[trace]   145/200 processed; usable=145
+[trace]   146/200 processed; usable=146
+[trace]   147/200 processed; usable=147
+[trace]   148/200 processed; usable=148
+[trace]   149/200 processed; usable=149
+[trace]   150/200 processed; usable=150
+[trace]   151/200 processed; usable=151
+[trace]   152/200 processed; usable=152
+[trace]   153/200 processed; usable=153
+[trace]   154/200 processed; usable=154
+[trace]   155/200 processed; usable=155
+[trace]   156/200 processed; usable=156
+[trace]   157/200 processed; usable=157
+[trace]   158/200 processed; usable=158
+[trace]   159/200 processed; usable=159
+[trace]   160/200 processed; usable=160
+[trace]   161/200 processed; usable=161
+[trace]   162/200 processed; usable=162
+[trace]   163/200 processed; usable=163
+[trace]   164/200 processed; usable=164
+[trace]   165/200 processed; usable=165
+[trace]   166/200 processed; usable=166
+[trace]   167/200 processed; usable=167
+[trace]   168/200 processed; usable=168
+[trace]   169/200 processed; usable=169
+[trace]   170/200 processed; usable=170
+[trace]   171/200 processed; usable=171
+[trace]   172/200 processed; usable=172
+[trace]   173/200 processed; usable=173
+[trace]   174/200 processed; usable=174
+[trace]   175/200 processed; usable=175
+[trace]   176/200 processed; usable=176
+[trace]   177/200 processed; usable=177
+[trace]   178/200 processed; usable=178
+[trace]   179/200 processed; usable=179
+[trace]   180/200 processed; usable=180
+[trace]   181/200 processed; usable=181
+[trace]   182/200 processed; usable=182
+[trace]   183/200 processed; usable=183
+[trace]   184/200 processed; usable=184
+[trace]   185/200 processed; usable=185
+[trace]   186/200 processed; usable=186
+[trace]   187/200 processed; usable=187
+[trace]   188/200 processed; usable=188
+[trace]   189/200 processed; usable=189
+[trace]   190/200 processed; usable=190
+[trace]   191/200 processed; usable=191
+[trace]   192/200 processed; usable=192
+[trace]   193/200 processed; usable=193
+[trace]   194/200 processed; usable=194
+[trace]   195/200 processed; usable=195
+[trace]   196/200 processed; usable=196
+[trace]   197/200 processed; usable=197
+[trace]   198/200 processed; usable=198
+[trace]   199/200 processed; usable=199
+[trace]   200/200 processed; usable=200
+[Qwen3-8B-4bit/anli_r1] PRIMARY attention[last_minus_1_v_norm_lastq_weighted] @ step 0 CI_lo=0.6621086192600782 dep=True | GEOM attention[last_minus_1_v_norm_lastq_weighted] @ step 0 CI_lo=0.673672170622635 dep=True | controls_pass=True
+
+===== Qwen3-8B-4bit/triviaqa_paired =====
+
+  Loading model: mlx-community/Qwen3-8B-4bit
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 20504.47it/s]
+     Layers: 36 | Probed: {'final': 35} | Output projection: lm_head (V=151936, D=4096)
+[ace] Qwen3-8B-4bit 25/200
+[ace] Qwen3-8B-4bit 50/200
+[ace] Qwen3-8B-4bit 75/200
+[ace] Qwen3-8B-4bit 100/200
+[ace] Qwen3-8B-4bit 125/200
+[ace] Qwen3-8B-4bit 150/200
+[ace] Qwen3-8B-4bit 175/200
+[ace] Qwen3-8B-4bit 200/200
+
+  Loading model: mlx-community/Qwen3-8B-4bit
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 7130.48it/s]
+     Layers: 36 | Probed: {'final': 35} | Output projection: lm_head (V=151936, D=4096)
+[inventory] benchmark=triviaqa_paired path=stage_b/data/triviaqa_paired_seed20260612_n200.jsonl
+[trace] model=mlx-community/Qwen3-8B-4bit
+[trace] samples=200 K=512 final_layer=final d=4096 V=151936
+[trace] commit instant: gen_step=1; pinned aggregate = final 25% block logit lens plus readout
+[trace] n_layers=36; pinned_late_layers=[27, 28, 29, 30, 31, 32, 33, 34, 35]
+[trace]   1/200 processed; usable=1
+[trace]   2/200 processed; usable=2
+[trace]   3/200 processed; usable=3
+[trace]   4/200 processed; usable=4
+[trace]   5/200 processed; usable=5
+[trace]   6/200 processed; usable=6
+[trace]   7/200 processed; usable=7
+[trace]   8/200 processed; usable=8
+[trace]   9/200 processed; usable=9
+[trace]   10/200 processed; usable=10
+[trace]   11/200 processed; usable=11
+[trace]   12/200 processed; usable=12
+[trace]   13/200 processed; usable=13
+[trace]   14/200 processed; usable=14
+[trace]   15/200 processed; usable=15
+[trace]   16/200 processed; usable=16
+[trace]   17/200 processed; usable=17
+[trace]   18/200 processed; usable=18
+[trace]   19/200 processed; usable=19
+[trace]   20/200 processed; usable=20
+[trace]   21/200 processed; usable=21
+[trace]   22/200 processed; usable=22
+[trace]   23/200 processed; usable=23
+[trace]   24/200 processed; usable=24
+[trace]   25/200 processed; usable=25
+[trace]   26/200 processed; usable=26
+[trace]   27/200 processed; usable=27
+[trace]   28/200 processed; usable=28
+[trace]   29/200 processed; usable=29
+[trace]   30/200 processed; usable=30
+[trace]   31/200 processed; usable=31
+[trace]   32/200 processed; usable=32
+[trace]   33/200 processed; usable=33
+[trace]   34/200 processed; usable=34
+[trace]   35/200 processed; usable=35
+[trace]   36/200 processed; usable=36
+[trace]   37/200 processed; usable=37
+[trace]   38/200 processed; usable=38
+[trace]   39/200 processed; usable=39
+[trace]   40/200 processed; usable=40
+[trace]   41/200 processed; usable=41
+[trace]   42/200 processed; usable=42
+[trace]   43/200 processed; usable=43
+[trace]   44/200 processed; usable=44
+[trace]   45/200 processed; usable=45
+[trace]   46/200 processed; usable=46
+[trace]   47/200 processed; usable=47
+[trace]   48/200 processed; usable=48
+[trace]   49/200 processed; usable=49
+[trace]   50/200 processed; usable=50
+[trace]   51/200 processed; usable=51
+[trace]   52/200 processed; usable=52
+[trace]   53/200 processed; usable=53
+[trace]   54/200 processed; usable=54
+[trace]   55/200 processed; usable=55
+[trace]   56/200 processed; usable=56
+[trace]   57/200 processed; usable=57
+[trace]   58/200 processed; usable=58
+[trace]   59/200 processed; usable=59
+[trace]   60/200 processed; usable=60
+[trace]   61/200 processed; usable=61
+[trace]   62/200 processed; usable=62
+[trace]   63/200 processed; usable=63
+[trace]   64/200 processed; usable=64
+[trace]   65/200 processed; usable=65
+[trace]   66/200 processed; usable=66
+[trace]   67/200 processed; usable=67
+[trace]   68/200 processed; usable=68
+[trace]   69/200 processed; usable=69
+[trace]   70/200 processed; usable=70
+[trace]   71/200 processed; usable=71
+[trace]   72/200 processed; usable=72
+[trace]   73/200 processed; usable=73
+[trace]   74/200 processed; usable=74
+[trace]   75/200 processed; usable=75
+[trace]   76/200 processed; usable=76
+[trace]   77/200 processed; usable=77
+[trace]   78/200 processed; usable=78
+[trace]   79/200 processed; usable=79
+[trace]   80/200 processed; usable=80
+[trace]   81/200 processed; usable=81
+[trace]   82/200 processed; usable=82
+[trace]   83/200 processed; usable=83
+[trace]   84/200 processed; usable=84
+[trace]   85/200 processed; usable=85
+[trace]   86/200 processed; usable=86
+[trace]   87/200 processed; usable=87
+[trace]   88/200 processed; usable=88
+[trace]   89/200 processed; usable=89
+[trace]   90/200 processed; usable=90
+[trace]   91/200 processed; usable=91
+[trace]   92/200 processed; usable=92
+[trace]   93/200 processed; usable=93
+[trace]   94/200 processed; usable=94
+[trace]   95/200 processed; usable=95
+[trace]   96/200 processed; usable=96
+[trace]   97/200 processed; usable=97
+[trace]   98/200 processed; usable=98
+[trace]   99/200 processed; usable=99
+[trace]   100/200 processed; usable=100
+[trace]   101/200 processed; usable=101
+[trace]   102/200 processed; usable=102
+[trace]   103/200 processed; usable=103
+[trace]   104/200 processed; usable=104
+[trace]   105/200 processed; usable=105
+[trace]   106/200 processed; usable=106
+[trace]   107/200 processed; usable=107
+[trace]   108/200 processed; usable=108
+[trace]   109/200 processed; usable=109
+[trace]   110/200 processed; usable=110
+[trace]   111/200 processed; usable=111
+[trace]   112/200 processed; usable=112
+[trace]   113/200 processed; usable=113
+[trace]   114/200 processed; usable=114
+[trace]   115/200 processed; usable=115
+[trace]   116/200 processed; usable=116
+[trace]   117/200 processed; usable=117
+[trace]   118/200 processed; usable=118
+[trace]   119/200 processed; usable=119
+[trace]   120/200 processed; usable=120
+[trace]   121/200 processed; usable=121
+[trace]   122/200 processed; usable=122
+[trace]   123/200 processed; usable=123
+[trace]   124/200 processed; usable=124
+[trace]   125/200 processed; usable=125
+[trace]   126/200 processed; usable=126
+[trace]   127/200 processed; usable=127
+[trace]   128/200 processed; usable=128
+[trace]   129/200 processed; usable=129
+[trace]   130/200 processed; usable=130
+[trace]   131/200 processed; usable=131
+[trace]   132/200 processed; usable=132
+[trace]   133/200 processed; usable=133
+[trace]   134/200 processed; usable=134
+[trace]   135/200 processed; usable=135
+[trace]   136/200 processed; usable=136
+[trace]   137/200 processed; usable=137
+[trace]   138/200 processed; usable=138
+[trace]   139/200 processed; usable=139
+[trace]   140/200 processed; usable=140
+[trace]   141/200 processed; usable=141
+[trace]   142/200 processed; usable=142
+[trace]   143/200 processed; usable=143
+[trace]   144/200 processed; usable=144
+[trace]   145/200 processed; usable=145
+[trace]   146/200 processed; usable=146
+[trace]   147/200 processed; usable=147
+[trace]   148/200 processed; usable=148
+[trace]   149/200 processed; usable=149
+[trace]   150/200 processed; usable=150
+[trace]   151/200 processed; usable=151
+[trace]   152/200 processed; usable=152
+[trace]   153/200 processed; usable=153
+[trace]   154/200 processed; usable=154
+[trace]   155/200 processed; usable=155
+[trace]   156/200 processed; usable=156
+[trace]   157/200 processed; usable=157
+[trace]   158/200 processed; usable=158
+[trace]   159/200 processed; usable=159
+[trace]   160/200 processed; usable=160
+[trace]   161/200 processed; usable=161
+[trace]   162/200 processed; usable=162
+[trace]   163/200 processed; usable=163
+[trace]   164/200 processed; usable=164
+[trace]   165/200 processed; usable=165
+[trace]   166/200 processed; usable=166
+[trace]   167/200 processed; usable=167
+[trace]   168/200 processed; usable=168
+[trace]   169/200 processed; usable=169
+[trace]   170/200 processed; usable=170
+[trace]   171/200 processed; usable=171
+[trace]   172/200 processed; usable=172
+[trace]   173/200 processed; usable=173
+[trace]   174/200 processed; usable=174
+[trace]   175/200 processed; usable=175
+[trace]   176/200 processed; usable=176
+[trace]   177/200 processed; usable=177
+[trace]   178/200 processed; usable=178
+[trace]   179/200 processed; usable=179
+[trace]   180/200 processed; usable=180
+[trace]   181/200 processed; usable=181
+[trace]   182/200 processed; usable=182
+[trace]   183/200 processed; usable=183
+[trace]   184/200 processed; usable=184
+[trace]   185/200 processed; usable=185
+[trace]   186/200 processed; usable=186
+[trace]   187/200 processed; usable=187
+[trace]   188/200 processed; usable=188
+[trace]   189/200 processed; usable=189
+[trace]   190/200 processed; usable=190
+[trace]   191/200 processed; usable=191
+[trace]   192/200 processed; usable=192
+[trace]   193/200 processed; usable=193
+[trace]   194/200 processed; usable=194
+[trace]   195/200 processed; usable=195
+[trace]   196/200 processed; usable=196
+[trace]   197/200 processed; usable=197
+[trace]   198/200 processed; usable=198
+[trace]   199/200 processed; usable=199
+[trace]   200/200 processed; usable=200
+[Qwen3-8B-4bit/triviaqa_paired] PRIMARY Fusion fusion_rank_mean_geom @ step 0 CI_lo=0.8867527544966569 dep=True | GEOM Fusion fusion_rank_mean_geom @ step 0 CI_lo=0.8929766414141415 dep=True | controls_pass=True
+
+===== gemma-3-4b-it-4bit/anli_r1 =====
+
+  Loading model: mlx-community/gemma-3-4b-it-4bit
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 12172.10it/s]
+     Layers: 34 | Probed: {'final': 33} | Output projection: lm_head (V=262208, D=2560)
+[ace] gemma-3-4b-it-4bit 25/200
+[ace] gemma-3-4b-it-4bit 50/200
+[ace] gemma-3-4b-it-4bit 75/200
+[ace] gemma-3-4b-it-4bit 100/200
+[ace] gemma-3-4b-it-4bit 125/200
+[ace] gemma-3-4b-it-4bit 150/200
+[ace] gemma-3-4b-it-4bit 175/200
+[ace] gemma-3-4b-it-4bit 200/200
+
+  Loading model: mlx-community/gemma-3-4b-it-4bit
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 133152.51it/s]
+     Layers: 34 | Probed: {'final': 33} | Output projection: lm_head (V=262208, D=2560)
+[inventory] benchmark=anli_r1 path=stage_b/data/anli_R1_seed20260612_n200.jsonl
+[trace] model=mlx-community/gemma-3-4b-it-4bit
+[trace] samples=200 K=512 final_layer=final d=2560 V=262208
+[trace] commit instant: gen_step=1; pinned aggregate = final 25% block logit lens plus readout
+[trace] n_layers=34; pinned_late_layers=[25, 26, 27, 28, 29, 30, 31, 32, 33]
+[trace]   1/200 processed; usable=1
+[trace]   2/200 processed; usable=2
+[trace]   3/200 processed; usable=3
+[trace]   4/200 processed; usable=4
+[trace]   5/200 processed; usable=5
+[trace]   6/200 processed; usable=6
+[trace]   7/200 processed; usable=7
+[trace]   8/200 processed; usable=8
+[trace]   9/200 processed; usable=9
+[trace]   10/200 processed; usable=10
+[trace]   11/200 processed; usable=11
+[trace]   12/200 processed; usable=12
+[trace]   13/200 processed; usable=13
+[trace]   14/200 processed; usable=14
+[trace]   15/200 processed; usable=15
+[trace]   16/200 processed; usable=16
+[trace]   17/200 processed; usable=17
+[trace]   18/200 processed; usable=18
+[trace]   19/200 processed; usable=19
+[trace]   20/200 processed; usable=20
+[trace]   21/200 processed; usable=21
+[trace]   22/200 processed; usable=22
+[trace]   23/200 processed; usable=23
+[trace]   24/200 processed; usable=24
+[trace]   25/200 processed; usable=25
+[trace]   26/200 processed; usable=26
+[trace]   27/200 processed; usable=27
+[trace]   28/200 processed; usable=28
+[trace]   29/200 processed; usable=29
+[trace]   30/200 processed; usable=30
+[trace]   31/200 processed; usable=31
+[trace]   32/200 processed; usable=32
+[trace]   33/200 processed; usable=33
+[trace]   34/200 processed; usable=34
+[trace]   35/200 processed; usable=35
+[trace]   36/200 processed; usable=36
+[trace]   37/200 processed; usable=37
+[trace]   38/200 processed; usable=38
+[trace]   39/200 processed; usable=39
+[trace]   40/200 processed; usable=40
+[trace]   41/200 processed; usable=41
+[trace]   42/200 processed; usable=42
+[trace]   43/200 processed; usable=43
+[trace]   44/200 processed; usable=44
+[trace]   45/200 processed; usable=45
+[trace]   46/200 processed; usable=46
+[trace]   47/200 processed; usable=47
+[trace]   48/200 processed; usable=48
+[trace]   49/200 processed; usable=49
+[trace]   50/200 processed; usable=50
+[trace]   51/200 processed; usable=51
+[trace]   52/200 processed; usable=52
+[trace]   53/200 processed; usable=53
+[trace]   54/200 processed; usable=54
+[trace]   55/200 processed; usable=55
+[trace]   56/200 processed; usable=56
+[trace]   57/200 processed; usable=57
+[trace]   58/200 processed; usable=58
+[trace]   59/200 processed; usable=59
+[trace]   60/200 processed; usable=60
+[trace]   61/200 processed; usable=61
+[trace]   62/200 processed; usable=62
+[trace]   63/200 processed; usable=63
+[trace]   64/200 processed; usable=64
+[trace]   65/200 processed; usable=65
+[trace]   66/200 processed; usable=66
+[trace]   67/200 processed; usable=67
+[trace]   68/200 processed; usable=68
+[trace]   69/200 processed; usable=69
+[trace]   70/200 processed; usable=70
+[trace]   71/200 processed; usable=71
+[trace]   72/200 processed; usable=72
+[trace]   73/200 processed; usable=73
+[trace]   74/200 processed; usable=74
+[trace]   75/200 processed; usable=75
+[trace]   76/200 processed; usable=76
+[trace]   77/200 processed; usable=77
+[trace]   78/200 processed; usable=78
+[trace]   79/200 processed; usable=79
+[trace]   80/200 processed; usable=80
+[trace]   81/200 processed; usable=81
+[trace]   82/200 processed; usable=82
+[trace]   83/200 processed; usable=83
+[trace]   84/200 processed; usable=84
+[trace]   85/200 processed; usable=85
+[trace]   86/200 processed; usable=86
+[trace]   87/200 processed; usable=87
+[trace]   88/200 processed; usable=88
+[trace]   89/200 processed; usable=89
+[trace]   90/200 processed; usable=90
+[trace]   91/200 processed; usable=91
+[trace]   92/200 processed; usable=92
+[trace]   93/200 processed; usable=93
+[trace]   94/200 processed; usable=94
+[trace]   95/200 processed; usable=95
+[trace]   96/200 processed; usable=96
+[trace]   97/200 processed; usable=97
+[trace]   98/200 processed; usable=98
+[trace]   99/200 processed; usable=99
+[trace]   100/200 processed; usable=100
+[trace]   101/200 processed; usable=101
+[trace]   102/200 processed; usable=102
+[trace]   103/200 processed; usable=103
+[trace]   104/200 processed; usable=104
+[trace]   105/200 processed; usable=105
+[trace]   106/200 processed; usable=106
+[trace]   107/200 processed; usable=107
+[trace]   108/200 processed; usable=108
+[trace]   109/200 processed; usable=109
+[trace]   110/200 processed; usable=110
+[trace]   111/200 processed; usable=111
+[trace]   112/200 processed; usable=112
+[trace]   113/200 processed; usable=113
+[trace]   114/200 processed; usable=114
+[trace]   115/200 processed; usable=115
+[trace]   116/200 processed; usable=116
+[trace]   117/200 processed; usable=117
+[trace]   118/200 processed; usable=118
+[trace]   119/200 processed; usable=119
+[trace]   120/200 processed; usable=120
+[trace]   121/200 processed; usable=121
+[trace]   122/200 processed; usable=122
+[trace]   123/200 processed; usable=123
+[trace]   124/200 processed; usable=124
+[trace]   125/200 processed; usable=125
+[trace]   126/200 processed; usable=126
+[trace]   127/200 processed; usable=127
+[trace]   128/200 processed; usable=128
+[trace]   129/200 processed; usable=129
+[trace]   130/200 processed; usable=130
+[trace]   131/200 processed; usable=131
+[trace]   132/200 processed; usable=132
+[trace]   133/200 processed; usable=133
+[trace]   134/200 processed; usable=134
+[trace]   135/200 processed; usable=135
+[trace]   136/200 processed; usable=136
+[trace]   137/200 processed; usable=137
+[trace]   138/200 processed; usable=138
+[trace]   139/200 processed; usable=139
+[trace]   140/200 processed; usable=140
+[trace]   141/200 processed; usable=141
+[trace]   142/200 processed; usable=142
+[trace]   143/200 processed; usable=143
+[trace]   144/200 processed; usable=144
+[trace]   145/200 processed; usable=145
+[trace]   146/200 processed; usable=146
+[trace]   147/200 processed; usable=147
+[trace]   148/200 processed; usable=148
+[trace]   149/200 processed; usable=149
+[trace]   150/200 processed; usable=150
+[trace]   151/200 processed; usable=151
+[trace]   152/200 processed; usable=152
+[trace]   153/200 processed; usable=153
+[trace]   154/200 processed; usable=154
+[trace]   155/200 processed; usable=155
+[trace]   156/200 processed; usable=156
+[trace]   157/200 processed; usable=157
+[trace]   158/200 processed; usable=158
+[trace]   159/200 processed; usable=159
+[trace]   160/200 processed; usable=160
+[trace]   161/200 processed; usable=161
+[trace]   162/200 processed; usable=162
+[trace]   163/200 processed; usable=163
+[trace]   164/200 processed; usable=164
+[trace]   165/200 processed; usable=165
+[trace]   166/200 processed; usable=166
+[trace]   167/200 processed; usable=167
+[trace]   168/200 processed; usable=168
+[trace]   169/200 processed; usable=169
+[trace]   170/200 processed; usable=170
+[trace]   171/200 processed; usable=171
+[trace]   172/200 processed; usable=172
+[trace]   173/200 processed; usable=173
+[trace]   174/200 processed; usable=174
+[trace]   175/200 processed; usable=175
+[trace]   176/200 processed; usable=176
+[trace]   177/200 processed; usable=177
+[trace]   178/200 processed; usable=178
+[trace]   179/200 processed; usable=179
+[trace]   180/200 processed; usable=180
+[trace]   181/200 processed; usable=181
+[trace]   182/200 processed; usable=182
+[trace]   183/200 processed; usable=183
+[trace]   184/200 processed; usable=184
+[trace]   185/200 processed; usable=185
+[trace]   186/200 processed; usable=186
+[trace]   187/200 processed; usable=187
+[trace]   188/200 processed; usable=188
+[trace]   189/200 processed; usable=189
+[trace]   190/200 processed; usable=190
+[trace]   191/200 processed; usable=191
+[trace]   192/200 processed; usable=192
+[trace]   193/200 processed; usable=193
+[trace]   194/200 processed; usable=194
+[trace]   195/200 processed; usable=195
+[trace]   196/200 processed; usable=196
+[trace]   197/200 processed; usable=197
+[trace]   198/200 processed; usable=198
+[trace]   199/200 processed; usable=199
+[trace]   200/200 processed; usable=200
+[gemma-3-4b-it-4bit/anli_r1] PRIMARY attention[last_minus_1_js] @ step 0 CI_lo=0.4 dep=False | GEOM attention[last_minus_1_js] @ step 0 CI_lo=0.4027580125967223 dep=False | controls_pass=True
+
+===== gemma-3-4b-it-4bit/triviaqa_paired =====
+
+  Loading model: mlx-community/gemma-3-4b-it-4bit
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 37477.03it/s]
+     Layers: 34 | Probed: {'final': 33} | Output projection: lm_head (V=262208, D=2560)
+[ace] gemma-3-4b-it-4bit 25/200
+[ace] gemma-3-4b-it-4bit 50/200
+[ace] gemma-3-4b-it-4bit 75/200
+[ace] gemma-3-4b-it-4bit 100/200
+[ace] gemma-3-4b-it-4bit 125/200
+[ace] gemma-3-4b-it-4bit 150/200
+[ace] gemma-3-4b-it-4bit 175/200
+[ace] gemma-3-4b-it-4bit 200/200
+
+  Loading model: mlx-community/gemma-3-4b-it-4bit
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 32263.88it/s]
+     Layers: 34 | Probed: {'final': 33} | Output projection: lm_head (V=262208, D=2560)
+[inventory] benchmark=triviaqa_paired path=stage_b/data/triviaqa_paired_seed20260612_n200.jsonl
+[trace] model=mlx-community/gemma-3-4b-it-4bit
+[trace] samples=200 K=512 final_layer=final d=2560 V=262208
+[trace] commit instant: gen_step=1; pinned aggregate = final 25% block logit lens plus readout
+[trace] n_layers=34; pinned_late_layers=[25, 26, 27, 28, 29, 30, 31, 32, 33]
+[trace]   1/200 processed; usable=1
+[trace]   2/200 processed; usable=2
+[trace]   3/200 processed; usable=3
+[trace]   4/200 processed; usable=4
+[trace]   5/200 processed; usable=5
+[trace]   6/200 processed; usable=6
+[trace]   7/200 processed; usable=7
+[trace]   8/200 processed; usable=8
+[trace]   9/200 processed; usable=9
+[trace]   10/200 processed; usable=10
+[trace]   11/200 processed; usable=11
+[trace]   12/200 processed; usable=12
+[trace]   13/200 processed; usable=13
+[trace]   14/200 processed; usable=14
+[trace]   15/200 processed; usable=15
+[trace]   16/200 processed; usable=16
+[trace]   17/200 processed; usable=17
+[trace]   18/200 processed; usable=18
+[trace]   19/200 processed; usable=19
+[trace]   20/200 processed; usable=20
+[trace]   21/200 processed; usable=21
+[trace]   22/200 processed; usable=22
+[trace]   23/200 processed; usable=23
+[trace]   24/200 processed; usable=24
+[trace]   25/200 processed; usable=25
+[trace]   26/200 processed; usable=26
+[trace]   27/200 processed; usable=27
+[trace]   28/200 processed; usable=28
+[trace]   29/200 processed; usable=29
+[trace]   30/200 processed; usable=30
+[trace]   31/200 processed; usable=31
+[trace]   32/200 processed; usable=32
+[trace]   33/200 processed; usable=33
+[trace]   34/200 processed; usable=34
+[trace]   35/200 processed; usable=35
+[trace]   36/200 processed; usable=36
+[trace]   37/200 processed; usable=37
+[trace]   38/200 processed; usable=38
+[trace]   39/200 processed; usable=39
+[trace]   40/200 processed; usable=40
+[trace]   41/200 processed; usable=41
+[trace]   42/200 processed; usable=42
+[trace]   43/200 processed; usable=43
+[trace]   44/200 processed; usable=44
+[trace]   45/200 processed; usable=45
+[trace]   46/200 processed; usable=46
+[trace]   47/200 processed; usable=47
+[trace]   48/200 processed; usable=48
+[trace]   49/200 processed; usable=49
+[trace]   50/200 processed; usable=50
+[trace]   51/200 processed; usable=51
+[trace]   52/200 processed; usable=52
+[trace]   53/200 processed; usable=53
+[trace]   54/200 processed; usable=54
+[trace]   55/200 processed; usable=55
+[trace]   56/200 processed; usable=56
+[trace]   57/200 processed; usable=57
+[trace]   58/200 processed; usable=58
+[trace]   59/200 processed; usable=59
+[trace]   60/200 processed; usable=60
+[trace]   61/200 processed; usable=61
+[trace]   62/200 processed; usable=62
+[trace]   63/200 processed; usable=63
+[trace]   64/200 processed; usable=64
+[trace]   65/200 processed; usable=65
+[trace]   66/200 processed; usable=66
+[trace]   67/200 processed; usable=67
+[trace]   68/200 processed; usable=68
+[trace]   69/200 processed; usable=69
+[trace]   70/200 processed; usable=70
+[trace]   71/200 processed; usable=71
+[trace]   72/200 processed; usable=72
+[trace]   73/200 processed; usable=73
+[trace]   74/200 processed; usable=74
+[trace]   75/200 processed; usable=75
+[trace]   76/200 processed; usable=76
+[trace]   77/200 processed; usable=77
+[trace]   78/200 processed; usable=78
+[trace]   79/200 processed; usable=79
+[trace]   80/200 processed; usable=80
+[trace]   81/200 processed; usable=81
+[trace]   82/200 processed; usable=82
+[trace]   83/200 processed; usable=83
+[trace]   84/200 processed; usable=84
+[trace]   85/200 processed; usable=85
+[trace]   86/200 processed; usable=86
+[trace]   87/200 processed; usable=87
+[trace]   88/200 processed; usable=88
+[trace]   89/200 processed; usable=89
+[trace]   90/200 processed; usable=90
+[trace]   91/200 processed; usable=91
+[trace]   92/200 processed; usable=92
+[trace]   93/200 processed; usable=93
+[trace]   94/200 processed; usable=94
+[trace]   95/200 processed; usable=95
+[trace]   96/200 processed; usable=96
+[trace]   97/200 processed; usable=97
+[trace]   98/200 processed; usable=98
+[trace]   99/200 processed; usable=99
+[trace]   100/200 processed; usable=100
+[trace]   101/200 processed; usable=101
+[trace]   102/200 processed; usable=102
+[trace]   103/200 processed; usable=103
+[trace]   104/200 processed; usable=104
+[trace]   105/200 processed; usable=105
+[trace]   106/200 processed; usable=106
+[trace]   107/200 processed; usable=107
+[trace]   108/200 processed; usable=108
+[trace]   109/200 processed; usable=109
+[trace]   110/200 processed; usable=110
+[trace]   111/200 processed; usable=111
+[trace]   112/200 processed; usable=112
+[trace]   113/200 processed; usable=113
+[trace]   114/200 processed; usable=114
+[trace]   115/200 processed; usable=115
+[trace]   116/200 processed; usable=116
+[trace]   117/200 processed; usable=117
+[trace]   118/200 processed; usable=118
+[trace]   119/200 processed; usable=119
+[trace]   120/200 processed; usable=120
+[trace]   121/200 processed; usable=121
+[trace]   122/200 processed; usable=122
+[trace]   123/200 processed; usable=123
+[trace]   124/200 processed; usable=124
+[trace]   125/200 processed; usable=125
+[trace]   126/200 processed; usable=126
+[trace]   127/200 processed; usable=127
+[trace]   128/200 processed; usable=128
+[trace]   129/200 processed; usable=129
+[trace]   130/200 processed; usable=130
+[trace]   131/200 processed; usable=131
+[trace]   132/200 processed; usable=132
+[trace]   133/200 processed; usable=133
+[trace]   134/200 processed; usable=134
+[trace]   135/200 processed; usable=135
+[trace]   136/200 processed; usable=136
+[trace]   137/200 processed; usable=137
+[trace]   138/200 processed; usable=138
+[trace]   139/200 processed; usable=139
+[trace]   140/200 processed; usable=140
+[trace]   141/200 processed; usable=141
+[trace]   142/200 processed; usable=142
+[trace]   143/200 processed; usable=143
+[trace]   144/200 processed; usable=144
+[trace]   145/200 processed; usable=145
+[trace]   146/200 processed; usable=146
+[trace]   147/200 processed; usable=147
+[trace]   148/200 processed; usable=148
+[trace]   149/200 processed; usable=149
+[trace]   150/200 processed; usable=150
+[trace]   151/200 processed; usable=151
+[trace]   152/200 processed; usable=152
+[trace]   153/200 processed; usable=153
+[trace]   154/200 processed; usable=154
+[trace]   155/200 processed; usable=155
+[trace]   156/200 processed; usable=156
+[trace]   157/200 processed; usable=157
+[trace]   158/200 processed; usable=158
+[trace]   159/200 processed; usable=159
+[trace]   160/200 processed; usable=160
+[trace]   161/200 processed; usable=161
+[trace]   162/200 processed; usable=162
+[trace]   163/200 processed; usable=163
+[trace]   164/200 processed; usable=164
+[trace]   165/200 processed; usable=165
+[trace]   166/200 processed; usable=166
+[trace]   167/200 processed; usable=167
+[trace]   168/200 processed; usable=168
+[trace]   169/200 processed; usable=169
+[trace]   170/200 processed; usable=170
+[trace]   171/200 processed; usable=171
+[trace]   172/200 processed; usable=172
+[trace]   173/200 processed; usable=173
+[trace]   174/200 processed; usable=174
+[trace]   175/200 processed; usable=175
+[trace]   176/200 processed; usable=176
+[trace]   177/200 processed; usable=177
+[trace]   178/200 processed; usable=178
+[trace]   179/200 processed; usable=179
+[trace]   180/200 processed; usable=180
+[trace]   181/200 processed; usable=181
+[trace]   182/200 processed; usable=182
+[trace]   183/200 processed; usable=183
+[trace]   184/200 processed; usable=184
+[trace]   185/200 processed; usable=185
+[trace]   186/200 processed; usable=186
+[trace]   187/200 processed; usable=187
+[trace]   188/200 processed; usable=188
+[trace]   189/200 processed; usable=189
+[trace]   190/200 processed; usable=190
+[trace]   191/200 processed; usable=191
+[trace]   192/200 processed; usable=192
+[trace]   193/200 processed; usable=193
+[trace]   194/200 processed; usable=194
+[trace]   195/200 processed; usable=195
+[trace]   196/200 processed; usable=196
+[trace]   197/200 processed; usable=197
+[trace]   198/200 processed; usable=198
+[trace]   199/200 processed; usable=199
+[trace]   200/200 processed; usable=200
+[gemma-3-4b-it-4bit/triviaqa_paired] PRIMARY Fusion fusion_rank_mean_full @ step 0 CI_lo=0.7698061698061699 dep=True | GEOM attention[final_js_kv_groups] @ step 0 CI_lo=0.722781200317965 dep=True | controls_pass=True
+
+============================================================
+SEALED run | seed 20260612 | planned 20 ok 20 errors 0
+PRIMARY (full panel):    18/20 deployable (bar 19) -> FAIL
+SECONDARY (geom-only):   18/20 deployable (bar 17) -> PASS
+geometric win-map: {'Readout spectral_entropy @ step 0': 1, 'Readout neg_shadow_logvol_r1 @ step 0': 1, 'attention[mid_v_norm_lastq_weighted] @ step 0': 2, 'Readout fisher_eff_rank @ step 0': 2, 'attention[last_minus_1_js] @ step 0': 2, 'attention[last_minus_1_bos_mass] @ step 0': 1, 'attention[final_v_norm_lastq_weighted] @ step 0': 2, 'attention[final_bos_mass] @ step 0': 3, 'attention[final_js_no_bos] @ step 0': 1, 'Fusion fusion_rank_mean_geom @ step 0': 2, 'attention[final_js_kv_groups] @ step 0': 2, 'attention[last_minus_1_v_norm_lastq_weighted] @ step 0': 1}
+summary -> stage_b/profiles/SUMMARY.json

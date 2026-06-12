@@ -3,19 +3,38 @@
 A calibrated **commit-moment monitor** that unifies three in-house geometric signals
 for hallucination-risk readout at (or before) the first generated token.
 
-> ⚠️ **Status: pre-registration snapshot — not standalone-runnable.**
-> This repository is published to **timestamp the pre-registration** (`stage_b/PRE_REGISTRATION.md`,
-> Amendments v1–v5) and its gated fresh data **before** the registered sealed run is executed —
-> that is the point of a pre-registration. The registered seal is run from a tagged commit of this
-> repo so the public record and the executed code are byte-identical.
+> ✅ **Status: registered run COMPLETE (seed 20260612).** Results below. The run was executed
+> from tag [`prereg-seal-20260612`](https://github.com/flowstyleliving/commit-confluence/releases/tag/prereg-seal-20260612)
+> so the executed code is byte-identical to the pre-registration (`stage_b/PRE_REGISTRATION.md`,
+> Amendments v1–v5). The pre-registration and gated fresh data were committed *before* the run.
 >
-> The integration layer here **imports sealed modules from a separate dependency repo**
-> (`t0-morphology-furnace`: `pri_calibrator`, `comprehensive_run`, `diagnose_inter_head_disagreement`,
-> the RPV statistic functions in `test_shadow_ambiguity`). Those modules are part of a frozen
-> research core that is **not yet public** (pending the paper), so a fresh clone will not run as-is.
-> Point `$CONFLUENCE_T0_REPO` at that repo to run locally. The code, the registration, and the
-> verification record are all here and fully readable; reproduction is available on request and
-> will be complete when the sealed core is published.
+> **Reproducibility.** The per-cell score matrices (`stage_b/profiles/*/*.matrix.npz`) are
+> published, so the descriptive analyses (E1/E2/E3 via `stage_b/analyze_universality.py`) are
+> **independently reproducible from this repo alone** — no models or private dependencies needed.
+> The *forward pass* that produced those matrices imports sealed modules from a separate dependency
+> repo (`t0-morphology-furnace`: `pri_calibrator`, `comprehensive_run`,
+> `diagnose_inter_head_disagreement`, the RPV statistics in `test_shadow_ambiguity`), a frozen
+> research core **not yet public** (pending the paper); point `$CONFLUENCE_T0_REPO` at it to
+> regenerate matrices locally.
+
+## Results (registered run, seed 20260612 — 10 models × {ANLI R1, TriviaQA paired}, n=200)
+
+Clean run: 20/20 cells computed, zero errors, all shuffled-label controls passed, registered (not preview). Two pre-registered endpoints (lead with the geometric one):
+
+- **Geometric-only dispatcher — PASS, 18/20** (bar ≥17). A confidence-free panel (ACE attention + null_ratio + RPV) under the honest nested-OOB selector is deployable (OOB CI lower bound > 0.50) on 18 of 20 cohort cells. The registered geometric claim **holds**.
+- **Full-panel (incl. confidence + fusion) — FAIL, 18/20** (bar ≥19). The strict product claim allowed ≤1 non-deployable cell and predicted exactly one (`gemma-3-4b/anli`); a second appeared, so it misses by one → the strict claim is **falsified** (the honest, registered outcome).
+
+**Both endpoints fail the identical two ANLI cells** (`gemma-3-4b/anli`, predicted; `Llama-3.1-8B/anli`, the one model with no prior ACE seal). Confidence and fusion rescued neither — coverage is 18/20 *with or without* confidence, so those two are genuine epistemic blind spots no panel cell covers (TriviaQA 10/10, ANLI 8/10).
+
+**No universal best signal:** the deployable cells are won by **12 distinct cells** — ACE attention dominant, RPV (fisher_eff_rank / spectral_entropy / neg_shadow) covering 4 cells where attention does not, and the pre-registered cross-locus fusion cell winning 2 outright. Corroboration *with* complementarity.
+
+### Descriptive analyses (pre-registered, non-gating — `stage_b/universality_*.json`)
+
+- **E1 — partial universality (first positive in the program).** Pooling 9 models to pick one fixed cell and testing on the held-out 10th, the cross-locus **fusion** cell clears the pre-registered ≥8/10 bar on both tasks (ANLI 9/10, TriviaQA 10/10 holdouts at AUROC > 0.55). No universal *champion*, but a universal **above-chance floor** — aggregation buys cross-model robustness. (Bar is 0.55 ≈ "beats chance"; strength is heterogeneous.)
+- **E2 — task transfer.** Applying a model's per-task winner across tasks: median transfer AUROC **0.67**, above-floor on **85%** of transfers. Per-*model* calibration is a decent cross-task proxy.
+- **E3 — label-efficiency** *(preview: reduced repeats=3, nboot=200; registered nboot=1000 pending).* Mean fraction of cells deployable climbs **0.51 (n=50) → 0.71 (n=100) → 0.83 (n=150) → 0.90 (n=200)**. The knee is ~n=100; standing up a new (model, task) costs **~150–200 labels** — affordable, not thousands.
+
+The thesis, refined by these: *no universal best signal, but a fixed aggregate gives a universal above-chance floor; per-model calibration transfers across tasks ~85% of the time; full strength still needs per-deployment calibration at ~150–200 labels.*
 
 ## Thesis
 
@@ -37,7 +56,8 @@ deployability rails) picks the deployable cell without oracle knowledge.
 
 ## Honest constraint set (what the verdicts forbid)
 
-1. No universal cell — selection is per-(model, distribution).
+1. No universal *champion* cell — per-(model, distribution) selection yields 12 distinct winners.
+   (But E1 finds a universal above-chance *floor* in the fusion aggregate — see Results.)
 2. Stacking gains are small — the signals overlap (corroborate), they don't add orthogonally.
 3. But the overlap has holes, and the holes are covered (e.g. null_ratio dies on
    Qwen3-8B where RPV is alive).

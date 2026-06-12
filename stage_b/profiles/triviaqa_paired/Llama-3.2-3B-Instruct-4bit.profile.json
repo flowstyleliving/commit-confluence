@@ -1,0 +1,387 @@
+{
+ "schema_version": "confluence/0.2-unified",
+ "model": "mlx-community/Llama-3.2-3B-Instruct-4bit",
+ "slug": "Llama-3.2-3B-Instruct-4bit",
+ "benchmark": "triviaqa_paired",
+ "n": 200,
+ "n_aligned": 200,
+ "n_dropped_unaligned": 0,
+ "n_cells_total": 29,
+ "n_ace_cells": 21,
+ "n_readout_cells": 6,
+ "n_fusion_cells": 2,
+ "ace_data_hash": "da57fa3d3c09ea56e41c7ca085f48c0e7af3b592b337d76fa12f5c33a1361d4a",
+ "readout_data_hash": "da57fa3d3c09ea56e41c7ca085f48c0e7af3b592b337d76fa12f5c33a1361d4a",
+ "primary_full_panel": {
+  "winner": "Readout neg_shadow_logvol_r1 @ step 0",
+  "ci_semantics": "procedure-level OOB CI (in-bag winners vary across resamples); winner = modal in-bag pick",
+  "winner_marginal": {
+   "auroc": 0.887,
+   "sign": -1
+  },
+  "oob_auroc_median": 0.8791478978978979,
+  "oob_auroc_ci_lo": 0.7703123905812326,
+  "oob_auroc_ci_hi": 0.9458718912666281,
+  "winner_stability": 0.8835,
+  "winner_counts": {
+   "attention[final_js] @ step 0": 9,
+   "attention[final_js_kv_groups] @ step 0": 6,
+   "attention[last_minus_1_js] @ step 0": 203,
+   "Readout neg_shadow_logvol_r1 @ step 0": 1767,
+   "Fusion fusion_rank_mean_geom @ step 0": 15
+  },
+  "oob_n_bootstrap_used": 2000,
+  "n_cells": 29,
+  "deployable": true,
+  "full_sample_marginals": {
+   "attention[final_js] @ step 0": {
+    "auroc": 0.8034,
+    "sign": -1
+   },
+   "attention[final_js_kv_groups] @ step 0": {
+    "auroc": 0.7994,
+    "sign": -1
+   },
+   "attention[final_js_no_bos] @ step 0": {
+    "auroc": 0.6901,
+    "sign": -1
+   },
+   "attention[final_bos_mass] @ step 0": {
+    "auroc": 0.5552,
+    "sign": -1
+   },
+   "attention[final_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[final_v_norm_max] @ step 0": {
+    "auroc": 0.5246,
+    "sign": -1
+   },
+   "attention[final_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.5066,
+    "sign": -1
+   },
+   "attention[mid_js] @ step 0": {
+    "auroc": 0.5512,
+    "sign": 1
+   },
+   "attention[mid_js_kv_groups] @ step 0": {
+    "auroc": 0.6814,
+    "sign": 1
+   },
+   "attention[mid_js_no_bos] @ step 0": {
+    "auroc": 0.535,
+    "sign": -1
+   },
+   "attention[mid_bos_mass] @ step 0": {
+    "auroc": 0.5449,
+    "sign": -1
+   },
+   "attention[mid_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[mid_v_norm_max] @ step 0": {
+    "auroc": 0.5006,
+    "sign": -1
+   },
+   "attention[mid_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.5759,
+    "sign": 1
+   },
+   "attention[last_minus_1_js] @ step 0": {
+    "auroc": 0.8446,
+    "sign": -1
+   },
+   "attention[last_minus_1_js_kv_groups] @ step 0": {
+    "auroc": 0.7214,
+    "sign": -1
+   },
+   "attention[last_minus_1_js_no_bos] @ step 0": {
+    "auroc": 0.7342,
+    "sign": -1
+   },
+   "attention[last_minus_1_bos_mass] @ step 0": {
+    "auroc": 0.679,
+    "sign": 1
+   },
+   "attention[last_minus_1_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[last_minus_1_v_norm_max] @ step 0": {
+    "auroc": 0.5194,
+    "sign": 1
+   },
+   "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.6605,
+    "sign": -1
+   },
+   "Readout fisher_eff_rank @ step 0": {
+    "auroc": 0.6897,
+    "sign": -1
+   },
+   "Readout spectral_entropy @ step 0": {
+    "auroc": 0.8072,
+    "sign": -1
+   },
+   "Readout neg_shadow_logvol_r1 @ step 0": {
+    "auroc": 0.887,
+    "sign": -1
+   },
+   "Readout null_ratio_post_rank1 @ step 0": {
+    "auroc": 0.7619,
+    "sign": -1
+   },
+   "Readout surprise @ step 0": {
+    "auroc": 0.5039,
+    "sign": -1
+   },
+   "Readout p_max @ step 0": {
+    "auroc": 0.7659,
+    "sign": 1
+   },
+   "Fusion fusion_rank_mean_full @ step 0": {
+    "auroc": 0.7754,
+    "sign": 1
+   },
+   "Fusion fusion_rank_mean_geom @ step 0": {
+    "auroc": 0.8324,
+    "sign": 1
+   }
+  }
+ },
+ "secondary_geometric_only": {
+  "winner": "Readout neg_shadow_logvol_r1 @ step 0",
+  "ci_semantics": "procedure-level OOB CI (in-bag winners vary across resamples); winner = modal in-bag pick",
+  "winner_marginal": {
+   "auroc": 0.887,
+   "sign": -1
+  },
+  "oob_auroc_median": 0.8791478978978979,
+  "oob_auroc_ci_lo": 0.7703123905812326,
+  "oob_auroc_ci_hi": 0.9458718912666281,
+  "winner_stability": 0.8835,
+  "winner_counts": {
+   "attention[final_js] @ step 0": 9,
+   "attention[final_js_kv_groups] @ step 0": 6,
+   "attention[last_minus_1_js] @ step 0": 203,
+   "Readout neg_shadow_logvol_r1 @ step 0": 1767,
+   "Fusion fusion_rank_mean_geom @ step 0": 15
+  },
+  "oob_n_bootstrap_used": 2000,
+  "n_cells": 26,
+  "deployable": true,
+  "full_sample_marginals": {
+   "attention[final_js] @ step 0": {
+    "auroc": 0.8034,
+    "sign": -1
+   },
+   "attention[final_js_kv_groups] @ step 0": {
+    "auroc": 0.7994,
+    "sign": -1
+   },
+   "attention[final_js_no_bos] @ step 0": {
+    "auroc": 0.6901,
+    "sign": -1
+   },
+   "attention[final_bos_mass] @ step 0": {
+    "auroc": 0.5552,
+    "sign": -1
+   },
+   "attention[final_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[final_v_norm_max] @ step 0": {
+    "auroc": 0.5246,
+    "sign": -1
+   },
+   "attention[final_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.5066,
+    "sign": -1
+   },
+   "attention[mid_js] @ step 0": {
+    "auroc": 0.5512,
+    "sign": 1
+   },
+   "attention[mid_js_kv_groups] @ step 0": {
+    "auroc": 0.6814,
+    "sign": 1
+   },
+   "attention[mid_js_no_bos] @ step 0": {
+    "auroc": 0.535,
+    "sign": -1
+   },
+   "attention[mid_bos_mass] @ step 0": {
+    "auroc": 0.5449,
+    "sign": -1
+   },
+   "attention[mid_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[mid_v_norm_max] @ step 0": {
+    "auroc": 0.5006,
+    "sign": -1
+   },
+   "attention[mid_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.5759,
+    "sign": 1
+   },
+   "attention[last_minus_1_js] @ step 0": {
+    "auroc": 0.8446,
+    "sign": -1
+   },
+   "attention[last_minus_1_js_kv_groups] @ step 0": {
+    "auroc": 0.7214,
+    "sign": -1
+   },
+   "attention[last_minus_1_js_no_bos] @ step 0": {
+    "auroc": 0.7342,
+    "sign": -1
+   },
+   "attention[last_minus_1_bos_mass] @ step 0": {
+    "auroc": 0.679,
+    "sign": 1
+   },
+   "attention[last_minus_1_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[last_minus_1_v_norm_max] @ step 0": {
+    "auroc": 0.5194,
+    "sign": 1
+   },
+   "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.6605,
+    "sign": -1
+   },
+   "Readout fisher_eff_rank @ step 0": {
+    "auroc": 0.6897,
+    "sign": -1
+   },
+   "Readout spectral_entropy @ step 0": {
+    "auroc": 0.8072,
+    "sign": -1
+   },
+   "Readout neg_shadow_logvol_r1 @ step 0": {
+    "auroc": 0.887,
+    "sign": -1
+   },
+   "Readout null_ratio_post_rank1 @ step 0": {
+    "auroc": 0.7619,
+    "sign": -1
+   },
+   "Fusion fusion_rank_mean_geom @ step 0": {
+    "auroc": 0.8324,
+    "sign": 1
+   }
+  }
+ },
+ "controls": {
+  "shuffled_label_full": {
+   "k_perms": 3,
+   "n_excluding_null_upward": 0,
+   "pass": true,
+   "perms": [
+    {
+     "oob_auroc_median": 0.4590606997228389,
+     "oob_auroc_ci_lo": 0.3463402704831933,
+     "oob_auroc_ci_hi": 0.5560451902748413,
+     "excludes_null_upward": false
+    },
+    {
+     "oob_auroc_median": 0.5116813929313929,
+     "oob_auroc_ci_lo": 0.37377924334193685,
+     "oob_auroc_ci_hi": 0.6205978920648936,
+     "excludes_null_upward": false
+    },
+    {
+     "oob_auroc_median": 0.5092892331185674,
+     "oob_auroc_ci_lo": 0.3807871261032129,
+     "oob_auroc_ci_hi": 0.6250160256410255,
+     "excludes_null_upward": false
+    }
+   ]
+  },
+  "shuffled_label_geometric": {
+   "k_perms": 3,
+   "n_excluding_null_upward": 0,
+   "pass": true,
+   "perms": [
+    {
+     "oob_auroc_median": 0.46096318688144433,
+     "oob_auroc_ci_lo": 0.34640395220588227,
+     "oob_auroc_ci_hi": 0.556841341403162,
+     "excludes_null_upward": false
+    },
+    {
+     "oob_auroc_median": 0.5166666666666666,
+     "oob_auroc_ci_lo": 0.37144381223328593,
+     "oob_auroc_ci_hi": 0.6257490135477268,
+     "excludes_null_upward": false
+    },
+    {
+     "oob_auroc_median": 0.5109632554945054,
+     "oob_auroc_ci_lo": 0.3814711976553079,
+     "oob_auroc_ci_hi": 0.6257638590335824,
+     "excludes_null_upward": false
+    }
+   ]
+  },
+  "pass": true
+ },
+ "fusion": {
+  "key": "Llama-3.2-3B-Instruct-4bit|triviaqa_paired",
+  "components": {
+   "ACE_modal": {
+    "column": "last_minus_1_js_no_bos",
+    "sign": -1,
+    "source": "per_cell"
+   },
+   "surprise": {
+    "column": "surprise",
+    "sign": 1,
+    "source": "per_cell"
+   },
+   "null_ratio_post_rank1": {
+    "column": "null_ratio_post_rank1",
+    "sign": -1,
+    "source": "per_cell"
+   },
+   "fisher_eff_rank": {
+    "column": "fisher_eff_rank",
+    "sign": -1,
+    "source": "per_cell"
+   }
+  }
+ },
+ "provenance": {
+  "seed": 20260612,
+  "n_bootstrap": 2000,
+  "sealed_selector": "_nested_bootstrap_oob_auroc (imported, not modified)",
+  "module_hashes": {
+   "pri_calibrator.py": "78c4f098295fe600cc4f6f1a14cc7b496ac93d8d70dd65743c1504eb20931101",
+   "comprehensive_run.py": "f6f5958bae5b035f07f034b9f4f5784b1a86c1ab00ab0f9c9ef4a5584776e8f8",
+   "diagnose_inter_head_disagreement.py": "b996ed923ac3eefeb0550901b2bf8ce5c5e0ae6486c8d41efdc2de9fb9567c99",
+   "pri_runtime.py": "cf56a2607b94666ab092647a764b1b73c7974b38445caa6a4b252a9cdf240784",
+   "pri_v2_io_plugins.py": "6c56be1888abc6ad44150583b869bac06366fa70a7d8e13230da3703064eb7b7",
+   "pri_v2_mlx_pipeline.py": "abb0debd8b7b3f0503418e09a21050fad968d88a6ea10fd4412983c6ba6e4a5c",
+   "model_adapters.py": "5ce42c7f8de787e6f301c4542ebbb5057bc8b1702758702095f62cc720743137",
+   "test_shadow_ambiguity.py": "12046a3ff98ddaba207396b943415dd5360f4cb4a942462994889d0aa8771961",
+   "confluence_calibrator.py": "6142217f7608dc7c790649e7d26fe99c115f439c5390d70c5128cf4c89808aa6",
+   "fusion_signs.json": "92b5468bd241b517dd2d5cf70ad28556157424deb54b5f85f88af0305ff35372"
+  },
+  "model_snapshot_sha": {
+   "resolved_revision": "7f0dc925e0d0afb0322d96f9255cfddf2ba5636e",
+   "resolved_source": "refs/main",
+   "cached_snapshots": [
+    "7f0dc925e0d0afb0322d96f9255cfddf2ba5636e"
+   ]
+  }
+ },
+ "data_path": "stage_b/data/triviaqa_paired_seed20260612_n200.jsonl",
+ "data_file_sha256": "7e0a2e2e049c83d5fe1aaccffa52c25885c0e5457362e91055c680905a68b6c7"
+}

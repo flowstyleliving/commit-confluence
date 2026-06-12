@@ -1,0 +1,1430 @@
+{
+ "n_cells_loaded": 20,
+ "cells": [
+  "Llama-3.1-8B-Instruct-4bit|anli_r1",
+  "Llama-3.1-8B-Instruct-4bit|triviaqa_paired",
+  "Llama-3.2-3B-Instruct-4bit|anli_r1",
+  "Llama-3.2-3B-Instruct-4bit|triviaqa_paired",
+  "Mistral-7B-Instruct-v0.3-4bit|anli_r1",
+  "Mistral-7B-Instruct-v0.3-4bit|triviaqa_paired",
+  "Mistral-Nemo-Instruct-2407-4bit|anli_r1",
+  "Mistral-Nemo-Instruct-2407-4bit|triviaqa_paired",
+  "Phi-3.5-mini-instruct-4bit|anli_r1",
+  "Phi-3.5-mini-instruct-4bit|triviaqa_paired",
+  "Phi-4-mini-instruct-4bit|anli_r1",
+  "Phi-4-mini-instruct-4bit|triviaqa_paired",
+  "Qwen2.5-7B-Instruct-4bit|anli_r1",
+  "Qwen2.5-7B-Instruct-4bit|triviaqa_paired",
+  "Qwen3-1.7B-4bit|anli_r1",
+  "Qwen3-1.7B-4bit|triviaqa_paired",
+  "Qwen3-8B-4bit|anli_r1",
+  "Qwen3-8B-4bit|triviaqa_paired",
+  "gemma-3-4b-it-4bit|anli_r1",
+  "gemma-3-4b-it-4bit|triviaqa_paired"
+ ],
+ "E1_lomo": {
+  "anli_r1": {
+   "holdout_winners": [
+    {
+     "holdout": "Llama-3.1-8B-Instruct-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.6764,
+     "sign": 1,
+     "holdout_auroc": 0.5572999999999999
+    },
+    {
+     "holdout": "Llama-3.2-3B-Instruct-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.6676,
+     "sign": 1,
+     "holdout_auroc": 0.6363000000000001
+    },
+    {
+     "holdout": "Mistral-7B-Instruct-v0.3-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.6588,
+     "sign": 1,
+     "holdout_auroc": 0.7152499999999999
+    },
+    {
+     "holdout": "Mistral-Nemo-Instruct-2407-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.6587,
+     "sign": 1,
+     "holdout_auroc": 0.7165
+    },
+    {
+     "holdout": "Phi-3.5-mini-instruct-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.6624,
+     "sign": 1,
+     "holdout_auroc": 0.6829500000000001
+    },
+    {
+     "holdout": "Phi-4-mini-instruct-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.6555,
+     "sign": 1,
+     "holdout_auroc": 0.74535
+    },
+    {
+     "holdout": "Qwen2.5-7B-Instruct-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.6551,
+     "sign": 1,
+     "holdout_auroc": 0.7487500000000001
+    },
+    {
+     "holdout": "Qwen3-1.7B-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.6781,
+     "sign": 1,
+     "holdout_auroc": 0.5412000000000001
+    },
+    {
+     "holdout": "Qwen3-8B-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.6586,
+     "sign": 1,
+     "holdout_auroc": 0.7171000000000001
+    },
+    {
+     "holdout": "gemma-3-4b-it-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.6734,
+     "sign": 1,
+     "holdout_auroc": 0.5837
+    }
+   ],
+   "holdout_winner_survival": 9,
+   "fixed_cell_max_survival": {
+    "cell": "Fusion fusion_rank_mean_geom @ step 0",
+    "n_holdouts_gt055": 9,
+    "of_n_holdouts": 10
+   },
+   "n_holdouts": 10,
+   "landscape_cells_gt055": {
+    "Fusion fusion_rank_mean_geom @ step 0": 9,
+    "Fusion fusion_rank_mean_full @ step 0": 8
+   },
+   "landscape_note": "full cell x holdout matrix is multiplicity-prone; descriptive only",
+   "landscape": {
+    "attention[final_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.46099999999999997,
+     "Llama-3.2-3B-Instruct-4bit": 0.5614,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.3479,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.6016,
+     "Phi-3.5-mini-instruct-4bit": 0.42550000000000004,
+     "Phi-4-mini-instruct-4bit": 0.585,
+     "Qwen2.5-7B-Instruct-4bit": 0.42769999999999997,
+     "Qwen3-1.7B-4bit": 0.3062,
+     "Qwen3-8B-4bit": 0.222,
+     "gemma-3-4b-it-4bit": 0.47490000000000004
+    },
+    "attention[final_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5459,
+     "Llama-3.2-3B-Instruct-4bit": 0.5493,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.6237,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5372,
+     "Phi-3.5-mini-instruct-4bit": 0.42550000000000004,
+     "Phi-4-mini-instruct-4bit": 0.4887,
+     "Qwen2.5-7B-Instruct-4bit": 0.4667,
+     "Qwen3-1.7B-4bit": 0.2955,
+     "Qwen3-8B-4bit": 0.3772,
+     "gemma-3-4b-it-4bit": 0.48050000000000004
+    },
+    "attention[final_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.47819999999999996,
+     "Llama-3.2-3B-Instruct-4bit": 0.4651,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.34,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.43859999999999993,
+     "Phi-3.5-mini-instruct-4bit": 0.41619999999999996,
+     "Phi-4-mini-instruct-4bit": 0.4451,
+     "Qwen2.5-7B-Instruct-4bit": 0.3386,
+     "Qwen3-1.7B-4bit": 0.39920000000000005,
+     "Qwen3-8B-4bit": 0.20909999999999998,
+     "gemma-3-4b-it-4bit": 0.4707
+    },
+    "attention[final_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5355000000000001,
+     "Llama-3.2-3B-Instruct-4bit": 0.48029999999999995,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5293,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.7390000000000001,
+     "Phi-3.5-mini-instruct-4bit": 0.7118,
+     "Phi-4-mini-instruct-4bit": 0.5774000000000001,
+     "Qwen2.5-7B-Instruct-4bit": 0.7896,
+     "Qwen3-1.7B-4bit": 0.34550000000000003,
+     "Qwen3-8B-4bit": 0.7665,
+     "gemma-3-4b-it-4bit": 0.5141
+    },
+    "attention[final_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-3.5-mini-instruct-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen2.5-7B-Instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[final_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.4982,
+     "Llama-3.2-3B-Instruct-4bit": 0.5137,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.4608,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.47425,
+     "Phi-3.5-mini-instruct-4bit": 0.5117499999999999,
+     "Phi-4-mini-instruct-4bit": 0.53065,
+     "Qwen2.5-7B-Instruct-4bit": 0.48445,
+     "Qwen3-1.7B-4bit": 0.5083500000000001,
+     "Qwen3-8B-4bit": 0.5166,
+     "gemma-3-4b-it-4bit": 0.44355
+    },
+    "attention[final_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5247,
+     "Llama-3.2-3B-Instruct-4bit": 0.46809999999999996,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5254000000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.7695,
+     "Phi-3.5-mini-instruct-4bit": 0.7010000000000001,
+     "Phi-4-mini-instruct-4bit": 0.4218,
+     "Qwen2.5-7B-Instruct-4bit": 0.7884,
+     "Qwen3-1.7B-4bit": 0.3564,
+     "Qwen3-8B-4bit": 0.7041,
+     "gemma-3-4b-it-4bit": 0.5499999999999999
+    },
+    "attention[mid_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5892999999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.4051,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5945,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.3706,
+     "Phi-3.5-mini-instruct-4bit": 0.6523000000000001,
+     "Phi-4-mini-instruct-4bit": 0.6028999999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.5258,
+     "Qwen3-1.7B-4bit": 0.49169999999999997,
+     "Qwen3-8B-4bit": 0.6401,
+     "gemma-3-4b-it-4bit": 0.449
+    },
+    "attention[mid_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5434000000000001,
+     "Llama-3.2-3B-Instruct-4bit": 0.4331,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.6144,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.49279999999999996,
+     "Phi-3.5-mini-instruct-4bit": 0.6523000000000001,
+     "Phi-4-mini-instruct-4bit": 0.6255000000000001,
+     "Qwen2.5-7B-Instruct-4bit": 0.5566,
+     "Qwen3-1.7B-4bit": 0.462,
+     "Qwen3-8B-4bit": 0.6448,
+     "gemma-3-4b-it-4bit": 0.46690000000000004
+    },
+    "attention[mid_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.6261,
+     "Llama-3.2-3B-Instruct-4bit": 0.45199999999999996,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5763,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.31,
+     "Phi-3.5-mini-instruct-4bit": 0.5852,
+     "Phi-4-mini-instruct-4bit": 0.5983,
+     "Qwen2.5-7B-Instruct-4bit": 0.5333,
+     "Qwen3-1.7B-4bit": 0.5317999999999999,
+     "Qwen3-8B-4bit": 0.6416000000000001,
+     "gemma-3-4b-it-4bit": 0.4965
+    },
+    "attention[mid_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.6484,
+     "Llama-3.2-3B-Instruct-4bit": 0.3522,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.6249000000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.4133,
+     "Phi-3.5-mini-instruct-4bit": 0.6250000000000001,
+     "Phi-4-mini-instruct-4bit": 0.6548,
+     "Qwen2.5-7B-Instruct-4bit": 0.48280000000000006,
+     "Qwen3-1.7B-4bit": 0.43770000000000003,
+     "Qwen3-8B-4bit": 0.5282,
+     "gemma-3-4b-it-4bit": 0.46110000000000007
+    },
+    "attention[mid_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-3.5-mini-instruct-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen2.5-7B-Instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[mid_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.54735,
+     "Llama-3.2-3B-Instruct-4bit": 0.4849,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.46385,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.47429999999999994,
+     "Phi-3.5-mini-instruct-4bit": 0.49995,
+     "Phi-4-mini-instruct-4bit": 0.5387,
+     "Qwen2.5-7B-Instruct-4bit": 0.5135,
+     "Qwen3-1.7B-4bit": 0.48555,
+     "Qwen3-8B-4bit": 0.56145,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[mid_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.656,
+     "Llama-3.2-3B-Instruct-4bit": 0.3977,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.6497,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.4227,
+     "Phi-3.5-mini-instruct-4bit": 0.6586,
+     "Phi-4-mini-instruct-4bit": 0.6773000000000001,
+     "Qwen2.5-7B-Instruct-4bit": 0.4693,
+     "Qwen3-1.7B-4bit": 0.4866,
+     "Qwen3-8B-4bit": 0.5546,
+     "gemma-3-4b-it-4bit": 0.5279
+    },
+    "attention[last_minus_1_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.4474,
+     "Llama-3.2-3B-Instruct-4bit": 0.5390999999999999,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.6714000000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.6039999999999999,
+     "Phi-3.5-mini-instruct-4bit": 0.38669999999999993,
+     "Phi-4-mini-instruct-4bit": 0.6631,
+     "Qwen2.5-7B-Instruct-4bit": 0.5527,
+     "Qwen3-1.7B-4bit": 0.4936,
+     "Qwen3-8B-4bit": 0.2395,
+     "gemma-3-4b-it-4bit": 0.6168
+    },
+    "attention[last_minus_1_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.4115,
+     "Llama-3.2-3B-Instruct-4bit": 0.5051,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.3532,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.48540000000000005,
+     "Phi-3.5-mini-instruct-4bit": 0.38669999999999993,
+     "Phi-4-mini-instruct-4bit": 0.3601,
+     "Qwen2.5-7B-Instruct-4bit": 0.375,
+     "Qwen3-1.7B-4bit": 0.4581,
+     "Qwen3-8B-4bit": 0.27620000000000006,
+     "gemma-3-4b-it-4bit": 0.39359999999999995
+    },
+    "attention[last_minus_1_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.4755999999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.5447,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.6936,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5507,
+     "Phi-3.5-mini-instruct-4bit": 0.41380000000000006,
+     "Phi-4-mini-instruct-4bit": 0.6194999999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.5982000000000001,
+     "Qwen3-1.7B-4bit": 0.4614,
+     "Qwen3-8B-4bit": 0.36060000000000003,
+     "gemma-3-4b-it-4bit": 0.6111000000000001
+    },
+    "attention[last_minus_1_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5506,
+     "Llama-3.2-3B-Instruct-4bit": 0.4747,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5879000000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.8332999999999999,
+     "Phi-3.5-mini-instruct-4bit": 0.638,
+     "Phi-4-mini-instruct-4bit": 0.3311,
+     "Qwen2.5-7B-Instruct-4bit": 0.5738,
+     "Qwen3-1.7B-4bit": 0.4844,
+     "Qwen3-8B-4bit": 0.7943,
+     "gemma-3-4b-it-4bit": 0.5033
+    },
+    "attention[last_minus_1_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-3.5-mini-instruct-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen2.5-7B-Instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[last_minus_1_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5335500000000001,
+     "Llama-3.2-3B-Instruct-4bit": 0.5506499999999999,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.4484,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5199,
+     "Phi-3.5-mini-instruct-4bit": 0.47465,
+     "Phi-4-mini-instruct-4bit": 0.48800000000000004,
+     "Qwen2.5-7B-Instruct-4bit": 0.52215,
+     "Qwen3-1.7B-4bit": 0.55345,
+     "Qwen3-8B-4bit": 0.5416,
+     "gemma-3-4b-it-4bit": 0.45135000000000003
+    },
+    "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5481,
+     "Llama-3.2-3B-Instruct-4bit": 0.4606,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5009999999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.674,
+     "Phi-3.5-mini-instruct-4bit": 0.6395,
+     "Phi-4-mini-instruct-4bit": 0.3571,
+     "Qwen2.5-7B-Instruct-4bit": 0.5756,
+     "Qwen3-1.7B-4bit": 0.4811,
+     "Qwen3-8B-4bit": 0.8038,
+     "gemma-3-4b-it-4bit": 0.5624
+    },
+    "Readout fisher_eff_rank @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.37170000000000003,
+     "Llama-3.2-3B-Instruct-4bit": 0.32660000000000006,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.2632,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.3149,
+     "Phi-3.5-mini-instruct-4bit": 0.33919999999999995,
+     "Phi-4-mini-instruct-4bit": 0.30519999999999997,
+     "Qwen2.5-7B-Instruct-4bit": 0.3655,
+     "Qwen3-1.7B-4bit": 0.47419999999999995,
+     "Qwen3-8B-4bit": 0.27749999999999997,
+     "gemma-3-4b-it-4bit": 0.4757
+    },
+    "Readout spectral_entropy @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.3667,
+     "Llama-3.2-3B-Instruct-4bit": 0.30870000000000003,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.7258,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.6745,
+     "Phi-3.5-mini-instruct-4bit": 0.6453000000000002,
+     "Phi-4-mini-instruct-4bit": 0.6795,
+     "Qwen2.5-7B-Instruct-4bit": 0.6890000000000001,
+     "Qwen3-1.7B-4bit": 0.4565,
+     "Qwen3-8B-4bit": 0.30119999999999997,
+     "gemma-3-4b-it-4bit": 0.5458
+    },
+    "Readout neg_shadow_logvol_r1 @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.4289,
+     "Llama-3.2-3B-Instruct-4bit": 0.3844,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.675,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.2828,
+     "Phi-3.5-mini-instruct-4bit": 0.6264000000000001,
+     "Phi-4-mini-instruct-4bit": 0.3805,
+     "Qwen2.5-7B-Instruct-4bit": 0.2436,
+     "Qwen3-1.7B-4bit": 0.43629999999999997,
+     "Qwen3-8B-4bit": 0.3023,
+     "gemma-3-4b-it-4bit": 0.4939
+    },
+    "Readout null_ratio_post_rank1 @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5302,
+     "Llama-3.2-3B-Instruct-4bit": 0.5824,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.6819000000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.6039000000000001,
+     "Phi-3.5-mini-instruct-4bit": 0.6840999999999999,
+     "Phi-4-mini-instruct-4bit": 0.3241,
+     "Qwen2.5-7B-Instruct-4bit": 0.7414999999999999,
+     "Qwen3-1.7B-4bit": 0.4817,
+     "Qwen3-8B-4bit": 0.44899999999999995,
+     "gemma-3-4b-it-4bit": 0.4718
+    },
+    "Readout surprise @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5992999999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.556,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5769,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.37340000000000007,
+     "Phi-3.5-mini-instruct-4bit": 0.5764,
+     "Phi-4-mini-instruct-4bit": 0.324,
+     "Qwen2.5-7B-Instruct-4bit": 0.4112,
+     "Qwen3-1.7B-4bit": 0.6276999999999999,
+     "Qwen3-8B-4bit": 0.267,
+     "gemma-3-4b-it-4bit": 0.4793
+    },
+    "Readout p_max @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5265,
+     "Llama-3.2-3B-Instruct-4bit": 0.5682,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.6874999999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.4301,
+     "Phi-3.5-mini-instruct-4bit": 0.37549999999999994,
+     "Phi-4-mini-instruct-4bit": 0.5753,
+     "Qwen2.5-7B-Instruct-4bit": 0.7241,
+     "Qwen3-1.7B-4bit": 0.5131,
+     "Qwen3-8B-4bit": 0.30970000000000003,
+     "gemma-3-4b-it-4bit": 0.5225
+    },
+    "Fusion fusion_rank_mean_full @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.50455,
+     "Llama-3.2-3B-Instruct-4bit": 0.6127499999999999,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.68325,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.7237999999999999,
+     "Phi-3.5-mini-instruct-4bit": 0.66025,
+     "Phi-4-mini-instruct-4bit": 0.66215,
+     "Qwen2.5-7B-Instruct-4bit": 0.7533000000000001,
+     "Qwen3-1.7B-4bit": 0.44734999999999997,
+     "Qwen3-8B-4bit": 0.7477499999999999,
+     "gemma-3-4b-it-4bit": 0.58395
+    },
+    "Fusion fusion_rank_mean_geom @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5572999999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.6363000000000001,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.7152499999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.7165,
+     "Phi-3.5-mini-instruct-4bit": 0.6829500000000001,
+     "Phi-4-mini-instruct-4bit": 0.74535,
+     "Qwen2.5-7B-Instruct-4bit": 0.7487500000000001,
+     "Qwen3-1.7B-4bit": 0.5412000000000001,
+     "Qwen3-8B-4bit": 0.7171000000000001,
+     "gemma-3-4b-it-4bit": 0.5837
+    }
+   },
+   "sign_stability": {
+    "attention[final_js] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[final_js_kv_groups] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[final_js_no_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": -1
+    },
+    "attention[final_bos_mass] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.8,
+     "modal_sign": -1
+    },
+    "attention[final_v_norm_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[final_v_norm_max] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": 1
+    },
+    "attention[final_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": 1
+    },
+    "attention[mid_js] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": 1
+    },
+    "attention[mid_js_kv_groups] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": 1
+    },
+    "attention[mid_js_no_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": 1
+    },
+    "attention[mid_bos_mass] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_max] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_js] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_js_kv_groups] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_js_no_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_bos_mass] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_v_norm_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_v_norm_max] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": 1
+    },
+    "Readout fisher_eff_rank @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "Readout spectral_entropy @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": 1
+    },
+    "Readout neg_shadow_logvol_r1 @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": -1
+    },
+    "Readout null_ratio_post_rank1 @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": 1
+    },
+    "Readout surprise @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": -1
+    },
+    "Readout p_max @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": -1
+    },
+    "Fusion fusion_rank_mean_full @ step 0": {
+     "n_models": 10,
+     "agreement": 0.9,
+     "modal_sign": 1
+    },
+    "Fusion fusion_rank_mean_geom @ step 0": {
+     "n_models": 10,
+     "agreement": 1.0,
+     "modal_sign": 1
+    }
+   }
+  },
+  "triviaqa_paired": {
+   "holdout_winners": [
+    {
+     "holdout": "Llama-3.1-8B-Instruct-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.7941,
+     "sign": 1,
+     "holdout_auroc": 0.76015
+    },
+    {
+     "holdout": "Llama-3.2-3B-Instruct-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.7861,
+     "sign": 1,
+     "holdout_auroc": 0.83235
+    },
+    {
+     "holdout": "Mistral-7B-Instruct-v0.3-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.7797,
+     "sign": 1,
+     "holdout_auroc": 0.88995
+    },
+    {
+     "holdout": "Mistral-Nemo-Instruct-2407-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.773,
+     "sign": 1,
+     "holdout_auroc": 0.9504499999999999
+    },
+    {
+     "holdout": "Phi-3.5-mini-instruct-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.7897,
+     "sign": 1,
+     "holdout_auroc": 0.7995999999999999
+    },
+    {
+     "holdout": "Phi-4-mini-instruct-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.8025,
+     "sign": 1,
+     "holdout_auroc": 0.68495
+    },
+    {
+     "holdout": "Qwen2.5-7B-Instruct-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.8073,
+     "sign": 1,
+     "holdout_auroc": 0.6414
+    },
+    {
+     "holdout": "Qwen3-1.7B-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.8147,
+     "sign": 1,
+     "holdout_auroc": 0.57525
+    },
+    {
+     "holdout": "Qwen3-8B-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.7743,
+     "sign": 1,
+     "holdout_auroc": 0.93865
+    },
+    {
+     "holdout": "gemma-3-4b-it-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.7858,
+     "sign": 1,
+     "holdout_auroc": 0.83455
+    }
+   ],
+   "holdout_winner_survival": 10,
+   "fixed_cell_max_survival": {
+    "cell": "Fusion fusion_rank_mean_geom @ step 0",
+    "n_holdouts_gt055": 10,
+    "of_n_holdouts": 10
+   },
+   "n_holdouts": 10,
+   "landscape_cells_gt055": {
+    "Fusion fusion_rank_mean_geom @ step 0": 10,
+    "attention[final_bos_mass] @ step 0": 9,
+    "Fusion fusion_rank_mean_full @ step 0": 8
+   },
+   "landscape_note": "full cell x holdout matrix is multiplicity-prone; descriptive only",
+   "landscape": {
+    "attention[final_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.2603,
+     "Llama-3.2-3B-Instruct-4bit": 0.8033999999999999,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.08249999999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.24159999999999998,
+     "Phi-3.5-mini-instruct-4bit": 0.8185,
+     "Phi-4-mini-instruct-4bit": 0.7464,
+     "Qwen2.5-7B-Instruct-4bit": 0.5641,
+     "Qwen3-1.7B-4bit": 0.3981,
+     "Qwen3-8B-4bit": 0.3982,
+     "gemma-3-4b-it-4bit": 0.19540000000000002
+    },
+    "attention[final_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.3701,
+     "Llama-3.2-3B-Instruct-4bit": 0.7994,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.9297,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.45319999999999994,
+     "Phi-3.5-mini-instruct-4bit": 0.8185,
+     "Phi-4-mini-instruct-4bit": 0.756,
+     "Qwen2.5-7B-Instruct-4bit": 0.5719000000000001,
+     "Qwen3-1.7B-4bit": 0.3638,
+     "Qwen3-8B-4bit": 0.7391000000000001,
+     "gemma-3-4b-it-4bit": 0.15389999999999998
+    },
+    "attention[final_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.4171,
+     "Llama-3.2-3B-Instruct-4bit": 0.6901,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.08320000000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.1425,
+     "Phi-3.5-mini-instruct-4bit": 0.8395999999999999,
+     "Phi-4-mini-instruct-4bit": 0.6992,
+     "Qwen2.5-7B-Instruct-4bit": 0.5119,
+     "Qwen3-1.7B-4bit": 0.5995999999999999,
+     "Qwen3-8B-4bit": 0.38949999999999996,
+     "gemma-3-4b-it-4bit": 0.1907
+    },
+    "attention[final_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.7559999999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.5552,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.04100000000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.9528,
+     "Phi-3.5-mini-instruct-4bit": 0.6731,
+     "Phi-4-mini-instruct-4bit": 0.5538000000000001,
+     "Qwen2.5-7B-Instruct-4bit": 0.8628,
+     "Qwen3-1.7B-4bit": 0.7231000000000001,
+     "Qwen3-8B-4bit": 0.8010999999999999,
+     "gemma-3-4b-it-4bit": 0.615
+    },
+    "attention[final_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-3.5-mini-instruct-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen2.5-7B-Instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[final_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5206,
+     "Llama-3.2-3B-Instruct-4bit": 0.52455,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.58345,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.52205,
+     "Phi-3.5-mini-instruct-4bit": 0.52195,
+     "Phi-4-mini-instruct-4bit": 0.5765500000000001,
+     "Qwen2.5-7B-Instruct-4bit": 0.43294999999999995,
+     "Qwen3-1.7B-4bit": 0.5594,
+     "Qwen3-8B-4bit": 0.588,
+     "gemma-3-4b-it-4bit": 0.54325
+    },
+    "attention[final_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.7119,
+     "Llama-3.2-3B-Instruct-4bit": 0.4934,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.0946,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.9799000000000001,
+     "Phi-3.5-mini-instruct-4bit": 0.6178,
+     "Phi-4-mini-instruct-4bit": 0.2492,
+     "Qwen2.5-7B-Instruct-4bit": 0.8705999999999999,
+     "Qwen3-1.7B-4bit": 0.6804,
+     "Qwen3-8B-4bit": 0.5824999999999999,
+     "gemma-3-4b-it-4bit": 0.6474
+    },
+    "attention[mid_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.6195,
+     "Llama-3.2-3B-Instruct-4bit": 0.5512,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.3542,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.16300000000000003,
+     "Phi-3.5-mini-instruct-4bit": 0.6870999999999999,
+     "Phi-4-mini-instruct-4bit": 0.7224999999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.6712,
+     "Qwen3-1.7B-4bit": 0.3942,
+     "Qwen3-8B-4bit": 0.6036999999999999,
+     "gemma-3-4b-it-4bit": 0.5682999999999999
+    },
+    "attention[mid_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.6154000000000002,
+     "Llama-3.2-3B-Instruct-4bit": 0.6814000000000001,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.4435,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5156999999999999,
+     "Phi-3.5-mini-instruct-4bit": 0.6870999999999999,
+     "Phi-4-mini-instruct-4bit": 0.8039999999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.7320000000000001,
+     "Qwen3-1.7B-4bit": 0.39360000000000006,
+     "Qwen3-8B-4bit": 0.6247,
+     "gemma-3-4b-it-4bit": 0.5442
+    },
+    "attention[mid_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.4293,
+     "Llama-3.2-3B-Instruct-4bit": 0.5349999999999999,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5499,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.7585,
+     "Phi-3.5-mini-instruct-4bit": 0.5590999999999999,
+     "Phi-4-mini-instruct-4bit": 0.5428999999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.4028,
+     "Qwen3-1.7B-4bit": 0.6073,
+     "Qwen3-8B-4bit": 0.5291000000000001,
+     "gemma-3-4b-it-4bit": 0.40110000000000007
+    },
+    "attention[mid_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.642,
+     "Llama-3.2-3B-Instruct-4bit": 0.5449,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.4981,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.4221,
+     "Phi-3.5-mini-instruct-4bit": 0.6898,
+     "Phi-4-mini-instruct-4bit": 0.8904999999999998,
+     "Qwen2.5-7B-Instruct-4bit": 0.6385000000000001,
+     "Qwen3-1.7B-4bit": 0.4256,
+     "Qwen3-8B-4bit": 0.6974999999999999,
+     "gemma-3-4b-it-4bit": 0.3698
+    },
+    "attention[mid_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-3.5-mini-instruct-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen2.5-7B-Instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[mid_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.49305000000000004,
+     "Llama-3.2-3B-Instruct-4bit": 0.50065,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.4803,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.4447,
+     "Phi-3.5-mini-instruct-4bit": 0.49884999999999996,
+     "Phi-4-mini-instruct-4bit": 0.4535,
+     "Qwen2.5-7B-Instruct-4bit": 0.49485,
+     "Qwen3-1.7B-4bit": 0.5024500000000001,
+     "Qwen3-8B-4bit": 0.47375,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[mid_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.6647000000000001,
+     "Llama-3.2-3B-Instruct-4bit": 0.5759000000000001,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.62,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.33110000000000006,
+     "Phi-3.5-mini-instruct-4bit": 0.7298,
+     "Phi-4-mini-instruct-4bit": 0.8917,
+     "Qwen2.5-7B-Instruct-4bit": 0.6996,
+     "Qwen3-1.7B-4bit": 0.46349999999999997,
+     "Qwen3-8B-4bit": 0.7065,
+     "gemma-3-4b-it-4bit": 0.25070000000000003
+    },
+    "attention[last_minus_1_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.454,
+     "Llama-3.2-3B-Instruct-4bit": 0.15539999999999998,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.03480000000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.0983,
+     "Phi-3.5-mini-instruct-4bit": 0.21430000000000002,
+     "Phi-4-mini-instruct-4bit": 0.32299999999999995,
+     "Qwen2.5-7B-Instruct-4bit": 0.3924,
+     "Qwen3-1.7B-4bit": 0.4718,
+     "Qwen3-8B-4bit": 0.4665000000000001,
+     "gemma-3-4b-it-4bit": 0.3684
+    },
+    "attention[last_minus_1_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.4187,
+     "Llama-3.2-3B-Instruct-4bit": 0.2786,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.05200000000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.0597,
+     "Phi-3.5-mini-instruct-4bit": 0.21430000000000002,
+     "Phi-4-mini-instruct-4bit": 0.2673,
+     "Qwen2.5-7B-Instruct-4bit": 0.5096,
+     "Qwen3-1.7B-4bit": 0.4728,
+     "Qwen3-8B-4bit": 0.3578,
+     "gemma-3-4b-it-4bit": 0.3325
+    },
+    "attention[last_minus_1_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5631,
+     "Llama-3.2-3B-Instruct-4bit": 0.7342,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.9470000000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.12969999999999998,
+     "Phi-3.5-mini-instruct-4bit": 0.7299,
+     "Phi-4-mini-instruct-4bit": 0.341,
+     "Qwen2.5-7B-Instruct-4bit": 0.5336000000000001,
+     "Qwen3-1.7B-4bit": 0.5186,
+     "Qwen3-8B-4bit": 0.8216,
+     "gemma-3-4b-it-4bit": 0.6682
+    },
+    "attention[last_minus_1_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.7464999999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.321,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.0867,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.9689000000000001,
+     "Phi-3.5-mini-instruct-4bit": 0.7803,
+     "Phi-4-mini-instruct-4bit": 0.39219999999999994,
+     "Qwen2.5-7B-Instruct-4bit": 0.8043,
+     "Qwen3-1.7B-4bit": 0.6482,
+     "Qwen3-8B-4bit": 0.6118000000000001,
+     "gemma-3-4b-it-4bit": 0.35209999999999997
+    },
+    "attention[last_minus_1_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-3.5-mini-instruct-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen2.5-7B-Instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[last_minus_1_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.502,
+     "Llama-3.2-3B-Instruct-4bit": 0.48059999999999997,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.45655,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.47495,
+     "Phi-3.5-mini-instruct-4bit": 0.46215000000000006,
+     "Phi-4-mini-instruct-4bit": 0.4605,
+     "Qwen2.5-7B-Instruct-4bit": 0.38070000000000004,
+     "Qwen3-1.7B-4bit": 0.501,
+     "Qwen3-8B-4bit": 0.4789,
+     "gemma-3-4b-it-4bit": 0.49244999999999994
+    },
+    "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.7095,
+     "Llama-3.2-3B-Instruct-4bit": 0.3395,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.0631,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.96,
+     "Phi-3.5-mini-instruct-4bit": 0.7904,
+     "Phi-4-mini-instruct-4bit": 0.4907,
+     "Qwen2.5-7B-Instruct-4bit": 0.8001,
+     "Qwen3-1.7B-4bit": 0.6181000000000001,
+     "Qwen3-8B-4bit": 0.5992000000000001,
+     "gemma-3-4b-it-4bit": 0.42869999999999997
+    },
+    "Readout fisher_eff_rank @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.1807,
+     "Llama-3.2-3B-Instruct-4bit": 0.3103,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.8816999999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.7292000000000001,
+     "Phi-3.5-mini-instruct-4bit": 0.5036999999999999,
+     "Phi-4-mini-instruct-4bit": 0.5399,
+     "Qwen2.5-7B-Instruct-4bit": 0.7824,
+     "Qwen3-1.7B-4bit": 0.6615,
+     "Qwen3-8B-4bit": 0.14140000000000003,
+     "gemma-3-4b-it-4bit": 0.7836999999999998
+    },
+    "Readout spectral_entropy @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.1952,
+     "Llama-3.2-3B-Instruct-4bit": 0.1928,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.8887,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.8071,
+     "Phi-3.5-mini-instruct-4bit": 0.5649,
+     "Phi-4-mini-instruct-4bit": 0.5542,
+     "Qwen2.5-7B-Instruct-4bit": 0.7553000000000001,
+     "Qwen3-1.7B-4bit": 0.6441,
+     "Qwen3-8B-4bit": 0.22409999999999997,
+     "gemma-3-4b-it-4bit": 0.8004
+    },
+    "Readout neg_shadow_logvol_r1 @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.7822999999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.887,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.12499999999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.27859999999999996,
+     "Phi-3.5-mini-instruct-4bit": 0.5206999999999999,
+     "Phi-4-mini-instruct-4bit": 0.5986999999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.5404,
+     "Qwen3-1.7B-4bit": 0.4527,
+     "Qwen3-8B-4bit": 0.8838,
+     "gemma-3-4b-it-4bit": 0.5439
+    },
+    "Readout null_ratio_post_rank1 @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.3981,
+     "Llama-3.2-3B-Instruct-4bit": 0.23809999999999998,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.13040000000000002,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.1385,
+     "Phi-3.5-mini-instruct-4bit": 0.17220000000000002,
+     "Phi-4-mini-instruct-4bit": 0.6377,
+     "Qwen2.5-7B-Instruct-4bit": 0.5042,
+     "Qwen3-1.7B-4bit": 0.5208999999999999,
+     "Qwen3-8B-4bit": 0.20530000000000004,
+     "gemma-3-4b-it-4bit": 0.1951
+    },
+    "Readout surprise @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.7538000000000001,
+     "Llama-3.2-3B-Instruct-4bit": 0.5038999999999999,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.7435,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.385,
+     "Phi-3.5-mini-instruct-4bit": 0.5680999999999999,
+     "Phi-4-mini-instruct-4bit": 0.8125,
+     "Qwen2.5-7B-Instruct-4bit": 0.25220000000000004,
+     "Qwen3-1.7B-4bit": 0.85495,
+     "Qwen3-8B-4bit": 0.26339999999999997,
+     "gemma-3-4b-it-4bit": 0.2982
+    },
+    "Readout p_max @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.296,
+     "Llama-3.2-3B-Instruct-4bit": 0.7659,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.03260000000000002,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.1891,
+     "Phi-3.5-mini-instruct-4bit": 0.45640000000000003,
+     "Phi-4-mini-instruct-4bit": 0.6508999999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.6788999999999998,
+     "Qwen3-1.7B-4bit": 0.6033000000000001,
+     "Qwen3-8B-4bit": 0.3879,
+     "gemma-3-4b-it-4bit": 0.5885
+    },
+    "Fusion fusion_rank_mean_full @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.6285,
+     "Llama-3.2-3B-Instruct-4bit": 0.77545,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.8583,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.9396,
+     "Phi-3.5-mini-instruct-4bit": 0.7398499999999999,
+     "Phi-4-mini-instruct-4bit": 0.53095,
+     "Qwen2.5-7B-Instruct-4bit": 0.71995,
+     "Qwen3-1.7B-4bit": 0.40005000000000007,
+     "Qwen3-8B-4bit": 0.9339,
+     "gemma-3-4b-it-4bit": 0.876
+    },
+    "Fusion fusion_rank_mean_geom @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.76015,
+     "Llama-3.2-3B-Instruct-4bit": 0.83235,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.88995,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.9504499999999999,
+     "Phi-3.5-mini-instruct-4bit": 0.7995999999999999,
+     "Phi-4-mini-instruct-4bit": 0.68495,
+     "Qwen2.5-7B-Instruct-4bit": 0.6414,
+     "Qwen3-1.7B-4bit": 0.57525,
+     "Qwen3-8B-4bit": 0.93865,
+     "gemma-3-4b-it-4bit": 0.83455
+    }
+   },
+   "sign_stability": {
+    "attention[final_js] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[final_js_kv_groups] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": -1
+    },
+    "attention[final_js_no_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": -1
+    },
+    "attention[final_bos_mass] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.9,
+     "modal_sign": -1
+    },
+    "attention[final_v_norm_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[final_v_norm_max] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.9,
+     "modal_sign": -1
+    },
+    "attention[final_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": 1
+    },
+    "attention[mid_js] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": 1
+    },
+    "attention[mid_js_kv_groups] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.8,
+     "modal_sign": 1
+    },
+    "attention[mid_js_no_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": -1
+    },
+    "attention[mid_bos_mass] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": -1
+    },
+    "attention[mid_v_norm_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_max] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_js] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_js_kv_groups] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_js_no_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.8,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_bos_mass] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_v_norm_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_v_norm_max] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": 1
+    },
+    "Readout fisher_eff_rank @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": 1
+    },
+    "Readout spectral_entropy @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": 1
+    },
+    "Readout neg_shadow_logvol_r1 @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": -1
+    },
+    "Readout null_ratio_post_rank1 @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": 1
+    },
+    "Readout surprise @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": -1
+    },
+    "Readout p_max @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": 1
+    },
+    "Fusion fusion_rank_mean_full @ step 0": {
+     "n_models": 10,
+     "agreement": 0.9,
+     "modal_sign": 1
+    },
+    "Fusion fusion_rank_mean_geom @ step 0": {
+     "n_models": 10,
+     "agreement": 1.0,
+     "modal_sign": 1
+    }
+   }
+  }
+ },
+ "E2_transfer": {
+  "rows": [
+   {
+    "slug": "Llama-3.1-8B-Instruct-4bit",
+    "primary:anli_r1->triviaqa_paired": {
+     "cell": "attention[mid_v_norm_lastq_weighted] @ step 0",
+     "src_auroc": 0.656,
+     "transfer_auroc": 0.6647000000000001
+    },
+    "geometric:anli_r1->triviaqa_paired": {
+     "cell": "attention[mid_v_norm_lastq_weighted] @ step 0",
+     "src_auroc": 0.656,
+     "transfer_auroc": 0.6647000000000001
+    },
+    "primary:triviaqa_paired->anli_r1": {
+     "cell": "Readout fisher_eff_rank @ step 0",
+     "src_auroc": 0.8193,
+     "transfer_auroc": 0.6283000000000001
+    },
+    "geometric:triviaqa_paired->anli_r1": {
+     "cell": "Readout fisher_eff_rank @ step 0",
+     "src_auroc": 0.8193,
+     "transfer_auroc": 0.6283000000000001
+    }
+   },
+   {
+    "slug": "Llama-3.2-3B-Instruct-4bit",
+    "primary:anli_r1->triviaqa_paired": {
+     "cell": "Readout spectral_entropy @ step 0",
+     "src_auroc": 0.6913,
+     "transfer_auroc": 0.8071999999999999
+    },
+    "geometric:anli_r1->triviaqa_paired": {
+     "cell": "Readout spectral_entropy @ step 0",
+     "src_auroc": 0.6913,
+     "transfer_auroc": 0.8071999999999999
+    },
+    "primary:triviaqa_paired->anli_r1": {
+     "cell": "Readout neg_shadow_logvol_r1 @ step 0",
+     "src_auroc": 0.887,
+     "transfer_auroc": 0.6155999999999999
+    },
+    "geometric:triviaqa_paired->anli_r1": {
+     "cell": "Readout neg_shadow_logvol_r1 @ step 0",
+     "src_auroc": 0.887,
+     "transfer_auroc": 0.6155999999999999
+    }
+   },
+   {
+    "slug": "Mistral-7B-Instruct-v0.3-4bit",
+    "primary:anli_r1->triviaqa_paired": {
+     "cell": "Readout fisher_eff_rank @ step 0",
+     "src_auroc": 0.7368,
+     "transfer_auroc": 0.8816999999999999
+    },
+    "geometric:anli_r1->triviaqa_paired": {
+     "cell": "Readout fisher_eff_rank @ step 0",
+     "src_auroc": 0.7368,
+     "transfer_auroc": 0.8816999999999999
+    },
+    "primary:triviaqa_paired->anli_r1": {
+     "cell": "Readout p_max @ step 0",
+     "src_auroc": 0.9674,
+     "transfer_auroc": 0.6874999999999999
+    },
+    "geometric:triviaqa_paired->anli_r1": {
+     "cell": "attention[last_minus_1_js] @ step 0",
+     "src_auroc": 0.9652,
+     "transfer_auroc": 0.6714000000000001
+    }
+   },
+   {
+    "slug": "Mistral-Nemo-Instruct-2407-4bit",
+    "primary:anli_r1->triviaqa_paired": {
+     "cell": "attention[last_minus_1_bos_mass] @ step 0",
+     "src_auroc": 0.8333,
+     "transfer_auroc": 0.9689000000000001
+    },
+    "geometric:anli_r1->triviaqa_paired": {
+     "cell": "attention[last_minus_1_bos_mass] @ step 0",
+     "src_auroc": 0.8333,
+     "transfer_auroc": 0.9689000000000001
+    },
+    "primary:triviaqa_paired->anli_r1": {
+     "cell": "attention[final_v_norm_lastq_weighted] @ step 0",
+     "src_auroc": 0.9799,
+     "transfer_auroc": 0.7695
+    },
+    "geometric:triviaqa_paired->anli_r1": {
+     "cell": "attention[final_v_norm_lastq_weighted] @ step 0",
+     "src_auroc": 0.9799,
+     "transfer_auroc": 0.7695
+    }
+   },
+   {
+    "slug": "Phi-3.5-mini-instruct-4bit",
+    "primary:anli_r1->triviaqa_paired": {
+     "cell": "attention[final_bos_mass] @ step 0",
+     "src_auroc": 0.7118,
+     "transfer_auroc": 0.6731
+    },
+    "geometric:anli_r1->triviaqa_paired": {
+     "cell": "attention[final_bos_mass] @ step 0",
+     "src_auroc": 0.7118,
+     "transfer_auroc": 0.6731
+    },
+    "primary:triviaqa_paired->anli_r1": {
+     "cell": "attention[final_js_no_bos] @ step 0",
+     "src_auroc": 0.8396,
+     "transfer_auroc": 0.41619999999999996
+    },
+    "geometric:triviaqa_paired->anli_r1": {
+     "cell": "attention[final_js_no_bos] @ step 0",
+     "src_auroc": 0.8396,
+     "transfer_auroc": 0.41619999999999996
+    }
+   },
+   {
+    "slug": "Phi-4-mini-instruct-4bit",
+    "primary:anli_r1->triviaqa_paired": {
+     "cell": "Fusion fusion_rank_mean_geom @ step 0",
+     "src_auroc": 0.7453,
+     "transfer_auroc": 0.68495
+    },
+    "geometric:anli_r1->triviaqa_paired": {
+     "cell": "Fusion fusion_rank_mean_geom @ step 0",
+     "src_auroc": 0.7453,
+     "transfer_auroc": 0.68495
+    },
+    "primary:triviaqa_paired->anli_r1": {
+     "cell": "attention[mid_v_norm_lastq_weighted] @ step 0",
+     "src_auroc": 0.8917,
+     "transfer_auroc": 0.6773000000000001
+    },
+    "geometric:triviaqa_paired->anli_r1": {
+     "cell": "attention[mid_v_norm_lastq_weighted] @ step 0",
+     "src_auroc": 0.8917,
+     "transfer_auroc": 0.6773000000000001
+    }
+   },
+   {
+    "slug": "Qwen2.5-7B-Instruct-4bit",
+    "primary:anli_r1->triviaqa_paired": {
+     "cell": "attention[final_bos_mass] @ step 0",
+     "src_auroc": 0.7896,
+     "transfer_auroc": 0.8628
+    },
+    "geometric:anli_r1->triviaqa_paired": {
+     "cell": "attention[final_bos_mass] @ step 0",
+     "src_auroc": 0.7896,
+     "transfer_auroc": 0.8628
+    },
+    "primary:triviaqa_paired->anli_r1": {
+     "cell": "attention[final_v_norm_lastq_weighted] @ step 0",
+     "src_auroc": 0.8706,
+     "transfer_auroc": 0.7884
+    },
+    "geometric:triviaqa_paired->anli_r1": {
+     "cell": "attention[final_v_norm_lastq_weighted] @ step 0",
+     "src_auroc": 0.8706,
+     "transfer_auroc": 0.7884
+    }
+   },
+   {
+    "slug": "Qwen3-1.7B-4bit",
+    "primary:anli_r1->triviaqa_paired": {
+     "cell": "attention[final_js_kv_groups] @ step 0",
+     "src_auroc": 0.7045,
+     "transfer_auroc": 0.3638
+    },
+    "geometric:anli_r1->triviaqa_paired": {
+     "cell": "attention[final_js_kv_groups] @ step 0",
+     "src_auroc": 0.7045,
+     "transfer_auroc": 0.3638
+    },
+    "primary:triviaqa_paired->anli_r1": {
+     "cell": "Readout surprise @ step 0",
+     "src_auroc": 0.8549,
+     "transfer_auroc": 0.6276999999999999
+    },
+    "geometric:triviaqa_paired->anli_r1": {
+     "cell": "attention[final_bos_mass] @ step 0",
+     "src_auroc": 0.7231,
+     "transfer_auroc": 0.34550000000000003
+    }
+   },
+   {
+    "slug": "Qwen3-8B-4bit",
+    "primary:anli_r1->triviaqa_paired": {
+     "cell": "attention[last_minus_1_v_norm_lastq_weighted] @ step 0",
+     "src_auroc": 0.8038,
+     "transfer_auroc": 0.5992000000000001
+    },
+    "geometric:anli_r1->triviaqa_paired": {
+     "cell": "attention[last_minus_1_v_norm_lastq_weighted] @ step 0",
+     "src_auroc": 0.8038,
+     "transfer_auroc": 0.5992000000000001
+    },
+    "primary:triviaqa_paired->anli_r1": {
+     "cell": "Fusion fusion_rank_mean_geom @ step 0",
+     "src_auroc": 0.9386,
+     "transfer_auroc": 0.7171000000000001
+    },
+    "geometric:triviaqa_paired->anli_r1": {
+     "cell": "Fusion fusion_rank_mean_geom @ step 0",
+     "src_auroc": 0.9386,
+     "transfer_auroc": 0.7171000000000001
+    }
+   },
+   {
+    "slug": "gemma-3-4b-it-4bit",
+    "primary:anli_r1->triviaqa_paired": {
+     "cell": "attention[last_minus_1_js] @ step 0",
+     "src_auroc": 0.6168,
+     "transfer_auroc": 0.6316
+    },
+    "geometric:anli_r1->triviaqa_paired": {
+     "cell": "attention[last_minus_1_js] @ step 0",
+     "src_auroc": 0.6168,
+     "transfer_auroc": 0.6316
+    },
+    "primary:triviaqa_paired->anli_r1": {
+     "cell": "Fusion fusion_rank_mean_full @ step 0",
+     "src_auroc": 0.876,
+     "transfer_auroc": 0.58395
+    },
+    "geometric:triviaqa_paired->anli_r1": {
+     "cell": "attention[final_js_kv_groups] @ step 0",
+     "src_auroc": 0.8461,
+     "transfer_auroc": 0.5195000000000001
+    }
+   }
+  ],
+  "median_transfer_auroc": 0.6731,
+  "frac_transfer_gt055": 0.85
+ }
+}

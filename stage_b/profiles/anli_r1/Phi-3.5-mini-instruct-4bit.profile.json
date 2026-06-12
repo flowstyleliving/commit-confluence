@@ -1,0 +1,403 @@
+{
+ "schema_version": "confluence/0.2-unified",
+ "model": "mlx-community/Phi-3.5-mini-instruct-4bit",
+ "slug": "Phi-3.5-mini-instruct-4bit",
+ "benchmark": "anli_r1",
+ "n": 200,
+ "n_aligned": 200,
+ "n_dropped_unaligned": 0,
+ "n_cells_total": 29,
+ "n_ace_cells": 21,
+ "n_readout_cells": 6,
+ "n_fusion_cells": 2,
+ "ace_data_hash": "d73a23a426a7551126a6dc9304b0458d6f89fd659eda78817ec466309a248963",
+ "readout_data_hash": "d73a23a426a7551126a6dc9304b0458d6f89fd659eda78817ec466309a248963",
+ "primary_full_panel": {
+  "winner": "attention[final_bos_mass] @ step 0",
+  "ci_semantics": "procedure-level OOB CI (in-bag winners vary across resamples); winner = modal in-bag pick",
+  "winner_marginal": {
+   "auroc": 0.7118,
+   "sign": -1
+  },
+  "oob_auroc_median": 0.6682682583652112,
+  "oob_auroc_ci_lo": 0.5443347224242272,
+  "oob_auroc_ci_hi": 0.7640092465570384,
+  "winner_stability": 0.439,
+  "winner_counts": {
+   "attention[final_bos_mass] @ step 0": 878,
+   "attention[final_v_norm_lastq_weighted] @ step 0": 327,
+   "attention[mid_js] @ step 0": 60,
+   "attention[mid_js_no_bos] @ step 0": 2,
+   "attention[mid_bos_mass] @ step 0": 3,
+   "attention[mid_v_norm_lastq_weighted] @ step 0": 107,
+   "attention[last_minus_1_js] @ step 0": 2,
+   "attention[last_minus_1_bos_mass] @ step 0": 1,
+   "Readout fisher_eff_rank @ step 0": 77,
+   "Readout spectral_entropy @ step 0": 10,
+   "Readout null_ratio_post_rank1 @ step 0": 338,
+   "Readout p_max @ step 0": 11,
+   "Fusion fusion_rank_mean_full @ step 0": 13,
+   "Fusion fusion_rank_mean_geom @ step 0": 171
+  },
+  "oob_n_bootstrap_used": 2000,
+  "n_cells": 29,
+  "deployable": true,
+  "full_sample_marginals": {
+   "attention[final_js] @ step 0": {
+    "auroc": 0.5745,
+    "sign": 1
+   },
+   "attention[final_js_kv_groups] @ step 0": {
+    "auroc": 0.5745,
+    "sign": 1
+   },
+   "attention[final_js_no_bos] @ step 0": {
+    "auroc": 0.5838,
+    "sign": 1
+   },
+   "attention[final_bos_mass] @ step 0": {
+    "auroc": 0.7118,
+    "sign": -1
+   },
+   "attention[final_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[final_v_norm_max] @ step 0": {
+    "auroc": 0.5117,
+    "sign": 1
+   },
+   "attention[final_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.701,
+    "sign": 1
+   },
+   "attention[mid_js] @ step 0": {
+    "auroc": 0.6523,
+    "sign": 1
+   },
+   "attention[mid_js_kv_groups] @ step 0": {
+    "auroc": 0.6523,
+    "sign": 1
+   },
+   "attention[mid_js_no_bos] @ step 0": {
+    "auroc": 0.5852,
+    "sign": 1
+   },
+   "attention[mid_bos_mass] @ step 0": {
+    "auroc": 0.625,
+    "sign": -1
+   },
+   "attention[mid_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[mid_v_norm_max] @ step 0": {
+    "auroc": 0.5001,
+    "sign": 1
+   },
+   "attention[mid_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.6586,
+    "sign": 1
+   },
+   "attention[last_minus_1_js] @ step 0": {
+    "auroc": 0.6133,
+    "sign": 1
+   },
+   "attention[last_minus_1_js_kv_groups] @ step 0": {
+    "auroc": 0.6133,
+    "sign": 1
+   },
+   "attention[last_minus_1_js_no_bos] @ step 0": {
+    "auroc": 0.5862,
+    "sign": 1
+   },
+   "attention[last_minus_1_bos_mass] @ step 0": {
+    "auroc": 0.638,
+    "sign": -1
+   },
+   "attention[last_minus_1_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[last_minus_1_v_norm_max] @ step 0": {
+    "auroc": 0.5253,
+    "sign": 1
+   },
+   "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.6395,
+    "sign": 1
+   },
+   "Readout fisher_eff_rank @ step 0": {
+    "auroc": 0.6608,
+    "sign": 1
+   },
+   "Readout spectral_entropy @ step 0": {
+    "auroc": 0.6453,
+    "sign": 1
+   },
+   "Readout neg_shadow_logvol_r1 @ step 0": {
+    "auroc": 0.6264,
+    "sign": 1
+   },
+   "Readout null_ratio_post_rank1 @ step 0": {
+    "auroc": 0.6841,
+    "sign": 1
+   },
+   "Readout surprise @ step 0": {
+    "auroc": 0.5764,
+    "sign": -1
+   },
+   "Readout p_max @ step 0": {
+    "auroc": 0.6245,
+    "sign": 1
+   },
+   "Fusion fusion_rank_mean_full @ step 0": {
+    "auroc": 0.6603,
+    "sign": 1
+   },
+   "Fusion fusion_rank_mean_geom @ step 0": {
+    "auroc": 0.683,
+    "sign": 1
+   }
+  }
+ },
+ "secondary_geometric_only": {
+  "winner": "attention[final_bos_mass] @ step 0",
+  "ci_semantics": "procedure-level OOB CI (in-bag winners vary across resamples); winner = modal in-bag pick",
+  "winner_marginal": {
+   "auroc": 0.7118,
+   "sign": -1
+  },
+  "oob_auroc_median": 0.6692060627544498,
+  "oob_auroc_ci_lo": 0.5516682901793196,
+  "oob_auroc_ci_hi": 0.7640753217655778,
+  "winner_stability": 0.4425,
+  "winner_counts": {
+   "attention[final_bos_mass] @ step 0": 885,
+   "attention[final_v_norm_lastq_weighted] @ step 0": 332,
+   "attention[mid_js] @ step 0": 61,
+   "attention[mid_js_no_bos] @ step 0": 2,
+   "attention[mid_bos_mass] @ step 0": 3,
+   "attention[mid_v_norm_lastq_weighted] @ step 0": 107,
+   "attention[last_minus_1_js] @ step 0": 2,
+   "attention[last_minus_1_bos_mass] @ step 0": 1,
+   "Readout fisher_eff_rank @ step 0": 77,
+   "Readout spectral_entropy @ step 0": 11,
+   "Readout null_ratio_post_rank1 @ step 0": 342,
+   "Fusion fusion_rank_mean_geom @ step 0": 177
+  },
+  "oob_n_bootstrap_used": 2000,
+  "n_cells": 26,
+  "deployable": true,
+  "full_sample_marginals": {
+   "attention[final_js] @ step 0": {
+    "auroc": 0.5745,
+    "sign": 1
+   },
+   "attention[final_js_kv_groups] @ step 0": {
+    "auroc": 0.5745,
+    "sign": 1
+   },
+   "attention[final_js_no_bos] @ step 0": {
+    "auroc": 0.5838,
+    "sign": 1
+   },
+   "attention[final_bos_mass] @ step 0": {
+    "auroc": 0.7118,
+    "sign": -1
+   },
+   "attention[final_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[final_v_norm_max] @ step 0": {
+    "auroc": 0.5117,
+    "sign": 1
+   },
+   "attention[final_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.701,
+    "sign": 1
+   },
+   "attention[mid_js] @ step 0": {
+    "auroc": 0.6523,
+    "sign": 1
+   },
+   "attention[mid_js_kv_groups] @ step 0": {
+    "auroc": 0.6523,
+    "sign": 1
+   },
+   "attention[mid_js_no_bos] @ step 0": {
+    "auroc": 0.5852,
+    "sign": 1
+   },
+   "attention[mid_bos_mass] @ step 0": {
+    "auroc": 0.625,
+    "sign": -1
+   },
+   "attention[mid_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[mid_v_norm_max] @ step 0": {
+    "auroc": 0.5001,
+    "sign": 1
+   },
+   "attention[mid_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.6586,
+    "sign": 1
+   },
+   "attention[last_minus_1_js] @ step 0": {
+    "auroc": 0.6133,
+    "sign": 1
+   },
+   "attention[last_minus_1_js_kv_groups] @ step 0": {
+    "auroc": 0.6133,
+    "sign": 1
+   },
+   "attention[last_minus_1_js_no_bos] @ step 0": {
+    "auroc": 0.5862,
+    "sign": 1
+   },
+   "attention[last_minus_1_bos_mass] @ step 0": {
+    "auroc": 0.638,
+    "sign": -1
+   },
+   "attention[last_minus_1_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[last_minus_1_v_norm_max] @ step 0": {
+    "auroc": 0.5253,
+    "sign": 1
+   },
+   "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.6395,
+    "sign": 1
+   },
+   "Readout fisher_eff_rank @ step 0": {
+    "auroc": 0.6608,
+    "sign": 1
+   },
+   "Readout spectral_entropy @ step 0": {
+    "auroc": 0.6453,
+    "sign": 1
+   },
+   "Readout neg_shadow_logvol_r1 @ step 0": {
+    "auroc": 0.6264,
+    "sign": 1
+   },
+   "Readout null_ratio_post_rank1 @ step 0": {
+    "auroc": 0.6841,
+    "sign": 1
+   },
+   "Fusion fusion_rank_mean_geom @ step 0": {
+    "auroc": 0.683,
+    "sign": 1
+   }
+  }
+ },
+ "controls": {
+  "shuffled_label_full": {
+   "k_perms": 3,
+   "n_excluding_null_upward": 0,
+   "pass": true,
+   "perms": [
+    {
+     "oob_auroc_median": 0.4731891764149828,
+     "oob_auroc_ci_lo": 0.36094845779220774,
+     "oob_auroc_ci_hi": 0.565158249158249,
+     "excludes_null_upward": false
+    },
+    {
+     "oob_auroc_median": 0.5253623298469876,
+     "oob_auroc_ci_lo": 0.3897986111111111,
+     "oob_auroc_ci_hi": 0.6384649122807017,
+     "excludes_null_upward": false
+    },
+    {
+     "oob_auroc_median": 0.4713342739908205,
+     "oob_auroc_ci_lo": 0.3587712960016366,
+     "oob_auroc_ci_hi": 0.5648270975056688,
+     "excludes_null_upward": false
+    }
+   ]
+  },
+  "shuffled_label_geometric": {
+   "k_perms": 3,
+   "n_excluding_null_upward": 0,
+   "pass": true,
+   "perms": [
+    {
+     "oob_auroc_median": 0.476987315500829,
+     "oob_auroc_ci_lo": 0.36726753654658967,
+     "oob_auroc_ci_hi": 0.5684231147926,
+     "excludes_null_upward": false
+    },
+    {
+     "oob_auroc_median": 0.5278651173388016,
+     "oob_auroc_ci_lo": 0.39609132959316784,
+     "oob_auroc_ci_hi": 0.6387289679992664,
+     "excludes_null_upward": false
+    },
+    {
+     "oob_auroc_median": 0.4742435942435943,
+     "oob_auroc_ci_lo": 0.3609868045805546,
+     "oob_auroc_ci_hi": 0.5687212032606769,
+     "excludes_null_upward": false
+    }
+   ]
+  },
+  "pass": true
+ },
+ "fusion": {
+  "key": "Phi-3.5-mini-instruct-4bit|anli_r1",
+  "components": {
+   "ACE_modal": {
+    "column": "last_minus_1_js_no_bos",
+    "sign": 1,
+    "source": "per_cell"
+   },
+   "surprise": {
+    "column": "surprise",
+    "sign": 1,
+    "source": "per_cell"
+   },
+   "null_ratio_post_rank1": {
+    "column": "null_ratio_post_rank1",
+    "sign": 1,
+    "source": "per_cell"
+   },
+   "fisher_eff_rank": {
+    "column": "fisher_eff_rank",
+    "sign": 1,
+    "source": "per_cell"
+   }
+  }
+ },
+ "provenance": {
+  "seed": 20260612,
+  "n_bootstrap": 2000,
+  "sealed_selector": "_nested_bootstrap_oob_auroc (imported, not modified)",
+  "module_hashes": {
+   "pri_calibrator.py": "78c4f098295fe600cc4f6f1a14cc7b496ac93d8d70dd65743c1504eb20931101",
+   "comprehensive_run.py": "f6f5958bae5b035f07f034b9f4f5784b1a86c1ab00ab0f9c9ef4a5584776e8f8",
+   "diagnose_inter_head_disagreement.py": "b996ed923ac3eefeb0550901b2bf8ce5c5e0ae6486c8d41efdc2de9fb9567c99",
+   "pri_runtime.py": "cf56a2607b94666ab092647a764b1b73c7974b38445caa6a4b252a9cdf240784",
+   "pri_v2_io_plugins.py": "6c56be1888abc6ad44150583b869bac06366fa70a7d8e13230da3703064eb7b7",
+   "pri_v2_mlx_pipeline.py": "abb0debd8b7b3f0503418e09a21050fad968d88a6ea10fd4412983c6ba6e4a5c",
+   "model_adapters.py": "5ce42c7f8de787e6f301c4542ebbb5057bc8b1702758702095f62cc720743137",
+   "test_shadow_ambiguity.py": "12046a3ff98ddaba207396b943415dd5360f4cb4a942462994889d0aa8771961",
+   "confluence_calibrator.py": "6142217f7608dc7c790649e7d26fe99c115f439c5390d70c5128cf4c89808aa6",
+   "fusion_signs.json": "92b5468bd241b517dd2d5cf70ad28556157424deb54b5f85f88af0305ff35372"
+  },
+  "model_snapshot_sha": {
+   "resolved_revision": "7b2052fd882fe017300d4d42a4eb06a27b816af4",
+   "resolved_source": "refs/main",
+   "cached_snapshots": [
+    "7b2052fd882fe017300d4d42a4eb06a27b816af4"
+   ]
+  }
+ },
+ "data_path": "stage_b/data/anli_R1_seed20260612_n200.jsonl",
+ "data_file_sha256": "57ad341f2c29c886a726b7c62b7371be8c064b04b9b96e98324c931157d4f55b"
+}
