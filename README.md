@@ -8,7 +8,7 @@ for hallucination-risk readout at (or before) the first generated token.
 > so the executed code is byte-identical to the pre-registration (`stage_b/PRE_REGISTRATION.md`,
 > Amendments v1–v5). The pre-registration and gated fresh data were committed *before* the run.
 >
-> **Reproducibility.** The per-cell score matrices (`stage_b/profiles/*/*.matrix.npz`) are
+> **Reproducibility.** The per-deployment score matrices (`stage_b/profiles/*/*.matrix.npz`) are
 > published, so the descriptive analyses (E1/E2/E3 via `stage_b/analyze_universality.py`) are
 > **independently reproducible from this repo alone** — no models or private dependencies needed.
 > The *forward pass* that produced those matrices imports sealed modules from a separate dependency
@@ -19,20 +19,22 @@ for hallucination-risk readout at (or before) the first generated token.
 
 ## Results (registered run, seed 20260612 — 10 models × {ANLI R1, TriviaQA paired}, n=200)
 
-Clean run: 20/20 cells computed, zero errors, all shuffled-label controls passed, registered (not preview). Two pre-registered endpoints (lead with the geometric one):
+**Terminology:** a *deployment* = one (model, task) pairing (20 total); a *signal* = one candidate detector in the 29-entry panel (e.g. `attention[final_bos_mass] @ step 0`). The honest selector picks one signal per deployment.
 
-- **Geometric-only dispatcher — PASS, 18/20** (bar ≥17). A confidence-free panel (ACE attention + PRI + RPV) under the honest nested-OOB selector is deployable (OOB CI lower bound > 0.50) on 18 of 20 cohort cells. The registered geometric claim **holds**.
-- **Full-panel (incl. confidence + fusion) — FAIL, 18/20** (bar ≥19). The strict product claim allowed ≤1 non-deployable cell and predicted exactly one (`gemma-3-4b/anli`); a second appeared, so it misses by one → the strict claim is **falsified** (the honest, registered outcome).
+Clean run: 20/20 deployments computed, zero errors, all shuffled-label controls passed, registered (not preview). Two pre-registered endpoints (lead with the geometric one):
 
-**Both endpoints fail the identical two ANLI cells** (`gemma-3-4b/anli`, predicted; `Llama-3.1-8B/anli`, the one model with no prior ACE seal). Confidence and fusion rescued neither — coverage is 18/20 *with or without* confidence, so those two are genuine epistemic blind spots no panel cell covers (TriviaQA 10/10, ANLI 8/10).
+- **Geometric-only dispatcher — PASS, 18/20** (bar ≥17). A confidence-free panel (ACE attention + PRI + RPV) under the honest nested-OOB selector is deployable (OOB CI lower bound > 0.50) in 18 of 20 deployments. The registered geometric claim **holds**.
+- **Full-panel (incl. confidence + fusion) — FAIL, 18/20** (bar ≥19). The strict product claim allowed ≤1 non-deployable deployment and predicted exactly one (`gemma-3-4b/anli`); a second appeared, so it misses by one → the strict claim is **falsified** (the honest, registered outcome).
 
-**No universal best signal:** the deployable cells are won by **12 distinct cells** — ACE attention dominant, RPV (fisher_eff_rank / spectral_entropy / neg_shadow) covering 4 cells where attention does not, and the pre-registered cross-locus fusion cell winning 2 outright. Corroboration *with* complementarity.
+**Both endpoints fail the identical two ANLI deployments** (`gemma-3-4b/anli`, predicted; `Llama-3.1-8B/anli`, the one model with no prior ACE seal). Confidence and fusion rescued neither — coverage is 18/20 *with or without* confidence, so those two are genuine epistemic blind spots no panel signal covers (TriviaQA 10/10, ANLI 8/10).
 
-### Descriptive analyses (pre-registered, non-gating — `stage_b/universality_*.json`)
+**No universal best signal:** the 18 deployable deployments are won by **12 distinct signals** — ACE attention dominant, RPV (fisher_eff_rank / spectral_entropy / neg_shadow) winning 4 deployments where attention does not, and the pre-registered cross-locus fusion signal winning 2 outright. Corroboration *with* complementarity.
 
-- **E1 — partial universality (first positive in the program).** Pooling 9 models to pick one fixed cell and testing on the held-out 10th, the cross-locus **fusion** cell clears the pre-registered ≥8/10 bar on both tasks (ANLI 9/10, TriviaQA 10/10 holdouts at AUROC > 0.55). No universal *champion*, but a universal **above-chance floor** — aggregation buys cross-model robustness. (Bar is 0.55 ≈ "beats chance"; strength is heterogeneous.)
+### Descriptive analyses (pre-registered, non-gating — `stage_b/universality.json`)
+
+- **E1 — partial universality (first positive in the program).** Pooling 9 models to pick one fixed signal and testing on the held-out 10th, the cross-locus **fusion** signal clears the pre-registered ≥8/10 bar on both tasks (ANLI 9/10, TriviaQA 10/10 holdouts at AUROC > 0.55). No universal *champion*, but a universal **above-chance floor** — aggregation buys cross-model robustness. (Bar is 0.55 ≈ "beats chance"; strength is heterogeneous.)
 - **E2 — task transfer.** Applying a model's per-task winner across tasks: median transfer AUROC **0.67**, above-floor on **85%** of transfers. Per-*model* calibration is a decent cross-task proxy.
-- **E3 — label-efficiency** *(preview: reduced repeats=3, nboot=200; registered nboot=1000 pending).* Mean fraction of cells deployable climbs **0.51 (n=50) → 0.71 (n=100) → 0.83 (n=150) → 0.90 (n=200)**. The knee is ~n=100; standing up a new (model, task) costs **~150–200 labels** — affordable, not thousands.
+- **E3 — label-efficiency** (registered: repeats=10, nboot=1000). Mean fraction of deployments deployable climbs **0.45 (n=50) → 0.67 (n=100) → 0.79 (n=150) → 0.90 (n=200)** (geometric; full-panel tracks 0.01–0.04 higher). The knee is ~n=100; n=50 is below a coin flip; standing up a new deployment costs **~150–200 labels** — affordable, not thousands.
 
 The thesis, refined by these: *no universal best signal, but a fixed aggregate gives a universal above-chance floor; per-model calibration transfers across tasks ~85% of the time; full strength still needs per-deployment calibration at ~150–200 labels.*
 
@@ -52,11 +54,11 @@ commitment pathway*. Three independent research lines walked into the same room:
 They *converge* — they do not subsume one another. The monitor treats them as a
 **panel of specialists with one honest dispatcher**: a per-(model, exact deployment
 distribution) `CalibrationProfile` (nested-OOB CIs, sign-lock, drift hashes,
-deployability rails) picks the deployable cell without oracle knowledge.
+deployability rails) picks the deployable signal without oracle knowledge.
 
 ## Honest constraint set (what the verdicts forbid)
 
-1. No universal *champion* cell — per-(model, distribution) selection yields 12 distinct winners.
+1. No universal *champion* signal — per-(model, distribution) selection yields 12 distinct winners.
    (But E1 finds a universal above-chance *floor* in the fusion aggregate — see Results.)
 2. Stacking gains are small — the signals overlap (corroborate), they don't add orthogonally.
 3. But the overlap has holes, and the holes are covered (e.g. PRI dies on
@@ -66,17 +68,17 @@ deployability rails) picks the deployable cell without oracle knowledge.
 ## Plan
 
 - **Stage A — union coverage matrix** (`stage_a/`): zero-new-compute read over sealed
-  artifacts. For every (model, task) cell, which families are OOB-deployable, and is
+  artifacts. For every (model, task) deployment, which families are OOB-deployable, and is
   the union gap-free (≥1 deployable family everywhere)?
 - **Stage B — sealed unified-panel run** (gated on Stage A): fresh-seed pre-reg where the
-  calibrator fits all families in one pass; registered claim = at least one panel cell is
-  deployable on every model, and the dispatcher selects it without oracle knowledge.
+  calibrator fits all families in one pass; registered claim = at least one panel signal is
+  deployable in every deployment, and the dispatcher selects it without oracle knowledge.
 
 ## Source artifacts (read-only inputs; not vendored)
 
 - ACE sealed profiles — `t0-morphology-furnace/experiments/t0-sealed/2026-05-26/profiles/`
 - RPV comprehensive run — `t0-morphology-furnace/exploratory/shadow-ambiguity/comprehensive_outputs/`
-- PRI (v3) — carried inside the RPV run as `null_ratio_post_rank1` (same cells, same data)
+- PRI (v3) — carried inside the RPV run as `null_ratio_post_rank1` (same deployments, same data)
 
 This repo holds the *integration layer* only. It does not re-run or vendor the source
 experiments; it reads their sealed outputs and composes them. The dependency-repo root is
