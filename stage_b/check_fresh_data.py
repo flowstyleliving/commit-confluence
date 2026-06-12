@@ -127,6 +127,12 @@ def _gate_body(a):
     # different injected answer (the generator excludes sealed question_ids; the gate must too).
     qid_overlap = 0
     if a.task == "triviaqa" and rows and not serr:
+        # SF1-fix-2: require meta.question_id on every row, else the overlap check below is a
+        # silently-inert empty-set comparison on a file that legally omits the field.
+        n_missing_qid = sum(1 for _, d in rows if not (d.get("meta") or {}).get("question_id"))
+        if n_missing_qid:
+            hard_fail.append(f"qid-schema: {n_missing_qid} TriviaQA rows lack meta.question_id "
+                             f"(required so the sealed-question-id overlap check is meaningful)")
         fresh_qids = _question_ids(rows)
         sealed_qids = _question_ids(sealed_rows)
         qid_overlap = len(fresh_qids & sealed_qids)

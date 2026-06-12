@@ -91,6 +91,21 @@ def _validate_resumed_profile(prof, *, model, benchmark, data_path, seed, nboot,
     cur_mods = CC.module_hashes()
     if prov.get("module_hashes") != cur_mods:
         mismatches.append("module_hashes drift (code or fusion_signs.json changed since the profile)")
+    # M3-fix-3: model weights can drift independently of code/data; the snapshot was recorded but
+    # never compared on resume - a re-pulled cache would pass silently.
+    cur_snap = CC.model_snapshot_sha(model)
+    if prov.get("model_snapshot_sha") != cur_snap:
+        mismatches.append("model_snapshot_sha drift (the cached weights changed since the profile)")
+    # M3-fix-2: a same-seed/-data/-code `--limit` SMOKE profile is otherwise indistinguishable from
+    # a full registered cell. The registered denominator is exact (every planned sample scored, zero
+    # drops), so a resumed profile must show full n_aligned and zero drops or it is not registered.
+    expected_n = sum(1 for ln in open(data_path) if ln.strip())
+    if prof.get("n_aligned") != expected_n:
+        mismatches.append(f"n_aligned {prof.get('n_aligned')!r} != planned {expected_n} "
+                          f"(a partial/smoke profile cannot count toward a registered cell)")
+    if prof.get("n_dropped_unaligned"):  # any nonzero drop => not a registered-denominator cell
+        mismatches.append(f"n_dropped_unaligned {prof.get('n_dropped_unaligned')!r} != 0 "
+                          f"(registered cells calibrate on every planned sample)")
     if not os.path.exists(npz_path):
         mismatches.append(f"missing matrix npz {npz_path}")
     if mismatches:

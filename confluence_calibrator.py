@@ -275,6 +275,10 @@ def module_hashes() -> Dict[str, str]:
         "pri_v2_io_plugins": os.path.join(T0_REPO, "pri_v2_io_plugins.py"),
         "pri_v2_mlx_pipeline": os.path.join(T0_REPO, "pri_v2_mlx_pipeline.py"),
         "model_adapters": os.path.join(T0_REPO, "model_adapters.py"),
+        # M5-fix-2: comprehensive_run imports the RPV statistic fns (fisher_eff_rank,
+        # fisher_spectral_entropy, shadow_logvol_post_rank) from test_shadow_ambiguity - that
+        # module IS executed on the readout path, so its drift must be recorded too.
+        "test_shadow_ambiguity": os.path.join(T0_REPO, "exploratory/shadow-ambiguity/test_shadow_ambiguity.py"),
     }
     out = {}
     for mod, exp in expected.items():

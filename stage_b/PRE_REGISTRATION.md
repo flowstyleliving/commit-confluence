@@ -257,3 +257,28 @@ Confirmed-clean by Codex (no change needed): fusion component signs are genuinel
 (sealed-era paths only, runtime loads the frozen `fusion_signs.json`); in-bag sign-lock + OOB
 evaluation in the sealed selector; data-gate normalization matches the generator byte-for-byte;
 multiplicity is pre-registered as priced in by nested OOB.
+
+---
+
+## Amendments v5 (2026-06-11, Codex re-verify of the v4 fixes — BEFORE the registered run)
+
+The Codex re-verification of Amendments v4 confirmed M1/M2/M4/SF2/SF3 closed but found 3 narrow
+residuals (2 in M3, 1 in M5) + 1 in SF1. All now closed; all in the harness/provenance surface.
+
+- **M3-fix-2 — resume rejects partial/smoke profiles.** `_validate_resumed_profile` now also
+  requires `n_aligned == planned-n` (rows in the data file) and `n_dropped_unaligned == 0`, so a
+  same-seed/-data/-code `--limit` smoke profile can no longer be folded into a registered cell.
+- **M3-fix-3 — resume compares the model snapshot.** The recorded `model_snapshot_sha` was stored
+  but never checked; resume now rejects a profile whose snapshot differs from the current cache
+  (model-weight drift independent of code/data).
+- **M5-fix-2 — provenance hashes the RPV statistic module.** `comprehensive_run` imports
+  `fisher_eff_rank` / `fisher_spectral_entropy` / `shadow_logvol_post_rank` from
+  `test_shadow_ambiguity`; that file is on the readout hot path and is now in `module_hashes()`.
+- **SF1-fix-2 — TriviaQA gate requires `meta.question_id`.** The qid-overlap check was inert on a
+  file that legally omits the field; the gate now hard-fails any TriviaQA row missing it, so the
+  sealed-question-id disjointness check can never silently pass.
+
+Residual known limitation (documented, not a code change): `model_snapshot_sha` resolves
+`refs/main` (the revision a bare `mlx_load(model_id)` with no explicit revision resolves to) rather
+than instrumenting the loader's actually-returned path; sound because the loader is invoked with no
+explicit revision, and `cached_snapshots` is recorded as an ambiguity tripwire.
