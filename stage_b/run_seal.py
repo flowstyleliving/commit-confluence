@@ -14,7 +14,7 @@ amendment A4; the denominator never shrinks).
 Run with the t0 venv. Data files must be FRESH-seed and pass stage_b/check_fresh_data.py;
 sealed-content files and pilot seeds are refused unless --allow-sealed-data (= preview).
 
-    /Users/msrk/Documents/t0-morphology-furnace/.venv/bin/python stage_b/run_seal.py \
+    "$CONFLUENCE_T0_REPO"/.venv/bin/python stage_b/run_seal.py \
         --seed <FRESH> --anli <fresh_anli.jsonl> --triviaqa <fresh_triviaqa.jsonl> \
         --out-dir stage_b/profiles
 """
@@ -22,6 +22,8 @@ import sys, os, json, argparse, traceback
 import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import confluence_calibrator as CC
+
+T0_REPO = CC.T0_REPO  # configurable sealed-dependency root ($CONFLUENCE_T0_REPO)
 
 COHORT = [  # pre-reg cohort P + Llama-3.1-8B (10 models)
     "mlx-community/Llama-3.2-3B-Instruct-4bit",
@@ -35,9 +37,10 @@ COHORT = [  # pre-reg cohort P + Llama-3.1-8B (10 models)
     "mlx-community/Qwen3-8B-4bit",
     "mlx-community/gemma-3-4b-it-4bit",
 ]
+_SEALED_DATA_DIR = os.path.join(T0_REPO, "experiments/t0-sealed/2026-05-26/data")
 SEALED_DATA = {  # 20260526 sealed-seed files - PREVIEW only (data reuse); fresh files override
-    "anli_r1": "/Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
-    "triviaqa_paired": "/Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
+    "anli_r1": os.path.join(_SEALED_DATA_DIR, "anli_R1_seed20260526_n200.jsonl"),
+    "triviaqa_paired": os.path.join(_SEALED_DATA_DIR, "triviaqa_paired_seed20260526_n100.jsonl"),
 }
 # C3: pilot/sealed-era seeds may never stamp a registered run
 PILOT_SEEDS = {20260512, 20260526, 20260610, 20260611}

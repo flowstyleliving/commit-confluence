@@ -1,6 +1,6 @@
 {
- "fresh": "/Users/msrk/Documents/commit-confluence/stage_b/data/triviaqa_paired_seed20260612_n200.jsonl",
- "sealed": "/Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
+ "fresh": "~/Documents/commit-confluence/stage_b/data/triviaqa_paired_seed20260612_n200.jsonl",
+ "sealed": "~/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
  "task": "triviaqa",
  "n": 200,
  "label_balance": 0.5,

@@ -6,8 +6,8 @@ import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import confluence_calibrator as CC
 
-RPV_DIR = "/Users/msrk/Documents/t0-morphology-furnace/exploratory/shadow-ambiguity/comprehensive_outputs"
-DATA = "/Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl"
+RPV_DIR = os.path.join(CC.T0_REPO, "exploratory/shadow-ambiguity/comprehensive_outputs")
+DATA = os.path.join(CC.T0_REPO, "experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl")
 MODEL = "mlx-community/Llama-3.2-3B-Instruct-4bit"
 RPV = RPV_DIR + "/shadow_v2__Llama-3.2-3B-Instruct-4bit__anli_r1__limitall.json"
 

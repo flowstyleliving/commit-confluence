@@ -26,11 +26,11 @@ in the sealed files**. Then gate them:
 ```bash
 .../python stage_b/check_fresh_data.py --task anli \
   --fresh /path/anli_R1_seed20260612_n200.jsonl \
-  --sealed /Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl \
+  --sealed ~/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl \
   --out stage_b/data_gate_anli.json
 .../python stage_b/check_fresh_data.py --task triviaqa \
   --fresh /path/triviaqa_paired_seed20260612_n200.jsonl \
-  --sealed /Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl \
+  --sealed ~/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl \
   --out stage_b/data_gate_triviaqa.json
 ```
 
@@ -39,7 +39,7 @@ Both must print PASS (schema, n, balance, zero intra-dups, **zero overlap**) bef
 ## Launch (one command, after Codex sign-off + data gate PASS)
 
 ```bash
-/Users/msrk/Documents/t0-morphology-furnace/.venv/bin/python stage_b/run_seal.py \
+~/Documents/t0-morphology-furnace/.venv/bin/python stage_b/run_seal.py \
   --seed 20260612 \
   --anli    /path/to/anli_R1_seed20260612_n200.jsonl \
   --triviaqa /path/to/triviaqa_paired_seed20260612_n200.jsonl \

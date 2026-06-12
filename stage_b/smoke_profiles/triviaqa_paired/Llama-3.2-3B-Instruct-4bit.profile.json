@@ -353,5 +353,5 @@
   },
   "model_snapshot_sha": "7f0dc925e0d0afb0322d96f9255cfddf2ba5636e"
  },
- "data_path": "/Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl"
+ "data_path": "~/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl"
 }

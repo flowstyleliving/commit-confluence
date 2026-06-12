@@ -14,14 +14,17 @@ The sealed selector is IMPORTED read-only; we never edit the frozen ACE/T0 core.
 Sign-lock + OOB honesty are inherited verbatim from `_nested_bootstrap_oob_auroc`.
 
 Run with the t0 venv (has sklearn/mlx):
-    /Users/msrk/Documents/t0-morphology-furnace/.venv/bin/python confluence_calibrator.py ...
+    "$CONFLUENCE_T0_REPO"/.venv/bin/python confluence_calibrator.py ...
 """
 from __future__ import annotations
 import json, os, sys
 from typing import Any, Dict, List, Tuple
 import numpy as np
 
-T0_REPO = "/Users/msrk/Documents/t0-morphology-furnace"
+# Path to the sealed ACE/T0 dependency repo. Override with $CONFLUENCE_T0_REPO; defaults to a
+# sibling under the home dir so the committed source carries no absolute username path.
+T0_REPO = os.environ.get("CONFLUENCE_T0_REPO",
+                         os.path.expanduser("~/Documents/t0-morphology-furnace"))
 if T0_REPO not in sys.path:
     sys.path.insert(0, T0_REPO)
 

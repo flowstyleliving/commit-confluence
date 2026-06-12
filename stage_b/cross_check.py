@@ -15,7 +15,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
 import confluence_calibrator as CC
 
-RPV_DIR = "/Users/msrk/Documents/t0-morphology-furnace/exploratory/shadow-ambiguity/comprehensive_outputs"
+RPV_DIR = os.path.join(CC.T0_REPO, "exploratory/shadow-ambiguity/comprehensive_outputs")
 
 CELLS = [
     ("Qwen3-8B-4bit", "anli_r1", "backstop: null_ratio dead -> RPV should win geom"),

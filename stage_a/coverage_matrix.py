@@ -21,8 +21,9 @@ Output: stage_a/out/coverage_matrix.{md,json}
 import json, glob, os, sys
 import numpy as np
 
-RPV_DIR = "/Users/msrk/Documents/t0-morphology-furnace/exploratory/shadow-ambiguity/comprehensive_outputs"
-ACE_DIR = "/Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/profiles"
+_T0 = os.environ.get("CONFLUENCE_T0_REPO", os.path.expanduser("~/Documents/t0-morphology-furnace"))
+RPV_DIR = os.path.join(_T0, "exploratory/shadow-ambiguity/comprehensive_outputs")
+ACE_DIR = os.path.join(_T0, "experiments/t0-sealed/2026-05-26/profiles")
 OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "out")
 SEED = 20260610
 N_BOOT = 2000

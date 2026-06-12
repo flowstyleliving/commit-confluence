@@ -14,8 +14,8 @@ import confluence_calibrator as CC
 SEAL = CC.SEAL
 
 MODEL = "mlx-community/Qwen2.5-7B-Instruct-4bit"
-DATA = "/Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl"
-PROFILE = "/Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/profiles/anli/Qwen2.5-7B-Instruct-4bit.profile.json"
+DATA = os.path.join(CC.T0_REPO, "experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl")
+PROFILE = os.path.join(CC.T0_REPO, "experiments/t0-sealed/2026-05-26/profiles/anli/Qwen2.5-7B-Instruct-4bit.profile.json")
 HERE = os.path.dirname(os.path.abspath(__file__))
 TOL = 0.01
 

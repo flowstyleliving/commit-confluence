@@ -8,9 +8,9 @@
   "n_per_class": 100,
   "n_rows": 200,
   "n_sealed_excluded_during_sampling": 82,
-  "output": "/Users/msrk/Documents/commit-confluence/stage_b/data/anli_R1_seed20260612_n200.jsonl",
+  "output": "~/Documents/commit-confluence/stage_b/data/anli_R1_seed20260612_n200.jsonl",
   "prompt_template": "Instruction: Read the premise and decide whether the hypothesis is entailed by the premise. Answer YES if the premise entails the hypothesis, NO if the premise contradicts the hypothesis.\n\nPremise: {premise}\nHypothesis: {hypothesis}\nAnswer:",
-  "sealed_exclusion_source": "/Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
+  "sealed_exclusion_source": "~/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
   "seed": 20260612,
   "split": "dev_r1",
   "task": "anli_r1"

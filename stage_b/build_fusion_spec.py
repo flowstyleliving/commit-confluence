@@ -21,7 +21,7 @@ fresh-seed run. Re-running it must be byte-stable (sorted keys, no timestamps).
 """
 import json, os, sys, glob, collections
 
-T0 = "/Users/msrk/Documents/t0-morphology-furnace"
+T0 = os.environ.get("CONFLUENCE_T0_REPO", os.path.expanduser("~/Documents/t0-morphology-furnace"))
 SEALED_PROFILES = os.path.join(T0, "experiments/t0-sealed/2026-05-26/profiles")
 RPV_OUT = os.path.join(T0, "exploratory/shadow-ambiguity/comprehensive_outputs")
 sys.path.insert(0, T0)

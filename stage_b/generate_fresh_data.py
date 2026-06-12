@@ -31,14 +31,14 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import random
 from pathlib import Path
 
 import numpy as np
 
-SEALED_DIR = Path(
-    "/Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data"
-)
+_T0_REPO = os.environ.get("CONFLUENCE_T0_REPO", os.path.expanduser("~/Documents/t0-morphology-furnace"))
+SEALED_DIR = Path(_T0_REPO) / "experiments/t0-sealed/2026-05-26/data"
 SEALED_ANLI = SEALED_DIR / "anli_R1_seed20260526_n200.jsonl"
 SEALED_TRIVIAQA = SEALED_DIR / "triviaqa_paired_seed20260526_n100.jsonl"
 
