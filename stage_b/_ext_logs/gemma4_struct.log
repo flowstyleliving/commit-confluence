@@ -1,0 +1,259 @@
+top model: mlx_vlm.models.gemma4_unified.gemma4_unified Model
+language_model: LanguageModel
+inner: Gemma4TextModel attrs: ['apply', 'apply_to_modules', 'children', 'clear', 'config', 'copy', 'embed_scale', 'embed_tokens_per_layer', 'eval', 'filter_and_map', 'first_kv_shared_layer_idx', 'freeze', 'fromkeys', 'get', 'get_per_layer_inputs', 'hidden_size_per_layer_input', 'is_module', 'items', 'keys', 'leaf_modules', 'load_weights', 'modules', 'named_modules', 'num_hidden_layers', 'parameters', 'per_layer_input_scale', 'per_layer_model_projection', 'per_layer_projection_norm', 'per_layer_projection_scale', 'pop', 'popitem', 'project_per_layer_inputs', 'save_weights', 'set_dtype', 'setdefault']
+n_layers: 48
+  inner.embed_tokens: present QuantizedEmbedding
+  inner.norm: present RMSNorm
+  lm.lm_head: absent
+  m.lm_head: absent
+embed_tokens.weight shape: (262144, 480)
+
+===== Model.__call__ =====
+    def __call__(
+        self,
+        input_ids: Optional[mx.array] = None,
+        pixel_values: Optional[mx.array] = None,
+        mask: Optional[mx.array] = None,
+        cache: Optional[mx.array] = None,
+        **kwargs,
+    ):
+        input_embeddings_features = self.get_input_embeddings(
+            input_ids=input_ids,
+            pixel_values=pixel_values,
+            **kwargs,
+        )
+
+        lm_kwargs = {
+            k: kwargs[k]
+            for k in (
+                "capture_layer_ids",
+                "hidden_sink",
+                "shared_kv_sink",
+                "return_hidden",
+                "return_shared_kv",
+            )
+            if k in kwargs
+        }
+
+        return self.language_model(
+            None,
+            cache=cache,
+            inputs_embeds=input_embeddings_features.inputs_embeds,
+            mask=mask,
+            per_layer_inputs=input_embeddings_features.per_layer_inputs,
+            **lm_kwargs,
+        )
+
+
+===== LM.__call__ =====
+    def __call__(
+        self,
+        inputs: mx.array = None,
+        inputs_embeds: Optional[mx.array] = None,
+        mask: Optional[mx.array] = None,
+        cache=None,
+        per_layer_inputs: Optional[mx.array] = None,
+        capture_layer_ids: Optional[List[int]] = None,
+        **kwargs,
+    ):
+        hidden_sink: Optional[list] = (
+            []
+            if capture_layer_ids is not None or kwargs.pop("return_hidden", False)
+            else None
+        )
+        shared_kv_sink: Optional[dict] = (
+            {} if kwargs.pop("return_shared_kv", False) else None
+        )
+        # Allow callers to pass pre-allocated sinks directly.
+        hidden_sink = kwargs.pop("hidden_sink", hidden_sink)
+        shared_kv_sink = kwargs.pop("shared_kv_sink", shared_kv_sink)
+
+        out = self.model(
+            inputs,
+            inputs_embeds=inputs_embeds,
+            mask=mask,
+            cache=cache,
+            per_layer_inputs=per_layer_inputs,
+            capture_layer_ids=capture_layer_ids,
+            hidden_sink=hidden_sink,
+            shared_kv_sink=shared_kv_sink,
+            **kwargs,
+        )
+        out = self.logits_from_hidden(out)
+        return LanguageModelOutput(
+            logits=out,
+            hidden_states=hidden_sink,
+            shared_kv_states=shared_kv_sink,
+        )
+
+
+===== inner.__call__ =====
+    def __call__(
+        self,
+        inputs: mx.array = None,
+        inputs_embeds: Optional[mx.array] = None,
+        mask: Optional[mx.array] = None,
+        cache=None,
+        per_layer_inputs: Optional[mx.array] = None,
+        mm_token_type_ids: Optional[mx.array] = None,
+        token_type_ids: Optional[mx.array] = None,
+        capture_layer_ids: Optional[List[int]] = None,
+        hidden_sink: Optional[list] = None,
+        shared_kv_sink: Optional[dict] = None,
+        **kwargs,
+    ):
+        if inputs_embeds is None:
+            h = self.embed_tokens(inputs)
+            h = h * self.embed_scale
+        else:
+            h = inputs_embeds
+
+        # Per-layer inputs (2B/4B models)
+        if self.hidden_size_per_layer_input:
+            if inputs is not None and per_layer_inputs is None:
+                per_layer_inputs = self.get_per_layer_inputs(inputs)
+            elif per_layer_inputs is not None:
+                target_len = h.shape[1]
+                if per_layer_inputs.shape[1] != target_len:
+                    cache_offset = next(
+                        (
+                            int(c.offset)
+                            for c in (cache or [])
+                            if c is not None and hasattr(c, "offset")
+                        ),
+                        0,
+                    )
+                    max_start = max(per_layer_inputs.shape[1] - target_len, 0)
+                    start = min(cache_offset, max_start)
+                    per_layer_inputs = per_layer_inputs[:, start : start + target_len]
+            if per_layer_inputs is not None or inputs is not None:
+                per_layer_inputs = self.project_per_layer_inputs(h, per_layer_inputs)
+
+        # Build cache + masks
+        if cache is None:
+            cache = [None] * len(self.layers)
+        else:
+            cache = cache + [None] * (len(self.layers) - len(cache))
+
+        if mask is None:
+            if mm_token_type_ids is None:
+                mm_token_type_ids = token_type_ids
+            masks = self._make_masks(h, cache, mm_token_type_ids)
+        else:
+            masks = [mask] * len(self.layers)
+
+        # Forward through layers
+        if per_layer_inputs is not None:
+            per_layer_inputs = [
+                per_layer_inputs[:, :, i, :] for i, _ in enumerate(self.layers)
+            ]
+        else:
+            per_layer_inputs = [None] * len(self.layers)
+
+        capture_set = set(capture_layer_ids) if capture_layer_ids else set()
+        intermediates = [(None, None)] * len(self.layers)
+        for idx, (layer, c, m, prev_idx, pli) in enumerate(
+            zip(
+                self.layers,
+                cache,
+                masks,
+                self.previous_kvs,
+                per_layer_inputs,
+            )
+        ):
+            kvs, offset = intermediates[prev_idx]
+            h, kvs, offset = layer(
+                h, m, c, per_layer_input=pli, shared_kv=kvs, offset=offset
+            )
+            intermediates[idx] = (kvs, offset)
+            if hidden_sink is not None and idx in capture_set:
+                hidden_sink.append(h)
+
+        if shared_kv_sink is not None:
+            for idx, layer in enumerate(self.layers):
+                kvs, _ = intermediates[idx]
+                if kvs is not None:
+                    shared_kv_sink[layer.layer_type] = kvs
+
+        # Match HF's `_can_record_outputs={"hidden_states": Gemma4TextDecoderLayer}`
+        # — the recorded value is the LAST decoder layer's output, captured
+        # BEFORE the final RMSNorm. Speculative verification can reuse this
+        # hidden for deferred logits; MTP drafters normalize it via
+        # LanguageModel.speculative_draft_hidden before consuming it.
+        if hidden_sink is not None and not capture_set:
+            hidden_sink.append(h)
+
+        if kwargs.pop("skip_final_norm", False):
+            return h
+
+        h = self.norm(h)
+
+        return h
+
+
+===== layer.__call__ =====
+    def __call__(
+        self,
+        x: mx.array,
+        mask: Optional[mx.array] = None,
+        cache: Optional[Any] = None,
+        per_layer_input: Optional[mx.array] = None,
+        shared_kv: Optional[tuple] = None,
+        offset: Optional[Any] = None,
+    ) -> mx.array:
+        residual = x
+
+        h = self.input_layernorm(x)
+        h, shared_kv, offset = self.self_attn(
+            h, mask, cache, shared_kv=shared_kv, offset=offset
+        )
+        h = self.post_attention_layernorm(h)
+        h = residual + h
+
+        residual = h
+
+        if self.enable_moe:
+            h1 = self.pre_feedforward_layernorm(h)
+            h1 = self.mlp(h1)
+            h1 = self.post_feedforward_layernorm_1(h1)
+
+            top_k_indices, top_k_weights = self.router(h)
+            h2 = self.pre_feedforward_layernorm_2(h)
+            h2 = self.experts(h2, top_k_indices, top_k_weights)
+            h2 = self.post_feedforward_layernorm_2(h2)
+
+            h = h1 + h2
+        else:
+            h = self.pre_feedforward_layernorm(h)
+            h = self.mlp(h)
+
+        h = self.post_feedforward_layernorm(h)
+        h = residual + h
+
+        # Per-layer input gating
+        if (
+            self.per_layer_input_gate is not None
+            and self.per_layer_projection is not None
+            and self.post_per_layer_input_norm is not None
+            and per_layer_input is not None
+        ):
+            residual = h
+            gate = self.per_layer_input_gate(h)
+            gate = nn.gelu_approx(gate)
+            gate = mx.multiply(gate, per_layer_input)
+            gate = self.per_layer_projection(gate)
+            gate = self.post_per_layer_input_norm(gate)
+            h = residual + gate
+
+        if self.layer_scalar is not None:
+            h = h * self.layer_scalar
+
+        return h, shared_kv, offset
+
+
+layer0 attn: layer_type=sliding_attention n_heads=16 n_kv=8 head_dim=256 scale=1.0 sliding=True k_eq_v=False
+
+layer5 attn: layer_type=full_attention n_heads=16 n_kv=1 head_dim=512 scale=1.0 sliding=False k_eq_v=True
+
+tokenizer: GemmaTokenizer chat_template: True
+STRUCT_DONE

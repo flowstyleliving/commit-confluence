@@ -1,0 +1,14 @@
+LOGITS_FROM_HIDDEN_SRC:
+    def logits_from_hidden(self, hidden: mx.array) -> mx.array:
+        logits = self.model.embed_tokens.as_linear(hidden)
+        if self.final_logit_softcapping is not None:
+            logits = logit_softcap(self.final_logit_softcapping, logits)
+        return logits
+
+lm attrs: ['apply', 'apply_to_modules', 'children', 'chunked_prefill_policy', 'clear', 'config', 'copy', 'eval', 'filter_and_map', 'final_logit_softcapping', 'freeze', 'fromkeys', 'get', 'head_dim', 'is_module', 'items', 'keys', 'layers', 'leaf_modules', 'load_weights', 'logits_from_hidden', 'make_cache', 'model_type', 'modules', 'n_kv_heads', 'named_modules', 'no_chunked_prefill', 'parameters', 'pop', 'popitem', 'quant_predicate', 'rollback_speculative_cache', 'sanitize', 'save_weights', 'set_dtype', 'setdefault', 'speculative_draft_hidden', 'speculative_logits_from_hidden', 'state', 'train', 'trainable_parameter_filter', 'trainable_parameters', 'training', 'unfreeze', 'update']
+prompt token len: 23
+out type: LanguageModelOutput
+logits shape: (1, 23, 262144)
+hidden_states: n= 48 each: (1, 23, 3840)
+commit: p_max=1.0000 surprise=0.0000 argmax=10784 tok='Yes'
+READOUT_PROBE_DONE

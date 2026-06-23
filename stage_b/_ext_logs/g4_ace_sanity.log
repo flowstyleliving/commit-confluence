@@ -1,0 +1,9 @@
+[g4-ace] mlx-community/gemma-4-12B-it-qat-4bit n_layers=48 tags={'final': 47, 'mid': 24, 'last_minus_1': 46}
+  [final] w=(16, 143) rowsum=1.0000 finite=True vn=(1, 143) nkv=1
+  [final] o_proj match cos(my, model)=1.0000  maxabs=0.062
+  [mid] w=(16, 143) rowsum=1.0000 finite=True vn=(8, 143) nkv=8
+  [mid] o_proj match cos(my, model)=1.0000  maxabs=0.031
+  [last_minus_1] w=(16, 143) rowsum=1.0000 finite=True vn=(8, 143) nkv=8
+  [last_minus_1] o_proj match cos(my, model)=1.0000  maxabs=0.016
+  ACE cells: 20/21 finite
+G4_ACE_SANITY_DONE

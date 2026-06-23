@@ -1,0 +1,21 @@
+[g4-full] mlx-community/gemma-4-12B-it-qat-4bit anli_r1 layers=48 tags={'final': 47, 'mid': 24, 'last_minus_1': 46} d=3840 ace_cells=21 ro_cells=6
+  0/200 kept=1
+  25/200 kept=26
+  50/200 kept=51
+  75/200 kept=76
+  100/200 kept=101
+  125/200 kept=126
+  150/200 kept=151
+  175/200 kept=176
+G4_FULL_RESULT
+{
+  "task": "anli_r1",
+  "n_aligned": 200,
+  "geom_winner": "attention[mid_bos_mass] @ step 0",
+  "geom_ci_lo": 0.3904829534139879,
+  "geom_deployable": false,
+  "primary_winner": "attention[mid_bos_mass] @ step 0",
+  "primary_ci_lo": 0.3839380218851603,
+  "primary_deployable": false,
+  "controls_pass": true
+}

@@ -1,0 +1,34 @@
+[g4-readout] model=mlx-community/gemma-3-12b-it-4bit final_idx=47 d=3840 K=512 gamma=ok
+  ex0 FAIL AttributeError: 'NoneType' object has no attribute 'values'
+Traceback (most recent call last):
+  File "/Users/msrk/Documents/commit-confluence/stage_b/gemma4_readout_extract.py", line 72, in main
+    logits1, h_prev = forward_capture(lm, ids, fidx)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/msrk/Documents/commit-confluence/stage_b/gemma4_readout_extract.py", line 36, in forward_capture
+    h = hs[0] if isinstance(hs, (list, tuple)) else list(hs.values())[0]
+                                                         ^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'values'
+  ex1 FAIL AttributeError: 'NoneType' object has no attribute 'values'
+Traceback (most recent call last):
+  File "/Users/msrk/Documents/commit-confluence/stage_b/gemma4_readout_extract.py", line 72, in main
+    logits1, h_prev = forward_capture(lm, ids, fidx)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/msrk/Documents/commit-confluence/stage_b/gemma4_readout_extract.py", line 36, in forward_capture
+    h = hs[0] if isinstance(hs, (list, tuple)) else list(hs.values())[0]
+                                                         ^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'values'
+  ex2 FAIL AttributeError: 'NoneType' object has no attribute 'values'
+Traceback (most recent call last):
+  File "/Users/msrk/Documents/commit-confluence/stage_b/gemma4_readout_extract.py", line 72, in main
+    logits1, h_prev = forward_capture(lm, ids, fidx)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/msrk/Documents/commit-confluence/stage_b/gemma4_readout_extract.py", line 36, in forward_capture
+    h = hs[0] if isinstance(hs, (list, tuple)) else list(hs.values())[0]
+                                                         ^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'values'
+  ex3 FAIL AttributeError: 'NoneType' object has no attribute 'values'
+  ex4 FAIL AttributeError: 'NoneType' object has no attribute 'values'
+  ex5 FAIL AttributeError: 'NoneType' object has no attribute 'values'
+  ex6 FAIL AttributeError: 'NoneType' object has no attribute 'values'
+  ex7 FAIL AttributeError: 'NoneType' object has no attribute 'values'
+NO ROWS — extraction failed
