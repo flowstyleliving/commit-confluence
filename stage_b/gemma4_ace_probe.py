@@ -5,7 +5,7 @@ works by wrapping one target layer, running gen_step=1, and dumping the
 recomputed softmax weights + basic sanity checks.
 
 Run:
-    cd /Users/msrk/Documents/commit-confluence
+    cd /path/to/commit-confluence
     .venv_gemma4/bin/python stage_b/gemma4_ace_probe.py
 
 If this works, the full gemma4_ace_extract.py becomes mechanical.

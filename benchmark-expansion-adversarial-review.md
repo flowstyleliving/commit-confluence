@@ -1,18 +1,18 @@
 # Adversarial Review — Benchmark Expansion Proposal
 
-Proposal reviewed: `/Users/msrk/Documents/the_GOAT/wiki/paper/benchmark-expansion-proposal.md`
+Proposal reviewed: `wiki/paper/benchmark-expansion-proposal.md`
 
 Code checked:
 
-- `/Users/msrk/Documents/commit-confluence/confluence_calibrator.py`
-- `/Users/msrk/Documents/commit-confluence/stage_b/run_seal.py`
-- `/Users/msrk/Documents/commit-confluence/stage_b/analyze_universality.py`
-- `/Users/msrk/Documents/commit-confluence/stage_b/check_fresh_data.py`
-- `/Users/msrk/Documents/commit-confluence/stage_b/generate_fresh_data.py`
-- `/Users/msrk/Documents/t0-morphology-furnace/pri_calibrator.py`
-- `/Users/msrk/Documents/t0-morphology-furnace/pri_v2_io_plugins.py`
-- `/Users/msrk/Documents/t0-morphology-furnace/exploratory/shadow-ambiguity/comprehensive_run.py`
-- `/Users/msrk/Documents/the_GOAT/wiki/paper/cc-draft.tex`
+- `confluence_calibrator.py`
+- `stage_b/run_seal.py`
+- `stage_b/analyze_universality.py`
+- `stage_b/check_fresh_data.py`
+- `stage_b/generate_fresh_data.py`
+- `$CONFLUENCE_T0_REPO/pri_calibrator.py`
+- `$CONFLUENCE_T0_REPO/pri_v2_io_plugins.py`
+- `$CONFLUENCE_T0_REPO/exploratory/shadow-ambiguity/comprehensive_run.py`
+- `wiki/paper/cc-draft.tex`
 
 External factual checks used:
 

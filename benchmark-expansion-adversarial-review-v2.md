@@ -1,18 +1,18 @@
 # Second Adversarial Review - Benchmark Expansion Proposal v2
 
-Proposal reviewed: `/Users/msrk/Documents/the_GOAT/wiki/paper/benchmark-expansion-proposal-v2.md`
+Proposal reviewed: `wiki/paper/benchmark-expansion-proposal-v2.md`
 
-Original review: `/Users/msrk/Documents/the_GOAT/wiki/paper/benchmark-expansion-adversarial-review.md`
+Original review: `wiki/paper/benchmark-expansion-adversarial-review.md`
 
-Commit-locus reference: `/Users/msrk/Documents/the_GOAT/wiki/references/commit-locus.md`
+Commit-locus reference: `wiki/references/commit-locus.md`
 
 Code spot-checked:
 
-- `/Users/msrk/Documents/commit-confluence/confluence_calibrator.py`
-- `/Users/msrk/Documents/commit-confluence/stage_b/run_seal.py`
-- `/Users/msrk/Documents/commit-confluence/stage_b/analyze_universality.py`
-- `/Users/msrk/Documents/commit-confluence/stage_b/check_fresh_data.py`
-- `/Users/msrk/Documents/commit-confluence/stage_b/generate_fresh_data.py`
+- `confluence_calibrator.py`
+- `stage_b/run_seal.py`
+- `stage_b/analyze_universality.py`
+- `stage_b/check_fresh_data.py`
+- `stage_b/generate_fresh_data.py`
 
 ## Bottom Line
 

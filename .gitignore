@@ -1,7 +1,9 @@
 __pycache__/
 *.pyc
 .DS_Store
+.venv*/
 
 # run outputs (registered results under stage_b/profiles/ ARE published)
 stage_b/preview_profiles/
 stage_b/_smoke_profiles/
+stage_b/_ext_logs/
