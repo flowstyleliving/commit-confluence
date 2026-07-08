@@ -29,7 +29,17 @@ if T0_REPO not in sys.path:
     sys.path.insert(0, T0_REPO)
 
 # --- sealed machinery, imported read-only (R2) ---
-import pri_calibrator as SEAL  # noqa: E402
+# Prefer the sealed dependency repo (full extraction + selection). When it is absent
+# (e.g. a reviewer cloning only this repo), fall back to the vendored selector copy in
+# sealed_selector.py - byte-identical selection machinery (provenance hash in its
+# docstring), sufficient for every analysis that runs on the published matrices.
+# Extraction (fresh model forwards) still requires the sealed repo.
+try:
+    import pri_calibrator as SEAL  # noqa: E402
+    SEAL_SOURCE = "t0-morphology-furnace"
+except (ImportError, ModuleNotFoundError):
+    import sealed_selector as SEAL  # noqa: E402
+    SEAL_SOURCE = "vendored:sealed_selector"
 
 PanelCell = Tuple[int, str, str]
 

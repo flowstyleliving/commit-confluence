@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the companion paper."
+title: "commit-confluence: a pre-registered commit-moment hallucination monitor"
+authors:
+  - family-names: Kitti
+    given-names: Michael S. R.
+    email: msrkittty@proton.me
+repository-code: "https://github.com/flowstyleliving/commit-confluence"
+license: MIT
+preferred-citation:
+  type: article
+  title: "Decoder LLM Hallucination: No Universal Detector, but a Universal Floor — A Pre-Registered Study of Commit-Moment Hallucination Monitoring Across Ten Language Models"
+  authors:
+    - family-names: Kitti
+      given-names: Michael S. R.
+      email: msrkittty@proton.me
+  year: 2026
+  month: 6
+  institution:
+    name: "Furnace Research"

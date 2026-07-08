@@ -3,19 +3,53 @@
 A calibrated **commit-moment monitor** that unifies three in-house geometric signals
 for hallucination-risk readout at (or before) the first generated token.
 
+**Companion paper:** *Decoder LLM Hallucination: No Universal Detector, but a Universal
+Floor — A Pre-Registered Study of Commit-Moment Hallucination Monitoring Across Ten
+Language Models* (M. S. R. Kitti, Furnace Research, June 2026). This repository is the
+paper's reproducibility artifact: the pre-registration, the gated fresh data, the
+registered per-deployment score matrices and profiles, and the analysis code. Citation
+metadata in [`CITATION.cff`](CITATION.cff); code MIT, artifacts CC BY 4.0 ([`LICENSE`](LICENSE)).
+
 > ✅ **Status: registered run COMPLETE (seed 20260612).** Results below. The run was executed
 > from tag [`prereg-seal-20260612`](https://github.com/flowstyleliving/commit-confluence/releases/tag/prereg-seal-20260612)
 > so the executed code is byte-identical to the pre-registration (`stage_b/PRE_REGISTRATION.md`,
 > Amendments v1–v5). The pre-registration and gated fresh data were committed *before* the run.
 >
 > **Reproducibility.** The per-deployment score matrices (`stage_b/profiles/*/*.matrix.npz`) are
-> published, so the descriptive analyses (E1/E2/E3 via `stage_b/analyze_universality.py`) are
-> **independently reproducible from this repo alone** — no models or private dependencies needed.
-> The *forward pass* that produced those matrices imports sealed modules from a separate dependency
-> repo (`t0-morphology-furnace`: `pri_calibrator`, `comprehensive_run`,
+> published, and the sealed selection machinery is vendored (`sealed_selector.py`, byte-identical
+> to the sealed module — provenance sha256 in its docstring matches the `module_hashes` recorded
+> in every registered profile). Both registered endpoint verdicts
+> (`stage_b/verify_endpoints.py`) and the descriptive analyses E1/E2/E3
+> (`stage_b/analyze_universality.py`) are therefore **reproducible from this repo alone** — no
+> models, no private dependencies (see *Reproduce the registered results* below).
+> The *forward pass* that produced the matrices imports sealed extraction modules from a separate
+> dependency repo (`t0-morphology-furnace`: `pri_calibrator`, `comprehensive_run`,
 > `diagnose_inter_head_disagreement`, the RPV statistics in `test_shadow_ambiguity`), a frozen
-> research core **not yet public** (pending the paper); point `$CONFLUENCE_T0_REPO` at it to
-> regenerate matrices locally.
+> research core **not yet public** (pending the companion reports); point `$CONFLUENCE_T0_REPO`
+> at it to regenerate matrices from scratch.
+
+## Reproduce the registered results (no models needed)
+
+```bash
+pip install -r requirements-analysis.txt   # numpy + scipy + scikit-learn
+
+# Both pre-registered endpoint verdicts, re-derived from the published matrices at the
+# registered settings (seed 20260612, nboot 2000) and compared byte-exactly against the
+# committed profiles. Prints the 18/20 PASS / 18/20-vs-19 FAIL tallies. (~minutes; add
+# --nboot 200 for a quick pass.)
+python stage_b/verify_endpoints.py
+
+# The pre-registered descriptive analyses E1 (LOMO universality) / E2 (task transfer) /
+# E3 (label efficiency). Registered E3 settings are --repeats 10 --nboot-labeleff 1000.
+python stage_b/analyze_universality.py --profiles-dir stage_b/profiles --out /tmp/universality.json
+
+# The post-seal extension cells (scale/family + the non-byte-comparable gemma-4 axis):
+python stage_b/verify_endpoints.py --profiles-dir stage_b/profiles_ext
+```
+
+E1/E2 are deterministic given the matrices and reproduce `stage_b/universality.json`
+identically; E3 and the endpoint verification are exactly reproducible at the registered
+seed/bootstrap settings.
 
 ## Results (registered run, seed 20260612 — 10 models × {ANLI R1, TriviaQA paired}, n=200)
 
@@ -37,6 +71,32 @@ Clean run: 20/20 deployments computed, zero errors, all shuffled-label controls 
 - **E3 — label-efficiency** (registered: repeats=10, nboot=1000). Mean fraction of deployments deployable climbs **0.45 (n=50) → 0.67 (n=100) → 0.79 (n=150) → 0.90 (n=200)** (geometric; full-panel tracks 0.01–0.04 higher). The knee is ~n=100; n=50 is below a coin flip; standing up a new deployment costs **~150–200 labels** — affordable, not thousands.
 
 The thesis, refined by these: *no universal best signal, but a fixed aggregate gives a universal above-chance floor; per-model calibration transfers across tasks ~85% of the time; full strength still needs per-deployment calibration at ~150–200 labels.*
+
+## Post-seal extensions (do NOT enter or alter the sealed 18/20)
+
+The paper's extension section asks whether the two sealed ANLI orphans are permanent blind
+spots or capacity artifacts. Artifacts for the local runs are published here:
+
+- **Scale + family axis (byte-comparable to the seal).** Pre-registered before any metric
+  (`stage_b/PRE_REGISTRATION_EXT.md`, run via `stage_b/run_ext.py`; same data, seed, panel,
+  selector, and module hashes as the seal). `gemma-3-12b-it` and `Qwen2.5-14B-Instruct`,
+  both tasks, n=200: **4/4 deployable** (geometric OOB CI-lo — gemma-3-12b: ANLI 0.709,
+  TriviaQA 0.929; Qwen2.5-14B: ANLI 0.766, TriviaQA 0.597). The sealed `gemma-3-4b/anli`
+  orphan (0.403 FAIL) is recovered by scale; the Qwen-14B control rules out a generic
+  12–14B effect. Matrices + profiles: `stage_b/profiles_ext/`.
+- **Generation axis (`gemma-4-12B`, NOT byte-comparable).** The `gemma4_unified`
+  architecture is unsupported by the sealed MLX stack, so extraction uses a reimplemented
+  loader + attention recompute (`stage_b/gemma4_full_extract.py`, validated to o_proj
+  cosine 1.0; build spec in `stage_b/GEMMA4_BUILD_SPEC.md`), scored by the same calibrator.
+  **2/2 deployable** (ANLI 0.691, TriviaQA 0.751), both winners the cross-locus fusion
+  signal. The orphan does not reappear a generation later. Matrices:
+  `stage_b/profiles_ext/*/gemma-4-12B-it_FIXED.matrix.npz` (reported as standalone,
+  never pooled with byte-comparable cells).
+- **GPU / torch panel (30B–70B, NOT byte-comparable).** `modal/` holds the PyTorch
+  extraction app used for the larger-model cells discussed in the paper (Qwen2.5-32B/72B,
+  Llama-3.3-70B locus dissociation, and the precision-ladder deconfound), plus the exact
+  uploaded data and MLX reference matrices used for its cross-implementation validation.
+  See `modal/README.md` for the comparability caveats.
 
 ## Thesis
 
@@ -81,6 +141,9 @@ deployability rails) picks the deployable signal without oracle knowledge.
 - PRI (v3) — carried inside the RPV run as `null_ratio_post_rank1` (same deployments, same data)
 
 This repo holds the *integration layer* only. It does not re-run or vendor the source
-experiments; it reads their sealed outputs and composes them. The dependency-repo root is
-configurable via the `CONFLUENCE_T0_REPO` environment variable (defaults to
+experiments; it reads their sealed outputs and composes them. (The single vendored
+exception is the selection machinery in `sealed_selector.py` — a byte-identical,
+hash-stamped copy kept so the published matrices are analyzable without the private
+repo; see the Reproducibility note above.) The dependency-repo root is configurable via
+the `CONFLUENCE_T0_REPO` environment variable (defaults to
 `~/Documents/t0-morphology-furnace`); no absolute machine paths are committed.
