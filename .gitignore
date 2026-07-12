@@ -7,3 +7,4 @@ __pycache__/
 stage_b/preview_profiles/
 stage_b/_smoke_profiles/
 stage_b/_ext_logs/
+stage_b/data_bench_preview/
