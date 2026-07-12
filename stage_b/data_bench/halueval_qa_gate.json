@@ -1,0 +1,23 @@
+{
+ "fresh": "/Users/msrk/Documents/commit-confluence/stage_b/data_bench/halueval_qa_seed20260711_n1000.jsonl",
+ "sealed": [
+  "/Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
+  "/Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
+  "/Users/msrk/Documents/commit-confluence/stage_b/data/anli_R1_seed20260612_n200.jsonl",
+  "/Users/msrk/Documents/commit-confluence/stage_b/data/triviaqa_paired_seed20260612_n200.jsonl"
+ ],
+ "task": "halueval_qa",
+ "n": 1000,
+ "label_balance": 0.5,
+ "n_intra_dup": 0,
+ "n_overlap_with_sealed": 0,
+ "n_qid_overlap_with_sealed": 0,
+ "n_missing_stem_id": 0,
+ "n_stems": 500,
+ "n_stems_over_cap": 0,
+ "length_cap": 2048,
+ "fresh_sha256": "460019e12d25c33e9f842f52bb0e3fd70274256290dc7784101ebaa95b2163e7",
+ "hard_failures": [],
+ "warnings": [],
+ "pass": true
+}
