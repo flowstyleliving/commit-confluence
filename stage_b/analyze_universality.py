@@ -24,6 +24,9 @@ E3  Label-efficiency curve: per (model, task), stratified subsamples n in {50,10
     R repeats, re-run the sealed nested-OOB selector (nboot 1000), report the fraction of
     repeats deployable. Prices the labeling cost of per-deployment calibration.
 
+A2  BENCH v1.2 registered fixed-cell LOMO: `fusion_rank_mean_geom` only, exact planned
+    ten-model denominator, pooled-training sign fit, and strict holdout AUROC > 0.55.
+
 Usage:
   python stage_b/analyze_universality.py --profiles-dir stage_b/profiles --out stage_b/universality.json
 """
@@ -32,6 +35,13 @@ import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import confluence_calibrator as CC
 SEAL = CC.SEAL
+BENCH_PLANNED_SLUGS = [
+    "Llama-3.2-3B-Instruct-4bit", "Llama-3.1-8B-Instruct-4bit",
+    "Mistral-7B-Instruct-v0.3-4bit", "Mistral-Nemo-Instruct-2407-4bit",
+    "Phi-3.5-mini-instruct-4bit", "Phi-4-mini-instruct-4bit",
+    "Qwen2.5-7B-Instruct-4bit", "Qwen3-1.7B-4bit", "Qwen3-8B-4bit",
+    "gemma-3-4b-it-4bit",
+]
 
 
 def auroc_fixed(y, s, sign):
@@ -47,6 +57,15 @@ def auroc_fixed(y, s, sign):
 def load_cells(profiles_dir):
     """-> {(slug, task): {M, y, panel(with fusion), labels_by_cell, profile}}"""
     cells = {}
+    summary_path = os.path.join(profiles_dir, "SUMMARY.json")
+    summary = json.load(open(summary_path)) if os.path.exists(summary_path) else {}
+    systematic_commitment_fail_tasks = set(
+        ((summary.get("endpoints") or {}).get(
+            "systematic_commitment_fail_tasks") or []))
+    summary_status = {
+        (row.get("slug"), row.get("task")): row.get("terminal_status")
+        for row in (summary.get("cells") or [])
+    }
     for npz in sorted(glob.glob(os.path.join(profiles_dir, "*", "*.matrix.npz"))):
         task = os.path.basename(os.path.dirname(npz))
         slug = os.path.basename(npz).replace(".matrix.npz", "")
@@ -54,11 +73,17 @@ def load_cells(profiles_dir):
         M = d["score_matrix"]; y = d["labels"]
         panel = [tuple(c) for c in json.loads(str(d["panel"]))]
         # append the pre-registered fusion cells so all analyses see the deployed 29-cell panel
-        M, panel, _ = CC.append_fusion_columns(M, panel, slug, task)
+        canonical_task = CC.canonical_fusion_task_key(task)
+        M, panel, fusion_meta = CC.append_fusion_columns(
+            M, panel, slug, task, canonical_benchmark=canonical_task)
         profp = npz.replace(".matrix.npz", ".profile.json")
         prof = json.load(open(profp)) if os.path.exists(profp) else None
         cells[(slug, task)] = {"M": M, "y": y, "panel": panel,
-                               "labels": [SEAL._cell_label(c) for c in panel], "profile": prof}
+                               "labels": [SEAL._cell_label(c) for c in panel],
+                               "profile": prof, "fusion": fusion_meta,
+                               "summary_terminal_status": summary_status.get((slug, task)),
+                               "task_behaviorally_infeasible": (
+                                   task in systematic_commitment_fail_tasks)}
     return cells
 
 
@@ -127,6 +152,99 @@ def lomo(cells, task):
                                       if v >= max(1, len(slugs) - 2)},
             "landscape_note": "full cell x holdout matrix is multiplicity-prone; descriptive only",
             "landscape": landscape, "sign_stability": sign_audit}
+
+
+def registered_a2(cells, task="halueval_qa", planned_slugs=None):
+    """BENCH v1.2 A2 estimator; never substitutes the descriptive max landscape."""
+    planned = list(planned_slugs or BENCH_PLANNED_SLUGS)
+    if len(planned) != 10 or len(set(planned)) != 10:
+        raise ValueError("A2 planned denominator must be exactly ten unique models")
+
+    usable, failures = {}, {}
+    for slug in planned:
+        cell = cells.get((slug, task))
+        if cell is None:
+            failures[slug] = "missing matrix"
+            continue
+        profile = cell.get("profile") or {}
+        if cell.get("summary_terminal_status") != "OK":
+            failures[slug] = cell.get("summary_terminal_status") or "missing strict summary cell"
+            continue
+        if cell.get("task_behaviorally_infeasible"):
+            failures[slug] = "task systematic commitment failure"
+            continue
+        if profile.get("spec_version") != "bench/1.2":
+            failures[slug] = "missing/mismatched bench profile"
+            continue
+        if profile.get("terminal_status") != "OK":
+            failures[slug] = profile.get("terminal_status") or "missing terminal status"
+            continue
+        if (profile.get("endpoint_status_by_unit") or {}).get("cluster") != "OK":
+            failures[slug] = "CONTROL-FAIL[cluster]"
+            continue
+        if len(cell["y"]) != 1000:
+            failures[slug] = f"n={len(cell['y'])}, expected 1000"
+            continue
+        indices = [j for j, panel_cell in enumerate(cell["panel"])
+                   if panel_cell[2] == "fusion_rank_mean_geom"]
+        if len(indices) != 1:
+            failures[slug] = f"fusion_rank_mean_geom columns={len(indices)}"
+            continue
+        j = indices[0]
+        usable[slug] = {"ranked": CC._rank01(cell["M"][:, j]), "y": cell["y"]}
+
+    if len(usable) < 4:
+        rows = [{"holdout": slug, "pass": False,
+                 "failure_reason": failures.get(slug, "fewer than 3 usable training models")}
+                for slug in planned]
+        return {"schema_version": "bench-a2/1.2", "task": task,
+                "cell": "fusion_rank_mean_geom", "threshold": 0.55,
+                "planned_denominator": 10, "n_usable_models": len(usable),
+                "aborted": True, "abort_reason": "fewer than 3 usable training models",
+                "n_holdouts_gt055": 0, "bar": 8, "pass": False,
+                "failures": failures, "holdouts": rows}
+
+    rows = []
+    for holdout in planned:
+        if holdout not in usable:
+            rows.append({"holdout": holdout, "training_slugs": [], "fitted_sign": 0,
+                         "pool_auroc": None, "holdout_auroc": None, "pass": False,
+                         "failure_reason": failures[holdout]})
+            continue
+        training = [slug for slug in planned if slug != holdout and slug in usable]
+        if len(training) < 3:
+            return {"schema_version": "bench-a2/1.2", "task": task,
+                    "cell": "fusion_rank_mean_geom", "threshold": 0.55,
+                    "planned_denominator": 10, "n_usable_models": len(usable),
+                    "aborted": True,
+                    "abort_reason": f"holdout {holdout} has fewer than 3 training models",
+                    "n_holdouts_gt055": 0, "bar": 8, "pass": False,
+                    "failures": failures, "holdouts": rows}
+        pooled_scores = np.concatenate([usable[slug]["ranked"] for slug in training])
+        pooled_labels = np.concatenate([usable[slug]["y"] for slug in training])
+        pool_auc, sign, n_pool = SEAL._score_candidate(pooled_scores, pooled_labels)
+        if sign == 0 or not np.isfinite(pool_auc):
+            hold_auc, reason = None, "zero/non-finite pooled sign fit"
+        else:
+            hold_auc = auroc_fixed(
+                usable[holdout]["y"], usable[holdout]["ranked"], sign)
+            reason = None if hold_auc is not None else "non-finite holdout AUROC"
+        passed = bool(hold_auc is not None and hold_auc > 0.55)
+        rows.append({"holdout": holdout, "training_slugs": training,
+                     "n_training_models": len(training), "n_pool_rows": int(n_pool),
+                     "fitted_sign": int(sign),
+                     "pool_auroc": None if not np.isfinite(pool_auc) else float(pool_auc),
+                     "holdout_auroc": hold_auc, "threshold_strict_gt": 0.55,
+                     "pass": passed, "failure_reason": reason})
+    n_pass = sum(row["pass"] for row in rows)
+    return {"schema_version": "bench-a2/1.2", "task": task,
+            "cell": "fusion_rank_mean_geom", "estimator": (
+                "within-model _rank01; concatenate other usable models; fit one sign with "
+                "_score_candidate; apply fixed sign with auroc_fixed"),
+            "planned_slugs": planned, "planned_denominator": 10,
+            "n_usable_models": len(usable), "aborted": False,
+            "threshold": 0.55, "n_holdouts_gt055": n_pass, "bar": 8,
+            "pass": bool(n_pass >= 8), "failures": failures, "holdouts": rows}
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -212,13 +330,27 @@ def main():
     ap.add_argument("--repeats", type=int, default=10)
     ap.add_argument("--nboot-labeleff", type=int, default=1000)
     ap.add_argument("--skip", default="", help="comma list from {lomo,transfer,labeleff}")
+    ap.add_argument("--bench-a2", action="store_true",
+                    help="score registered BENCH v1.2 A2 on halueval_qa")
     a = ap.parse_args()
     skip = set(s for s in a.skip.split(",") if s)
+    if a.bench_a2:
+        summary_path = os.path.join(a.profiles_dir, "SUMMARY.json")
+        if not os.path.exists(summary_path):
+            raise ValueError("registered A2 requires the strict BENCH SUMMARY.json")
+        summary = json.load(open(summary_path))
+        if summary.get("spec_version") != "bench/1.2":
+            raise ValueError("registered A2 requires a bench/1.2 strict summary")
 
     cells = load_cells(a.profiles_dir)
     print(f"loaded {len(cells)} (model, task) matrices from {a.profiles_dir}", flush=True)
     report = {"n_cells_loaded": len(cells),
               "cells": sorted(f"{s}|{t}" for (s, t) in cells)}
+    if a.bench_a2:
+        report["A2_registered"] = registered_a2(cells)
+        a2 = report["A2_registered"]
+        print(f"[A2] {a2['n_holdouts_gt055']}/10 > 0.55; bar=8; "
+              f"pass={a2['pass']} aborted={a2['aborted']}", flush=True)
     tasks = sorted({t for (_, t) in cells})
     if "lomo" not in skip:
         report["E1_lomo"] = {t: lomo(cells, t) for t in tasks}

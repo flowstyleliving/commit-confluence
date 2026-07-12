@@ -2,7 +2,7 @@
 """
 confluence_calibrator - the unified commit-moment dispatcher.
 
-Composes (does NOT reimplement) the sealed nested-OOB selection from
+Composes the sealed nested-OOB row selection from
 t0-morphology-furnace/pri_calibrator.py over a MERGED candidate panel:
 
     ACE attention cells  (attention pass)        - W_u-free routing morphology
@@ -10,8 +10,9 @@ t0-morphology-furnace/pri_calibrator.py over a MERGED candidate panel:
     RPV stats            (readout pass)           - fisher_eff_rank + spectral_entropy + logvol
     surprise, p_max      (readout pass)           - confidence base
 
-The sealed selector is IMPORTED read-only; we never edit the frozen ACE/T0 core.
-Sign-lock + OOB honesty are inherited verbatim from `_nested_bootstrap_oob_auroc`.
+The sealed row selector is IMPORTED read-only; we never edit the frozen ACE/T0 core.
+BENCH adds a local stem-cluster analogue whose only statistical change is the registered
+exchangeable unit. Sign-lock + OOB evaluation order match `_nested_bootstrap_oob_auroc`.
 
 Run with the t0 venv (has sklearn/mlx):
     "$CONFLUENCE_T0_REPO"/.venv/bin/python confluence_calibrator.py ...
@@ -62,11 +63,48 @@ CONFIDENCE_KEYS = {"surprise", "p_max"}
 NON_GEOMETRIC_KEYS = CONFIDENCE_KEYS | {"fusion_rank_mean_full"}
 FUSION_SPEC_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                 "stage_b", "fusion_signs.json")
+BENCH_FUSION_TASK_ALIASES = {
+    "anli_r1_rep": "anli_r1",
+    "triviaqa_paired_rep": "triviaqa_paired",
+}
 
 
 # ──────────────────────────────────────────────────────────────────────────────
 # loaders
 # ──────────────────────────────────────────────────────────────────────────────
+def _stem_id_from_row(row: Dict[str, Any]):
+    """Read BENCH stem metadata without changing legacy JSONL semantics."""
+    if row.get("stem_id") is not None:
+        return row["stem_id"]
+    return (row.get("meta") or {}).get("stem_id")
+
+
+def _source_row_metadata(data_path: str, *, limit: int | None = None,
+                         require_stem_ids: bool = False) -> Dict[str, np.ndarray | None]:
+    """Load label/stem metadata in source-row order for extraction alignment checks."""
+    labels, stems = [], []
+    with open(data_path) as f:
+        for line_no, line in enumerate(f, 1):
+            if not line.strip():
+                continue
+            row = json.loads(line)
+            if row.get("label") not in (0, 1):
+                raise ValueError(f"{data_path}:{line_no}: label must be 0 or 1")
+            stem_id = _stem_id_from_row(row)
+            if require_stem_ids and stem_id is None:
+                raise ValueError(f"{data_path}:{line_no}: BENCH row missing stem_id")
+            labels.append(int(row["label"]))
+            stems.append(stem_id)
+            if limit is not None and len(labels) >= limit:
+                break
+    stem_array = None
+    if any(s is not None for s in stems):
+        if any(s is None for s in stems):
+            raise ValueError(f"{data_path}: stem_id is present on only a subset of rows")
+        stem_array = np.asarray([str(s) for s in stems], dtype=np.str_)
+    return {"labels": np.asarray(labels, dtype=np.int64), "stem_ids": stem_array}
+
+
 def _rows_to_readout(rows: List[Dict[str, Any]]):
     """Parse per-sample readout rows -> (X, y, sample_idx), dropping any non-finite row."""
     keys = [READOUT_KEYS[c] for c in READOUT_PANEL]
@@ -84,20 +122,29 @@ def _rows_to_readout(rows: List[Dict[str, Any]]):
     return (np.array(X, dtype=np.float64), np.array(y, dtype=np.int64), np.array(idx, dtype=np.int64))
 
 
-def load_readout_matrix(rpv_json_path: str) -> Dict[str, Any]:
+def load_readout_matrix(rpv_json_path: str, *, require_stem_ids: bool = False) -> Dict[str, Any]:
     """Per-sample readout features from an EXISTING RPV comprehensive run (sealed-seed reuse)."""
     d = json.load(open(rpv_json_path))
     X, y, idx = _rows_to_readout(d.get("rows", []))
+    source_meta = None
+    data_path = d.get("data_path")
+    if data_path and os.path.exists(data_path):
+        source_meta = _source_row_metadata(data_path, require_stem_ids=require_stem_ids)
+        if not np.array_equal(y, source_meta["labels"][idx]):
+            raise AssertionError("loaded readout labels disagree with source JSONL at sample_idx")
+    stems = None if source_meta is None or source_meta["stem_ids"] is None else source_meta["stem_ids"][idx]
     return {
         "model": d.get("model"), "slug": (d.get("model") or "").split("/")[-1],
         "benchmark": d.get("benchmark"), "data_path": d.get("data_path"),
         "data_hash": d.get("diagnostics", {}).get("data_hash_sha256"),
-        "score_matrix": X, "labels": y, "sample_idx": idx, "panel": list(READOUT_PANEL), "n": len(y),
+        "score_matrix": X, "labels": y, "sample_idx": idx, "stem_ids": stems,
+        "panel": list(READOUT_PANEL), "n": len(y),
     }
 
 
 def collect_readout_matrix_fresh(model_id: str, benchmark: str, data_path: str, *,
-                                 seed: int, limit: int | None = None) -> Dict[str, Any]:
+                                 seed: int, limit: int | None = None,
+                                 require_stem_ids: bool = False) -> Dict[str, Any]:
     """FRESH readout pass (RPV + null_ratio + surprise + p_max) at the gen_step=1 commit instant,
     computed by importing the sealed-grade shadow-ambiguity compute (trace_pair_features) - NOT by
     reusing existing rows. This is the readout arm for the fresh-seed seal."""
@@ -110,11 +157,20 @@ def collect_readout_matrix_fresh(model_id: str, benchmark: str, data_path: str, 
                                 limit=(limit or 0), max_new_tokens=1,
                                 k_support=CR.K_SUPPORT_DEFAULT, seed=seed)
     X, y, idx = _rows_to_readout(fr.rows)
+    source_meta = _source_row_metadata(
+        data_path, limit=limit, require_stem_ids=require_stem_ids)
+    if not np.array_equal(y, source_meta["labels"][idx]):
+        raise AssertionError("readout labels disagree with source JSONL at sample_idx")
+    stems = None if source_meta["stem_ids"] is None else source_meta["stem_ids"][idx]
+    token_by_idx = {int(r["sample_idx"]): int(r["gen_token_id"]) for r in fr.rows
+                    if r.get("gen_token_id") is not None}
+    gen_token_ids = np.asarray([token_by_idx.get(int(i), -1) for i in idx], dtype=np.int64)
     dh = (fr.diagnostics or {}).get("data_hash_sha256")
     return {
         "model": model_id, "slug": model_id.split("/")[-1], "benchmark": benchmark,
         "data_path": str(data_path), "data_hash": dh,
-        "score_matrix": X, "labels": y, "sample_idx": idx, "panel": list(READOUT_PANEL),
+        "score_matrix": X, "labels": y, "sample_idx": idx, "stem_ids": stems,
+        "gen_token_ids": gen_token_ids, "panel": list(READOUT_PANEL),
         "n": len(y), "drops": fr.drops,
     }
 
@@ -122,9 +178,86 @@ def collect_readout_matrix_fresh(model_id: str, benchmark: str, data_path: str, 
 # ──────────────────────────────────────────────────────────────────────────────
 # selection (wraps the sealed nested-OOB selector)
 # ──────────────────────────────────────────────────────────────────────────────
+def _cluster_bootstrap_oob_auroc(score_matrix: np.ndarray, labels: np.ndarray,
+                                 panel: List[PanelCell], stem_ids: np.ndarray,
+                                 n_bootstrap: int, seed: int) -> Dict[str, Any]:
+    """BENCH stem-cluster analogue of the sealed row bootstrap.
+
+    Stems are ordered by first row occurrence. A bootstrap draw samples that ordered
+    stem list with replacement; every row of a sampled stem enters in-bag once per draw
+    occurrence, while OOB contains every row whose stem was absent from the draw.
+    """
+    from sklearn.metrics import roc_auc_score
+
+    stem_ids = np.asarray(stem_ids).astype(str)
+    if len(stem_ids) != len(labels):
+        raise ValueError("stem_ids length must equal labels length")
+    ordered_stems = list(dict.fromkeys(stem_ids.tolist()))
+    if len(ordered_stems) == len(stem_ids):
+        # Exact reduction required by BENCH §5: unique stem per row is the sealed path.
+        return SEAL._nested_bootstrap_oob_auroc(
+            score_matrix, labels, panel, n_bootstrap, seed)
+
+    rows_by_stem = {stem: np.flatnonzero(stem_ids == stem).astype(np.int64)
+                    for stem in ordered_stems}
+    n_groups, n_cells = len(ordered_stems), score_matrix.shape[1]
+    rng = np.random.RandomState(seed + 1)
+    oob_aurocs: List[float] = []
+    winner_counts: Dict[int, int] = {j: 0 for j in range(n_cells)}
+
+    for _ in range(n_bootstrap):
+        sampled = rng.randint(0, n_groups, size=n_groups)
+        sampled_set = set(sampled.tolist())
+        in_bag = np.concatenate([rows_by_stem[ordered_stems[g]] for g in sampled])
+        oob_groups = [g for g in range(n_groups) if g not in sampled_set]
+        oob = (np.concatenate([rows_by_stem[ordered_stems[g]] for g in oob_groups])
+               if oob_groups else np.array([], dtype=np.int64))
+        if len(oob) < 4 or len(np.unique(labels[oob])) < 2:
+            continue
+
+        best_j, best_distance, best_sign = -1, -1.0, 0
+        for j in range(n_cells):
+            auc, sign, _ = SEAL._score_candidate(score_matrix[in_bag, j], labels[in_bag])
+            if np.isfinite(auc):
+                distance = abs(auc - 0.5)
+                if distance > best_distance:
+                    best_j, best_distance, best_sign = j, distance, sign
+        if best_j < 0:
+            continue
+        winner_counts[best_j] += 1
+
+        s_oob = score_matrix[oob, best_j] * best_sign
+        y_oob = labels[oob]
+        finite = np.isfinite(s_oob)
+        if finite.sum() < 4 or len(np.unique(y_oob[finite])) < 2:
+            continue
+        oob_aurocs.append(float(roc_auc_score(y_oob[finite], s_oob[finite])))
+
+    total_winners = sum(winner_counts.values())
+    stability = (max(winner_counts.values()) / total_winners
+                 if total_winners else float("nan"))
+    labeled_counts = {SEAL._cell_label(panel[j]): count
+                      for j, count in winner_counts.items() if count > 0}
+    if not oob_aurocs:
+        return {
+            "oob_auroc_median": float("nan"), "oob_auroc_ci_lo": float("nan"),
+            "oob_auroc_ci_hi": float("nan"), "oob_n_bootstrap_used": 0,
+            "winner_stability": float(stability), "winner_counts": labeled_counts,
+        }
+    arr = np.asarray(oob_aurocs, dtype=np.float64)
+    return {
+        "oob_auroc_median": float(np.median(arr)),
+        "oob_auroc_ci_lo": float(np.percentile(arr, 2.5)),
+        "oob_auroc_ci_hi": float(np.percentile(arr, 97.5)),
+        "oob_n_bootstrap_used": int(len(arr)),
+        "winner_stability": float(stability), "winner_counts": labeled_counts,
+    }
+
+
 def run_selection(score_matrix: np.ndarray, labels: np.ndarray, panel: List[PanelCell],
                   *, n_bootstrap: int = 2000, seed: int = 20260610,
-                  restrict_keys: set | None = None) -> Dict[str, Any]:
+                  restrict_keys: set | None = None, stem_ids: np.ndarray | None = None,
+                  bootstrap_unit: str = "row") -> Dict[str, Any]:
     """Run the SEALED nested-OOB selector over (a column-subset of) the panel.
     restrict_keys: keep only cells whose detail (c[2]) is in this set (e.g. drop
     confidence cells for the geometric-only endpoint)."""
@@ -135,7 +268,17 @@ def run_selection(score_matrix: np.ndarray, labels: np.ndarray, panel: List[Pane
     else:
         sm, pn = score_matrix, list(panel)
 
-    oob = SEAL._nested_bootstrap_oob_auroc(sm, labels, pn, n_bootstrap, seed)
+    if bootstrap_unit == "row":
+        oob = SEAL._nested_bootstrap_oob_auroc(sm, labels, pn, n_bootstrap, seed)
+        n_groups = len(labels)
+    elif bootstrap_unit == "cluster":
+        if stem_ids is None:
+            raise ValueError("cluster bootstrap requires stem_ids")
+        oob = _cluster_bootstrap_oob_auroc(
+            sm, labels, pn, stem_ids, n_bootstrap, seed)
+        n_groups = len(set(np.asarray(stem_ids).astype(str).tolist()))
+    else:
+        raise ValueError(f"unsupported bootstrap_unit={bootstrap_unit!r}")
 
     # full-sample marginal per cell (reference only; deployability uses OOB)
     marg = {}
@@ -160,6 +303,7 @@ def run_selection(score_matrix: np.ndarray, labels: np.ndarray, panel: List[Pane
         "winner_stability": oob.get("winner_stability"),
         "winner_counts": wc, "oob_n_bootstrap_used": oob.get("oob_n_bootstrap_used"),
         "n_cells": len(pn), "deployable": bool(ci_lo is not None and np.isfinite(ci_lo) and ci_lo > 0.50),
+        "bootstrap_unit": bootstrap_unit, "n_groups": int(n_groups),
         "full_sample_marginals": marg,
     }
 
@@ -206,14 +350,21 @@ def _rank01(v: np.ndarray) -> np.ndarray:
     return out
 
 
+def canonical_fusion_task_key(benchmark: str) -> str:
+    """Frozen BENCH aliases; unknown/new tasks intentionally use modal fallbacks."""
+    return BENCH_FUSION_TASK_ALIASES.get(benchmark, benchmark)
+
+
 def append_fusion_columns(M: np.ndarray, panel: List[PanelCell], slug: str, benchmark: str,
-                          spec: Dict[str, Any] | None = None):
+                          spec: Dict[str, Any] | None = None,
+                          canonical_benchmark: str | None = None):
     """Append the two pre-registered fusion cells. Component orientations locked per
     (model, task) from sealed-era artifacts; missing entries -> cohort-modal fallback.
     Fusion = mean of oriented component ranks; NaN if ANY component non-finite."""
     if spec is None:
         spec = json.load(open(FUSION_SPEC_PATH))
-    key = f"{slug}|{benchmark}"
+    fusion_task = canonical_benchmark or canonical_fusion_task_key(benchmark)
+    key = f"{slug}|{fusion_task}"
     bylabel = {c[2]: j for j, c in enumerate(panel)}
     ace_detail = spec["ace_component"]["column_name"].split("::")[-1]
     ace_sign = spec["ace_component"]["per_cell_sign"].get(key,
@@ -236,7 +387,10 @@ def append_fusion_columns(M: np.ndarray, panel: List[PanelCell], slug: str, benc
     for fname, fdef in sorted(spec["fusion_cells"].items()):
         cols.append(np.vstack([ranked[c] for c in fdef["components"]]).mean(axis=0))
         pan.append((0, "Fusion", fname))
-    return np.hstack([M, np.column_stack(cols)]), pan, {"key": key, "components": used}
+    return np.hstack([M, np.column_stack(cols)]), pan, {
+        "key": key, "reported_benchmark": benchmark,
+        "canonical_benchmark": fusion_task, "components": used,
+    }
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -244,22 +398,41 @@ def append_fusion_columns(M: np.ndarray, panel: List[PanelCell], slug: str, benc
 # ──────────────────────────────────────────────────────────────────────────────
 def shuffled_label_control(M: np.ndarray, y: np.ndarray, panel: List[PanelCell], *,
                            n_bootstrap: int, seed: int, restrict_keys: set | None = None,
-                           k_perms: int = 3) -> Dict[str, Any]:
+                           k_perms: int = 3, stem_ids: np.ndarray | None = None,
+                           bootstrap_unit: str = "row") -> Dict[str, Any]:
     """Pre-registered per-cell control: re-run the FULL nested-OOB selection on permuted
     labels. A single permutation's 95% CI excludes 0.5 upward ~2.5% of the time by chance,
     so the FLAG requires >=2 of k_perms permutations with CI_lo > 0.50 (amendment A3)."""
     perms = []
+    stems = None if stem_ids is None else np.asarray(stem_ids).astype(str)
+    paired = stems is not None and len(set(stems.tolist())) < len(stems)
     for k in range(k_perms):
         rng = np.random.RandomState(seed + 90210 + k)
-        yp = y[rng.permutation(len(y))]
+        if paired:
+            yp = np.asarray(y, dtype=np.int64).copy()
+            for stem in dict.fromkeys(stems.tolist()):
+                idx = np.flatnonzero(stems == stem)
+                if len(idx) != 2 or set(yp[idx].tolist()) != {0, 1}:
+                    raise ValueError(
+                        f"paired null requires exactly two {{0,1}} rows per stem; {stem!r} invalid")
+                if rng.rand() < 0.5:
+                    yp[idx] = yp[idx[::-1]]
+            permutation = "within_stem_label_swap"
+        else:
+            yp = y[rng.permutation(len(y))]
+            permutation = "global_row_permutation"
         r = run_selection(M, yp, panel, n_bootstrap=n_bootstrap, seed=seed,
-                          restrict_keys=restrict_keys)
+                          restrict_keys=restrict_keys, stem_ids=stems,
+                          bootstrap_unit=bootstrap_unit)
         lo = r.get("oob_auroc_ci_lo")
-        perms.append({"oob_auroc_median": r.get("oob_auroc_median"), "oob_auroc_ci_lo": lo,
+        perms.append({"k": k, "seed": seed + 90210 + k, "permutation": permutation,
+                      "oob_auroc_median": r.get("oob_auroc_median"), "oob_auroc_ci_lo": lo,
                       "oob_auroc_ci_hi": r.get("oob_auroc_ci_hi"),
                       "excludes_null_upward": bool(lo is not None and np.isfinite(lo) and lo > 0.50)})
     n_excl = sum(p["excludes_null_upward"] for p in perms)
-    return {"k_perms": k_perms, "n_excluding_null_upward": n_excl,
+    return {"k_perms": k_perms, "bootstrap_unit": bootstrap_unit,
+            "permutation": "within_stem_label_swap" if paired else "global_row_permutation",
+            "n_excluding_null_upward": n_excl,
             "pass": bool(n_excl < 2), "perms": perms}
 
 
@@ -339,7 +512,8 @@ def model_snapshot_sha(model_id: str):
 # ──────────────────────────────────────────────────────────────────────────────
 def collect_ace_matrix(model_slug: str, jsonl_path: str, *, seed: int,
                        max_new_tokens: int = 8, limit: int | None = None,
-                       panel: List[PanelCell] | None = None) -> Dict[str, Any]:
+                       panel: List[PanelCell] | None = None,
+                       require_stem_ids: bool = False) -> Dict[str, Any]:
     # S1 fix: default to the SEALED ACE instrument (21-cell, with v-norms) so the unified
     # panel can actually select the sealed per-model winners (some are v_norm cells).
     from diagnose_inter_head_disagreement import (
@@ -350,6 +524,10 @@ def collect_ace_matrix(model_slug: str, jsonl_path: str, *, seed: int,
     prompts, labels, data_hash = SEAL._load_calibration_jsonl(jsonl_path)
     if limit is not None:
         prompts, labels = prompts[:limit], labels[:limit]
+    source_meta = _source_row_metadata(
+        jsonl_path, limit=limit, require_stem_ids=require_stem_ids)
+    if not np.array_equal(np.asarray(labels, dtype=np.int64), source_meta["labels"]):
+        raise AssertionError("ACE labels disagree with source JSONL row metadata")
     decoder_layers = _find_layers(state.model)
     target_map = _target_layer_map(len(decoder_layers))
     n_kv: Dict[str, int] = {}
@@ -388,7 +566,8 @@ def collect_ace_matrix(model_slug: str, jsonl_path: str, *, seed: int,
             print(f"[ace] {model_slug.split('/')[-1]} {i+1}/{n}", flush=True)
     return {"score_matrix": sm, "labels": np.asarray(labels, dtype=np.int64),
             "panel": panel, "data_hash": data_hash, "slug": model_slug.split("/")[-1],
-            "sample_idx": np.arange(n, dtype=np.int64), "n": n}
+            "sample_idx": np.arange(n, dtype=np.int64),
+            "stem_ids": source_meta["stem_ids"], "n": n}
 
 
 def merge_matrices(ace: Dict[str, Any], readout: Dict[str, Any], *,
@@ -421,9 +600,23 @@ def merge_matrices(ace: Dict[str, Any], readout: Dict[str, Any], *,
                              f"{int((ya != yb).sum())} disagree")
     M = np.hstack([ace["score_matrix"][ra], readout["score_matrix"][rb]])
     panel = list(ace["panel"]) + list(readout["panel"])
+    ace_stems, readout_stems = ace.get("stem_ids"), readout.get("stem_ids")
+    if (ace_stems is None) != (readout_stems is None):
+        raise AssertionError("stem metadata present on only one extraction arm")
+    stems = None
+    if ace_stems is not None:
+        stems_a = np.asarray(ace_stems).astype(str)[ra]
+        stems_b = np.asarray(readout_stems).astype(str)[rb]
+        if not np.array_equal(stems_a, stems_b):
+            raise AssertionError("stem_id misalignment between ACE/readout arms")
+        stems = stems_a
+    readout_tokens = readout.get("gen_token_ids")
+    gen_token_ids = (None if readout_tokens is None
+                     else np.asarray(readout_tokens, dtype=np.int64)[rb])
     return {
         "score_matrix": M, "labels": ya, "panel": panel,
         "sample_idx": np.array(common, dtype=np.int64),
+        "stem_ids": stems, "gen_token_ids": gen_token_ids,
         "slug": ace.get("slug"), "n": len(ya), "n_aligned": len(common),
         "n_dropped_unaligned": len(ace["labels"]) - len(common),
         "n_ace_cells": len(ace["panel"]), "n_readout_cells": len(readout["panel"]),
@@ -433,27 +626,55 @@ def merge_matrices(ace: Dict[str, Any], readout: Dict[str, Any], *,
 
 def calibrate_merged(mm: Dict[str, Any], *, n_bootstrap: int = 2000, seed: int = 20260610,
                      model_id: str | None = None, benchmark: str | None = None,
-                     with_fusion: bool = True, with_controls: bool = True) -> Dict[str, Any]:
+                     with_fusion: bool = True, with_controls: bool = True,
+                     bootstrap_units: Tuple[str, ...] = ("row",),
+                     canonical_fusion_benchmark: str | None = None) -> Dict[str, Any]:
     """Dual-endpoint dispatcher over a merged matrix + pre-registered fusion cells (E4) +
     per-cell shuffled-label controls (A3) + drift/provenance hashes (C2)."""
     M, ya, panel = mm["score_matrix"], mm["labels"], list(mm["panel"])
     fusion_meta = None
     if with_fusion:
         M, panel, fusion_meta = append_fusion_columns(
-            M, panel, mm.get("slug") or "", benchmark or "")
-    full = run_selection(M, ya, panel, n_bootstrap=n_bootstrap, seed=seed)
+            M, panel, mm.get("slug") or "", benchmark or "",
+            canonical_benchmark=canonical_fusion_benchmark)
     geom_keys = {c[2] for c in panel if c[2] not in NON_GEOMETRIC_KEYS}
-    geom = run_selection(M, ya, panel, n_bootstrap=n_bootstrap, seed=seed, restrict_keys=geom_keys)
-    controls = None
-    if with_controls:
-        controls = {
-            "shuffled_label_full": shuffled_label_control(
-                M, ya, panel, n_bootstrap=n_bootstrap, seed=seed),
-            "shuffled_label_geometric": shuffled_label_control(
-                M, ya, panel, n_bootstrap=n_bootstrap, seed=seed, restrict_keys=geom_keys),
+    stems = mm.get("stem_ids")
+    endpoints_by_unit, controls_by_unit = {}, {}
+    for unit in bootstrap_units:
+        full_u = run_selection(
+            M, ya, panel, n_bootstrap=n_bootstrap, seed=seed,
+            stem_ids=stems, bootstrap_unit=unit)
+        geom_u = run_selection(
+            M, ya, panel, n_bootstrap=n_bootstrap, seed=seed,
+            restrict_keys=geom_keys, stem_ids=stems, bootstrap_unit=unit)
+        endpoints_by_unit[unit] = {
+            "primary_full_panel": full_u,
+            "secondary_geometric_only": geom_u,
         }
-        controls["pass"] = bool(controls["shuffled_label_full"]["pass"]
-                                and controls["shuffled_label_geometric"]["pass"])
+        if with_controls:
+            ctrl = {
+                "shuffled_label_full": shuffled_label_control(
+                    M, ya, panel, n_bootstrap=n_bootstrap, seed=seed,
+                    stem_ids=stems, bootstrap_unit=unit),
+                "shuffled_label_geometric": shuffled_label_control(
+                    M, ya, panel, n_bootstrap=n_bootstrap, seed=seed,
+                    restrict_keys=geom_keys, stem_ids=stems, bootstrap_unit=unit),
+            }
+            ctrl["pass"] = bool(ctrl["shuffled_label_full"]["pass"]
+                                and ctrl["shuffled_label_geometric"]["pass"])
+            controls_by_unit[unit] = ctrl
+    if not endpoints_by_unit:
+        raise ValueError("bootstrap_units must contain at least one unit")
+    compatibility_unit = "row" if "row" in endpoints_by_unit else next(iter(endpoints_by_unit))
+    full = endpoints_by_unit[compatibility_unit]["primary_full_panel"]
+    geom = endpoints_by_unit[compatibility_unit]["secondary_geometric_only"]
+    controls = controls_by_unit.get(compatibility_unit) if with_controls else None
+    selector_provenance = {
+        unit: ("sealed row _nested_bootstrap_oob_auroc (imported, not modified)"
+               if unit == "row" else
+               "BENCH stem-cluster OOB selector (exchangeable unit=stem)")
+        for unit in bootstrap_units
+    }
     return {
         "schema_version": "confluence/0.2-unified",
         "model": model_id, "slug": mm.get("slug"), "benchmark": benchmark,
@@ -463,9 +684,16 @@ def calibrate_merged(mm: Dict[str, Any], *, n_bootstrap: int = 2000, seed: int =
         "n_fusion_cells": len(panel) - mm["n_ace_cells"] - mm["n_readout_cells"],
         "ace_data_hash": mm.get("ace_data_hash"), "readout_data_hash": mm.get("readout_data_hash"),
         "primary_full_panel": full, "secondary_geometric_only": geom,
-        "controls": controls, "fusion": fusion_meta,
+        "endpoints_by_unit": endpoints_by_unit,
+        "controls": controls, "controls_by_unit": controls_by_unit,
+        "fusion": fusion_meta,
         "provenance": {"seed": seed, "n_bootstrap": n_bootstrap,
-                       "sealed_selector": "_nested_bootstrap_oob_auroc (imported, not modified)",
+                       "sealed_selector": selector_provenance.get("row"),
+                       "selector_by_unit": selector_provenance,
+                       "bootstrap_units": list(bootstrap_units),
+                       "canonical_fusion_benchmark": (
+                           canonical_fusion_benchmark
+                           or canonical_fusion_task_key(benchmark or "")),
                        "module_hashes": module_hashes(),
                        "model_snapshot_sha": model_snapshot_sha(model_id) if model_id else None},
     }
@@ -474,11 +702,15 @@ def calibrate_merged(mm: Dict[str, Any], *, n_bootstrap: int = 2000, seed: int =
 def merge_and_calibrate(ace: Dict[str, Any], readout: Dict[str, Any], *,
                         n_bootstrap: int = 2000, seed: int = 20260610,
                         model_id: str | None = None, benchmark: str | None = None,
-                        with_fusion: bool = True, with_controls: bool = True) -> Dict[str, Any]:
+                        with_fusion: bool = True, with_controls: bool = True,
+                        bootstrap_units: Tuple[str, ...] = ("row",),
+                        canonical_fusion_benchmark: str | None = None) -> Dict[str, Any]:
     """Back-compatible wrapper: merge, then calibrate (fusion + controls on by default)."""
     return calibrate_merged(merge_matrices(ace, readout), n_bootstrap=n_bootstrap, seed=seed,
                             model_id=model_id, benchmark=benchmark,
-                            with_fusion=with_fusion, with_controls=with_controls)
+                            with_fusion=with_fusion, with_controls=with_controls,
+                            bootstrap_units=bootstrap_units,
+                            canonical_fusion_benchmark=canonical_fusion_benchmark)
 
 
 if __name__ == "__main__":

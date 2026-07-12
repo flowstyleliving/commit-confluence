@@ -1,0 +1,69 @@
+{
+ "schema_version": "bench-parity/1.2",
+ "seed": 20260612,
+ "sample_idx": 0,
+ "source": "/Users/msrk/Documents/commit-confluence/stage_b/data/anli_R1_seed20260612_n200.jsonl",
+ "results": {
+  "Llama-3.2-3B-Instruct-4bit": {
+   "pass": true,
+   "n_reference_finite": 27,
+   "n_exact": 27,
+   "reference_matrix": "/Users/msrk/Documents/commit-confluence/stage_b/profiles/anli_r1/Llama-3.2-3B-Instruct-4bit.matrix.npz"
+  },
+  "Llama-3.1-8B-Instruct-4bit": {
+   "pass": true,
+   "n_reference_finite": 27,
+   "n_exact": 27,
+   "reference_matrix": "/Users/msrk/Documents/commit-confluence/stage_b/profiles/anli_r1/Llama-3.1-8B-Instruct-4bit.matrix.npz"
+  },
+  "Mistral-7B-Instruct-v0.3-4bit": {
+   "pass": true,
+   "n_reference_finite": 27,
+   "n_exact": 27,
+   "reference_matrix": "/Users/msrk/Documents/commit-confluence/stage_b/profiles/anli_r1/Mistral-7B-Instruct-v0.3-4bit.matrix.npz"
+  },
+  "Mistral-Nemo-Instruct-2407-4bit": {
+   "pass": true,
+   "n_reference_finite": 27,
+   "n_exact": 27,
+   "reference_matrix": "/Users/msrk/Documents/commit-confluence/stage_b/profiles/anli_r1/Mistral-Nemo-Instruct-2407-4bit.matrix.npz"
+  },
+  "Phi-3.5-mini-instruct-4bit": {
+   "pass": true,
+   "n_reference_finite": 27,
+   "n_exact": 27,
+   "reference_matrix": "/Users/msrk/Documents/commit-confluence/stage_b/profiles/anli_r1/Phi-3.5-mini-instruct-4bit.matrix.npz"
+  },
+  "Phi-4-mini-instruct-4bit": {
+   "pass": true,
+   "n_reference_finite": 27,
+   "n_exact": 27,
+   "reference_matrix": "/Users/msrk/Documents/commit-confluence/stage_b/profiles/anli_r1/Phi-4-mini-instruct-4bit.matrix.npz"
+  },
+  "Qwen2.5-7B-Instruct-4bit": {
+   "pass": true,
+   "n_reference_finite": 27,
+   "n_exact": 27,
+   "reference_matrix": "/Users/msrk/Documents/commit-confluence/stage_b/profiles/anli_r1/Qwen2.5-7B-Instruct-4bit.matrix.npz"
+  },
+  "Qwen3-1.7B-4bit": {
+   "pass": true,
+   "n_reference_finite": 27,
+   "n_exact": 27,
+   "reference_matrix": "/Users/msrk/Documents/commit-confluence/stage_b/profiles/anli_r1/Qwen3-1.7B-4bit.matrix.npz"
+  },
+  "Qwen3-8B-4bit": {
+   "pass": true,
+   "n_reference_finite": 27,
+   "n_exact": 27,
+   "reference_matrix": "/Users/msrk/Documents/commit-confluence/stage_b/profiles/anli_r1/Qwen3-8B-4bit.matrix.npz"
+  },
+  "gemma-3-4b-it-4bit": {
+   "pass": true,
+   "n_reference_finite": 27,
+   "n_exact": 27,
+   "reference_matrix": "/Users/msrk/Documents/commit-confluence/stage_b/profiles/anli_r1/gemma-3-4b-it-4bit.matrix.npz"
+  }
+ },
+ "pass": true
+}
