@@ -1,8 +1,8 @@
 # PRE-REGISTRATION — Benchmark Extension BENCH (post-seal)
 
-**Version:** v1.2, 2026-07-11 — **DRAFT PENDING MK SIGN-OFF; NOT YET FROZEN.** This
-document freezes at MK sign-off (§Sign-off); until then it may be revised openly. After
-sign-off, any change is an Amendments entry (§9), never an edit.
+**Version:** v1.3, 2026-07-12 — **FROZEN (MK sign-off 2026-07-12) + Amendment A1.**
+v1.3 = v1.2 + the single disclosed Amendment A1 (§9): subword-prefix commitment rule,
+adopted after Phase-3 smokes and before any strict cell. Spec version `bench/1.3`.
 **v1.0 → v1.1:** same day, after a Codex CLI adversarial review of the v1.0 draft
 (verdict 4/10 FIX; filed at `wiki/paper/cc-bench-prereg-review.md`). All of that review's
 TIGHTENED items are incorporated; §10 records the honest per-fix status.
@@ -322,9 +322,12 @@ intersection set. Additions frozen here:
   Smokes produce no registered metric and can never be `--resume`d into a cell.
 - **Full-cell commitment audit (new in v1.1; closes the "smoke only checks 16 rows"
   hole):** in every STRICT cell, each row's first generated token id is decoded and must
-  normalize to canonical `YES` or `NO` under the frozen normalization rule: strip leading
-  whitespace/newlines, case-fold, strip trailing punctuation; accept exactly the forms
-  `yes`/`no` (including tokenizer variants like `" YES"`, `"Yes"`). Any row failing this
+  normalize to a canonical `YES`/`NO` commit under the frozen normalization rule: strip
+  leading whitespace/newlines, case-fold, strip trailing punctuation; accept any
+  **non-empty prefix of `yes` or `no`** (Amendment A1, §9 — subword tokenizers such as
+  Mistral's split "YES" into `Y`+`ES`, so the first token of a genuine yes-commit can be
+  a strict prefix; the prefix sets of the two forms are disjoint, so no ambiguity).
+  Whitespace-only tokens (`"\n"`) and non-prefix tokens (`" To"`) fail. Any row failing this
   marks the cell **COMMITMENT-FAIL** (counted as a failed cell in its family denominator —
   same standing as a behavioral smoke fail). The decoded-commitment tally is stamped into
   the cell's provenance so the audit is checkable after the fact.
@@ -552,7 +555,37 @@ hash delta is fully accounted for:
 
 ## 9. Amendments
 
-(append-only; none at v1.2)
+(append-only)
+
+### A1 — 2026-07-12 — Subword-prefix commitment rule (bench/1.2 → bench/1.3)
+
+**Timing:** filed after Phase-3 smokes surfaced the issue and BEFORE any strict cell was
+run or any registered metric computed. Phase-4 had not started.
+**What the smokes found (44/60 cells complete at filing):** 9 COMMITMENT-FAILs with
+three signatures — (a) Mistral-7B decodes first token `'Y'` on 5/5 of its smoked tasks:
+its tokenizer splits `YES` into `Y`+`ES`, so the model IS committing YES at token 1 and
+the v1.2 exact-form rule (`yes`/`no` only) misclassifies a genuine commit — a tokenizer
+artifact, not a behavioral failure; (b) Qwen2.5 decodes `' To'` on 9/16 ANLI-R1/R2 smoke
+rows (chain-of-thought instead of commit) — a REAL behavioral failure; (c) Phi-3.5
+decodes `'\n'` on 4/16 ANLI rows (commit-locus offset) — a REAL failure under the
+first-token contract.
+**Change (MK decision, option "c" of three presented):** the canonical-commit test
+becomes "normalized token is a non-empty prefix of `yes` or `no`" (rescues only the
+subword artifact (a)). Signatures (b) and (c) remain failures — no behavioral rescue.
+**What does NOT change:** templates, data (drawn and sha-pinned before the amendment),
+sampling, bars, denominators, endpoints, controls, cluster algorithm — only the
+normalizer predicate and `SPEC_VERSION` → `bench/1.3`.
+**Materiality:** under v1.2, `anli_r1_rep` had 3 commitment-failing models, tripping the
+§8.1 systematic-commitment rule → task infeasible → B1 mathematically dead partly on a
+tokenizer artifact. Under v1.3, Mistral-7B is rescued everywhere; Qwen2.5 and Phi-3.5
+ANLI failures stand (anli_r1_rep: 2 behavioral fails — below the §8.1 threshold; both
+B1 endpoints remain reachable at ≥17/20 with zero slack beyond these two).
+**Disclosure rule for the paper:** the extension section must state that the commitment
+normalizer was amended between smokes and strict cells, citing this entry.
+**Re-audit protocol:** completed smoke verdicts are re-scored from their stamped
+`commitment_audit.rows` (token ids/decodes are immutable facts recorded under v1.2);
+model outputs are not regenerated. Re-scored profiles are stamped
+`reaudited_under=bench/1.3-A1`.
 
 ## 10. Audit tables
 

@@ -28,7 +28,7 @@ import confluence_calibrator as CC
 import check_fresh_data as GATE
 
 
-SPEC_VERSION = "bench/1.2"
+SPEC_VERSION = "bench/1.3"
 SEED = 20260711
 NBOOT = 2000
 FROZEN_FUSION_SHA256 = "92b5468bd241b517dd2d5cf70ad28556157424deb54b5f85f88af0305ff35372"
@@ -375,6 +375,10 @@ def run_phase1_unit_checks() -> Dict[str, Any]:
         raise AssertionError("replication fusion alias did not resolve")
     if normalize_commitment(" \nYES!!!") != "yes" or normalize_commitment(" No. ") != "no":
         raise AssertionError("commitment normalization contract failed")
+    if (not is_canonical_commitment("y") or not is_canonical_commitment("no")
+            or is_canonical_commitment("") or is_canonical_commitment("to")
+            or is_canonical_commitment("the")):
+        raise AssertionError("bench/1.3 commitment prefix contract failed")
     return {"pass": True, "row_unique_cluster_equal": True,
             "cluster_n_groups": cluster["n_groups"],
             "control_permutation": control["permutation"],
@@ -394,6 +398,15 @@ def normalize_commitment(text: str) -> str:
     return value
 
 
+def is_canonical_commitment(normalized: str) -> bool:
+    # bench/1.3 Amendment A1: subword tokenizers (e.g. Mistral "YES" -> "Y"+"ES")
+    # emit the answer commit as a strict prefix of the canonical form. A non-empty
+    # normalized prefix of "yes" or "no" is a canonical commit; the prefix sets of
+    # the two forms do not overlap ("y"/"ye" vs "n"), so no ambiguity is introduced.
+    # Whitespace-only ("") and non-prefix tokens (" To" -> "to") still fail.
+    return bool(normalized) and ("yes".startswith(normalized) or "no".startswith(normalized))
+
+
 def commitment_audit(model_id: str, token_ids: Sequence[int]) -> Dict[str, Any]:
     tokenizer = _local_tokenizer(model_id)
     rows = []
@@ -401,7 +414,8 @@ def commitment_audit(model_id: str, token_ids: Sequence[int]) -> Dict[str, Any]:
         decoded = "" if int(token_id) < 0 else tokenizer.decode([int(token_id)])
         normalized = normalize_commitment(decoded)
         rows.append({"token_id": int(token_id), "decoded": decoded,
-                     "normalized": normalized, "canonical": normalized in {"yes", "no"}})
+                     "normalized": normalized,
+                     "canonical": is_canonical_commitment(normalized)})
     n_canonical = sum(row["canonical"] for row in rows)
     return {"n": len(rows), "n_canonical": n_canonical,
             "n_noncanonical": len(rows) - n_canonical, "rows": rows}
