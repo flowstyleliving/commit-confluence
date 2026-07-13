@@ -1,7 +1,7 @@
 {
- "spec_version": "bench/1.2",
+ "spec_version": "bench/1.3",
  "seed": 20260711,
- "extension_manifest_sha256": "7109f8148d3c00419284fbb1192d4495a745d50d7bde82e072a83ccf09c37bb6",
+ "extension_manifest_sha256": "922da0a22ca217c9058ec38562f36ab371fa535030ea162c4b6b00961dd48974",
  "task_data_sha256": {
   "halueval_qa": "460019e12d25c33e9f842f52bb0e3fd70274256290dc7784101ebaa95b2163e7",
   "anli_r1_rep": "da99648854ea67a938b5d10e00c418b4096f687222d4ec959efabf981efc4622",
@@ -240,66 +240,18 @@
    "controls_pass": true
   },
   "Mistral-7B-Instruct-v0.3-4bit/halueval_qa": {
-   "status": "BEHAVIORAL-FAIL",
+   "status": "PASS",
    "n_aligned": 16,
    "commitment": {
     "n": 16,
-    "n_canonical": 7,
-    "n_noncanonical": 9,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
     "rows": [
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
-     },
-     {
-      "token_id": 8697,
-      "decoded": "NO",
-      "normalized": "no",
       "canonical": true
-     },
-     {
-      "token_id": 8697,
-      "decoded": "NO",
-      "normalized": "no",
-      "canonical": true
-     },
-     {
-      "token_id": 1395,
-      "decoded": "Y",
-      "normalized": "y",
-      "canonical": false
-     },
-     {
-      "token_id": 1395,
-      "decoded": "Y",
-      "normalized": "y",
-      "canonical": false
-     },
-     {
-      "token_id": 1395,
-      "decoded": "Y",
-      "normalized": "y",
-      "canonical": false
-     },
-     {
-      "token_id": 1395,
-      "decoded": "Y",
-      "normalized": "y",
-      "canonical": false
-     },
-     {
-      "token_id": 8697,
-      "decoded": "NO",
-      "normalized": "no",
-      "canonical": true
-     },
-     {
-      "token_id": 1395,
-      "decoded": "Y",
-      "normalized": "y",
-      "canonical": false
      },
      {
       "token_id": 8697,
@@ -317,7 +269,25 @@
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": true
      },
      {
       "token_id": 8697,
@@ -329,13 +299,43 @@
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
      },
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": true
      },
      {
       "token_id": 8697,
@@ -345,7 +345,8 @@
      }
     ]
    },
-   "controls_pass": true
+   "controls_pass": true,
+   "status_v12": "BEHAVIORAL-FAIL"
   },
   "Mistral-Nemo-Instruct-2407-4bit/halueval_qa": {
    "status": "PASS",
@@ -1320,36 +1321,36 @@
    "controls_pass": true
   },
   "Mistral-7B-Instruct-v0.3-4bit/anli_r1_rep": {
-   "status": "BEHAVIORAL-FAIL",
+   "status": "PASS",
    "n_aligned": 16,
    "commitment": {
     "n": 16,
-    "n_canonical": 9,
-    "n_noncanonical": 7,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
     "rows": [
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      },
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      },
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      },
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      },
      {
       "token_id": 8697,
@@ -1361,19 +1362,19 @@
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      },
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      },
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      },
      {
       "token_id": 8697,
@@ -1425,7 +1426,8 @@
      }
     ]
    },
-   "controls_pass": true
+   "controls_pass": true,
+   "status_v12": "BEHAVIORAL-FAIL"
   },
   "Mistral-Nemo-Instruct-2407-4bit/anli_r1_rep": {
    "status": "PASS",
@@ -2400,12 +2402,12 @@
    "controls_pass": true
   },
   "Mistral-7B-Instruct-v0.3-4bit/triviaqa_paired_rep": {
-   "status": "BEHAVIORAL-FAIL",
+   "status": "PASS",
    "n_aligned": 16,
    "commitment": {
     "n": 16,
-    "n_canonical": 9,
-    "n_noncanonical": 7,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
     "rows": [
      {
       "token_id": 8697,
@@ -2417,42 +2419,6 @@
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
-     },
-     {
-      "token_id": 8697,
-      "decoded": "NO",
-      "normalized": "no",
-      "canonical": true
-     },
-     {
-      "token_id": 1395,
-      "decoded": "Y",
-      "normalized": "y",
-      "canonical": false
-     },
-     {
-      "token_id": 1395,
-      "decoded": "Y",
-      "normalized": "y",
-      "canonical": false
-     },
-     {
-      "token_id": 8697,
-      "decoded": "NO",
-      "normalized": "no",
-      "canonical": true
-     },
-     {
-      "token_id": 8697,
-      "decoded": "NO",
-      "normalized": "no",
-      "canonical": true
-     },
-     {
-      "token_id": 8697,
-      "decoded": "NO",
-      "normalized": "no",
       "canonical": true
      },
      {
@@ -2465,7 +2431,31 @@
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
      },
      {
       "token_id": 8697,
@@ -2477,7 +2467,7 @@
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      },
      {
       "token_id": 8697,
@@ -2489,13 +2479,25 @@
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
      },
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": true
      },
      {
       "token_id": 8697,
@@ -2505,7 +2507,8 @@
      }
     ]
    },
-   "controls_pass": true
+   "controls_pass": true,
+   "status_v12": "BEHAVIORAL-FAIL"
   },
   "Mistral-Nemo-Instruct-2407-4bit/triviaqa_paired_rep": {
    "status": "PASS",
@@ -3480,95 +3483,17 @@
    "controls_pass": true
   },
   "Mistral-7B-Instruct-v0.3-4bit/anli_r2": {
-   "status": "BEHAVIORAL-FAIL",
+   "status": "PASS",
    "n_aligned": 16,
    "commitment": {
     "n": 16,
-    "n_canonical": 10,
-    "n_noncanonical": 6,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
     "rows": [
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
-     },
-     {
-      "token_id": 8697,
-      "decoded": "NO",
-      "normalized": "no",
-      "canonical": true
-     },
-     {
-      "token_id": 1395,
-      "decoded": "Y",
-      "normalized": "y",
-      "canonical": false
-     },
-     {
-      "token_id": 8697,
-      "decoded": "NO",
-      "normalized": "no",
-      "canonical": true
-     },
-     {
-      "token_id": 1395,
-      "decoded": "Y",
-      "normalized": "y",
-      "canonical": false
-     },
-     {
-      "token_id": 1395,
-      "decoded": "Y",
-      "normalized": "y",
-      "canonical": false
-     },
-     {
-      "token_id": 1395,
-      "decoded": "Y",
-      "normalized": "y",
-      "canonical": false
-     },
-     {
-      "token_id": 8697,
-      "decoded": "NO",
-      "normalized": "no",
-      "canonical": true
-     },
-     {
-      "token_id": 8697,
-      "decoded": "NO",
-      "normalized": "no",
-      "canonical": true
-     },
-     {
-      "token_id": 8697,
-      "decoded": "NO",
-      "normalized": "no",
-      "canonical": true
-     },
-     {
-      "token_id": 8697,
-      "decoded": "NO",
-      "normalized": "no",
-      "canonical": true
-     },
-     {
-      "token_id": 8697,
-      "decoded": "NO",
-      "normalized": "no",
-      "canonical": true
-     },
-     {
-      "token_id": 8697,
-      "decoded": "NO",
-      "normalized": "no",
-      "canonical": true
-     },
-     {
-      "token_id": 8697,
-      "decoded": "NO",
-      "normalized": "no",
       "canonical": true
      },
      {
@@ -3581,11 +3506,90 @@
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": true
      }
     ]
    },
-   "controls_pass": true
+   "controls_pass": true,
+   "status_v12": "BEHAVIORAL-FAIL"
   },
   "Mistral-Nemo-Instruct-2407-4bit/anli_r2": {
    "status": "PASS",
@@ -4560,65 +4564,17 @@
    "controls_pass": true
   },
   "Mistral-7B-Instruct-v0.3-4bit/halueval_dialogue": {
-   "status": "BEHAVIORAL-FAIL",
+   "status": "PASS",
    "n_aligned": 16,
    "commitment": {
     "n": 16,
-    "n_canonical": 7,
-    "n_noncanonical": 9,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
     "rows": [
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
-     },
-     {
-      "token_id": 8697,
-      "decoded": "NO",
-      "normalized": "no",
-      "canonical": true
-     },
-     {
-      "token_id": 8697,
-      "decoded": "NO",
-      "normalized": "no",
-      "canonical": true
-     },
-     {
-      "token_id": 1395,
-      "decoded": "Y",
-      "normalized": "y",
-      "canonical": false
-     },
-     {
-      "token_id": 1395,
-      "decoded": "Y",
-      "normalized": "y",
-      "canonical": false
-     },
-     {
-      "token_id": 1395,
-      "decoded": "Y",
-      "normalized": "y",
-      "canonical": false
-     },
-     {
-      "token_id": 8697,
-      "decoded": "NO",
-      "normalized": "no",
-      "canonical": true
-     },
-     {
-      "token_id": 1395,
-      "decoded": "Y",
-      "normalized": "y",
-      "canonical": false
-     },
-     {
-      "token_id": 8697,
-      "decoded": "NO",
-      "normalized": "no",
       "canonical": true
      },
      {
@@ -4637,7 +4593,19 @@
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": true
      },
      {
       "token_id": 8697,
@@ -4649,23 +4617,60 @@
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
      },
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
      },
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": true
      }
     ]
    },
-   "controls_pass": true
+   "controls_pass": true,
+   "status_v12": "BEHAVIORAL-FAIL"
   },
   "Mistral-Nemo-Instruct-2407-4bit/halueval_dialogue": {
    "status": "PASS",
@@ -5640,24 +5645,24 @@
    "controls_pass": true
   },
   "Mistral-7B-Instruct-v0.3-4bit/halueval_summarization": {
-   "status": "BEHAVIORAL-FAIL",
+   "status": "PASS",
    "n_aligned": 16,
    "commitment": {
     "n": 16,
-    "n_canonical": 3,
-    "n_noncanonical": 13,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
     "rows": [
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      },
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      },
      {
       "token_id": 8697,
@@ -5669,25 +5674,25 @@
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      },
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      },
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      },
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      },
      {
       "token_id": 8697,
@@ -5699,37 +5704,37 @@
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      },
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      },
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      },
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      },
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      },
      {
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      },
      {
       "token_id": 8697,
@@ -5741,11 +5746,12 @@
       "token_id": 1395,
       "decoded": "Y",
       "normalized": "y",
-      "canonical": false
+      "canonical": true
      }
     ]
    },
-   "controls_pass": true
+   "controls_pass": true,
+   "status_v12": "BEHAVIORAL-FAIL"
   },
   "Mistral-Nemo-Instruct-2407-4bit/halueval_summarization": {
    "status": "PASS",
@@ -6503,5 +6509,6 @@
    },
    "controls_pass": true
   }
- }
+ },
+ "reaudited_under": "bench/1.3-A1"
 }
