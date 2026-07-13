@@ -1,0 +1,6507 @@
+{
+ "spec_version": "bench/1.2",
+ "seed": 20260711,
+ "extension_manifest_sha256": "7109f8148d3c00419284fbb1192d4495a745d50d7bde82e072a83ccf09c37bb6",
+ "task_data_sha256": {
+  "halueval_qa": "460019e12d25c33e9f842f52bb0e3fd70274256290dc7784101ebaa95b2163e7",
+  "anli_r1_rep": "da99648854ea67a938b5d10e00c418b4096f687222d4ec959efabf981efc4622",
+  "triviaqa_paired_rep": "e5d7d25543ae75149c7a0caf8cca7abdf377c49fe9e7a3545129458a4e064646",
+  "anli_r2": "5b549a29eeb896db9d39ef79c0fe592ae5441f8f28915e19d86fb65f05653e44",
+  "halueval_dialogue": "a3433c11ac97507e7a192ded5a1aa76909b1671802ef32094fa8bc0a3fdb68d1",
+  "halueval_summarization": "4ceb4548e73f7a9e2b5c747ceb82abe2fa685f0e29ca9671f3710c84b590ef8f"
+ },
+ "models": [
+  "Llama-3.2-3B-Instruct-4bit",
+  "Llama-3.1-8B-Instruct-4bit",
+  "Mistral-7B-Instruct-v0.3-4bit",
+  "Mistral-Nemo-Instruct-2407-4bit",
+  "Phi-3.5-mini-instruct-4bit",
+  "Phi-4-mini-instruct-4bit",
+  "Qwen2.5-7B-Instruct-4bit",
+  "Qwen3-1.7B-4bit",
+  "Qwen3-8B-4bit",
+  "gemma-3-4b-it-4bit"
+ ],
+ "results": {
+  "Llama-3.2-3B-Instruct-4bit/halueval_qa": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Llama-3.1-8B-Instruct-4bit/halueval_qa": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Mistral-7B-Instruct-v0.3-4bit/halueval_qa": {
+   "status": "BEHAVIORAL-FAIL",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 7,
+    "n_noncanonical": 9,
+    "rows": [
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Mistral-Nemo-Instruct-2407-4bit/halueval_qa": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Phi-3.5-mini-instruct-4bit/halueval_qa": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Phi-4-mini-instruct-4bit/halueval_qa": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Qwen2.5-7B-Instruct-4bit/halueval_qa": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Qwen3-1.7B-4bit/halueval_qa": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Qwen3-8B-4bit/halueval_qa": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "gemma-3-4b-it-4bit/halueval_qa": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Llama-3.2-3B-Instruct-4bit/anli_r1_rep": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Llama-3.1-8B-Instruct-4bit/anli_r1_rep": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Mistral-7B-Instruct-v0.3-4bit/anli_r1_rep": {
+   "status": "BEHAVIORAL-FAIL",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 9,
+    "n_noncanonical": 7,
+    "rows": [
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Mistral-Nemo-Instruct-2407-4bit/anli_r1_rep": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Phi-3.5-mini-instruct-4bit/anli_r1_rep": {
+   "status": "BEHAVIORAL-FAIL",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 12,
+    "n_noncanonical": 4,
+    "rows": [
+     {
+      "token_id": 13,
+      "decoded": "\n",
+      "normalized": "",
+      "canonical": false
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 13,
+      "decoded": "\n",
+      "normalized": "",
+      "canonical": false
+     },
+     {
+      "token_id": 13,
+      "decoded": "\n",
+      "normalized": "",
+      "canonical": false
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 13,
+      "decoded": "\n",
+      "normalized": "",
+      "canonical": false
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Phi-4-mini-instruct-4bit/anli_r1_rep": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Qwen2.5-7B-Instruct-4bit/anli_r1_rep": {
+   "status": "BEHAVIORAL-FAIL",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 7,
+    "n_noncanonical": 9,
+    "rows": [
+     {
+      "token_id": 2014,
+      "decoded": " To",
+      "normalized": "to",
+      "canonical": false
+     },
+     {
+      "token_id": 2014,
+      "decoded": " To",
+      "normalized": "to",
+      "canonical": false
+     },
+     {
+      "token_id": 2014,
+      "decoded": " To",
+      "normalized": "to",
+      "canonical": false
+     },
+     {
+      "token_id": 2014,
+      "decoded": " To",
+      "normalized": "to",
+      "canonical": false
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 2014,
+      "decoded": " To",
+      "normalized": "to",
+      "canonical": false
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 2014,
+      "decoded": " To",
+      "normalized": "to",
+      "canonical": false
+     },
+     {
+      "token_id": 2014,
+      "decoded": " To",
+      "normalized": "to",
+      "canonical": false
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 2014,
+      "decoded": " To",
+      "normalized": "to",
+      "canonical": false
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 2014,
+      "decoded": " To",
+      "normalized": "to",
+      "canonical": false
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Qwen3-1.7B-4bit/anli_r1_rep": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Qwen3-8B-4bit/anli_r1_rep": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "gemma-3-4b-it-4bit/anli_r1_rep": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Llama-3.2-3B-Instruct-4bit/triviaqa_paired_rep": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Llama-3.1-8B-Instruct-4bit/triviaqa_paired_rep": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Mistral-7B-Instruct-v0.3-4bit/triviaqa_paired_rep": {
+   "status": "BEHAVIORAL-FAIL",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 9,
+    "n_noncanonical": 7,
+    "rows": [
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Mistral-Nemo-Instruct-2407-4bit/triviaqa_paired_rep": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Phi-3.5-mini-instruct-4bit/triviaqa_paired_rep": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Phi-4-mini-instruct-4bit/triviaqa_paired_rep": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Qwen2.5-7B-Instruct-4bit/triviaqa_paired_rep": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Qwen3-1.7B-4bit/triviaqa_paired_rep": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Qwen3-8B-4bit/triviaqa_paired_rep": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "gemma-3-4b-it-4bit/triviaqa_paired_rep": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Llama-3.2-3B-Instruct-4bit/anli_r2": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Llama-3.1-8B-Instruct-4bit/anli_r2": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Mistral-7B-Instruct-v0.3-4bit/anli_r2": {
+   "status": "BEHAVIORAL-FAIL",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 10,
+    "n_noncanonical": 6,
+    "rows": [
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Mistral-Nemo-Instruct-2407-4bit/anli_r2": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Phi-3.5-mini-instruct-4bit/anli_r2": {
+   "status": "BEHAVIORAL-FAIL",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 12,
+    "n_noncanonical": 4,
+    "rows": [
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 13,
+      "decoded": "\n",
+      "normalized": "",
+      "canonical": false
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 13,
+      "decoded": "\n",
+      "normalized": "",
+      "canonical": false
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 13,
+      "decoded": "\n",
+      "normalized": "",
+      "canonical": false
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 13,
+      "decoded": "\n",
+      "normalized": "",
+      "canonical": false
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Phi-4-mini-instruct-4bit/anli_r2": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Qwen2.5-7B-Instruct-4bit/anli_r2": {
+   "status": "BEHAVIORAL-FAIL",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 7,
+    "n_noncanonical": 9,
+    "rows": [
+     {
+      "token_id": 2014,
+      "decoded": " To",
+      "normalized": "to",
+      "canonical": false
+     },
+     {
+      "token_id": 2014,
+      "decoded": " To",
+      "normalized": "to",
+      "canonical": false
+     },
+     {
+      "token_id": 2014,
+      "decoded": " To",
+      "normalized": "to",
+      "canonical": false
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 2014,
+      "decoded": " To",
+      "normalized": "to",
+      "canonical": false
+     },
+     {
+      "token_id": 2014,
+      "decoded": " To",
+      "normalized": "to",
+      "canonical": false
+     },
+     {
+      "token_id": 2014,
+      "decoded": " To",
+      "normalized": "to",
+      "canonical": false
+     },
+     {
+      "token_id": 2014,
+      "decoded": " To",
+      "normalized": "to",
+      "canonical": false
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 2014,
+      "decoded": " To",
+      "normalized": "to",
+      "canonical": false
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 2014,
+      "decoded": " To",
+      "normalized": "to",
+      "canonical": false
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Qwen3-1.7B-4bit/anli_r2": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Qwen3-8B-4bit/anli_r2": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "gemma-3-4b-it-4bit/anli_r2": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Llama-3.2-3B-Instruct-4bit/halueval_dialogue": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Llama-3.1-8B-Instruct-4bit/halueval_dialogue": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Mistral-7B-Instruct-v0.3-4bit/halueval_dialogue": {
+   "status": "BEHAVIORAL-FAIL",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 7,
+    "n_noncanonical": 9,
+    "rows": [
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Mistral-Nemo-Instruct-2407-4bit/halueval_dialogue": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Phi-3.5-mini-instruct-4bit/halueval_dialogue": {
+   "status": "BEHAVIORAL-FAIL",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 14,
+    "n_noncanonical": 2,
+    "rows": [
+     {
+      "token_id": 13,
+      "decoded": "\n",
+      "normalized": "",
+      "canonical": false
+     },
+     {
+      "token_id": 13,
+      "decoded": "\n",
+      "normalized": "",
+      "canonical": false
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Phi-4-mini-instruct-4bit/halueval_dialogue": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Qwen2.5-7B-Instruct-4bit/halueval_dialogue": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Qwen3-1.7B-4bit/halueval_dialogue": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Qwen3-8B-4bit/halueval_dialogue": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "gemma-3-4b-it-4bit/halueval_dialogue": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Llama-3.2-3B-Instruct-4bit/halueval_summarization": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Llama-3.1-8B-Instruct-4bit/halueval_summarization": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5782,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14410,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Mistral-7B-Instruct-v0.3-4bit/halueval_summarization": {
+   "status": "BEHAVIORAL-FAIL",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 3,
+    "n_noncanonical": 13,
+    "rows": [
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     },
+     {
+      "token_id": 8697,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 1395,
+      "decoded": "Y",
+      "normalized": "y",
+      "canonical": false
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Mistral-Nemo-Instruct-2407-4bit/halueval_summarization": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 16071,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51935,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Phi-3.5-mini-instruct-4bit/halueval_summarization": {
+   "status": "BEHAVIORAL-FAIL",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 9,
+    "n_noncanonical": 7,
+    "rows": [
+     {
+      "token_id": 11698,
+      "decoded": "NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 13,
+      "decoded": "\n",
+      "normalized": "",
+      "canonical": false
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 13,
+      "decoded": "\n",
+      "normalized": "",
+      "canonical": false
+     },
+     {
+      "token_id": 13,
+      "decoded": "\n",
+      "normalized": "",
+      "canonical": false
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 13,
+      "decoded": "\n",
+      "normalized": "",
+      "canonical": false
+     },
+     {
+      "token_id": 13,
+      "decoded": "\n",
+      "normalized": "",
+      "canonical": false
+     },
+     {
+      "token_id": 13,
+      "decoded": "\n",
+      "normalized": "",
+      "canonical": false
+     },
+     {
+      "token_id": 13,
+      "decoded": "\n",
+      "normalized": "",
+      "canonical": false
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 22483,
+      "decoded": "YES",
+      "normalized": "yes",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Phi-4-mini-instruct-4bit/halueval_summarization": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 9319,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 32968,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Qwen2.5-7B-Instruct-4bit/halueval_summarization": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Qwen3-1.7B-4bit/halueval_summarization": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 5664,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "Qwen3-8B-4bit/halueval_summarization": {
+   "status": "PASS",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 16,
+    "n_noncanonical": 0,
+    "rows": [
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 14080,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     }
+    ]
+   },
+   "controls_pass": true
+  },
+  "gemma-3-4b-it-4bit/halueval_summarization": {
+   "status": "BEHAVIORAL-FAIL",
+   "n_aligned": 16,
+   "commitment": {
+    "n": 16,
+    "n_canonical": 8,
+    "n_noncanonical": 8,
+    "rows": [
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 51327,
+      "decoded": " YES",
+      "normalized": "yes",
+      "canonical": true
+     },
+     {
+      "token_id": 9424,
+      "decoded": " NO",
+      "normalized": "no",
+      "canonical": true
+     },
+     {
+      "token_id": 531,
+      "decoded": " to",
+      "normalized": "to",
+      "canonical": false
+     },
+     {
+      "token_id": 506,
+      "decoded": " the",
+      "normalized": "the",
+      "canonical": false
+     },
+     {
+      "token_id": 532,
+      "decoded": " and",
+      "normalized": "and",
+      "canonical": false
+     },
+     {
+      "token_id": 496,
+      "decoded": " a",
+      "normalized": "a",
+      "canonical": false
+     },
+     {
+      "token_id": 236770,
+      "decoded": "1",
+      "normalized": "1",
+      "canonical": false
+     },
+     {
+      "token_id": 236770,
+      "decoded": "1",
+      "normalized": "1",
+      "canonical": false
+     },
+     {
+      "token_id": 531,
+      "decoded": " to",
+      "normalized": "to",
+      "canonical": false
+     },
+     {
+      "token_id": 236743,
+      "decoded": " ",
+      "normalized": "",
+      "canonical": false
+     }
+    ]
+   },
+   "controls_pass": true
+  }
+ }
+}
