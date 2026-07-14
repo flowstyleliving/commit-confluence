@@ -24,7 +24,7 @@ E3  Label-efficiency curve: per (model, task), stratified subsamples n in {50,10
     R repeats, re-run the sealed nested-OOB selector (nboot 1000), report the fraction of
     repeats deployable. Prices the labeling cost of per-deployment calibration.
 
-A2  BENCH v1.2 registered fixed-cell LOMO: `fusion_rank_mean_geom` only, exact planned
+A2  BENCH v1.3 registered fixed-cell LOMO: `fusion_rank_mean_geom` only, exact planned
     ten-model denominator, pooled-training sign fit, and strict holdout AUROC > 0.55.
 
 Usage:
@@ -43,6 +43,13 @@ BENCH_PLANNED_SLUGS = [
     "gemma-3-4b-it-4bit",
 ]
 
+# bench/1.3 Amendment A2: single source of truth inside the analysis boundary.  This is
+# intentionally mirrored, rather than imported from run_bench.py: importing the execution
+# harness would couple matrix-only analysis to its MLX/runtime imports.  The extension manifest
+# freezes both files, and A2 requires them to be re-stamped together after any future bump.
+ACCEPTED_SPEC_VERSION = "bench/1.3"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 def auroc_fixed(y, s, sign):
     """AUROC of s oriented by a FIXED sign (no refitting on the eval side)."""
@@ -52,6 +59,36 @@ def auroc_fixed(y, s, sign):
     if f.sum() < 4 or len(np.unique(y[f])) < 2:
         return None
     return float(roc_auc_score(y[f], s[f] * sign))
+
+
+def matrix_stem_ids(matrix, labels):
+    """Load persisted BENCH stems or recover sealed TriviaQA stems from source provenance."""
+    if "stem_ids" in matrix.files:
+        return matrix["stem_ids"].astype(str)
+    if "meta" not in matrix.files or "sample_idx" not in matrix.files:
+        return None
+    meta = json.loads(str(matrix["meta"]))
+    data_path = meta.get("data_path")
+    if not data_path:
+        return None
+    path = data_path if os.path.isabs(data_path) else os.path.join(ROOT, data_path)
+    if not os.path.exists(path):
+        return None
+    rows = [json.loads(line) for line in open(path) if line.strip()]
+    indices = matrix["sample_idx"].astype(np.int64)
+    if len(indices) != len(labels) or any(i < 0 or i >= len(rows) for i in indices):
+        raise ValueError("matrix sample_idx cannot be aligned to its source rows")
+    if not np.array_equal(labels, np.asarray([rows[i]["label"] for i in indices])):
+        raise ValueError("matrix labels disagree with source rows at sample_idx")
+    stems = []
+    for i in indices:
+        row = rows[i]
+        row_meta = row.get("meta") or {}
+        value = row.get("stem_id", row_meta.get("stem_id", row_meta.get("question_id")))
+        if value is None:
+            return None
+        stems.append(str(value))
+    return np.asarray(stems, dtype=np.str_)
 
 
 def load_cells(profiles_dir):
@@ -78,7 +115,9 @@ def load_cells(profiles_dir):
             M, panel, slug, task, canonical_benchmark=canonical_task)
         profp = npz.replace(".matrix.npz", ".profile.json")
         prof = json.load(open(profp)) if os.path.exists(profp) else None
+        stem_ids = matrix_stem_ids(d, y)
         cells[(slug, task)] = {"M": M, "y": y, "panel": panel,
+                               "stem_ids": stem_ids,
                                "labels": [SEAL._cell_label(c) for c in panel],
                                "profile": prof, "fusion": fusion_meta,
                                "summary_terminal_status": summary_status.get((slug, task)),
@@ -155,7 +194,7 @@ def lomo(cells, task):
 
 
 def registered_a2(cells, task="halueval_qa", planned_slugs=None):
-    """BENCH v1.2 A2 estimator; never substitutes the descriptive max landscape."""
+    """BENCH v1.3 A2 estimator; never substitutes the descriptive max landscape."""
     planned = list(planned_slugs or BENCH_PLANNED_SLUGS)
     if len(planned) != 10 or len(set(planned)) != 10:
         raise ValueError("A2 planned denominator must be exactly ten unique models")
@@ -173,7 +212,7 @@ def registered_a2(cells, task="halueval_qa", planned_slugs=None):
         if cell.get("task_behaviorally_infeasible"):
             failures[slug] = "task systematic commitment failure"
             continue
-        if profile.get("spec_version") != "bench/1.2":
+        if profile.get("spec_version") != ACCEPTED_SPEC_VERSION:
             failures[slug] = "missing/mismatched bench profile"
             continue
         if profile.get("terminal_status") != "OK":
@@ -290,13 +329,58 @@ def transfer(cells):
 # ──────────────────────────────────────────────────────────────────────────────
 # E3 - label efficiency
 # ──────────────────────────────────────────────────────────────────────────────
+def _legacy_row_subsample(y, nsub, rng):
+    """The pre-A2 row-stratified E3 draw, kept intact for ungrouped tasks."""
+    pos, neg = np.where(y == 1)[0], np.where(y == 0)[0]
+    kp = max(2, int(round(nsub * len(pos) / len(y))))
+    kn = nsub - kp
+    if kp > len(pos) or kn > len(neg) or kn < 2:
+        return None
+    return np.concatenate([rng.choice(pos, kp, replace=False),
+                           rng.choice(neg, kn, replace=False)])
+
+
+def _e3_subsample(y, stem_ids, nsub, rng):
+    """Draw a label-budget subsample without splitting a paired stem (A2)."""
+    if stem_ids is None:
+        stem_ids = np.asarray([f"row:{i}" for i in range(len(y))], dtype=np.str_)
+    else:
+        stem_ids = np.asarray(stem_ids).astype(str)
+    if len(stem_ids) != len(y):
+        raise ValueError("E3 stem_ids length must match labels")
+
+    ordered_stems = list(dict.fromkeys(stem_ids.tolist()))
+    if len(ordered_stems) == len(y):
+        # Unique stem per row is the ungrouped case.  Calling the preserved helper is the
+        # exact pre-A2 RNG path; this assertion prevents a mislabeled grouped input from
+        # silently entering it.
+        assert len(set(stem_ids.tolist())) == len(y)
+        return _legacy_row_subsample(y, nsub, rng), "row"
+
+    rows_by_stem = {stem: np.flatnonzero(stem_ids == stem).astype(np.int64)
+                    for stem in ordered_stems}
+    if any(len(rows) != 2 or set(y[rows].tolist()) != {0, 1}
+           for rows in rows_by_stem.values()):
+        raise ValueError("grouped E3 currently requires paired two-row {0,1} stems")
+    if nsub % 2:
+        raise ValueError("paired-stem E3 requires an even label budget")
+    n_stems = nsub // 2
+    if n_stems > len(ordered_stems):
+        return None, "stem"
+    chosen = rng.choice(len(ordered_stems), n_stems, replace=False)
+    idx = np.concatenate([rows_by_stem[ordered_stems[int(j)]] for j in chosen])
+    assert len(idx) == nsub and len(set(stem_ids[idx].tolist())) == n_stems
+    return idx, "stem"
+
+
 def label_efficiency(cells, sizes=(50, 100, 150), repeats=10, nboot=1000, seed=20260613):
     out = {}
     for (slug, task), c in sorted(cells.items()):
         M, y, panel = c["M"], c["y"], c["panel"]
         geom_keys = {p[2] for p in panel if p[2] not in CC.NON_GEOMETRIC_KEYS}
         gcols = [j for j, p in enumerate(panel) if p[2] in geom_keys]
-        pos, neg = np.where(y == 1)[0], np.where(y == 0)[0]
+        stem_ids = c.get("stem_ids")
+        units = set()
         res = {}
         for nsub in sizes:
             if nsub >= len(y):
@@ -304,19 +388,19 @@ def label_efficiency(cells, sizes=(50, 100, 150), repeats=10, nboot=1000, seed=2
             dep_full, dep_geom = 0, 0
             for r in range(repeats):
                 rng = np.random.RandomState(seed + 1000 * nsub + r)
-                kp = max(2, int(round(nsub * len(pos) / len(y))))
-                kn = nsub - kp
-                if kp > len(pos) or kn > len(neg) or kn < 2:
+                idx, unit = _e3_subsample(y, stem_ids, nsub, rng)
+                units.add(unit)
+                if idx is None:
                     continue
-                idx = np.concatenate([rng.choice(pos, kp, replace=False),
-                                      rng.choice(neg, kn, replace=False)])
                 full = SEAL._nested_bootstrap_oob_auroc(M[idx], y[idx], panel, nboot, seed + r)
                 geom = SEAL._nested_bootstrap_oob_auroc(M[idx][:, gcols], y[idx],
                                                         [panel[j] for j in gcols], nboot, seed + r)
                 lo_f, lo_g = full.get("oob_auroc_ci_lo"), geom.get("oob_auroc_ci_lo")
                 dep_full += bool(lo_f is not None and np.isfinite(lo_f) and lo_f > 0.50)
                 dep_geom += bool(lo_g is not None and np.isfinite(lo_g) and lo_g > 0.50)
-            res[str(nsub)] = {"frac_deployable_full": round(dep_full / repeats, 3),
+            res[str(nsub)] = {"label_budget": nsub,
+                              "subsample_unit": next(iter(units)) if len(units) == 1 else None,
+                              "frac_deployable_full": round(dep_full / repeats, 3),
                               "frac_deployable_geom": round(dep_geom / repeats, 3)}
         out[f"{slug}|{task}"] = res
         print(f"[E3] {slug}|{task}: {res}", flush=True)
@@ -331,7 +415,7 @@ def main():
     ap.add_argument("--nboot-labeleff", type=int, default=1000)
     ap.add_argument("--skip", default="", help="comma list from {lomo,transfer,labeleff}")
     ap.add_argument("--bench-a2", action="store_true",
-                    help="score registered BENCH v1.2 A2 on halueval_qa")
+                    help="score registered BENCH v1.3 A2 on halueval_qa")
     a = ap.parse_args()
     skip = set(s for s in a.skip.split(",") if s)
     if a.bench_a2:
@@ -339,8 +423,9 @@ def main():
         if not os.path.exists(summary_path):
             raise ValueError("registered A2 requires the strict BENCH SUMMARY.json")
         summary = json.load(open(summary_path))
-        if summary.get("spec_version") != "bench/1.2":
-            raise ValueError("registered A2 requires a bench/1.2 strict summary")
+        if summary.get("spec_version") != ACCEPTED_SPEC_VERSION:
+            raise ValueError(
+                f"registered A2 requires a {ACCEPTED_SPEC_VERSION} strict summary")
 
     cells = load_cells(a.profiles_dir)
     print(f"loaded {len(cells)} (model, task) matrices from {a.profiles_dir}", flush=True)

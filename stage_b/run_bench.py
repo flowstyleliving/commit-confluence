@@ -97,6 +97,51 @@ def sha256_file(path: Path) -> str:
     return h.hexdigest()
 
 
+def resolve_frozen_arrow(recorded_path: Path, expected_sha256: str) -> Path:
+    """Resolve a frozen HF Arrow artifact by bytes, not by the builder machine's path (A3)."""
+    roots = []
+    configured = os.environ.get("CONFLUENCE_HF_CACHE")
+    if configured:
+        roots.append(Path(configured).expanduser())
+    roots.append(Path.home() / ".cache/huggingface/datasets")
+
+    candidates: List[Path] = []
+    for root in roots:
+        if root.is_file() and root.name == recorded_path.name:
+            candidates.append(root)
+        elif root.is_dir():
+            candidates.extend(sorted(root.rglob(recorded_path.name)))
+    candidates.append(recorded_path.expanduser())
+
+    seen = set()
+    for candidate in candidates:
+        key = str(candidate.resolve()) if candidate.exists() else str(candidate)
+        if key in seen:
+            continue
+        seen.add(key)
+        if candidate.is_file() and sha256_file(candidate) == expected_sha256:
+            return candidate.resolve()
+    raise FileNotFoundError(
+        f"frozen Arrow artifact {recorded_path.name} unavailable; set CONFLUENCE_HF_CACHE "
+        f"to a Hugging Face cache containing sha256={expected_sha256}")
+
+
+def resolve_exclusion_reference(recorded_path: Path,
+                                expected_by_name: Dict[str, Tuple[Path, str]]) -> Tuple[Path, str]:
+    """Resolve a provenance path to the vendored/current file and verify its frozen bytes."""
+    expected = expected_by_name.get(recorded_path.name)
+    if expected is None:
+        raise ValueError(f"unregistered exclusion reference: {recorded_path.name}")
+    current_path, expected_sha256 = expected
+    candidates = [recorded_path.expanduser(), current_path]
+    for candidate in candidates:
+        if candidate.is_file() and sha256_file(candidate) == expected_sha256:
+            return candidate.resolve(), expected_sha256
+    raise FileNotFoundError(
+        f"exclusion reference {recorded_path.name} unavailable/mismatched; "
+        f"expected sha256={expected_sha256} (vendored path: {current_path})")
+
+
 def sha256_json(value: Any) -> str:
     payload = json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
     return hashlib.sha256(payload.encode()).hexdigest()
@@ -896,10 +941,28 @@ def validate_data_manifest(task: str, data_path: Path) -> Dict[str, Any]:
     effective_n = len({str(row.get("stem_id")) for row in rows})
     if manifest.get("effective_n_stems") != effective_n:
         raise ValueError("manifest effective stem n mismatch")
-    references = {str(Path(path).resolve()) for path in manifest.get("exclusion_references", [])}
-    expected_references = {str(path.resolve()) for path in SEALED_REFERENCES}
-    if references != expected_references:
-        raise ValueError("enumerated exclusion-reference union mismatch")
+    if any(not path.is_file() for path in SEALED_REFERENCES):
+        missing = [str(path) for path in SEALED_REFERENCES if not path.is_file()]
+        raise FileNotFoundError(
+            "sealed exclusion references unavailable; set CONFLUENCE_T0_REPO to the "
+            f"byte-pinned extraction core (missing: {missing})")
+    expected_by_name = {
+        path.name: (path.resolve(), sha256_file(path)) for path in SEALED_REFERENCES
+    }
+    if len(expected_by_name) != len(SEALED_REFERENCES):
+        raise ValueError("sealed exclusion reference basenames are not unique")
+    recorded_references = [Path(value) for value in manifest.get("exclusion_references", [])]
+    resolved_references = [
+        resolve_exclusion_reference(recorded, expected_by_name)
+        for recorded in recorded_references
+    ]
+    resolved_hashes = Counter(digest for _, digest in resolved_references)
+    expected_hashes = Counter(digest for _, digest in expected_by_name.values())
+    if resolved_hashes != expected_hashes:
+        raise ValueError(
+            "enumerated exclusion-reference content union mismatch; "
+            f"expected sha256 multiset={dict(expected_hashes)}")
+    resolved_sources = []
     if task.startswith("halueval_"):
         if manifest.get("source_commit") != HALU_COMMIT or not manifest.get("raw_sha256"):
             raise ValueError("HaluEval commit/raw hash mismatch")
@@ -917,27 +980,31 @@ def validate_data_manifest(task: str, data_path: Path) -> Dict[str, Any]:
         if set(sources) != expected_names:
             raise ValueError("ANLI source split set mismatch")
         for source in sources.values():
-            source_path = Path(source["path"])
-            name = source_path.name
+            recorded_path = Path(source["path"])
+            name = recorded_path.name
             expected_sha = FROZEN_ARROW_HASHES.get(name)
-            if (source.get("sha256") != expected_sha or not source_path.exists()
-                    or sha256_file(source_path) != expected_sha):
+            if source.get("sha256") != expected_sha or expected_sha is None:
                 raise ValueError(f"ANLI source hash mismatch: {name}")
+            source_path = resolve_frozen_arrow(recorded_path, expected_sha)
+            resolved_sources.append(str(source_path))
         if manifest.get("rng") != "numpy.random.RandomState":
             raise ValueError("ANLI RNG class mismatch")
     else:
         if manifest.get("artifact_fingerprint") != TRIVIA_FINGERPRINT:
             raise ValueError("TriviaQA fingerprint mismatch")
-        source_path = Path(manifest.get("source_file") or "")
-        name = source_path.name
+        recorded_path = Path(manifest.get("source_file") or "")
+        name = recorded_path.name
         expected_sha = FROZEN_ARROW_HASHES.get(name)
-        if (manifest.get("source_sha256") != expected_sha or not source_path.exists()
-                or sha256_file(source_path) != expected_sha):
+        if manifest.get("source_sha256") != expected_sha or expected_sha is None:
             raise ValueError("TriviaQA source hash mismatch")
+        source_path = resolve_frozen_arrow(recorded_path, expected_sha)
+        resolved_sources.append(str(source_path))
         if manifest.get("rng") != "random.Random":
             raise ValueError("TriviaQA RNG class mismatch")
     return {"path": str(path), "sha256": sha256_file(path),
-            "source_verified": True}
+            "source_verified": True,
+            "resolved_source_files": resolved_sources,
+            "resolved_exclusion_references": [str(path) for path, _ in resolved_references]}
 
 
 def main() -> None:

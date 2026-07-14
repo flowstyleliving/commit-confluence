@@ -35,6 +35,8 @@ Commands:
 
 Set CONFLUENCE_PYTHON to choose a Python interpreter. Set CONFLUENCE_T0_REPO
 only to deliberately override the vendored, byte-pinned extraction core.
+Set CONFLUENCE_HF_CACHE to a Hugging Face datasets cache containing the frozen
+Arrow artifacts when they are not under the platform default cache path.
 EOF
 }
 

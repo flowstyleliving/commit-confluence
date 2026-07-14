@@ -587,6 +587,76 @@ normalizer was amended between smokes and strict cells, citing this entry.
 model outputs are not regenerated. Re-scored profiles are stamped
 `reaudited_under=bench/1.3-A1`.
 
+### A2 — 2026-07-14 — Restore the registered A2 analysis path; stem-aware E3
+
+**Timing:** filed while Phase 4 was paused, before any strict cell completed and before any
+registered BENCH metric was computed. This entry is not backdated and does not modify A1's
+historical text.
+**Defect:** A1 correctly changed execution profiles and summaries from `bench/1.2` to
+`bench/1.3`, but the hash-frozen `analyze_universality.py` still strictly required
+`bench/1.2` at both A2 input gates. It would therefore reject every profile produced by the
+run it was registered to score and then reject the strict summary. A1's "what does NOT
+change" clause omitted the analysis path, and the extension manifest's original A1
+`unchanged` string named "analysis". Although literally accurate as a statement about file
+bytes, that provenance statement was consequentially misleading because leaving analysis
+unchanged made the registered estimator inoperable. The manifest retains that original
+wording and adds a visible `unchanged_correction` linked to A2.
+**A2 repair:** `analyze_universality.py` now has one analysis-local constant,
+`ACCEPTED_SPEC_VERSION = "bench/1.3"`, and both profile and summary gates use strict equality
+to it. It is deliberately mirrored instead of imported from `run_bench.py`: importing the
+execution harness would couple matrix-only analysis to its MLX/runtime dependency boundary.
+The extension manifest freezes and re-stamps both files together; a future spec bump must
+amend both. The gate does not accept `bench/1.2`, a version range, or a prefix match.
+**Estimator output schema:** `bench-a2/1.2` is retained. That string versions the estimator's
+output contract, which this repair does not change; it is independent of the input execution
+spec version.
+**E3 correction (descriptive, non-gating):** paired-task label-efficiency subsamples now draw
+whole stems, so one row of a TriviaQA/HaluEval pair cannot enter while its twin is left out.
+For ungrouped tasks, where each stem is one row, the implementation takes the preserved
+row-stratified RNG path identically and asserts the unique-stem condition. Reported sample
+sizes remain label budgets. This correction is separate from the registered A2 endpoint and
+cannot change an endpoint verdict.
+**Scope:** this amendment is spec-restoring, not spec-altering. It changes no bar,
+denominator, endpoint, estimator, fixed cell, cell set, sign convention, data, template,
+sampling frame, control, or inference threshold. The `fusion_rank_mean_geom` LOMO estimator
+and strict `> 0.55` / 8-of-10 rule are unchanged.
+**Additive sealed sensitivity:** `cluster_sensitivity.py` is an explicitly descriptive,
+non-gating stem-cluster sensitivity for the ten published sealed TriviaQA cells. It changes
+only the resampling unit for that report and does not alter the sealed 18/20 result.
+**Disclosure rule for the paper:** the BENCH extension must disclose the A1→A2 version-gate
+desynchronization and pre-Phase-4 repair, the unchanged `bench-a2/1.2` output schema, and the
+stem-aware E3 correction. Any label-cost claim must name the label budget and paired-stem
+subsampling rule. The sealed cluster sensitivity must be labeled descriptive and non-gating.
+
+### A3 — 2026-07-14 — Resolve frozen BENCH inputs by content, not builder-machine path
+
+**Timing:** filed with A2 while Phase 4 was paused, before any strict cell completed and before
+any registered BENCH metric was computed. Phase-2 data manifests remain byte-frozen.
+**Defect:** the six frozen manifests truthfully record the absolute paths used on the builder
+machine, but `run_bench.py` treated those provenance strings as portable identities. It
+compared exclusion paths to the current dependency root and required Arrow files at the
+recorded `/Users/msrk/...` locations. A vendored dependency or a reviewer cache therefore
+failed despite containing the exact registered bytes. Rewriting the frozen manifests would
+destroy provenance and still would not make absolute paths portable.
+**Repair:** the recorded paths remain untouched as provenance. Exclusion-reference identity
+is now the exact sha256 multiset of the enumerated union, resolved first at the recorded path
+and then at the corresponding current/vendored reference. Frozen Arrow artifacts resolve
+through `$CONFLUENCE_HF_CACHE`, then the platform Hugging Face datasets-cache default, then
+the recorded path, and must match `FROZEN_ARROW_HASHES`. Missing bytes fail closed with the
+environment variable and expected sha256 in the error.
+**Scope:** A3 changes source resolution only. It changes no source bytes, datum, manifest,
+exclusion union, sampling frame, seed, RNG, task, bar, denominator, endpoint, estimator,
+panel, sign convention, control, or result interpretation. `SPEC_VERSION` remains
+`bench/1.3`.
+**Phase-3 consequence:** changing the load-bearing `run_bench.py` hash changes the extension
+manifest sha256. Existing `SMOKE_SUMMARY.json` is not silently re-stamped. The strict launcher
+continues to fail closed on that mismatch; the executor must perform and document the Phase-3
+provenance re-audit required by the harness before Phase 4 resumes.
+**Disclosure rule for the paper/review packet:** state that frozen manifests retain original
+builder paths as provenance while execution resolves and verifies content-addressed inputs;
+name `$CONFLUENCE_HF_CACHE` as the portability override. Do not call BENCH resume-ready until
+the post-A3 smoke provenance gate passes.
+
 ## 10. Audit tables
 
 ### 10.1 v2-review (proposal-level) required fixes — status after v1.2

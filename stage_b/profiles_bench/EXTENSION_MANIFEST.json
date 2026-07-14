@@ -20,7 +20,64 @@
     "new": "bench/1.3",
     "old": "bench/1.2"
    },
-   "unchanged": "calibrator, fusion_signs, builders, gate, analysis, attestations, parity report"
+   "unchanged": "calibrator, fusion_signs, builders, gate, analysis, attestations, parity report",
+   "unchanged_correction": {
+    "filed_by": "A2",
+    "date": "2026-07-14",
+    "original_wording_retained": true,
+    "correction": "analysis was byte-unchanged but incompatible with A1's bench/1.3 outputs; A2 restores the registered analysis path"
+   }
+  },
+  {
+   "id": "A2",
+   "date": "2026-07-14",
+   "amended_by": "Claude Code / MK",
+   "prereg_section": "9",
+   "reason": "restore strict bench/1.3 A2 input gates and make descriptive E3 paired-stem-aware; filed before any completed Phase-4 cell",
+   "spec_version": {
+    "old": "bench/1.3",
+    "new": "bench/1.3"
+   },
+   "estimator_output_schema": {
+    "old": "bench-a2/1.2",
+    "new": "bench-a2/1.2"
+   },
+   "changed_files": {
+    "stage_b/PRE_REGISTRATION_BENCH.md": {
+     "old": "bfb3ba2c38271c3221505746c5f49aaca78f8c6708dd0c37b615f5a97c81b286",
+     "new": "69293dbe64e3e8ceadf1fef108eb69a691ef8f0af3f315d28fea864fbf3e65c7"
+    },
+    "stage_b/analyze_universality.py": {
+     "old": "d85cacf891f1e5c574e1aa53b55e486e284d9db57e8af917d370d934a7f3aef2",
+     "new": "3a7cddbb71a6466175eefc520d6c45705b4bf724392fd443b05db76dadabe2fc"
+    }
+   },
+   "unchanged": "calibrator, run_bench execution semantics, fusion_signs, builders, gate, bars, denominators, endpoints, data, attestations, parity report",
+   "verification": "not run by Codex; executor verification required"
+  },
+  {
+   "id": "A3",
+   "date": "2026-07-14",
+   "amended_by": "Claude Code / MK",
+   "prereg_section": "9",
+   "reason": "resolve frozen Arrow and exclusion inputs by registered content hash without rewriting Phase-2 manifests",
+   "spec_version": {
+    "old": "bench/1.3",
+    "new": "bench/1.3"
+   },
+   "changed_files": {
+    "stage_b/PRE_REGISTRATION_BENCH.md": {
+     "old": "bfb3ba2c38271c3221505746c5f49aaca78f8c6708dd0c37b615f5a97c81b286",
+     "new": "69293dbe64e3e8ceadf1fef108eb69a691ef8f0af3f315d28fea864fbf3e65c7"
+    },
+    "stage_b/run_bench.py": {
+     "old": "70b15c9f030cc32c3421b50c6668baa37328b7c57b73ec3e24bfe609e89fcb56",
+     "new": "f670c1e08ab44a6176807a312fdf2680b1188d2daff06f7c46bfddaa73a7ba57"
+    }
+   },
+   "unchanged": "calibrator, fusion_signs, builders, gate, frozen Phase-2 manifest bytes, bars, denominators, endpoints, data, attestations, parity report",
+   "smoke_provenance_status": "STALE-BLOCKING: executor must complete post-A3 Phase-3 provenance re-audit; SMOKE_SUMMARY.json was not rewritten by this script",
+   "verification": "not run by Codex; executor verification required"
   }
  ],
  "calibrator_diff": {
@@ -40,12 +97,12 @@
  "extension_calibrator_sha256": "c79009a3adaf57c6ad38d2400c3c705e12d00ab18d917399b59d56b23d513e9a",
  "files": {
   "confluence_calibrator.py": "c79009a3adaf57c6ad38d2400c3c705e12d00ab18d917399b59d56b23d513e9a",
-  "stage_b/PRE_REGISTRATION_BENCH.md": "bfb3ba2c38271c3221505746c5f49aaca78f8c6708dd0c37b615f5a97c81b286",
-  "stage_b/analyze_universality.py": "d85cacf891f1e5c574e1aa53b55e486e284d9db57e8af917d370d934a7f3aef2",
+  "stage_b/PRE_REGISTRATION_BENCH.md": "69293dbe64e3e8ceadf1fef108eb69a691ef8f0af3f315d28fea864fbf3e65c7",
+  "stage_b/analyze_universality.py": "3a7cddbb71a6466175eefc520d6c45705b4bf724392fd443b05db76dadabe2fc",
   "stage_b/check_fresh_data.py": "333b26369401bccb4fc7cbea5d7c97e1595089d4f0e586d178f337de83d2e917",
   "stage_b/fusion_signs.json": "92b5468bd241b517dd2d5cf70ad28556157424deb54b5f85f88af0305ff35372",
   "stage_b/generate_bench_data.py": "f24b5b3171725b6b19b8691371fb8b36182b0b506b54d63020d003ce7bdb21c9",
-  "stage_b/run_bench.py": "70b15c9f030cc32c3421b50c6668baa37328b7c57b73ec3e24bfe609e89fcb56"
+  "stage_b/run_bench.py": "f670c1e08ab44a6176807a312fdf2680b1188d2daff06f7c46bfddaa73a7ba57"
  },
  "fusion_signs_sha256": "92b5468bd241b517dd2d5cf70ad28556157424deb54b5f85f88af0305ff35372",
  "phase0_calibrator_sha256": "f55279162eb15a3806a0698e1540e898a13f70dbdc9e99820a969bb2bf563bbb",
@@ -58,5 +115,12 @@
  },
  "schema_version": "bench-extension-manifest/1.2",
  "seed": 20260711,
- "spec_version": "bench/1.3"
+ "spec_version": "bench/1.3",
+ "restamp_provenance": {
+  "script": "stage_b/restamp_manifest_a2.py",
+  "script_sha256": "bb26ccd7d1764cf67a3e0789cc9d2de46e5d9c5ac72cde83e0edfe11a564aa48",
+  "executed_by": "Claude Code / MK",
+  "codex_execution_status": "not run by Codex",
+  "smoke_summary_rewritten": false
+ }
 }
