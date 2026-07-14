@@ -1,0 +1,16 @@
+# EXACT pins for the analysis path — the versions the registered run was executed with.
+#
+# Use this file, not requirements-analysis.txt, when the goal is to reproduce the
+# registered numbers. The repo claims byte-exact reproducibility of the endpoint
+# verification; a floating dependency range cannot honor that claim, because
+# scikit-learn's roc_auc_score and numpy's RNG stream are both version-sensitive.
+#
+#   pip install -r requirements-analysis.lock.txt
+#
+# Registered run environment: python 3.11
+# (The BENCH extension is separately pinned to python 3.9.6 + mlx 0.29.3 / mlx_lm 0.29.1;
+#  see runtime_versions in stage_b/profiles_bench/EXTENSION_MANIFEST.json.)
+
+numpy==2.0.2
+scipy==1.13.1
+scikit-learn==1.6.1

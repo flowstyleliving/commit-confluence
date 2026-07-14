@@ -2,11 +2,17 @@
 # verification (stage_b/verify_endpoints.py) and the descriptive analyses E1/E2/E3
 # (stage_b/analyze_universality.py) on the published score matrices. No models needed.
 #
-# Regenerating the matrices themselves (fresh model forwards) additionally requires the
-# sealed dependency repo (t0-morphology-furnace, via $CONFLUENCE_T0_REPO) and its MLX
-# stack on Apple silicon - see README.
+# Regenerating matrices uses the vendored core plus requirements-runtime.txt and an
+# Apple-silicon MLX environment - see README.
 #
 # Registered run executed with: numpy 2.0.2, scipy 1.13.1, scikit-learn 1.6.1 (python 3.11).
+#
+# >>> TO REPRODUCE THE REGISTERED NUMBERS, USE requirements-analysis.lock.txt <<<
+# The ranges below are a compatibility floor for casual use. They are NOT sufficient for
+# the repo's byte-exact reproducibility claim: roc_auc_score (scikit-learn) and the RNG
+# stream (numpy) are both version-sensitive, so a floating range can silently move a CI
+# bound. The lock file pins the exact executed versions.
+
 numpy>=1.26
 scipy>=1.11
 scikit-learn>=1.4

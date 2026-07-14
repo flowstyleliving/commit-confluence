@@ -1,7 +1,8 @@
 #!/bin/bash
 # Parallel gemma4 venv + model + introspection. Does NOT touch the seal venv or the sealed t0 core.
-LOG="$HOME/Documents/commit-confluence/stage_b/_ext_logs/gemma4_setup.log"
-VENV="$HOME/Documents/commit-confluence/.venv_gemma4"
+ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+LOG="$ROOT/stage_b/_ext_logs/gemma4_setup.log"
+VENV="$ROOT/.venv_gemma4"
 PYBASE="$(command -v python3.12 || command -v python3.11 || command -v python3)"
 {
   echo "=== setup start ($(date)) base python: $PYBASE ==="
@@ -15,6 +16,6 @@ PYBASE="$(command -v python3.12 || command -v python3.11 || command -v python3)"
   echo "=== download gemma-4-12B-it-qat-4bit ==="
   "$VENV/bin/python" -c "from huggingface_hub import snapshot_download; print(snapshot_download('mlx-community/gemma-4-12B-it-qat-4bit'))" 2>&1 | tail -2
   echo "=== introspect ==="
-  "$VENV/bin/python" "$HOME/Documents/commit-confluence/stage_b/introspect_gemma4.py" 2>&1
+  "$VENV/bin/python" "$ROOT/stage_b/introspect_gemma4.py" 2>&1
   echo "=== setup done ($(date)) ==="
 } > "$LOG" 2>&1

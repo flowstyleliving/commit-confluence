@@ -1,0 +1,91 @@
+#!/bin/sh
+set -eu
+
+ROOT=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+VENDORED_T0="$ROOT/vendor/t0_core"
+
+export CONFLUENCE_T0_REPO="${CONFLUENCE_T0_REPO:-$VENDORED_T0}"
+export PYTHONPATH="$CONFLUENCE_T0_REPO${PYTHONPATH:+:$PYTHONPATH}"
+
+if [ -n "${CONFLUENCE_PYTHON:-}" ]; then
+    PYTHON=$CONFLUENCE_PYTHON
+elif [ -x "$ROOT/.venv/bin/python" ]; then
+    PYTHON="$ROOT/.venv/bin/python"
+else
+    PYTHON=python3
+fi
+
+cd "$ROOT"
+
+usage() {
+    cat <<'EOF'
+Usage: ./confluence COMMAND [ARGS...]
+
+Commands:
+  setup     Create .venv and install the pinned full runtime
+  doctor    Check the vendored core, platform, and Python dependencies
+  verify    Reproduce registered endpoint verdicts from published matrices
+  analyze   Run the registered E1/E2/E3 analyses
+  seal      Run stage_b/run_seal.py with the vendored extraction core
+  bench     Run stage_b/run_bench.py with the vendored extraction core
+  resume-bench  Resume the paused BENCH Phase-4 strict run exactly
+  ext       Run the post-seal scale/family extension
+  python    Run a Python command inside the standalone environment
+  help      Show this help
+
+Set CONFLUENCE_PYTHON to choose a Python interpreter. Set CONFLUENCE_T0_REPO
+only to deliberately override the vendored, byte-pinned extraction core.
+EOF
+}
+
+command=${1:-help}
+if [ "$#" -gt 0 ]; then shift; fi
+
+case "$command" in
+    setup)
+        SETUP_PYTHON=${CONFLUENCE_SETUP_PYTHON:-/usr/bin/python3}
+        "$SETUP_PYTHON" -m venv "$ROOT/.venv"
+        "$ROOT/.venv/bin/python" -m pip install --upgrade pip
+        "$ROOT/.venv/bin/python" -m pip install -r requirements-runtime.txt
+        ;;
+    doctor)
+        exec "$PYTHON" stage_b/standalone_doctor.py "$@"
+        ;;
+    verify)
+        exec "$PYTHON" stage_b/verify_endpoints.py "$@"
+        ;;
+    analyze)
+        exec "$PYTHON" stage_b/analyze_universality.py "$@"
+        ;;
+    seal)
+        exec "$PYTHON" stage_b/run_seal.py "$@"
+        ;;
+    bench)
+        exec "$PYTHON" stage_b/run_bench.py "$@"
+        ;;
+    resume-bench)
+        exec "$PYTHON" stage_b/run_bench.py \
+            --phase strict --resume --out-dir stage_b/profiles_bench \
+            --task halueval_qa=stage_b/data_bench/halueval_qa_seed20260711_n1000.jsonl \
+            --task anli_r1_rep=stage_b/data_bench/anli_r1_rep_seed20260711_n1000.jsonl \
+            --task triviaqa_paired_rep=stage_b/data_bench/triviaqa_paired_rep_seed20260711_n1000.jsonl \
+            --task anli_r2=stage_b/data_bench/anli_r2_seed20260711_n1000.jsonl \
+            --task halueval_dialogue=stage_b/data_bench/halueval_dialogue_seed20260711_n1000.jsonl \
+            --task halueval_summarization=stage_b/data_bench/halueval_summarization_seed20260711_n1000.jsonl \
+            "$@"
+        ;;
+    ext)
+        exec "$PYTHON" stage_b/run_ext.py "$@"
+        ;;
+    python)
+        exec "$PYTHON" "$@"
+        ;;
+    help|-h|--help)
+        usage
+        ;;
+    *)
+        echo "Unknown command: $command" >&2
+        usage >&2
+        exit 2
+        ;;
+esac

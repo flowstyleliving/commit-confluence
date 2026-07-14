@@ -10,10 +10,12 @@ import sys, os, json
 import numpy as np
 import mlx.core as mx
 
-T0 = os.path.expanduser("~/Documents/t0-morphology-furnace")
+HERE = os.path.dirname(os.path.abspath(__file__))
+REPO_ROOT = os.path.dirname(HERE)
+T0 = os.environ.get("CONFLUENCE_T0_REPO", os.path.join(REPO_ROOT, "vendor", "t0_core"))
 sys.path.insert(0, T0); sys.path.insert(0, os.path.join(T0, "exploratory/shadow-ambiguity"))
-sys.path.insert(0, os.path.expanduser("~/Documents/commit-confluence"))
-sys.path.insert(0, os.path.expanduser("~/Documents/commit-confluence/stage_b"))
+sys.path.insert(0, REPO_ROOT)
+sys.path.insert(0, HERE)
 
 import pri_calibrator as SEAL
 from diagnose_inter_head_disagreement import _target_layer_map

@@ -7,9 +7,11 @@ Runtime monkeypatch of pri_calibrator._compute_panel_scores_for_sample (slices c
 value tensors on the head axis); readout/null_ratio/RPV/confidence + calibration are untouched.
 No sealed-core file is edited. Run in the SEAL venv (t0 .venv, mlx-lm 0.29.1)."""
 import sys, os, json
-os.chdir(os.path.expanduser("~/Documents/commit-confluence"))
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+os.chdir(REPO_ROOT)
 sys.path.insert(0, os.getcwd()); sys.path.insert(0, "stage_b")
-sys.path.insert(0, os.path.expanduser("~/Documents/t0-morphology-furnace"))
+sys.path.insert(0, os.environ.get(
+    "CONFLUENCE_T0_REPO", os.path.join(REPO_ROOT, "vendor", "t0_core")))
 os.makedirs("/tmp/crab", exist_ok=True)
 
 import pri_calibrator as SEAL

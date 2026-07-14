@@ -1,7 +1,9 @@
 """Can the t0 extraction pipeline be imported+reused under the gemma4 venv (newer mlx-lm)?
 If yes, we monkeypatch only the loader (mlx-vlm) and reuse ALL extraction code. Read-only probe."""
 import sys, os, inspect
-T0 = os.path.expanduser("~/Documents/t0-morphology-furnace")
+HERE = os.path.dirname(os.path.abspath(__file__))
+REPO_ROOT = os.path.dirname(HERE)
+T0 = os.environ.get("CONFLUENCE_T0_REPO", os.path.join(REPO_ROOT, "vendor", "t0_core"))
 sys.path.insert(0, T0)
 sys.path.insert(0, os.path.join(T0, "exploratory/shadow-ambiguity"))
 

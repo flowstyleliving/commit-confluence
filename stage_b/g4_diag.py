@@ -9,10 +9,13 @@ import sys, os, json
 import numpy as np
 import mlx.core as mx
 
-sys.path.insert(0, os.path.expanduser("~/Documents/t0-morphology-furnace"))
-sys.path.insert(0, os.path.expanduser("~/Documents/t0-morphology-furnace/exploratory/shadow-ambiguity"))
-sys.path.insert(0, os.path.expanduser("~/Documents/commit-confluence"))
-sys.path.insert(0, os.path.expanduser("~/Documents/commit-confluence/stage_b"))
+HERE = os.path.dirname(os.path.abspath(__file__))
+REPO_ROOT = os.path.dirname(HERE)
+T0 = os.environ.get("CONFLUENCE_T0_REPO", os.path.join(REPO_ROOT, "vendor", "t0_core"))
+sys.path.insert(0, T0)
+sys.path.insert(0, os.path.join(T0, "exploratory/shadow-ambiguity"))
+sys.path.insert(0, REPO_ROOT)
+sys.path.insert(0, HERE)
 
 import comprehensive_run as CR
 import pri_v2_io_plugins as io_plugins
@@ -20,7 +23,7 @@ from mlx_vlm import load as vload
 
 G4_ID = "mlx-community/gemma-4-12B-it-qat-4bit"
 G3_ID = "mlx-community/gemma-3-12b-it-4bit"
-DATA = os.path.expanduser("~/Documents/commit-confluence/stage_b/data/triviaqa_paired_seed20260612_n200.jsonl")
+DATA = os.path.join(HERE, "data", "triviaqa_paired_seed20260612_n200.jsonl")
 
 prompts, labels, _ = CR._load_calibration_jsonl(DATA)
 m, proc = vload(G4_ID)

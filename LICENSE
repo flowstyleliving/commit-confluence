@@ -22,11 +22,69 @@ SOFTWARE.
 
 ---
 
-Data and result artifacts in this repository (the files under stage_b/data/,
-stage_b/profiles/, stage_b/profiles_ext/, stage_b/profiles_ext_gemma4/,
-modal/data_upload/, modal/refs_upload/, and the *.json result files) are
-licensed under Creative Commons Attribution 4.0 International (CC BY 4.0),
-matching the companion paper. https://creativecommons.org/licenses/by/4.0/
+## Artifacts (CC BY 4.0)
 
-The evaluation prompts derive from ANLI (Nie et al., 2020) and TriviaQA
-(Joshi et al., 2017); those datasets retain their original licenses.
+Data and result artifacts in this repository are licensed under Creative Commons
+Attribution 4.0 International (CC BY 4.0), matching the companion paper.
+https://creativecommons.org/licenses/by/4.0/
+
+This covers the files under:
+
+  stage_b/data/                  stage_b/profiles/
+  stage_b/data_bench/            stage_b/profiles_bench/
+  stage_b/profiles_ext/          stage_b/profiles_ext_gemma4/
+  modal/data_upload/             modal/refs_upload/
+
+and the *.json result files at any level.
+
+## Third-party code vendored in this repository
+
+  vendor/t0_core/    minimal extraction import closure from t0-morphology-furnace
+  modal/seal/        the seal modules mounted by the GPU extractor, vendored verbatim
+                     at the versions that actually ran (see modal/PROVENANCE.md)
+
+Both are (c) 2026 Michael S. R. Kitti and carried under the MIT terms above.
+
+## Upstream datasets
+
+The evaluation prompts derive from the datasets below, which retain their original
+licenses. Redistribution here is for reproducibility of the registered analyses.
+
+  ANLI       Nie et al., 2020. Adversarial NLI: A New Benchmark for Natural
+             Language Understanding. ACL 2020. CC BY-NC 4.0.
+             https://github.com/facebookresearch/anli
+
+  TriviaQA   Joshi et al., 2017. TriviaQA: A Large Scale Distantly Supervised
+             Challenge Dataset for Reading Comprehension. ACL 2017. Apache-2.0.
+             https://github.com/mandarjoshi90/triviaqa
+
+  HaluEval   Li et al., 2023. HaluEval: A Large-Scale Hallucination Evaluation
+             Benchmark for Large Language Models. EMNLP 2023. MIT License.
+             https://github.com/RUCAIBox/HaluEval
+             Used by the BENCH extension (stage_b/data_bench/). The HaluEval MIT
+             notice is reproduced below as required by that license.
+
+--- HaluEval, MIT License, Copyright (c) 2023 RUCAIBox ---
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in the
+Software without restriction, including without limitation the rights to use, copy,
+modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+and to permit persons to whom the Software is furnished to do so, subject to the
+following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+--- end HaluEval notice ---
+
+Note: ANLI is CC BY-NC 4.0 (non-commercial). Derived prompts under stage_b/data/
+and stage_b/data_bench/ inherit that restriction; the CC BY 4.0 grant above applies
+to this repository's own contributions and does not override upstream terms.

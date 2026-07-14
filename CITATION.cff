@@ -1,12 +1,47 @@
 cff-version: 1.2.0
-message: "If you use this repository, please cite the companion paper."
-title: "commit-confluence: a pre-registered commit-moment hallucination monitor"
+message: "If you use this repository, please cite the companion paper (preferred-citation below)."
+
+title: "commit-confluence: reproducibility artifact for a pre-registered study of commit-moment hallucination signals"
+abstract: >-
+  Pre-registration, gated evaluation data, registered per-deployment score matrices and
+  calibration profiles, and analysis code for a study of whether four families of
+  commit-moment internal signals (attention morphology, residual motion, readout geometry,
+  and output confidence) unify into one calibrated detector, and whether that detector is
+  universal or must be calibrated per deployment. Scope note: the evaluated task is
+  candidate-answer correctness readout (YES/NO judgment of a supplied candidate) on ten
+  4-bit open-weight models of 1.7B-8B across two benchmarks, not detection of spontaneous
+  hallucination in free generation.
+
+type: software
 authors:
   - family-names: Kitti
     given-names: Michael S. R.
     email: msrkittty@proton.me
+    affiliation: "Furnace Research"
+
+version: "1.0.0"
+date-released: 2026-07-14
 repository-code: "https://github.com/flowstyleliving/commit-confluence"
 license: MIT
+# Artifacts (data + results) are CC BY 4.0; see LICENSE for the split and for
+# upstream dataset terms (ANLI CC BY-NC 4.0, TriviaQA Apache-2.0, HaluEval MIT).
+
+keywords:
+  - hallucination detection
+  - large language models
+  - pre-registration
+  - calibration
+  - interpretability
+  - uncertainty quantification
+
+identifiers:
+  - type: url
+    value: "https://github.com/flowstyleliving/commit-confluence/releases/tag/prereg-seal-20260612"
+    description: "Tagged commit from which the registered run was executed (seed 20260612)"
+  # TODO(pre-review): mint a Zenodo DOI for the reviewed snapshot and add it here as a
+  # doi identifier. An external review packet should cite an immutable, archived version,
+  # not a mutable branch.
+
 preferred-citation:
   type: article
   title: "Decoder LLM Hallucination: No Universal Detector, but a Universal Floor — A Pre-Registered Study of Commit-Moment Hallucination Monitoring Across Ten Language Models"
@@ -14,7 +49,11 @@ preferred-citation:
     - family-names: Kitti
       given-names: Michael S. R.
       email: msrkittty@proton.me
+      affiliation: "Furnace Research"
   year: 2026
   month: 6
   institution:
     name: "Furnace Research"
+  # TODO(pre-review): add DOI / arXiv id / venue once the companion paper is posted.
+  # Until then the paper is cited by title only, which is not sufficient for an
+  # external review packet.

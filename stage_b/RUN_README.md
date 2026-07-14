@@ -1,10 +1,17 @@
 # Stage B - launch instructions
 
+> 📜 **HISTORICAL — this page is the pre-launch checklist, kept for provenance.**
+> Both prerequisites below were met and **the registered seal RAN on 2026-06-11**
+> (seed 20260612, tag `prereg-seal-20260612`). The verdict — geometric **18/20 PASS**,
+> full panel **18/20 FAIL** against a ≥19 bar — is in the top-level [`README.md`](../README.md).
+> Nothing here is outstanding. Read this only to see what the gate *was*; read the root
+> README for what is true now.
+
 The harness `run_seal.py` is complete and smoked end-to-end (ACE pass + fresh readout pass +
 sample_idx merge + fusion cells + dual-endpoint nested-OOB selection + shuffled-label controls +
-matrix persistence + profile emit + planned-cohort endpoint eval). What remains before the
-**registered fresh-seed seal** is: (1) the Codex adversarial sign-off, and (2) **fresh data
-files that pass the data gate** (the one external prerequisite).
+matrix persistence + profile emit + planned-cohort endpoint eval). What remained before the
+**registered fresh-seed seal** was: (1) the Codex adversarial sign-off, and (2) **fresh data
+files that pass the data gate** (the one external prerequisite). Both were completed.
 
 ## The fresh-data prerequisite (amendments A1 + A5)
 
@@ -24,13 +31,13 @@ per line) at a NEW seed (e.g. 20260612), **excluding any example whose normalize
 in the sealed files**. Then gate them:
 
 ```bash
-.../python stage_b/check_fresh_data.py --task anli \
+./confluence python stage_b/check_fresh_data.py --task anli \
   --fresh /path/anli_R1_seed20260612_n200.jsonl \
-  --sealed ~/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl \
+  --sealed vendor/t0_core/experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl \
   --out stage_b/data_gate_anli.json
-.../python stage_b/check_fresh_data.py --task triviaqa \
+./confluence python stage_b/check_fresh_data.py --task triviaqa \
   --fresh /path/triviaqa_paired_seed20260612_n200.jsonl \
-  --sealed ~/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl \
+  --sealed vendor/t0_core/experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl \
   --out stage_b/data_gate_triviaqa.json
 ```
 
@@ -39,7 +46,7 @@ Both must print PASS (schema, n, balance, zero intra-dups, **zero overlap**) bef
 ## Launch (one command, after Codex sign-off + data gate PASS)
 
 ```bash
-~/Documents/t0-morphology-furnace/.venv/bin/python stage_b/run_seal.py \
+./confluence seal \
   --seed 20260612 \
   --anli    /path/to/anli_R1_seed20260612_n200.jsonl \
   --triviaqa /path/to/triviaqa_paired_seed20260612_n200.jsonl \
@@ -67,7 +74,7 @@ so a stale/preview/old-code profile can never be folded into the registered coho
 ## After the run - pre-registered descriptive analyses (A7, zero new forwards)
 
 ```bash
-.../python stage_b/analyze_universality.py --profiles-dir stage_b/profiles \
+./confluence analyze --profiles-dir stage_b/profiles \
   --out stage_b/universality.json
 ```
 
@@ -77,7 +84,7 @@ label-efficiency curve. All descriptive, none gate the seal.
 ## Preview mode (no fresh data, sealed-seed reuse)
 
 ```bash
-.../python stage_b/run_seal.py --seed 20260610 --allow-sealed-data --out-dir stage_b/preview_profiles
+./confluence seal --seed 20260610 --allow-sealed-data --out-dir stage_b/preview_profiles
 ```
 
 `SUMMARY.json` carries `"is_preview": true`. Useful as a thesis-level sanity check; the

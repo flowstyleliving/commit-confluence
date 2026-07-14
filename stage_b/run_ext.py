@@ -7,7 +7,8 @@ registered seal (stage_b/profiles/) is never touched. Idempotent: skips cells wh
 skips models not yet in the HF cache. gemma-3-12b/anli runs first (headline orphan-scale question).
 """
 import sys, os, json, time
-os.chdir(os.path.expanduser("~/Documents/commit-confluence"))
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+os.chdir(REPO_ROOT)
 sys.path.insert(0, os.getcwd())
 sys.path.insert(0, os.path.join(os.getcwd(), "stage_b"))
 from run_seal import run_cell
