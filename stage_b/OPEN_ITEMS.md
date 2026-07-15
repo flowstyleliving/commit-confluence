@@ -10,15 +10,21 @@ Last touched: 2026-07-14.
 
 ## OPEN
 
-### O1 — Amendment A4: single source of truth for `SPEC_VERSION`  ⟶ blocks a clean smoke re-audit
-- **What:** `run_bench.SPEC_VERSION` and `analyze_universality.ACCEPTED_SPEC_VERSION` are two
-  independent `"bench/1.3"` literals with no code guard. This is the exact channel that caused
-  the A2 bug. Fix = leaf module `stage_b/bench_spec.py` imported by both.
-- **Detail / work order:** `stage_b/CODEX_WORKORDER_A4_SPEC_MODULE.md`
-- **Constraints:** filed as Amendment A4 (changes a load-bearing hash, adds a frozen file).
-  Needs its OWN re-stamp script — `restamp_manifest_a2.py` correctly refuses to re-run
-  (`{ids}=={"A1"}` guard, verified). Land A4 **before** the post-A3 smoke re-audit (O2) so that
-  re-audit runs once against a final manifest.
+### O1 — Amendment A4 + Phase-4 launch readiness  ⟶ the path to the confirmatory run
+- **What:** A4 = leaf module `stage_b/bench_spec.py` (single `SPEC_VERSION` source) imported by both
+  `run_bench.py` and `analyze_universality.py`, closing the two-independent-literals channel that
+  caused the A2 bug. Bundled with Phase-4 launch readiness (denominator/stem-gate/abort guards +
+  a paste-able run command block) and the O3 regen.
+- **Detail / work order:** `stage_b/CODEX_WORKORDER_A4_AND_PHASE4_READINESS.md` (bundled; supersedes
+  the standalone `CODEX_WORKORDER_A4_SPEC_MODULE.md`, which stays as the A4 rationale). Includes a
+  **post-run Codex review prompt** to be handed back after the executor completes Phase 4.
+- **Constraints:** A4 is an Amendment (changes a load-bearing hash, adds a frozen file); needs its
+  OWN `restamp_manifest_a4.py` — `restamp_manifest_a2.py` correctly refuses to re-run
+  (`{ids}=={"A1"}` guard, verified). Land A4 **before** the O2 smoke re-audit so it runs once.
+- **Supply precondition — CLEARED 2026-07-14:** `halueval_qa` built + gate-clean (1000 rows / 500
+  stems / 500–500 balanced, 0 over 2048-token cap, 0 sealed overlap, no warnings). The earlier
+  "~457 stems" worry was a mis-read — 457 is a *token length*; QA is 100% admissible. The
+  confirmatory-supply-abort risk does NOT fire. What remains is mechanical, not scientific.
 - **Owner:** Codex authors, executor (Claude Code / MK) runs. NOT STARTED.
 
 ### O2 — Post-A3 smoke provenance re-audit  ⟶ hard-blocks BENCH Phase 4
