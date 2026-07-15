@@ -78,6 +78,40 @@
    "unchanged": "calibrator, fusion_signs, builders, gate, frozen Phase-2 manifest bytes, bars, denominators, endpoints, data, attestations, parity report",
    "smoke_provenance_status": "STALE-BLOCKING: executor must complete post-A3 Phase-3 provenance re-audit; SMOKE_SUMMARY.json was not rewritten by this script",
    "verification": "not run by Codex; executor verification required"
+  },
+  {
+   "id": "A4",
+   "date": "2026-07-14",
+   "amended_by": "Claude Code / MK",
+   "prereg_section": "9",
+   "reason": "replace the runner/analyzer spec-version mirror with one dependency-free leaf; filed before any completed Phase-4 cell",
+   "spec_version": {
+    "old": "bench/1.3",
+    "new": "bench/1.3"
+   },
+   "changed_files": {
+    "stage_b/PRE_REGISTRATION_BENCH.md": {
+     "old": "69293dbe64e3e8ceadf1fef108eb69a691ef8f0af3f315d28fea864fbf3e65c7",
+     "new": "342e907e2868496e4d2ec12a623b86c30a4d2f4ef8fa00d919033ef43374d893"
+    },
+    "stage_b/analyze_universality.py": {
+     "old": "3a7cddbb71a6466175eefc520d6c45705b4bf724392fd443b05db76dadabe2fc",
+     "new": "000e8d017024e645272e5218601131c97acfd1a4991b9c95836a191ac7374396"
+    },
+    "stage_b/run_bench.py": {
+     "old": "f670c1e08ab44a6176807a312fdf2680b1188d2daff06f7c46bfddaa73a7ba57",
+     "new": "9870a8b9f88849629773ea0f7fab5bd3b3ce6f17abb038a224e752df4585f2ef"
+    },
+    "stage_b/bench_spec.py": {
+     "old": null,
+     "new": "bf0a1b2764cd0d406b8788af1d680268a7c30bf90b6846839b7ca4211896c83c",
+     "status": "NEW frozen files{} entry"
+    }
+   },
+   "unchanged": "calibrator, fusion_signs, builders, gate, frozen Phase-2 manifest bytes, bars, denominators, endpoints, estimators, data, controls, attestations, parity report",
+   "smoke_provenance_status": "STALE-BLOCKING: executor must complete the post-A4 Phase-3 smoke provenance re-audit; SMOKE_SUMMARY.json was not rewritten by this script",
+   "bundled_e3_regeneration": "executor-owned after restamp/smoke re-audit; not run by Codex",
+   "verification": "not run by Codex; executor verification required"
   }
  ],
  "calibrator_diff": {
@@ -97,12 +131,13 @@
  "extension_calibrator_sha256": "c79009a3adaf57c6ad38d2400c3c705e12d00ab18d917399b59d56b23d513e9a",
  "files": {
   "confluence_calibrator.py": "c79009a3adaf57c6ad38d2400c3c705e12d00ab18d917399b59d56b23d513e9a",
-  "stage_b/PRE_REGISTRATION_BENCH.md": "69293dbe64e3e8ceadf1fef108eb69a691ef8f0af3f315d28fea864fbf3e65c7",
-  "stage_b/analyze_universality.py": "3a7cddbb71a6466175eefc520d6c45705b4bf724392fd443b05db76dadabe2fc",
+  "stage_b/PRE_REGISTRATION_BENCH.md": "342e907e2868496e4d2ec12a623b86c30a4d2f4ef8fa00d919033ef43374d893",
+  "stage_b/analyze_universality.py": "000e8d017024e645272e5218601131c97acfd1a4991b9c95836a191ac7374396",
   "stage_b/check_fresh_data.py": "333b26369401bccb4fc7cbea5d7c97e1595089d4f0e586d178f337de83d2e917",
   "stage_b/fusion_signs.json": "92b5468bd241b517dd2d5cf70ad28556157424deb54b5f85f88af0305ff35372",
   "stage_b/generate_bench_data.py": "f24b5b3171725b6b19b8691371fb8b36182b0b506b54d63020d003ce7bdb21c9",
-  "stage_b/run_bench.py": "f670c1e08ab44a6176807a312fdf2680b1188d2daff06f7c46bfddaa73a7ba57"
+  "stage_b/run_bench.py": "9870a8b9f88849629773ea0f7fab5bd3b3ce6f17abb038a224e752df4585f2ef",
+  "stage_b/bench_spec.py": "bf0a1b2764cd0d406b8788af1d680268a7c30bf90b6846839b7ca4211896c83c"
  },
  "fusion_signs_sha256": "92b5468bd241b517dd2d5cf70ad28556157424deb54b5f85f88af0305ff35372",
  "phase0_calibrator_sha256": "f55279162eb15a3806a0698e1540e898a13f70dbdc9e99820a969bb2bf563bbb",
@@ -117,10 +152,17 @@
  "seed": 20260711,
  "spec_version": "bench/1.3",
  "restamp_provenance": {
-  "script": "stage_b/restamp_manifest_a2.py",
-  "script_sha256": "bb26ccd7d1764cf67a3e0789cc9d2de46e5d9c5ac72cde83e0edfe11a564aa48",
+  "script": "stage_b/restamp_manifest_a4.py",
+  "script_sha256": "963f49c2e24ee01a22e3ca33f4f803e18e7caf5379767063f2822a0ccc44dcf6",
   "executed_by": "Claude Code / MK",
   "codex_execution_status": "not run by Codex",
-  "smoke_summary_rewritten": false
+  "smoke_summary_rewritten": false,
+  "previous": {
+   "script": "stage_b/restamp_manifest_a2.py",
+   "script_sha256": "bb26ccd7d1764cf67a3e0789cc9d2de46e5d9c5ac72cde83e0edfe11a564aa48",
+   "executed_by": "Claude Code / MK",
+   "codex_execution_status": "not run by Codex",
+   "smoke_summary_rewritten": false
+  }
  }
 }

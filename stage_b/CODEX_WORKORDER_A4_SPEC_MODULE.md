@@ -1,6 +1,7 @@
 # Work order — Amendment A4: single source of truth for `SPEC_VERSION`
 
-**Status:** OPEN — not started. Filed 2026-07-14, after A2/A3 landed.
+**Status:** SUPERSEDED by `CODEX_WORKORDER_A4_AND_PHASE4_READINESS.md`; Codex authoring complete,
+executor restamp/verification pending. Filed 2026-07-14, after A2/A3 landed.
 **Lane:** Codex authors (write/audit only, runs nothing). Claude Code / MK executes and verifies.
 **Blocking:** BENCH Phase 4 is already blocked pending the post-A3 smoke provenance re-audit.
 A4 should land *before* that re-audit so the two re-stamps collapse into one.

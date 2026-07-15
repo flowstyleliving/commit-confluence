@@ -22,13 +22,13 @@ from pathlib import Path
 from typing import Any, Dict, List, Sequence, Tuple
 
 import numpy as np
+from bench_spec import SPEC_VERSION
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import confluence_calibrator as CC
 import check_fresh_data as GATE
 
 
-SPEC_VERSION = "bench/1.3"
 SEED = 20260711
 NBOOT = 2000
 FROZEN_FUSION_SHA256 = "92b5468bd241b517dd2d5cf70ad28556157424deb54b5f85f88af0305ff35372"
@@ -82,7 +82,8 @@ SEALED_REFERENCES = [
     STAGE_B / "data/triviaqa_paired_seed20260612_n200.jsonl",
 ]
 MANIFEST_FILES = [
-    STAGE_B / "run_bench.py", STAGE_B / "generate_bench_data.py",
+    STAGE_B / "run_bench.py", STAGE_B / "bench_spec.py",
+    STAGE_B / "generate_bench_data.py",
     STAGE_B / "check_fresh_data.py", STAGE_B / "analyze_universality.py",
     ROOT / "confluence_calibrator.py", STAGE_B / "fusion_signs.json",
     STAGE_B / "PRE_REGISTRATION_BENCH.md",

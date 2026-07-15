@@ -32,6 +32,7 @@ Usage:
 """
 import sys, os, json, glob, argparse
 import numpy as np
+from bench_spec import SPEC_VERSION as ACCEPTED_SPEC_VERSION
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import confluence_calibrator as CC
 SEAL = CC.SEAL
@@ -43,11 +44,8 @@ BENCH_PLANNED_SLUGS = [
     "gemma-3-4b-it-4bit",
 ]
 
-# bench/1.3 Amendment A2: single source of truth inside the analysis boundary.  This is
-# intentionally mirrored, rather than imported from run_bench.py: importing the execution
-# harness would couple matrix-only analysis to its MLX/runtime imports.  The extension manifest
-# freezes both files, and A2 requires them to be re-stamped together after any future bump.
-ACCEPTED_SPEC_VERSION = "bench/1.3"
+# Amendment A4: bind the strict analysis gate to the dependency-free execution-spec leaf.
+# Importing this leaf preserves the matrix-only boundary without importing the MLX harness.
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 

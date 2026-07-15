@@ -1,6 +1,7 @@
 # Work order — Amendment A4 + Phase-4 launch readiness (bundled)
 
-**Status:** OPEN — not started. Filed 2026-07-14. Tracks O1 (+ enables O2, O3) in `OPEN_ITEMS.md`.
+**Status:** AUTHORED BY CODEX — executor verification/restamp/smoke/E3/Phase 4 pending. Filed
+2026-07-14. Tracks O1 (+ enables O2, O3) in `OPEN_ITEMS.md`.
 **Codex:** authors everything below (write/audit only — runs nothing: no smokes, no forwards, no
 calibration, no `restamp` execution, no agent spawns). Marks every verification "not run by Codex".
 **Executor (Claude Code / MK):** runs the restamp, the smoke re-audit, and the strict Phase-4 seal

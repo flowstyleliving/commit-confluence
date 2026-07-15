@@ -657,6 +657,40 @@ builder paths as provenance while execution resolves and verifies content-addres
 name `$CONFLUENCE_HF_CACHE` as the portability override. Do not call BENCH resume-ready until
 the post-A3 smoke provenance gate passes.
 
+### A4 — 2026-07-14 — One dependency-free execution-spec source of truth
+
+**Timing:** filed after A2/A3 landed and while Phase 4 remained paused, before any strict cell
+completed and before any registered BENCH metric was computed. This entry is append-only and
+does not rewrite the historical A1, A2, or A3 records.
+**Residual defect:** A2 restored both strict analysis gates but left
+`run_bench.SPEC_VERSION` and `analyze_universality.ACCEPTED_SPEC_VERSION` as independent
+`bench/1.3` literals. Manifest co-stamping made drift visible after a re-stamp but did not make
+drift impossible in code; a future runner-only bump could again make the registered analysis
+path unreachable.
+**Repair:** `stage_b/bench_spec.py` is a dependency-free leaf containing the sole runtime
+`SPEC_VERSION`. `run_bench.py` imports it directly, and `analyze_universality.py` imports the
+same object under the analysis-local name `ACCEPTED_SPEC_VERSION`. The leaf imports no MLX,
+torch, calibrator, or other runtime dependency, so analysis remains usable from its NumPy-only
+environment. Both profile and summary gates retain strict equality; no prefix, range, regex, or
+fallback acceptance is introduced.
+**Frozen-file consequence:** the extension manifest adds `stage_b/bench_spec.py` as a new
+`files{}` entry and re-stamps the amended preregistration, runner, and analyzer. The A4 restamp
+does not rewrite `SMOKE_SUMMARY.json`; its manifest attestation remains stale and Phase 4 remains
+hard-blocked until the executor completes the post-A4 Phase-3 smoke provenance re-audit against
+the final manifest.
+**Bundled descriptive regeneration:** after the A4 restamp and smoke re-audit, the executor
+regenerates committed `stage_b/universality.json` once with the A2 paired-stem E3 draw. The
+executor expectation recorded before this amendment is 15/18 deployable deployments at the
+150-label budget on both endpoints, with ANLI bit-identical; any deviation stops propagation.
+This descriptive regeneration does not gate or alter a sealed or BENCH endpoint.
+**Scope:** A4 is a constant-extraction and provenance amendment. It changes no spec value,
+output schema, bar, denominator, endpoint, estimator, task, model, data, template, sampling
+frame, resampling unit, control, sign convention, threshold, or result interpretation.
+**Disclosure rule for the paper/review packet:** disclose that A2's temporary mirror was
+replaced before Phase 4 by a dependency-free shared spec leaf, and that the final extension
+manifest and smoke provenance were re-audited in that order. Runtime verification and all
+numerical checks are executor-owned and were not run by Codex.
+
 ## 10. Audit tables
 
 ### 10.1 v2-review (proposal-level) required fixes — status after v1.2

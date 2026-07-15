@@ -25,16 +25,17 @@ Last touched: 2026-07-14.
   stems / 500–500 balanced, 0 over 2048-token cap, 0 sealed overlap, no warnings). The earlier
   "~457 stems" worry was a mis-read — 457 is a *token length*; QA is 100% admissible. The
   confirmatory-supply-abort risk does NOT fire. What remains is mechanical, not scientific.
-- **Owner:** Codex authors, executor (Claude Code / MK) runs. NOT STARTED.
+- **Owner:** Codex authoring complete; executor (Claude Code / MK) runs. See
+  `stage_b/CODEX_A4_PHASE4_READINESS_HANDOFF.md`. EXECUTOR STEPS PENDING.
 
-### O2 — Post-A3 smoke provenance re-audit  ⟶ hard-blocks BENCH Phase 4
-- **What:** the A2/A3 (and forthcoming A4) manifest re-stamps invalidate
+### O2 — Post-A4 smoke provenance re-audit  ⟶ hard-blocks BENCH Phase 4
+- **What:** the A2/A3 and pending A4 manifest re-stamps invalidate
   `SMOKE_SUMMARY.json`'s attested `extension_manifest_sha256`. `run_bench.py:842` enforces that
   equality, so strict Phase 4 hard-fails until the 60/60 Phase-3 smokes are re-verified against
   the final manifest and `SMOKE_SUMMARY.json` is re-stamped. This is deliberate fail-closed
   behaviour, not a bug.
-- **Detail:** `stage_b/CODEX_A2_AMENDMENT_HANDOFF.md` (smoke_provenance_status), and the A3
-  record in `stage_b/profiles_bench/EXTENSION_MANIFEST.json`.
+- **Detail:** `stage_b/CODEX_A4_PHASE4_READINESS_HANDOFF.md` (exact smoke command), the A2/A3
+  handoff, and the A3 record in `stage_b/profiles_bench/EXTENSION_MANIFEST.json`.
 - **Constraints:** do AFTER O1. Executor-run (re-scores smokes); Codex cannot run it.
 - **Owner:** executor. NOT STARTED. **BENCH Phase 4 stays blocked until this closes.**
 
@@ -49,11 +50,10 @@ Last touched: 2026-07-14.
   *down* by ≤0.2 — the expected direction, since the old draw let a stem's correct row calibrate
   against its own wrong twin. Fresh numbers are saved at
   `<scratchpad>/universality_postA2.json` and transcribed into the results page (see detail).
-- **Decision needed:** regenerate and re-commit `universality.json` on the branch (it is
-  descriptive / non-gating), OR bundle the regen into the A4 execution so the registered
-  artifacts move once. Recommend **bundle with A4** — one coherent re-stamp.
+- **Decision:** bundled into the A4 executor sequence so the registered descriptive artifact
+  moves once. Codex authored the command and stop assertions; execution remains pending.
 - **Detail:** `wiki/results/e3-stem-aware-2026-07-14.md` (vault).
-- **Owner:** executor. NOT STARTED.
+- **Owner:** executor. COMMAND + STOP ASSERTIONS AUTHORED; EXECUTION PENDING.
 
 ### O4 — Scoped adversarial audit of the reviewer packet + A2/A3 logic
 - **What:** Codex authored A2/A3, so it has not been adversarially reviewed by fresh eyes — only
