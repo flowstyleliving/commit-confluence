@@ -1,7 +1,7 @@
 {
  "spec_version": "bench/1.3",
  "seed": 20260711,
- "extension_manifest_sha256": "922da0a22ca217c9058ec38562f36ab371fa535030ea162c4b6b00961dd48974",
+ "extension_manifest_sha256": "e5266ba7d5d959b7f89a9b7a1df268f8ad38fa2d297193a03d54d2a077e4ce89",
  "task_data_sha256": {
   "halueval_qa": "460019e12d25c33e9f842f52bb0e3fd70274256290dc7784101ebaa95b2163e7",
   "anli_r1_rep": "da99648854ea67a938b5d10e00c418b4096f687222d4ec959efabf981efc4622",
@@ -345,8 +345,7 @@
      }
     ]
    },
-   "controls_pass": true,
-   "status_v12": "BEHAVIORAL-FAIL"
+   "controls_pass": true
   },
   "Mistral-Nemo-Instruct-2407-4bit/halueval_qa": {
    "status": "PASS",
@@ -1426,8 +1425,7 @@
      }
     ]
    },
-   "controls_pass": true,
-   "status_v12": "BEHAVIORAL-FAIL"
+   "controls_pass": true
   },
   "Mistral-Nemo-Instruct-2407-4bit/anli_r1_rep": {
    "status": "PASS",
@@ -2507,8 +2505,7 @@
      }
     ]
    },
-   "controls_pass": true,
-   "status_v12": "BEHAVIORAL-FAIL"
+   "controls_pass": true
   },
   "Mistral-Nemo-Instruct-2407-4bit/triviaqa_paired_rep": {
    "status": "PASS",
@@ -3588,8 +3585,7 @@
      }
     ]
    },
-   "controls_pass": true,
-   "status_v12": "BEHAVIORAL-FAIL"
+   "controls_pass": true
   },
   "Mistral-Nemo-Instruct-2407-4bit/anli_r2": {
    "status": "PASS",
@@ -4669,8 +4665,7 @@
      }
     ]
    },
-   "controls_pass": true,
-   "status_v12": "BEHAVIORAL-FAIL"
+   "controls_pass": true
   },
   "Mistral-Nemo-Instruct-2407-4bit/halueval_dialogue": {
    "status": "PASS",
@@ -5750,8 +5745,7 @@
      }
     ]
    },
-   "controls_pass": true,
-   "status_v12": "BEHAVIORAL-FAIL"
+   "controls_pass": true
   },
   "Mistral-Nemo-Instruct-2407-4bit/halueval_summarization": {
    "status": "PASS",
@@ -6509,6 +6503,5 @@
    },
    "controls_pass": true
   }
- },
- "reaudited_under": "bench/1.3-A1"
+ }
 }

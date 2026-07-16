@@ -1193,8 +1193,8 @@
     "ac1c269cb4222a4e136a3d09edad301056c1f36a"
    ]
   },
-  "spec_version": "bench/1.2",
-  "extension_manifest_sha256": "7109f8148d3c00419284fbb1192d4495a745d50d7bde82e072a83ccf09c37bb6",
+  "spec_version": "bench/1.3",
+  "extension_manifest_sha256": "e5266ba7d5d959b7f89a9b7a1df268f8ad38fa2d297193a03d54d2a077e4ce89",
   "panel_sha256": "12df895a2e5213cb77a7331b22f1ac00bb217d04cb288f67cabe588581c38db8",
   "ordered_stem_id_sha256": "53ff0739cf52124fec968711d78c7a1bd4f53b9d1d4550e38c3016bed54ec8b6",
   "control_seeds": [
@@ -1216,7 +1216,7 @@
   "commitment_audit_sha256": "bf5a0d4b9eab40586176346b7bf4df796558317ebcba71004703d66d6154c555",
   "feature_extraction_comparability": "Phase-1 frozen-row byte parity passed"
  },
- "spec_version": "bench/1.2",
+ "spec_version": "bench/1.3",
  "data_path": "stage_b/profiles_bench/_smokes/anli_r1_rep.jsonl",
  "data_file_sha256": "357097ac2ea542c030c4b8b9dce3607bda0eace48106e5c8356700ea338ae344",
  "commitment_audit": {
@@ -1320,14 +1320,11 @@
     "normalized": "no",
     "canonical": true
    }
-  ],
-  "n_noncanonical_v13": 0
+  ]
  },
  "terminal_status": "OK",
  "endpoint_status_by_unit": {
   "row": "OK",
   "cluster": "OK"
- },
- "terminal_status_v12": "OK",
- "reaudited_under": "bench/1.3-A1"
+ }
 }

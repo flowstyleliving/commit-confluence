@@ -1147,8 +1147,8 @@
     "647ca0751669b21a364c86ccc5df54c4d7e4e91c"
    ]
   },
-  "spec_version": "bench/1.2",
-  "extension_manifest_sha256": "7109f8148d3c00419284fbb1192d4495a745d50d7bde82e072a83ccf09c37bb6",
+  "spec_version": "bench/1.3",
+  "extension_manifest_sha256": "e5266ba7d5d959b7f89a9b7a1df268f8ad38fa2d297193a03d54d2a077e4ce89",
   "panel_sha256": "12df895a2e5213cb77a7331b22f1ac00bb217d04cb288f67cabe588581c38db8",
   "ordered_stem_id_sha256": "42073207aeb0da0a23f72176dfbca10b437db1c79dc848e08df4a5c066800c40",
   "control_seeds": [
@@ -1170,7 +1170,7 @@
   "commitment_audit_sha256": "396f47f6d1f19ce944a5bcfa11a74b93b799958b59ddd111f89b00f53f033a9a",
   "feature_extraction_comparability": "Phase-1 frozen-row byte parity passed"
  },
- "spec_version": "bench/1.2",
+ "spec_version": "bench/1.3",
  "data_path": "stage_b/profiles_bench/_smokes/triviaqa_paired_rep.jsonl",
  "data_file_sha256": "4adfe205bcc85275e47cd5fd6d8f46eead2a9c7b5beed9af9cb5233f8c78d2ce",
  "commitment_audit": {
@@ -1274,14 +1274,11 @@
     "normalized": "no",
     "canonical": true
    }
-  ],
-  "n_noncanonical_v13": 0
+  ]
  },
  "terminal_status": "OK",
  "endpoint_status_by_unit": {
   "row": "OK",
   "cluster": "OK"
- },
- "terminal_status_v12": "OK",
- "reaudited_under": "bench/1.3-A1"
+ }
 }

@@ -1230,8 +1230,8 @@
     "647ca0751669b21a364c86ccc5df54c4d7e4e91c"
    ]
   },
-  "spec_version": "bench/1.2",
-  "extension_manifest_sha256": "7109f8148d3c00419284fbb1192d4495a745d50d7bde82e072a83ccf09c37bb6",
+  "spec_version": "bench/1.3",
+  "extension_manifest_sha256": "e5266ba7d5d959b7f89a9b7a1df268f8ad38fa2d297193a03d54d2a077e4ce89",
   "panel_sha256": "12df895a2e5213cb77a7331b22f1ac00bb217d04cb288f67cabe588581c38db8",
   "ordered_stem_id_sha256": "d38d23c1f665f12b5d63bde0c8bc4b62238b415577aa10224b7e73911e234b93",
   "control_seeds": [
@@ -1253,7 +1253,7 @@
   "commitment_audit_sha256": "2d15b06aec0693f146e655f55a3fd9bedecc096596e1b07ee92607d68de11d9e",
   "feature_extraction_comparability": "Phase-1 frozen-row byte parity passed"
  },
- "spec_version": "bench/1.2",
+ "spec_version": "bench/1.3",
  "data_path": "stage_b/profiles_bench/_smokes/halueval_summarization.jsonl",
  "data_file_sha256": "41b3acbe73dc05c9f9f382ffa89c43ad8867b52f1f9d5269a2f7bf14e59c2895",
  "commitment_audit": {
@@ -1357,14 +1357,11 @@
     "normalized": "yes",
     "canonical": true
    }
-  ],
-  "n_noncanonical_v13": 0
+  ]
  },
  "terminal_status": "OK",
  "endpoint_status_by_unit": {
   "row": "OK",
   "cluster": "OK"
- },
- "terminal_status_v12": "OK",
- "reaudited_under": "bench/1.3-A1"
+ }
 }

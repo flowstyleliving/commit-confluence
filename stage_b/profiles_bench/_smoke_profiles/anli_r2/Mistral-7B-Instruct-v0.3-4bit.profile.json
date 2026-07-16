@@ -1235,8 +1235,8 @@
     "a4b8f870474b0eb527f466a03fbc187830d271f5"
    ]
   },
-  "spec_version": "bench/1.2",
-  "extension_manifest_sha256": "7109f8148d3c00419284fbb1192d4495a745d50d7bde82e072a83ccf09c37bb6",
+  "spec_version": "bench/1.3",
+  "extension_manifest_sha256": "e5266ba7d5d959b7f89a9b7a1df268f8ad38fa2d297193a03d54d2a077e4ce89",
   "panel_sha256": "12df895a2e5213cb77a7331b22f1ac00bb217d04cb288f67cabe588581c38db8",
   "ordered_stem_id_sha256": "5dea3583033b2ba28ac205a43a4e0c110ce8d05b5aee9d785c2f8553e40df010",
   "control_seeds": [
@@ -1249,105 +1249,27 @@
    "row": "OK",
    "cluster": "OK"
   },
-  "commitment_status": "COMMITMENT-FAIL",
+  "commitment_status": "OK",
   "commitment_tally": {
    "n": 16,
-   "n_canonical": 10,
-   "n_noncanonical": 6
+   "n_canonical": 16,
+   "n_noncanonical": 0
   },
-  "commitment_audit_sha256": "acb0e33fb255d363aad99a2f1abb8ab995f3e61f91c78298f76b02698653a8ef",
+  "commitment_audit_sha256": "d1fe91d3584543268830328751f6e60844a4b0437444d5880f4981397ced34d4",
   "feature_extraction_comparability": "Phase-1 frozen-row byte parity passed"
  },
- "spec_version": "bench/1.2",
+ "spec_version": "bench/1.3",
  "data_path": "stage_b/profiles_bench/_smokes/anli_r2.jsonl",
  "data_file_sha256": "6554d870e6e88d74507e0c6df1abed7ba9a8dbe35122db7f8840b82d0bb13ac8",
  "commitment_audit": {
   "n": 16,
-  "n_canonical": 10,
-  "n_noncanonical": 6,
+  "n_canonical": 16,
+  "n_noncanonical": 0,
   "rows": [
    {
     "token_id": 1395,
     "decoded": "Y",
     "normalized": "y",
-    "canonical": false
-   },
-   {
-    "token_id": 8697,
-    "decoded": "NO",
-    "normalized": "no",
-    "canonical": true
-   },
-   {
-    "token_id": 1395,
-    "decoded": "Y",
-    "normalized": "y",
-    "canonical": false
-   },
-   {
-    "token_id": 8697,
-    "decoded": "NO",
-    "normalized": "no",
-    "canonical": true
-   },
-   {
-    "token_id": 1395,
-    "decoded": "Y",
-    "normalized": "y",
-    "canonical": false
-   },
-   {
-    "token_id": 1395,
-    "decoded": "Y",
-    "normalized": "y",
-    "canonical": false
-   },
-   {
-    "token_id": 1395,
-    "decoded": "Y",
-    "normalized": "y",
-    "canonical": false
-   },
-   {
-    "token_id": 8697,
-    "decoded": "NO",
-    "normalized": "no",
-    "canonical": true
-   },
-   {
-    "token_id": 8697,
-    "decoded": "NO",
-    "normalized": "no",
-    "canonical": true
-   },
-   {
-    "token_id": 8697,
-    "decoded": "NO",
-    "normalized": "no",
-    "canonical": true
-   },
-   {
-    "token_id": 8697,
-    "decoded": "NO",
-    "normalized": "no",
-    "canonical": true
-   },
-   {
-    "token_id": 8697,
-    "decoded": "NO",
-    "normalized": "no",
-    "canonical": true
-   },
-   {
-    "token_id": 8697,
-    "decoded": "NO",
-    "normalized": "no",
-    "canonical": true
-   },
-   {
-    "token_id": 8697,
-    "decoded": "NO",
-    "normalized": "no",
     "canonical": true
    },
    {
@@ -1360,16 +1282,91 @@
     "token_id": 1395,
     "decoded": "Y",
     "normalized": "y",
-    "canonical": false
+    "canonical": true
+   },
+   {
+    "token_id": 8697,
+    "decoded": "NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 1395,
+    "decoded": "Y",
+    "normalized": "y",
+    "canonical": true
+   },
+   {
+    "token_id": 1395,
+    "decoded": "Y",
+    "normalized": "y",
+    "canonical": true
+   },
+   {
+    "token_id": 1395,
+    "decoded": "Y",
+    "normalized": "y",
+    "canonical": true
+   },
+   {
+    "token_id": 8697,
+    "decoded": "NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 8697,
+    "decoded": "NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 8697,
+    "decoded": "NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 8697,
+    "decoded": "NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 8697,
+    "decoded": "NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 8697,
+    "decoded": "NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 8697,
+    "decoded": "NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 8697,
+    "decoded": "NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 1395,
+    "decoded": "Y",
+    "normalized": "y",
+    "canonical": true
    }
-  ],
-  "n_noncanonical_v13": 0
+  ]
  },
  "terminal_status": "OK",
  "endpoint_status_by_unit": {
   "row": "OK",
   "cluster": "OK"
- },
- "terminal_status_v12": "COMMITMENT-FAIL",
- "reaudited_under": "bench/1.3-A1"
+ }
 }
