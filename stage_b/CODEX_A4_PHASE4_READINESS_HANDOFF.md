@@ -186,6 +186,17 @@ PY
 
 Stop and do not commit/propagate the regenerated artifact if either assertion fails.
 
+> **Executor note 2026-07-15 — this assertion block has TWO bugs; superseded by a corrected check.**
+> Both are assertion defects, not data drift (Codex-confirmed). (a) `assert all(new[k]==old[k])` for
+> ANLI is unpassable by construction: the same block requires every new record to carry
+> `subsample_unit`, which the pre-A2 baseline `bc6e2be` lacks, so full-dict equality can never hold —
+> the correct check compares only the shared numeric fields (`frac_deployable_full`/`geom`), on which
+> ANLI is bit-identical (0/30 records changed). (b) `assert both==15` has the wrong constant: the
+> joint (≥0.8 on both endpoints) count is **14/18** — and it is 14/18 for BOTH the committed `bc6e2be`
+> file and the stem-aware regen (stable across draws; per-endpoint is 15/18 each). The regenerated
+> `stage_b/universality.json` was therefore validated and IS safe to commit despite the raw assertion
+> tripping. Detail: `wiki/results/e3-stem-aware-2026-07-14.md`, `stage_b/OPEN_ITEMS.md` O3.
+
 ### 4. Detached strict Phase-4 run — exact registered invocation
 
 The raw trace streams to the run log. Launch and completion lifecycle lines also append to the

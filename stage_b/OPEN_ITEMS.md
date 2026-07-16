@@ -44,16 +44,19 @@ Last touched: 2026-07-14.
   pre-A2 **row-splitting** draw (0 `subsample_unit` fields). The code now draws whole stems on
   TriviaQA. The file a reviewer reads therefore disagrees with the code that generates it.
 - **Impact — LOW, and quantified:** re-running E3 under the stem-aware draw does **not** move
-  the paper's headline. At 150 labels, **15/18** deployments reach ≥0.8 deployability on BOTH
-  endpoints — identical to the old file. ANLI is bit-identical (0/30 numbers moved; it takes the
-  preserved legacy row path). Only 8 TriviaQA cells moved, all at n=50 (one at n=100), mostly
-  *down* by ≤0.2 — the expected direction, since the old draw let a stem's correct row calibrate
-  against its own wrong twin. Fresh numbers are saved at
-  `<scratchpad>/universality_postA2.json` and transcribed into the results page (see detail).
-- **Decision:** bundled into the A4 executor sequence so the registered descriptive artifact
-  moves once. Codex authored the command and stop assertions; execution remains pending.
+  the paper's headline. At 150 labels, **14/18** deployments reach ≥0.8 deployability on BOTH
+  endpoints — identical to the old file (`bc6e2be` is also 14/18). ANLI is bit-identical (0/30
+  numbers moved; it takes the preserved legacy row path). Fresh numbers saved at
+  `<scratchpad>/universality_postA2.json`; regen is bit-identical to them (deterministic).
+- **REGENERATED 2026-07-15 (A4 executor):** `stage_b/universality.json` re-run via
+  `./confluence analyze --profiles-dir stage_b/profiles`. Verified: ANLI 0/30 numbers moved
+  (only provenance fields `label_budget`/`subsample_unit` added), 14/18 @150 both draws,
+  deterministic. **Two handoff assertion bugs found (not data drift):** (a) ANLI dict-equality
+  compares the newly-added provenance fields ⇒ unpassable by construction; (b) magic number `15`
+  never matched any file — the true count is 14/18. Corrected the "15/18" miscount in the results
+  page. Regenerated artifact validated; commit decision pending user checkpoint.
 - **Detail:** `wiki/results/e3-stem-aware-2026-07-14.md` (vault).
-- **Owner:** executor. COMMAND + STOP ASSERTIONS AUTHORED; EXECUTION PENDING.
+- **Owner:** executor. REGEN DONE + VALIDATED; awaiting commit alongside strict Phase-4 checkpoint.
 
 ### O4 — Scoped adversarial audit of the reviewer packet + A2/A3 logic
 - **What:** Codex authored A2/A3, so it has not been adversarially reviewed by fresh eyes — only

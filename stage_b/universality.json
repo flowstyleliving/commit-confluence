@@ -1430,280 +1430,400 @@
  "E3_label_efficiency": {
   "Llama-3.1-8B-Instruct-4bit|anli_r1": {
    "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.0,
     "frac_deployable_geom": 0.0
    },
    "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.0,
     "frac_deployable_geom": 0.0
    },
    "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.0,
     "frac_deployable_geom": 0.0
    }
   },
   "Llama-3.1-8B-Instruct-4bit|triviaqa_paired": {
    "50": {
-    "frac_deployable_full": 0.2,
-    "frac_deployable_geom": 0.1
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.4,
+    "frac_deployable_geom": 0.4
    },
    "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    },
    "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    }
   },
   "Llama-3.2-3B-Instruct-4bit|anli_r1": {
    "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.1,
     "frac_deployable_geom": 0.1
    },
    "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.1,
     "frac_deployable_geom": 0.2
    },
    "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.3,
     "frac_deployable_geom": 0.5
    }
   },
   "Llama-3.2-3B-Instruct-4bit|triviaqa_paired": {
    "50": {
-    "frac_deployable_full": 0.9,
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.8,
     "frac_deployable_geom": 0.9
    },
    "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    },
    "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    }
   },
   "Mistral-7B-Instruct-v0.3-4bit|anli_r1": {
    "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.0,
     "frac_deployable_geom": 0.0
    },
    "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.2,
     "frac_deployable_geom": 0.3
    },
    "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.9,
     "frac_deployable_geom": 0.9
    }
   },
   "Mistral-7B-Instruct-v0.3-4bit|triviaqa_paired": {
    "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    },
    "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    },
    "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    }
   },
   "Mistral-Nemo-Instruct-2407-4bit|anli_r1": {
    "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.4,
     "frac_deployable_geom": 0.4
    },
    "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.9,
     "frac_deployable_geom": 0.9
    },
    "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    }
   },
   "Mistral-Nemo-Instruct-2407-4bit|triviaqa_paired": {
    "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    },
    "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    },
    "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    }
   },
   "Phi-3.5-mini-instruct-4bit|anli_r1": {
    "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.1,
     "frac_deployable_geom": 0.1
    },
    "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.0,
     "frac_deployable_geom": 0.0
    },
    "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.7,
     "frac_deployable_geom": 0.9
    }
   },
   "Phi-3.5-mini-instruct-4bit|triviaqa_paired": {
    "50": {
-    "frac_deployable_full": 0.7,
-    "frac_deployable_geom": 0.8
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.6,
+    "frac_deployable_geom": 0.6
    },
    "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    },
    "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    }
   },
   "Phi-4-mini-instruct-4bit|anli_r1": {
    "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.0,
     "frac_deployable_geom": 0.0
    },
    "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.8,
     "frac_deployable_geom": 0.7
    },
    "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    }
   },
   "Phi-4-mini-instruct-4bit|triviaqa_paired": {
    "50": {
-    "frac_deployable_full": 1.0,
-    "frac_deployable_geom": 1.0
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.9,
+    "frac_deployable_geom": 0.9
    },
    "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    },
    "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    }
   },
   "Qwen2.5-7B-Instruct-4bit|anli_r1": {
    "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.5,
     "frac_deployable_geom": 0.4
    },
    "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    },
    "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    }
   },
   "Qwen2.5-7B-Instruct-4bit|triviaqa_paired": {
    "50": {
-    "frac_deployable_full": 0.9,
-    "frac_deployable_geom": 0.8
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.8,
+    "frac_deployable_geom": 0.9
    },
    "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    },
    "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    }
   },
   "Qwen3-1.7B-4bit|anli_r1": {
    "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.0,
     "frac_deployable_geom": 0.0
    },
    "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.1,
     "frac_deployable_geom": 0.1
    },
    "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.2,
     "frac_deployable_geom": 0.2
    }
   },
   "Qwen3-1.7B-4bit|triviaqa_paired": {
    "50": {
-    "frac_deployable_full": 0.5,
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.4,
     "frac_deployable_geom": 0.0
    },
    "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
-    "frac_deployable_geom": 0.1
+    "frac_deployable_geom": 0.0
    },
    "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 0.3
    }
   },
   "Qwen3-8B-4bit|anli_r1": {
    "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.4,
     "frac_deployable_geom": 0.4
    },
    "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    },
    "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    }
   },
   "Qwen3-8B-4bit|triviaqa_paired": {
    "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    },
    "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    },
    "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    }
   },
   "gemma-3-4b-it-4bit|anli_r1": {
    "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.0,
     "frac_deployable_geom": 0.0
    },
    "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.0,
     "frac_deployable_geom": 0.0
    },
    "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
     "frac_deployable_full": 0.0,
     "frac_deployable_geom": 0.0
    }
   },
   "gemma-3-4b-it-4bit|triviaqa_paired": {
    "50": {
-    "frac_deployable_full": 1.0,
-    "frac_deployable_geom": 0.9
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.8,
+    "frac_deployable_geom": 0.7
    },
    "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    },
    "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
     "frac_deployable_full": 1.0,
     "frac_deployable_geom": 1.0
    }
