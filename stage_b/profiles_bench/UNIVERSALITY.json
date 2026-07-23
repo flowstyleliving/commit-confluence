@@ -1,0 +1,4362 @@
+{
+ "n_cells_loaded": 53,
+ "cells": [
+  "Llama-3.1-8B-Instruct-4bit|anli_r1_rep",
+  "Llama-3.1-8B-Instruct-4bit|anli_r2",
+  "Llama-3.1-8B-Instruct-4bit|halueval_dialogue",
+  "Llama-3.1-8B-Instruct-4bit|halueval_qa",
+  "Llama-3.1-8B-Instruct-4bit|halueval_summarization",
+  "Llama-3.1-8B-Instruct-4bit|triviaqa_paired_rep",
+  "Llama-3.2-3B-Instruct-4bit|anli_r1_rep",
+  "Llama-3.2-3B-Instruct-4bit|anli_r2",
+  "Llama-3.2-3B-Instruct-4bit|halueval_dialogue",
+  "Llama-3.2-3B-Instruct-4bit|halueval_qa",
+  "Llama-3.2-3B-Instruct-4bit|halueval_summarization",
+  "Llama-3.2-3B-Instruct-4bit|triviaqa_paired_rep",
+  "Mistral-7B-Instruct-v0.3-4bit|anli_r1_rep",
+  "Mistral-7B-Instruct-v0.3-4bit|anli_r2",
+  "Mistral-7B-Instruct-v0.3-4bit|halueval_dialogue",
+  "Mistral-7B-Instruct-v0.3-4bit|halueval_qa",
+  "Mistral-7B-Instruct-v0.3-4bit|halueval_summarization",
+  "Mistral-7B-Instruct-v0.3-4bit|triviaqa_paired_rep",
+  "Mistral-Nemo-Instruct-2407-4bit|anli_r1_rep",
+  "Mistral-Nemo-Instruct-2407-4bit|anli_r2",
+  "Mistral-Nemo-Instruct-2407-4bit|halueval_dialogue",
+  "Mistral-Nemo-Instruct-2407-4bit|halueval_qa",
+  "Mistral-Nemo-Instruct-2407-4bit|halueval_summarization",
+  "Mistral-Nemo-Instruct-2407-4bit|triviaqa_paired_rep",
+  "Phi-3.5-mini-instruct-4bit|halueval_qa",
+  "Phi-3.5-mini-instruct-4bit|triviaqa_paired_rep",
+  "Phi-4-mini-instruct-4bit|anli_r1_rep",
+  "Phi-4-mini-instruct-4bit|anli_r2",
+  "Phi-4-mini-instruct-4bit|halueval_dialogue",
+  "Phi-4-mini-instruct-4bit|halueval_qa",
+  "Phi-4-mini-instruct-4bit|halueval_summarization",
+  "Phi-4-mini-instruct-4bit|triviaqa_paired_rep",
+  "Qwen2.5-7B-Instruct-4bit|halueval_dialogue",
+  "Qwen2.5-7B-Instruct-4bit|halueval_qa",
+  "Qwen2.5-7B-Instruct-4bit|halueval_summarization",
+  "Qwen2.5-7B-Instruct-4bit|triviaqa_paired_rep",
+  "Qwen3-1.7B-4bit|anli_r1_rep",
+  "Qwen3-1.7B-4bit|anli_r2",
+  "Qwen3-1.7B-4bit|halueval_dialogue",
+  "Qwen3-1.7B-4bit|halueval_qa",
+  "Qwen3-1.7B-4bit|halueval_summarization",
+  "Qwen3-1.7B-4bit|triviaqa_paired_rep",
+  "Qwen3-8B-4bit|anli_r1_rep",
+  "Qwen3-8B-4bit|anli_r2",
+  "Qwen3-8B-4bit|halueval_dialogue",
+  "Qwen3-8B-4bit|halueval_qa",
+  "Qwen3-8B-4bit|halueval_summarization",
+  "Qwen3-8B-4bit|triviaqa_paired_rep",
+  "gemma-3-4b-it-4bit|anli_r1_rep",
+  "gemma-3-4b-it-4bit|anli_r2",
+  "gemma-3-4b-it-4bit|halueval_dialogue",
+  "gemma-3-4b-it-4bit|halueval_qa",
+  "gemma-3-4b-it-4bit|triviaqa_paired_rep"
+ ],
+ "E1_lomo": {
+  "anli_r1_rep": {
+   "holdout_winners": [
+    {
+     "holdout": "Llama-3.1-8B-Instruct-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.7956,
+     "sign": 1,
+     "holdout_auroc": 0.589804
+    },
+    {
+     "holdout": "Llama-3.2-3B-Instruct-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.7602,
+     "sign": 1,
+     "holdout_auroc": 0.838078
+    },
+    {
+     "holdout": "Mistral-7B-Instruct-v0.3-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.7514,
+     "sign": 1,
+     "holdout_auroc": 0.8990879999999999
+    },
+    {
+     "holdout": "Mistral-Nemo-Instruct-2407-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.7583,
+     "sign": 1,
+     "holdout_auroc": 0.8513079999999998
+    },
+    {
+     "holdout": "Phi-4-mini-instruct-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.7606,
+     "sign": 1,
+     "holdout_auroc": 0.8347140000000001
+    },
+    {
+     "holdout": "Qwen3-1.7B-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.7973,
+     "sign": 1,
+     "holdout_auroc": 0.577844
+    },
+    {
+     "holdout": "Qwen3-8B-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.7676,
+     "sign": 1,
+     "holdout_auroc": 0.7860319999999998
+    },
+    {
+     "holdout": "gemma-3-4b-it-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.7681,
+     "sign": 1,
+     "holdout_auroc": 0.782316
+    }
+   ],
+   "holdout_winner_survival": 8,
+   "fixed_cell_max_survival": {
+    "cell": "Fusion fusion_rank_mean_geom @ step 0",
+    "n_holdouts_gt055": 8,
+    "of_n_holdouts": 8
+   },
+   "n_holdouts": 8,
+   "landscape_cells_gt055": {
+    "Fusion fusion_rank_mean_geom @ step 0": 8,
+    "Fusion fusion_rank_mean_full @ step 0": 6
+   },
+   "landscape_note": "full cell x holdout matrix is multiplicity-prone; descriptive only",
+   "landscape": {
+    "attention[final_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.273292,
+     "Llama-3.2-3B-Instruct-4bit": 0.7805,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.8283760000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5891519999999999,
+     "Phi-4-mini-instruct-4bit": 0.770744,
+     "Qwen3-1.7B-4bit": 0.689252,
+     "Qwen3-8B-4bit": 0.144748,
+     "gemma-3-4b-it-4bit": 0.498252
+    },
+    "attention[final_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.42012000000000005,
+     "Llama-3.2-3B-Instruct-4bit": 0.7688119999999999,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.81418,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.599032,
+     "Phi-4-mini-instruct-4bit": 0.667324,
+     "Qwen3-1.7B-4bit": 0.7217119999999999,
+     "Qwen3-8B-4bit": 0.22358,
+     "gemma-3-4b-it-4bit": 0.4066
+    },
+    "attention[final_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.445656,
+     "Llama-3.2-3B-Instruct-4bit": 0.74156,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.8544799999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.537836,
+     "Phi-4-mini-instruct-4bit": 0.7091799999999999,
+     "Qwen3-1.7B-4bit": 0.679848,
+     "Qwen3-8B-4bit": 0.170468,
+     "gemma-3-4b-it-4bit": 0.671952
+    },
+    "attention[final_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.702712,
+     "Llama-3.2-3B-Instruct-4bit": 0.39727200000000007,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5221480000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.8466800000000001,
+     "Phi-4-mini-instruct-4bit": 0.604732,
+     "Qwen3-1.7B-4bit": 0.455916,
+     "Qwen3-8B-4bit": 0.77216,
+     "gemma-3-4b-it-4bit": 0.55472
+    },
+    "attention[final_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[final_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.491168,
+     "Llama-3.2-3B-Instruct-4bit": 0.51364,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.52104,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.514932,
+     "Phi-4-mini-instruct-4bit": 0.5016179999999999,
+     "Qwen3-1.7B-4bit": 0.494768,
+     "Qwen3-8B-4bit": 0.519944,
+     "gemma-3-4b-it-4bit": 0.48758599999999996
+    },
+    "attention[final_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.693248,
+     "Llama-3.2-3B-Instruct-4bit": 0.39024000000000003,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.519468,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.8963439999999998,
+     "Phi-4-mini-instruct-4bit": 0.44853600000000005,
+     "Qwen3-1.7B-4bit": 0.434352,
+     "Qwen3-8B-4bit": 0.614084,
+     "gemma-3-4b-it-4bit": 0.524544
+    },
+    "attention[mid_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.7069719999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.25516,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.7593000000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.253088,
+     "Phi-4-mini-instruct-4bit": 0.7399519999999999,
+     "Qwen3-1.7B-4bit": 0.451184,
+     "Qwen3-8B-4bit": 0.604148,
+     "gemma-3-4b-it-4bit": 0.568508
+    },
+    "attention[mid_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.670892,
+     "Llama-3.2-3B-Instruct-4bit": 0.28325999999999996,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.767012,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.49752399999999997,
+     "Phi-4-mini-instruct-4bit": 0.7698799999999999,
+     "Qwen3-1.7B-4bit": 0.427348,
+     "Qwen3-8B-4bit": 0.582704,
+     "gemma-3-4b-it-4bit": 0.63982
+    },
+    "attention[mid_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.658228,
+     "Llama-3.2-3B-Instruct-4bit": 0.26129199999999997,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.725496,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.20944400000000002,
+     "Phi-4-mini-instruct-4bit": 0.73124,
+     "Qwen3-1.7B-4bit": 0.482972,
+     "Qwen3-8B-4bit": 0.5552440000000001,
+     "gemma-3-4b-it-4bit": 0.689832
+    },
+    "attention[mid_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.678912,
+     "Llama-3.2-3B-Instruct-4bit": 0.38701199999999997,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.7752479999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.35906,
+     "Phi-4-mini-instruct-4bit": 0.802528,
+     "Qwen3-1.7B-4bit": 0.46366399999999997,
+     "Qwen3-8B-4bit": 0.58972,
+     "gemma-3-4b-it-4bit": 0.44022400000000006
+    },
+    "attention[mid_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[mid_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.462974,
+     "Llama-3.2-3B-Instruct-4bit": 0.497584,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.480212,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5002420000000001,
+     "Phi-4-mini-instruct-4bit": 0.4554480000000001,
+     "Qwen3-1.7B-4bit": 0.480358,
+     "Qwen3-8B-4bit": 0.479394,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[mid_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.6871759999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.41081999999999996,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.7971440000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.332812,
+     "Phi-4-mini-instruct-4bit": 0.81692,
+     "Qwen3-1.7B-4bit": 0.471936,
+     "Qwen3-8B-4bit": 0.625368,
+     "gemma-3-4b-it-4bit": 0.42056800000000005
+    },
+    "attention[last_minus_1_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.384664,
+     "Llama-3.2-3B-Instruct-4bit": 0.738588,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.841496,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.7124080000000002,
+     "Phi-4-mini-instruct-4bit": 0.745684,
+     "Qwen3-1.7B-4bit": 0.52712,
+     "Qwen3-8B-4bit": 0.21466400000000002,
+     "gemma-3-4b-it-4bit": 0.7408119999999999
+    },
+    "attention[last_minus_1_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.37274799999999997,
+     "Llama-3.2-3B-Instruct-4bit": 0.6457160000000001,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.8048679999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.621704,
+     "Phi-4-mini-instruct-4bit": 0.7029719999999999,
+     "Qwen3-1.7B-4bit": 0.366692,
+     "Qwen3-8B-4bit": 0.290368,
+     "gemma-3-4b-it-4bit": 0.7130400000000001
+    },
+    "attention[last_minus_1_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5078199999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.7517119999999999,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.8802879999999998,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.6757759999999999,
+     "Phi-4-mini-instruct-4bit": 0.788084,
+     "Qwen3-1.7B-4bit": 0.37107999999999997,
+     "Qwen3-8B-4bit": 0.444008,
+     "gemma-3-4b-it-4bit": 0.8109680000000001
+    },
+    "attention[last_minus_1_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.687092,
+     "Llama-3.2-3B-Instruct-4bit": 0.34917200000000004,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.6703079999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.917588,
+     "Phi-4-mini-instruct-4bit": 0.267668,
+     "Qwen3-1.7B-4bit": 0.42328,
+     "Qwen3-8B-4bit": 0.842524,
+     "gemma-3-4b-it-4bit": 0.44206
+    },
+    "attention[last_minus_1_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[last_minus_1_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.501382,
+     "Llama-3.2-3B-Instruct-4bit": 0.490734,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.484328,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.48277200000000003,
+     "Phi-4-mini-instruct-4bit": 0.441846,
+     "Qwen3-1.7B-4bit": 0.487684,
+     "Qwen3-8B-4bit": 0.48187199999999997,
+     "gemma-3-4b-it-4bit": 0.48122800000000004
+    },
+    "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.63376,
+     "Llama-3.2-3B-Instruct-4bit": 0.322028,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.57004,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.793052,
+     "Phi-4-mini-instruct-4bit": 0.334268,
+     "Qwen3-1.7B-4bit": 0.41511999999999993,
+     "Qwen3-8B-4bit": 0.842908,
+     "gemma-3-4b-it-4bit": 0.618252
+    },
+    "Readout fisher_eff_rank @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.265308,
+     "Llama-3.2-3B-Instruct-4bit": 0.18291200000000002,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.11188400000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.28663199999999994,
+     "Phi-4-mini-instruct-4bit": 0.285604,
+     "Qwen3-1.7B-4bit": 0.24214800000000003,
+     "Qwen3-8B-4bit": 0.11569600000000002,
+     "gemma-3-4b-it-4bit": 0.303216
+    },
+    "Readout spectral_entropy @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.260084,
+     "Llama-3.2-3B-Instruct-4bit": 0.15387199999999998,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.13313999999999998,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.775924,
+     "Phi-4-mini-instruct-4bit": 0.655504,
+     "Qwen3-1.7B-4bit": 0.7395159999999998,
+     "Qwen3-8B-4bit": 0.14888,
+     "gemma-3-4b-it-4bit": 0.749344
+    },
+    "Readout neg_shadow_logvol_r1 @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.37826800000000005,
+     "Llama-3.2-3B-Instruct-4bit": 0.303928,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.19119999999999998,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.17004400000000003,
+     "Phi-4-mini-instruct-4bit": 0.187948,
+     "Qwen3-1.7B-4bit": 0.317008,
+     "Qwen3-8B-4bit": 0.26072799999999996,
+     "gemma-3-4b-it-4bit": 0.38484799999999997
+    },
+    "Readout null_ratio_post_rank1 @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.590164,
+     "Llama-3.2-3B-Instruct-4bit": 0.749804,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.87622,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.6797880000000001,
+     "Phi-4-mini-instruct-4bit": 0.27702800000000005,
+     "Qwen3-1.7B-4bit": 0.718232,
+     "Qwen3-8B-4bit": 0.42678,
+     "gemma-3-4b-it-4bit": 0.4745440000000001
+    },
+    "Readout surprise @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.682222,
+     "Llama-3.2-3B-Instruct-4bit": 0.603884,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.6143240000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.229992,
+     "Phi-4-mini-instruct-4bit": 0.7789759999999999,
+     "Qwen3-1.7B-4bit": 0.16172399999999998,
+     "Qwen3-8B-4bit": 0.198264,
+     "gemma-3-4b-it-4bit": 0.36802999999999997
+    },
+    "Readout p_max @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.441152,
+     "Llama-3.2-3B-Instruct-4bit": 0.36738399999999993,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.157528,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.39747200000000005,
+     "Phi-4-mini-instruct-4bit": 0.5167360000000001,
+     "Qwen3-1.7B-4bit": 0.26358000000000004,
+     "Qwen3-8B-4bit": 0.30954400000000004,
+     "gemma-3-4b-it-4bit": 0.535412
+    },
+    "Fusion fusion_rank_mean_full @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.476116,
+     "Llama-3.2-3B-Instruct-4bit": 0.816844,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.8723699999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.869688,
+     "Phi-4-mini-instruct-4bit": 0.75699,
+     "Qwen3-1.7B-4bit": 0.33248199999999994,
+     "Qwen3-8B-4bit": 0.838538,
+     "gemma-3-4b-it-4bit": 0.792616
+    },
+    "Fusion fusion_rank_mean_geom @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.589804,
+     "Llama-3.2-3B-Instruct-4bit": 0.838078,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.8990879999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.8513079999999998,
+     "Phi-4-mini-instruct-4bit": 0.8347140000000001,
+     "Qwen3-1.7B-4bit": 0.577844,
+     "Qwen3-8B-4bit": 0.7860319999999998,
+     "gemma-3-4b-it-4bit": 0.782316
+    }
+   },
+   "sign_stability": {
+    "attention[final_js] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "attention[final_js_kv_groups] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "attention[final_js_no_bos] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.75,
+     "modal_sign": -1
+    },
+    "attention[final_bos_mass] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.75,
+     "modal_sign": -1
+    },
+    "attention[final_v_norm_bos] @ step 0": {
+     "n_models": 8,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[final_v_norm_max] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "attention[final_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": 1
+    },
+    "attention[mid_js] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": 1
+    },
+    "attention[mid_js_kv_groups] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": 1
+    },
+    "attention[mid_js_no_bos] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": 1
+    },
+    "attention[mid_bos_mass] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_bos] @ step 0": {
+     "n_models": 8,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_max] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_js] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.75,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_js_kv_groups] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_js_no_bos] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.75,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_bos_mass] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_v_norm_bos] @ step 0": {
+     "n_models": 8,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_v_norm_max] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": 1
+    },
+    "Readout fisher_eff_rank @ step 0": {
+     "n_models": 8,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "Readout spectral_entropy @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": 1
+    },
+    "Readout neg_shadow_logvol_r1 @ step 0": {
+     "n_models": 8,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "Readout null_ratio_post_rank1 @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": 1
+    },
+    "Readout surprise @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "Readout p_max @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "Fusion fusion_rank_mean_full @ step 0": {
+     "n_models": 8,
+     "agreement": 0.75,
+     "modal_sign": 1
+    },
+    "Fusion fusion_rank_mean_geom @ step 0": {
+     "n_models": 8,
+     "agreement": 1.0,
+     "modal_sign": 1
+    }
+   }
+  },
+  "anli_r2": {
+   "holdout_winners": [
+    {
+     "holdout": "Llama-3.1-8B-Instruct-4bit",
+     "winner": "attention[last_minus_1_bos_mass] @ step 0",
+     "pool_auroc": 0.5791,
+     "sign": -1,
+     "holdout_auroc": 0.537072
+    },
+    {
+     "holdout": "Llama-3.2-3B-Instruct-4bit",
+     "winner": "attention[last_minus_1_bos_mass] @ step 0",
+     "pool_auroc": 0.5862,
+     "sign": -1,
+     "holdout_auroc": 0.48716800000000005
+    },
+    {
+     "holdout": "Mistral-7B-Instruct-v0.3-4bit",
+     "winner": "attention[last_minus_1_bos_mass] @ step 0",
+     "pool_auroc": 0.5739,
+     "sign": -1,
+     "holdout_auroc": 0.57288
+    },
+    {
+     "holdout": "Mistral-Nemo-Instruct-2407-4bit",
+     "winner": "attention[last_minus_1_js_no_bos] @ step 0",
+     "pool_auroc": 0.5615,
+     "sign": -1,
+     "holdout_auroc": 0.5653239999999999
+    },
+    {
+     "holdout": "Phi-4-mini-instruct-4bit",
+     "winner": "attention[last_minus_1_bos_mass] @ step 0",
+     "pool_auroc": 0.5951,
+     "sign": -1,
+     "holdout_auroc": 0.424468
+    },
+    {
+     "holdout": "Qwen3-1.7B-4bit",
+     "winner": "attention[last_minus_1_bos_mass] @ step 0",
+     "pool_auroc": 0.5863,
+     "sign": -1,
+     "holdout_auroc": 0.48638000000000003
+    },
+    {
+     "holdout": "Qwen3-8B-4bit",
+     "winner": "attention[final_js] @ step 0",
+     "pool_auroc": 0.5794,
+     "sign": -1,
+     "holdout_auroc": 0.26416399999999995
+    },
+    {
+     "holdout": "gemma-3-4b-it-4bit",
+     "winner": "attention[last_minus_1_bos_mass] @ step 0",
+     "pool_auroc": 0.5778,
+     "sign": -1,
+     "holdout_auroc": 0.546024
+    }
+   ],
+   "holdout_winner_survival": 2,
+   "fixed_cell_max_survival": {
+    "cell": "attention[final_js] @ step 0",
+    "n_holdouts_gt055": 5,
+    "of_n_holdouts": 8
+   },
+   "n_holdouts": 8,
+   "landscape_cells_gt055": {},
+   "landscape_note": "full cell x holdout matrix is multiplicity-prone; descriptive only",
+   "landscape": {
+    "attention[final_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.48129200000000005,
+     "Llama-3.2-3B-Instruct-4bit": 0.569272,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.68494,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.632648,
+     "Phi-4-mini-instruct-4bit": 0.56578,
+     "Qwen3-1.7B-4bit": 0.633988,
+     "Qwen3-8B-4bit": 0.26416399999999995,
+     "gemma-3-4b-it-4bit": 0.487968
+    },
+    "attention[final_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.542616,
+     "Llama-3.2-3B-Instruct-4bit": 0.556756,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.656908,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.596996,
+     "Phi-4-mini-instruct-4bit": 0.480496,
+     "Qwen3-1.7B-4bit": 0.632724,
+     "Qwen3-8B-4bit": 0.37653600000000004,
+     "gemma-3-4b-it-4bit": 0.47885199999999994
+    },
+    "attention[final_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.558932,
+     "Llama-3.2-3B-Instruct-4bit": 0.543152,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.686828,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.590224,
+     "Phi-4-mini-instruct-4bit": 0.5348040000000001,
+     "Qwen3-1.7B-4bit": 0.575372,
+     "Qwen3-8B-4bit": 0.307248,
+     "gemma-3-4b-it-4bit": 0.540636
+    },
+    "attention[final_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.55046,
+     "Llama-3.2-3B-Instruct-4bit": 0.48223599999999994,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.487904,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.7350039999999999,
+     "Phi-4-mini-instruct-4bit": 0.536428,
+     "Qwen3-1.7B-4bit": 0.4113960000000001,
+     "Qwen3-8B-4bit": 0.700732,
+     "gemma-3-4b-it-4bit": 0.49542400000000003
+    },
+    "attention[final_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[final_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.530568,
+     "Llama-3.2-3B-Instruct-4bit": 0.50814,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.4700019999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.495726,
+     "Phi-4-mini-instruct-4bit": 0.506162,
+     "Qwen3-1.7B-4bit": 0.520736,
+     "Qwen3-8B-4bit": 0.514556,
+     "gemma-3-4b-it-4bit": 0.490866
+    },
+    "attention[final_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.533684,
+     "Llama-3.2-3B-Instruct-4bit": 0.47213199999999994,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.492876,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.773296,
+     "Phi-4-mini-instruct-4bit": 0.47606799999999994,
+     "Qwen3-1.7B-4bit": 0.435544,
+     "Qwen3-8B-4bit": 0.630148,
+     "gemma-3-4b-it-4bit": 0.48696399999999995
+    },
+    "attention[mid_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.430108,
+     "Llama-3.2-3B-Instruct-4bit": 0.40184000000000003,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.422304,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.38832,
+     "Phi-4-mini-instruct-4bit": 0.41100800000000004,
+     "Qwen3-1.7B-4bit": 0.465148,
+     "Qwen3-8B-4bit": 0.44034399999999996,
+     "gemma-3-4b-it-4bit": 0.43567599999999995
+    },
+    "attention[mid_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.554852,
+     "Llama-3.2-3B-Instruct-4bit": 0.415456,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.592096,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.49415600000000004,
+     "Phi-4-mini-instruct-4bit": 0.617808,
+     "Qwen3-1.7B-4bit": 0.45902,
+     "Qwen3-8B-4bit": 0.564032,
+     "gemma-3-4b-it-4bit": 0.45852
+    },
+    "attention[mid_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.45356799999999997,
+     "Llama-3.2-3B-Instruct-4bit": 0.423284,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.425612,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.3439960000000001,
+     "Phi-4-mini-instruct-4bit": 0.41312,
+     "Qwen3-1.7B-4bit": 0.470696,
+     "Qwen3-8B-4bit": 0.45256,
+     "gemma-3-4b-it-4bit": 0.510804
+    },
+    "attention[mid_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.599336,
+     "Llama-3.2-3B-Instruct-4bit": 0.41466400000000003,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.588684,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.44802,
+     "Phi-4-mini-instruct-4bit": 0.617936,
+     "Qwen3-1.7B-4bit": 0.483852,
+     "Qwen3-8B-4bit": 0.51736,
+     "gemma-3-4b-it-4bit": 0.47799600000000003
+    },
+    "attention[mid_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[mid_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.502534,
+     "Llama-3.2-3B-Instruct-4bit": 0.5115339999999999,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.516252,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5251399999999999,
+     "Phi-4-mini-instruct-4bit": 0.493424,
+     "Qwen3-1.7B-4bit": 0.499168,
+     "Qwen3-8B-4bit": 0.49595,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[mid_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.606252,
+     "Llama-3.2-3B-Instruct-4bit": 0.438408,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.6178760000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.453584,
+     "Phi-4-mini-instruct-4bit": 0.645076,
+     "Qwen3-1.7B-4bit": 0.49541199999999996,
+     "Qwen3-8B-4bit": 0.533172,
+     "gemma-3-4b-it-4bit": 0.49697199999999997
+    },
+    "attention[last_minus_1_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.512608,
+     "Llama-3.2-3B-Instruct-4bit": 0.554528,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.67808,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.603272,
+     "Phi-4-mini-instruct-4bit": 0.601776,
+     "Qwen3-1.7B-4bit": 0.489248,
+     "Qwen3-8B-4bit": 0.30536800000000003,
+     "gemma-3-4b-it-4bit": 0.5432359999999999
+    },
+    "attention[last_minus_1_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.494684,
+     "Llama-3.2-3B-Instruct-4bit": 0.522308,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.352284,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.54354,
+     "Phi-4-mini-instruct-4bit": 0.5974719999999999,
+     "Qwen3-1.7B-4bit": 0.447944,
+     "Qwen3-8B-4bit": 0.33699999999999997,
+     "gemma-3-4b-it-4bit": 0.5369280000000001
+    },
+    "attention[last_minus_1_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.540312,
+     "Llama-3.2-3B-Instruct-4bit": 0.577492,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.695012,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5653239999999999,
+     "Phi-4-mini-instruct-4bit": 0.573404,
+     "Qwen3-1.7B-4bit": 0.498156,
+     "Qwen3-8B-4bit": 0.456644,
+     "gemma-3-4b-it-4bit": 0.5897080000000001
+    },
+    "attention[last_minus_1_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.537072,
+     "Llama-3.2-3B-Instruct-4bit": 0.48716800000000005,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.57288,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.8173959999999999,
+     "Phi-4-mini-instruct-4bit": 0.424468,
+     "Qwen3-1.7B-4bit": 0.48638000000000003,
+     "Qwen3-8B-4bit": 0.7190840000000001,
+     "gemma-3-4b-it-4bit": 0.546024
+    },
+    "attention[last_minus_1_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[last_minus_1_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.50949,
+     "Llama-3.2-3B-Instruct-4bit": 0.5061180000000001,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.4623259999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.479958,
+     "Phi-4-mini-instruct-4bit": 0.501176,
+     "Qwen3-1.7B-4bit": 0.47723199999999993,
+     "Qwen3-8B-4bit": 0.510956,
+     "gemma-3-4b-it-4bit": 0.47262200000000004
+    },
+    "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5124120000000001,
+     "Llama-3.2-3B-Instruct-4bit": 0.47040000000000004,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.49673999999999996,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.67862,
+     "Phi-4-mini-instruct-4bit": 0.438548,
+     "Qwen3-1.7B-4bit": 0.466388,
+     "Qwen3-8B-4bit": 0.727304,
+     "gemma-3-4b-it-4bit": 0.590832
+    },
+    "Readout fisher_eff_rank @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.58692,
+     "Llama-3.2-3B-Instruct-4bit": 0.638836,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.27508,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.7079319999999999,
+     "Phi-4-mini-instruct-4bit": 0.401448,
+     "Qwen3-1.7B-4bit": 0.47678,
+     "Qwen3-8B-4bit": 0.721536,
+     "gemma-3-4b-it-4bit": 0.428008
+    },
+    "Readout spectral_entropy @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.404732,
+     "Llama-3.2-3B-Instruct-4bit": 0.34850800000000004,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.286568,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.34918000000000005,
+     "Phi-4-mini-instruct-4bit": 0.5788239999999999,
+     "Qwen3-1.7B-4bit": 0.5064000000000001,
+     "Qwen3-8B-4bit": 0.30013200000000007,
+     "gemma-3-4b-it-4bit": 0.58972
+    },
+    "Readout neg_shadow_logvol_r1 @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.46088,
+     "Llama-3.2-3B-Instruct-4bit": 0.41375999999999996,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.32952000000000004,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.29880000000000007,
+     "Phi-4-mini-instruct-4bit": 0.400596,
+     "Qwen3-1.7B-4bit": 0.452312,
+     "Qwen3-8B-4bit": 0.387348,
+     "gemma-3-4b-it-4bit": 0.471908
+    },
+    "Readout null_ratio_post_rank1 @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.48188800000000004,
+     "Llama-3.2-3B-Instruct-4bit": 0.5890960000000001,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.696844,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.636964,
+     "Phi-4-mini-instruct-4bit": 0.354252,
+     "Qwen3-1.7B-4bit": 0.5376759999999999,
+     "Qwen3-8B-4bit": 0.5044799999999999,
+     "gemma-3-4b-it-4bit": 0.468572
+    },
+    "Readout surprise @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.643708,
+     "Llama-3.2-3B-Instruct-4bit": 0.5383119999999999,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.53762,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.40093599999999996,
+     "Phi-4-mini-instruct-4bit": 0.64006,
+     "Qwen3-1.7B-4bit": 0.659616,
+     "Qwen3-8B-4bit": 0.38792,
+     "gemma-3-4b-it-4bit": 0.506176
+    },
+    "Readout p_max @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.481972,
+     "Llama-3.2-3B-Instruct-4bit": 0.550064,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.313636,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5083120000000001,
+     "Phi-4-mini-instruct-4bit": 0.523396,
+     "Qwen3-1.7B-4bit": 0.457404,
+     "Qwen3-8B-4bit": 0.37456,
+     "gemma-3-4b-it-4bit": 0.504648
+    },
+    "Fusion fusion_rank_mean_full @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.38937,
+     "Llama-3.2-3B-Instruct-4bit": 0.49922600000000006,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.300954,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.42549,
+     "Phi-4-mini-instruct-4bit": 0.438032,
+     "Qwen3-1.7B-4bit": 0.45227000000000006,
+     "Qwen3-8B-4bit": 0.415302,
+     "gemma-3-4b-it-4bit": 0.433562
+    },
+    "Fusion fusion_rank_mean_geom @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.463414,
+     "Llama-3.2-3B-Instruct-4bit": 0.5170859999999999,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.27729800000000004,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.50436,
+     "Phi-4-mini-instruct-4bit": 0.515244,
+     "Qwen3-1.7B-4bit": 0.527178,
+     "Qwen3-8B-4bit": 0.35967000000000005,
+     "gemma-3-4b-it-4bit": 0.5789300000000001
+    }
+   },
+   "sign_stability": {
+    "attention[final_js] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "attention[final_js_kv_groups] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "attention[final_js_no_bos] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.875,
+     "modal_sign": -1
+    },
+    "attention[final_bos_mass] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[final_v_norm_bos] @ step 0": {
+     "n_models": 8,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[final_v_norm_max] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": 1
+    },
+    "attention[final_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "attention[mid_js] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[mid_js_kv_groups] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[mid_js_no_bos] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[mid_bos_mass] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_bos] @ step 0": {
+     "n_models": 8,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_max] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_js] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.75,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_js_kv_groups] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_js_no_bos] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.75,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_bos_mass] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_v_norm_bos] @ step 0": {
+     "n_models": 8,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_v_norm_max] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.75,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "Readout fisher_eff_rank @ step 0": {
+     "n_models": 8,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "Readout spectral_entropy @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": 1
+    },
+    "Readout neg_shadow_logvol_r1 @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "Readout null_ratio_post_rank1 @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": 1
+    },
+    "Readout surprise @ step 0": {
+     "n_models": 8,
+     "agreement": 0.75,
+     "modal_sign": -1
+    },
+    "Readout p_max @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "Fusion fusion_rank_mean_full @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "Fusion fusion_rank_mean_geom @ step 0": {
+     "n_models": 8,
+     "agreement": 0.75,
+     "modal_sign": 1
+    }
+   }
+  },
+  "halueval_dialogue": {
+   "holdout_winners": [
+    {
+     "holdout": "Llama-3.1-8B-Instruct-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.6208,
+     "sign": 1,
+     "holdout_auroc": 0.298126
+    },
+    {
+     "holdout": "Llama-3.2-3B-Instruct-4bit",
+     "winner": "attention[final_bos_mass] @ step 0",
+     "pool_auroc": 0.6257,
+     "sign": -1,
+     "holdout_auroc": 0.402272
+    },
+    {
+     "holdout": "Mistral-7B-Instruct-v0.3-4bit",
+     "winner": "attention[mid_js_kv_groups] @ step 0",
+     "pool_auroc": 0.6131,
+     "sign": 1,
+     "holdout_auroc": 0.353324
+    },
+    {
+     "holdout": "Mistral-Nemo-Instruct-2407-4bit",
+     "winner": "attention[last_minus_1_js_no_bos] @ step 0",
+     "pool_auroc": 0.623,
+     "sign": -1,
+     "holdout_auroc": 0.205744
+    },
+    {
+     "holdout": "Phi-4-mini-instruct-4bit",
+     "winner": "Readout fisher_eff_rank @ step 0",
+     "pool_auroc": 0.6029,
+     "sign": 1,
+     "holdout_auroc": 0.418392
+    },
+    {
+     "holdout": "Qwen2.5-7B-Instruct-4bit",
+     "winner": "Readout surprise @ step 0",
+     "pool_auroc": 0.6229,
+     "sign": -1,
+     "holdout_auroc": 0.529224
+    },
+    {
+     "holdout": "Qwen3-1.7B-4bit",
+     "winner": "attention[final_bos_mass] @ step 0",
+     "pool_auroc": 0.6116,
+     "sign": -1,
+     "holdout_auroc": 0.515004
+    },
+    {
+     "holdout": "Qwen3-8B-4bit",
+     "winner": "Readout surprise @ step 0",
+     "pool_auroc": 0.664,
+     "sign": -1,
+     "holdout_auroc": 0.20064800000000002
+    },
+    {
+     "holdout": "gemma-3-4b-it-4bit",
+     "winner": "Readout surprise @ step 0",
+     "pool_auroc": 0.6293,
+     "sign": -1,
+     "holdout_auroc": 0.478008
+    }
+   ],
+   "holdout_winner_survival": 0,
+   "fixed_cell_max_survival": {
+    "cell": "attention[last_minus_1_js_no_bos] @ step 0",
+    "n_holdouts_gt055": 6,
+    "of_n_holdouts": 9
+   },
+   "n_holdouts": 9,
+   "landscape_cells_gt055": {},
+   "landscape_note": "full cell x holdout matrix is multiplicity-prone; descriptive only",
+   "landscape": {
+    "attention[final_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.266496,
+     "Llama-3.2-3B-Instruct-4bit": 0.69434,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.7655799999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.560792,
+     "Phi-4-mini-instruct-4bit": 0.621632,
+     "Qwen2.5-7B-Instruct-4bit": 0.56826,
+     "Qwen3-1.7B-4bit": 0.49717999999999996,
+     "Qwen3-8B-4bit": 0.540144,
+     "gemma-3-4b-it-4bit": 0.507204
+    },
+    "attention[final_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.32436,
+     "Llama-3.2-3B-Instruct-4bit": 0.682144,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.7695799999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.29892399999999997,
+     "Phi-4-mini-instruct-4bit": 0.603988,
+     "Qwen2.5-7B-Instruct-4bit": 0.6667000000000001,
+     "Qwen3-1.7B-4bit": 0.497048,
+     "Qwen3-8B-4bit": 0.5454640000000001,
+     "gemma-3-4b-it-4bit": 0.385704
+    },
+    "attention[final_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.235008,
+     "Llama-3.2-3B-Instruct-4bit": 0.318656,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.215668,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.329496,
+     "Phi-4-mini-instruct-4bit": 0.4273159999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.424128,
+     "Qwen3-1.7B-4bit": 0.498136,
+     "Qwen3-8B-4bit": 0.433332,
+     "gemma-3-4b-it-4bit": 0.370568
+    },
+    "attention[final_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.54454,
+     "Llama-3.2-3B-Instruct-4bit": 0.402272,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.54816,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.867524,
+     "Phi-4-mini-instruct-4bit": 0.656076,
+     "Qwen2.5-7B-Instruct-4bit": 0.6538839999999999,
+     "Qwen3-1.7B-4bit": 0.515004,
+     "Qwen3-8B-4bit": 0.6976359999999999,
+     "gemma-3-4b-it-4bit": 0.522832
+    },
+    "attention[final_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen2.5-7B-Instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[final_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.514552,
+     "Llama-3.2-3B-Instruct-4bit": 0.519234,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.511368,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.491522,
+     "Phi-4-mini-instruct-4bit": 0.48123000000000005,
+     "Qwen2.5-7B-Instruct-4bit": 0.49436800000000003,
+     "Qwen3-1.7B-4bit": 0.510006,
+     "Qwen3-8B-4bit": 0.49972,
+     "gemma-3-4b-it-4bit": 0.500426
+    },
+    "attention[final_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5850960000000001,
+     "Llama-3.2-3B-Instruct-4bit": 0.40817600000000004,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.467504,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.859552,
+     "Phi-4-mini-instruct-4bit": 0.389044,
+     "Qwen2.5-7B-Instruct-4bit": 0.578808,
+     "Qwen3-1.7B-4bit": 0.5180440000000001,
+     "Qwen3-8B-4bit": 0.7221960000000001,
+     "gemma-3-4b-it-4bit": 0.507744
+    },
+    "attention[mid_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.636416,
+     "Llama-3.2-3B-Instruct-4bit": 0.614924,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.355176,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.611908,
+     "Phi-4-mini-instruct-4bit": 0.7426480000000001,
+     "Qwen2.5-7B-Instruct-4bit": 0.478248,
+     "Qwen3-1.7B-4bit": 0.499472,
+     "Qwen3-8B-4bit": 0.539368,
+     "gemma-3-4b-it-4bit": 0.6284959999999999
+    },
+    "attention[mid_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.575512,
+     "Llama-3.2-3B-Instruct-4bit": 0.657756,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.353324,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.6807920000000001,
+     "Phi-4-mini-instruct-4bit": 0.737436,
+     "Qwen2.5-7B-Instruct-4bit": 0.511904,
+     "Qwen3-1.7B-4bit": 0.5215239999999999,
+     "Qwen3-8B-4bit": 0.5367879999999999,
+     "gemma-3-4b-it-4bit": 0.682912
+    },
+    "attention[mid_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.7244079999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.570884,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.35420799999999997,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.43244799999999994,
+     "Phi-4-mini-instruct-4bit": 0.716464,
+     "Qwen2.5-7B-Instruct-4bit": 0.468032,
+     "Qwen3-1.7B-4bit": 0.500448,
+     "Qwen3-8B-4bit": 0.546496,
+     "gemma-3-4b-it-4bit": 0.714688
+    },
+    "attention[mid_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.484056,
+     "Llama-3.2-3B-Instruct-4bit": 0.43693600000000005,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.587612,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.367364,
+     "Phi-4-mini-instruct-4bit": 0.333936,
+     "Qwen2.5-7B-Instruct-4bit": 0.536804,
+     "Qwen3-1.7B-4bit": 0.500176,
+     "Qwen3-8B-4bit": 0.49812,
+     "gemma-3-4b-it-4bit": 0.613448
+    },
+    "attention[mid_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen2.5-7B-Instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[mid_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.528106,
+     "Llama-3.2-3B-Instruct-4bit": 0.5149119999999999,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.554114,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5177499999999999,
+     "Phi-4-mini-instruct-4bit": 0.507164,
+     "Qwen2.5-7B-Instruct-4bit": 0.520708,
+     "Qwen3-1.7B-4bit": 0.48843200000000003,
+     "Qwen3-8B-4bit": 0.51658,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[mid_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.520996,
+     "Llama-3.2-3B-Instruct-4bit": 0.421104,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.4606,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.43835199999999996,
+     "Phi-4-mini-instruct-4bit": 0.28659599999999996,
+     "Qwen2.5-7B-Instruct-4bit": 0.44321599999999994,
+     "Qwen3-1.7B-4bit": 0.4884160000000001,
+     "Qwen3-8B-4bit": 0.520756,
+     "gemma-3-4b-it-4bit": 0.39082399999999995
+    },
+    "attention[last_minus_1_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.514336,
+     "Llama-3.2-3B-Instruct-4bit": 0.583808,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.681408,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.179944,
+     "Phi-4-mini-instruct-4bit": 0.6737679999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.48256,
+     "Qwen3-1.7B-4bit": 0.5285880000000001,
+     "Qwen3-8B-4bit": 0.32730000000000004,
+     "gemma-3-4b-it-4bit": 0.238144
+    },
+    "attention[last_minus_1_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.48304800000000003,
+     "Llama-3.2-3B-Instruct-4bit": 0.544356,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.682284,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.192836,
+     "Phi-4-mini-instruct-4bit": 0.6726,
+     "Qwen2.5-7B-Instruct-4bit": 0.539408,
+     "Qwen3-1.7B-4bit": 0.518572,
+     "Qwen3-8B-4bit": 0.3496039999999999,
+     "gemma-3-4b-it-4bit": 0.244
+    },
+    "attention[last_minus_1_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.483356,
+     "Llama-3.2-3B-Instruct-4bit": 0.6467440000000001,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.767148,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.205744,
+     "Phi-4-mini-instruct-4bit": 0.7349079999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.601392,
+     "Qwen3-1.7B-4bit": 0.55108,
+     "Qwen3-8B-4bit": 0.4101,
+     "gemma-3-4b-it-4bit": 0.789148
+    },
+    "attention[last_minus_1_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.586428,
+     "Llama-3.2-3B-Instruct-4bit": 0.49807199999999996,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.593012,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.852744,
+     "Phi-4-mini-instruct-4bit": 0.312412,
+     "Qwen2.5-7B-Instruct-4bit": 0.6514599999999999,
+     "Qwen3-1.7B-4bit": 0.5253559999999999,
+     "Qwen3-8B-4bit": 0.6746,
+     "gemma-3-4b-it-4bit": 0.34202
+    },
+    "attention[last_minus_1_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen2.5-7B-Instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[last_minus_1_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.48393600000000003,
+     "Llama-3.2-3B-Instruct-4bit": 0.48843000000000003,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.503846,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.48540800000000006,
+     "Phi-4-mini-instruct-4bit": 0.503836,
+     "Qwen2.5-7B-Instruct-4bit": 0.48983,
+     "Qwen3-1.7B-4bit": 0.491774,
+     "Qwen3-8B-4bit": 0.487244,
+     "gemma-3-4b-it-4bit": 0.49047999999999997
+    },
+    "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.552728,
+     "Llama-3.2-3B-Instruct-4bit": 0.43000800000000006,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.500372,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.15532400000000002,
+     "Phi-4-mini-instruct-4bit": 0.35033600000000004,
+     "Qwen2.5-7B-Instruct-4bit": 0.58834,
+     "Qwen3-1.7B-4bit": 0.530396,
+     "Qwen3-8B-4bit": 0.6772239999999999,
+     "gemma-3-4b-it-4bit": 0.295688
+    },
+    "Readout fisher_eff_rank @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.29062,
+     "Llama-3.2-3B-Instruct-4bit": 0.3776,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.7860280000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.7983199999999999,
+     "Phi-4-mini-instruct-4bit": 0.418392,
+     "Qwen2.5-7B-Instruct-4bit": 0.6861039999999999,
+     "Qwen3-1.7B-4bit": 0.49445199999999995,
+     "Qwen3-8B-4bit": 0.702888,
+     "gemma-3-4b-it-4bit": 0.6868479999999999
+    },
+    "Readout spectral_entropy @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.28231199999999995,
+     "Llama-3.2-3B-Instruct-4bit": 0.386236,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.713072,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.753176,
+     "Phi-4-mini-instruct-4bit": 0.47054,
+     "Qwen2.5-7B-Instruct-4bit": 0.6904560000000001,
+     "Qwen3-1.7B-4bit": 0.458572,
+     "Qwen3-8B-4bit": 0.631656,
+     "gemma-3-4b-it-4bit": 0.5062199999999999
+    },
+    "Readout neg_shadow_logvol_r1 @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.288256,
+     "Llama-3.2-3B-Instruct-4bit": 0.38239199999999995,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.6735319999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.27816399999999997,
+     "Phi-4-mini-instruct-4bit": 0.30834,
+     "Qwen2.5-7B-Instruct-4bit": 0.656488,
+     "Qwen3-1.7B-4bit": 0.47742,
+     "Qwen3-8B-4bit": 0.5084960000000001,
+     "gemma-3-4b-it-4bit": 0.6724479999999999
+    },
+    "Readout null_ratio_post_rank1 @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.34974400000000005,
+     "Llama-3.2-3B-Instruct-4bit": 0.390844,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.23703999999999997,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.184496,
+     "Phi-4-mini-instruct-4bit": 0.533112,
+     "Qwen2.5-7B-Instruct-4bit": 0.427516,
+     "Qwen3-1.7B-4bit": 0.489516,
+     "Qwen3-8B-4bit": 0.44733999999999996,
+     "gemma-3-4b-it-4bit": 0.442764
+    },
+    "Readout surprise @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.6675960000000001,
+     "Llama-3.2-3B-Instruct-4bit": 0.7297520000000001,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.7605039999999998,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.776564,
+     "Phi-4-mini-instruct-4bit": 0.702024,
+     "Qwen2.5-7B-Instruct-4bit": 0.529224,
+     "Qwen3-1.7B-4bit": 0.6684420000000001,
+     "Qwen3-8B-4bit": 0.20064800000000002,
+     "gemma-3-4b-it-4bit": 0.478008
+    },
+    "Readout p_max @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.476684,
+     "Llama-3.2-3B-Instruct-4bit": 0.6288279999999999,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.31952400000000003,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.33265200000000006,
+     "Phi-4-mini-instruct-4bit": 0.6036440000000001,
+     "Qwen2.5-7B-Instruct-4bit": 0.4839,
+     "Qwen3-1.7B-4bit": 0.557492,
+     "Qwen3-8B-4bit": 0.6152080000000001,
+     "gemma-3-4b-it-4bit": 0.287104
+    },
+    "Fusion fusion_rank_mean_full @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.241756,
+     "Llama-3.2-3B-Instruct-4bit": 0.34533600000000003,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.732776,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.49706,
+     "Phi-4-mini-instruct-4bit": 0.49421000000000004,
+     "Qwen2.5-7B-Instruct-4bit": 0.611696,
+     "Qwen3-1.7B-4bit": 0.434032,
+     "Qwen3-8B-4bit": 0.643162,
+     "gemma-3-4b-it-4bit": 0.7405899999999999
+    },
+    "Fusion fusion_rank_mean_geom @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.298126,
+     "Llama-3.2-3B-Instruct-4bit": 0.4525,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.7959700000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.745112,
+     "Phi-4-mini-instruct-4bit": 0.603514,
+     "Qwen2.5-7B-Instruct-4bit": 0.6176980000000001,
+     "Qwen3-1.7B-4bit": 0.5190520000000001,
+     "Qwen3-8B-4bit": 0.5066919999999999,
+     "gemma-3-4b-it-4bit": 0.725762
+    }
+   },
+   "sign_stability": {
+    "attention[final_js] @ step 0": {
+     "n_models": 9,
+     "agreement": 0.778,
+     "modal_sign": -1
+    },
+    "attention[final_js_kv_groups] @ step 0": {
+     "n_models": 9,
+     "agreement": 0.556,
+     "modal_sign": -1
+    },
+    "attention[final_js_no_bos] @ step 0": {
+     "n_models": 9,
+     "agreement": 0.556,
+     "modal_sign": -1
+    },
+    "attention[final_bos_mass] @ step 0": {
+     "n_models": 9,
+     "agreement": 0.889,
+     "modal_sign": -1
+    },
+    "attention[final_v_norm_bos] @ step 0": {
+     "n_models": 9,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[final_v_norm_max] @ step 0": {
+     "n_models": 9,
+     "agreement": 0.556,
+     "modal_sign": 1
+    },
+    "attention[final_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 9,
+     "agreement": 0.667,
+     "modal_sign": 1
+    },
+    "attention[mid_js] @ step 0": {
+     "n_models": 9,
+     "agreement": 0.667,
+     "modal_sign": 1
+    },
+    "attention[mid_js_kv_groups] @ step 0": {
+     "n_models": 9,
+     "agreement": 0.889,
+     "modal_sign": 1
+    },
+    "attention[mid_js_no_bos] @ step 0": {
+     "n_models": 9,
+     "agreement": 0.667,
+     "modal_sign": 1
+    },
+    "attention[mid_bos_mass] @ step 0": {
+     "n_models": 9,
+     "agreement": 0.556,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_bos] @ step 0": {
+     "n_models": 9,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_max] @ step 0": {
+     "n_models": 9,
+     "agreement": 0.889,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 9,
+     "agreement": 0.556,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_js] @ step 0": {
+     "n_models": 9,
+     "agreement": 0.667,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_js_kv_groups] @ step 0": {
+     "n_models": 9,
+     "agreement": 0.667,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_js_no_bos] @ step 0": {
+     "n_models": 9,
+     "agreement": 0.667,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_bos_mass] @ step 0": {
+     "n_models": 9,
+     "agreement": 0.667,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_v_norm_bos] @ step 0": {
+     "n_models": 9,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_v_norm_max] @ step 0": {
+     "n_models": 9,
+     "agreement": 0.667,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 9,
+     "agreement": 0.667,
+     "modal_sign": 1
+    },
+    "Readout fisher_eff_rank @ step 0": {
+     "n_models": 9,
+     "agreement": 0.556,
+     "modal_sign": 1
+    },
+    "Readout spectral_entropy @ step 0": {
+     "n_models": 9,
+     "agreement": 0.556,
+     "modal_sign": 1
+    },
+    "Readout neg_shadow_logvol_r1 @ step 0": {
+     "n_models": 9,
+     "agreement": 0.556,
+     "modal_sign": 1
+    },
+    "Readout null_ratio_post_rank1 @ step 0": {
+     "n_models": 9,
+     "agreement": 0.667,
+     "modal_sign": -1
+    },
+    "Readout surprise @ step 0": {
+     "n_models": 9,
+     "agreement": 0.778,
+     "modal_sign": -1
+    },
+    "Readout p_max @ step 0": {
+     "n_models": 9,
+     "agreement": 0.556,
+     "modal_sign": 1
+    },
+    "Fusion fusion_rank_mean_full @ step 0": {
+     "n_models": 9,
+     "agreement": 0.556,
+     "modal_sign": -1
+    },
+    "Fusion fusion_rank_mean_geom @ step 0": {
+     "n_models": 9,
+     "agreement": 0.778,
+     "modal_sign": 1
+    }
+   }
+  },
+  "halueval_qa": {
+   "holdout_winners": [
+    {
+     "holdout": "Llama-3.1-8B-Instruct-4bit",
+     "winner": "attention[final_bos_mass] @ step 0",
+     "pool_auroc": 0.6441,
+     "sign": -1,
+     "holdout_auroc": 0.531084
+    },
+    {
+     "holdout": "Llama-3.2-3B-Instruct-4bit",
+     "winner": "attention[final_bos_mass] @ step 0",
+     "pool_auroc": 0.6616,
+     "sign": -1,
+     "holdout_auroc": 0.373176
+    },
+    {
+     "holdout": "Mistral-7B-Instruct-v0.3-4bit",
+     "winner": "Readout surprise @ step 0",
+     "pool_auroc": 0.6804,
+     "sign": 1,
+     "holdout_auroc": 0.35016
+    },
+    {
+     "holdout": "Mistral-Nemo-Instruct-2407-4bit",
+     "winner": "Readout surprise @ step 0",
+     "pool_auroc": 0.6335,
+     "sign": 1,
+     "holdout_auroc": 0.772176
+    },
+    {
+     "holdout": "Phi-3.5-mini-instruct-4bit",
+     "winner": "attention[mid_js_kv_groups] @ step 0",
+     "pool_auroc": 0.6673,
+     "sign": 1,
+     "holdout_auroc": 0.09456000000000002
+    },
+    {
+     "holdout": "Phi-4-mini-instruct-4bit",
+     "winner": "attention[last_minus_1_bos_mass] @ step 0",
+     "pool_auroc": 0.6565,
+     "sign": -1,
+     "holdout_auroc": 0.119668
+    },
+    {
+     "holdout": "Qwen2.5-7B-Instruct-4bit",
+     "winner": "Readout surprise @ step 0",
+     "pool_auroc": 0.6754,
+     "sign": 1,
+     "holdout_auroc": 0.39519600000000005
+    },
+    {
+     "holdout": "Qwen3-1.7B-4bit",
+     "winner": "Readout surprise @ step 0",
+     "pool_auroc": 0.6971,
+     "sign": 1,
+     "holdout_auroc": 0.19986
+    },
+    {
+     "holdout": "Qwen3-8B-4bit",
+     "winner": "attention[mid_js_kv_groups] @ step 0",
+     "pool_auroc": 0.6274,
+     "sign": 1,
+     "holdout_auroc": 0.454196
+    },
+    {
+     "holdout": "gemma-3-4b-it-4bit",
+     "winner": "attention[final_bos_mass] @ step 0",
+     "pool_auroc": 0.6391,
+     "sign": -1,
+     "holdout_auroc": 0.5760959999999999
+    }
+   ],
+   "holdout_winner_survival": 2,
+   "fixed_cell_max_survival": {
+    "cell": "attention[final_bos_mass] @ step 0",
+    "n_holdouts_gt055": 7,
+    "of_n_holdouts": 10
+   },
+   "n_holdouts": 10,
+   "landscape_cells_gt055": {},
+   "landscape_note": "full cell x holdout matrix is multiplicity-prone; descriptive only",
+   "landscape": {
+    "attention[final_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.189344,
+     "Llama-3.2-3B-Instruct-4bit": 0.37302799999999997,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.35327200000000003,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.283048,
+     "Phi-3.5-mini-instruct-4bit": 0.19166,
+     "Phi-4-mini-instruct-4bit": 0.470148,
+     "Qwen2.5-7B-Instruct-4bit": 0.299872,
+     "Qwen3-1.7B-4bit": 0.44798000000000004,
+     "Qwen3-8B-4bit": 0.130908,
+     "gemma-3-4b-it-4bit": 0.499328
+    },
+    "attention[final_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.25732,
+     "Llama-3.2-3B-Instruct-4bit": 0.6469,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.7020359999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5931759999999999,
+     "Phi-3.5-mini-instruct-4bit": 0.8083400000000001,
+     "Phi-4-mini-instruct-4bit": 0.525004,
+     "Qwen2.5-7B-Instruct-4bit": 0.552576,
+     "Qwen3-1.7B-4bit": 0.62938,
+     "Qwen3-8B-4bit": 0.191324,
+     "gemma-3-4b-it-4bit": 0.439172
+    },
+    "attention[final_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.122584,
+     "Llama-3.2-3B-Instruct-4bit": 0.564044,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.282284,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.280812,
+     "Phi-3.5-mini-instruct-4bit": 0.30804400000000004,
+     "Phi-4-mini-instruct-4bit": 0.539584,
+     "Qwen2.5-7B-Instruct-4bit": 0.353996,
+     "Qwen3-1.7B-4bit": 0.295132,
+     "Qwen3-8B-4bit": 0.187412,
+     "gemma-3-4b-it-4bit": 0.41056
+    },
+    "attention[final_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.531084,
+     "Llama-3.2-3B-Instruct-4bit": 0.373176,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.6663680000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.714592,
+     "Phi-3.5-mini-instruct-4bit": 0.641036,
+     "Phi-4-mini-instruct-4bit": 0.7113919999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.7811279999999999,
+     "Qwen3-1.7B-4bit": 0.47783600000000004,
+     "Qwen3-8B-4bit": 0.8549199999999999,
+     "gemma-3-4b-it-4bit": 0.5760959999999999
+    },
+    "attention[final_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-3.5-mini-instruct-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen2.5-7B-Instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[final_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.583732,
+     "Llama-3.2-3B-Instruct-4bit": 0.568078,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5222579999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.513284,
+     "Phi-3.5-mini-instruct-4bit": 0.501346,
+     "Phi-4-mini-instruct-4bit": 0.51491,
+     "Qwen2.5-7B-Instruct-4bit": 0.50339,
+     "Qwen3-1.7B-4bit": 0.508174,
+     "Qwen3-8B-4bit": 0.510832,
+     "gemma-3-4b-it-4bit": 0.5023139999999999
+    },
+    "attention[final_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5652680000000001,
+     "Llama-3.2-3B-Instruct-4bit": 0.35104,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.6703079999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.78946,
+     "Phi-3.5-mini-instruct-4bit": 0.655316,
+     "Phi-4-mini-instruct-4bit": 0.324664,
+     "Qwen2.5-7B-Instruct-4bit": 0.649444,
+     "Qwen3-1.7B-4bit": 0.5076559999999999,
+     "Qwen3-8B-4bit": 0.7818839999999998,
+     "gemma-3-4b-it-4bit": 0.46032799999999996
+    },
+    "attention[mid_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.4534,
+     "Llama-3.2-3B-Instruct-4bit": 0.55902,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.701348,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.21883999999999998,
+     "Phi-3.5-mini-instruct-4bit": 0.09456000000000002,
+     "Phi-4-mini-instruct-4bit": 0.8692839999999998,
+     "Qwen2.5-7B-Instruct-4bit": 0.5327040000000001,
+     "Qwen3-1.7B-4bit": 0.674412,
+     "Qwen3-8B-4bit": 0.493472,
+     "gemma-3-4b-it-4bit": 0.902924
+    },
+    "attention[mid_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.39835600000000004,
+     "Llama-3.2-3B-Instruct-4bit": 0.765024,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.559516,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.582272,
+     "Phi-3.5-mini-instruct-4bit": 0.09456000000000002,
+     "Phi-4-mini-instruct-4bit": 0.8411759999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.76836,
+     "Qwen3-1.7B-4bit": 0.7165360000000001,
+     "Qwen3-8B-4bit": 0.454196,
+     "gemma-3-4b-it-4bit": 0.920612
+    },
+    "attention[mid_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.7304879999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.6038800000000001,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.68194,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.284844,
+     "Phi-3.5-mini-instruct-4bit": 0.165364,
+     "Phi-4-mini-instruct-4bit": 0.800896,
+     "Qwen2.5-7B-Instruct-4bit": 0.41056000000000004,
+     "Qwen3-1.7B-4bit": 0.458208,
+     "Qwen3-8B-4bit": 0.480088,
+     "gemma-3-4b-it-4bit": 0.9199799999999999
+    },
+    "attention[mid_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.436636,
+     "Llama-3.2-3B-Instruct-4bit": 0.44560799999999995,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.37624799999999997,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.366256,
+     "Phi-3.5-mini-instruct-4bit": 0.178916,
+     "Phi-4-mini-instruct-4bit": 0.184604,
+     "Qwen2.5-7B-Instruct-4bit": 0.521068,
+     "Qwen3-1.7B-4bit": 0.38718,
+     "Qwen3-8B-4bit": 0.491272,
+     "gemma-3-4b-it-4bit": 0.327872
+    },
+    "attention[mid_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-3.5-mini-instruct-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen2.5-7B-Instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[mid_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.531188,
+     "Llama-3.2-3B-Instruct-4bit": 0.5364800000000001,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.540696,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.514328,
+     "Phi-3.5-mini-instruct-4bit": 0.543698,
+     "Phi-4-mini-instruct-4bit": 0.558048,
+     "Qwen2.5-7B-Instruct-4bit": 0.526056,
+     "Qwen3-1.7B-4bit": 0.481828,
+     "Qwen3-8B-4bit": 0.506624,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[mid_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5563319999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.5585359999999999,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.384888,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.586564,
+     "Phi-3.5-mini-instruct-4bit": 0.201164,
+     "Phi-4-mini-instruct-4bit": 0.15788400000000002,
+     "Qwen2.5-7B-Instruct-4bit": 0.5765480000000001,
+     "Qwen3-1.7B-4bit": 0.427416,
+     "Qwen3-8B-4bit": 0.464188,
+     "gemma-3-4b-it-4bit": 0.760832
+    },
+    "attention[last_minus_1_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.787156,
+     "Llama-3.2-3B-Instruct-4bit": 0.619148,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.255596,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.514532,
+     "Phi-3.5-mini-instruct-4bit": 0.6691720000000001,
+     "Phi-4-mini-instruct-4bit": 0.511976,
+     "Qwen2.5-7B-Instruct-4bit": 0.46686000000000005,
+     "Qwen3-1.7B-4bit": 0.347396,
+     "Qwen3-8B-4bit": 0.8983960000000001,
+     "gemma-3-4b-it-4bit": 0.657404
+    },
+    "attention[last_minus_1_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.8419239999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.7346400000000001,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.25172000000000005,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.7619119999999999,
+     "Phi-3.5-mini-instruct-4bit": 0.6691720000000001,
+     "Phi-4-mini-instruct-4bit": 0.49142,
+     "Qwen2.5-7B-Instruct-4bit": 0.6414519999999999,
+     "Qwen3-1.7B-4bit": 0.37925200000000003,
+     "Qwen3-8B-4bit": 0.9077040000000001,
+     "gemma-3-4b-it-4bit": 0.47910400000000003
+    },
+    "attention[last_minus_1_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.706796,
+     "Llama-3.2-3B-Instruct-4bit": 0.5511159999999998,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.369072,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.38702400000000003,
+     "Phi-3.5-mini-instruct-4bit": 0.572616,
+     "Phi-4-mini-instruct-4bit": 0.498884,
+     "Qwen2.5-7B-Instruct-4bit": 0.26508,
+     "Qwen3-1.7B-4bit": 0.527952,
+     "Qwen3-8B-4bit": 0.8778599999999999,
+     "gemma-3-4b-it-4bit": 0.7297119999999999
+    },
+    "attention[last_minus_1_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.760308,
+     "Llama-3.2-3B-Instruct-4bit": 0.507576,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.433684,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.875964,
+     "Phi-3.5-mini-instruct-4bit": 0.7074999999999999,
+     "Phi-4-mini-instruct-4bit": 0.119668,
+     "Qwen2.5-7B-Instruct-4bit": 0.8004560000000001,
+     "Qwen3-1.7B-4bit": 0.309028,
+     "Qwen3-8B-4bit": 0.8145,
+     "gemma-3-4b-it-4bit": 0.6998439999999999
+    },
+    "attention[last_minus_1_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-3.5-mini-instruct-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen2.5-7B-Instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[last_minus_1_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.508938,
+     "Llama-3.2-3B-Instruct-4bit": 0.506128,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.513856,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.507564,
+     "Phi-3.5-mini-instruct-4bit": 0.5006379999999999,
+     "Phi-4-mini-instruct-4bit": 0.514466,
+     "Qwen2.5-7B-Instruct-4bit": 0.508138,
+     "Qwen3-1.7B-4bit": 0.504734,
+     "Qwen3-8B-4bit": 0.504416,
+     "gemma-3-4b-it-4bit": 0.49618999999999996
+    },
+    "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.786068,
+     "Llama-3.2-3B-Instruct-4bit": 0.459032,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.38226400000000005,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.6642239999999999,
+     "Phi-3.5-mini-instruct-4bit": 0.7995760000000001,
+     "Phi-4-mini-instruct-4bit": 0.1864,
+     "Qwen2.5-7B-Instruct-4bit": 0.662856,
+     "Qwen3-1.7B-4bit": 0.307096,
+     "Qwen3-8B-4bit": 0.8222680000000001,
+     "gemma-3-4b-it-4bit": 0.7216279999999999
+    },
+    "Readout fisher_eff_rank @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.190268,
+     "Llama-3.2-3B-Instruct-4bit": 0.182728,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.126692,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.16434400000000002,
+     "Phi-3.5-mini-instruct-4bit": 0.48995200000000005,
+     "Phi-4-mini-instruct-4bit": 0.275948,
+     "Qwen2.5-7B-Instruct-4bit": 0.7762319999999999,
+     "Qwen3-1.7B-4bit": 0.621772,
+     "Qwen3-8B-4bit": 0.125448,
+     "gemma-3-4b-it-4bit": 0.188504
+    },
+    "Readout spectral_entropy @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.186492,
+     "Llama-3.2-3B-Instruct-4bit": 0.201764,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.141552,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.17231199999999997,
+     "Phi-3.5-mini-instruct-4bit": 0.340352,
+     "Phi-4-mini-instruct-4bit": 0.269676,
+     "Qwen2.5-7B-Instruct-4bit": 0.609504,
+     "Qwen3-1.7B-4bit": 0.525408,
+     "Qwen3-8B-4bit": 0.167656,
+     "gemma-3-4b-it-4bit": 0.165512
+    },
+    "Readout neg_shadow_logvol_r1 @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.19029999999999997,
+     "Llama-3.2-3B-Instruct-4bit": 0.232856,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.13623200000000002,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.146184,
+     "Phi-3.5-mini-instruct-4bit": 0.157248,
+     "Phi-4-mini-instruct-4bit": 0.25502,
+     "Qwen2.5-7B-Instruct-4bit": 0.504564,
+     "Qwen3-1.7B-4bit": 0.48119199999999995,
+     "Qwen3-8B-4bit": 0.39396,
+     "gemma-3-4b-it-4bit": 0.583104
+    },
+    "Readout null_ratio_post_rank1 @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.6707,
+     "Llama-3.2-3B-Instruct-4bit": 0.8424359999999999,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.21604800000000002,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5604119999999999,
+     "Phi-3.5-mini-instruct-4bit": 0.22814800000000002,
+     "Phi-4-mini-instruct-4bit": 0.678108,
+     "Qwen2.5-7B-Instruct-4bit": 0.546056,
+     "Qwen3-1.7B-4bit": 0.722784,
+     "Qwen3-8B-4bit": 0.618144,
+     "gemma-3-4b-it-4bit": 0.7648600000000001
+    },
+    "Readout surprise @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.8374600000000001,
+     "Llama-3.2-3B-Instruct-4bit": 0.852652,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.35016,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.772176,
+     "Phi-3.5-mini-instruct-4bit": 0.764376,
+     "Phi-4-mini-instruct-4bit": 0.612078,
+     "Qwen2.5-7B-Instruct-4bit": 0.39519600000000005,
+     "Qwen3-1.7B-4bit": 0.19986,
+     "Qwen3-8B-4bit": 0.8961700000000001,
+     "gemma-3-4b-it-4bit": 0.79324
+    },
+    "Readout p_max @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.508308,
+     "Llama-3.2-3B-Instruct-4bit": 0.152244,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.7583639999999998,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.276472,
+     "Phi-3.5-mini-instruct-4bit": 0.906488,
+     "Phi-4-mini-instruct-4bit": 0.732772,
+     "Qwen2.5-7B-Instruct-4bit": 0.790984,
+     "Qwen3-1.7B-4bit": 0.39668,
+     "Qwen3-8B-4bit": 0.29632,
+     "gemma-3-4b-it-4bit": 0.8348280000000001
+    },
+    "Fusion fusion_rank_mean_full @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.32613000000000003,
+     "Llama-3.2-3B-Instruct-4bit": 0.27967400000000003,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.19561,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.16820799999999997,
+     "Phi-3.5-mini-instruct-4bit": 0.27025600000000005,
+     "Phi-4-mini-instruct-4bit": 0.333168,
+     "Qwen2.5-7B-Instruct-4bit": 0.324678,
+     "Qwen3-1.7B-4bit": 0.28284,
+     "Qwen3-8B-4bit": 0.374126,
+     "gemma-3-4b-it-4bit": 0.19355400000000003
+    },
+    "Fusion fusion_rank_mean_geom @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.825128,
+     "Llama-3.2-3B-Instruct-4bit": 0.8731880000000001,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.173692,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.206316,
+     "Phi-3.5-mini-instruct-4bit": 0.394206,
+     "Phi-4-mini-instruct-4bit": 0.72372,
+     "Qwen2.5-7B-Instruct-4bit": 0.27610999999999997,
+     "Qwen3-1.7B-4bit": 0.5766420000000001,
+     "Qwen3-8B-4bit": 0.5828679999999999,
+     "gemma-3-4b-it-4bit": 0.85019
+    }
+   },
+   "sign_stability": {
+    "attention[final_js] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": -1
+    },
+    "attention[final_js_kv_groups] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": -1
+    },
+    "attention[final_js_no_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[final_bos_mass] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.8,
+     "modal_sign": -1
+    },
+    "attention[final_v_norm_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[final_v_norm_max] @ step 0": {
+     "n_models": 10,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[final_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": 1
+    },
+    "attention[mid_js] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": 1
+    },
+    "attention[mid_js_kv_groups] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": 1
+    },
+    "attention[mid_js_no_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[mid_bos_mass] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_max] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.9,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_js] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_js_kv_groups] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_js_no_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_bos_mass] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_v_norm_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_v_norm_max] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.9,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": 1
+    },
+    "Readout fisher_eff_rank @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "Readout spectral_entropy @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": 1
+    },
+    "Readout neg_shadow_logvol_r1 @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "Readout null_ratio_post_rank1 @ step 0": {
+     "n_models": 10,
+     "agreement": 0.8,
+     "modal_sign": -1
+    },
+    "Readout surprise @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": 1
+    },
+    "Readout p_max @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": -1
+    },
+    "Fusion fusion_rank_mean_full @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "Fusion fusion_rank_mean_geom @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": -1
+    }
+   }
+  },
+  "halueval_summarization": {
+   "holdout_winners": [
+    {
+     "holdout": "Llama-3.1-8B-Instruct-4bit",
+     "winner": "attention[final_bos_mass] @ step 0",
+     "pool_auroc": 0.611,
+     "sign": -1,
+     "holdout_auroc": 0.38160399999999994
+    },
+    {
+     "holdout": "Llama-3.2-3B-Instruct-4bit",
+     "winner": "Readout null_ratio_post_rank1 @ step 0",
+     "pool_auroc": 0.6284,
+     "sign": -1,
+     "holdout_auroc": 0.445848
+    },
+    {
+     "holdout": "Mistral-7B-Instruct-v0.3-4bit",
+     "winner": "Readout neg_shadow_logvol_r1 @ step 0",
+     "pool_auroc": 0.6392,
+     "sign": -1,
+     "holdout_auroc": 0.364776
+    },
+    {
+     "holdout": "Mistral-Nemo-Instruct-2407-4bit",
+     "winner": "Readout neg_shadow_logvol_r1 @ step 0",
+     "pool_auroc": 0.6237,
+     "sign": -1,
+     "holdout_auroc": 0.47319599999999995
+    },
+    {
+     "holdout": "Phi-4-mini-instruct-4bit",
+     "winner": "Readout p_max @ step 0",
+     "pool_auroc": 0.6505,
+     "sign": 1,
+     "holdout_auroc": 0.343272
+    },
+    {
+     "holdout": "Qwen2.5-7B-Instruct-4bit",
+     "winner": "Readout p_max @ step 0",
+     "pool_auroc": 0.6378,
+     "sign": 1,
+     "holdout_auroc": 0.43187200000000003
+    },
+    {
+     "holdout": "Qwen3-1.7B-4bit",
+     "winner": "Readout neg_shadow_logvol_r1 @ step 0",
+     "pool_auroc": 0.6354,
+     "sign": -1,
+     "holdout_auroc": 0.391044
+    },
+    {
+     "holdout": "Qwen3-8B-4bit",
+     "winner": "attention[last_minus_1_js] @ step 0",
+     "pool_auroc": 0.617,
+     "sign": -1,
+     "holdout_auroc": 0.145704
+    }
+   ],
+   "holdout_winner_survival": 0,
+   "fixed_cell_max_survival": {
+    "cell": "Readout p_max @ step 0",
+    "n_holdouts_gt055": 6,
+    "of_n_holdouts": 8
+   },
+   "n_holdouts": 8,
+   "landscape_cells_gt055": {
+    "Readout p_max @ step 0": 6
+   },
+   "landscape_note": "full cell x holdout matrix is multiplicity-prone; descriptive only",
+   "landscape": {
+    "attention[final_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.565632,
+     "Llama-3.2-3B-Instruct-4bit": 0.383884,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.7269880000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.553668,
+     "Phi-4-mini-instruct-4bit": 0.530832,
+     "Qwen2.5-7B-Instruct-4bit": 0.516416,
+     "Qwen3-1.7B-4bit": 0.520864,
+     "Qwen3-8B-4bit": 0.7697320000000001
+    },
+    "attention[final_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.464028,
+     "Llama-3.2-3B-Instruct-4bit": 0.354324,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.30908800000000003,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.44148,
+     "Phi-4-mini-instruct-4bit": 0.562464,
+     "Qwen2.5-7B-Instruct-4bit": 0.340812,
+     "Qwen3-1.7B-4bit": 0.640648,
+     "Qwen3-8B-4bit": 0.32579600000000003
+    },
+    "attention[final_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.695644,
+     "Llama-3.2-3B-Instruct-4bit": 0.339352,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.731752,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.52386,
+     "Phi-4-mini-instruct-4bit": 0.576524,
+     "Qwen2.5-7B-Instruct-4bit": 0.50964,
+     "Qwen3-1.7B-4bit": 0.522108,
+     "Qwen3-8B-4bit": 0.6969159999999999
+    },
+    "attention[final_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.38160399999999994,
+     "Llama-3.2-3B-Instruct-4bit": 0.44320400000000004,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.78328,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.542188,
+     "Phi-4-mini-instruct-4bit": 0.6181,
+     "Qwen2.5-7B-Instruct-4bit": 0.78786,
+     "Qwen3-1.7B-4bit": 0.460192,
+     "Qwen3-8B-4bit": 0.642012
+    },
+    "attention[final_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen2.5-7B-Instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5
+    },
+    "attention[final_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.4940899999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.487292,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.496958,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.49230599999999997,
+     "Phi-4-mini-instruct-4bit": 0.484526,
+     "Qwen2.5-7B-Instruct-4bit": 0.49216399999999993,
+     "Qwen3-1.7B-4bit": 0.49559800000000004,
+     "Qwen3-8B-4bit": 0.502166
+    },
+    "attention[final_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.44152800000000003,
+     "Llama-3.2-3B-Instruct-4bit": 0.43467199999999995,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.230688,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.530012,
+     "Phi-4-mini-instruct-4bit": 0.34078400000000003,
+     "Qwen2.5-7B-Instruct-4bit": 0.549448,
+     "Qwen3-1.7B-4bit": 0.420728,
+     "Qwen3-8B-4bit": 0.43448
+    },
+    "attention[mid_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5659799999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.5886359999999999,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.522168,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.34894000000000003,
+     "Phi-4-mini-instruct-4bit": 0.27900400000000003,
+     "Qwen2.5-7B-Instruct-4bit": 0.409304,
+     "Qwen3-1.7B-4bit": 0.46392799999999995,
+     "Qwen3-8B-4bit": 0.57996
+    },
+    "attention[mid_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.53666,
+     "Llama-3.2-3B-Instruct-4bit": 0.622632,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.39378799999999997,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5851199999999999,
+     "Phi-4-mini-instruct-4bit": 0.7052999999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.354292,
+     "Qwen3-1.7B-4bit": 0.45222399999999996,
+     "Qwen3-8B-4bit": 0.5873919999999999
+    },
+    "attention[mid_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.416388,
+     "Llama-3.2-3B-Instruct-4bit": 0.55474,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.439928,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.41637599999999997,
+     "Phi-4-mini-instruct-4bit": 0.34345200000000004,
+     "Qwen2.5-7B-Instruct-4bit": 0.45509599999999995,
+     "Qwen3-1.7B-4bit": 0.402756,
+     "Qwen3-8B-4bit": 0.5566519999999999
+    },
+    "attention[mid_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.564752,
+     "Llama-3.2-3B-Instruct-4bit": 0.518676,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.25058,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.365432,
+     "Phi-4-mini-instruct-4bit": 0.5610280000000001,
+     "Qwen2.5-7B-Instruct-4bit": 0.413412,
+     "Qwen3-1.7B-4bit": 0.41912,
+     "Qwen3-8B-4bit": 0.527884
+    },
+    "attention[mid_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen2.5-7B-Instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5
+    },
+    "attention[mid_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.500484,
+     "Llama-3.2-3B-Instruct-4bit": 0.48393200000000003,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.485242,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.49768599999999996,
+     "Phi-4-mini-instruct-4bit": 0.494054,
+     "Qwen2.5-7B-Instruct-4bit": 0.49469,
+     "Qwen3-1.7B-4bit": 0.494632,
+     "Qwen3-8B-4bit": 0.49891200000000013
+    },
+    "attention[mid_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.42665600000000004,
+     "Llama-3.2-3B-Instruct-4bit": 0.518792,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.33044,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.337628,
+     "Phi-4-mini-instruct-4bit": 0.558952,
+     "Qwen2.5-7B-Instruct-4bit": 0.37639999999999996,
+     "Qwen3-1.7B-4bit": 0.43162,
+     "Qwen3-8B-4bit": 0.398992
+    },
+    "attention[last_minus_1_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.56402,
+     "Llama-3.2-3B-Instruct-4bit": 0.8652840000000002,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.357192,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.55334,
+     "Phi-4-mini-instruct-4bit": 0.42823999999999995,
+     "Qwen2.5-7B-Instruct-4bit": 0.850076,
+     "Qwen3-1.7B-4bit": 0.7009639999999999,
+     "Qwen3-8B-4bit": 0.145704
+    },
+    "attention[last_minus_1_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.598644,
+     "Llama-3.2-3B-Instruct-4bit": 0.8274,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.32345999999999997,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.4515,
+     "Phi-4-mini-instruct-4bit": 0.510464,
+     "Qwen2.5-7B-Instruct-4bit": 0.8326199999999999,
+     "Qwen3-1.7B-4bit": 0.718372,
+     "Qwen3-8B-4bit": 0.12238
+    },
+    "attention[last_minus_1_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.551972,
+     "Llama-3.2-3B-Instruct-4bit": 0.9001480000000001,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.274852,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5737319999999999,
+     "Phi-4-mini-instruct-4bit": 0.419392,
+     "Qwen2.5-7B-Instruct-4bit": 0.8690879999999999,
+     "Qwen3-1.7B-4bit": 0.637764,
+     "Qwen3-8B-4bit": 0.3046
+    },
+    "attention[last_minus_1_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.516308,
+     "Llama-3.2-3B-Instruct-4bit": 0.32238,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.587792,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.6247240000000001,
+     "Phi-4-mini-instruct-4bit": 0.40433600000000003,
+     "Qwen2.5-7B-Instruct-4bit": 0.612948,
+     "Qwen3-1.7B-4bit": 0.425624,
+     "Qwen3-8B-4bit": 0.274284
+    },
+    "attention[last_minus_1_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen2.5-7B-Instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5
+    },
+    "attention[last_minus_1_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.511794,
+     "Llama-3.2-3B-Instruct-4bit": 0.49892400000000003,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.51803,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.517134,
+     "Phi-4-mini-instruct-4bit": 0.469484,
+     "Qwen2.5-7B-Instruct-4bit": 0.49923399999999996,
+     "Qwen3-1.7B-4bit": 0.50657,
+     "Qwen3-8B-4bit": 0.507628
+    },
+    "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.48304400000000003,
+     "Llama-3.2-3B-Instruct-4bit": 0.3114680000000001,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.356576,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.40732,
+     "Phi-4-mini-instruct-4bit": 0.5314559999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.45230000000000004,
+     "Qwen3-1.7B-4bit": 0.40569999999999995,
+     "Qwen3-8B-4bit": 0.247492
+    },
+    "Readout fisher_eff_rank @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.6479239999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.735248,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.526656,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5966560000000001,
+     "Phi-4-mini-instruct-4bit": 0.516852,
+     "Qwen2.5-7B-Instruct-4bit": 0.43971599999999994,
+     "Qwen3-1.7B-4bit": 0.42945600000000006,
+     "Qwen3-8B-4bit": 0.670444
+    },
+    "Readout spectral_entropy @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.675664,
+     "Llama-3.2-3B-Instruct-4bit": 0.81296,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.47272800000000004,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.508412,
+     "Phi-4-mini-instruct-4bit": 0.552624,
+     "Qwen2.5-7B-Instruct-4bit": 0.7119599999999999,
+     "Qwen3-1.7B-4bit": 0.43539999999999995,
+     "Qwen3-8B-4bit": 0.6430119999999999
+    },
+    "Readout neg_shadow_logvol_r1 @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.7147680000000001,
+     "Llama-3.2-3B-Instruct-4bit": 0.794272,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.364776,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.47319599999999995,
+     "Phi-4-mini-instruct-4bit": 0.6802119999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.7186359999999999,
+     "Qwen3-1.7B-4bit": 0.391044,
+     "Qwen3-8B-4bit": 0.702232
+    },
+    "Readout null_ratio_post_rank1 @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5864119999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.445848,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.6458720000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.6601640000000001,
+     "Phi-4-mini-instruct-4bit": 0.53538,
+     "Qwen2.5-7B-Instruct-4bit": 0.786292,
+     "Qwen3-1.7B-4bit": 0.49983600000000006,
+     "Qwen3-8B-4bit": 0.6851119999999999
+    },
+    "Readout surprise @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.653712,
+     "Llama-3.2-3B-Instruct-4bit": 0.654284,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.272804,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.654228,
+     "Phi-4-mini-instruct-4bit": 0.414288,
+     "Qwen2.5-7B-Instruct-4bit": 0.5335,
+     "Qwen3-1.7B-4bit": 0.42668,
+     "Qwen3-8B-4bit": 0.6300140000000001
+    },
+    "Readout p_max @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.675236,
+     "Llama-3.2-3B-Instruct-4bit": 0.611924,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.7122120000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.6930879999999999,
+     "Phi-4-mini-instruct-4bit": 0.343272,
+     "Qwen2.5-7B-Instruct-4bit": 0.43187200000000003,
+     "Qwen3-1.7B-4bit": 0.664312,
+     "Qwen3-8B-4bit": 0.764608
+    },
+    "Fusion fusion_rank_mean_full @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5195019999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.341122,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.7577679999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.49932200000000004,
+     "Phi-4-mini-instruct-4bit": 0.622306,
+     "Qwen2.5-7B-Instruct-4bit": 0.40580799999999995,
+     "Qwen3-1.7B-4bit": 0.431412,
+     "Qwen3-8B-4bit": 0.725034
+    },
+    "Fusion fusion_rank_mean_geom @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.594352,
+     "Llama-3.2-3B-Instruct-4bit": 0.392486,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.7205759999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.643696,
+     "Phi-4-mini-instruct-4bit": 0.574394,
+     "Qwen2.5-7B-Instruct-4bit": 0.42172199999999993,
+     "Qwen3-1.7B-4bit": 0.388642,
+     "Qwen3-8B-4bit": 0.7655200000000001
+    }
+   },
+   "sign_stability": {
+    "attention[final_js] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.875,
+     "modal_sign": 1
+    },
+    "attention[final_js_kv_groups] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[final_js_no_bos] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.875,
+     "modal_sign": 1
+    },
+    "attention[final_bos_mass] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "attention[final_v_norm_bos] @ step 0": {
+     "n_models": 8,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[final_v_norm_max] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.75,
+     "modal_sign": -1
+    },
+    "attention[final_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[mid_js] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": 1
+    },
+    "attention[mid_js_kv_groups] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": 1
+    },
+    "attention[mid_js_no_bos] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[mid_bos_mass] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "attention[mid_v_norm_bos] @ step 0": {
+     "n_models": 8,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_max] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_js] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_js_kv_groups] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_js_no_bos] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_bos_mass] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_v_norm_bos] @ step 0": {
+     "n_models": 8,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_v_norm_max] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "Readout fisher_eff_rank @ step 0": {
+     "n_models": 8,
+     "agreement": 0.75,
+     "modal_sign": -1
+    },
+    "Readout spectral_entropy @ step 0": {
+     "n_models": 8,
+     "agreement": 0.75,
+     "modal_sign": -1
+    },
+    "Readout neg_shadow_logvol_r1 @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    },
+    "Readout null_ratio_post_rank1 @ step 0": {
+     "n_models": 8,
+     "agreement": 0.75,
+     "modal_sign": -1
+    },
+    "Readout surprise @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": 1
+    },
+    "Readout p_max @ step 0": {
+     "n_models": 8,
+     "agreement": 0.75,
+     "modal_sign": 1
+    },
+    "Fusion fusion_rank_mean_full @ step 0": {
+     "n_models": 8,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "Fusion fusion_rank_mean_geom @ step 0": {
+     "n_models": 8,
+     "agreement": 0.625,
+     "modal_sign": -1
+    }
+   }
+  },
+  "triviaqa_paired_rep": {
+   "holdout_winners": [
+    {
+     "holdout": "Llama-3.1-8B-Instruct-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.8227,
+     "sign": 1,
+     "holdout_auroc": 0.8041940000000001
+    },
+    {
+     "holdout": "Llama-3.2-3B-Instruct-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.8248,
+     "sign": 1,
+     "holdout_auroc": 0.78507
+    },
+    {
+     "holdout": "Mistral-7B-Instruct-v0.3-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.8113,
+     "sign": 1,
+     "holdout_auroc": 0.9064919999999999
+    },
+    {
+     "holdout": "Mistral-Nemo-Instruct-2407-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.8062,
+     "sign": 1,
+     "holdout_auroc": 0.9522780000000001
+    },
+    {
+     "holdout": "Phi-3.5-mini-instruct-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.82,
+     "sign": 1,
+     "holdout_auroc": 0.828208
+    },
+    {
+     "holdout": "Phi-4-mini-instruct-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.8316,
+     "sign": 1,
+     "holdout_auroc": 0.7244860000000001
+    },
+    {
+     "holdout": "Qwen2.5-7B-Instruct-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.8309,
+     "sign": 1,
+     "holdout_auroc": 0.730642
+    },
+    {
+     "holdout": "Qwen3-1.7B-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.8353,
+     "sign": 1,
+     "holdout_auroc": 0.6906559999999999
+    },
+    {
+     "holdout": "Qwen3-8B-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.808,
+     "sign": 1,
+     "holdout_auroc": 0.9363919999999999
+    },
+    {
+     "holdout": "gemma-3-4b-it-4bit",
+     "winner": "Fusion fusion_rank_mean_geom @ step 0",
+     "pool_auroc": 0.8176,
+     "sign": 1,
+     "holdout_auroc": 0.850074
+    }
+   ],
+   "holdout_winner_survival": 10,
+   "fixed_cell_max_survival": {
+    "cell": "Fusion fusion_rank_mean_geom @ step 0",
+    "n_holdouts_gt055": 10,
+    "of_n_holdouts": 10
+   },
+   "n_holdouts": 10,
+   "landscape_cells_gt055": {
+    "Fusion fusion_rank_mean_geom @ step 0": 10,
+    "attention[final_bos_mass] @ step 0": 9,
+    "Fusion fusion_rank_mean_full @ step 0": 9
+   },
+   "landscape_note": "full cell x holdout matrix is multiplicity-prone; descriptive only",
+   "landscape": {
+    "attention[final_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.17204399999999997,
+     "Llama-3.2-3B-Instruct-4bit": 0.23573200000000005,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.06348800000000002,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.22868,
+     "Phi-3.5-mini-instruct-4bit": 0.152176,
+     "Phi-4-mini-instruct-4bit": 0.230152,
+     "Qwen2.5-7B-Instruct-4bit": 0.591412,
+     "Qwen3-1.7B-4bit": 0.42846799999999996,
+     "Qwen3-8B-4bit": 0.338012,
+     "gemma-3-4b-it-4bit": 0.18212799999999998
+    },
+    "attention[final_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.27376,
+     "Llama-3.2-3B-Instruct-4bit": 0.751464,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.930876,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.459308,
+     "Phi-3.5-mini-instruct-4bit": 0.847824,
+     "Phi-4-mini-instruct-4bit": 0.7463679999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.5293640000000001,
+     "Qwen3-1.7B-4bit": 0.40499999999999997,
+     "Qwen3-8B-4bit": 0.6634639999999999,
+     "gemma-3-4b-it-4bit": 0.13458000000000003
+    },
+    "attention[final_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.3142,
+     "Llama-3.2-3B-Instruct-4bit": 0.669352,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.07052800000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.15100400000000003,
+     "Phi-3.5-mini-instruct-4bit": 0.123328,
+     "Phi-4-mini-instruct-4bit": 0.7061679999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.46706400000000003,
+     "Qwen3-1.7B-4bit": 0.6538200000000001,
+     "Qwen3-8B-4bit": 0.33967600000000003,
+     "gemma-3-4b-it-4bit": 0.152804
+    },
+    "attention[final_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.8285079999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.589808,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.03211200000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.9740599999999999,
+     "Phi-3.5-mini-instruct-4bit": 0.6524679999999999,
+     "Phi-4-mini-instruct-4bit": 0.6268919999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.9022360000000001,
+     "Qwen3-1.7B-4bit": 0.6838,
+     "Qwen3-8B-4bit": 0.8005919999999999,
+     "gemma-3-4b-it-4bit": 0.61042
+    },
+    "attention[final_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-3.5-mini-instruct-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen2.5-7B-Instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[final_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5343,
+     "Llama-3.2-3B-Instruct-4bit": 0.520362,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.45975,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.518776,
+     "Phi-3.5-mini-instruct-4bit": 0.506236,
+     "Phi-4-mini-instruct-4bit": 0.500588,
+     "Qwen2.5-7B-Instruct-4bit": 0.391578,
+     "Qwen3-1.7B-4bit": 0.49438000000000004,
+     "Qwen3-8B-4bit": 0.468958,
+     "gemma-3-4b-it-4bit": 0.489638
+    },
+    "attention[final_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.793124,
+     "Llama-3.2-3B-Instruct-4bit": 0.540476,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.069556,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.990416,
+     "Phi-3.5-mini-instruct-4bit": 0.6048279999999999,
+     "Phi-4-mini-instruct-4bit": 0.29980399999999996,
+     "Qwen2.5-7B-Instruct-4bit": 0.923404,
+     "Qwen3-1.7B-4bit": 0.6517120000000001,
+     "Qwen3-8B-4bit": 0.591028,
+     "gemma-3-4b-it-4bit": 0.68604
+    },
+    "attention[mid_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5342439999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.636568,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.397592,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.14416800000000002,
+     "Phi-3.5-mini-instruct-4bit": 0.707732,
+     "Phi-4-mini-instruct-4bit": 0.790216,
+     "Qwen2.5-7B-Instruct-4bit": 0.666684,
+     "Qwen3-1.7B-4bit": 0.39682399999999995,
+     "Qwen3-8B-4bit": 0.65864,
+     "gemma-3-4b-it-4bit": 0.5740799999999999
+    },
+    "attention[mid_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.545916,
+     "Llama-3.2-3B-Instruct-4bit": 0.7550520000000001,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.425616,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.52894,
+     "Phi-3.5-mini-instruct-4bit": 0.707732,
+     "Phi-4-mini-instruct-4bit": 0.8380679999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.7322799999999999,
+     "Qwen3-1.7B-4bit": 0.400992,
+     "Qwen3-8B-4bit": 0.675092,
+     "gemma-3-4b-it-4bit": 0.534092
+    },
+    "attention[mid_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.48098,
+     "Llama-3.2-3B-Instruct-4bit": 0.47765599999999997,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.51084,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.263432,
+     "Phi-3.5-mini-instruct-4bit": 0.581124,
+     "Phi-4-mini-instruct-4bit": 0.5425639999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.409656,
+     "Qwen3-1.7B-4bit": 0.57674,
+     "Qwen3-8B-4bit": 0.492136,
+     "gemma-3-4b-it-4bit": 0.35502
+    },
+    "attention[mid_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.541824,
+     "Llama-3.2-3B-Instruct-4bit": 0.6111199999999999,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.525536,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.46076400000000006,
+     "Phi-3.5-mini-instruct-4bit": 0.72192,
+     "Phi-4-mini-instruct-4bit": 0.927328,
+     "Qwen2.5-7B-Instruct-4bit": 0.637872,
+     "Qwen3-1.7B-4bit": 0.43385599999999996,
+     "Qwen3-8B-4bit": 0.7526600000000001,
+     "gemma-3-4b-it-4bit": 0.38197600000000004
+    },
+    "attention[mid_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-3.5-mini-instruct-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen2.5-7B-Instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[mid_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5914999999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.537416,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.49019,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.453444,
+     "Phi-3.5-mini-instruct-4bit": 0.546798,
+     "Phi-4-mini-instruct-4bit": 0.54035,
+     "Qwen2.5-7B-Instruct-4bit": 0.5489999999999999,
+     "Qwen3-1.7B-4bit": 0.497026,
+     "Qwen3-8B-4bit": 0.52139,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[mid_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.559436,
+     "Llama-3.2-3B-Instruct-4bit": 0.654932,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.616716,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.35092,
+     "Phi-3.5-mini-instruct-4bit": 0.769196,
+     "Phi-4-mini-instruct-4bit": 0.924384,
+     "Qwen2.5-7B-Instruct-4bit": 0.6991200000000002,
+     "Qwen3-1.7B-4bit": 0.461648,
+     "Qwen3-8B-4bit": 0.755208,
+     "gemma-3-4b-it-4bit": 0.23446
+    },
+    "attention[last_minus_1_js] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.3997400000000001,
+     "Llama-3.2-3B-Instruct-4bit": 0.155144,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.017224000000000007,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.09222400000000001,
+     "Phi-3.5-mini-instruct-4bit": 0.21023599999999998,
+     "Phi-4-mini-instruct-4bit": 0.3399,
+     "Qwen2.5-7B-Instruct-4bit": 0.39584800000000003,
+     "Qwen3-1.7B-4bit": 0.470644,
+     "Qwen3-8B-4bit": 0.49441599999999997,
+     "gemma-3-4b-it-4bit": 0.392028
+    },
+    "attention[last_minus_1_js_kv_groups] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.607088,
+     "Llama-3.2-3B-Instruct-4bit": 0.29726800000000003,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.02986000000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.04101200000000001,
+     "Phi-3.5-mini-instruct-4bit": 0.21023599999999998,
+     "Phi-4-mini-instruct-4bit": 0.27562400000000004,
+     "Qwen2.5-7B-Instruct-4bit": 0.5218640000000001,
+     "Qwen3-1.7B-4bit": 0.452988,
+     "Qwen3-8B-4bit": 0.382108,
+     "gemma-3-4b-it-4bit": 0.35250000000000004
+    },
+    "attention[last_minus_1_js_no_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.552756,
+     "Llama-3.2-3B-Instruct-4bit": 0.718576,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.971708,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.119744,
+     "Phi-3.5-mini-instruct-4bit": 0.721716,
+     "Phi-4-mini-instruct-4bit": 0.33877199999999996,
+     "Qwen2.5-7B-Instruct-4bit": 0.47759599999999997,
+     "Qwen3-1.7B-4bit": 0.5005679999999999,
+     "Qwen3-8B-4bit": 0.817024,
+     "gemma-3-4b-it-4bit": 0.6690760000000001
+    },
+    "attention[last_minus_1_bos_mass] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.7616999999999999,
+     "Llama-3.2-3B-Instruct-4bit": 0.343116,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.07128400000000001,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.9870599999999999,
+     "Phi-3.5-mini-instruct-4bit": 0.7748919999999999,
+     "Phi-4-mini-instruct-4bit": 0.36763999999999997,
+     "Qwen2.5-7B-Instruct-4bit": 0.848188,
+     "Qwen3-1.7B-4bit": 0.6417599999999999,
+     "Qwen3-8B-4bit": 0.6572959999999999,
+     "gemma-3-4b-it-4bit": 0.35052799999999995
+    },
+    "attention[last_minus_1_v_norm_bos] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.5,
+     "Llama-3.2-3B-Instruct-4bit": 0.5,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.5,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5,
+     "Phi-3.5-mini-instruct-4bit": 0.5,
+     "Phi-4-mini-instruct-4bit": 0.5,
+     "Qwen2.5-7B-Instruct-4bit": 0.5,
+     "Qwen3-1.7B-4bit": 0.5,
+     "Qwen3-8B-4bit": 0.5,
+     "gemma-3-4b-it-4bit": 0.5
+    },
+    "attention[last_minus_1_v_norm_max] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.565078,
+     "Llama-3.2-3B-Instruct-4bit": 0.5665100000000001,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.505134,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.5715060000000001,
+     "Phi-3.5-mini-instruct-4bit": 0.504816,
+     "Phi-4-mini-instruct-4bit": 0.51582,
+     "Qwen2.5-7B-Instruct-4bit": 0.651342,
+     "Qwen3-1.7B-4bit": 0.54382,
+     "Qwen3-8B-4bit": 0.5507219999999999,
+     "gemma-3-4b-it-4bit": 0.531308
+    },
+    "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.7336079999999998,
+     "Llama-3.2-3B-Instruct-4bit": 0.36313599999999996,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.043632000000000004,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.986088,
+     "Phi-3.5-mini-instruct-4bit": 0.8179039999999999,
+     "Phi-4-mini-instruct-4bit": 0.478436,
+     "Qwen2.5-7B-Instruct-4bit": 0.844768,
+     "Qwen3-1.7B-4bit": 0.6350759999999999,
+     "Qwen3-8B-4bit": 0.647572,
+     "gemma-3-4b-it-4bit": 0.421252
+    },
+    "Readout fisher_eff_rank @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.125076,
+     "Llama-3.2-3B-Instruct-4bit": 0.32168,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.898776,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.765896,
+     "Phi-3.5-mini-instruct-4bit": 0.545216,
+     "Phi-4-mini-instruct-4bit": 0.547204,
+     "Qwen2.5-7B-Instruct-4bit": 0.851048,
+     "Qwen3-1.7B-4bit": 0.718908,
+     "Qwen3-8B-4bit": 0.172012,
+     "gemma-3-4b-it-4bit": 0.8101160000000001
+    },
+    "Readout spectral_entropy @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.138224,
+     "Llama-3.2-3B-Instruct-4bit": 0.21969200000000003,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.8991,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.8606560000000001,
+     "Phi-3.5-mini-instruct-4bit": 0.587264,
+     "Phi-4-mini-instruct-4bit": 0.5679000000000001,
+     "Qwen2.5-7B-Instruct-4bit": 0.819324,
+     "Qwen3-1.7B-4bit": 0.7224639999999999,
+     "Qwen3-8B-4bit": 0.271312,
+     "gemma-3-4b-it-4bit": 0.831456
+    },
+    "Readout neg_shadow_logvol_r1 @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.830372,
+     "Llama-3.2-3B-Instruct-4bit": 0.8651199999999999,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.09672799999999998,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.23128,
+     "Phi-3.5-mini-instruct-4bit": 0.515244,
+     "Phi-4-mini-instruct-4bit": 0.6046279999999999,
+     "Qwen2.5-7B-Instruct-4bit": 0.494248,
+     "Qwen3-1.7B-4bit": 0.330044,
+     "Qwen3-8B-4bit": 0.09527600000000001,
+     "gemma-3-4b-it-4bit": 0.5254679999999999
+    },
+    "Readout null_ratio_post_rank1 @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.37139200000000006,
+     "Llama-3.2-3B-Instruct-4bit": 0.29192399999999996,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.894916,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.853828,
+     "Phi-3.5-mini-instruct-4bit": 0.8318599999999999,
+     "Phi-4-mini-instruct-4bit": 0.696252,
+     "Qwen2.5-7B-Instruct-4bit": 0.451544,
+     "Qwen3-1.7B-4bit": 0.652148,
+     "Qwen3-8B-4bit": 0.158644,
+     "gemma-3-4b-it-4bit": 0.208596
+    },
+    "Readout surprise @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.244136,
+     "Llama-3.2-3B-Instruct-4bit": 0.5064919999999999,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.25453000000000003,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.32879400000000003,
+     "Phi-3.5-mini-instruct-4bit": 0.555328,
+     "Phi-4-mini-instruct-4bit": 0.24013599999999996,
+     "Qwen2.5-7B-Instruct-4bit": 0.251768,
+     "Qwen3-1.7B-4bit": 0.198826,
+     "Qwen3-8B-4bit": 0.215806,
+     "gemma-3-4b-it-4bit": 0.217702
+    },
+    "Readout p_max @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.29944,
+     "Llama-3.2-3B-Instruct-4bit": 0.269052,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.021500000000000012,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.11888000000000001,
+     "Phi-3.5-mini-instruct-4bit": 0.48814399999999997,
+     "Phi-4-mini-instruct-4bit": 0.601468,
+     "Qwen2.5-7B-Instruct-4bit": 0.5715600000000001,
+     "Qwen3-1.7B-4bit": 0.5914999999999999,
+     "Qwen3-8B-4bit": 0.412196,
+     "gemma-3-4b-it-4bit": 0.6045480000000001
+    },
+    "Fusion fusion_rank_mean_full @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.6759,
+     "Llama-3.2-3B-Instruct-4bit": 0.739922,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.88281,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.960968,
+     "Phi-3.5-mini-instruct-4bit": 0.76505,
+     "Phi-4-mini-instruct-4bit": 0.587582,
+     "Qwen2.5-7B-Instruct-4bit": 0.7857679999999999,
+     "Qwen3-1.7B-4bit": 0.549516,
+     "Qwen3-8B-4bit": 0.9472160000000001,
+     "gemma-3-4b-it-4bit": 0.8957779999999997
+    },
+    "Fusion fusion_rank_mean_geom @ step 0": {
+     "Llama-3.1-8B-Instruct-4bit": 0.8041940000000001,
+     "Llama-3.2-3B-Instruct-4bit": 0.78507,
+     "Mistral-7B-Instruct-v0.3-4bit": 0.9064919999999999,
+     "Mistral-Nemo-Instruct-2407-4bit": 0.9522780000000001,
+     "Phi-3.5-mini-instruct-4bit": 0.828208,
+     "Phi-4-mini-instruct-4bit": 0.7244860000000001,
+     "Qwen2.5-7B-Instruct-4bit": 0.730642,
+     "Qwen3-1.7B-4bit": 0.6906559999999999,
+     "Qwen3-8B-4bit": 0.9363919999999999,
+     "gemma-3-4b-it-4bit": 0.850074
+    }
+   },
+   "sign_stability": {
+    "attention[final_js] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[final_js_kv_groups] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": -1
+    },
+    "attention[final_js_no_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[final_bos_mass] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.9,
+     "modal_sign": -1
+    },
+    "attention[final_v_norm_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[final_v_norm_max] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": 1
+    },
+    "attention[final_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.8,
+     "modal_sign": 1
+    },
+    "attention[mid_js] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": 1
+    },
+    "attention[mid_js_kv_groups] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.8,
+     "modal_sign": 1
+    },
+    "attention[mid_js_no_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[mid_bos_mass] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": -1
+    },
+    "attention[mid_v_norm_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_max] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": 1
+    },
+    "attention[mid_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_js] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_js_kv_groups] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_js_no_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_bos_mass] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": -1
+    },
+    "attention[last_minus_1_v_norm_bos] @ step 0": {
+     "n_models": 10,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_v_norm_max] @ step 0": {
+     "n_models": 10,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": 1
+    },
+    "Readout fisher_eff_rank @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": 1
+    },
+    "Readout spectral_entropy @ step 0": {
+     "n_models": 10,
+     "agreement": 0.7,
+     "modal_sign": 1
+    },
+    "Readout neg_shadow_logvol_r1 @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": -1
+    },
+    "Readout null_ratio_post_rank1 @ step 0": {
+     "n_models": 10,
+     "agreement": 0.5,
+     "modal_sign": 1
+    },
+    "Readout surprise @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": -1
+    },
+    "Readout p_max @ step 0": {
+     "n_models": 10,
+     "agreement": 0.6,
+     "modal_sign": 1
+    },
+    "Fusion fusion_rank_mean_full @ step 0": {
+     "n_models": 10,
+     "agreement": 1.0,
+     "modal_sign": 1
+    },
+    "Fusion fusion_rank_mean_geom @ step 0": {
+     "n_models": 10,
+     "agreement": 1.0,
+     "modal_sign": 1
+    }
+   }
+  }
+ },
+ "E2_transfer": {
+  "skipped": "need exactly 2 tasks, have ['anli_r1_rep', 'anli_r2', 'halueval_dialogue', 'halueval_qa', 'halueval_summarization', 'triviaqa_paired_rep']"
+ },
+ "E3_label_efficiency": {
+  "Llama-3.1-8B-Instruct-4bit|anli_r1_rep": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.1,
+    "frac_deployable_geom": 0.1
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.8,
+    "frac_deployable_geom": 0.8
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Llama-3.1-8B-Instruct-4bit|anli_r2": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.1,
+    "frac_deployable_geom": 0.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   }
+  },
+  "Llama-3.1-8B-Instruct-4bit|halueval_dialogue": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.2,
+    "frac_deployable_geom": 0.1
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.9,
+    "frac_deployable_geom": 0.8
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Llama-3.1-8B-Instruct-4bit|halueval_qa": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.9,
+    "frac_deployable_geom": 0.9
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Llama-3.1-8B-Instruct-4bit|halueval_summarization": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.2,
+    "frac_deployable_geom": 0.4
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.8,
+    "frac_deployable_geom": 0.7
+   }
+  },
+  "Llama-3.1-8B-Instruct-4bit|triviaqa_paired_rep": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.9,
+    "frac_deployable_geom": 0.9
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Llama-3.2-3B-Instruct-4bit|anli_r1_rep": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.9,
+    "frac_deployable_geom": 0.9
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Llama-3.2-3B-Instruct-4bit|anli_r2": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.1,
+    "frac_deployable_geom": 0.1
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.2,
+    "frac_deployable_geom": 0.2
+   }
+  },
+  "Llama-3.2-3B-Instruct-4bit|halueval_dialogue": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.5,
+    "frac_deployable_geom": 0.4
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.8,
+    "frac_deployable_geom": 0.6
+   }
+  },
+  "Llama-3.2-3B-Instruct-4bit|halueval_qa": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.9,
+    "frac_deployable_geom": 0.8
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Llama-3.2-3B-Instruct-4bit|halueval_summarization": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Llama-3.2-3B-Instruct-4bit|triviaqa_paired_rep": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.7,
+    "frac_deployable_geom": 0.7
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Mistral-7B-Instruct-v0.3-4bit|anli_r1_rep": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Mistral-7B-Instruct-v0.3-4bit|anli_r2": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.4,
+    "frac_deployable_geom": 0.4
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.7,
+    "frac_deployable_geom": 0.7
+   }
+  },
+  "Mistral-7B-Instruct-v0.3-4bit|halueval_dialogue": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.5,
+    "frac_deployable_geom": 0.5
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.8,
+    "frac_deployable_geom": 0.7
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Mistral-7B-Instruct-v0.3-4bit|halueval_qa": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.7,
+    "frac_deployable_geom": 0.7
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Mistral-7B-Instruct-v0.3-4bit|halueval_summarization": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.2,
+    "frac_deployable_geom": 0.2
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Mistral-7B-Instruct-v0.3-4bit|triviaqa_paired_rep": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Mistral-Nemo-Instruct-2407-4bit|anli_r1_rep": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.9,
+    "frac_deployable_geom": 0.9
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Mistral-Nemo-Instruct-2407-4bit|anli_r2": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.2,
+    "frac_deployable_geom": 0.2
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Mistral-Nemo-Instruct-2407-4bit|halueval_dialogue": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.8,
+    "frac_deployable_geom": 0.8
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Mistral-Nemo-Instruct-2407-4bit|halueval_qa": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.8,
+    "frac_deployable_geom": 0.8
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Mistral-Nemo-Instruct-2407-4bit|halueval_summarization": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.4,
+    "frac_deployable_geom": 0.0
+   }
+  },
+  "Mistral-Nemo-Instruct-2407-4bit|triviaqa_paired_rep": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Phi-3.5-mini-instruct-4bit|halueval_qa": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Phi-3.5-mini-instruct-4bit|triviaqa_paired_rep": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Phi-4-mini-instruct-4bit|anli_r1_rep": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.7,
+    "frac_deployable_geom": 0.6
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Phi-4-mini-instruct-4bit|anli_r2": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.3,
+    "frac_deployable_geom": 0.2
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.1,
+    "frac_deployable_geom": 0.1
+   }
+  },
+  "Phi-4-mini-instruct-4bit|halueval_dialogue": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.2,
+    "frac_deployable_geom": 0.2
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.8,
+    "frac_deployable_geom": 0.7
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Phi-4-mini-instruct-4bit|halueval_qa": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Phi-4-mini-instruct-4bit|halueval_summarization": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.4,
+    "frac_deployable_geom": 0.6
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.7,
+    "frac_deployable_geom": 0.7
+   }
+  },
+  "Phi-4-mini-instruct-4bit|triviaqa_paired_rep": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Qwen2.5-7B-Instruct-4bit|halueval_dialogue": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.1,
+    "frac_deployable_geom": 0.1
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.2,
+    "frac_deployable_geom": 0.2
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.6,
+    "frac_deployable_geom": 0.6
+   }
+  },
+  "Qwen2.5-7B-Instruct-4bit|halueval_qa": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.6,
+    "frac_deployable_geom": 0.5
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Qwen2.5-7B-Instruct-4bit|halueval_summarization": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.8,
+    "frac_deployable_geom": 0.9
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Qwen2.5-7B-Instruct-4bit|triviaqa_paired_rep": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.9,
+    "frac_deployable_geom": 0.9
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Qwen3-1.7B-4bit|anli_r1_rep": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.3,
+    "frac_deployable_geom": 0.1
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 0.8
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 0.9
+   }
+  },
+  "Qwen3-1.7B-4bit|anli_r2": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.3,
+    "frac_deployable_geom": 0.3
+   }
+  },
+  "Qwen3-1.7B-4bit|halueval_dialogue": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.2,
+    "frac_deployable_geom": 0.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.1,
+    "frac_deployable_geom": 0.0
+   }
+  },
+  "Qwen3-1.7B-4bit|halueval_qa": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.2,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.9,
+    "frac_deployable_geom": 0.8
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Qwen3-1.7B-4bit|halueval_summarization": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.2,
+    "frac_deployable_geom": 0.3
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.6,
+    "frac_deployable_geom": 0.7
+   }
+  },
+  "Qwen3-1.7B-4bit|triviaqa_paired_rep": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.3,
+    "frac_deployable_geom": 0.1
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.7,
+    "frac_deployable_geom": 0.3
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 0.9
+   }
+  },
+  "Qwen3-8B-4bit|anli_r1_rep": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Qwen3-8B-4bit|anli_r2": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.1,
+    "frac_deployable_geom": 0.1
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.8,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.9,
+    "frac_deployable_geom": 0.9
+   }
+  },
+  "Qwen3-8B-4bit|halueval_dialogue": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.3,
+    "frac_deployable_geom": 0.1
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.7,
+    "frac_deployable_geom": 0.5
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 0.9
+   }
+  },
+  "Qwen3-8B-4bit|halueval_qa": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Qwen3-8B-4bit|halueval_summarization": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.7,
+    "frac_deployable_geom": 0.7
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "Qwen3-8B-4bit|triviaqa_paired_rep": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "gemma-3-4b-it-4bit|anli_r1_rep": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.4,
+    "frac_deployable_geom": 0.4
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.9,
+    "frac_deployable_geom": 0.9
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "gemma-3-4b-it-4bit|anli_r2": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "row",
+    "frac_deployable_full": 0.0,
+    "frac_deployable_geom": 0.0
+   }
+  },
+  "gemma-3-4b-it-4bit|halueval_dialogue": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.3,
+    "frac_deployable_geom": 0.3
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.8,
+    "frac_deployable_geom": 0.8
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "gemma-3-4b-it-4bit|halueval_qa": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  },
+  "gemma-3-4b-it-4bit|triviaqa_paired_rep": {
+   "50": {
+    "label_budget": 50,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 0.9,
+    "frac_deployable_geom": 0.9
+   },
+   "100": {
+    "label_budget": 100,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   },
+   "150": {
+    "label_budget": 150,
+    "subsample_unit": "stem",
+    "frac_deployable_full": 1.0,
+    "frac_deployable_geom": 1.0
+   }
+  }
+ }
+}
