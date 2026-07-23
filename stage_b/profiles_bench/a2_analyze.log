@@ -1,0 +1,5 @@
+loaded 53 (model, task) matrices from stage_b/profiles_bench
+[A2] 6/10 > 0.55; bar=8; pass=False aborted=False
+
+report -> stage_b/profiles_bench/A2_REGISTERED.json
+EXIT=0

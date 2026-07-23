@@ -1,0 +1,36 @@
+name: bench-provenance
+
+# Verifies that the published BENCH strict Phase-4 artifacts still match the checksum
+# sidecar (PROVENANCE.json). This guards against later drift in the committed tree; it
+# does NOT retroactively prove an execution-time signature for the original run.
+
+on:
+  push:
+    paths:
+      - "stage_b/profiles_bench/**"
+      - "stage_b/verify_bench_provenance.py"
+      - "stage_b/test_verify_bench_provenance.py"
+      - ".github/workflows/bench-provenance.yml"
+  pull_request:
+    paths:
+      - "stage_b/profiles_bench/**"
+      - "stage_b/verify_bench_provenance.py"
+      - "stage_b/test_verify_bench_provenance.py"
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Unit tests (fail-closed behavior)
+        working-directory: stage_b
+        run: python3 -m unittest test_verify_bench_provenance
+      - name: Verify provenance sidecar against the committed tree
+        run: |
+          python3 stage_b/verify_bench_provenance.py \
+            --manifest stage_b/profiles_bench/PROVENANCE.json \
+            --root stage_b/profiles_bench

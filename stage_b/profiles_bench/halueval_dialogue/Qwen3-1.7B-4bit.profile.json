@@ -1,0 +1,7193 @@
+{
+ "schema_version": "confluence/0.2-unified",
+ "model": "mlx-community/Qwen3-1.7B-4bit",
+ "slug": "Qwen3-1.7B-4bit",
+ "benchmark": "halueval_dialogue",
+ "n": 1000,
+ "n_aligned": 1000,
+ "n_dropped_unaligned": 0,
+ "n_cells_total": 29,
+ "n_ace_cells": 21,
+ "n_readout_cells": 6,
+ "n_fusion_cells": 2,
+ "ace_data_hash": "ef5e604a87ce6eff3815f12c34c43c52ccdef47b4eb8a63dcd0b466af17d4fe8",
+ "readout_data_hash": "ef5e604a87ce6eff3815f12c34c43c52ccdef47b4eb8a63dcd0b466af17d4fe8",
+ "primary_full_panel": {
+  "winner": "Readout surprise @ step 0",
+  "ci_semantics": "procedure-level OOB CI (in-bag winners vary across resamples); winner = modal in-bag pick",
+  "winner_marginal": {
+   "auroc": 0.6684,
+   "sign": -1
+  },
+  "oob_auroc_median": 0.6684385841869565,
+  "oob_auroc_ci_lo": 0.6245999105727721,
+  "oob_auroc_ci_hi": 0.7114104072344971,
+  "winner_stability": 1.0,
+  "winner_counts": {
+   "Readout surprise @ step 0": 2000
+  },
+  "oob_n_bootstrap_used": 2000,
+  "n_cells": 29,
+  "deployable": true,
+  "bootstrap_unit": "row",
+  "n_groups": 1000,
+  "full_sample_marginals": {
+   "attention[final_js] @ step 0": {
+    "auroc": 0.5028,
+    "sign": 1
+   },
+   "attention[final_js_kv_groups] @ step 0": {
+    "auroc": 0.503,
+    "sign": 1
+   },
+   "attention[final_js_no_bos] @ step 0": {
+    "auroc": 0.5019,
+    "sign": -1
+   },
+   "attention[final_bos_mass] @ step 0": {
+    "auroc": 0.515,
+    "sign": -1
+   },
+   "attention[final_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[final_v_norm_max] @ step 0": {
+    "auroc": 0.51,
+    "sign": 1
+   },
+   "attention[final_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.518,
+    "sign": 1
+   },
+   "attention[mid_js] @ step 0": {
+    "auroc": 0.5005,
+    "sign": -1
+   },
+   "attention[mid_js_kv_groups] @ step 0": {
+    "auroc": 0.5215,
+    "sign": 1
+   },
+   "attention[mid_js_no_bos] @ step 0": {
+    "auroc": 0.5004,
+    "sign": 1
+   },
+   "attention[mid_bos_mass] @ step 0": {
+    "auroc": 0.5002,
+    "sign": 1
+   },
+   "attention[mid_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[mid_v_norm_max] @ step 0": {
+    "auroc": 0.5116,
+    "sign": -1
+   },
+   "attention[mid_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.5116,
+    "sign": -1
+   },
+   "attention[last_minus_1_js] @ step 0": {
+    "auroc": 0.5286,
+    "sign": -1
+   },
+   "attention[last_minus_1_js_kv_groups] @ step 0": {
+    "auroc": 0.5186,
+    "sign": -1
+   },
+   "attention[last_minus_1_js_no_bos] @ step 0": {
+    "auroc": 0.5511,
+    "sign": -1
+   },
+   "attention[last_minus_1_bos_mass] @ step 0": {
+    "auroc": 0.5254,
+    "sign": -1
+   },
+   "attention[last_minus_1_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[last_minus_1_v_norm_max] @ step 0": {
+    "auroc": 0.5082,
+    "sign": -1
+   },
+   "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.5304,
+    "sign": 1
+   },
+   "Readout fisher_eff_rank @ step 0": {
+    "auroc": 0.5055,
+    "sign": -1
+   },
+   "Readout spectral_entropy @ step 0": {
+    "auroc": 0.5414,
+    "sign": -1
+   },
+   "Readout neg_shadow_logvol_r1 @ step 0": {
+    "auroc": 0.5226,
+    "sign": -1
+   },
+   "Readout null_ratio_post_rank1 @ step 0": {
+    "auroc": 0.5105,
+    "sign": -1
+   },
+   "Readout surprise @ step 0": {
+    "auroc": 0.6684,
+    "sign": -1
+   },
+   "Readout p_max @ step 0": {
+    "auroc": 0.5575,
+    "sign": 1
+   },
+   "Fusion fusion_rank_mean_full @ step 0": {
+    "auroc": 0.566,
+    "sign": -1
+   },
+   "Fusion fusion_rank_mean_geom @ step 0": {
+    "auroc": 0.5191,
+    "sign": 1
+   }
+  }
+ },
+ "secondary_geometric_only": {
+  "winner": "attention[last_minus_1_js_no_bos] @ step 0",
+  "ci_semantics": "procedure-level OOB CI (in-bag winners vary across resamples); winner = modal in-bag pick",
+  "winner_marginal": {
+   "auroc": 0.5511,
+   "sign": -1
+  },
+  "oob_auroc_median": 0.5228804628514951,
+  "oob_auroc_ci_lo": 0.4505583392302142,
+  "oob_auroc_ci_hi": 0.5705575259303688,
+  "winner_stability": 0.467,
+  "winner_counts": {
+   "attention[final_js] @ step 0": 2,
+   "attention[final_js_kv_groups] @ step 0": 2,
+   "attention[final_js_no_bos] @ step 0": 10,
+   "attention[final_bos_mass] @ step 0": 22,
+   "attention[final_v_norm_max] @ step 0": 22,
+   "attention[final_v_norm_lastq_weighted] @ step 0": 56,
+   "attention[mid_js] @ step 0": 5,
+   "attention[mid_js_kv_groups] @ step 0": 64,
+   "attention[mid_js_no_bos] @ step 0": 12,
+   "attention[mid_bos_mass] @ step 0": 3,
+   "attention[mid_v_norm_max] @ step 0": 32,
+   "attention[mid_v_norm_lastq_weighted] @ step 0": 19,
+   "attention[last_minus_1_js] @ step 0": 90,
+   "attention[last_minus_1_js_no_bos] @ step 0": 934,
+   "attention[last_minus_1_bos_mass] @ step 0": 12,
+   "attention[last_minus_1_v_norm_max] @ step 0": 26,
+   "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": 198,
+   "Readout fisher_eff_rank @ step 0": 3,
+   "Readout spectral_entropy @ step 0": 425,
+   "Readout neg_shadow_logvol_r1 @ step 0": 22,
+   "Readout null_ratio_post_rank1 @ step 0": 16,
+   "Fusion fusion_rank_mean_geom @ step 0": 25
+  },
+  "oob_n_bootstrap_used": 2000,
+  "n_cells": 26,
+  "deployable": false,
+  "bootstrap_unit": "row",
+  "n_groups": 1000,
+  "full_sample_marginals": {
+   "attention[final_js] @ step 0": {
+    "auroc": 0.5028,
+    "sign": 1
+   },
+   "attention[final_js_kv_groups] @ step 0": {
+    "auroc": 0.503,
+    "sign": 1
+   },
+   "attention[final_js_no_bos] @ step 0": {
+    "auroc": 0.5019,
+    "sign": -1
+   },
+   "attention[final_bos_mass] @ step 0": {
+    "auroc": 0.515,
+    "sign": -1
+   },
+   "attention[final_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[final_v_norm_max] @ step 0": {
+    "auroc": 0.51,
+    "sign": 1
+   },
+   "attention[final_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.518,
+    "sign": 1
+   },
+   "attention[mid_js] @ step 0": {
+    "auroc": 0.5005,
+    "sign": -1
+   },
+   "attention[mid_js_kv_groups] @ step 0": {
+    "auroc": 0.5215,
+    "sign": 1
+   },
+   "attention[mid_js_no_bos] @ step 0": {
+    "auroc": 0.5004,
+    "sign": 1
+   },
+   "attention[mid_bos_mass] @ step 0": {
+    "auroc": 0.5002,
+    "sign": 1
+   },
+   "attention[mid_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[mid_v_norm_max] @ step 0": {
+    "auroc": 0.5116,
+    "sign": -1
+   },
+   "attention[mid_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.5116,
+    "sign": -1
+   },
+   "attention[last_minus_1_js] @ step 0": {
+    "auroc": 0.5286,
+    "sign": -1
+   },
+   "attention[last_minus_1_js_kv_groups] @ step 0": {
+    "auroc": 0.5186,
+    "sign": -1
+   },
+   "attention[last_minus_1_js_no_bos] @ step 0": {
+    "auroc": 0.5511,
+    "sign": -1
+   },
+   "attention[last_minus_1_bos_mass] @ step 0": {
+    "auroc": 0.5254,
+    "sign": -1
+   },
+   "attention[last_minus_1_v_norm_bos] @ step 0": {
+    "auroc": 0.5,
+    "sign": 1
+   },
+   "attention[last_minus_1_v_norm_max] @ step 0": {
+    "auroc": 0.5082,
+    "sign": -1
+   },
+   "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+    "auroc": 0.5304,
+    "sign": 1
+   },
+   "Readout fisher_eff_rank @ step 0": {
+    "auroc": 0.5055,
+    "sign": -1
+   },
+   "Readout spectral_entropy @ step 0": {
+    "auroc": 0.5414,
+    "sign": -1
+   },
+   "Readout neg_shadow_logvol_r1 @ step 0": {
+    "auroc": 0.5226,
+    "sign": -1
+   },
+   "Readout null_ratio_post_rank1 @ step 0": {
+    "auroc": 0.5105,
+    "sign": -1
+   },
+   "Fusion fusion_rank_mean_geom @ step 0": {
+    "auroc": 0.5191,
+    "sign": 1
+   }
+  }
+ },
+ "endpoints_by_unit": {
+  "row": {
+   "primary_full_panel": {
+    "winner": "Readout surprise @ step 0",
+    "ci_semantics": "procedure-level OOB CI (in-bag winners vary across resamples); winner = modal in-bag pick",
+    "winner_marginal": {
+     "auroc": 0.6684,
+     "sign": -1
+    },
+    "oob_auroc_median": 0.6684385841869565,
+    "oob_auroc_ci_lo": 0.6245999105727721,
+    "oob_auroc_ci_hi": 0.7114104072344971,
+    "winner_stability": 1.0,
+    "winner_counts": {
+     "Readout surprise @ step 0": 2000
+    },
+    "oob_n_bootstrap_used": 2000,
+    "n_cells": 29,
+    "deployable": true,
+    "bootstrap_unit": "row",
+    "n_groups": 1000,
+    "full_sample_marginals": {
+     "attention[final_js] @ step 0": {
+      "auroc": 0.5028,
+      "sign": 1
+     },
+     "attention[final_js_kv_groups] @ step 0": {
+      "auroc": 0.503,
+      "sign": 1
+     },
+     "attention[final_js_no_bos] @ step 0": {
+      "auroc": 0.5019,
+      "sign": -1
+     },
+     "attention[final_bos_mass] @ step 0": {
+      "auroc": 0.515,
+      "sign": -1
+     },
+     "attention[final_v_norm_bos] @ step 0": {
+      "auroc": 0.5,
+      "sign": 1
+     },
+     "attention[final_v_norm_max] @ step 0": {
+      "auroc": 0.51,
+      "sign": 1
+     },
+     "attention[final_v_norm_lastq_weighted] @ step 0": {
+      "auroc": 0.518,
+      "sign": 1
+     },
+     "attention[mid_js] @ step 0": {
+      "auroc": 0.5005,
+      "sign": -1
+     },
+     "attention[mid_js_kv_groups] @ step 0": {
+      "auroc": 0.5215,
+      "sign": 1
+     },
+     "attention[mid_js_no_bos] @ step 0": {
+      "auroc": 0.5004,
+      "sign": 1
+     },
+     "attention[mid_bos_mass] @ step 0": {
+      "auroc": 0.5002,
+      "sign": 1
+     },
+     "attention[mid_v_norm_bos] @ step 0": {
+      "auroc": 0.5,
+      "sign": 1
+     },
+     "attention[mid_v_norm_max] @ step 0": {
+      "auroc": 0.5116,
+      "sign": -1
+     },
+     "attention[mid_v_norm_lastq_weighted] @ step 0": {
+      "auroc": 0.5116,
+      "sign": -1
+     },
+     "attention[last_minus_1_js] @ step 0": {
+      "auroc": 0.5286,
+      "sign": -1
+     },
+     "attention[last_minus_1_js_kv_groups] @ step 0": {
+      "auroc": 0.5186,
+      "sign": -1
+     },
+     "attention[last_minus_1_js_no_bos] @ step 0": {
+      "auroc": 0.5511,
+      "sign": -1
+     },
+     "attention[last_minus_1_bos_mass] @ step 0": {
+      "auroc": 0.5254,
+      "sign": -1
+     },
+     "attention[last_minus_1_v_norm_bos] @ step 0": {
+      "auroc": 0.5,
+      "sign": 1
+     },
+     "attention[last_minus_1_v_norm_max] @ step 0": {
+      "auroc": 0.5082,
+      "sign": -1
+     },
+     "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+      "auroc": 0.5304,
+      "sign": 1
+     },
+     "Readout fisher_eff_rank @ step 0": {
+      "auroc": 0.5055,
+      "sign": -1
+     },
+     "Readout spectral_entropy @ step 0": {
+      "auroc": 0.5414,
+      "sign": -1
+     },
+     "Readout neg_shadow_logvol_r1 @ step 0": {
+      "auroc": 0.5226,
+      "sign": -1
+     },
+     "Readout null_ratio_post_rank1 @ step 0": {
+      "auroc": 0.5105,
+      "sign": -1
+     },
+     "Readout surprise @ step 0": {
+      "auroc": 0.6684,
+      "sign": -1
+     },
+     "Readout p_max @ step 0": {
+      "auroc": 0.5575,
+      "sign": 1
+     },
+     "Fusion fusion_rank_mean_full @ step 0": {
+      "auroc": 0.566,
+      "sign": -1
+     },
+     "Fusion fusion_rank_mean_geom @ step 0": {
+      "auroc": 0.5191,
+      "sign": 1
+     }
+    }
+   },
+   "secondary_geometric_only": {
+    "winner": "attention[last_minus_1_js_no_bos] @ step 0",
+    "ci_semantics": "procedure-level OOB CI (in-bag winners vary across resamples); winner = modal in-bag pick",
+    "winner_marginal": {
+     "auroc": 0.5511,
+     "sign": -1
+    },
+    "oob_auroc_median": 0.5228804628514951,
+    "oob_auroc_ci_lo": 0.4505583392302142,
+    "oob_auroc_ci_hi": 0.5705575259303688,
+    "winner_stability": 0.467,
+    "winner_counts": {
+     "attention[final_js] @ step 0": 2,
+     "attention[final_js_kv_groups] @ step 0": 2,
+     "attention[final_js_no_bos] @ step 0": 10,
+     "attention[final_bos_mass] @ step 0": 22,
+     "attention[final_v_norm_max] @ step 0": 22,
+     "attention[final_v_norm_lastq_weighted] @ step 0": 56,
+     "attention[mid_js] @ step 0": 5,
+     "attention[mid_js_kv_groups] @ step 0": 64,
+     "attention[mid_js_no_bos] @ step 0": 12,
+     "attention[mid_bos_mass] @ step 0": 3,
+     "attention[mid_v_norm_max] @ step 0": 32,
+     "attention[mid_v_norm_lastq_weighted] @ step 0": 19,
+     "attention[last_minus_1_js] @ step 0": 90,
+     "attention[last_minus_1_js_no_bos] @ step 0": 934,
+     "attention[last_minus_1_bos_mass] @ step 0": 12,
+     "attention[last_minus_1_v_norm_max] @ step 0": 26,
+     "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": 198,
+     "Readout fisher_eff_rank @ step 0": 3,
+     "Readout spectral_entropy @ step 0": 425,
+     "Readout neg_shadow_logvol_r1 @ step 0": 22,
+     "Readout null_ratio_post_rank1 @ step 0": 16,
+     "Fusion fusion_rank_mean_geom @ step 0": 25
+    },
+    "oob_n_bootstrap_used": 2000,
+    "n_cells": 26,
+    "deployable": false,
+    "bootstrap_unit": "row",
+    "n_groups": 1000,
+    "full_sample_marginals": {
+     "attention[final_js] @ step 0": {
+      "auroc": 0.5028,
+      "sign": 1
+     },
+     "attention[final_js_kv_groups] @ step 0": {
+      "auroc": 0.503,
+      "sign": 1
+     },
+     "attention[final_js_no_bos] @ step 0": {
+      "auroc": 0.5019,
+      "sign": -1
+     },
+     "attention[final_bos_mass] @ step 0": {
+      "auroc": 0.515,
+      "sign": -1
+     },
+     "attention[final_v_norm_bos] @ step 0": {
+      "auroc": 0.5,
+      "sign": 1
+     },
+     "attention[final_v_norm_max] @ step 0": {
+      "auroc": 0.51,
+      "sign": 1
+     },
+     "attention[final_v_norm_lastq_weighted] @ step 0": {
+      "auroc": 0.518,
+      "sign": 1
+     },
+     "attention[mid_js] @ step 0": {
+      "auroc": 0.5005,
+      "sign": -1
+     },
+     "attention[mid_js_kv_groups] @ step 0": {
+      "auroc": 0.5215,
+      "sign": 1
+     },
+     "attention[mid_js_no_bos] @ step 0": {
+      "auroc": 0.5004,
+      "sign": 1
+     },
+     "attention[mid_bos_mass] @ step 0": {
+      "auroc": 0.5002,
+      "sign": 1
+     },
+     "attention[mid_v_norm_bos] @ step 0": {
+      "auroc": 0.5,
+      "sign": 1
+     },
+     "attention[mid_v_norm_max] @ step 0": {
+      "auroc": 0.5116,
+      "sign": -1
+     },
+     "attention[mid_v_norm_lastq_weighted] @ step 0": {
+      "auroc": 0.5116,
+      "sign": -1
+     },
+     "attention[last_minus_1_js] @ step 0": {
+      "auroc": 0.5286,
+      "sign": -1
+     },
+     "attention[last_minus_1_js_kv_groups] @ step 0": {
+      "auroc": 0.5186,
+      "sign": -1
+     },
+     "attention[last_minus_1_js_no_bos] @ step 0": {
+      "auroc": 0.5511,
+      "sign": -1
+     },
+     "attention[last_minus_1_bos_mass] @ step 0": {
+      "auroc": 0.5254,
+      "sign": -1
+     },
+     "attention[last_minus_1_v_norm_bos] @ step 0": {
+      "auroc": 0.5,
+      "sign": 1
+     },
+     "attention[last_minus_1_v_norm_max] @ step 0": {
+      "auroc": 0.5082,
+      "sign": -1
+     },
+     "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+      "auroc": 0.5304,
+      "sign": 1
+     },
+     "Readout fisher_eff_rank @ step 0": {
+      "auroc": 0.5055,
+      "sign": -1
+     },
+     "Readout spectral_entropy @ step 0": {
+      "auroc": 0.5414,
+      "sign": -1
+     },
+     "Readout neg_shadow_logvol_r1 @ step 0": {
+      "auroc": 0.5226,
+      "sign": -1
+     },
+     "Readout null_ratio_post_rank1 @ step 0": {
+      "auroc": 0.5105,
+      "sign": -1
+     },
+     "Fusion fusion_rank_mean_geom @ step 0": {
+      "auroc": 0.5191,
+      "sign": 1
+     }
+    }
+   }
+  },
+  "cluster": {
+   "primary_full_panel": {
+    "winner": "Readout surprise @ step 0",
+    "ci_semantics": "procedure-level OOB CI (in-bag winners vary across resamples); winner = modal in-bag pick",
+    "winner_marginal": {
+     "auroc": 0.6684,
+     "sign": -1
+    },
+    "oob_auroc_median": 0.66813035381679,
+    "oob_auroc_ci_lo": 0.6291840979403676,
+    "oob_auroc_ci_hi": 0.707234461663556,
+    "winner_stability": 1.0,
+    "winner_counts": {
+     "Readout surprise @ step 0": 2000
+    },
+    "oob_n_bootstrap_used": 2000,
+    "n_cells": 29,
+    "deployable": true,
+    "bootstrap_unit": "cluster",
+    "n_groups": 500,
+    "full_sample_marginals": {
+     "attention[final_js] @ step 0": {
+      "auroc": 0.5028,
+      "sign": 1
+     },
+     "attention[final_js_kv_groups] @ step 0": {
+      "auroc": 0.503,
+      "sign": 1
+     },
+     "attention[final_js_no_bos] @ step 0": {
+      "auroc": 0.5019,
+      "sign": -1
+     },
+     "attention[final_bos_mass] @ step 0": {
+      "auroc": 0.515,
+      "sign": -1
+     },
+     "attention[final_v_norm_bos] @ step 0": {
+      "auroc": 0.5,
+      "sign": 1
+     },
+     "attention[final_v_norm_max] @ step 0": {
+      "auroc": 0.51,
+      "sign": 1
+     },
+     "attention[final_v_norm_lastq_weighted] @ step 0": {
+      "auroc": 0.518,
+      "sign": 1
+     },
+     "attention[mid_js] @ step 0": {
+      "auroc": 0.5005,
+      "sign": -1
+     },
+     "attention[mid_js_kv_groups] @ step 0": {
+      "auroc": 0.5215,
+      "sign": 1
+     },
+     "attention[mid_js_no_bos] @ step 0": {
+      "auroc": 0.5004,
+      "sign": 1
+     },
+     "attention[mid_bos_mass] @ step 0": {
+      "auroc": 0.5002,
+      "sign": 1
+     },
+     "attention[mid_v_norm_bos] @ step 0": {
+      "auroc": 0.5,
+      "sign": 1
+     },
+     "attention[mid_v_norm_max] @ step 0": {
+      "auroc": 0.5116,
+      "sign": -1
+     },
+     "attention[mid_v_norm_lastq_weighted] @ step 0": {
+      "auroc": 0.5116,
+      "sign": -1
+     },
+     "attention[last_minus_1_js] @ step 0": {
+      "auroc": 0.5286,
+      "sign": -1
+     },
+     "attention[last_minus_1_js_kv_groups] @ step 0": {
+      "auroc": 0.5186,
+      "sign": -1
+     },
+     "attention[last_minus_1_js_no_bos] @ step 0": {
+      "auroc": 0.5511,
+      "sign": -1
+     },
+     "attention[last_minus_1_bos_mass] @ step 0": {
+      "auroc": 0.5254,
+      "sign": -1
+     },
+     "attention[last_minus_1_v_norm_bos] @ step 0": {
+      "auroc": 0.5,
+      "sign": 1
+     },
+     "attention[last_minus_1_v_norm_max] @ step 0": {
+      "auroc": 0.5082,
+      "sign": -1
+     },
+     "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+      "auroc": 0.5304,
+      "sign": 1
+     },
+     "Readout fisher_eff_rank @ step 0": {
+      "auroc": 0.5055,
+      "sign": -1
+     },
+     "Readout spectral_entropy @ step 0": {
+      "auroc": 0.5414,
+      "sign": -1
+     },
+     "Readout neg_shadow_logvol_r1 @ step 0": {
+      "auroc": 0.5226,
+      "sign": -1
+     },
+     "Readout null_ratio_post_rank1 @ step 0": {
+      "auroc": 0.5105,
+      "sign": -1
+     },
+     "Readout surprise @ step 0": {
+      "auroc": 0.6684,
+      "sign": -1
+     },
+     "Readout p_max @ step 0": {
+      "auroc": 0.5575,
+      "sign": 1
+     },
+     "Fusion fusion_rank_mean_full @ step 0": {
+      "auroc": 0.566,
+      "sign": -1
+     },
+     "Fusion fusion_rank_mean_geom @ step 0": {
+      "auroc": 0.5191,
+      "sign": 1
+     }
+    }
+   },
+   "secondary_geometric_only": {
+    "winner": "attention[last_minus_1_js_no_bos] @ step 0",
+    "ci_semantics": "procedure-level OOB CI (in-bag winners vary across resamples); winner = modal in-bag pick",
+    "winner_marginal": {
+     "auroc": 0.5511,
+     "sign": -1
+    },
+    "oob_auroc_median": 0.5393367877157041,
+    "oob_auroc_ci_lo": 0.49397349804328355,
+    "oob_auroc_ci_hi": 0.5701323302701702,
+    "winner_stability": 0.6595,
+    "winner_counts": {
+     "attention[final_js] @ step 0": 1,
+     "attention[final_js_no_bos] @ step 0": 2,
+     "attention[final_bos_mass] @ step 0": 8,
+     "attention[final_v_norm_lastq_weighted] @ step 0": 35,
+     "attention[mid_js_kv_groups] @ step 0": 14,
+     "attention[mid_v_norm_lastq_weighted] @ step 0": 2,
+     "attention[last_minus_1_js] @ step 0": 33,
+     "attention[last_minus_1_js_no_bos] @ step 0": 1319,
+     "attention[last_minus_1_bos_mass] @ step 0": 2,
+     "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": 86,
+     "Readout spectral_entropy @ step 0": 485,
+     "Readout neg_shadow_logvol_r1 @ step 0": 5,
+     "Readout null_ratio_post_rank1 @ step 0": 2,
+     "Fusion fusion_rank_mean_geom @ step 0": 6
+    },
+    "oob_n_bootstrap_used": 2000,
+    "n_cells": 26,
+    "deployable": false,
+    "bootstrap_unit": "cluster",
+    "n_groups": 500,
+    "full_sample_marginals": {
+     "attention[final_js] @ step 0": {
+      "auroc": 0.5028,
+      "sign": 1
+     },
+     "attention[final_js_kv_groups] @ step 0": {
+      "auroc": 0.503,
+      "sign": 1
+     },
+     "attention[final_js_no_bos] @ step 0": {
+      "auroc": 0.5019,
+      "sign": -1
+     },
+     "attention[final_bos_mass] @ step 0": {
+      "auroc": 0.515,
+      "sign": -1
+     },
+     "attention[final_v_norm_bos] @ step 0": {
+      "auroc": 0.5,
+      "sign": 1
+     },
+     "attention[final_v_norm_max] @ step 0": {
+      "auroc": 0.51,
+      "sign": 1
+     },
+     "attention[final_v_norm_lastq_weighted] @ step 0": {
+      "auroc": 0.518,
+      "sign": 1
+     },
+     "attention[mid_js] @ step 0": {
+      "auroc": 0.5005,
+      "sign": -1
+     },
+     "attention[mid_js_kv_groups] @ step 0": {
+      "auroc": 0.5215,
+      "sign": 1
+     },
+     "attention[mid_js_no_bos] @ step 0": {
+      "auroc": 0.5004,
+      "sign": 1
+     },
+     "attention[mid_bos_mass] @ step 0": {
+      "auroc": 0.5002,
+      "sign": 1
+     },
+     "attention[mid_v_norm_bos] @ step 0": {
+      "auroc": 0.5,
+      "sign": 1
+     },
+     "attention[mid_v_norm_max] @ step 0": {
+      "auroc": 0.5116,
+      "sign": -1
+     },
+     "attention[mid_v_norm_lastq_weighted] @ step 0": {
+      "auroc": 0.5116,
+      "sign": -1
+     },
+     "attention[last_minus_1_js] @ step 0": {
+      "auroc": 0.5286,
+      "sign": -1
+     },
+     "attention[last_minus_1_js_kv_groups] @ step 0": {
+      "auroc": 0.5186,
+      "sign": -1
+     },
+     "attention[last_minus_1_js_no_bos] @ step 0": {
+      "auroc": 0.5511,
+      "sign": -1
+     },
+     "attention[last_minus_1_bos_mass] @ step 0": {
+      "auroc": 0.5254,
+      "sign": -1
+     },
+     "attention[last_minus_1_v_norm_bos] @ step 0": {
+      "auroc": 0.5,
+      "sign": 1
+     },
+     "attention[last_minus_1_v_norm_max] @ step 0": {
+      "auroc": 0.5082,
+      "sign": -1
+     },
+     "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": {
+      "auroc": 0.5304,
+      "sign": 1
+     },
+     "Readout fisher_eff_rank @ step 0": {
+      "auroc": 0.5055,
+      "sign": -1
+     },
+     "Readout spectral_entropy @ step 0": {
+      "auroc": 0.5414,
+      "sign": -1
+     },
+     "Readout neg_shadow_logvol_r1 @ step 0": {
+      "auroc": 0.5226,
+      "sign": -1
+     },
+     "Readout null_ratio_post_rank1 @ step 0": {
+      "auroc": 0.5105,
+      "sign": -1
+     },
+     "Fusion fusion_rank_mean_geom @ step 0": {
+      "auroc": 0.5191,
+      "sign": 1
+     }
+    }
+   }
+  }
+ },
+ "controls": {
+  "shuffled_label_full": {
+   "k_perms": 3,
+   "bootstrap_unit": "row",
+   "permutation": "within_stem_label_swap",
+   "n_excluding_null_upward": 0,
+   "pass": true,
+   "perms": [
+    {
+     "k": 0,
+     "seed": 20350921,
+     "permutation": "within_stem_label_swap",
+     "oob_auroc_median": 0.4765213544391936,
+     "oob_auroc_ci_lo": 0.4303150652846241,
+     "oob_auroc_ci_hi": 0.5233758920232715,
+     "excludes_null_upward": false
+    },
+    {
+     "k": 1,
+     "seed": 20350922,
+     "permutation": "within_stem_label_swap",
+     "oob_auroc_median": 0.47449377001075876,
+     "oob_auroc_ci_lo": 0.4279815954918732,
+     "oob_auroc_ci_hi": 0.5142297684185713,
+     "excludes_null_upward": false
+    },
+    {
+     "k": 2,
+     "seed": 20350923,
+     "permutation": "within_stem_label_swap",
+     "oob_auroc_median": 0.4745610496859981,
+     "oob_auroc_ci_lo": 0.43132937225747725,
+     "oob_auroc_ci_hi": 0.5145190087983591,
+     "excludes_null_upward": false
+    }
+   ]
+  },
+  "shuffled_label_geometric": {
+   "k_perms": 3,
+   "bootstrap_unit": "row",
+   "permutation": "within_stem_label_swap",
+   "n_excluding_null_upward": 0,
+   "pass": true,
+   "perms": [
+    {
+     "k": 0,
+     "seed": 20350921,
+     "permutation": "within_stem_label_swap",
+     "oob_auroc_median": 0.4780830775610524,
+     "oob_auroc_ci_lo": 0.43196069153598315,
+     "oob_auroc_ci_hi": 0.5257468825020837,
+     "excludes_null_upward": false
+    },
+    {
+     "k": 1,
+     "seed": 20350922,
+     "permutation": "within_stem_label_swap",
+     "oob_auroc_median": 0.4741766573007203,
+     "oob_auroc_ci_lo": 0.4291895213620975,
+     "oob_auroc_ci_hi": 0.5143671633885863,
+     "excludes_null_upward": false
+    },
+    {
+     "k": 2,
+     "seed": 20350923,
+     "permutation": "within_stem_label_swap",
+     "oob_auroc_median": 0.4759557526990323,
+     "oob_auroc_ci_lo": 0.4332356661610447,
+     "oob_auroc_ci_hi": 0.5157633561704267,
+     "excludes_null_upward": false
+    }
+   ]
+  },
+  "pass": true
+ },
+ "controls_by_unit": {
+  "row": {
+   "shuffled_label_full": {
+    "k_perms": 3,
+    "bootstrap_unit": "row",
+    "permutation": "within_stem_label_swap",
+    "n_excluding_null_upward": 0,
+    "pass": true,
+    "perms": [
+     {
+      "k": 0,
+      "seed": 20350921,
+      "permutation": "within_stem_label_swap",
+      "oob_auroc_median": 0.4765213544391936,
+      "oob_auroc_ci_lo": 0.4303150652846241,
+      "oob_auroc_ci_hi": 0.5233758920232715,
+      "excludes_null_upward": false
+     },
+     {
+      "k": 1,
+      "seed": 20350922,
+      "permutation": "within_stem_label_swap",
+      "oob_auroc_median": 0.47449377001075876,
+      "oob_auroc_ci_lo": 0.4279815954918732,
+      "oob_auroc_ci_hi": 0.5142297684185713,
+      "excludes_null_upward": false
+     },
+     {
+      "k": 2,
+      "seed": 20350923,
+      "permutation": "within_stem_label_swap",
+      "oob_auroc_median": 0.4745610496859981,
+      "oob_auroc_ci_lo": 0.43132937225747725,
+      "oob_auroc_ci_hi": 0.5145190087983591,
+      "excludes_null_upward": false
+     }
+    ]
+   },
+   "shuffled_label_geometric": {
+    "k_perms": 3,
+    "bootstrap_unit": "row",
+    "permutation": "within_stem_label_swap",
+    "n_excluding_null_upward": 0,
+    "pass": true,
+    "perms": [
+     {
+      "k": 0,
+      "seed": 20350921,
+      "permutation": "within_stem_label_swap",
+      "oob_auroc_median": 0.4780830775610524,
+      "oob_auroc_ci_lo": 0.43196069153598315,
+      "oob_auroc_ci_hi": 0.5257468825020837,
+      "excludes_null_upward": false
+     },
+     {
+      "k": 1,
+      "seed": 20350922,
+      "permutation": "within_stem_label_swap",
+      "oob_auroc_median": 0.4741766573007203,
+      "oob_auroc_ci_lo": 0.4291895213620975,
+      "oob_auroc_ci_hi": 0.5143671633885863,
+      "excludes_null_upward": false
+     },
+     {
+      "k": 2,
+      "seed": 20350923,
+      "permutation": "within_stem_label_swap",
+      "oob_auroc_median": 0.4759557526990323,
+      "oob_auroc_ci_lo": 0.4332356661610447,
+      "oob_auroc_ci_hi": 0.5157633561704267,
+      "excludes_null_upward": false
+     }
+    ]
+   },
+   "pass": true
+  },
+  "cluster": {
+   "shuffled_label_full": {
+    "k_perms": 3,
+    "bootstrap_unit": "cluster",
+    "permutation": "within_stem_label_swap",
+    "n_excluding_null_upward": 0,
+    "pass": true,
+    "perms": [
+     {
+      "k": 0,
+      "seed": 20350921,
+      "permutation": "within_stem_label_swap",
+      "oob_auroc_median": 0.495184623304358,
+      "oob_auroc_ci_lo": 0.45556173359816293,
+      "oob_auroc_ci_hi": 0.5288117022683927,
+      "excludes_null_upward": false
+     },
+     {
+      "k": 1,
+      "seed": 20350922,
+      "permutation": "within_stem_label_swap",
+      "oob_auroc_median": 0.49050791313973563,
+      "oob_auroc_ci_lo": 0.45035704848993136,
+      "oob_auroc_ci_hi": 0.5193214426571352,
+      "excludes_null_upward": false
+     },
+     {
+      "k": 2,
+      "seed": 20350923,
+      "permutation": "within_stem_label_swap",
+      "oob_auroc_median": 0.4907839545100432,
+      "oob_auroc_ci_lo": 0.4515831801026314,
+      "oob_auroc_ci_hi": 0.5189702199506069,
+      "excludes_null_upward": false
+     }
+    ]
+   },
+   "shuffled_label_geometric": {
+    "k_perms": 3,
+    "bootstrap_unit": "cluster",
+    "permutation": "within_stem_label_swap",
+    "n_excluding_null_upward": 0,
+    "pass": true,
+    "perms": [
+     {
+      "k": 0,
+      "seed": 20350921,
+      "permutation": "within_stem_label_swap",
+      "oob_auroc_median": 0.4977405923978862,
+      "oob_auroc_ci_lo": 0.46087349874503347,
+      "oob_auroc_ci_hi": 0.5306979170905539,
+      "excludes_null_upward": false
+     },
+     {
+      "k": 1,
+      "seed": 20350922,
+      "permutation": "within_stem_label_swap",
+      "oob_auroc_median": 0.4908243619754151,
+      "oob_auroc_ci_lo": 0.4534146160208283,
+      "oob_auroc_ci_hi": 0.5197989660871855,
+      "excludes_null_upward": false
+     },
+     {
+      "k": 2,
+      "seed": 20350923,
+      "permutation": "within_stem_label_swap",
+      "oob_auroc_median": 0.49258752254334315,
+      "oob_auroc_ci_lo": 0.4581458877291553,
+      "oob_auroc_ci_hi": 0.5198952878869415,
+      "excludes_null_upward": false
+     }
+    ]
+   },
+   "pass": true
+  }
+ },
+ "fusion": {
+  "key": "Qwen3-1.7B-4bit|halueval_dialogue",
+  "reported_benchmark": "halueval_dialogue",
+  "canonical_benchmark": "halueval_dialogue",
+  "components": {
+   "ACE_modal": {
+    "column": "last_minus_1_js_no_bos",
+    "sign": -1,
+    "source": "modal_fallback"
+   },
+   "surprise": {
+    "column": "surprise",
+    "sign": 1,
+    "source": "modal_fallback"
+   },
+   "null_ratio_post_rank1": {
+    "column": "null_ratio_post_rank1",
+    "sign": 1,
+    "source": "modal_fallback"
+   },
+   "fisher_eff_rank": {
+    "column": "fisher_eff_rank",
+    "sign": 1,
+    "source": "modal_fallback"
+   }
+  }
+ },
+ "provenance": {
+  "seed": 20260711,
+  "n_bootstrap": 2000,
+  "sealed_selector": "sealed row _nested_bootstrap_oob_auroc (imported, not modified)",
+  "selector_by_unit": {
+   "row": "sealed row _nested_bootstrap_oob_auroc (imported, not modified)",
+   "cluster": "BENCH stem-cluster OOB selector (exchangeable unit=stem)"
+  },
+  "bootstrap_units": [
+   "row",
+   "cluster"
+  ],
+  "canonical_fusion_benchmark": "halueval_dialogue",
+  "module_hashes": {
+   "pri_calibrator.py": "78c4f098295fe600cc4f6f1a14cc7b496ac93d8d70dd65743c1504eb20931101",
+   "comprehensive_run.py": "f6f5958bae5b035f07f034b9f4f5784b1a86c1ab00ab0f9c9ef4a5584776e8f8",
+   "diagnose_inter_head_disagreement.py": "b996ed923ac3eefeb0550901b2bf8ce5c5e0ae6486c8d41efdc2de9fb9567c99",
+   "pri_runtime.py": "cf56a2607b94666ab092647a764b1b73c7974b38445caa6a4b252a9cdf240784",
+   "pri_v2_io_plugins.py": "6c56be1888abc6ad44150583b869bac06366fa70a7d8e13230da3703064eb7b7",
+   "pri_v2_mlx_pipeline.py": "abb0debd8b7b3f0503418e09a21050fad968d88a6ea10fd4412983c6ba6e4a5c",
+   "model_adapters.py": "5ce42c7f8de787e6f301c4542ebbb5057bc8b1702758702095f62cc720743137",
+   "test_shadow_ambiguity.py": "12046a3ff98ddaba207396b943415dd5360f4cb4a942462994889d0aa8771961",
+   "confluence_calibrator.py": "c79009a3adaf57c6ad38d2400c3c705e12d00ab18d917399b59d56b23d513e9a",
+   "fusion_signs.json": "92b5468bd241b517dd2d5cf70ad28556157424deb54b5f85f88af0305ff35372"
+  },
+  "model_snapshot_sha": {
+   "resolved_revision": "3b1b1768f8f8cf8351c712464f906e86c2b8269e",
+   "resolved_source": "refs/main",
+   "cached_snapshots": [
+    "._3b1b1768f8f8cf8351c712464f906e86c2b8269e",
+    "3b1b1768f8f8cf8351c712464f906e86c2b8269e"
+   ]
+  },
+  "spec_version": "bench/1.3",
+  "extension_manifest_sha256": "e5266ba7d5d959b7f89a9b7a1df268f8ad38fa2d297193a03d54d2a077e4ce89",
+  "panel_sha256": "12df895a2e5213cb77a7331b22f1ac00bb217d04cb288f67cabe588581c38db8",
+  "ordered_stem_id_sha256": "c49f7152f53bc815f080d9289766342a18a48718ee6fcbbf9c6b938b1be65c4e",
+  "control_seeds": [
+   20350921,
+   20350922,
+   20350923
+  ],
+  "controls_by_unit_sha256": "90c98ced2d1256d6b9d46f6328a4189aeaf8ca4fc69243c5273be2d44c30c816",
+  "endpoint_status_by_unit": {
+   "row": "OK",
+   "cluster": "OK"
+  },
+  "commitment_status": "OK",
+  "commitment_tally": {
+   "n": 1000,
+   "n_canonical": 1000,
+   "n_noncanonical": 0
+  },
+  "commitment_audit_sha256": "a7d379656e098da55e3b5989854900e42cff0ba0f41770d9300ecae14bd1395f",
+  "feature_extraction_comparability": "Phase-1 frozen-row byte parity passed"
+ },
+ "spec_version": "bench/1.3",
+ "data_path": "stage_b/data_bench/halueval_dialogue_seed20260711_n1000.jsonl",
+ "data_file_sha256": "a3433c11ac97507e7a192ded5a1aa76909b1671802ef32094fa8bc0a3fdb68d1",
+ "commitment_audit": {
+  "n": 1000,
+  "n_canonical": 1000,
+  "n_noncanonical": 0,
+  "rows": [
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 14080,
+    "decoded": " YES",
+    "normalized": "yes",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   },
+   {
+    "token_id": 5664,
+    "decoded": " NO",
+    "normalized": "no",
+    "canonical": true
+   }
+  ]
+ },
+ "terminal_status": "OK",
+ "endpoint_status_by_unit": {
+  "row": "OK",
+  "cluster": "OK"
+ }
+}

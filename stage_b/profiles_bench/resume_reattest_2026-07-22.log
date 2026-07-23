@@ -1,0 +1,560 @@
+The tokenizer you are loading from '/Users/msrk/.cache/huggingface/hub/models--mlx-community--Mistral-Nemo-Instruct-2407-4bit/snapshots/647ca0751669b21a364c86ccc5df54c4d7e4e91c' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+The tokenizer you are loading from '/Users/msrk/.cache/huggingface/hub/models--mlx-community--Mistral-Nemo-Instruct-2407-4bit/snapshots/647ca0751669b21a364c86ccc5df54c4d7e4e91c' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+The tokenizer you are loading from '/Users/msrk/.cache/huggingface/hub/models--mlx-community--Mistral-Nemo-Instruct-2407-4bit/snapshots/647ca0751669b21a364c86ccc5df54c4d7e4e91c' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+The tokenizer you are loading from '/Users/msrk/.cache/huggingface/hub/models--mlx-community--Mistral-Nemo-Instruct-2407-4bit/snapshots/647ca0751669b21a364c86ccc5df54c4d7e4e91c' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+The tokenizer you are loading from '/Users/msrk/.cache/huggingface/hub/models--mlx-community--Mistral-Nemo-Instruct-2407-4bit/snapshots/647ca0751669b21a364c86ccc5df54c4d7e4e91c' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+The tokenizer you are loading from '/Users/msrk/.cache/huggingface/hub/models--mlx-community--Mistral-Nemo-Instruct-2407-4bit/snapshots/647ca0751669b21a364c86ccc5df54c4d7e4e91c' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+{
+ "spec_version": "bench/1.3",
+ "seed": 20260711,
+ "n_bootstrap": 2000,
+ "cells": [
+  {
+   "slug": "Llama-3.2-3B-Instruct-4bit",
+   "task": "halueval_qa",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Llama-3.1-8B-Instruct-4bit",
+   "task": "halueval_qa",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Mistral-7B-Instruct-v0.3-4bit",
+   "task": "halueval_qa",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Mistral-Nemo-Instruct-2407-4bit",
+   "task": "halueval_qa",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Phi-3.5-mini-instruct-4bit",
+   "task": "halueval_qa",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Phi-4-mini-instruct-4bit",
+   "task": "halueval_qa",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Qwen2.5-7B-Instruct-4bit",
+   "task": "halueval_qa",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Qwen3-1.7B-4bit",
+   "task": "halueval_qa",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Qwen3-8B-4bit",
+   "task": "halueval_qa",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "gemma-3-4b-it-4bit",
+   "task": "halueval_qa",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Llama-3.2-3B-Instruct-4bit",
+   "task": "anli_r1_rep",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Llama-3.1-8B-Instruct-4bit",
+   "task": "anli_r1_rep",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Mistral-7B-Instruct-v0.3-4bit",
+   "task": "anli_r1_rep",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Mistral-Nemo-Instruct-2407-4bit",
+   "task": "anli_r1_rep",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Phi-3.5-mini-instruct-4bit",
+   "task": "anli_r1_rep",
+   "terminal_status": "BEHAVIORAL-FAIL"
+  },
+  {
+   "slug": "Phi-4-mini-instruct-4bit",
+   "task": "anli_r1_rep",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Qwen2.5-7B-Instruct-4bit",
+   "task": "anli_r1_rep",
+   "terminal_status": "BEHAVIORAL-FAIL"
+  },
+  {
+   "slug": "Qwen3-1.7B-4bit",
+   "task": "anli_r1_rep",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Qwen3-8B-4bit",
+   "task": "anli_r1_rep",
+   "terminal_status": "COMMITMENT-FAIL",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "gemma-3-4b-it-4bit",
+   "task": "anli_r1_rep",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Llama-3.2-3B-Instruct-4bit",
+   "task": "triviaqa_paired_rep",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Llama-3.1-8B-Instruct-4bit",
+   "task": "triviaqa_paired_rep",
+   "terminal_status": "COMMITMENT-FAIL",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Mistral-7B-Instruct-v0.3-4bit",
+   "task": "triviaqa_paired_rep",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Mistral-Nemo-Instruct-2407-4bit",
+   "task": "triviaqa_paired_rep",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Phi-3.5-mini-instruct-4bit",
+   "task": "triviaqa_paired_rep",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Phi-4-mini-instruct-4bit",
+   "task": "triviaqa_paired_rep",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Qwen2.5-7B-Instruct-4bit",
+   "task": "triviaqa_paired_rep",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Qwen3-1.7B-4bit",
+   "task": "triviaqa_paired_rep",
+   "terminal_status": "COMMITMENT-FAIL",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Qwen3-8B-4bit",
+   "task": "triviaqa_paired_rep",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "gemma-3-4b-it-4bit",
+   "task": "triviaqa_paired_rep",
+   "terminal_status": "COMMITMENT-FAIL",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Llama-3.2-3B-Instruct-4bit",
+   "task": "anli_r2",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Llama-3.1-8B-Instruct-4bit",
+   "task": "anli_r2",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Mistral-7B-Instruct-v0.3-4bit",
+   "task": "anli_r2",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Mistral-Nemo-Instruct-2407-4bit",
+   "task": "anli_r2",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Phi-3.5-mini-instruct-4bit",
+   "task": "anli_r2",
+   "terminal_status": "BEHAVIORAL-FAIL"
+  },
+  {
+   "slug": "Phi-4-mini-instruct-4bit",
+   "task": "anli_r2",
+   "terminal_status": "COMMITMENT-FAIL",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Qwen2.5-7B-Instruct-4bit",
+   "task": "anli_r2",
+   "terminal_status": "BEHAVIORAL-FAIL"
+  },
+  {
+   "slug": "Qwen3-1.7B-4bit",
+   "task": "anli_r2",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Qwen3-8B-4bit",
+   "task": "anli_r2",
+   "terminal_status": "COMMITMENT-FAIL",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "gemma-3-4b-it-4bit",
+   "task": "anli_r2",
+   "terminal_status": "COMMITMENT-FAIL",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Llama-3.2-3B-Instruct-4bit",
+   "task": "halueval_dialogue",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Llama-3.1-8B-Instruct-4bit",
+   "task": "halueval_dialogue",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Mistral-7B-Instruct-v0.3-4bit",
+   "task": "halueval_dialogue",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Mistral-Nemo-Instruct-2407-4bit",
+   "task": "halueval_dialogue",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Phi-3.5-mini-instruct-4bit",
+   "task": "halueval_dialogue",
+   "terminal_status": "BEHAVIORAL-FAIL"
+  },
+  {
+   "slug": "Phi-4-mini-instruct-4bit",
+   "task": "halueval_dialogue",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Qwen2.5-7B-Instruct-4bit",
+   "task": "halueval_dialogue",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Qwen3-1.7B-4bit",
+   "task": "halueval_dialogue",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Qwen3-8B-4bit",
+   "task": "halueval_dialogue",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "gemma-3-4b-it-4bit",
+   "task": "halueval_dialogue",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Llama-3.2-3B-Instruct-4bit",
+   "task": "halueval_summarization",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Llama-3.1-8B-Instruct-4bit",
+   "task": "halueval_summarization",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Mistral-7B-Instruct-v0.3-4bit",
+   "task": "halueval_summarization",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Mistral-Nemo-Instruct-2407-4bit",
+   "task": "halueval_summarization",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Phi-3.5-mini-instruct-4bit",
+   "task": "halueval_summarization",
+   "terminal_status": "BEHAVIORAL-FAIL"
+  },
+  {
+   "slug": "Phi-4-mini-instruct-4bit",
+   "task": "halueval_summarization",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Qwen2.5-7B-Instruct-4bit",
+   "task": "halueval_summarization",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Qwen3-1.7B-4bit",
+   "task": "halueval_summarization",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "Qwen3-8B-4bit",
+   "task": "halueval_summarization",
+   "terminal_status": "OK",
+   "endpoint_status_by_unit": {
+    "row": "OK",
+    "cluster": "OK"
+   }
+  },
+  {
+   "slug": "gemma-3-4b-it-4bit",
+   "task": "halueval_summarization",
+   "terminal_status": "BEHAVIORAL-FAIL"
+  }
+ ],
+ "endpoints": {
+  "A1": {
+   "n_pass": 10,
+   "bar": 8,
+   "denominator": 10,
+   "pass": true,
+   "blocked_by_unrun": false
+  },
+  "B1_procedural": {
+   "n_pass": 7,
+   "bar": 17,
+   "denominator": 20,
+   "pass": false,
+   "blocked_by_unrun": false
+  },
+  "B1_valid": {
+   "n_pass": 7,
+   "bar": 17,
+   "denominator": 20,
+   "pass": false,
+   "blocked_by_unrun": false
+  },
+  "B2_orphan_probe": {
+   "task": "anli_r1_rep",
+   "bootstrap_unit": "row",
+   "geometric_deployable": {
+    "gemma-3-4b-it-4bit": true,
+    "Llama-3.1-8B-Instruct-4bit": true
+   }
+  },
+  "systematic_commitment_fail_tasks": [
+   "anli_r2",
+   "triviaqa_paired_rep"
+  ]
+ }
+}

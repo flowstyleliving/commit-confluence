@@ -1,0 +1,513 @@
+{
+ "schema_version": "sealed-cluster-sensitivity/1.0",
+ "status": "DESCRIPTIVE-NON-GATING",
+ "alters_sealed_verdict": false,
+ "sealed_verdict_preserved": "18/20",
+ "task": "triviaqa_paired",
+ "bootstrap_unit": "question_stem",
+ "seed": 20260612,
+ "n_bootstrap": 2000,
+ "method": "sealed candidate scoring and in-bag selection/OOB evaluation order; exchangeable unit changed from row to question stem",
+ "cells": [
+  {
+   "slug": "Llama-3.1-8B-Instruct-4bit",
+   "n_rows": 200,
+   "n_stems": 100,
+   "fusion": {
+    "key": "Llama-3.1-8B-Instruct-4bit|triviaqa_paired",
+    "reported_benchmark": "triviaqa_paired",
+    "canonical_benchmark": "triviaqa_paired",
+    "components": {
+     "ACE_modal": {
+      "column": "last_minus_1_js_no_bos",
+      "sign": -1,
+      "source": "modal_fallback"
+     },
+     "surprise": {
+      "column": "surprise",
+      "sign": 1,
+      "source": "per_cell"
+     },
+     "null_ratio_post_rank1": {
+      "column": "null_ratio_post_rank1",
+      "sign": -1,
+      "source": "per_cell"
+     },
+     "fisher_eff_rank": {
+      "column": "fisher_eff_rank",
+      "sign": -1,
+      "source": "per_cell"
+     }
+    }
+   },
+   "primary_full_panel": {
+    "winner": "Readout fisher_eff_rank @ step 0",
+    "oob_auroc_median": 0.8134765625,
+    "oob_auroc_ci_lo": 0.6982840921542844,
+    "oob_auroc_ci_hi": 0.8875107515959907,
+    "oob_n_bootstrap_used": 2000,
+    "winner_stability": 0.9255,
+    "descriptive_deployable_ci_lo_gt_0_50": true
+   },
+   "secondary_geometric_only": {
+    "winner": "Readout fisher_eff_rank @ step 0",
+    "oob_auroc_median": 0.8170137591302871,
+    "oob_auroc_ci_lo": 0.7187369017036236,
+    "oob_auroc_ci_hi": 0.8888888888888888,
+    "oob_n_bootstrap_used": 2000,
+    "winner_stability": 0.9555,
+    "descriptive_deployable_ci_lo_gt_0_50": true
+   }
+  },
+  {
+   "slug": "Llama-3.2-3B-Instruct-4bit",
+   "n_rows": 200,
+   "n_stems": 100,
+   "fusion": {
+    "key": "Llama-3.2-3B-Instruct-4bit|triviaqa_paired",
+    "reported_benchmark": "triviaqa_paired",
+    "canonical_benchmark": "triviaqa_paired",
+    "components": {
+     "ACE_modal": {
+      "column": "last_minus_1_js_no_bos",
+      "sign": -1,
+      "source": "per_cell"
+     },
+     "surprise": {
+      "column": "surprise",
+      "sign": 1,
+      "source": "per_cell"
+     },
+     "null_ratio_post_rank1": {
+      "column": "null_ratio_post_rank1",
+      "sign": -1,
+      "source": "per_cell"
+     },
+     "fisher_eff_rank": {
+      "column": "fisher_eff_rank",
+      "sign": -1,
+      "source": "per_cell"
+     }
+    }
+   },
+   "primary_full_panel": {
+    "winner": "Readout neg_shadow_logvol_r1 @ step 0",
+    "oob_auroc_median": 0.8819444444444444,
+    "oob_auroc_ci_lo": 0.7984323630054923,
+    "oob_auroc_ci_hi": 0.9510261479591836,
+    "oob_n_bootstrap_used": 2000,
+    "winner_stability": 0.9305,
+    "descriptive_deployable_ci_lo_gt_0_50": true
+   },
+   "secondary_geometric_only": {
+    "winner": "Readout neg_shadow_logvol_r1 @ step 0",
+    "oob_auroc_median": 0.8819444444444444,
+    "oob_auroc_ci_lo": 0.7984323630054923,
+    "oob_auroc_ci_hi": 0.9510261479591836,
+    "oob_n_bootstrap_used": 2000,
+    "winner_stability": 0.9305,
+    "descriptive_deployable_ci_lo_gt_0_50": true
+   }
+  },
+  {
+   "slug": "Mistral-7B-Instruct-v0.3-4bit",
+   "n_rows": 200,
+   "n_stems": 100,
+   "fusion": {
+    "key": "Mistral-7B-Instruct-v0.3-4bit|triviaqa_paired",
+    "reported_benchmark": "triviaqa_paired",
+    "canonical_benchmark": "triviaqa_paired",
+    "components": {
+     "ACE_modal": {
+      "column": "last_minus_1_js_no_bos",
+      "sign": -1,
+      "source": "per_cell"
+     },
+     "surprise": {
+      "column": "surprise",
+      "sign": 1,
+      "source": "per_cell"
+     },
+     "null_ratio_post_rank1": {
+      "column": "null_ratio_post_rank1",
+      "sign": 1,
+      "source": "per_cell"
+     },
+     "fisher_eff_rank": {
+      "column": "fisher_eff_rank",
+      "sign": 1,
+      "source": "per_cell"
+     }
+    }
+   },
+   "primary_full_panel": {
+    "winner": "Readout p_max @ step 0",
+    "oob_auroc_median": 0.958968689582094,
+    "oob_auroc_ci_lo": 0.9205227509314048,
+    "oob_auroc_ci_hi": 0.9912399405642649,
+    "oob_n_bootstrap_used": 2000,
+    "winner_stability": 0.484,
+    "descriptive_deployable_ci_lo_gt_0_50": true
+   },
+   "secondary_geometric_only": {
+    "winner": "attention[last_minus_1_js] @ step 0",
+    "oob_auroc_median": 0.9587138429752067,
+    "oob_auroc_ci_lo": 0.9174554328731234,
+    "oob_auroc_ci_hi": 0.9912399405642648,
+    "oob_n_bootstrap_used": 2000,
+    "winner_stability": 0.653,
+    "descriptive_deployable_ci_lo_gt_0_50": true
+   }
+  },
+  {
+   "slug": "Mistral-Nemo-Instruct-2407-4bit",
+   "n_rows": 200,
+   "n_stems": 100,
+   "fusion": {
+    "key": "Mistral-Nemo-Instruct-2407-4bit|triviaqa_paired",
+    "reported_benchmark": "triviaqa_paired",
+    "canonical_benchmark": "triviaqa_paired",
+    "components": {
+     "ACE_modal": {
+      "column": "last_minus_1_js_no_bos",
+      "sign": 1,
+      "source": "per_cell"
+     },
+     "surprise": {
+      "column": "surprise",
+      "sign": 1,
+      "source": "per_cell"
+     },
+     "null_ratio_post_rank1": {
+      "column": "null_ratio_post_rank1",
+      "sign": 1,
+      "source": "per_cell"
+     },
+     "fisher_eff_rank": {
+      "column": "fisher_eff_rank",
+      "sign": 1,
+      "source": "per_cell"
+     }
+    }
+   },
+   "primary_full_panel": {
+    "winner": "attention[final_v_norm_lastq_weighted] @ step 0",
+    "oob_auroc_median": 0.9802775748721696,
+    "oob_auroc_ci_lo": 0.940826566994923,
+    "oob_auroc_ci_hi": 1.0,
+    "oob_n_bootstrap_used": 2000,
+    "winner_stability": 0.9295,
+    "descriptive_deployable_ci_lo_gt_0_50": true
+   },
+   "secondary_geometric_only": {
+    "winner": "attention[final_v_norm_lastq_weighted] @ step 0",
+    "oob_auroc_median": 0.9802775748721696,
+    "oob_auroc_ci_lo": 0.9408327246165085,
+    "oob_auroc_ci_hi": 1.0,
+    "oob_n_bootstrap_used": 2000,
+    "winner_stability": 0.9295,
+    "descriptive_deployable_ci_lo_gt_0_50": true
+   }
+  },
+  {
+   "slug": "Phi-3.5-mini-instruct-4bit",
+   "n_rows": 200,
+   "n_stems": 100,
+   "fusion": {
+    "key": "Phi-3.5-mini-instruct-4bit|triviaqa_paired",
+    "reported_benchmark": "triviaqa_paired",
+    "canonical_benchmark": "triviaqa_paired",
+    "components": {
+     "ACE_modal": {
+      "column": "last_minus_1_js_no_bos",
+      "sign": -1,
+      "source": "per_cell"
+     },
+     "surprise": {
+      "column": "surprise",
+      "sign": 1,
+      "source": "per_cell"
+     },
+     "null_ratio_post_rank1": {
+      "column": "null_ratio_post_rank1",
+      "sign": 1,
+      "source": "per_cell"
+     },
+     "fisher_eff_rank": {
+      "column": "fisher_eff_rank",
+      "sign": 1,
+      "source": "per_cell"
+     }
+    }
+   },
+   "primary_full_panel": {
+    "winner": "attention[final_js_no_bos] @ step 0",
+    "oob_auroc_median": 0.8184499044625246,
+    "oob_auroc_ci_lo": 0.7297817047817048,
+    "oob_auroc_ci_hi": 0.8914339498884952,
+    "oob_n_bootstrap_used": 2000,
+    "winner_stability": 0.5615,
+    "descriptive_deployable_ci_lo_gt_0_50": true
+   },
+   "secondary_geometric_only": {
+    "winner": "attention[final_js_no_bos] @ step 0",
+    "oob_auroc_median": 0.8184499044625246,
+    "oob_auroc_ci_lo": 0.7297817047817048,
+    "oob_auroc_ci_hi": 0.8914339498884952,
+    "oob_n_bootstrap_used": 2000,
+    "winner_stability": 0.5615,
+    "descriptive_deployable_ci_lo_gt_0_50": true
+   }
+  },
+  {
+   "slug": "Phi-4-mini-instruct-4bit",
+   "n_rows": 200,
+   "n_stems": 100,
+   "fusion": {
+    "key": "Phi-4-mini-instruct-4bit|triviaqa_paired",
+    "reported_benchmark": "triviaqa_paired",
+    "canonical_benchmark": "triviaqa_paired",
+    "components": {
+     "ACE_modal": {
+      "column": "last_minus_1_js_no_bos",
+      "sign": 1,
+      "source": "per_cell"
+     },
+     "surprise": {
+      "column": "surprise",
+      "sign": 1,
+      "source": "per_cell"
+     },
+     "null_ratio_post_rank1": {
+      "column": "null_ratio_post_rank1",
+      "sign": 1,
+      "source": "per_cell"
+     },
+     "fisher_eff_rank": {
+      "column": "fisher_eff_rank",
+      "sign": 1,
+      "source": "per_cell"
+     }
+    }
+   },
+   "primary_full_panel": {
+    "winner": "attention[mid_v_norm_lastq_weighted] @ step 0",
+    "oob_auroc_median": 0.8891966759002771,
+    "oob_auroc_ci_lo": 0.8293681640625,
+    "oob_auroc_ci_hi": 0.9425302870968845,
+    "oob_n_bootstrap_used": 2000,
+    "winner_stability": 0.5455,
+    "descriptive_deployable_ci_lo_gt_0_50": true
+   },
+   "secondary_geometric_only": {
+    "winner": "attention[mid_v_norm_lastq_weighted] @ step 0",
+    "oob_auroc_median": 0.8891966759002771,
+    "oob_auroc_ci_lo": 0.8293681640625,
+    "oob_auroc_ci_hi": 0.9425302870968845,
+    "oob_n_bootstrap_used": 2000,
+    "winner_stability": 0.5455,
+    "descriptive_deployable_ci_lo_gt_0_50": true
+   }
+  },
+  {
+   "slug": "Qwen2.5-7B-Instruct-4bit",
+   "n_rows": 200,
+   "n_stems": 100,
+   "fusion": {
+    "key": "Qwen2.5-7B-Instruct-4bit|triviaqa_paired",
+    "reported_benchmark": "triviaqa_paired",
+    "canonical_benchmark": "triviaqa_paired",
+    "components": {
+     "ACE_modal": {
+      "column": "last_minus_1_js_no_bos",
+      "sign": 1,
+      "source": "per_cell"
+     },
+     "surprise": {
+      "column": "surprise",
+      "sign": 1,
+      "source": "per_cell"
+     },
+     "null_ratio_post_rank1": {
+      "column": "null_ratio_post_rank1",
+      "sign": -1,
+      "source": "per_cell"
+     },
+     "fisher_eff_rank": {
+      "column": "fisher_eff_rank",
+      "sign": 1,
+      "source": "per_cell"
+     }
+    }
+   },
+   "primary_full_panel": {
+    "winner": "attention[final_v_norm_lastq_weighted] @ step 0",
+    "oob_auroc_median": 0.8642618702389196,
+    "oob_auroc_ci_lo": 0.7924771120973044,
+    "oob_auroc_ci_hi": 0.9306064310311414,
+    "oob_n_bootstrap_used": 2000,
+    "winner_stability": 0.7145,
+    "descriptive_deployable_ci_lo_gt_0_50": true
+   },
+   "secondary_geometric_only": {
+    "winner": "attention[final_v_norm_lastq_weighted] @ step 0",
+    "oob_auroc_median": 0.8642659279778393,
+    "oob_auroc_ci_lo": 0.7929253808864266,
+    "oob_auroc_ci_hi": 0.9306156368364521,
+    "oob_n_bootstrap_used": 2000,
+    "winner_stability": 0.7145,
+    "descriptive_deployable_ci_lo_gt_0_50": true
+   }
+  },
+  {
+   "slug": "Qwen3-1.7B-4bit",
+   "n_rows": 200,
+   "n_stems": 100,
+   "fusion": {
+    "key": "Qwen3-1.7B-4bit|triviaqa_paired",
+    "reported_benchmark": "triviaqa_paired",
+    "canonical_benchmark": "triviaqa_paired",
+    "components": {
+     "ACE_modal": {
+      "column": "last_minus_1_js_no_bos",
+      "sign": 1,
+      "source": "per_cell"
+     },
+     "surprise": {
+      "column": "surprise",
+      "sign": 1,
+      "source": "per_cell"
+     },
+     "null_ratio_post_rank1": {
+      "column": "null_ratio_post_rank1",
+      "sign": 1,
+      "source": "per_cell"
+     },
+     "fisher_eff_rank": {
+      "column": "fisher_eff_rank",
+      "sign": 1,
+      "source": "per_cell"
+     }
+    }
+   },
+   "primary_full_panel": {
+    "winner": "Readout surprise @ step 0",
+    "oob_auroc_median": 0.8568298027757487,
+    "oob_auroc_ci_lo": 0.784370767332415,
+    "oob_auroc_ci_hi": 0.9186925301166218,
+    "oob_n_bootstrap_used": 2000,
+    "winner_stability": 1.0,
+    "descriptive_deployable_ci_lo_gt_0_50": true
+   },
+   "secondary_geometric_only": {
+    "winner": "attention[final_bos_mass] @ step 0",
+    "oob_auroc_median": 0.7167779388850416,
+    "oob_auroc_ci_lo": 0.583005297976397,
+    "oob_auroc_ci_hi": 0.7888010008639379,
+    "oob_n_bootstrap_used": 2000,
+    "winner_stability": 0.8995,
+    "descriptive_deployable_ci_lo_gt_0_50": true
+   }
+  },
+  {
+   "slug": "Qwen3-8B-4bit",
+   "n_rows": 200,
+   "n_stems": 100,
+   "fusion": {
+    "key": "Qwen3-8B-4bit|triviaqa_paired",
+    "reported_benchmark": "triviaqa_paired",
+    "canonical_benchmark": "triviaqa_paired",
+    "components": {
+     "ACE_modal": {
+      "column": "last_minus_1_js_no_bos",
+      "sign": -1,
+      "source": "per_cell"
+     },
+     "surprise": {
+      "column": "surprise",
+      "sign": 1,
+      "source": "per_cell"
+     },
+     "null_ratio_post_rank1": {
+      "column": "null_ratio_post_rank1",
+      "sign": -1,
+      "source": "per_cell"
+     },
+     "fisher_eff_rank": {
+      "column": "fisher_eff_rank",
+      "sign": -1,
+      "source": "per_cell"
+     }
+    }
+   },
+   "primary_full_panel": {
+    "winner": "Fusion fusion_rank_mean_geom @ step 0",
+    "oob_auroc_median": 0.9344135802469136,
+    "oob_auroc_ci_lo": 0.8885999081237789,
+    "oob_auroc_ci_hi": 0.9723216753886776,
+    "oob_n_bootstrap_used": 2000,
+    "winner_stability": 0.654,
+    "descriptive_deployable_ci_lo_gt_0_50": true
+   },
+   "secondary_geometric_only": {
+    "winner": "Fusion fusion_rank_mean_geom @ step 0",
+    "oob_auroc_median": 0.939446366782007,
+    "oob_auroc_ci_lo": 0.8953109618598476,
+    "oob_auroc_ci_hi": 0.975944339316609,
+    "oob_n_bootstrap_used": 2000,
+    "winner_stability": 0.9975,
+    "descriptive_deployable_ci_lo_gt_0_50": true
+   }
+  },
+  {
+   "slug": "gemma-3-4b-it-4bit",
+   "n_rows": 200,
+   "n_stems": 100,
+   "fusion": {
+    "key": "gemma-3-4b-it-4bit|triviaqa_paired",
+    "reported_benchmark": "triviaqa_paired",
+    "canonical_benchmark": "triviaqa_paired",
+    "components": {
+     "ACE_modal": {
+      "column": "last_minus_1_js_no_bos",
+      "sign": -1,
+      "source": "per_cell"
+     },
+     "surprise": {
+      "column": "surprise",
+      "sign": 1,
+      "source": "per_cell"
+     },
+     "null_ratio_post_rank1": {
+      "column": "null_ratio_post_rank1",
+      "sign": -1,
+      "source": "per_cell"
+     },
+     "fisher_eff_rank": {
+      "column": "fisher_eff_rank",
+      "sign": 1,
+      "source": "per_cell"
+     }
+    }
+   },
+   "primary_full_panel": {
+    "winner": "Fusion fusion_rank_mean_full @ step 0",
+    "oob_auroc_median": 0.8673822714681441,
+    "oob_auroc_ci_lo": 0.7790724603296741,
+    "oob_auroc_ci_hi": 0.9306122448979591,
+    "oob_n_bootstrap_used": 2000,
+    "winner_stability": 0.8505,
+    "descriptive_deployable_ci_lo_gt_0_50": true
+   },
+   "secondary_geometric_only": {
+    "winner": "attention[final_js_kv_groups] @ step 0",
+    "oob_auroc_median": 0.8278778951127437,
+    "oob_auroc_ci_lo": 0.7461103427596935,
+    "oob_auroc_ci_hi": 0.8942901234567902,
+    "oob_n_bootstrap_used": 2000,
+    "winner_stability": 0.611,
+    "descriptive_deployable_ci_lo_gt_0_50": true
+   }
+  }
+ ]
+}
