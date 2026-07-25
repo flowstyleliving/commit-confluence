@@ -1,0 +1,293 @@
+{
+  "status": "DESIGNED-RETROSPECTIVE; NOT A FINDING; NOT BLIND-CONFIRMATORY",
+  "discovery_task_excluded": "halueval_qa",
+  "auxiliary_tasks": [
+    "anli_r2",
+    "halueval_dialogue",
+    "halueval_summarization"
+  ],
+  "fixed_cell": "fusion_rank_mean_geom",
+  "sign_table": [
+    {
+      "model": "Llama-3.2-3B-Instruct-4bit",
+      "trio_member": 0,
+      "tasks": {
+        "anli_r2": {
+          "sign": 1,
+          "usable": true,
+          "reason": null
+        },
+        "halueval_dialogue": {
+          "sign": -1,
+          "usable": true,
+          "reason": null
+        },
+        "halueval_summarization": {
+          "sign": 1,
+          "usable": true,
+          "reason": null
+        }
+      },
+      "n_usable": 3,
+      "positive_majority": 1
+    },
+    {
+      "model": "Llama-3.1-8B-Instruct-4bit",
+      "trio_member": 0,
+      "tasks": {
+        "anli_r2": {
+          "sign": -1,
+          "usable": true,
+          "reason": null
+        },
+        "halueval_dialogue": {
+          "sign": -1,
+          "usable": true,
+          "reason": null
+        },
+        "halueval_summarization": {
+          "sign": -1,
+          "usable": true,
+          "reason": null
+        }
+      },
+      "n_usable": 3,
+      "positive_majority": 0
+    },
+    {
+      "model": "Mistral-7B-Instruct-v0.3-4bit",
+      "trio_member": 1,
+      "tasks": {
+        "anli_r2": {
+          "sign": 1,
+          "usable": true,
+          "reason": null
+        },
+        "halueval_dialogue": {
+          "sign": 1,
+          "usable": true,
+          "reason": null
+        },
+        "halueval_summarization": {
+          "sign": -1,
+          "usable": true,
+          "reason": null
+        }
+      },
+      "n_usable": 3,
+      "positive_majority": 1
+    },
+    {
+      "model": "Mistral-Nemo-Instruct-2407-4bit",
+      "trio_member": 1,
+      "tasks": {
+        "anli_r2": {
+          "sign": 1,
+          "usable": true,
+          "reason": null
+        },
+        "halueval_dialogue": {
+          "sign": 1,
+          "usable": true,
+          "reason": null
+        },
+        "halueval_summarization": {
+          "sign": -1,
+          "usable": true,
+          "reason": null
+        }
+      },
+      "n_usable": 3,
+      "positive_majority": 1
+    },
+    {
+      "model": "Phi-4-mini-instruct-4bit",
+      "trio_member": 0,
+      "tasks": {
+        "anli_r2": {
+          "sign": 1,
+          "usable": true,
+          "reason": null
+        },
+        "halueval_dialogue": {
+          "sign": 1,
+          "usable": true,
+          "reason": null
+        },
+        "halueval_summarization": {
+          "sign": -1,
+          "usable": true,
+          "reason": null
+        }
+      },
+      "n_usable": 3,
+      "positive_majority": 1
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct-4bit",
+      "trio_member": 1,
+      "tasks": {
+        "anli_r2": {
+          "sign": null,
+          "usable": false,
+          "reason": "missing matrix"
+        },
+        "halueval_dialogue": {
+          "sign": 1,
+          "usable": true,
+          "reason": null
+        },
+        "halueval_summarization": {
+          "sign": 1,
+          "usable": true,
+          "reason": null
+        }
+      },
+      "n_usable": 2,
+      "positive_majority": 1
+    },
+    {
+      "model": "Qwen3-1.7B-4bit",
+      "trio_member": 0,
+      "tasks": {
+        "anli_r2": {
+          "sign": 1,
+          "usable": true,
+          "reason": null
+        },
+        "halueval_dialogue": {
+          "sign": 1,
+          "usable": true,
+          "reason": null
+        },
+        "halueval_summarization": {
+          "sign": 1,
+          "usable": true,
+          "reason": null
+        }
+      },
+      "n_usable": 3,
+      "positive_majority": 1
+    },
+    {
+      "model": "Qwen3-8B-4bit",
+      "trio_member": 0,
+      "tasks": {
+        "anli_r2": {
+          "sign": -1,
+          "usable": true,
+          "reason": null
+        },
+        "halueval_dialogue": {
+          "sign": 1,
+          "usable": true,
+          "reason": null
+        },
+        "halueval_summarization": {
+          "sign": -1,
+          "usable": true,
+          "reason": null
+        }
+      },
+      "n_usable": 3,
+      "positive_majority": 0
+    },
+    {
+      "model": "gemma-3-4b-it-4bit",
+      "trio_member": 0,
+      "tasks": {
+        "anli_r2": {
+          "sign": 1,
+          "usable": true,
+          "reason": null
+        },
+        "halueval_dialogue": {
+          "sign": 1,
+          "usable": true,
+          "reason": null
+        },
+        "halueval_summarization": {
+          "sign": null,
+          "usable": false,
+          "reason": "missing matrix"
+        }
+      },
+      "n_usable": 2,
+      "positive_majority": 1
+    }
+  ],
+  "model_outcomes": [
+    {
+      "model": "Llama-3.2-3B-Instruct-4bit",
+      "trio_member": 0,
+      "positive_majority": 1
+    },
+    {
+      "model": "Llama-3.1-8B-Instruct-4bit",
+      "trio_member": 0,
+      "positive_majority": 0
+    },
+    {
+      "model": "Mistral-7B-Instruct-v0.3-4bit",
+      "trio_member": 1,
+      "positive_majority": 1
+    },
+    {
+      "model": "Mistral-Nemo-Instruct-2407-4bit",
+      "trio_member": 1,
+      "positive_majority": 1
+    },
+    {
+      "model": "Phi-4-mini-instruct-4bit",
+      "trio_member": 0,
+      "positive_majority": 1
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct-4bit",
+      "trio_member": 1,
+      "positive_majority": 1
+    },
+    {
+      "model": "Qwen3-1.7B-4bit",
+      "trio_member": 0,
+      "positive_majority": 1
+    },
+    {
+      "model": "Qwen3-8B-4bit",
+      "trio_member": 0,
+      "positive_majority": 0
+    },
+    {
+      "model": "gemma-3-4b-it-4bit",
+      "trio_member": 0,
+      "positive_majority": 1
+    }
+  ],
+  "primary_aborted": false,
+  "fisher_exact": {
+    "layout": [
+      [
+        "trio+ and majority+",
+        "trio+ and majority-not+"
+      ],
+      [
+        "trio- and majority+",
+        "trio- and majority-not+"
+      ]
+    ],
+    "table": [
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    "alternative": "two-sided",
+    "odds_ratio": null,
+    "odds_ratio_nonfinite": true,
+    "p_value": 0.5
+  }
+}
