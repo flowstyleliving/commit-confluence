@@ -1,0 +1,9 @@
+[kv-tension-pilot] start: Mon Jun  8 22:13:36 PDT 2026
+[kv-tension-pilot] pid=85605
+[kv-tension-pilot] repo=/Users/msrk/Documents/t0-morphology-furnace
+[kv-tension-pilot] data=/Users/msrk/Documents/t0-morphology-furnace/experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl
+[kv-tension-pilot] out=/Users/msrk/Documents/t0-morphology-furnace/exploratory/attention-kv-tension/pilot_outputs/2026-06-09/anli_r1_t0_kv_tension
+[kv-tension-pilot] n_bootstrap=1000
+[kv-tension-pilot] models=5
+
+[kv-tension-pilot] === model: mlx-community/Qwen2.5-7B-Instruct-4bit  Mon Jun  8 22:13:36 PDT 2026 ===

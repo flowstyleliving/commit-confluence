@@ -1,0 +1,302 @@
+{
+  "calibration_stats": {
+    "auroc": 0.8479,
+    "auroc_bootstrap_ci_hi": 0.9003247719716031,
+    "auroc_bootstrap_ci_lo": 0.7933149857954545,
+    "candidate_panel": [
+      {
+        "auroc": 0.8404,
+        "cell": "attention[final_js] @ step 0",
+        "column_name": "attention::final_js",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "final_js",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.6997999999999999,
+        "cell": "attention[final_js_kv_groups] @ step 0",
+        "column_name": "attention::final_js_kv_groups",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "final_js_kv_groups",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.7978,
+        "cell": "attention[final_js_no_bos] @ step 0",
+        "column_name": "attention::final_js_no_bos",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "final_js_no_bos",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.7313000000000001,
+        "cell": "attention[final_bos_mass] @ step 0",
+        "column_name": "attention::final_bos_mass",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "final_bos_mass",
+        "sign": -1,
+        "step": 0
+      },
+      {
+        "auroc": 0.8479,
+        "cell": "attention[final_js_within_kv_groups] @ step 0",
+        "column_name": "attention::final_js_within_kv_groups",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "final_js_within_kv_groups",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.8016,
+        "cell": "attention[final_js_within_kv_groups_no_bos] @ step 0",
+        "column_name": "attention::final_js_within_kv_groups_no_bos",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "final_js_within_kv_groups_no_bos",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.8251,
+        "cell": "attention[final_js_kv_tension_gap] @ step 0",
+        "column_name": "attention::final_js_kv_tension_gap",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "final_js_kv_tension_gap",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.7010000000000001,
+        "cell": "attention[final_js_kv_tension_ratio] @ step 0",
+        "column_name": "attention::final_js_kv_tension_ratio",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "final_js_kv_tension_ratio",
+        "sign": -1,
+        "step": 0
+      },
+      {
+        "auroc": 0.5911,
+        "cell": "attention[mid_js] @ step 0",
+        "column_name": "attention::mid_js",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "mid_js",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.6029,
+        "cell": "attention[mid_js_kv_groups] @ step 0",
+        "column_name": "attention::mid_js_kv_groups",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "mid_js_kv_groups",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.5798,
+        "cell": "attention[mid_js_no_bos] @ step 0",
+        "column_name": "attention::mid_js_no_bos",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "mid_js_no_bos",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.5145,
+        "cell": "attention[mid_bos_mass] @ step 0",
+        "column_name": "attention::mid_bos_mass",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "mid_bos_mass",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.5909,
+        "cell": "attention[mid_js_within_kv_groups] @ step 0",
+        "column_name": "attention::mid_js_within_kv_groups",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "mid_js_within_kv_groups",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.5988,
+        "cell": "attention[mid_js_within_kv_groups_no_bos] @ step 0",
+        "column_name": "attention::mid_js_within_kv_groups_no_bos",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "mid_js_within_kv_groups_no_bos",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.5659000000000001,
+        "cell": "attention[mid_js_kv_tension_gap] @ step 0",
+        "column_name": "attention::mid_js_kv_tension_gap",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "mid_js_kv_tension_gap",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.5337999999999999,
+        "cell": "attention[mid_js_kv_tension_ratio] @ step 0",
+        "column_name": "attention::mid_js_kv_tension_ratio",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "mid_js_kv_tension_ratio",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.7786,
+        "cell": "attention[last_minus_1_js] @ step 0",
+        "column_name": "attention::last_minus_1_js",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "last_minus_1_js",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.7524,
+        "cell": "attention[last_minus_1_js_kv_groups] @ step 0",
+        "column_name": "attention::last_minus_1_js_kv_groups",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "last_minus_1_js_kv_groups",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.6393,
+        "cell": "attention[last_minus_1_js_no_bos] @ step 0",
+        "column_name": "attention::last_minus_1_js_no_bos",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "last_minus_1_js_no_bos",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.8216,
+        "cell": "attention[last_minus_1_bos_mass] @ step 0",
+        "column_name": "attention::last_minus_1_bos_mass",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "last_minus_1_bos_mass",
+        "sign": -1,
+        "step": 0
+      },
+      {
+        "auroc": 0.7313,
+        "cell": "attention[last_minus_1_js_within_kv_groups] @ step 0",
+        "column_name": "attention::last_minus_1_js_within_kv_groups",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "last_minus_1_js_within_kv_groups",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.5525000000000001,
+        "cell": "attention[last_minus_1_js_within_kv_groups_no_bos] @ step 0",
+        "column_name": "attention::last_minus_1_js_within_kv_groups_no_bos",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "last_minus_1_js_within_kv_groups_no_bos",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.7331,
+        "cell": "attention[last_minus_1_js_kv_tension_gap] @ step 0",
+        "column_name": "attention::last_minus_1_js_kv_tension_gap",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "last_minus_1_js_kv_tension_gap",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.5574999999999999,
+        "cell": "attention[last_minus_1_js_kv_tension_ratio] @ step 0",
+        "column_name": "attention::last_minus_1_js_kv_tension_ratio",
+        "family": "Attention",
+        "n_evaluated": 200,
+        "rank_label": "last_minus_1_js_kv_tension_ratio",
+        "sign": 1,
+        "step": 0
+      }
+    ],
+    "oob_auroc_ci_hi": 0.9038327526132405,
+    "oob_auroc_ci_lo": 0.7382207207207206,
+    "oob_auroc_median": 0.8333333333333334,
+    "oob_n_bootstrap_used": 1000,
+    "winner_counts": {
+      "attention[final_js] @ step 0": 240,
+      "attention[final_js_kv_tension_gap] @ step 0": 1,
+      "attention[final_js_no_bos] @ step 0": 18,
+      "attention[final_js_within_kv_groups] @ step 0": 593,
+      "attention[final_js_within_kv_groups_no_bos] @ step 0": 15,
+      "attention[last_minus_1_bos_mass] @ step 0": 133
+    },
+    "winner_stability": 0.593
+  },
+  "detector": {
+    "alpha": 1.0,
+    "gen_step": 0,
+    "layer": "final",
+    "metric": {
+      "column_name": "attention::final_js_within_kv_groups",
+      "derivation": null,
+      "family": "Attention",
+      "label": "final_js_within_kv_groups"
+    },
+    "sign": 1,
+    "threshold": null
+  },
+  "model": {
+    "output_projection_kind": "lm_head",
+    "slug": "mlx-community/Qwen3-8B-4bit"
+  },
+  "provenance": {
+    "attention_wrapper_module_hash_sha256": "b996ed923ac3eefeb0550901b2bf8ce5c5e0ae6486c8d41efdc2de9fb9567c99",
+    "calibrated_at_iso": "2026-06-09T05:31:34.062060Z",
+    "calibration_seed": 20260512,
+    "calibrator_module_hash_sha256": "78c4f098295fe600cc4f6f1a14cc7b496ac93d8d70dd65743c1504eb20931101",
+    "io_plugins_module_hash_sha256": "6c56be1888abc6ad44150583b869bac06366fa70a7d8e13230da3703064eb7b7",
+    "max_new_tokens": 1,
+    "model_adapters_module_hash_sha256": "5ce42c7f8de787e6f301c4542ebbb5057bc8b1702758702095f62cc720743137",
+    "model_snapshot_sha": "545dc4251c05440727734bcd94334791f6ab0192",
+    "n_bootstrap": 1000,
+    "pipeline_module_hash_sha256": "abb0debd8b7b3f0503418e09a21050fad968d88a6ea10fd4412983c6ba6e4a5c"
+  },
+  "schema_version": "1.2",
+  "task": {
+    "data_hash_sha256": "4c1a616dedc0b3ece9a59e22476674c8ab4246319baedd041b6118e48d9d43a1",
+    "label": "kv_tension_pilot_anli_r1_t0_20260609",
+    "n_calibration": 200,
+    "n_neg": 100,
+    "n_pos": 100
+  },
+  "warnings": [
+    "winner_unstable (winner_stability=0.59; a different panel cell wins on >30% of bootstrap resamples \u2014 the chosen cell is noise-driven at this n)"
+  ]
+}

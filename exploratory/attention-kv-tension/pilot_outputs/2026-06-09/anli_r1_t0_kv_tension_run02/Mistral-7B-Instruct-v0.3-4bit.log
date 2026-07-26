@@ -1,0 +1,37 @@
+
+  Loading model: mlx-community/Mistral-7B-Instruct-v0.3-4bit
+Fetching 7 files:   0%|          | 0/7 [00:00<?, ?it/s]Fetching 7 files: 100%|██████████| 7/7 [00:00<00:00, 8112.77it/s]
+     Layers: 32 | Probed: {'final': 31} | Output projection: lm_head (V=32768, D=4096)
+[calibrate] model=mlx-community/Mistral-7B-Instruct-v0.3-4bit  task=kv_tension_pilot_anli_r1_t0_20260609
+[calibrate] n_calibration=200 (pos=100, neg=100)
+[calibrate] panel=['attention[final_js] @ step 0', 'attention[final_js_kv_groups] @ step 0', 'attention[final_js_no_bos] @ step 0', 'attention[final_bos_mass] @ step 0', 'attention[final_js_within_kv_groups] @ step 0', 'attention[final_js_within_kv_groups_no_bos] @ step 0', 'attention[final_js_kv_tension_gap] @ step 0', 'attention[final_js_kv_tension_ratio] @ step 0', 'attention[mid_js] @ step 0', 'attention[mid_js_kv_groups] @ step 0', 'attention[mid_js_no_bos] @ step 0', 'attention[mid_bos_mass] @ step 0', 'attention[mid_js_within_kv_groups] @ step 0', 'attention[mid_js_within_kv_groups_no_bos] @ step 0', 'attention[mid_js_kv_tension_gap] @ step 0', 'attention[mid_js_kv_tension_ratio] @ step 0', 'attention[last_minus_1_js] @ step 0', 'attention[last_minus_1_js_kv_groups] @ step 0', 'attention[last_minus_1_js_no_bos] @ step 0', 'attention[last_minus_1_bos_mass] @ step 0', 'attention[last_minus_1_js_within_kv_groups] @ step 0', 'attention[last_minus_1_js_within_kv_groups_no_bos] @ step 0', 'attention[last_minus_1_js_kv_tension_gap] @ step 0', 'attention[last_minus_1_js_kv_tension_ratio] @ step 0']
+[calibrate] attention capture active: target_map={'final': 31, 'mid': 16, 'last_minus_1': 30} n_kv_heads={'final': 8, 'mid': 8, 'last_minus_1': 8}  v_norms=False
+[calibrate] tracing 200 samples...
+[calibrate]   10/200
+[calibrate]   20/200
+[calibrate]   30/200
+[calibrate]   40/200
+[calibrate]   50/200
+[calibrate]   60/200
+[calibrate]   70/200
+[calibrate]   80/200
+[calibrate]   90/200
+[calibrate]   100/200
+[calibrate]   110/200
+[calibrate]   120/200
+[calibrate]   130/200
+[calibrate]   140/200
+[calibrate]   150/200
+[calibrate]   160/200
+[calibrate]   170/200
+[calibrate]   180/200
+[calibrate]   190/200
+[calibrate]   200/200
+[calibrate] best cell: attention[last_minus_1_js_kv_tension_ratio] @ step 0  AUROC=0.806  sign=+1
+[calibrate] in-sample 95%% CI: [0.742, 0.865]  (n_bootstrap=1000)
+[calibrate] nested OOB bootstrap...
+[calibrate] OOB median AUROC: 0.791  CI [0.693, 0.869]  (used 1000/1000 rounds)
+[calibrate] winner stability: 0.60  counts: {'attention[final_js] @ step 0': 1, 'attention[final_js_no_bos] @ step 0': 1, 'attention[final_js_within_kv_groups_no_bos] @ step 0': 2, 'attention[last_minus_1_js_no_bos] @ step 0': 69, 'attention[last_minus_1_js_within_kv_groups] @ step 0': 35, 'attention[last_minus_1_js_within_kv_groups_no_bos] @ step 0': 288, 'attention[last_minus_1_js_kv_tension_gap] @ step 0': 7, 'attention[last_minus_1_js_kv_tension_ratio] @ step 0': 597}
+[calibrate]   WARNING: winner_unstable (winner_stability=0.60; a different panel cell wins on >30% of bootstrap resamples — the chosen cell is noise-driven at this n)
+[calibrate] wrote profile: /Users/msrk/Documents/t0-morphology-furnace/exploratory/attention-kv-tension/pilot_outputs/2026-06-09/anli_r1_t0_kv_tension_run02/Mistral-7B-Instruct-v0.3-4bit.profile.json
+[calibrate] 1 warning(s) — see profile['warnings']

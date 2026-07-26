@@ -1,0 +1,35 @@
+
+  Loading model: mlx-community/Qwen2.5-7B-Instruct-4bit
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 34379.54it/s]
+     Layers: 28 | Probed: {'final': 27} | Output projection: lm_head (V=152064, D=3584)
+[calibrate] model=mlx-community/Qwen2.5-7B-Instruct-4bit  task=kv_tension_pilot_anli_r1_t0_20260609
+[calibrate] n_calibration=200 (pos=100, neg=100)
+[calibrate] panel=['attention[final_js] @ step 0', 'attention[final_js_kv_groups] @ step 0', 'attention[final_js_no_bos] @ step 0', 'attention[final_bos_mass] @ step 0', 'attention[final_js_within_kv_groups] @ step 0', 'attention[final_js_within_kv_groups_no_bos] @ step 0', 'attention[final_js_kv_tension_gap] @ step 0', 'attention[final_js_kv_tension_ratio] @ step 0', 'attention[mid_js] @ step 0', 'attention[mid_js_kv_groups] @ step 0', 'attention[mid_js_no_bos] @ step 0', 'attention[mid_bos_mass] @ step 0', 'attention[mid_js_within_kv_groups] @ step 0', 'attention[mid_js_within_kv_groups_no_bos] @ step 0', 'attention[mid_js_kv_tension_gap] @ step 0', 'attention[mid_js_kv_tension_ratio] @ step 0', 'attention[last_minus_1_js] @ step 0', 'attention[last_minus_1_js_kv_groups] @ step 0', 'attention[last_minus_1_js_no_bos] @ step 0', 'attention[last_minus_1_bos_mass] @ step 0', 'attention[last_minus_1_js_within_kv_groups] @ step 0', 'attention[last_minus_1_js_within_kv_groups_no_bos] @ step 0', 'attention[last_minus_1_js_kv_tension_gap] @ step 0', 'attention[last_minus_1_js_kv_tension_ratio] @ step 0']
+[calibrate] attention capture active: target_map={'final': 27, 'mid': 14, 'last_minus_1': 26} n_kv_heads={'final': 4, 'mid': 4, 'last_minus_1': 4}  v_norms=False
+[calibrate] tracing 200 samples...
+[calibrate]   10/200
+[calibrate]   20/200
+[calibrate]   30/200
+[calibrate]   40/200
+[calibrate]   50/200
+[calibrate]   60/200
+[calibrate]   70/200
+[calibrate]   80/200
+[calibrate]   90/200
+[calibrate]   100/200
+[calibrate]   110/200
+[calibrate]   120/200
+[calibrate]   130/200
+[calibrate]   140/200
+[calibrate]   150/200
+[calibrate]   160/200
+[calibrate]   170/200
+[calibrate]   180/200
+[calibrate]   190/200
+[calibrate]   200/200
+[calibrate] best cell: attention[final_bos_mass] @ step 0  AUROC=0.780  sign=-1
+[calibrate] in-sample 95%% CI: [0.713, 0.843]  (n_bootstrap=1000)
+[calibrate] nested OOB bootstrap...
+[calibrate] OOB median AUROC: 0.763  CI [0.647, 0.844]  (used 1000/1000 rounds)
+[calibrate] winner stability: 0.74  counts: {'attention[final_js_no_bos] @ step 0': 26, 'attention[final_bos_mass] @ step 0': 742, 'attention[last_minus_1_js_kv_groups] @ step 0': 12, 'attention[last_minus_1_js_kv_tension_ratio] @ step 0': 220}
+[calibrate] wrote profile: /Users/msrk/Documents/t0-morphology-furnace/exploratory/attention-kv-tension/pilot_outputs/2026-06-09/anli_r1_t0_kv_tension_run02/Qwen2.5-7B-Instruct-4bit.profile.json
