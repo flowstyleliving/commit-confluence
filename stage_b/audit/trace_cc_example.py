@@ -7,6 +7,10 @@ The winner cell is derived from the profile's exact winner string (no substring
 matching). Any failed check exits nonzero. v2 after the 2026-08-12 gpt-5.6-sol audit;
 the fail-open v1 is preserved in git history at e8e4db2.
 
+Scope limit: only winners stored in the 27-column matrix (Attention/Readout cells)
+can be traced. Fusion winners are computed downstream of the matrix and will fail
+resolution here - fail-closed, but this CLI is NOT generic over all cells.
+
 Also prints (non-gating) the cell's most-flagged example - for the sealed
 Qwen2.5-7B/anli_r1 cell this is jsonl row 168, which is gold-entailed: the rank-1
 flag is a false positive, illustrating what a ranking endpoint at AUROC ~0.79 does
