@@ -1,0 +1,253 @@
+{
+ "schema": "cc-audit-run-record/3",
+ "argv": [
+  "stage_b/audit/verify_cell.py",
+  "--task",
+  "anli_r1",
+  "--model",
+  "Qwen2.5-7B-Instruct-4bit",
+  "--ace-rows",
+  "168,21,0,100",
+  "--readout-prefix",
+  "4",
+  "--acknowledge-code-drift",
+  "confluence_calibrator.py=c79009a3adaf57c6"
+ ],
+ "timestamp_utc": "2026-08-13T01:27:28.521586+00:00",
+ "verdict": "PASS_WITH_ACKNOWLEDGED_CODE_DRIFT",
+ "cell": {
+  "model": "mlx-community/Qwen2.5-7B-Instruct-4bit",
+  "slug": "Qwen2.5-7B-Instruct-4bit",
+  "task": "anli_r1",
+  "seed": 20260612
+ },
+ "artifact_hashes": {
+  "verify_cell.py": "a62bab8aa57950d13640baff83af1564eb5fcf1f529bd1f0fd24416ca881bf63",
+  "profile_json": "d719d4f0924f4cd6fbb381a8bfbd1fc036ec1dbff17242552ca990aaebd59891",
+  "matrix_npz": "065c5a5a25b1a780ebda4ba5412936db415b1384ebc5c0079e7bd897fafada5c",
+  "data_jsonl": "57ad341f2c29c886a726b7c62b7371be8c064b04b9b96e98324c931157d4f55b"
+ },
+ "environment": {
+  "python": "3.9.6 (default, Apr 30 2025, 02:07:17) \n[Clang 17.0.0 (clang-1700.0.13.5)]",
+  "platform": "macOS-15.6.1-arm64-arm-64bit",
+  "numpy": "2.0.2",
+  "mlx": "0.29.3",
+  "mlx_lm": "0.29.1",
+  "T0_REPO": "/Users/msrk/Documents/commit-confluence/vendor/t0_core",
+  "seal_source": "t0-morphology-furnace",
+  "pythondontwritebytecode": "1",
+  "git": {
+   "commit-confluence": {
+    "head": "e209093e2d1ae003abf47597faa3326257a561b9",
+    "dirty_excluding_run_records": false,
+    "dirty_paths": []
+   },
+   "t0_repo": null
+  }
+ },
+ "provenance": {
+  "module_hashes": {
+   "pri_calibrator.py": {
+    "recorded": "78c4f098295fe600cc4f6f1a14cc7b496ac93d8d70dd65743c1504eb20931101",
+    "current": "78c4f098295fe600cc4f6f1a14cc7b496ac93d8d70dd65743c1504eb20931101",
+    "status": "MATCH"
+   },
+   "comprehensive_run.py": {
+    "recorded": "f6f5958bae5b035f07f034b9f4f5784b1a86c1ab00ab0f9c9ef4a5584776e8f8",
+    "current": "f6f5958bae5b035f07f034b9f4f5784b1a86c1ab00ab0f9c9ef4a5584776e8f8",
+    "status": "MATCH"
+   },
+   "diagnose_inter_head_disagreement.py": {
+    "recorded": "b996ed923ac3eefeb0550901b2bf8ce5c5e0ae6486c8d41efdc2de9fb9567c99",
+    "current": "b996ed923ac3eefeb0550901b2bf8ce5c5e0ae6486c8d41efdc2de9fb9567c99",
+    "status": "MATCH"
+   },
+   "pri_runtime.py": {
+    "recorded": "cf56a2607b94666ab092647a764b1b73c7974b38445caa6a4b252a9cdf240784",
+    "current": "cf56a2607b94666ab092647a764b1b73c7974b38445caa6a4b252a9cdf240784",
+    "status": "MATCH"
+   },
+   "pri_v2_io_plugins.py": {
+    "recorded": "6c56be1888abc6ad44150583b869bac06366fa70a7d8e13230da3703064eb7b7",
+    "current": "6c56be1888abc6ad44150583b869bac06366fa70a7d8e13230da3703064eb7b7",
+    "status": "MATCH"
+   },
+   "pri_v2_mlx_pipeline.py": {
+    "recorded": "abb0debd8b7b3f0503418e09a21050fad968d88a6ea10fd4412983c6ba6e4a5c",
+    "current": "abb0debd8b7b3f0503418e09a21050fad968d88a6ea10fd4412983c6ba6e4a5c",
+    "status": "MATCH"
+   },
+   "model_adapters.py": {
+    "recorded": "5ce42c7f8de787e6f301c4542ebbb5057bc8b1702758702095f62cc720743137",
+    "current": "5ce42c7f8de787e6f301c4542ebbb5057bc8b1702758702095f62cc720743137",
+    "status": "MATCH"
+   },
+   "test_shadow_ambiguity.py": {
+    "recorded": "12046a3ff98ddaba207396b943415dd5360f4cb4a942462994889d0aa8771961",
+    "current": "12046a3ff98ddaba207396b943415dd5360f4cb4a942462994889d0aa8771961",
+    "status": "MATCH"
+   },
+   "confluence_calibrator.py": {
+    "recorded": "6142217f7608dc7c790649e7d26fe99c115f439c5390d70c5128cf4c89808aa6",
+    "current": "c79009a3adaf57c6ad38d2400c3c705e12d00ab18d917399b59d56b23d513e9a",
+    "status": "MISMATCH"
+   },
+   "fusion_signs.json": {
+    "recorded": "92b5468bd241b517dd2d5cf70ad28556157424deb54b5f85f88af0305ff35372",
+    "current": "92b5468bd241b517dd2d5cf70ad28556157424deb54b5f85f88af0305ff35372",
+    "status": "MATCH"
+   }
+  },
+  "drifted_modules": [
+   "confluence_calibrator.py"
+  ],
+  "hash_pinned_waivers": {
+   "confluence_calibrator.py": "c79009a3adaf57c6"
+  },
+  "unwaived_drift": [],
+  "model_snapshot": {
+   "current": {
+    "resolved_revision": "c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed",
+    "resolved_source": "refs/main",
+    "cached_snapshots": [
+     "._c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed",
+     "c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed"
+    ]
+   },
+   "recorded": {
+    "resolved_revision": "c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed",
+    "resolved_source": "refs/main",
+    "cached_snapshots": [
+     "c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed"
+    ]
+   },
+   "note": "revision-pointer comparison under the default HF cache layout; weight shards are NOT hashed"
+  }
+ },
+ "comparisons": {
+  "ace": {
+   "rows": [
+    168,
+    21,
+    0,
+    100
+   ],
+   "n_compared": 84,
+   "n_mismatch": 0,
+   "worst_abs_diff": 0.0
+  },
+  "readout": {
+   "n_compared": 24,
+   "n_mismatch": 0,
+   "worst_abs_diff": 0.0
+  },
+  "equality_criterion": "float64 byte equality; source arrays asserted float64 and finite before comparison"
+ },
+ "checks": [
+  {
+   "name": "data_file_sha256 matches profile stamp",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "matrix meta matches profile (model/benchmark/seed/data hashes)",
+   "ok": true,
+   "detail": "{\"model\": \"mlx-community/Qwen2.5-7B-Instruct-4bit\", \"benchmark\": \"anli_r1\", \"data_path\": \"stage_b/data/anli_R1_seed20260612_n200.jsonl\", \"seed\": 20260612, \"ace_data_hash\": \"d73a23a426a7551126a6dc9304b0458d6f89fd659eda78817ec466309a248963\", \"readout_data_hash\": \"d73a23a426a7551126a6dc9304b0458d6f89fd659eda78817ec466309a248963\"}"
+  },
+  {
+   "name": "stored panel = 21 Attention + 6 Readout, all triples unique",
+   "ok": true,
+   "detail": "len=27"
+  },
+  {
+   "name": "stored matrix shape/dtype",
+   "ok": true,
+   "detail": "(200, 27) float64"
+  },
+  {
+   "name": "sample_idx is a complete permutation of 0..n-1",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "matrix labels == jsonl labels at sample_idx (all rows)",
+   "ok": true,
+   "detail": "n=200 profile n_aligned=200"
+  },
+  {
+   "name": "requested rows in range",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "model snapshot revision matches profile (pointer check, not weight hash)",
+   "ok": true,
+   "detail": "current=c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed recorded=c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed"
+  },
+  {
+   "name": "subset lines byte-identical to source rows",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "fresh ACE panel == stored Attention panel (exact triples, in order)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "fresh ACE shape/dtype",
+   "ok": true,
+   "detail": "(4, 21) float64"
+  },
+  {
+   "name": "fresh ACE values all finite",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "ACE comparison count == 84 (4 distinct rows x 21)",
+   "ok": true,
+   "detail": "84"
+  },
+  {
+   "name": "ACE values byte-identical",
+   "ok": true,
+   "detail": "0 mismatches, worst |diff|=0.000e+00"
+  },
+  {
+   "name": "readout sample_idx == exact prefix (no drops)",
+   "ok": true,
+   "detail": "[0, 1, 2, 3]"
+  },
+  {
+   "name": "fresh readout panel == stored Readout panel (exact triples, in order)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "fresh readout shape/dtype",
+   "ok": true,
+   "detail": "(4, 6) float64"
+  },
+  {
+   "name": "fresh readout values all finite",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "readout comparison count == 24",
+   "ok": true,
+   "detail": "24"
+  },
+  {
+   "name": "readout values byte-identical",
+   "ok": true,
+   "detail": "0 mismatches, worst |diff|=0.000e+00"
+  },
+  {
+   "name": "module hashes match profile (or drift waived at its pinned hash)",
+   "ok": true,
+   "detail": "unwaived drift: []"
+  }
+ ]
+}
