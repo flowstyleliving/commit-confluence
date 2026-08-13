@@ -25,8 +25,10 @@ preserved in git history).
   protocol constants, exact panel-triple identity and uniqueness, complete
   sample_idx permutation, matrix-meta↔profile agreement, distinct nonnegative row
   args, model snapshot-revision match (always fatal on drift), and per-module code
-  hashes vs the profile's `module_hashes` — drift is fatal unless the specific
-  module is named in `--acknowledge-code-drift MODULES` (recorded, never blanket).
+  hashes vs the profile's `module_hashes` — drift is fatal unless waived
+  HASH-PINNED via `--acknowledge-code-drift MODULE=SHA256` (the waiver forgives
+  one specific known state of one file, never "whatever that module now is";
+  recorded, never blanket).
   Every run that reaches or crashes out of the check flow writes a JSON record to
   `runs/` (verdict PASS / PASS_WITH_ACKNOWLEDGED_CODE_DRIFT / FAIL / ERROR); a run
   killed externally leaves no record. Records self-bind: they carry sha256 of the
@@ -75,7 +77,11 @@ corroboration on sampled values, not a formal proof of full-run provenance.
       <t0-repo>/.venv/bin/python stage_b/audit/verify_cell.py \
       --task anli_r1 --model Qwen2.5-7B-Instruct-4bit \
       --ace-rows 168,21,0,100 --readout-prefix 4 \
-      --acknowledge-code-drift confluence_calibrator.py
+      --acknowledge-code-drift confluence_calibrator.py=c79009a3adaf57c6
+
+(The pinned hash is the sha256 prefix of the post-seal BENCH-era
+`confluence_calibrator.py`; recompute with `shasum -a 256` if it has moved again —
+a moved hash is exactly what the pin exists to surface.)
 
 `PYTHONDONTWRITEBYTECODE=1` avoids writing `__pycache__` into the dependency
 tree. Executed run records live in `runs/` (JSON, one per run).

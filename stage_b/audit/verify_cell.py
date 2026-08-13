@@ -9,9 +9,12 @@ v2.1 after the second gpt-5.6-sol audit round (v2 at 7edafee, v1 at e8e4db2):
     leaves no record - that limitation stands.
   - the record binds itself to the artifacts: sha256 of this verifier file, the
     profile, the matrix npz, and the data jsonl are all recorded.
-  - --acknowledge-code-drift now takes an explicit comma-separated module allowlist;
-    only the named modules may mismatch the profile's recorded hashes. Unlisted
-    drift stays fatal. (v2's boolean form was a blanket waiver.)
+  - --acknowledge-code-drift is HASH-PINNED (v2.2): each waiver is MODULE=SHA256
+    (>=12-hex-char prefix), so a drifted module is waived only if its CURRENT hash
+    matches the pinned value - the flag forgives one specific known state of one
+    file, never "whatever this module happens to be". Unlisted or unpinned drift
+    stays fatal. (v2's boolean form was a blanket waiver; v2.1's module list
+    forgave any state of a named module.)
   - readout gets the same dtype/shape assertions as ACE; panel triples are asserted
     unique; protocol constants (21 attention + 6 readout columns) are asserted;
     sample_idx is asserted a complete permutation; matrix meta (model/benchmark/
@@ -110,10 +113,11 @@ def main():
     ap.add_argument("--readout-prefix", type=int, default=0,
                     help="N>0: also re-extract the readout pass on prefix rows 0..N-1")
     ap.add_argument("--profiles-dir", default=os.path.join(CC_ROOT, "stage_b", "profiles"))
-    ap.add_argument("--acknowledge-code-drift", default="", metavar="MODULES",
-                    help="comma-separated module names (e.g. confluence_calibrator.py) whose "
-                         "hash drift vs the profile is accepted and recorded; any OTHER drift "
-                         "remains fatal. Weight-snapshot drift is always fatal.")
+    ap.add_argument("--acknowledge-code-drift", default="", metavar="MOD=HASH[,MOD=HASH]",
+                    help="hash-pinned drift waivers, e.g. confluence_calibrator.py=c79009a3adaf57c6. "
+                         "A drifted module is waived ONLY if named here AND its current sha256 "
+                         "matches the pinned value (>=12 hex chars, prefix accepted). Any other "
+                         "drift remains fatal. Weight-snapshot drift is always fatal.")
     ap.add_argument("--record", default=None, help="run-record JSON path (default: audit/runs/)")
     a = ap.parse_args()
 
@@ -122,7 +126,15 @@ def main():
         ap.error("--ace-rows must be distinct nonnegative indices")
     if a.readout_prefix < 0:
         ap.error("--readout-prefix must be >= 0")
-    acked = {s for s in a.acknowledge_code_drift.split(",") if s}
+    acked = {}
+    for item in (s for s in a.acknowledge_code_drift.split(",") if s):
+        if "=" not in item:
+            ap.error(f"--acknowledge-code-drift entries must be MODULE=SHA256, got {item!r}")
+        mod, h = item.split("=", 1)
+        h = h.strip().lower()
+        if len(h) < 12 or any(c not in "0123456789abcdef" for c in h):
+            ap.error(f"--acknowledge-code-drift hash for {mod!r} must be >=12 hex chars")
+        acked[mod.strip()] = h
 
     if a.record:
         rec_path = a.record
@@ -133,7 +145,7 @@ def main():
 
     ck = Checks()
     record = {
-        "schema": "cc-audit-run-record/2",
+        "schema": "cc-audit-run-record/3",
         "argv": sys.argv,
         "timestamp_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "verdict": "ERROR",
@@ -286,11 +298,13 @@ def main():
             mod_table[name] = {"recorded": rec_h, "current": cur_h, "status": status}
             if status != "MATCH":
                 drift.append(name)
-        unacked = [d for d in drift if d not in acked]
+        unacked = [d for d in drift
+                   if not (d in acked and (mod_table[d]["current"] or "").startswith(acked[d]))]
         if drift:
-            print(f"  [WARN] module-hash drift vs profile: {drift} (acknowledged: {sorted(acked)})")
-        ck.add("module hashes match profile (or drift within the explicit allowlist)",
-               not unacked, f"unacknowledged drift: {unacked}")
+            print(f"  [WARN] module-hash drift vs profile: {drift} "
+                  f"(hash-pinned waivers: {acked})")
+        ck.add("module hashes match profile (or drift waived at its pinned hash)",
+               not unacked, f"unwaived drift: {unacked}")
 
         # ── record + verdict ───────────────────────────────────────────────
         try:
@@ -311,7 +325,7 @@ def main():
         }
         record["provenance"] = {
             "module_hashes": mod_table, "drifted_modules": drift,
-            "acknowledged_modules": sorted(acked), "unacknowledged_drift": unacked,
+            "hash_pinned_waivers": acked, "unwaived_drift": unacked,
             "model_snapshot": {"current": snap, "recorded": rec_snap,
                                "note": "revision-pointer comparison under the default HF cache "
                                        "layout; weight shards are NOT hashed"},
