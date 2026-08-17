@@ -1,0 +1,53 @@
+{
+  "schema": "furnace-depth-curve/1.0",
+  "model": "Qwen/Qwen2.5-32B-Instruct",
+  "task": "anli_r1",
+  "precision": "nf4",
+  "n_layers": 64,
+  "n_heads": 40,
+  "n_kv_heads": 8,
+  "n_rows": 200,
+  "metrics": [
+    "final_js",
+    "final_js_no_bos",
+    "final_js_kv_groups",
+    "final_bos_mass"
+  ],
+  "backend": "modal-torch",
+  "comparable": false,
+  "data_path": "/models/data/anli_r1_n200.jsonl",
+  "data_sha256": "57ad341f2c29c886a726b7c62b7371be8c064b04b9b96e98324c931157d4f55b",
+  "data_hash_loader": "d73a23a426a7551126a6dc9304b0458d6f89fd659eda78817ec466309a248963",
+  "yes_no_commit_rate": 1.0,
+  "gate": {
+    "rows": [
+      {
+        "row": 0,
+        "oproj_recon_cos": 1.0,
+        "commit_is_yes_no": true,
+        "commit_token": "'YES'"
+      },
+      {
+        "row": 1,
+        "oproj_recon_cos": 1.0,
+        "commit_is_yes_no": true,
+        "commit_token": "'NO'"
+      }
+    ],
+    "GATE_cos_ok": true,
+    "GATE_yes_no_ok": true
+  },
+  "prereg": "exploratory/depth-curve/PRE_REGISTRATION.md",
+  "note": "per-layer t=0 last-query attention; sealed kernel per block under tag 'final'",
+  "provenance": {
+    "extractor_code_commit": "c56b7e1",
+    "hf_model_revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+    "torch": "2.12.1+cu130",
+    "transformers": "5.12.1",
+    "bitsandbytes": "0.49.2",
+    "numpy": "1.26.4",
+    "seal_pri_calibrator_sha256": "78c4f098295fe600cc4f6f1a14cc7b496ac93d8d70dd65743c1504eb20931101",
+    "seal_diagnose_sha256": "b996ed923ac3eefeb0550901b2bf8ce5c5e0ae6486c8d41efdc2de9fb9567c99",
+    "depth_max_tokens": 900
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "furnace-depth-curve/1.0",
+  "model": "meta-llama/Llama-3.3-70B-Instruct",
+  "task": "halueval_qa",
+  "precision": "nf4",
+  "n_layers": 80,
+  "n_heads": 64,
+  "n_kv_heads": 8,
+  "n_rows": 200,
+  "metrics": [
+    "final_js",
+    "final_js_no_bos",
+    "final_js_kv_groups",
+    "final_bos_mass"
+  ],
+  "backend": "modal-torch",
+  "comparable": false,
+  "data_path": "/models/data/halueval_qa_n200.jsonl",
+  "data_sha256": "a841d096a3f41162a685994655e5fdd0974176ee35797e73be99e29e5d1c15e0",
+  "data_hash_loader": "fb0401c2b528ae7aebcd95c348d16c0bdc03b340f29aeb70e10a2db95ee97e84",
+  "yes_no_commit_rate": 0.995,
+  "gate": {
+    "rows": [
+      {
+        "row": 0,
+        "oproj_recon_cos": 0.99999,
+        "commit_is_yes_no": true,
+        "commit_token": "'NO'"
+      },
+      {
+        "row": 1,
+        "oproj_recon_cos": 0.99999,
+        "commit_is_yes_no": true,
+        "commit_token": "'NO'"
+      }
+    ],
+    "GATE_cos_ok": true,
+    "GATE_yes_no_ok": true
+  },
+  "prereg": "exploratory/depth-curve/PRE_REGISTRATION.md",
+  "note": "per-layer t=0 last-query attention; sealed kernel per block under tag 'final'",
+  "provenance": {
+    "extractor_code_commit": "c56b7e1",
+    "hf_model_revision": "6f6073b423013f6a7d4d9f39144961bfbfbc386b",
+    "torch": "2.12.1+cu130",
+    "transformers": "5.12.1",
+    "bitsandbytes": "0.49.2",
+    "numpy": "1.26.4",
+    "seal_pri_calibrator_sha256": "78c4f098295fe600cc4f6f1a14cc7b496ac93d8d70dd65743c1504eb20931101",
+    "seal_diagnose_sha256": "b996ed923ac3eefeb0550901b2bf8ce5c5e0ae6486c8d41efdc2de9fb9567c99",
+    "depth_max_tokens": 900
+  }
+}
