@@ -30,7 +30,17 @@ MNT = "/models"
 SEAL_REMOTE = "/seal"
 PKG_REMOTE = "/pkg"
 OUT_DIR = "depth_curve"
-MAX_PROMPT_TOKENS = 4096
+# Memory-safe bound for THIS lane (Codex audit MINOR-6): all blocks' bf16 attention
+# weights are materialized, ~n_layers*H*T^2*2 bytes; at 80x64 and T=900 that is ~8.3GiB,
+# fine beside nf4 weights on an 80GB card. Observed wrapped prompts are <650 tokens.
+DEPTH_MAX_TOKENS = 900
+
+# Frozen data provenance (PRE_REGISTRATION.md) — ENFORCED, not just recorded
+# (Codex audit MAJOR-1): the mounted volume file must hash to the registered value.
+FROZEN_DATA_SHA256 = {
+    "anli_r1": "57ad341f2c29c886a726b7c62b7371be8c064b04b9b96e98324c931157d4f55b",
+    "halueval_qa": "a841d096a3f41162a685994655e5fdd0974176ee35797e73be99e29e5d1c15e0",
+}
 
 # The four weight-only attention cells (sealed panel details, t=0). v-norm cells are
 # excluded by design: per-layer v-hooks are unnecessary for the depth question and
@@ -105,7 +115,8 @@ def _oproj_cos_gate(BASE, model, tok, model_id, prompt, tags, final_idx):
 
 
 @app.function(image=image, gpu=GPU_CONFIG, volumes={MNT: vol}, secrets=[hf_secret], timeout=60 * 60 * 6)
-def depth_extract(model_id: str, task: str, n: int = 200, precision: str = "nf4"):
+def depth_extract(model_id: str, task: str, n: int = 200, precision: str = "nf4",
+                  code_commit: str = ""):
     import hashlib
     import json
     import sys
@@ -130,6 +141,11 @@ def depth_extract(model_id: str, task: str, n: int = 200, precision: str = "nf4"
     if not os.path.exists(data):
         raise FileNotFoundError(f"missing data file on volume: {data}")
     data_sha = hashlib.sha256(open(data, "rb").read()).hexdigest()
+    frozen = FROZEN_DATA_SHA256.get(task)
+    if frozen is None:
+        raise RuntimeError(f"task {task!r} has no frozen data hash in this lane — refusing to run")
+    if data_sha != frozen:
+        raise RuntimeError(f"DATA HASH MISMATCH for {task}: volume file {data_sha} != frozen {frozen}")
     prompts, labels, dh = CR._load_calibration_jsonl(data)
     if len(prompts) != n:
         raise RuntimeError(f"expected n={n} rows, data file has {len(prompts)}")
@@ -164,8 +180,9 @@ def depth_extract(model_id: str, task: str, n: int = 200, precision: str = "nf4"
 
     for i, prompt in enumerate(prompts):
         ids = BASE._chat_ids(tok, prompt, model_id)
-        if len(ids) > MAX_PROMPT_TOKENS:
-            raise RuntimeError(f"row {i}: prompt has {len(ids)} tokens > {MAX_PROMPT_TOKENS}")
+        if len(ids) > DEPTH_MAX_TOKENS:
+            raise RuntimeError(f"row {i}: prompt has {len(ids)} tokens > {DEPTH_MAX_TOKENS} "
+                               f"(memory-safe bound for all-blocks attention capture)")
         with torch.no_grad():
             out = model(torch.tensor([ids], device=model.device),
                         output_attentions=True, use_cache=False)
@@ -194,7 +211,7 @@ def depth_extract(model_id: str, task: str, n: int = 200, precision: str = "nf4"
                 if sc is None or not np.isfinite(sc):
                     raise RuntimeError(f"row {i} block {li} cell {cell}: non-finite score {sc!r}")
                 scores[i, li, k] = float(sc)
-        del out
+        del att, out
         if (i + 1) % 10 == 0:
             torch.cuda.empty_cache()
         if i % 25 == 0:
@@ -210,6 +227,11 @@ def depth_extract(model_id: str, task: str, n: int = 200, precision: str = "nf4"
     slug = model_id.split("/")[-1]
     outdir = f"{MNT}/{OUT_DIR}/{task}"
     os.makedirs(outdir, exist_ok=True)
+    # runtime provenance (Codex audit MINOR-5)
+    import bitsandbytes
+    import transformers
+    def _sha_file(p):
+        return hashlib.sha256(open(p, "rb").read()).hexdigest()
     meta = {
         "schema": "furnace-depth-curve/1.0", "model": model_id, "task": task,
         "precision": precision, "n_layers": n_layers, "n_heads": n_heads, "n_kv_heads": n_kv,
@@ -219,6 +241,15 @@ def depth_extract(model_id: str, task: str, n: int = 200, precision: str = "nf4"
         "yes_no_commit_rate": round(frac_yn, 4), "gate": gate,
         "prereg": "exploratory/depth-curve/PRE_REGISTRATION.md",
         "note": "per-layer t=0 last-query attention; sealed kernel per block under tag 'final'",
+        "provenance": {
+            "extractor_code_commit": code_commit or "<not passed>",
+            "hf_model_revision": getattr(model.config, "_commit_hash", None),
+            "torch": torch.__version__, "transformers": transformers.__version__,
+            "bitsandbytes": bitsandbytes.__version__, "numpy": np.__version__,
+            "seal_pri_calibrator_sha256": _sha_file(f"{SEAL_REMOTE}/pri_calibrator.py"),
+            "seal_diagnose_sha256": _sha_file(f"{SEAL_REMOTE}/diagnose_inter_head_disagreement.py"),
+            "depth_max_tokens": DEPTH_MAX_TOKENS,
+        },
     }
     np.savez(f"{outdir}/{slug}.depth.npz",
              scores=scores, labels=np.asarray(labels, dtype=np.int64),
@@ -239,5 +270,5 @@ def depth_extract(model_id: str, task: str, n: int = 200, precision: str = "nf4"
 
 @app.local_entrypoint()
 def main(model_id: str = "Qwen/Qwen2.5-7B-Instruct", task: str = "anli_r1",
-         n: int = 200, precision: str = "nf4"):
-    print(depth_extract.remote(model_id, task, n, precision))
+         n: int = 200, precision: str = "nf4", code_commit: str = ""):
+    print(depth_extract.remote(model_id, task, n, precision, code_commit))

@@ -100,6 +100,27 @@ shuffled envelope.
 - Misses are reported as written. Amendments require a new dated section here, never an
   in-place edit.
 
+## Post-audit fixes (2026-08-16, pre-launch — NO endpoint, threshold, or prediction changes)
+
+A Codex static audit (verdict YELLOW, no blockers; sealed-kernel reuse verified exact)
+was run on the frozen commit `fadbaff` before any big-model cell was launched. Fixes
+applied, all of which make the code enforce what this document already stated:
+1. Frozen data hashes are now ENFORCED in the extractor (mismatch aborts), not just recorded.
+2. The scorer strictly validates every artifact (schema, model/task/precision=nf4, frozen
+   data hash, n=200, expected layer counts 28/64/80/80, the exact 4-metric panel, identity
+   sample_idx, gates passed, YES/NO ≥ 0.5) — filename existence alone no longer counts.
+3. Interval conventions corrected to the closed intervals written here: mid-region
+   [0.4N, 0.6N] = blocks ceil(0.4N)..floor(0.6N); E3 "ℓ < 0.4N" = blocks 0..ceil(0.4N)−1;
+   E2 window start ceil(0.5N).
+4. The unregistered "NO-PEAKS" scorer outcome maps to UNDECIDED (frozen outcome set) with
+   a descriptive reason.
+5. NPZ meta now carries runtime provenance (extractor commit, HF model revision, library
+   versions, sealed-kernel file hashes).
+6. Operational memory guard: per-prompt token bound 900 for this lane (observed wrapped
+   prompts < 650; 4096 would OOM the all-blocks capture at 80 layers).
+The pre-fix smoke cell (Qwen2.5-7B/anli_r1) is discarded and re-extracted under the fixed
+code so all 8 cells share identical extractor bytes.
+
 ## Cost/infra note
 
 `output_attentions=True` already materializes all blocks' weights in the existing June

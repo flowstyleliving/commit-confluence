@@ -46,6 +46,25 @@ QWEN_TRIO = ["Qwen2.5-7B-Instruct", "Qwen2.5-32B-Instruct", "Qwen2.5-72B-Instruc
 CONTROL = "Llama-3.3-70B-Instruct"
 TASKS = ["anli_r1", "halueval_qa"]
 
+# Strict artifact validation (Codex audit MAJOR-2): frozen expectations per cell.
+EXPECT_N_LAYERS = {"Qwen2.5-7B-Instruct": 28, "Qwen2.5-32B-Instruct": 64,
+                   "Qwen2.5-72B-Instruct": 80, "Llama-3.3-70B-Instruct": 80}
+EXPECT_METRICS = ["final_js", "final_js_no_bos", "final_js_kv_groups", "final_bos_mass"]
+EXPECT_N_ROWS = 200
+EXPECT_SCHEMA = "furnace-depth-curve/1.0"
+EXPECT_PRECISION = "nf4"
+FROZEN_DATA_SHA256 = {
+    "anli_r1": "57ad341f2c29c886a726b7c62b7371be8c064b04b9b96e98324c931157d4f55b",
+    "halueval_qa": "a841d096a3f41162a685994655e5fdd0974176ee35797e73be99e29e5d1c15e0",
+}
+
+
+def _closed_interval_blocks(N, lo_frac, hi_frac):
+    """Integer blocks l with lo_frac*N <= l <= hi_frac*N (closed interval, prereg wording)."""
+    lo = int(np.ceil(lo_frac * N))
+    hi = int(np.floor(hi_frac * N))
+    return lo, hi + 1  # python slice
+
 
 def signfree_auroc_matrix(scores_lm, y):
     """scores_lm: [n, L] for one metric; y: [n] in {0,1}. Returns [L] sign-free AUROCs."""
@@ -70,10 +89,31 @@ def load_cell(npz_dir, task, slug):
     meta = json.loads(str(z["meta"]))
     scores = z["scores"]  # [n, L, K]
     y = z["labels"].astype(np.int64)
-    if not np.isfinite(scores).all():
-        raise ValueError(f"{path}: non-finite scores")
-    if scores.shape[0] != y.shape[0] or scores.shape[1] != int(meta["n_layers"]):
-        raise ValueError(f"{path}: shape mismatch {scores.shape} vs n_layers={meta['n_layers']}")
+
+    def req(cond, msg):
+        if not cond:
+            raise ValueError(f"{path}: ARTIFACT VALIDATION FAILED — {msg}")
+
+    req(meta.get("schema") == EXPECT_SCHEMA, f"schema {meta.get('schema')!r} != {EXPECT_SCHEMA!r}")
+    req(str(meta.get("model", "")).endswith(slug), f"meta.model {meta.get('model')!r} does not match slug {slug!r}")
+    req(meta.get("task") == task, f"meta.task {meta.get('task')!r} != {task!r}")
+    req(meta.get("precision") == EXPECT_PRECISION, f"precision {meta.get('precision')!r} != {EXPECT_PRECISION!r}")
+    req(meta.get("data_sha256") == FROZEN_DATA_SHA256[task],
+        f"data_sha256 {meta.get('data_sha256')!r} != frozen {FROZEN_DATA_SHA256[task]!r}")
+    req(int(meta.get("n_layers", -1)) == EXPECT_N_LAYERS[slug],
+        f"n_layers {meta.get('n_layers')} != expected {EXPECT_N_LAYERS[slug]}")
+    req(metrics == EXPECT_METRICS, f"metrics {metrics} != frozen {EXPECT_METRICS}")
+    req(scores.ndim == 3 and scores.shape == (EXPECT_N_ROWS, EXPECT_N_LAYERS[slug], len(EXPECT_METRICS)),
+        f"scores shape {scores.shape} != ({EXPECT_N_ROWS}, {EXPECT_N_LAYERS[slug]}, {len(EXPECT_METRICS)})")
+    req(y.shape == (EXPECT_N_ROWS,), f"labels shape {y.shape}")
+    req(set(np.unique(y).tolist()) == {0, 1}, f"labels not binary: {np.unique(y)}")
+    req(np.array_equal(z["sample_idx"], np.arange(EXPECT_N_ROWS)), "sample_idx is not the identity 0..199")
+    gate = meta.get("gate") or {}
+    req(bool(gate.get("GATE_cos_ok")) and bool(gate.get("GATE_yes_no_ok")),
+        f"gates not passed in meta: {gate}")
+    req(float(meta.get("yes_no_commit_rate", 0.0)) >= 0.5,
+        f"yes_no_commit_rate {meta.get('yes_no_commit_rate')} < 0.5")
+    req(np.isfinite(scores).all(), "non-finite scores")
     return scores, y, metrics, meta
 
 
@@ -130,11 +170,11 @@ def analyze_cell(scores, y, metrics, meta, rng_env, rng_boot):
         "lstar_frac_median": (q(boot_lstars, 50) / N) if len(boot_lstars) else None,
     }
 
-    # E2 rise shape
+    # E2 rise shape (closed intervals per prereg wording; Codex audit MAJOR-3)
     if lstar is not None:
-        lo, hi = int(np.floor(E3_FRONT * N)), int(np.ceil(0.6 * N))
+        lo, hi = _closed_interval_blocks(N, 0.4, 0.6)
         b_base = float(np.median(A[lo:hi])) if hi > lo else float("nan")
-        start = int(np.floor(0.5 * N))
+        start = int(np.ceil(0.5 * N))
         seg = A[start:lstar + 1]
         J = float(np.max(np.abs(np.diff(seg)))) if len(seg) >= 2 else 0.0
         R = float(A[lstar] - b_base)
@@ -144,15 +184,16 @@ def analyze_cell(scores, y, metrics, meta, rng_env, rng_boot):
     else:
         res["E2"] = None
 
-    # E3 early layers
-    front = int(np.floor(E3_FRONT * N))
+    # E3 early layers: strictly l < 0.4N (blocks 0 .. ceil(0.4N)-1)
+    front = int(np.ceil(E3_FRONT * N))
     early = [int(li) for li in range(front) if A[li] >= E3_AUROC and A[li] > env_q[li]]
     res["E3_early_blocks"] = early
 
     # E4 terminal dip
     res["E4_terminal_dip"] = (lstar is not None and lstar <= N - 2
                               and float(A[N - 1]) <= float(A[lstar]) - E4_DIP)
-    res["mid_region_median"] = float(np.median(A[int(np.floor(0.4 * N)):int(np.ceil(0.6 * N))]))
+    mlo, mhi = _closed_interval_blocks(N, 0.4, 0.6)
+    res["mid_region_median"] = float(np.median(A[mlo:mhi]))
     res["max_auroc_any_block"] = float(A.max())
     return res
 
@@ -178,7 +219,10 @@ def main():
         rows = [cells[(task, s)] for s in QWEN_TRIO]
         with_peak = [r for r in rows if r["lstar"] is not None and r["lstar_boot_median"] is not None]
         if len(with_peak) < 2:
-            verdicts[task] = {"E1": "NO-PEAKS", "n_with_peak": len(with_peak)}
+            # frozen outcome set is {ABSOLUTE, RELATIVE, UNDECIDED}; <2 peaks maps to
+            # UNDECIDED with a descriptive reason (Codex audit MINOR-4)
+            verdicts[task] = {"E1": "UNDECIDED", "reason": "insufficient qualifying peaks (<2 of 3 sizes)",
+                              "n_with_peak": len(with_peak)}
             continue
         nl = [r["N_minus_lstar_median"] for r in with_peak]
         fr = [r["lstar_frac_median"] for r in with_peak]
