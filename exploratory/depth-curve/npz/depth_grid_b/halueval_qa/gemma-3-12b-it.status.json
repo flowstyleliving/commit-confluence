@@ -1,0 +1,23 @@
+{
+  "status": "ok",
+  "reason": "",
+  "model_key": "gemma3_12b",
+  "model_id": "google/gemma-3-12b-it",
+  "revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "task": "halueval_qa",
+  "schema": "furnace-depth-curve/1.1-gridB",
+  "result": {
+    "model": "google/gemma-3-12b-it",
+    "task": "halueval_qa",
+    "precision": "nf4",
+    "n_layers": 48,
+    "yes_no_commit_rate": 1.0,
+    "gate_cos": [
+      0.99999,
+      0.99999
+    ],
+    "out": "/models/depth_grid_b/halueval_qa/gemma-3-12b-it.depth.npz",
+    "gpu_label": "A100-80GB"
+  },
+  "gpu_label": "A100-80GB"
+}

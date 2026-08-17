@@ -1,0 +1,23 @@
+{
+  "status": "ok",
+  "reason": "",
+  "model_key": "mistral_small_32",
+  "model_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "revision": "95a6d26c4bfb886c58daf9d3f7332c857cb27b43",
+  "task": "halueval_qa",
+  "schema": "furnace-depth-curve/1.1-gridB",
+  "result": {
+    "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+    "task": "halueval_qa",
+    "precision": "nf4",
+    "n_layers": 40,
+    "yes_no_commit_rate": 1.0,
+    "gate_cos": [
+      1.0,
+      1.0
+    ],
+    "out": "/models/depth_grid_b/halueval_qa/Mistral-Small-3.2-24B-Instruct-2506.depth.npz",
+    "gpu_label": "A100-80GB"
+  },
+  "gpu_label": "A100-80GB"
+}

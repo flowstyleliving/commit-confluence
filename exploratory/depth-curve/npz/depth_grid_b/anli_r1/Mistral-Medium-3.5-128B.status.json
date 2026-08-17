@@ -1,0 +1,23 @@
+{
+  "status": "ok",
+  "reason": "",
+  "model_key": "mistral_medium_35",
+  "model_id": "mistralai/Mistral-Medium-3.5-128B",
+  "revision": "22b2b868a15677cfa6061277ed2f653d1349a9ab",
+  "task": "anli_r1",
+  "schema": "furnace-depth-curve/1.1-gridB",
+  "result": {
+    "model": "mistralai/Mistral-Medium-3.5-128B",
+    "task": "anli_r1",
+    "precision": "fp8origin-dequant-bf16",
+    "n_layers": 88,
+    "yes_no_commit_rate": 0.895,
+    "gate_cos": [
+      1.0,
+      1.0
+    ],
+    "out": "/models/depth_grid_b/anli_r1/Mistral-Medium-3.5-128B.depth.npz",
+    "gpu_label": "A100-80GB:4"
+  },
+  "gpu_label": "A100-80GB:4"
+}

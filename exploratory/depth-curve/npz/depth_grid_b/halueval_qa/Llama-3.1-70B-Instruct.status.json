@@ -1,0 +1,23 @@
+{
+  "status": "ok",
+  "reason": "",
+  "model_key": "llama31_70b",
+  "model_id": "meta-llama/Llama-3.1-70B-Instruct",
+  "revision": "1605565b47bb9346c5515c34102e054115b4f98b",
+  "task": "halueval_qa",
+  "schema": "furnace-depth-curve/1.1-gridB",
+  "result": {
+    "model": "meta-llama/Llama-3.1-70B-Instruct",
+    "task": "halueval_qa",
+    "precision": "nf4",
+    "n_layers": 80,
+    "yes_no_commit_rate": 1.0,
+    "gate_cos": [
+      0.99999,
+      0.99999
+    ],
+    "out": "/models/depth_grid_b/halueval_qa/Llama-3.1-70B-Instruct.depth.npz",
+    "gpu_label": "A100-80GB"
+  },
+  "gpu_label": "A100-80GB"
+}

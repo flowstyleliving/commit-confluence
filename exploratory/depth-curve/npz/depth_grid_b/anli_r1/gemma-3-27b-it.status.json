@@ -1,0 +1,10 @@
+{
+  "status": "aborted",
+  "reason": "RuntimeError: row 0 block 3 cell (0, 'Attention', 'final_js_no_bos'): bad score None",
+  "model_key": "gemma3_27b",
+  "model_id": "google/gemma-3-27b-it",
+  "revision": "005ad3404e59d6023443cb575daa05336842228a",
+  "task": "anli_r1",
+  "schema": "furnace-depth-curve/1.1-gridB",
+  "gpu_label": "A100-80GB"
+}

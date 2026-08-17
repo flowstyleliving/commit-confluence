@@ -1,0 +1,10 @@
+{
+  "status": "aborted",
+  "reason": "RuntimeError: missing smoke prompt manifest: /models/depth_grid_b/manifests/Mistral-Small-3.2-24B-Instruct-2506.anli_r1.prompts.json \u2014 run smoke first",
+  "model_key": "mistral_small_32",
+  "model_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "revision": "95a6d26c4bfb886c58daf9d3f7332c857cb27b43",
+  "task": "anli_r1",
+  "schema": "furnace-depth-curve/1.1-gridB",
+  "gpu_label": "A100-80GB"
+}
