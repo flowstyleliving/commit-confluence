@@ -1,0 +1,19 @@
+{
+  "data_path": "/models/data/halueval_qa_n200.jsonl",
+  "data_sha256": "a841d096a3f41162a685994655e5fdd0974176ee35797e73be99e29e5d1c15e0",
+  "n_neg_label0": 100,
+  "n_pos_label1": 100,
+  "n_rows": 200,
+  "notes": [
+    "Stem-paired HaluEval qa stress task; 100 stems for 200 rows.",
+    "Long contexts are whitespace-normalized and char-limited for attention capture."
+  ],
+  "ref_path": "/models/refs/halueval_qa.matrix.npz",
+  "schema": "furnace_stress_data_v1",
+  "seed": 20260612,
+  "source": {
+    "config": "qa",
+    "dataset": "pminervini/HaluEval"
+  },
+  "task": "halueval_qa"
+}
