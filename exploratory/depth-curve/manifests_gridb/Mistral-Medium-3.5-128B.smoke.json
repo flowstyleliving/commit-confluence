@@ -1,0 +1,74 @@
+{
+  "model_key": "mistral_medium_35",
+  "model_id": "mistralai/Mistral-Medium-3.5-128B",
+  "revision": "22b2b868a15677cfa6061277ed2f653d1349a9ab",
+  "precision": "fp8origin-dequant-bf16",
+  "load_notes": {
+    "dequant_method": "from_pretrained(bf16)",
+    "gpu_names": [
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA A100-SXM4-80GB"
+    ],
+    "param_dtype_hist": {
+      "torch.bfloat16": 1233
+    },
+    "decoder_linear_types": {
+      "Linear": 616
+    }
+  },
+  "wrapper_class": "Mistral3ForConditionalGeneration",
+  "n_layers": 88,
+  "n_heads": 96,
+  "n_kv": 8,
+  "tasks": {
+    "anli_r1": {
+      "gate": [
+        {
+          "row": 0,
+          "cos": 1.0,
+          "yes_no": true,
+          "commit": "'YES'"
+        },
+        {
+          "row": 1,
+          "cos": 1.0,
+          "yes_no": true,
+          "commit": "'YES'"
+        }
+      ],
+      "n_rows": 200,
+      "max_tokens_ok": true,
+      "mistral_xcheck": {
+        "mismatches": 0,
+        "first": null
+      },
+      "manifest_sha256": "3fac6bdf67f356fe20783c55e351ec5ec15e0734388585aaacfa3bad482a887b"
+    },
+    "halueval_qa": {
+      "gate": [
+        {
+          "row": 0,
+          "cos": 1.0,
+          "yes_no": true,
+          "commit": "'NO'"
+        },
+        {
+          "row": 1,
+          "cos": 1.0,
+          "yes_no": true,
+          "commit": "'YES'"
+        }
+      ],
+      "n_rows": 200,
+      "max_tokens_ok": true,
+      "mistral_xcheck": {
+        "mismatches": 0,
+        "first": null
+      },
+      "manifest_sha256": "97b1ba6ebd34b76b88f099302ae4b8887c294edaafe99456bbd9331f31dd2b91"
+    }
+  },
+  "failed_tasks": {}
+}

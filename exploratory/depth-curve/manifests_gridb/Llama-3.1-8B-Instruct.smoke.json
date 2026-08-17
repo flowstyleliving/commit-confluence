@@ -1,0 +1,64 @@
+{
+  "model_key": "llama31_8b",
+  "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+  "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+  "precision": "nf4",
+  "load_notes": {
+    "gpu_names": [
+      "NVIDIA A100 80GB PCIe"
+    ],
+    "param_dtype_hist": {
+      "torch.bfloat16": 67,
+      "torch.uint8": 224
+    },
+    "decoder_linear_types": {
+      "Linear4bit": 224
+    }
+  },
+  "wrapper_class": "LlamaForCausalLM",
+  "n_layers": 32,
+  "n_heads": 32,
+  "n_kv": 8,
+  "tasks": {
+    "anli_r1": {
+      "gate": [
+        {
+          "row": 0,
+          "cos": 1.0,
+          "yes_no": true,
+          "commit": "'YES'"
+        },
+        {
+          "row": 1,
+          "cos": 1.0,
+          "yes_no": true,
+          "commit": "'NO'"
+        }
+      ],
+      "n_rows": 200,
+      "max_tokens_ok": true,
+      "mistral_xcheck": null,
+      "manifest_sha256": "ec30755c7280fdc42f28755c74ff5d3b5b59d3efb0f0a4d520fac4092e351199"
+    },
+    "halueval_qa": {
+      "gate": [
+        {
+          "row": 0,
+          "cos": 1.0,
+          "yes_no": true,
+          "commit": "'YES'"
+        },
+        {
+          "row": 1,
+          "cos": 0.99999,
+          "yes_no": true,
+          "commit": "'NO'"
+        }
+      ],
+      "n_rows": 200,
+      "max_tokens_ok": true,
+      "mistral_xcheck": null,
+      "manifest_sha256": "075e01093a4848475291ab153aa33abdd0005a3ef90046b034d54de98ee100be"
+    }
+  }
+}

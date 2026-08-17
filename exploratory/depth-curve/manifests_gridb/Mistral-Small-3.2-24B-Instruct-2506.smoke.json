@@ -1,0 +1,73 @@
+{
+  "model_key": "mistral_small_32",
+  "model_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "revision": "95a6d26c4bfb886c58daf9d3f7332c857cb27b43",
+  "precision": "nf4",
+  "load_notes": {
+    "gpu_names": [
+      "NVIDIA A100-SXM4-80GB"
+    ],
+    "param_dtype_hist": {
+      "torch.bfloat16": 134,
+      "torch.uint8": 451
+    },
+    "decoder_linear_types": {
+      "Linear4bit": 280
+    }
+  },
+  "wrapper_class": "Mistral3ForConditionalGeneration",
+  "n_layers": 40,
+  "n_heads": 32,
+  "n_kv": 8,
+  "tasks": {
+    "anli_r1": {
+      "gate": [
+        {
+          "row": 0,
+          "cos": 1.0,
+          "yes_no": true,
+          "commit": "'YES'"
+        },
+        {
+          "row": 1,
+          "cos": 1.0,
+          "yes_no": false,
+          "commit": "'To'"
+        }
+      ],
+      "n_rows": 200,
+      "max_tokens_ok": true,
+      "mistral_xcheck": {
+        "mismatches": 0,
+        "first": null
+      },
+      "smoke_failure": "RuntimeError: SMOKE GATE FAIL mistral_small_32/anli_r1: commit not YES/NO ('YES'/'To')"
+    },
+    "halueval_qa": {
+      "gate": [
+        {
+          "row": 0,
+          "cos": 1.0,
+          "yes_no": true,
+          "commit": "'NO'"
+        },
+        {
+          "row": 1,
+          "cos": 1.0,
+          "yes_no": true,
+          "commit": "'YES'"
+        }
+      ],
+      "n_rows": 200,
+      "max_tokens_ok": true,
+      "mistral_xcheck": {
+        "mismatches": 0,
+        "first": null
+      },
+      "manifest_sha256": "cdf8712562d397c6fd15858de1d25af278606ed9d54f6062e5a2fa58469bcd3f"
+    }
+  },
+  "failed_tasks": {
+    "anli_r1": "RuntimeError: SMOKE GATE FAIL mistral_small_32/anli_r1: commit not YES/NO ('YES'/'To')"
+  }
+}

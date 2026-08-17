@@ -1,0 +1,64 @@
+{
+  "model_key": "gemma3_12b",
+  "model_id": "google/gemma-3-12b-it",
+  "revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "precision": "nf4",
+  "load_notes": {
+    "gpu_names": [
+      "NVIDIA A100 80GB PCIe"
+    ],
+    "param_dtype_hist": {
+      "torch.bfloat16": 567,
+      "torch.uint8": 498
+    },
+    "decoder_linear_types": {
+      "Linear4bit": 336
+    }
+  },
+  "wrapper_class": "Gemma3ForConditionalGeneration",
+  "n_layers": 48,
+  "n_heads": 16,
+  "n_kv": 8,
+  "tasks": {
+    "anli_r1": {
+      "gate": [
+        {
+          "row": 0,
+          "cos": 0.99999,
+          "yes_no": true,
+          "commit": "'YES'"
+        },
+        {
+          "row": 1,
+          "cos": 0.99999,
+          "yes_no": true,
+          "commit": "'YES'"
+        }
+      ],
+      "n_rows": 200,
+      "max_tokens_ok": true,
+      "mistral_xcheck": null,
+      "manifest_sha256": "37eec4eddae99f41a2de3f81b43dde60382886125ec7c6ab7f458536c9779e19"
+    },
+    "halueval_qa": {
+      "gate": [
+        {
+          "row": 0,
+          "cos": 0.99999,
+          "yes_no": true,
+          "commit": "'NO'"
+        },
+        {
+          "row": 1,
+          "cos": 0.99999,
+          "yes_no": true,
+          "commit": "'YES'"
+        }
+      ],
+      "n_rows": 200,
+      "max_tokens_ok": true,
+      "mistral_xcheck": null,
+      "manifest_sha256": "3750f6db6fdd3d71fcba81d611e89a31acbd519dda6c56f4633f398d4f619e47"
+    }
+  }
+}
