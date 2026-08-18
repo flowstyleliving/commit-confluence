@@ -76,6 +76,10 @@ FROZEN_MANIFEST_SHA256 = {
     "gemma-3-12b-it.halueval_qa": "3750f6db6fdd3d71fcba81d611e89a31acbd519dda6c56f4633f398d4f619e47",
     "gemma-3-27b-it.anli_r1": "e993a97d4da585cbb097e21d198d499b81232e56749af4914b8057a621a4dce0",
     "gemma-3-27b-it.halueval_qa": "65edb68a2ed64c85f833093495bcb7b3725330c9974dc3151de029ce7adfd460",
+    # 405B stretch (registered §7 enablement, MK go 2026-08-17): hashes frozen
+    # from its gates-only smoke (cos 0.99999 ×4, 882/882 Linear4bit, 8×A100).
+    "Llama-3.1-405B-Instruct.anli_r1": "ea796f73453509e920899139a3697ba1f6fcd02069bb2ee1fdb1bfc067b0d00a",
+    "Llama-3.1-405B-Instruct.halueval_qa": "c014438f2355cf4dba0b1a28c88d11f871fcfb55de1afa14cd6b553079a0c8a1",
 }
 
 # Filled at FREEZE TIME for the Medium cell: the dequant method AND GPU shape
@@ -127,6 +131,15 @@ REGISTRY = {
         revision="005ad3404e59d6023443cb575daa05336842228a",
         load="gemma3_nf4", gpu="A100-80GB",
         exp_layers=62, exp_heads=32, exp_kv=16, mistral_xcheck=False),
+    # STRETCH CELL (prereg §1/§7): descriptive-only, OUTSIDE every confirmatory
+    # denominator; runs only on MK's explicit go (given 2026-08-17). Default
+    # 8×A100-80 per the registration; the 4× downgrade path (nine-condition smoke
+    # gate) is deliberately NOT implemented — default hardware only.
+    "llama31_405b": dict(
+        model_id="meta-llama/Llama-3.1-405B-Instruct",
+        revision="be673f326cab4cd22ccfef76109faf68e41aa5f1",
+        load="base_nf4", gpu="A100-80GB:8",
+        exp_layers=126, exp_heads=128, exp_kv=8, mistral_xcheck=False),
 }
 
 _HERE = Path(__file__).parent
@@ -733,6 +746,10 @@ def _extract_body(model_key: str, task: str, gpu_label: str):
         if gpu_label != FROZEN_MEDIUM_GPU:
             raise SystemExit(f"Medium must run on frozen GPU shape "
                              f"{FROZEN_MEDIUM_GPU!r}, not {gpu_label!r}")
+    if model_key == "llama31_405b" and gpu_label != "A100-80GB:8":
+        raise SystemExit(f"405B stretch must run on its registered default "
+                         f"A100-80GB:8, not {gpu_label!r} (round-10: enforced "
+                         f"in-body, not just via _fn_for)")
     try:
         res = _run_extract(conf, task)
         res["gpu_label"] = gpu_label
@@ -858,6 +875,11 @@ def extract_h200x2(model_key: str, task: str):
     return _extract_body(model_key, task, "H200:2")
 
 
+@app.function(gpu="A100-80GB:8", timeout=60 * 60 * 12, **_COMMON)
+def extract_a100x8(model_key: str, task: str):
+    return _extract_body(model_key, task, "A100-80GB:8")
+
+
 @app.function(gpu="A100-80GB", timeout=60 * 60 * 4, **_COMMON)
 def smoke_a100(model_key: str):
     return _smoke_body(model_key)
@@ -873,14 +895,21 @@ def smoke_h200x2(model_key: str):
     return _smoke_body(model_key)
 
 
+@app.function(gpu="A100-80GB:8", timeout=60 * 60 * 6, **_COMMON)
+def smoke_a100x8(model_key: str):
+    return _smoke_body(model_key)
+
+
 def _fn_for(conf, kind, gpu_override=None):
     gpu = gpu_override or conf["gpu"]
     table = {("A100-80GB", "extract"): extract_a100,
              ("A100-80GB:4", "extract"): extract_a100x4,
              ("H200:2", "extract"): extract_h200x2,
+             ("A100-80GB:8", "extract"): extract_a100x8,
              ("A100-80GB", "smoke"): smoke_a100,
              ("A100-80GB:4", "smoke"): smoke_a100x4,
-             ("H200:2", "smoke"): smoke_h200x2}
+             ("H200:2", "smoke"): smoke_h200x2,
+             ("A100-80GB:8", "smoke"): smoke_a100x8}
     return table[(gpu, kind)]
 
 
