@@ -1,0 +1,49 @@
+cells: evaluable 9/12, failures 3
+/Users/msrk/Documents/commit-confluence/exploratory/depth-curve/rescore_grid_a.py:164: RuntimeWarning: divide by zero encountered in matmul
+  sums = pos_indicators.astype(np.float64) @ ranks
+/Users/msrk/Documents/commit-confluence/exploratory/depth-curve/rescore_grid_a.py:164: RuntimeWarning: overflow encountered in matmul
+  sums = pos_indicators.astype(np.float64) @ ranks
+/Users/msrk/Documents/commit-confluence/exploratory/depth-curve/rescore_grid_a.py:164: RuntimeWarning: invalid value encountered in matmul
+  sums = pos_indicators.astype(np.float64) @ ranks
+observed computed: anli_r1/Llama-3.1-8B-Instruct
+observed computed: anli_r1/Llama-3.1-70B-Instruct
+observed computed: anli_r1/Mistral-Medium-3.5-128B
+observed computed: anli_r1/gemma-3-12b-it
+observed computed: halueval_qa/Llama-3.1-8B-Instruct
+observed computed: halueval_qa/Llama-3.1-70B-Instruct
+observed computed: halueval_qa/Mistral-Small-3.2-24B-Instruct-2506
+observed computed: halueval_qa/Mistral-Medium-3.5-128B
+observed computed: halueval_qa/gemma-3-12b-it
+perm anli_r1: 200/2000
+perm anli_r1: 400/2000
+perm anli_r1: 600/2000
+perm anli_r1: 800/2000
+perm anli_r1: 1000/2000
+perm anli_r1: 1200/2000
+perm anli_r1: 1400/2000
+perm anli_r1: 1600/2000
+perm anli_r1: 1800/2000
+perm anli_r1: 2000/2000
+perm halueval_qa: 200/2000
+perm halueval_qa: 400/2000
+perm halueval_qa: 600/2000
+perm halueval_qa: 800/2000
+perm halueval_qa: 1000/2000
+perm halueval_qa: 1200/2000
+perm halueval_qa: 1400/2000
+perm halueval_qa: 1600/2000
+perm halueval_qa: 1800/2000
+perm halueval_qa: 2000/2000
+boot anli_r1: 200/1000
+boot anli_r1: 400/1000
+boot anli_r1: 600/1000
+boot anli_r1: 800/1000
+boot anli_r1: 1000/1000
+boot halueval_qa: 200/1000
+boot halueval_qa: 400/1000
+boot halueval_qa: 600/1000
+boot halueval_qa: 800/1000
+boot halueval_qa: 1000/1000
+wrote /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/GRID_B_RESULTS.json
+wrote /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/GRID_B_RESULTS.md
+E5: WEAKEN 8/12 (p=0.0004998) | E6: NOT TESTED — gate closed 2/12 (p=0.0004998)

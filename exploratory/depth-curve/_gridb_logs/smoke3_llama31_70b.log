@@ -1,0 +1,736 @@
+Note that running a local entrypoint in detached mode only keeps the last triggered Modal function alive after the parent process has been killed or disconnected.
+✓ Initialized. View run at 
+https://modal.com/apps/mys628/main/ap-dlq7PhYqNjPyxx8aL98K2N
+Building image im-mHjMuqX8n9dTp4VfhUpRo1
+
+=> Step 0: FROM base
+
+=> Step 1: RUN python -m pip install accelerate==1.14.0 bitsandbytes==0.50.1 datasets==5.0.1 hf_transfer==0.1.9 huggingface_hub==1.27.0 mistral-common==1.11.7 numpy==2.3.5 pandas==3.0.5 safetensors==0.8.0 scikit-learn==1.9.0 scipy==1.18.0 sentencepiece==0.2.2 torch==2.13.0 transformers==5.15.0
+Looking in indexes: http://pypi-mirror.modal.local:5555/simple
+Collecting accelerate==1.14.0
+  Downloading http://pypi-mirror.modal.local:5555/simple/accelerate/accelerate-1.14.0-py3-none-any.whl.metadata (19 kB)
+Collecting bitsandbytes==0.50.1
+  Downloading http://pypi-mirror.modal.local:5555/simple/bitsandbytes/bitsandbytes-0.50.1-py3-none-manylinux_2_24_x86_64.whl.metadata (10 kB)
+Collecting datasets==5.0.1
+  Downloading http://pypi-mirror.modal.local:5555/simple/datasets/datasets-5.0.1-py3-none-any.whl.metadata (23 kB)
+Collecting hf_transfer==0.1.9
+  Downloading http://pypi-mirror.modal.local:5555/simple/hf-transfer/hf_transfer-0.1.9-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.7 kB)
+Collecting huggingface_hub==1.27.0
+  Downloading http://pypi-mirror.modal.local:5555/simple/huggingface-hub/huggingface_hub-1.27.0-py3-none-any.whl.metadata (16 kB)
+Collecting mistral-common==1.11.7
+  Downloading http://pypi-mirror.modal.local:5555/simple/mistral-common/mistral_common-1.11.7-py3-none-any.whl.metadata (5.9 kB)
+Collecting numpy==2.3.5
+  Downloading http://pypi-mirror.modal.local:5555/simple/numpy/numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Collecting pandas==3.0.5
+  Downloading http://pypi-mirror.modal.local:5555/simple/pandas/pandas-3.0.5-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+Collecting safetensors==0.8.0
+  Downloading http://pypi-mirror.modal.local:5555/simple/safetensors/safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+Collecting scikit-learn==1.9.0
+  Downloading http://pypi-mirror.modal.local:5555/simple/scikit-learn/scikit_learn-1.9.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (11 kB)
+Collecting scipy==1.18.0
+  Downloading http://pypi-mirror.modal.local:5555/simple/scipy/scipy-1.18.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Collecting sentencepiece==0.2.2
+  Downloading http://pypi-mirror.modal.local:5555/simple/sentencepiece/sentencepiece-0.2.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (33 kB)
+Collecting torch==2.13.0
+  Downloading http://pypi-mirror.modal.local:5555/simple/torch/torch-2.13.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (38 kB)
+Collecting transformers==5.15.0
+  Downloading http://pypi-mirror.modal.local:5555/simple/transformers/transformers-5.15.0-py3-none-any.whl.metadata (32 kB)
+Collecting packaging>=20.0 (from accelerate==1.14.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/packaging/packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting psutil (from accelerate==1.14.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/psutil/psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+Collecting pyyaml (from accelerate==1.14.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/pyyaml/pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+Collecting filelock (from torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/filelock/filelock-3.32.3-py3-none-any.whl.metadata (2.0 kB)
+Collecting typing-extensions>=4.10.0 (from torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/typing-extensions/typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting setuptools>=77.0.3 (from torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/setuptools/setuptools-84.0.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting sympy>=1.13.3 (from torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/sympy/sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx>=2.5.1 (from torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/networkx/networkx-3.6.1-py3-none-any.whl.metadata (6.8 kB)
+Collecting jinja2 (from torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/jinja2/jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec>=0.8.5 (from torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/fsspec/fsspec-2026.7.0-py3-none-any.whl.metadata (10 kB)
+Collecting cuda-toolkit==13.0.3 (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/cuda-toolkit/cuda_toolkit-13.0.3.0-py2.py3-none-any.whl.metadata (17 kB)
+Collecting cuda-bindings<14,>=13.0.3 (from torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/cuda-bindings/cuda_bindings-13.3.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (2.5 kB)
+Collecting nvidia-cudnn-cu13==9.20.0.48 (from torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-cudnn-cu13/nvidia_cudnn_cu13-9.20.0.48-py3-none-manylinux_2_27_x86_64.whl.metadata (1.9 kB)
+Collecting nvidia-cusparselt-cu13==0.8.1 (from torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-cusparselt-cu13/nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_x86_64.whl.metadata (12 kB)
+Collecting nvidia-nccl-cu13==2.29.7 (from torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-nccl-cu13/nvidia_nccl_cu13-2.29.7-py3-none-manylinux_2_18_x86_64.whl.metadata (2.1 kB)
+Collecting nvidia-nvshmem-cu13==3.4.5 (from torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-nvshmem-cu13/nvidia_nvshmem_cu13-3.4.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.1 kB)
+Collecting triton==3.7.1 (from torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/triton/triton-3.7.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (1.7 kB)
+Collecting pyarrow>=21.0.0 (from datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/pyarrow/pyarrow-25.0.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+Collecting dill<0.4.2,>=0.3.0 (from datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/dill/dill-0.4.1-py3-none-any.whl.metadata (10 kB)
+Collecting requests>=2.32.2 (from datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/requests/requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting httpx<1.0.0 (from datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/httpx/httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Collecting tqdm>=4.66.3 (from datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/tqdm/tqdm-4.70.0-py3-none-any.whl.metadata (57 kB)
+Collecting xxhash (from datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/xxhash/xxhash-4.0.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (17 kB)
+Collecting multiprocess<0.70.20 (from datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/multiprocess/multiprocess-0.70.19-py312-none-any.whl.metadata (7.5 kB)
+Collecting fsspec>=0.8.5 (from torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/fsspec/fsspec-2026.6.0-py3-none-any.whl.metadata (10 kB)
+Collecting click<9.0.0,>=8.4.2 (from huggingface_hub==1.27.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/click/click-8.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting hf-xet<2.0.0,>=1.5.2 (from huggingface_hub==1.27.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/hf-xet/hf_xet-1.6.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+Collecting pydantic<3.0,>=2.7 (from mistral-common==1.11.7)
+  Downloading http://pypi-mirror.modal.local:5555/simple/pydantic/pydantic-2.13.4-py3-none-any.whl.metadata (109 kB)
+Collecting jsonschema>=4.21.1 (from mistral-common==1.11.7)
+  Downloading http://pypi-mirror.modal.local:5555/simple/jsonschema/jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+Collecting tiktoken>=0.7.0 (from mistral-common==1.11.7)
+  Downloading http://pypi-mirror.modal.local:5555/simple/tiktoken/tiktoken-0.14.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (6.7 kB)
+Collecting pillow>=10.3.0 (from mistral-common==1.11.7)
+  Downloading http://pypi-mirror.modal.local:5555/simple/pillow/pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting pydantic-extra-types>=2.10.5 (from pydantic-extra-types[pycountry]>=2.10.5->mistral-common==1.11.7)
+  Downloading http://pypi-mirror.modal.local:5555/simple/pydantic-extra-types/pydantic_extra_types-2.11.1-py3-none-any.whl.metadata (4.2 kB)
+Collecting python-dateutil>=2.8.2 (from pandas==3.0.5)
+  Downloading http://pypi-mirror.modal.local:5555/simple/python-dateutil/python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting joblib>=1.4.0 (from scikit-learn==1.9.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/joblib/joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)
+Collecting narwhals>=2.0.1 (from scikit-learn==1.9.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/narwhals/narwhals-2.24.0-py3-none-any.whl.metadata (15 kB)
+Collecting threadpoolctl>=3.5.0 (from scikit-learn==1.9.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/threadpoolctl/threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+Collecting regex>=2025.10.22 (from transformers==5.15.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/regex/regex-2026.7.19-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+Collecting tokenizers<=0.23.0,>=0.22.0 (from transformers==5.15.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/tokenizers/tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+Collecting typer (from transformers==5.15.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/typer/typer-0.27.1-py3-none-any.whl.metadata (16 kB)
+Collecting nvidia-cublas==13.1.1.3.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-cublas/nvidia_cublas-13.1.1.3-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cuda-nvrtc==13.0.88.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-cuda-nvrtc/nvidia_cuda_nvrtc-13.0.88-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-runtime==13.0.96.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-cuda-runtime/nvidia_cuda_runtime-13.0.96-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cufft==12.0.0.61.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-cufft/nvidia_cufft-12.0.0.61-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-nvjitlink<14,>=13.0.88 (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-nvjitlink/nvidia_nvjitlink-13.3.33-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cufile==1.15.1.6.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-cufile/nvidia_cufile-1.15.1.6-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-cupti==13.0.85.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-cuda-cupti/nvidia_cuda_cupti-13.0.85-py3-none-manylinux_2_25_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-curand==10.4.0.35.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-curand/nvidia_curand-10.4.0.35-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cusolver==12.0.4.66.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-cusolver/nvidia_cusolver-12.0.4.66-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cusparse==12.6.3.3.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-cusparse/nvidia_cusparse-12.6.3.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-nvtx==13.0.85.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-nvtx/nvidia_nvtx-13.0.85-py3-none-manylinux1_x86_64.manylinux_2_5_x86_64.whl.metadata (1.8 kB)
+Collecting cuda-pathfinder>=1.4.2 (from cuda-bindings<14,>=13.0.3->torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/cuda-pathfinder/cuda_pathfinder-1.6.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting aiohttp!=4.0.0a0,!=4.0.0a1 (from fsspec[http]<=2026.6.0,>=2023.1.0->datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/aiohttp/aiohttp-3.14.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+Collecting anyio (from httpx<1.0.0->datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/anyio/anyio-4.14.2-py3-none-any.whl.metadata (4.6 kB)
+Collecting certifi (from httpx<1.0.0->datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/certifi/certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Collecting httpcore==1.* (from httpx<1.0.0->datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/httpcore/httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting idna (from httpx<1.0.0->datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/idna/idna-3.18-py3-none-any.whl.metadata (6.1 kB)
+Collecting h11>=0.16 (from httpcore==1.*->httpx<1.0.0->datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/h11/h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting annotated-types>=0.6.0 (from pydantic<3.0,>=2.7->mistral-common==1.11.7)
+  Downloading http://pypi-mirror.modal.local:5555/simple/annotated-types/annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.46.4 (from pydantic<3.0,>=2.7->mistral-common==1.11.7)
+  Downloading http://pypi-mirror.modal.local:5555/simple/pydantic-core/pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+Collecting typing-inspection>=0.4.2 (from pydantic<3.0,>=2.7->mistral-common==1.11.7)
+  Downloading http://pypi-mirror.modal.local:5555/simple/typing-inspection/typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+Collecting aiohappyeyeballs>=2.5.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.6.0,>=2023.1.0->datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/aiohappyeyeballs/aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)
+Collecting aiosignal>=1.4.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.6.0,>=2023.1.0->datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/aiosignal/aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+Collecting attrs>=17.3.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.6.0,>=2023.1.0->datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/attrs/attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+Collecting frozenlist>=1.1.1 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.6.0,>=2023.1.0->datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/frozenlist/frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (20 kB)
+Collecting multidict<7.0,>=4.5 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.6.0,>=2023.1.0->datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/multidict/multidict-6.7.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.3 kB)
+Collecting propcache>=0.2.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.6.0,>=2023.1.0->datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/propcache/propcache-0.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (16 kB)
+Collecting yarl<2.0,>=1.17.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.6.0,>=2023.1.0->datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/yarl/yarl-1.24.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (103 kB)
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=4.21.1->mistral-common==1.11.7)
+  Downloading http://pypi-mirror.modal.local:5555/simple/jsonschema-specifications/jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting referencing>=0.28.4 (from jsonschema>=4.21.1->mistral-common==1.11.7)
+  Downloading http://pypi-mirror.modal.local:5555/simple/referencing/referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting rpds-py>=0.25.0 (from jsonschema>=4.21.1->mistral-common==1.11.7)
+  Downloading http://pypi-mirror.modal.local:5555/simple/rpds-py/rpds_py-2026.6.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+Collecting pycountry>=23 (from pydantic-extra-types[pycountry]>=2.10.5->mistral-common==1.11.7)
+  Downloading http://pypi-mirror.modal.local:5555/simple/pycountry/pycountry-26.2.16-py3-none-any.whl.metadata (12 kB)
+Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas==3.0.5)
+  Downloading http://pypi-mirror.modal.local:5555/simple/six/six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting charset_normalizer<4,>=2 (from requests>=2.32.2->datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/charset-normalizer/charset_normalizer-3.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (45 kB)
+Collecting urllib3<3,>=1.26 (from requests>=2.32.2->datasets==5.0.1)
+  Downloading http://pypi-mirror.modal.local:5555/simple/urllib3/urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/mpmath/mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->torch==2.13.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/markupsafe/markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Collecting shellingham>=1.3.0 (from typer->transformers==5.15.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/shellingham/shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+Collecting rich>=13.8.0 (from typer->transformers==5.15.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/rich/rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+Collecting annotated-doc>=0.0.2 (from typer->transformers==5.15.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/annotated-doc/annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=13.8.0->typer->transformers==5.15.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/markdown-it-py/markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=13.8.0->typer->transformers==5.15.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/pygments/pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.8.0->typer->transformers==5.15.0)
+  Downloading http://pypi-mirror.modal.local:5555/simple/mdurl/mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/accelerate/accelerate-1.14.0-py3-none-any.whl (389 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/bitsandbytes/bitsandbytes-0.50.1-py3-none-manylinux_2_24_x86_64.whl (41.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 41.0/41.0 MB 294.7 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/torch/torch-2.13.0-cp312-cp312-manylinux_2_28_x86_64.whl (526.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 526.6/526.6 MB 609.6 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/datasets/datasets-5.0.1-py3-none-any.whl (559 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 559.1/559.1 kB 708.8 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/huggingface-hub/huggingface_hub-1.27.0-py3-none-any.whl (784 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 784.9/784.9 kB 1.1 GB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/hf-transfer/hf_transfer-0.1.9-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.6/3.6 MB 638.1 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/mistral-common/mistral_common-1.11.7-py3-none-any.whl (6.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 663.3 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/numpy/numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 317.2 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/pandas/pandas-3.0.5-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (11.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.0/11.0 MB 617.0 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/safetensors/safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/scikit-learn/scikit_learn-1.9.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.1/9.1 MB 654.9 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/scipy/scipy-1.18.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 590.8 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/sentencepiece/sentencepiece-0.2.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (1.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 795.0 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/transformers/transformers-5.15.0-py3-none-any.whl (11.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.7/11.7 MB 580.5 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/cuda-toolkit/cuda_toolkit-13.0.3.0-py2.py3-none-any.whl (2.5 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-cudnn-cu13/nvidia_cudnn_cu13-9.20.0.48-py3-none-manylinux_2_27_x86_64.whl (366.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 366.2/366.2 MB 617.5 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-cusparselt-cu13/nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_x86_64.whl (170.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 170.1/170.1 MB 620.4 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-nccl-cu13/nvidia_nccl_cu13-2.29.7-py3-none-manylinux_2_18_x86_64.whl (206.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 206.0/206.0 MB 633.8 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-nvshmem-cu13/nvidia_nvshmem_cu13-3.4.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (60.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.4/60.4 MB 711.7 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/triton/triton-3.7.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (197.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 197.7/197.7 MB 750.0 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/click/click-8.4.2-py3-none-any.whl (119 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/cuda-bindings/cuda_bindings-13.3.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (6.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.7/6.7 MB 797.2 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/dill/dill-0.4.1-py3-none-any.whl (120 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/fsspec/fsspec-2026.6.0-py3-none-any.whl (203 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/hf-xet/hf_xet-1.6.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 987.0 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/httpx/httpx-0.28.1-py3-none-any.whl (73 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/httpcore/httpcore-1.0.9-py3-none-any.whl (78 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/multiprocess/multiprocess-0.70.19-py312-none-any.whl (150 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-cublas/nvidia_cublas-13.1.1.3-py3-none-manylinux_2_27_x86_64.whl (423.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 423.1/423.1 MB 616.1 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-cuda-cupti/nvidia_cuda_cupti-13.0.85-py3-none-manylinux_2_25_x86_64.whl (10.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.7/10.7 MB 587.8 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-cuda-nvrtc/nvidia_cuda_nvrtc-13.0.88-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (90.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.2/90.2 MB 612.2 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-cuda-runtime/nvidia_cuda_runtime-13.0.96-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 823.3 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-cufft/nvidia_cufft-12.0.0.61-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (214.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 214.1/214.1 MB 570.9 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-cufile/nvidia_cufile-1.15.1.6-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 839.6 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-curand/nvidia_curand-10.4.0.35-py3-none-manylinux_2_27_x86_64.whl (59.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 59.5/59.5 MB 608.0 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-cusolver/nvidia_cusolver-12.0.4.66-py3-none-manylinux_2_27_x86_64.whl (200.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 200.9/200.9 MB 597.8 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-cusparse/nvidia_cusparse-12.6.3.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (145.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 145.9/145.9 MB 643.5 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-nvjitlink/nvidia_nvjitlink-13.3.33-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (40.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.7/40.7 MB 646.7 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/nvidia-nvtx/nvidia_nvtx-13.0.85-py3-none-manylinux1_x86_64.manylinux_2_5_x86_64.whl (148 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/pydantic/pydantic-2.13.4-py3-none-any.whl (472 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/pydantic-core/pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 922.7 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/tokenizers/tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 815.5 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/aiohttp/aiohttp-3.14.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 927.1 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/multidict/multidict-6.7.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (256 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/yarl/yarl-1.24.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (109 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/aiohappyeyeballs/aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/aiosignal/aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/annotated-types/annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/attrs/attrs-26.1.0-py3-none-any.whl (67 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/cuda-pathfinder/cuda_pathfinder-1.6.0-py3-none-any.whl (54 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/filelock/filelock-3.32.3-py3-none-any.whl (98 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/frozenlist/frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (242 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/h11/h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/idna/idna-3.18-py3-none-any.whl (65 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/joblib/joblib-1.5.3-py3-none-any.whl (309 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/jsonschema/jsonschema-4.26.0-py3-none-any.whl (90 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/jsonschema-specifications/jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/narwhals/narwhals-2.24.0-py3-none-any.whl (461 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/networkx/networkx-3.6.1-py3-none-any.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 776.9 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/packaging/packaging-26.3-py3-none-any.whl (129 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/pillow/pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 783.7 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/propcache/propcache-0.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (61 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/pyarrow/pyarrow-25.0.1-cp312-cp312-manylinux_2_28_x86_64.whl (50.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.1/50.1 MB 704.1 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/pydantic-extra-types/pydantic_extra_types-2.11.1-py3-none-any.whl (79 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/pycountry/pycountry-26.2.16-py3-none-any.whl (8.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.0/8.0 MB 736.3 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/python-dateutil/python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/pyyaml/pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 1.2 GB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/referencing/referencing-0.37.0-py3-none-any.whl (26 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/regex/regex-2026.7.19-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (801 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 801.8/801.8 kB 1.3 GB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/requests/requests-2.34.2-py3-none-any.whl (73 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/charset-normalizer/charset_normalizer-3.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (248 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/urllib3/urllib3-2.7.0-py3-none-any.whl (131 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/certifi/certifi-2026.7.22-py3-none-any.whl (136 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/rpds-py/rpds_py-2026.6.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (366 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/setuptools/setuptools-84.0.0-py3-none-any.whl (818 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 818.2/818.2 kB 1.4 GB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/six/six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/sympy/sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 809.8 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/mpmath/mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 971.4 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/threadpoolctl/threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/tiktoken/tiktoken-0.14.0-cp312-cp312-manylinux_2_28_x86_64.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 973.8 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/tqdm/tqdm-4.70.0-py3-none-any.whl (80 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/typing-extensions/typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/typing-inspection/typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/anyio/anyio-4.14.2-py3-none-any.whl (125 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/jinja2/jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/markupsafe/markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/psutil/psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/typer/typer-0.27.1-py3-none-any.whl (122 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/annotated-doc/annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/rich/rich-15.0.0-py3-none-any.whl (310 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/pygments/pygments-2.21.0-py3-none-any.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 917.4 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/markdown-it-py/markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/mdurl/mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/shellingham/shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+Downloading http://pypi-mirror.modal.local:5555/simple/xxhash/xxhash-4.0.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (261 kB)
+Installing collected packages: nvidia-cusparselt-cu13, mpmath, cuda-toolkit, xxhash, urllib3, typing-extensions, triton, tqdm, threadpoolctl, sympy, six, shellingham, setuptools, sentencepiece, safetensors, rpds-py, regex, pyyaml, pygments, pycountry, pyarrow, psutil, propcache, pillow, packaging, nvidia-nvtx, nvidia-nvshmem-cu13, nvidia-nvjitlink, nvidia-nccl-cu13, nvidia-curand, nvidia-cufile, nvidia-cuda-runtime, nvidia-cuda-nvrtc, nvidia-cuda-cupti, numpy, networkx, narwhals, multidict, mdurl, MarkupSafe, joblib, idna, hf-xet, hf_transfer, h11, fsspec, frozenlist, filelock, dill, cuda-pathfinder, click, charset_normalizer, certifi, attrs, annotated-types, annotated-doc, aiohappyeyeballs, yarl, typing-inspection, scipy, requests, referencing, python-dateutil, pydantic-core, nvidia-cusparse, nvidia-cufft, nvidia-cublas, multiprocess, markdown-it-py, jinja2, httpcore, cuda-bindings, anyio, aiosignal, tiktoken, scikit-learn, rich, pydantic, pandas, nvidia-cusolver, nvidia-cudnn-cu13, jsonschema-specifications, httpx, aiohttp, typer, pydantic-extra-types, jsonschema, huggingface_hub, torch, tokenizers, datasets, transformers, mistral-common, bitsandbytes, accelerate
+
+Successfully installed MarkupSafe-3.0.3 accelerate-1.14.0 aiohappyeyeballs-2.7.1 aiohttp-3.14.3 aiosignal-1.4.0 annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.14.2 attrs-26.1.0 bitsandbytes-0.50.1 certifi-2026.7.22 charset_normalizer-3.5.1 click-8.4.2 cuda-bindings-13.3.1 cuda-pathfinder-1.6.0 cuda-toolkit-13.0.3.0 datasets-5.0.1 dill-0.4.1 filelock-3.32.3 frozenlist-1.8.0 fsspec-2026.6.0 h11-0.16.0 hf-xet-1.6.0 hf_transfer-0.1.9 httpcore-1.0.9 httpx-0.28.1 huggingface_hub-1.27.0 idna-3.18 jinja2-3.1.6 joblib-1.5.3 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 markdown-it-py-4.2.0 mdurl-0.1.2 mistral-common-1.11.7 mpmath-1.3.0 multidict-6.7.1 multiprocess-0.70.19 narwhals-2.24.0 networkx-3.6.1 numpy-2.3.5 nvidia-cublas-13.1.1.3 nvidia-cuda-cupti-13.0.85 nvidia-cuda-nvrtc-13.0.88 nvidia-cuda-runtime-13.0.96 nvidia-cudnn-cu13-9.20.0.48 nvidia-cufft-12.0.0.61 nvidia-cufile-1.15.1.6 nvidia-curand-10.4.0.35 nvidia-cusolver-12.0.4.66 nvidia-cusparse-12.6.3.3 nvidia-cusparselt-cu13-0.8.1 nvidia-nccl-cu13-2.29.7 nvidia-nvjitlink-13.3.33 nvidia-nvshmem-cu13-3.4.5 nvidia-nvtx-13.0.85 packaging-26.3 pandas-3.0.5 pillow-12.3.0 propcache-0.5.2 psutil-7.2.2 pyarrow-25.0.1 pycountry-26.2.16 pydantic-2.13.4 pydantic-core-2.46.4 pydantic-extra-types-2.11.1 pygments-2.21.0 python-dateutil-2.9.0.post0 pyyaml-6.0.3 referencing-0.37.0 regex-2026.7.19 requests-2.34.2 rich-15.0.0 rpds-py-2026.6.3 safetensors-0.8.0 scikit-learn-1.9.0 scipy-1.18.0 sentencepiece-0.2.2 setuptools-84.0.0 shellingham-1.5.4 six-1.17.0 sympy-1.14.0 threadpoolctl-3.6.0 tiktoken-0.14.0 tokenizers-0.22.2 torch-2.13.0 tqdm-4.70.0 transformers-5.15.0 triton-3.7.1 typer-0.27.1 typing-extensions-4.16.0 typing-inspection-0.4.4 urllib3-2.7.0 xxhash-4.0.1 yarl-1.24.5
+
+[notice] A new release of pip is available: 25.1.1 -> 26.2.1
+[notice] To update, run: pip install --upgrade pip
+Saving image...
+Image saved, took 4.22s
+
+Built image im-mHjMuqX8n9dTp4VfhUpRo1 in 89.14s
+
+
+Building image im-H58FrjMsrXe2n8YKlYj4L1
+
+=> Step 0: FROM base
+
+=> Step 1: ENV HF_HUB_ENABLE_HF_TRANSFER=1
+
+=> Step 2: ENV HF_HOME=/models/hub
+
+=> Step 3: ENV TOKENIZERS_PARALLELISM=false
+Saving image...
+Image saved, took 598.48ms
+
+Built image im-H58FrjMsrXe2n8YKlYj4L1 in 1.45s
+
+
+Building image im-k0CD66De926Z4D3DV24hdj
+
+=> Step 0: FROM base
+
+=> Step 1: COPY . /
+Saving image...
+Image saved, took 1.61s
+
+Built image im-k0CD66De926Z4D3DV24hdj in 3.02s
+
+
+Building image im-8v1Rsnst6Qel9RDg0nZJ2k
+
+=> Step 0: FROM base
+
+=> Step 1: COPY . /
+Saving image...
+Image saved, took 825.11ms
+
+Built image im-8v1Rsnst6Qel9RDg0nZJ2k in 1.75s
+
+
+Building image im-ueeNJRo4jid9CMmPYY9fmB
+
+=> Step 0: FROM base
+
+=> Step 1: COPY . /
+Saving image...
+Image saved, took 688.71ms
+
+Built image im-ueeNJRo4jid9CMmPYY9fmB in 1.59s
+
+
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/modal_depth_
+│   b.py
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/seal
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/seal
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/modal_app.py
+├── 🔨 Created function extract_a100.
+├── 🔨 Created function extract_a100x4.
+├── 🔨 Created function extract_h200x2.
+├── 🔨 Created function smoke_a100.
+├── 🔨 Created function smoke_a100x4.
+└── 🔨 Created function smoke_h200x2.
+/seal/pri_v2_io_plugins.py:95: SyntaxWarning: invalid escape sequence '\s'
+  regex's anchor `(?:(?:^|\n)\s*|[\.\:]\s+)` deliberately does NOT match
+
+[1AFetching 30 files:   0%|          | 0/30 [00:00<?, ?it/s]
+[1AFetching 30 files:  23%|██▎       | 7/30 [01:40<05:29, 14.33s/it]
+[1AFetching 30 files:  27%|██▋       | 8/30 [01:44<04:37, 12.63s/it]
+[1AFetching 30 files:  30%|███       | 9/30 [02:52<08:12, 23.47s/it]
+[1AFetching 30 files:  33%|███▎      | 10/30 [02:57<06:28, 19.43s/it]
+[1AFetching 30 files:  37%|███▋      | 11/30 [02:58<04:46, 15.06s/it]
+[1AFetching 30 files:  40%|████      | 12/30 [03:00<03:28, 11.60s/it]
+[1AFetching 30 files:  43%|████▎     | 13/30 [03:00<02:28,  8.73s/it]
+[1AFetching 30 files:  47%|████▋     | 14/30 [03:04<01:56,  7.31s/it]
+[1AFetching 30 files:  50%|█████     | 15/30 [03:07<01:29,  5.95s/it]
+[1AFetching 30 files:  53%|█████▎    | 16/30 [03:18<01:45,  7.55s/it]
+[1AFetching 30 files:  57%|█████▋    | 17/30 [05:16<08:37, 39.79s/it]
+[1AFetching 30 files:  60%|██████    | 18/30 [06:21<09:26, 47.21s/it]
+[1AFetching 30 files:  63%|██████▎   | 19/30 [06:25<06:18, 34.44s/it]
+[1AFetching 30 files:  67%|██████▋   | 20/30 [06:27<04:06, 24.64s/it]
+[1AFetching 30 files:  70%|███████   | 21/30 [06:27<02:37, 17.46s/it]
+[1AFetching 30 files:  73%|███████▎  | 22/30 [06:28<01:38, 12.32s/it]
+[1AFetching 30 files:  77%|███████▋  | 23/30 [06:30<01:04,  9.20s/it]
+[1AFetching 30 files:  80%|████████  | 24/30 [06:33<00:45,  7.56s/it]
+[1AFetching 30 files:  83%|████████▎ | 25/30 [06:41<00:37,  7.55s/it]
+[1AFetching 30 files:  87%|████████▋ | 26/30 [07:31<01:20, 20.21s/it]
+[1AFetching 30 files:  90%|█████████ | 27/30 [07:42<00:53, 17.70s/it]
+[1AFetching 30 files:  93%|█████████▎| 28/30 [07:58<00:34, 17.16s/it]
+[1AFetching 30 files:  97%|█████████▋| 29/30 [08:01<00:12, 12.87s/it]
+[1AFetching 30 files: 100%|██████████| 30/30 [08:02<00:00,  9.13s/it]Fetching 30 files: 100%|██████████| 30/30 [08:02<00:00, 16.07s/it]
+
+[1ALoading weights:   0%|          | 0/723 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/723 [00:01<14:26,  1.20s/it]
+[1ALoading weights:   0%|          | 2/723 [00:03<21:33,  1.79s/it]
+[1ALoading weights:   1%|          | 4/723 [00:04<10:20,  1.16it/s]
+[1ALoading weights:   1%|          | 5/723 [00:04<09:09,  1.31it/s]
+[1ALoading weights:   1%|          | 6/723 [00:05<08:16,  1.45it/s]
+[1ALoading weights:   1%|          | 9/723 [00:05<04:05,  2.91it/s]
+[1ALoading weights:   1%|▏         | 10/723 [00:05<03:32,  3.35it/s]
+[1ALoading weights:   2%|▏         | 13/723 [00:05<02:50,  4.17it/s]
+[1ALoading weights:   2%|▏         | 14/723 [00:06<03:24,  3.46it/s]
+[1ALoading weights:   2%|▏         | 15/723 [00:07<04:04,  2.90it/s]
+[1ALoading weights:   2%|▏         | 18/723 [00:07<02:27,  4.77it/s]
+[1ALoading weights:   3%|▎         | 19/723 [00:07<02:29,  4.71it/s]
+[1ALoading weights:   3%|▎         | 22/723 [00:07<02:13,  5.26it/s]
+[1ALoading weights:   3%|▎         | 23/723 [00:08<02:25,  4.81it/s]
+[1ALoading weights:   3%|▎         | 24/723 [00:08<02:36,  4.46it/s]
+[1ALoading weights:   4%|▍         | 28/723 [00:08<01:29,  7.76it/s]
+[1ALoading weights:   4%|▍         | 31/723 [00:09<01:22,  8.38it/s]
+[1ALoading weights:   5%|▍         | 33/723 [00:09<01:53,  6.05it/s]
+[1ALoading weights:   5%|▌         | 37/723 [00:09<01:18,  8.74it/s]
+[1ALoading weights:   6%|▌         | 40/723 [00:10<01:16,  8.90it/s]
+[1ALoading weights:   6%|▌         | 42/723 [00:10<01:44,  6.51it/s]
+[1ALoading weights:   6%|▋         | 46/723 [00:10<01:13,  9.17it/s]
+[1ALoading weights:   7%|▋         | 49/723 [00:11<01:11,  9.42it/s]
+[1ALoading weights:   7%|▋         | 51/723 [00:11<01:40,  6.72it/s]
+[1ALoading weights:   8%|▊         | 55/723 [00:11<01:12,  9.19it/s]
+[1ALoading weights:   8%|▊         | 58/723 [00:12<01:11,  9.31it/s]
+[1ALoading weights:   8%|▊         | 60/723 [00:12<01:38,  6.71it/s]
+[1ALoading weights:   9%|▉         | 64/723 [00:13<01:12,  9.13it/s]
+[1ALoading weights:   9%|▉         | 67/723 [00:13<01:12,  9.05it/s]
+[1ALoading weights:  10%|▉         | 69/723 [00:13<01:38,  6.65it/s]
+[1ALoading weights:  10%|█         | 73/723 [00:14<01:10,  9.22it/s]
+[1ALoading weights:  11%|█         | 76/723 [00:14<01:08,  9.45it/s]
+[1ALoading weights:  11%|█         | 78/723 [00:15<01:35,  6.74it/s]
+[1ALoading weights:  11%|█▏        | 82/723 [00:15<01:10,  9.16it/s]
+[1ALoading weights:  12%|█▏        | 85/723 [00:15<01:08,  9.28it/s]
+[1ALoading weights:  12%|█▏        | 87/723 [00:16<01:33,  6.80it/s]
+[1ALoading weights:  13%|█▎        | 91/723 [00:16<01:07,  9.31it/s]
+[1ALoading weights:  13%|█▎        | 94/723 [00:16<01:07,  9.38it/s]
+[1ALoading weights:  13%|█▎        | 96/723 [00:17<01:31,  6.84it/s]
+[1ALoading weights:  14%|█▍        | 100/723 [00:17<01:07,  9.23it/s]
+[1ALoading weights:  14%|█▍        | 103/723 [00:17<01:06,  9.32it/s]
+[1ALoading weights:  15%|█▍        | 105/723 [00:18<01:30,  6.81it/s]
+[1ALoading weights:  15%|█▌        | 109/723 [00:18<01:05,  9.31it/s]
+[1ALoading weights:  15%|█▌        | 112/723 [00:18<01:05,  9.31it/s]
+[1ALoading weights:  16%|█▌        | 114/723 [00:19<01:28,  6.86it/s]
+[1ALoading weights:  16%|█▋        | 118/723 [00:19<01:03,  9.47it/s]
+[1ALoading weights:  17%|█▋        | 121/723 [00:19<01:01,  9.73it/s]
+[1ALoading weights:  17%|█▋        | 123/723 [00:20<01:25,  7.01it/s]
+[1ALoading weights:  18%|█▊        | 127/723 [00:20<01:02,  9.53it/s]
+[1ALoading weights:  18%|█▊        | 130/723 [00:20<01:01,  9.61it/s]
+[1ALoading weights:  18%|█▊        | 132/723 [00:21<01:25,  6.91it/s]
+[1ALoading weights:  19%|█▉        | 136/723 [00:21<01:01,  9.47it/s]
+[1ALoading weights:  19%|█▉        | 139/723 [00:21<01:03,  9.24it/s]
+[1ALoading weights:  20%|█▉        | 141/723 [00:22<01:30,  6.44it/s]
+[1ALoading weights:  20%|██        | 145/723 [00:22<01:04,  8.97it/s]
+[1ALoading weights:  20%|██        | 148/723 [00:23<01:02,  9.16it/s]
+[1ALoading weights:  21%|██        | 150/723 [00:23<01:07,  8.49it/s]
+[1ALoading weights:  22%|██▏       | 156/723 [00:23<00:39, 14.48it/s]
+[1ALoading weights:  22%|██▏       | 159/723 [00:23<00:49, 11.49it/s]
+[1ALoading weights:  23%|██▎       | 163/723 [00:23<00:37, 14.79it/s]
+[1ALoading weights:  23%|██▎       | 166/723 [00:24<00:43, 12.73it/s]
+[1ALoading weights:  23%|██▎       | 169/723 [00:24<00:57,  9.63it/s]
+[1ALoading weights:  24%|██▍       | 173/723 [00:24<00:42, 12.92it/s]
+[1ALoading weights:  24%|██▍       | 176/723 [00:25<00:44, 12.26it/s]
+[1ALoading weights:  25%|██▍       | 178/723 [00:25<00:43, 12.63it/s]
+[1ALoading weights:  25%|██▌       | 182/723 [00:25<00:32, 16.72it/s]
+[1ALoading weights:  26%|██▌       | 185/723 [00:25<00:36, 14.58it/s]
+[1ALoading weights:  26%|██▌       | 187/723 [00:25<00:38, 14.03it/s]
+[1ALoading weights:  26%|██▋       | 190/723 [00:26<00:33, 16.08it/s]
+[1ALoading weights:  27%|██▋       | 193/723 [00:26<00:41, 12.89it/s]
+[1ALoading weights:  27%|██▋       | 195/723 [00:27<01:12,  7.24it/s]
+[1ALoading weights:  28%|██▊       | 199/723 [00:27<00:51, 10.25it/s]
+[1ALoading weights:  28%|██▊       | 202/723 [00:27<00:46, 11.23it/s]
+[1ALoading weights:  28%|██▊       | 204/723 [00:27<00:53,  9.75it/s]
+[1ALoading weights:  29%|██▉       | 211/723 [00:27<00:37, 13.73it/s]
+[1ALoading weights:  29%|██▉       | 213/723 [00:28<00:42, 11.92it/s]
+[1ALoading weights:  30%|███       | 220/723 [00:28<00:41, 12.05it/s]
+[1ALoading weights:  31%|███       | 222/723 [00:29<01:12,  6.90it/s]
+[1ALoading weights:  31%|███▏      | 226/723 [00:29<00:53,  9.21it/s]
+[1ALoading weights:  32%|███▏      | 229/723 [00:30<00:46, 10.74it/s]
+[1ALoading weights:  32%|███▏      | 231/723 [00:30<00:50,  9.83it/s]
+[1ALoading weights:  33%|███▎      | 235/723 [00:30<00:42, 11.57it/s]
+[1ALoading weights:  33%|███▎      | 238/723 [00:30<00:45, 10.76it/s]
+[1ALoading weights:  33%|███▎      | 240/723 [00:31<00:55,  8.66it/s]
+[1ALoading weights:  34%|███▎      | 244/723 [00:31<00:39, 12.16it/s]
+[1ALoading weights:  34%|███▍      | 247/723 [00:31<00:42, 11.26it/s]
+[1ALoading weights:  34%|███▍      | 249/723 [00:32<00:50,  9.44it/s]
+[1ALoading weights:  35%|███▌      | 256/723 [00:32<00:32, 14.44it/s]
+[1ALoading weights:  36%|███▌      | 258/723 [00:32<00:37, 12.33it/s]
+[1ALoading weights:  36%|███▌      | 262/723 [00:32<00:29, 15.87it/s]
+[1ALoading weights:  37%|███▋      | 265/723 [00:33<00:35, 13.02it/s]
+[1ALoading weights:  37%|███▋      | 267/723 [00:33<00:52,  8.62it/s]
+[1ALoading weights:  37%|███▋      | 271/723 [00:33<00:37, 12.01it/s]
+[1ALoading weights:  38%|███▊      | 274/723 [00:34<00:47,  9.37it/s]
+[1ALoading weights:  38%|███▊      | 276/723 [00:34<00:52,  8.46it/s]
+[1ALoading weights:  39%|███▊      | 280/723 [00:34<00:37, 11.96it/s]
+[1ALoading weights:  39%|███▉      | 283/723 [00:34<00:32, 13.51it/s]
+[1ALoading weights:  40%|███▉      | 286/723 [00:35<00:34, 12.58it/s]
+[1ALoading weights:  40%|███▉      | 289/723 [00:35<00:31, 13.95it/s]
+[1ALoading weights:  40%|████      | 292/723 [00:35<00:45,  9.40it/s]
+[1ALoading weights:  41%|████      | 294/723 [00:36<01:24,  5.08it/s]
+[1ALoading weights:  41%|████      | 298/723 [00:36<00:56,  7.48it/s]
+[1ALoading weights:  42%|████▏     | 301/723 [00:37<00:45,  9.19it/s]
+[1ALoading weights:  42%|████▏     | 303/723 [00:37<00:48,  8.62it/s]
+[1ALoading weights:  43%|████▎     | 310/723 [00:37<00:29, 13.79it/s]
+[1ALoading weights:  43%|████▎     | 312/723 [00:37<00:34, 11.76it/s]
+[1ALoading weights:  44%|████▍     | 317/723 [00:37<00:24, 16.51it/s]
+[1ALoading weights:  44%|████▍     | 320/723 [00:39<00:58,  6.87it/s]
+[1ALoading weights:  45%|████▍     | 322/723 [00:39<00:59,  6.79it/s]
+[1ALoading weights:  45%|████▌     | 326/723 [00:39<00:41,  9.59it/s]
+[1ALoading weights:  46%|████▌     | 329/723 [00:39<00:40,  9.84it/s]
+[1ALoading weights:  46%|████▌     | 331/723 [00:40<00:37, 10.55it/s]
+[1ALoading weights:  46%|████▌     | 334/723 [00:40<00:31, 12.46it/s]
+[1ALoading weights:  47%|████▋     | 337/723 [00:40<00:27, 14.17it/s]
+[1ALoading weights:  47%|████▋     | 339/723 [00:40<00:32, 11.76it/s]
+[1ALoading weights:  47%|████▋     | 343/723 [00:40<00:23, 15.98it/s]
+[1ALoading weights:  48%|████▊     | 346/723 [00:40<00:22, 16.77it/s]
+[1ALoading weights:  48%|████▊     | 349/723 [00:41<00:26, 14.02it/s]
+[1ALoading weights:  49%|████▊     | 352/723 [00:41<00:23, 15.86it/s]
+[1ALoading weights:  49%|████▉     | 355/723 [00:41<00:23, 15.42it/s]
+[1ALoading weights:  49%|████▉     | 357/723 [00:41<00:29, 12.44it/s]
+[1ALoading weights:  50%|████▉     | 361/723 [00:41<00:22, 16.35it/s]
+[1ALoading weights:  50%|█████     | 364/723 [00:42<00:21, 16.97it/s]
+[1ALoading weights:  51%|█████     | 366/723 [00:42<00:27, 12.99it/s]
+[1ALoading weights:  51%|█████     | 370/723 [00:42<00:29, 12.13it/s]
+[1ALoading weights:  52%|█████▏    | 373/723 [00:42<00:25, 13.74it/s]
+[1ALoading weights:  52%|█████▏    | 375/723 [00:43<00:30, 11.40it/s]
+[1ALoading weights:  53%|█████▎    | 382/723 [00:43<00:20, 16.89it/s]
+[1ALoading weights:  53%|█████▎    | 384/723 [00:43<00:24, 13.76it/s]
+[1ALoading weights:  54%|█████▍    | 390/723 [00:43<00:16, 20.54it/s]
+[1ALoading weights:  54%|█████▍    | 393/723 [00:44<00:23, 13.76it/s]
+[1ALoading weights:  55%|█████▌    | 398/723 [00:44<00:17, 18.54it/s]
+[1ALoading weights:  56%|█████▌    | 402/723 [00:44<00:22, 14.55it/s]
+[1ALoading weights:  56%|█████▌    | 406/723 [00:44<00:18, 17.31it/s]
+[1ALoading weights:  57%|█████▋    | 409/723 [00:44<00:17, 17.87it/s]
+[1ALoading weights:  57%|█████▋    | 412/723 [00:45<00:20, 15.34it/s]
+[1ALoading weights:  57%|█████▋    | 415/723 [00:45<00:20, 14.89it/s]
+[1ALoading weights:  58%|█████▊    | 418/723 [00:45<00:18, 16.06it/s]
+[1ALoading weights:  58%|█████▊    | 420/723 [00:45<00:24, 12.60it/s]
+[1ALoading weights:  59%|█████▊    | 424/723 [00:45<00:17, 16.73it/s]
+[1ALoading weights:  59%|█████▉    | 427/723 [00:46<00:17, 17.26it/s]
+[1ALoading weights:  59%|█████▉    | 430/723 [00:46<00:26, 11.04it/s]
+[1ALoading weights:  60%|██████    | 434/723 [00:46<00:19, 14.78it/s]
+[1ALoading weights:  60%|██████    | 437/723 [00:47<00:21, 13.18it/s]
+[1ALoading weights:  61%|██████    | 439/723 [00:47<00:21, 13.48it/s]
+[1ALoading weights:  61%|██████    | 442/723 [00:47<00:19, 14.56it/s]
+[1ALoading weights:  62%|██████▏   | 445/723 [00:47<00:17, 15.79it/s]
+[1ALoading weights:  62%|██████▏   | 447/723 [00:47<00:22, 12.11it/s]
+[1ALoading weights:  62%|██████▏   | 451/723 [00:47<00:16, 16.67it/s]
+[1ALoading weights:  63%|██████▎   | 454/723 [00:48<00:15, 17.60it/s]
+[1ALoading weights:  63%|██████▎   | 457/723 [00:48<00:21, 12.42it/s]
+[1ALoading weights:  63%|██████▎   | 459/723 [00:48<00:20, 13.08it/s]
+[1ALoading weights:  64%|██████▍   | 461/723 [00:48<00:19, 13.25it/s]
+[1ALoading weights:  64%|██████▍   | 463/723 [00:48<00:21, 12.07it/s]
+[1ALoading weights:  64%|██████▍   | 465/723 [00:49<00:26,  9.75it/s]
+[1ALoading weights:  65%|██████▍   | 469/723 [00:49<00:17, 14.21it/s]
+[1ALoading weights:  65%|██████▌   | 472/723 [00:49<00:19, 12.84it/s]
+[1ALoading weights:  66%|██████▌   | 474/723 [00:50<00:27,  8.90it/s]
+[1ALoading weights:  66%|██████▌   | 478/723 [00:50<00:21, 11.48it/s]
+[1ALoading weights:  67%|██████▋   | 481/723 [00:50<00:20, 11.95it/s]
+[1ALoading weights:  67%|██████▋   | 483/723 [00:51<00:29,  8.19it/s]
+[1ALoading weights:  67%|██████▋   | 486/723 [00:51<00:23, 10.30it/s]
+[1ALoading weights:  67%|██████▋   | 488/723 [00:51<00:20, 11.25it/s]
+[1ALoading weights:  68%|██████▊   | 490/723 [00:51<00:23, 10.05it/s]
+[1ALoading weights:  68%|██████▊   | 492/723 [00:52<00:30,  7.64it/s]
+[1ALoading weights:  69%|██████▊   | 496/723 [00:52<00:21, 10.76it/s]
+[1ALoading weights:  69%|██████▉   | 499/723 [00:52<00:19, 11.22it/s]
+[1ALoading weights:  69%|██████▉   | 501/723 [00:52<00:24,  9.06it/s]
+[1ALoading weights:  70%|██████▉   | 505/723 [00:52<00:17, 12.71it/s]
+[1ALoading weights:  70%|███████   | 508/723 [00:53<00:15, 13.82it/s]
+[1ALoading weights:  71%|███████   | 510/723 [00:53<00:18, 11.50it/s]
+[1ALoading weights:  71%|███████   | 515/723 [00:53<00:12, 17.27it/s]
+[1ALoading weights:  72%|███████▏  | 518/723 [00:53<00:13, 14.67it/s]
+[1ALoading weights:  72%|███████▏  | 521/723 [00:53<00:12, 15.62it/s]
+[1ALoading weights:  73%|███████▎  | 526/723 [00:54<00:11, 17.49it/s]
+[1ALoading weights:  73%|███████▎  | 529/723 [00:54<00:12, 15.11it/s]
+[1ALoading weights:  74%|███████▍  | 534/723 [00:54<00:09, 20.53it/s]
+[1ALoading weights:  74%|███████▍  | 537/723 [00:54<00:13, 14.26it/s]
+[1ALoading weights:  75%|███████▌  | 543/723 [00:55<00:19,  9.46it/s]
+[1ALoading weights:  75%|███████▌  | 545/723 [00:56<00:30,  5.89it/s]
+[1ALoading weights:  76%|███████▌  | 547/723 [00:57<00:30,  5.71it/s]
+[1ALoading weights:  76%|███████▌  | 551/723 [00:57<00:21,  8.17it/s]
+[1ALoading weights:  76%|███████▋  | 553/723 [00:57<00:18,  8.96it/s]
+[1ALoading weights:  77%|███████▋  | 555/723 [00:57<00:19,  8.56it/s]
+[1ALoading weights:  78%|███████▊  | 562/723 [00:57<00:11, 13.87it/s]
+[1ALoading weights:  78%|███████▊  | 564/723 [00:58<00:13, 12.07it/s]
+[1ALoading weights:  79%|███████▉  | 571/723 [00:58<00:09, 16.60it/s]
+[1ALoading weights:  79%|███████▉  | 573/723 [00:58<00:11, 12.72it/s]
+[1ALoading weights:  80%|████████  | 580/723 [00:59<00:08, 17.22it/s]
+[1ALoading weights:  81%|████████  | 583/723 [00:59<00:09, 15.49it/s]
+[1ALoading weights:  81%|████████▏ | 589/723 [00:59<00:07, 18.18it/s]
+[1ALoading weights:  82%|████████▏ | 591/723 [00:59<00:08, 14.97it/s]
+[1ALoading weights:  83%|████████▎ | 598/723 [01:00<00:06, 19.15it/s]
+[1ALoading weights:  83%|████████▎ | 601/723 [01:00<00:07, 16.58it/s]
+[1ALoading weights:  84%|████████▍ | 607/723 [01:00<00:06, 19.14it/s]
+[1ALoading weights:  84%|████████▍ | 610/723 [01:00<00:06, 16.59it/s]
+[1ALoading weights:  85%|████████▌ | 616/723 [01:01<00:05, 19.28it/s]
+[1ALoading weights:  86%|████████▌ | 619/723 [01:01<00:06, 16.66it/s]
+[1ALoading weights:  86%|████████▋ | 625/723 [01:01<00:05, 19.36it/s]
+[1ALoading weights:  87%|████████▋ | 628/723 [01:01<00:05, 16.79it/s]
+[1ALoading weights:  88%|████████▊ | 634/723 [01:02<00:04, 19.55it/s]
+[1ALoading weights:  88%|████████▊ | 637/723 [01:02<00:05, 16.88it/s]
+[1ALoading weights:  89%|████████▉ | 643/723 [01:02<00:04, 19.44it/s]
+[1ALoading weights:  89%|████████▉ | 646/723 [01:02<00:04, 16.75it/s]
+[1ALoading weights:  90%|█████████ | 652/723 [01:03<00:03, 19.43it/s]
+[1ALoading weights:  91%|█████████ | 655/723 [01:03<00:04, 15.76it/s]
+[1ALoading weights:  91%|█████████ | 658/723 [01:03<00:03, 17.46it/s]
+[1ALoading weights:  91%|█████████▏| 661/723 [01:03<00:03, 18.26it/s]
+[1ALoading weights:  92%|█████████▏| 664/723 [01:03<00:03, 15.62it/s]
+[1ALoading weights:  93%|█████████▎| 670/723 [01:04<00:02, 18.90it/s]
+[1ALoading weights:  93%|█████████▎| 673/723 [01:04<00:03, 16.23it/s]
+[1ALoading weights:  94%|█████████▍| 679/723 [01:04<00:02, 19.10it/s]
+[1ALoading weights:  94%|█████████▍| 681/723 [01:04<00:02, 15.20it/s]
+[1ALoading weights:  95%|█████████▌| 688/723 [01:05<00:01, 19.56it/s]
+[1ALoading weights:  96%|█████████▌| 691/723 [01:05<00:01, 16.89it/s]
+[1ALoading weights:  96%|█████████▋| 697/723 [01:05<00:01, 19.55it/s]
+[1ALoading weights:  97%|█████████▋| 700/723 [01:05<00:01, 16.85it/s]
+[1ALoading weights:  98%|█████████▊| 706/723 [01:06<00:00, 19.44it/s]
+[1ALoading weights:  98%|█████████▊| 709/723 [01:06<00:00, 16.84it/s]
+[1ALoading weights:  99%|█████████▉| 715/723 [01:06<00:00, 19.50it/s]
+[1ALoading weights:  99%|█████████▉| 718/723 [01:06<00:00, 16.90it/s]
+[1ALoading weights: 100%|██████████| 723/723 [01:06<00:00, 10.79it/s]
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+[smoke] llama31_70b anli_r1: cos=0.99999/0.99999 yes_no=True/True commit='YES'/'NO' manifest_sha=04a818afc06838de…
+[smoke] llama31_70b halueval_qa: cos=0.99999/0.99999 yes_no=True/True commit='NO'/'NO' manifest_sha=40569a0f9fc2f05b…
+SMOKE_RESULT
+{
+  "model_key": "llama31_70b",
+  "model_id": "meta-llama/Llama-3.1-70B-Instruct",
+  "revision": "1605565b47bb9346c5515c34102e054115b4f98b",
+  "precision": "nf4",
+  "load_notes": {
+    "gpu_names": [
+      "NVIDIA A100-SXM4-80GB"
+    ],
+    "param_dtype_hist": {
+      "torch.bfloat16": 163,
+      "torch.uint8": 560
+    },
+    "decoder_linear_types": {
+      "Linear4bit": 560
+    }
+  },
+  "wrapper_class": "LlamaForCausalLM",
+  "n_layers": 80,
+  "n_heads": 64,
+  "n_kv": 8,
+  "tasks": {
+    "anli_r1": {
+      "gate": [
+        {
+          "row": 0,
+          "cos": 0.99999,
+          "yes_no": true,
+          "commit": "'YES'"
+        },
+        {
+          "row": 1,
+          "cos": 0.99999,
+          "yes_no": true,
+          "commit": "'NO'"
+        }
+      ],
+      "n_rows": 200,
+      "max_tokens_ok": true,
+      "mistral_xcheck": null,
+      "manifest_sha256": "04a818afc06838de2e0c19d57a293630e847c92abb9d9a5e2721ae54c6059f2a"
+    },
+    "halueval_qa": {
+      "gate": [
+        {
+          "row": 0,
+          "cos": 0.99999,
+          "yes_no": true,
+          "commit": "'NO'"
+        },
+        {
+          "row": 1,
+          "cos": 0.99999,
+          "yes_no": true,
+          "commit": "'NO'"
+        }
+      ],
+      "n_rows": 200,
+      "max_tokens_ok": true,
+      "mistral_xcheck": null,
+      "manifest_sha256": "40569a0f9fc2f05b49e1b2f217dad957f31e706da806919b57385621b6b7031d"
+    }
+  }
+}
+{'model_key': 'llama31_70b', 'model_id': 'meta-llama/Llama-3.1-70B-Instruct', 'revision': '1605565b47bb9346c5515c34102e054115b4f98b', 'precision': 'nf4', 'load_notes': {'gpu_names': ['NVIDIA A100-SXM4-80GB'], 'param_dtype_hist': {'torch.bfloat16': 163, 'torch.uint8': 560}, 'decoder_linear_types': {'Linear4bit': 560}}, 'wrapper_class': 'LlamaForCausalLM', 'n_layers': 80, 'n_heads': 64, 'n_kv': 8, 'tasks': {'anli_r1': {'gate': [{'row': 0, 'cos': 0.99999, 'yes_no': True, 'commit': "'YES'"}, {'row': 1, 'cos': 0.99999, 'yes_no': True, 'commit': "'NO'"}], 'n_rows': 200, 'max_tokens_ok': True, 'mistral_xcheck': None, 'manifest_sha256': '04a818afc06838de2e0c19d57a293630e847c92abb9d9a5e2721ae54c6059f2a'}, 'halueval_qa': {'gate': [{'row': 0, 'cos': 0.99999, 'yes_no': True, 'commit': "'NO'"}, {'row': 1, 'cos': 0.99999, 'yes_no': True, 'commit': "'NO'"}], 'n_rows': 200, 'max_tokens_ok': True, 'mistral_xcheck': None, 'manifest_sha256': '40569a0f9fc2f05b49e1b2f217dad957f31e706da806919b57385621b6b7031d'}}}
+[modal-client] 2026-08-17T15:37:00-0700 Timed out waiting for final app logs.
+✓ App completed. View run at 
+https://modal.com/apps/mys628/main/ap-dlq7PhYqNjPyxx8aL98K2N

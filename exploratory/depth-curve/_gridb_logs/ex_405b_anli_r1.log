@@ -1,0 +1,192 @@
+Note that running a local entrypoint in detached mode only keeps the last triggered Modal function alive after the parent process has been killed or disconnected.
+✓ Initialized. View run at 
+https://modal.com/apps/mys628/main/ap-E8ihpX9Ve2hNclRE66lzol
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/modal_depth_
+│   b.py
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/seal
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/seal
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/modal_app.py
+├── 🔨 Created function extract_a100.
+├── 🔨 Created function extract_a100x4.
+├── 🔨 Created function extract_h200x2.
+├── 🔨 Created function extract_a100x8.
+├── 🔨 Created function smoke_a100.
+├── 🔨 Created function smoke_a100x4.
+├── 🔨 Created function smoke_h200x2.
+└── 🔨 Created function smoke_a100x8.
+/seal/pri_v2_io_plugins.py:95: SyntaxWarning: invalid escape sequence '\s'
+  regex's anchor `(?:(?:^|\n)\s*|[\.\:]\s+)` deliberately does NOT match
+[modal-client] 2026-08-18T01:04:12+0000 Modal Client → Modal Worker Heartbeat attempt failed (attempt_dur=63.53, time_since_heartbeat_success=63.53, error=ConnectionError('Deadline exceeded'))
+
+[1ALoading weights:   0%|          | 0/1137 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/1137 [01:46<33:36:10, 106.49s/it]
+[1ALoading weights:   0%|          | 2/1137 [01:49<14:24:58, 45.73s/it] 
+[1ALoading weights:   0%|          | 4/1137 [01:51<5:30:36, 17.51s/it] 
+[1ALoading weights:   0%|          | 5/1137 [01:52<3:57:04, 12.57s/it]
+[1ALoading weights:   1%|          | 6/1137 [01:54<2:53:41,  9.21s/it]
+[1ALoading weights:   1%|          | 9/1137 [01:54<1:15:59,  4.04s/it]
+[1ALoading weights:   1%|          | 10/1137 [01:55<1:01:25,  3.27s/it]
+[1ALoading weights:   1%|          | 13/1137 [01:56<36:01,  1.92s/it]  
+[1ALoading weights:   1%|          | 14/1137 [01:57<34:57,  1.87s/it]
+[1ALoading weights:   1%|▏         | 15/1137 [01:59<33:16,  1.78s/it]
+[1ALoading weights:   2%|▏         | 18/1137 [01:59<18:33,  1.00it/s]
+[1ALoading weights:   2%|▏         | 19/1137 [02:00<17:15,  1.08it/s]
+[1ALoading weights:   2%|▏         | 22/1137 [02:02<14:26,  1.29it/s]
+[1ALoading weights:   2%|▏         | 23/1137 [02:03<17:10,  1.08it/s]
+[1ALoading weights:   2%|▏         | 24/1137 [02:05<19:27,  1.05s/it]
+[1ALoading weights:   2%|▏         | 27/1137 [02:05<11:33,  1.60it/s]
+[1ALoading weights:   2%|▏         | 28/1137 [02:06<11:16,  1.64it/s]
+[1ALoading weights:   3%|▎         | 31/1137 [02:07<10:44,  1.71it/s]
+[1ALoading weights:   3%|▎         | 32/1137 [02:09<13:32,  1.36it/s]
+[1ALoading weights:   3%|▎         | 33/1137 [02:10<15:19,  1.20it/s]
+[1ALoading weights:   3%|▎         | 36/1137 [02:11<10:03,  1.82it/s]
+[1ALoading weights:   3%|▎         | 37/1137 [02:11<10:03,  1.82it/s]
+[1ALoading weights:   3%|▎         | 38/1137 [02:11<08:28,  2.16it/s]
+[1ALoading weights:   4%|▎         | 40/1137 [02:13<09:33,  1.91it/s]
+[1ALoading weights:   4%|▎         | 41/1137 [02:14<12:54,  1.42it/s]
+[1ALoading weights:   4%|▎         | 42/1137 [02:15<14:46,  1.23it/s]
+[1ALoading weights:   4%|▍         | 45/1137 [02:16<09:22,  1.94it/s]
+[1ALoading weights:   4%|▍         | 46/1137 [02:16<09:27,  1.92it/s]
+[1ALoading weights:   4%|▍         | 49/1137 [02:18<09:46,  1.85it/s]
+[1ALoading weights:   4%|▍         | 50/1137 [02:20<12:56,  1.40it/s]
+[1ALoading weights:   4%|▍         | 51/1137 [02:21<15:11,  1.19it/s]
+[1ALoading weights:   5%|▍         | 54/1137 [02:22<09:39,  1.87it/s]
+[1ALoading weights:   5%|▍         | 55/1137 [02:22<08:54,  2.02it/s]
+[1ALoading weights:   5%|▌         | 58/1137 [02:23<09:22,  1.92it/s]
+[1ALoading weights:   5%|▌         | 59/1137 [02:25<12:21,  1.45it/s]
+[1ALoading weights:   5%|▌         | 60/1137 [02:26<14:28,  1.24it/s]
+[1ALoading weights:   6%|▌         | 63/1137 [02:27<08:51,  2.02it/s]
+[1ALoading weights:   6%|▌         | 64/1137 [02:27<08:24,  2.13it/s]
+[1ALoading weights:   6%|▌         | 67/1137 [02:28<07:56,  2.25it/s]
+[1ALoading weights:   6%|▌         | 68/1137 [02:29<10:16,  1.74it/s]
+[1ALoading weights:   6%|▌         | 69/1137 [02:30<11:45,  1.51it/s]
+[1ALoading weights:   6%|▋         | 72/1137 [02:31<07:15,  2.45it/s]
+[1ALoading weights:   6%|▋         | 73/1137 [02:31<06:54,  2.57it/s]
+[1ALoading weights:   7%|▋         | 76/1137 [02:32<06:30,  2.72it/s]
+[1ALoading weights:   7%|▋         | 77/1137 [02:33<08:28,  2.08it/s]
+[1ALoading weights:   7%|▋         | 78/1137 [02:34<10:14,  1.72it/s]
+[1ALoading weights:   7%|▋         | 81/1137 [02:34<06:25,  2.74it/s]
+[1ALoading weights:   7%|▋         | 82/1137 [02:35<06:13,  2.82it/s]
+[1ALoading weights:   7%|▋         | 85/1137 [02:36<06:09,  2.85it/s]
+[1ALoading weights:   8%|▊         | 86/1137 [02:37<08:06,  2.16it/s]
+[1ALoading weights:   8%|▊         | 87/1137 [02:38<09:55,  1.76it/s]
+[1ALoading weights:   8%|▊         | 90/1137 [02:38<06:15,  2.79it/s]
+[1ALoading weights:   8%|▊         | 91/1137 [02:38<06:05,  2.87it/s]
+[1ALoading weights:   8%|▊         | 94/1137 [02:39<05:47,  3.00it/s]
+[1ALoading weights:   8%|▊         | 95/1137 [02:40<07:23,  2.35it/s]
+[1ALoading weights:   8%|▊         | 96/1137 [02:41<08:50,  1.96it/s]
+[1ALoading weights:   9%|▊         | 99/1137 [02:41<05:33,  3.11it/s]
+[1ALoading weights:   9%|▉         | 100/1137 [02:42<05:20,  3.24it/s]
+[1ALoading weights:   9%|▉         | 103/1137 [02:43<05:12,  3.31it/s]
+[1ALoading weights:   9%|▉         | 104/1137 [02:43<06:51,  2.51it/s]
+[1ALoading weights:   9%|▉         | 105/1137 [02:44<08:27,  2.03it/s]
+[1ALoading weights:   9%|▉         | 108/1137 [02:45<05:19,  3.22it/s]
+[1ALoading weights:  10%|▉         | 109/1137 [02:45<05:09,  3.32it/s]
+[1ALoading weights:  10%|▉         | 112/1137 [02:46<05:03,  3.38it/s]
+[1ALoading weights:  10%|▉         | 113/1137 [02:47<06:43,  2.54it/s]
+[1ALoading weights:  10%|█         | 114/1137 [02:47<08:13,  2.07it/s]
+[1ALoading weights:  10%|█         | 117/1137 [02:48<05:11,  3.27it/s]
+[1ALoading weights:  10%|█         | 118/1137 [02:48<05:02,  3.36it/s]
+[1ALoading weights:  11%|█         | 121/1137 [02:49<04:59,  3.39it/s]
+[1ALoading weights:  11%|█         | 122/1137 [02:50<06:37,  2.56it/s]
+[1ALoading weights:  11%|█         | 123/1137 [02:51<08:12,  2.06it/s]
+[1ALoading weights:  11%|█         | 126/1137 [02:51<05:11,  3.25it/s]
+[1ALoading weights:  11%|█         | 127/1137 [02:56<20:47,  1.24s/it]
+[1ALoading weights:  11%|█▏        | 128/1137 [02:56<17:05,  1.02s/it]
+[1ALoading weights:  11%|█▏        | 130/1137 [02:57<13:31,  1.24it/s]
+[1ALoading weights:  12%|█▏        | 131/1137 [02:58<13:42,  1.22it/s]
+[1ALoading weights:  12%|█▏        | 132/1137 [02:59<13:47,  1.21it/s]
+[1ALoading weights:  12%|█▏        | 135/1137 [02:59<07:44,  2.16it/s]
+[1ALoading weights:  12%|█▏        | 136/1137 [03:06<27:49,  1.67s/it]
+[1ALoading weights:  12%|█▏        | 137/1137 [03:06<22:48,  1.37s/it]
+[1ALoading weights:  12%|█▏        | 139/1137 [03:07<16:52,  1.01s/it]
+[1ALoading weights:  12%|█▏        | 140/1137 [03:08<16:20,  1.02it/s]
+[1ALoading weights:  12%|█▏        | 141/1137 [03:09<15:52,  1.05it/s]
+[1ALoading weights:  13%|█▎        | 144/1137 [03:09<08:41,  1.90it/s]
+[1ALoading weights:  13%|█▎        | 145/1137 [03:12<14:23,  1.15it/s]
+[1ALoading weights:  13%|█▎        | 146/1137 [03:12<12:06,  1.36it/s]
+[1ALoading weights:  13%|█▎        | 148/1137 [03:13<10:12,  1.61it/s]
+[1ALoading weights:  13%|█▎        | 149/1137 [03:14<11:06,  1.48it/s]
+[1ALoading weights:  13%|█▎        | 150/1137 [03:14<11:46,  1.40it/s]
+[1ALoading weights:  13%|█▎        | 153/1137 [03:15<06:39,  2.46it/s]
+[1ALoading weights:  14%|█▎        | 154/1137 [03:26<41:58,  2.56s/it]
+[1ALoading weights:  14%|█▎        | 155/1137 [03:27<34:05,  2.08s/it]
+[1ALoading weights:  14%|█▍        | 157/1137 [03:28<23:48,  1.46s/it]
+[1ALoading weights:  14%|█▍        | 158/1137 [03:28<21:41,  1.33s/it]
+[1ALoading weights:  14%|█▍        | 159/1137 [03:29<19:52,  1.22s/it]
+[1ALoading weights:  14%|█▍        | 162/1137 [03:30<10:39,  1.52it/s]
+[1ALoading weights:  14%|█▍        | 163/1137 [03:34<22:21,  1.38s/it]
+[1ALoading weights:  14%|█▍        | 164/1137 [03:34<19:13,  1.19s/it]
+[1ALoading weights:  15%|█▍        | 166/1137 [03:35<14:32,  1.11it/s]
+[1ALoading weights:  15%|█▍        | 167/1137 [03:36<14:27,  1.12it/s]
+[1ALoading weights:  15%|█▍        | 168/1137 [03:37<14:13,  1.14it/s]
+[1ALoading weights:  15%|█▌        | 171/1137 [03:37<07:50,  2.05it/s]
+[1ALoading weights:  15%|█▌        | 172/1137 [03:43<23:27,  1.46s/it]
+[1ALoading weights:  15%|█▌        | 175/1137 [03:44<15:41,  1.02it/s]
+[1ALoading weights:  15%|█▌        | 176/1137 [03:45<16:54,  1.06s/it]
+[1ALoading weights:  16%|█▌        | 177/1137 [03:47<18:30,  1.16s/it]
+[1ALoading weights:  16%|█▌        | 180/1137 [03:48<13:22,  1.19it/s]
+[1ALoading weights:  16%|█▌        | 181/1137 [03:58<37:14,  2.34s/it]
+[1ALoading weights:  16%|█▌        | 184/1137 [03:59<24:46,  1.56s/it]
+[1ALoading weights:  16%|█▋        | 185/1137 [04:00<23:48,  1.50s/it]
+[1ALoading weights:  16%|█▋        | 186/1137 [04:02<23:31,  1.48s/it]
+[1ALoading weights:  17%|█▋        | 189/1137 [04:04<18:18,  1.16s/it]
+[1ALoading weights:  17%|█▋        | 190/1137 [04:11<35:24,  2.24s/it]
+[1ALoading weights:  17%|█▋        | 193/1137 [04:13<22:55,  1.46s/it]
+[1ALoading weights:  17%|█▋        | 194/1137 [04:14<22:45,  1.45s/it]
+[1ALoading weights:  17%|█▋        | 195/1137 [04:16<22:44,  1.45s/it]
+[1ALoading weights:  17%|█▋        | 198/1137 [04:19<20:30,  1.31s/it]
+[1ALoading weights:  18%|█▊        | 199/1137 [04:27<39:10,  2.51s/it]
+[1ALoading weights:  18%|█▊        | 200/1137 [04:27<31:50,  2.04s/it]
+[1ALoading weights:  18%|█▊        | 202/1137 [04:29<24:27,  1.57s/it]
+[1ALoading weights:  18%|█▊        | 203/1137 [04:30<23:20,  1.50s/it]
+Stopping app - user stopped from CLI.
+[1ALoading weights:  18%|█▊        | 204/1137 [04:31<21:19,  1.37s/it]
+[1ALoading weights:  18%|█▊        | 207/1137 [04:35<20:27,  1.32s/it]
+[1ALoading weights:  18%|█▊        | 207/1137 [04:44<21:17,  1.37s/it]
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/modal_depth_ │
+│ b.py:931 in extract                                                          │
+│                                                                              │
+│   930 │   │   │   │   │   │    f"only mistral_medium_35 may fall back to H20 │
+│ ❱ 931 │   print(_fn_for(conf, "extract", gpu or None).remote(model_key, task │
+│   932                                                                        │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_object.py:339 │
+│ in wrapped                                                                   │
+│                                                                              │
+│   338 │   │   await self.hydrate()                                           │
+│ ❱ 339 │   │   return await method(self, *args, **kwargs)                     │
+│   340                                                                        │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_functions.py: │
+│ 1765 in remote                                                               │
+│                                                                              │
+│   1764 │   │                                                                 │
+│ ❱ 1765 │   │   return await self._call_function(args, kwargs)                │
+│   1766                                                                       │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_functions.py: │
+│ 1709 in _call_function                                                       │
+│                                                                              │
+│   1708 │   │                                                                 │
+│ ❱ 1709 │   │   return await invocation.run_function()                        │
+│   1710                                                                       │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_functions.py: │
+│ 475 in run_function                                                          │
+│                                                                              │
+│    474 │   │   │   if await_response.output.result.status in TERMINAL_STATUS │
+│ ❱  475 │   │   │   │   return await _process_result(                         │
+│    476 │   │   │   │   │   await_response.output.result, await_response.outp │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_utils/functio │
+│ n_utils.py:532 in _process_result                                            │
+│                                                                              │
+│   531 │   │                                                                  │
+│ ❱ 532 │   │   raise RemoteError(result.exception)                            │
+│   533                                                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RemoteError

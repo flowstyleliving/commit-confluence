@@ -1,0 +1,103 @@
+Note that running a local entrypoint in detached mode only keeps the last triggered Modal function alive after the parent process has been killed or disconnected.
+✓ Initialized. View run at 
+https://modal.com/apps/mys628/main/ap-4ixnvpAj4lPgrcZCMXLb4t
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/modal_depth_
+│   b.py
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/seal
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/seal
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/modal_app.py
+├── 🔨 Created function extract_a100.
+├── 🔨 Created function extract_a100x4.
+├── 🔨 Created function extract_h200x2.
+├── 🔨 Created function smoke_a100.
+├── 🔨 Created function smoke_a100x4.
+└── 🔨 Created function smoke_h200x2.
+/seal/pri_v2_io_plugins.py:95: SyntaxWarning: invalid escape sequence '\s'
+  regex's anchor `(?:(?:^|\n)\s*|[\.\:]\s+)` deliberately does NOT match
+
+[1ALoading weights:   0%|          | 0/291 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/291 [00:26<2:06:21, 26.14s/it]
+[1ALoading weights:   1%|          | 2/291 [00:26<53:14, 11.05s/it]  
+[1ALoading weights:   1%|▏         | 4/291 [00:26<19:57,  4.17s/it]
+[1ALoading weights:   2%|▏         | 6/291 [00:26<10:33,  2.22s/it]
+[1ALoading weights:   4%|▍         | 13/291 [00:27<03:07,  1.49it/s]
+[1ALoading weights:   6%|▌         | 17/291 [00:27<02:07,  2.15it/s]
+[1ALoading weights:   8%|▊         | 22/291 [00:29<01:51,  2.42it/s]
+[1ALoading weights:   8%|▊         | 24/291 [00:33<03:30,  1.27it/s]
+[1ALoading weights:   9%|▉         | 27/291 [00:34<02:43,  1.61it/s]
+[1ALoading weights:  10%|▉         | 28/291 [00:35<02:46,  1.58it/s]
+[1ALoading weights:  11%|█         | 31/291 [00:37<03:06,  1.39it/s]
+[1ALoading weights:  11%|█         | 32/291 [00:39<03:39,  1.18it/s]
+[1ALoading weights:  11%|█▏        | 33/291 [00:41<04:03,  1.06it/s]
+[1ALoading weights:  13%|█▎        | 37/291 [00:41<02:20,  1.81it/s]
+[1ALoading weights:  14%|█▍        | 41/291 [00:43<02:02,  2.04it/s]
+[1ALoading weights:  15%|█▌        | 45/291 [00:43<01:19,  3.08it/s]
+[1ALoading weights:  16%|█▌        | 46/291 [00:44<01:44,  2.35it/s]
+[1ALoading weights:  17%|█▋        | 49/291 [00:45<01:32,  2.62it/s]
+[1ALoading weights:  17%|█▋        | 50/291 [00:46<01:46,  2.27it/s]
+[1ALoading weights:  19%|█▉        | 55/291 [00:46<00:55,  4.29it/s]
+[1ALoading weights:  20%|█▉        | 57/291 [00:47<01:19,  2.96it/s]
+[1ALoading weights:  20%|██        | 59/291 [00:48<01:11,  3.24it/s]
+[1ALoading weights:  21%|██        | 61/291 [00:48<01:10,  3.25it/s]
+[1ALoading weights:  22%|██▏       | 64/291 [00:50<01:26,  2.62it/s]
+[1ALoading weights:  23%|██▎       | 67/291 [00:53<02:11,  1.70it/s]
+[1ALoading weights:  24%|██▎       | 69/291 [00:56<02:54,  1.27it/s]
+[1ALoading weights:  26%|██▋       | 77/291 [00:57<01:37,  2.19it/s]
+[1ALoading weights:  28%|██▊       | 81/291 [00:59<01:35,  2.20it/s]
+[1ALoading weights:  29%|██▉       | 84/291 [01:01<01:37,  2.12it/s]
+[1ALoading weights:  29%|██▉       | 85/291 [01:04<02:37,  1.31it/s]
+[1ALoading weights:  30%|██▉       | 86/291 [01:05<02:49,  1.21it/s]
+[1ALoading weights:  30%|██▉       | 87/291 [01:07<03:19,  1.02it/s]
+[1ALoading weights:  33%|███▎      | 95/291 [01:07<01:11,  2.74it/s]
+[1ALoading weights:  35%|███▌      | 103/291 [01:07<00:37,  5.03it/s]
+[1ALoading weights:  37%|███▋      | 108/291 [01:08<00:26,  6.85it/s]
+[1ALoading weights:  39%|███▉      | 113/291 [01:08<00:19,  9.14it/s]
+[1ALoading weights:  42%|████▏     | 121/291 [01:08<00:12, 13.91it/s]
+[1ALoading weights:  43%|████▎     | 126/291 [01:08<00:09, 16.87it/s]
+[1ALoading weights:  45%|████▌     | 131/291 [01:08<00:07, 20.15it/s]
+[1ALoading weights:  48%|████▊     | 139/291 [01:08<00:05, 27.24it/s]
+[1ALoading weights:  49%|████▉     | 144/291 [01:08<00:04, 29.96it/s]
+[1ALoading weights:  51%|█████     | 149/291 [01:08<00:04, 32.20it/s]
+[1ALoading weights:  54%|█████▍    | 157/291 [01:09<00:03, 38.90it/s]
+[1ALoading weights:  56%|█████▌    | 162/291 [01:09<00:03, 39.80it/s]
+[1ALoading weights:  57%|█████▋    | 167/291 [01:09<00:03, 40.51it/s]
+[1ALoading weights:  59%|█████▉    | 172/291 [01:09<00:02, 42.70it/s]
+[1ALoading weights:  61%|██████    | 177/291 [01:09<00:02, 39.55it/s]
+[1ALoading weights:  64%|██████▎   | 185/291 [01:09<00:02, 44.88it/s]
+[1ALoading weights:  65%|██████▌   | 190/291 [01:10<00:07, 13.69it/s]
+[1ALoading weights:  67%|██████▋   | 195/291 [01:10<00:05, 16.27it/s]
+[1ALoading weights:  69%|██████▉   | 202/291 [01:11<00:04, 22.20it/s]
+[1ALoading weights:  71%|███████   | 207/291 [01:11<00:03, 25.32it/s]
+[1ALoading weights:  73%|███████▎  | 212/291 [01:11<00:02, 28.30it/s]
+[1ALoading weights:  76%|███████▌  | 220/291 [01:11<00:01, 35.63it/s]
+[1ALoading weights:  77%|███████▋  | 225/291 [01:11<00:01, 37.40it/s]
+[1ALoading weights:  79%|███████▉  | 230/291 [01:11<00:01, 37.73it/s]
+[1ALoading weights:  82%|████████▏ | 238/291 [01:11<00:01, 44.17it/s]
+[1ALoading weights:  84%|████████▎ | 243/291 [01:11<00:01, 43.84it/s]
+[1ALoading weights:  85%|████████▌ | 248/291 [01:12<00:00, 43.08it/s]
+[1ALoading weights:  88%|████████▊ | 256/291 [01:12<00:00, 48.19it/s]
+[1ALoading weights:  90%|████████▉ | 261/291 [01:12<00:00, 47.31it/s]
+[1ALoading weights:  91%|█████████▏| 266/291 [01:12<00:00, 46.07it/s]
+[1ALoading weights:  94%|█████████▍| 274/291 [01:12<00:00, 50.89it/s]
+[1ALoading weights:  96%|█████████▌| 280/291 [01:12<00:00, 47.57it/s]
+[1ALoading weights:  98%|█████████▊| 285/291 [01:14<00:00,  9.82it/s]
+[1ALoading weights: 100%|██████████| 291/291 [01:14<00:00,  3.91it/s]
+[gridB] meta-llama/Llama-3.1-8B-Instruct anli_r1 precision=nf4 layers=32 H=32 kv=8
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+[gridB] gate row 0: cos=0.9999956 yes_no=True commit='YES'
+[gridB] gate row 1: cos=0.9999957 yes_no=True commit='NO'
+[gridB] 0/200 yes_no_so_far=1
+[gridB] 25/200 yes_no_so_far=26
+[gridB] 50/200 yes_no_so_far=49
+[gridB] 75/200 yes_no_so_far=74
+[gridB] 100/200 yes_no_so_far=99
+[gridB] 125/200 yes_no_so_far=123
+[gridB] 150/200 yes_no_so_far=148
+[gridB] 175/200 yes_no_so_far=170
+[gridB] done in 18s: yes_no_rate=97.00%
+{'model': 'meta-llama/Llama-3.1-8B-Instruct', 'task': 'anli_r1', 'precision': 'nf4', 'n_layers': 32, 'yes_no_commit_rate': 0.97, 'gate_cos': [1.0, 1.0], 'out': '/models/depth_grid_b/anli_r1/Llama-3.1-8B-Instruct.depth.npz', 'gpu_label': 'A100-80GB'}
+GRIDB_EXTRACT_RESULT ok
+✓ App completed. View run at 
+https://modal.com/apps/mys628/main/ap-4ixnvpAj4lPgrcZCMXLb4t

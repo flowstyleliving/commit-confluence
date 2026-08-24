@@ -1,0 +1,21 @@
+=== STAGE 1: small models (8 cells) ===
+15:46:23 launched llama31_8b/anli_r1
+15:46:23 launched llama31_8b/halueval_qa
+15:46:23 launched mistral_small_32/anli_r1
+15:46:23 launched mistral_small_32/halueval_qa
+15:46:23 launched gemma3_12b/anli_r1
+15:46:23 launched gemma3_12b/halueval_qa
+15:46:23 launched gemma3_27b/anli_r1
+15:46:23 launched gemma3_27b/halueval_qa
+15:50:47 stage terminal
+=== STAGE 2: Llama-3.1-70B (2 cells) ===
+15:50:47 launched llama31_70b/anli_r1
+15:50:47 launched llama31_70b/halueval_qa
+15:58:57 stage terminal
+=== STAGE 3: Mistral-Medium-3.5 (2 cells) ===
+15:58:57 launched mistral_medium_35/anli_r1
+15:58:57 launched mistral_medium_35/halueval_qa
+16:09:09 stage terminal
+=== FINAL CHECK: all 12 terminal? ===
+16:09:20 stage terminal
+16:09:20 ALL 12 TERMINAL — marker written

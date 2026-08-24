@@ -1,0 +1,237 @@
+Note that running a local entrypoint in detached mode only keeps the last triggered Modal function alive after the parent process has been killed or disconnected.
+✓ Initialized. View run at 
+https://modal.com/apps/mys628/main/ap-DmMdclubkQri7wzsmx6jas
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/modal_depth_
+│   b.py
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/seal
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/seal
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/modal_app.py
+├── 🔨 Created function extract_a100.
+├── 🔨 Created function extract_a100x4.
+├── 🔨 Created function extract_h200x2.
+├── 🔨 Created function smoke_a100.
+├── 🔨 Created function smoke_a100x4.
+└── 🔨 Created function smoke_h200x2.
+/seal/pri_v2_io_plugins.py:95: SyntaxWarning: invalid escape sequence '\s'
+  regex's anchor `(?:(?:^|\n)\s*|[\.\:]\s+)` deliberately does NOT match
+
+[1ALoading weights:   0%|          | 0/1247 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/1247 [00:01<26:09,  1.26s/it]
+[1ALoading weights:   0%|          | 3/1247 [00:01<08:19,  2.49it/s]
+[1ALoading weights:   0%|          | 4/1247 [00:01<06:11,  3.35it/s]
+[1ALoading weights:   0%|          | 5/1247 [00:01<04:53,  4.23it/s]
+[1ALoading weights:   1%|▏         | 16/1247 [00:01<01:03, 19.49it/s]
+[1ALoading weights:   2%|▏         | 19/1247 [00:02<01:09, 17.80it/s]
+[1ALoading weights:   2%|▏         | 29/1247 [00:02<00:42, 28.48it/s]
+[1ALoading weights:   3%|▎         | 33/1247 [00:02<00:47, 25.58it/s]
+[1ALoading weights:   3%|▎         | 42/1247 [00:02<00:36, 32.82it/s]
+[1ALoading weights:   4%|▎         | 46/1247 [00:02<00:42, 28.25it/s]
+[1ALoading weights:   4%|▍         | 55/1247 [00:02<00:33, 35.99it/s]
+[1ALoading weights:   5%|▍         | 59/1247 [00:03<00:39, 29.97it/s]
+[1ALoading weights:   5%|▌         | 68/1247 [00:03<00:32, 36.25it/s]
+[1ALoading weights:   6%|▌         | 72/1247 [00:03<00:37, 31.47it/s]
+[1ALoading weights:   6%|▋         | 81/1247 [00:03<00:31, 37.20it/s]
+[1ALoading weights:   7%|▋         | 85/1247 [00:03<00:36, 31.56it/s]
+[1ALoading weights:   8%|▊         | 94/1247 [00:04<00:32, 35.67it/s]
+[1ALoading weights:   8%|▊         | 98/1247 [00:04<00:38, 30.06it/s]
+[1ALoading weights:   9%|▊         | 107/1247 [00:04<00:30, 36.89it/s]
+[1ALoading weights:   9%|▉         | 111/1247 [00:04<00:36, 31.04it/s]
+[1ALoading weights:  10%|▉         | 120/1247 [00:04<00:30, 36.68it/s]
+[1ALoading weights:  10%|▉         | 124/1247 [00:05<00:37, 29.85it/s]
+[1ALoading weights:  11%|█         | 133/1247 [00:05<00:30, 36.47it/s]
+[1ALoading weights:  11%|█         | 137/1247 [00:05<00:35, 31.12it/s]
+[1ALoading weights:  12%|█▏        | 146/1247 [00:05<00:29, 37.79it/s]
+[1ALoading weights:  12%|█▏        | 151/1247 [00:05<00:32, 33.69it/s]
+[1ALoading weights:  13%|█▎        | 159/1247 [00:06<00:28, 38.04it/s]
+[1ALoading weights:  13%|█▎        | 164/1247 [00:06<00:31, 34.25it/s]
+[1ALoading weights:  14%|█▍        | 172/1247 [00:06<00:27, 38.43it/s]
+[1ALoading weights:  14%|█▍        | 176/1247 [00:06<00:32, 32.55it/s]
+[1ALoading weights:  15%|█▍        | 185/1247 [00:06<00:26, 39.76it/s]
+[1ALoading weights:  15%|█▌        | 190/1247 [00:06<00:30, 35.20it/s]
+[1ALoading weights:  16%|█▌        | 198/1247 [00:07<00:26, 39.38it/s]
+[1ALoading weights:  16%|█▋        | 203/1247 [00:07<00:30, 34.67it/s]
+[1ALoading weights:  17%|█▋        | 211/1247 [00:07<00:26, 39.02it/s]
+[1ALoading weights:  17%|█▋        | 216/1247 [00:07<00:29, 34.64it/s]
+[1ALoading weights:  18%|█▊        | 224/1247 [00:07<00:26, 38.44it/s]
+[1ALoading weights:  18%|█▊        | 228/1247 [00:07<00:31, 32.55it/s]
+[1ALoading weights:  19%|█▉        | 237/1247 [00:08<00:26, 38.84it/s]
+[1ALoading weights:  19%|█▉        | 242/1247 [00:08<00:28, 34.88it/s]
+[1ALoading weights:  20%|██        | 250/1247 [00:08<00:25, 38.86it/s]
+[1ALoading weights:  20%|██        | 255/1247 [00:08<00:28, 34.48it/s]
+[1ALoading weights:  21%|██        | 263/1247 [00:08<00:25, 39.31it/s]
+[1ALoading weights:  21%|██▏       | 268/1247 [00:09<00:27, 35.31it/s]
+[1ALoading weights:  22%|██▏       | 276/1247 [00:09<00:24, 39.57it/s]
+[1ALoading weights:  23%|██▎       | 281/1247 [00:09<00:27, 34.79it/s]
+[1ALoading weights:  23%|██▎       | 289/1247 [00:09<00:24, 39.40it/s]
+[1ALoading weights:  24%|██▎       | 294/1247 [00:09<00:27, 34.82it/s]
+[1ALoading weights:  24%|██▍       | 302/1247 [00:09<00:24, 39.27it/s]
+[1ALoading weights:  25%|██▍       | 307/1247 [00:10<00:26, 34.87it/s]
+[1ALoading weights:  25%|██▌       | 315/1247 [00:10<00:23, 39.23it/s]
+[1ALoading weights:  26%|██▌       | 320/1247 [00:10<00:26, 35.52it/s]
+[1ALoading weights:  26%|██▋       | 328/1247 [00:10<00:22, 40.26it/s]
+[1ALoading weights:  27%|██▋       | 333/1247 [00:10<00:25, 36.06it/s]
+[1ALoading weights:  27%|██▋       | 341/1247 [00:10<00:21, 41.40it/s]
+[1ALoading weights:  28%|██▊       | 346/1247 [00:11<00:24, 36.55it/s]
+[1ALoading weights:  28%|██▊       | 354/1247 [00:11<00:21, 41.21it/s]
+[1ALoading weights:  29%|██▉       | 359/1247 [00:11<00:24, 36.47it/s]
+[1ALoading weights:  29%|██▉       | 367/1247 [00:11<00:21, 41.05it/s]
+[1ALoading weights:  30%|██▉       | 372/1247 [00:11<00:24, 36.23it/s]
+[1ALoading weights:  30%|███       | 380/1247 [00:11<00:21, 40.44it/s]
+[1ALoading weights:  31%|███       | 385/1247 [00:12<00:24, 35.89it/s]
+[1ALoading weights:  32%|███▏      | 393/1247 [00:12<00:20, 40.97it/s]
+[1ALoading weights:  32%|███▏      | 398/1247 [00:12<00:23, 36.36it/s]
+[1ALoading weights:  33%|███▎      | 406/1247 [00:12<00:20, 40.09it/s]
+[1ALoading weights:  33%|███▎      | 411/1247 [00:12<00:23, 35.63it/s]
+[1ALoading weights:  34%|███▎      | 419/1247 [00:12<00:20, 40.28it/s]
+[1ALoading weights:  34%|███▍      | 424/1247 [00:13<00:22, 36.13it/s]
+[1ALoading weights:  35%|███▍      | 432/1247 [00:13<00:20, 40.12it/s]
+[1ALoading weights:  35%|███▌      | 437/1247 [00:13<00:22, 35.64it/s]
+[1ALoading weights:  36%|███▌      | 445/1247 [00:13<00:19, 40.13it/s]
+[1ALoading weights:  36%|███▌      | 450/1247 [00:13<00:22, 35.15it/s]
+[1ALoading weights:  37%|███▋      | 458/1247 [00:13<00:19, 39.81it/s]
+[1ALoading weights:  37%|███▋      | 463/1247 [00:14<00:22, 35.22it/s]
+[1ALoading weights:  38%|███▊      | 471/1247 [00:14<00:19, 39.96it/s]
+[1ALoading weights:  38%|███▊      | 476/1247 [00:14<00:21, 35.72it/s]
+[1ALoading weights:  39%|███▉      | 484/1247 [00:14<00:18, 40.22it/s]
+[1ALoading weights:  39%|███▉      | 489/1247 [00:14<00:21, 35.50it/s]
+[1ALoading weights:  40%|███▉      | 497/1247 [00:15<00:18, 40.55it/s]
+[1ALoading weights:  40%|████      | 502/1247 [00:15<00:20, 36.10it/s]
+[1ALoading weights:  41%|████      | 510/1247 [00:15<00:18, 40.40it/s]
+[1ALoading weights:  41%|████▏     | 515/1247 [00:15<00:20, 35.54it/s]
+[1ALoading weights:  42%|████▏     | 523/1247 [00:15<00:17, 40.57it/s]
+[1ALoading weights:  42%|████▏     | 528/1247 [00:15<00:19, 35.99it/s]
+[1ALoading weights:  43%|████▎     | 536/1247 [00:16<00:17, 40.48it/s]
+[1ALoading weights:  43%|████▎     | 541/1247 [00:16<00:19, 35.94it/s]
+[1ALoading weights:  44%|████▍     | 549/1247 [00:16<00:17, 40.68it/s]
+[1ALoading weights:  44%|████▍     | 554/1247 [00:16<00:19, 36.10it/s]
+[1ALoading weights:  45%|████▌     | 562/1247 [00:16<00:17, 40.18it/s]
+[1ALoading weights:  45%|████▌     | 567/1247 [00:16<00:19, 35.31it/s]
+[1ALoading weights:  46%|████▌     | 575/1247 [00:17<00:16, 40.59it/s]
+[1ALoading weights:  47%|████▋     | 580/1247 [00:17<00:18, 35.87it/s]
+[1ALoading weights:  47%|████▋     | 588/1247 [00:17<00:16, 40.29it/s]
+[1ALoading weights:  48%|████▊     | 593/1247 [00:17<00:18, 35.96it/s]
+[1ALoading weights:  48%|████▊     | 601/1247 [00:17<00:15, 41.03it/s]
+[1ALoading weights:  49%|████▊     | 606/1247 [00:17<00:17, 36.31it/s]
+[1ALoading weights:  49%|████▉     | 614/1247 [00:18<00:15, 40.35it/s]
+[1ALoading weights:  50%|████▉     | 619/1247 [00:18<00:17, 35.91it/s]
+[1ALoading weights:  50%|█████     | 627/1247 [00:18<00:15, 40.43it/s]
+[1ALoading weights:  51%|█████     | 632/1247 [00:18<00:16, 36.51it/s]
+[1ALoading weights:  51%|█████▏    | 640/1247 [00:18<00:15, 38.89it/s]
+[1ALoading weights:  52%|█████▏    | 644/1247 [00:19<00:19, 31.38it/s]
+[1ALoading weights:  52%|█████▏    | 653/1247 [00:19<00:16, 36.71it/s]
+[1ALoading weights:  53%|█████▎    | 657/1247 [00:19<00:19, 30.59it/s]
+[1ALoading weights:  53%|█████▎    | 666/1247 [00:19<00:16, 35.95it/s]
+[1ALoading weights:  54%|█████▎    | 670/1247 [00:19<00:19, 30.04it/s]
+[1ALoading weights:  54%|█████▍    | 679/1247 [00:19<00:15, 35.82it/s]
+[1ALoading weights:  55%|█████▍    | 683/1247 [00:20<00:18, 30.12it/s]
+[1ALoading weights:  55%|█████▌    | 692/1247 [00:20<00:15, 34.73it/s]
+[1ALoading weights:  56%|█████▌    | 696/1247 [00:20<00:18, 29.02it/s]
+[1ALoading weights:  57%|█████▋    | 705/1247 [00:20<00:15, 34.38it/s]
+[1ALoading weights:  57%|█████▋    | 709/1247 [00:21<00:18, 29.73it/s]
+[1ALoading weights:  58%|█████▊    | 718/1247 [00:21<00:15, 34.76it/s]
+[1ALoading weights:  58%|█████▊    | 722/1247 [00:21<00:17, 29.73it/s]
+[1ALoading weights:  59%|█████▊    | 731/1247 [00:21<00:14, 36.65it/s]
+[1ALoading weights:  59%|█████▉    | 735/1247 [00:21<00:16, 30.28it/s]
+[1ALoading weights:  60%|█████▉    | 744/1247 [00:22<00:14, 34.23it/s]
+[1ALoading weights:  60%|█████▉    | 748/1247 [00:22<00:17, 28.28it/s]
+[1ALoading weights:  61%|██████    | 757/1247 [00:22<00:14, 33.28it/s]
+[1ALoading weights:  61%|██████    | 761/1247 [00:22<00:16, 28.87it/s]
+[1ALoading weights:  62%|██████▏   | 770/1247 [00:22<00:14, 33.95it/s]
+[1ALoading weights:  62%|██████▏   | 774/1247 [00:23<00:16, 28.58it/s]
+[1ALoading weights:  63%|██████▎   | 783/1247 [00:23<00:13, 34.40it/s]
+[1ALoading weights:  63%|██████▎   | 787/1247 [00:23<00:16, 28.69it/s]
+[1ALoading weights:  64%|██████▍   | 796/1247 [00:23<00:12, 35.43it/s]
+[1ALoading weights:  64%|██████▍   | 800/1247 [00:23<00:15, 29.68it/s]
+[1ALoading weights:  67%|██████▋   | 835/1247 [00:23<00:04, 84.87it/s]
+[1ALoading weights:  70%|██████▉   | 869/1247 [00:24<00:02, 130.76it/s]
+[1ALoading weights:  75%|███████▌  | 941/1247 [00:24<00:01, 254.72it/s]
+[1ALoading weights:  83%|████████▎ | 1029/1247 [00:24<00:00, 399.90it/s]
+[1ALoading weights:  89%|████████▉ | 1107/1247 [00:24<00:00, 493.38it/s]
+[1ALoading weights:  95%|█████████▌| 1187/1247 [00:24<00:00, 572.56it/s]
+[1ALoading weights: 100%|██████████| 1247/1247 [00:24<00:00, 50.73it/s] 
+[gridB] google/gemma-3-27b-it anli_r1 precision=nf4 layers=62 H=32 kv=16
+[gridB] gate row 0: cos=0.9999923 yes_no=True commit='YES'
+[gridB] gate row 1: cos=0.9999930 yes_no=True commit='NO'
+GRIDB_EXTRACT_RESULT aborted: row 0 block 3 cell (0, 'Attention', 'final_js_no_bos'): bad score None
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 946, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 172, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 225, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/modal_depth_b.py", line 848, in extract_a100
+    return _extract_body(model_key, task, "A100-80GB")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/modal_depth_b.py", line 737, in _extract_body
+    res = _run_extract(conf, task)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/modal_depth_b.py", line 635, in _run_extract
+    raise RuntimeError(f"row {i} block {li} cell {cell}: bad score {sc!r}")
+RuntimeError: row 0 block 3 cell (0, 'Attention', 'final_js_no_bos'): bad score None
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/modal_depth_ │
+│ b.py:902 in extract                                                          │
+│                                                                              │
+│   901 │   │   │   │   │   │    f"only mistral_medium_35 may fall back to H20 │
+│ ❱ 902 │   print(_fn_for(conf, "extract", gpu or None).remote(model_key, task │
+│   903                                                                        │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_object.py:339 │
+│ in wrapped                                                                   │
+│                                                                              │
+│   338 │   │   await self.hydrate()                                           │
+│ ❱ 339 │   │   return await method(self, *args, **kwargs)                     │
+│   340                                                                        │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_functions.py: │
+│ 1765 in remote                                                               │
+│                                                                              │
+│   1764 │   │                                                                 │
+│ ❱ 1765 │   │   return await self._call_function(args, kwargs)                │
+│   1766                                                                       │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_functions.py: │
+│ 1709 in _call_function                                                       │
+│                                                                              │
+│   1708 │   │                                                                 │
+│ ❱ 1709 │   │   return await invocation.run_function()                        │
+│   1710                                                                       │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_functions.py: │
+│ 494 in run_function                                                          │
+│                                                                              │
+│    493 │   │   │   # No more retries left.                                   │
+│ ❱  494 │   │   │   return await _process_result(                             │
+│    495 │   │   │   │   await_response.output.result, await_response.output.d │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_utils/functio │
+│ n_utils.py:530 in _process_result                                            │
+│                                                                              │
+│   529 │   │   │                                                              │
+│ ❱ 530 │   │   │   raise exc_with_hints(exc)                                  │
+│   531                                                                        │
+│                                                                              │
+│     ...Remote call to Modal Function (ta-01M08YF9EBRT7FZP3W3E6XES0R)...      │
+│                                                                              │
+│ /root/modal_depth_b.py:848 in extract_a100                                   │
+│                                                                              │
+│ ❱ 848 return _extract_body(model_key, task, "A100-80GB")                     │
+│                                                                              │
+│                                                                              │
+│ /root/modal_depth_b.py:737 in _extract_body                                  │
+│                                                                              │
+│ ❱ 737 res = _run_extract(conf, task)                                         │
+│                                                                              │
+│                                                                              │
+│ /root/modal_depth_b.py:635 in _run_extract                                   │
+│                                                                              │
+│ ❱ 635 raise RuntimeError(f"row {i} block {li} cell {cell}: bad score {sc!r}" │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RuntimeError: row 0 block 3 cell (0, 'Attention', 'final_js_no_bos'): bad score 
+None

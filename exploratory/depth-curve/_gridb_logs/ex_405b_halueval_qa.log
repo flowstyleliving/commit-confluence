@@ -1,0 +1,63 @@
+Note that running a local entrypoint in detached mode only keeps the last triggered Modal function alive after the parent process has been killed or disconnected.
+✓ Initialized. View run at 
+https://modal.com/apps/mys628/main/ap-4fmX47bGCmquQrVredQ0Hy
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/modal_depth_
+│   b.py
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/seal
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/seal
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/modal_app.py
+├── 🔨 Created function extract_a100.
+├── 🔨 Created function extract_a100x4.
+├── 🔨 Created function extract_h200x2.
+├── 🔨 Created function extract_a100x8.
+├── 🔨 Created function smoke_a100.
+├── 🔨 Created function smoke_a100x4.
+├── 🔨 Created function smoke_h200x2.
+└── 🔨 Created function smoke_a100x8.
+Stopping app - user stopped from CLI.
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/modal_depth_ │
+│ b.py:931 in extract                                                          │
+│                                                                              │
+│   930 │   │   │   │   │   │    f"only mistral_medium_35 may fall back to H20 │
+│ ❱ 931 │   print(_fn_for(conf, "extract", gpu or None).remote(model_key, task │
+│   932                                                                        │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_object.py:339 │
+│ in wrapped                                                                   │
+│                                                                              │
+│   338 │   │   await self.hydrate()                                           │
+│ ❱ 339 │   │   return await method(self, *args, **kwargs)                     │
+│   340                                                                        │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_functions.py: │
+│ 1765 in remote                                                               │
+│                                                                              │
+│   1764 │   │                                                                 │
+│ ❱ 1765 │   │   return await self._call_function(args, kwargs)                │
+│   1766                                                                       │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_functions.py: │
+│ 1709 in _call_function                                                       │
+│                                                                              │
+│   1708 │   │                                                                 │
+│ ❱ 1709 │   │   return await invocation.run_function()                        │
+│   1710                                                                       │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_functions.py: │
+│ 475 in run_function                                                          │
+│                                                                              │
+│    474 │   │   │   if await_response.output.result.status in TERMINAL_STATUS │
+│ ❱  475 │   │   │   │   return await _process_result(                         │
+│    476 │   │   │   │   │   await_response.output.result, await_response.outp │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_utils/functio │
+│ n_utils.py:532 in _process_result                                            │
+│                                                                              │
+│   531 │   │                                                                  │
+│ ❱ 532 │   │   raise RemoteError(result.exception)                            │
+│   533                                                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RemoteError

@@ -1,0 +1,150 @@
+Note that running a local entrypoint in detached mode only keeps the last triggered Modal function alive after the parent process has been killed or disconnected.
+✓ Initialized. View run at 
+https://modal.com/apps/mys628/main/ap-5bzGDedz1M5lf1KjGC0COt
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/modal_depth_
+│   b.py
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/seal
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/seal
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/modal_app.py
+├── 🔨 Created function extract_a100.
+├── 🔨 Created function extract_a100x4.
+├── 🔨 Created function extract_h200x2.
+├── 🔨 Created function smoke_a100.
+├── 🔨 Created function smoke_a100x4.
+└── 🔨 Created function smoke_h200x2.
+/seal/pri_v2_io_plugins.py:95: SyntaxWarning: invalid escape sequence '\s'
+  regex's anchor `(?:(?:^|\n)\s*|[\.\:]\s+)` deliberately does NOT match
+
+[1AFetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]
+[1AFetching 10 files: 100%|██████████| 10/10 [00:00<00:00, 523.16it/s]
+
+[1ALoading weights:   0%|          | 0/585 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/585 [00:35<5:46:11, 35.57s/it]
+[1ALoading weights:   0%|          | 2/585 [00:36<2:25:48, 15.01s/it]
+[1ALoading weights:   1%|          | 4/585 [00:36<55:24,  5.72s/it]  
+[1ALoading weights:   1%|          | 5/585 [00:36<38:43,  4.01s/it]
+[1ALoading weights:   1%|          | 6/585 [00:36<27:17,  2.83s/it]
+[1ALoading weights:   2%|▏         | 13/585 [00:42<12:19,  1.29s/it]
+[1ALoading weights:   2%|▏         | 14/585 [00:45<15:05,  1.59s/it]
+[1ALoading weights:   3%|▎         | 15/585 [00:52<22:52,  2.41s/it]
+[1ALoading weights:   3%|▎         | 17/585 [00:53<17:26,  1.84s/it]
+[1ALoading weights:   3%|▎         | 18/585 [00:54<15:33,  1.65s/it]
+[1ALoading weights:   3%|▎         | 19/585 [00:55<13:59,  1.48s/it]
+[1ALoading weights:   3%|▎         | 20/585 [00:56<12:18,  1.31s/it]
+[1ALoading weights:   4%|▍         | 22/585 [00:56<07:43,  1.21it/s]
+[1ALoading weights:   4%|▍         | 23/585 [01:01<16:00,  1.71s/it]
+[1ALoading weights:   4%|▍         | 24/585 [01:01<12:30,  1.34s/it]
+[1ALoading weights:   4%|▍         | 26/585 [01:03<10:40,  1.15s/it]
+[1ALoading weights:   5%|▍         | 28/585 [01:04<08:56,  1.04it/s]
+[1ALoading weights:   5%|▌         | 31/585 [01:04<05:11,  1.78it/s]
+[1ALoading weights:   5%|▌         | 32/585 [01:04<04:31,  2.03it/s]
+[1ALoading weights:   6%|▌         | 33/585 [01:04<03:53,  2.36it/s]
+[1ALoading weights:   7%|▋         | 40/585 [01:05<01:27,  6.23it/s]
+[1ALoading weights:   7%|▋         | 42/585 [01:05<01:25,  6.35it/s]
+[1ALoading weights:   8%|▊         | 45/585 [01:05<01:09,  7.83it/s]
+[1ALoading weights:   8%|▊         | 47/585 [01:06<02:11,  4.08it/s]
+[1ALoading weights:   8%|▊         | 49/585 [01:10<05:24,  1.65it/s]
+[1ALoading weights:   9%|▊         | 50/585 [01:16<12:38,  1.42s/it]
+[1ALoading weights:   9%|▊         | 51/585 [01:20<16:54,  1.90s/it]
+[1ALoading weights:   9%|▉         | 54/585 [01:21<10:39,  1.20s/it]
+[1ALoading weights:  10%|▉         | 58/585 [01:21<06:00,  1.46it/s]
+[1ALoading weights:  10%|█         | 59/585 [01:26<11:24,  1.30s/it]
+[1ALoading weights:  10%|█         | 60/585 [01:34<20:51,  2.38s/it]
+[1ALoading weights:  11%|█         | 63/585 [01:34<12:48,  1.47s/it]
+[1ALoading weights:  11%|█         | 64/585 [01:35<11:29,  1.32s/it]
+[1ALoading weights:  11%|█         | 65/585 [01:35<09:26,  1.09s/it]
+[1ALoading weights:  11%|█▏        | 67/585 [01:35<06:18,  1.37it/s]
+[1ALoading weights:  12%|█▏        | 68/585 [01:35<05:17,  1.63it/s]
+[1ALoading weights:  12%|█▏        | 69/585 [01:36<04:23,  1.96it/s]
+[1ALoading weights:  13%|█▎        | 76/585 [01:36<01:30,  5.64it/s]
+[1ALoading weights:  13%|█▎        | 78/585 [01:36<01:26,  5.88it/s]
+[1ALoading weights:  15%|█▍        | 85/585 [01:36<00:47, 10.51it/s]
+[1ALoading weights:  15%|█▌        | 88/585 [01:37<00:47, 10.42it/s]
+[1ALoading weights:  16%|█▌        | 94/585 [01:37<00:34, 14.28it/s]
+[1ALoading weights:  17%|█▋        | 97/585 [01:37<00:36, 13.28it/s]
+[1ALoading weights:  18%|█▊        | 103/585 [01:37<00:28, 16.97it/s]
+[1ALoading weights:  18%|█▊        | 106/585 [01:38<00:32, 14.90it/s]
+[1ALoading weights:  19%|█▉        | 112/585 [01:38<00:24, 19.10it/s]
+[1ALoading weights:  20%|█▉        | 115/585 [01:38<00:29, 16.08it/s]
+[1ALoading weights:  21%|██        | 121/585 [01:38<00:23, 19.83it/s]
+[1ALoading weights:  21%|██        | 124/585 [01:38<00:27, 16.55it/s]
+[1ALoading weights:  22%|██▏       | 130/585 [01:39<00:22, 20.16it/s]
+[1ALoading weights:  23%|██▎       | 133/585 [01:39<00:26, 17.16it/s]
+[1ALoading weights:  24%|██▍       | 139/585 [01:39<00:22, 20.14it/s]
+[1ALoading weights:  24%|██▍       | 142/585 [01:39<00:26, 16.93it/s]
+[1ALoading weights:  25%|██▌       | 148/585 [01:40<00:21, 20.67it/s]
+[1ALoading weights:  26%|██▌       | 151/585 [01:40<00:25, 17.16it/s]
+[1ALoading weights:  27%|██▋       | 157/585 [01:40<00:20, 20.54it/s]
+[1ALoading weights:  27%|██▋       | 160/585 [01:40<00:25, 16.95it/s]
+[1ALoading weights:  28%|██▊       | 166/585 [01:41<00:20, 20.35it/s]
+[1ALoading weights:  29%|██▉       | 169/585 [01:41<00:24, 16.98it/s]
+[1ALoading weights:  30%|██▉       | 175/585 [01:41<00:20, 19.84it/s]
+[1ALoading weights:  30%|███       | 178/585 [01:41<00:24, 16.63it/s]
+[1ALoading weights:  31%|███▏      | 184/585 [01:42<00:19, 20.63it/s]
+[1ALoading weights:  32%|███▏      | 187/585 [01:42<00:23, 16.93it/s]
+[1ALoading weights:  33%|███▎      | 193/585 [01:42<00:19, 20.21it/s]
+[1ALoading weights:  34%|███▎      | 196/585 [01:42<00:23, 16.79it/s]
+[1ALoading weights:  35%|███▍      | 202/585 [01:43<00:18, 20.31it/s]
+[1ALoading weights:  35%|███▌      | 205/585 [01:43<00:22, 16.79it/s]
+[1ALoading weights:  36%|███▌      | 211/585 [01:43<00:18, 20.16it/s]
+[1ALoading weights:  37%|███▋      | 214/585 [01:43<00:21, 17.09it/s]
+[1ALoading weights:  38%|███▊      | 220/585 [01:44<00:17, 20.40it/s]
+[1ALoading weights:  38%|███▊      | 223/585 [01:44<00:20, 17.30it/s]
+[1ALoading weights:  39%|███▉      | 229/585 [01:44<00:16, 21.39it/s]
+[1ALoading weights:  40%|███▉      | 232/585 [01:44<00:19, 17.83it/s]
+[1ALoading weights:  41%|████      | 238/585 [01:44<00:15, 21.83it/s]
+[1ALoading weights:  41%|████      | 241/585 [01:45<00:18, 18.27it/s]
+[1ALoading weights:  42%|████▏     | 247/585 [01:45<00:15, 22.05it/s]
+[1ALoading weights:  43%|████▎     | 250/585 [01:45<00:18, 18.12it/s]
+[1ALoading weights:  44%|████▍     | 256/585 [01:45<00:15, 21.49it/s]
+[1ALoading weights:  44%|████▍     | 259/585 [01:46<00:18, 17.98it/s]
+[1ALoading weights:  45%|████▌     | 265/585 [01:46<00:14, 22.20it/s]
+[1ALoading weights:  46%|████▌     | 268/585 [01:46<00:17, 18.23it/s]
+[1ALoading weights:  47%|████▋     | 274/585 [01:46<00:14, 21.77it/s]
+[1ALoading weights:  47%|████▋     | 277/585 [01:46<00:17, 17.87it/s]
+[1ALoading weights:  48%|████▊     | 283/585 [01:47<00:14, 21.54it/s]
+[1ALoading weights:  49%|████▉     | 286/585 [01:47<00:17, 17.54it/s]
+[1ALoading weights:  50%|████▉     | 292/585 [01:47<00:14, 20.63it/s]
+[1ALoading weights:  50%|█████     | 295/585 [01:47<00:16, 17.44it/s]
+[1ALoading weights:  51%|█████▏    | 301/585 [01:48<00:14, 20.15it/s]
+[1ALoading weights:  52%|█████▏    | 304/585 [01:48<00:17, 15.84it/s]
+[1ALoading weights:  53%|█████▎    | 310/585 [01:48<00:14, 19.11it/s]
+[1ALoading weights:  54%|█████▎    | 313/585 [01:49<00:18, 14.90it/s]
+[1ALoading weights:  55%|█████▍    | 319/585 [01:49<00:15, 17.44it/s]
+[1ALoading weights:  55%|█████▍    | 321/585 [01:49<00:19, 13.21it/s]
+[1ALoading weights:  56%|█████▌    | 328/585 [01:49<00:14, 17.73it/s]
+[1ALoading weights:  57%|█████▋    | 331/585 [01:50<00:18, 13.64it/s]
+[1ALoading weights:  58%|█████▊    | 337/585 [01:50<00:15, 16.09it/s]
+[1ALoading weights:  58%|█████▊    | 339/585 [01:50<00:19, 12.45it/s]
+[1ALoading weights:  59%|█████▉    | 346/585 [01:51<00:14, 16.67it/s]
+[1ALoading weights:  59%|█████▉    | 348/585 [01:51<00:18, 12.81it/s]
+[1ALoading weights:  61%|██████    | 355/585 [01:51<00:13, 16.64it/s]
+[1ALoading weights:  61%|██████    | 357/585 [01:52<00:18, 12.38it/s]
+[1ALoading weights:  64%|██████▍   | 375/585 [01:52<00:06, 31.60it/s]
+[1ALoading weights:  68%|██████▊   | 397/585 [01:52<00:03, 57.26it/s]
+[1ALoading weights:  73%|███████▎  | 429/585 [01:52<00:01, 99.05it/s]
+[1ALoading weights:  81%|████████  | 474/585 [01:52<00:00, 162.17it/s]
+[1ALoading weights:  86%|████████▋ | 506/585 [01:52<00:00, 194.54it/s]
+[1ALoading weights:  91%|█████████ | 533/585 [01:52<00:00, 207.93it/s]
+[1ALoading weights:  99%|█████████▉| 579/585 [01:52<00:00, 269.28it/s]
+[1ALoading weights: 100%|██████████| 585/585 [01:52<00:00,  5.18it/s] 
+[transformers] The tied weights mapping and config for this model specifies to tie model.language_model.embed_tokens.weight to lm_head.weight, but both are present in the checkpoints with different values, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning.
+[gridB] mistralai/Mistral-Small-3.2-24B-Instruct-2506 halueval_qa precision=nf4 layers=40 H=32 kv=8
+[gridB] gate row 0: cos=0.9999967 yes_no=True commit='NO'
+[gridB] gate row 1: cos=0.9999970 yes_no=True commit='YES'
+[gridB] 0/200 yes_no_so_far=1
+[gridB] 25/200 yes_no_so_far=26
+[gridB] 50/200 yes_no_so_far=51
+[gridB] 75/200 yes_no_so_far=76
+[gridB] 100/200 yes_no_so_far=101
+[gridB] 125/200 yes_no_so_far=126
+[gridB] 150/200 yes_no_so_far=151
+[gridB] 175/200 yes_no_so_far=176
+[gridB] done in 29s: yes_no_rate=100.00%
+GRIDB_EXTRACT_RESULT ok
+{'model': 'mistralai/Mistral-Small-3.2-24B-Instruct-2506', 'task': 'halueval_qa', 'precision': 'nf4', 'n_layers': 40, 'yes_no_commit_rate': 1.0, 'gate_cos': [1.0, 1.0], 'out': '/models/depth_grid_b/halueval_qa/Mistral-Small-3.2-24B-Instruct-2506.depth.npz', 'gpu_label': 'A100-80GB'}
+Runner terminated.
+✓ App completed. View run at 
+https://modal.com/apps/mys628/main/ap-5bzGDedz1M5lf1KjGC0COt

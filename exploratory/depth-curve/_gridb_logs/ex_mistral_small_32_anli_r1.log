@@ -1,0 +1,213 @@
+Note that running a local entrypoint in detached mode only keeps the last triggered Modal function alive after the parent process has been killed or disconnected.
+✓ Initialized. View run at 
+https://modal.com/apps/mys628/main/ap-jtxgqiy2oWgI2kdchXx7Hx
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/modal_depth_
+│   b.py
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/seal
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/seal
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/modal_app.py
+├── 🔨 Created function extract_a100.
+├── 🔨 Created function extract_a100x4.
+├── 🔨 Created function extract_h200x2.
+├── 🔨 Created function smoke_a100.
+├── 🔨 Created function smoke_a100x4.
+└── 🔨 Created function smoke_h200x2.
+/seal/pri_v2_io_plugins.py:95: SyntaxWarning: invalid escape sequence '\s'
+  regex's anchor `(?:(?:^|\n)\s*|[\.\:]\s+)` deliberately does NOT match
+
+[1AFetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]
+[1AFetching 10 files: 100%|██████████| 10/10 [00:00<00:00, 502.76it/s]
+
+[1ALoading weights:   0%|          | 0/585 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/585 [00:36<5:52:56, 36.26s/it]
+[1ALoading weights:   0%|          | 2/585 [00:36<2:28:52, 15.32s/it]
+[1ALoading weights:   1%|          | 4/585 [00:37<56:27,  5.83s/it]  
+[1ALoading weights:   1%|          | 5/585 [00:37<39:24,  4.08s/it]
+[1ALoading weights:   1%|          | 6/585 [00:37<27:44,  2.87s/it]
+[1ALoading weights:   2%|▏         | 13/585 [00:42<11:56,  1.25s/it]
+[1ALoading weights:   2%|▏         | 14/585 [00:45<14:31,  1.53s/it]
+[1ALoading weights:   3%|▎         | 15/585 [00:53<23:18,  2.45s/it]
+[1ALoading weights:   3%|▎         | 18/585 [00:55<16:10,  1.71s/it]
+[1ALoading weights:   3%|▎         | 19/585 [00:55<13:41,  1.45s/it]
+[1ALoading weights:   3%|▎         | 20/585 [00:56<13:55,  1.48s/it]
+[1ALoading weights:   4%|▍         | 22/585 [00:57<09:16,  1.01it/s]
+[1ALoading weights:   4%|▍         | 23/585 [01:01<16:34,  1.77s/it]
+[1ALoading weights:   4%|▍         | 24/585 [01:02<13:11,  1.41s/it]
+[1ALoading weights:   5%|▍         | 27/585 [01:03<08:33,  1.09it/s]
+[1ALoading weights:   5%|▍         | 28/585 [01:03<07:38,  1.22it/s]
+[1ALoading weights:   5%|▌         | 31/585 [01:03<04:24,  2.10it/s]
+[1ALoading weights:   5%|▌         | 32/585 [01:04<03:51,  2.38it/s]
+[1ALoading weights:   6%|▌         | 33/585 [01:04<03:20,  2.76it/s]
+[1ALoading weights:   7%|▋         | 40/585 [01:04<01:17,  7.03it/s]
+[1ALoading weights:   7%|▋         | 42/585 [01:06<02:53,  3.12it/s]
+[1ALoading weights:   8%|▊         | 49/585 [01:10<04:18,  2.07it/s]
+[1ALoading weights:   9%|▊         | 50/585 [01:16<08:37,  1.03it/s]
+[1ALoading weights:   9%|▊         | 51/585 [01:20<12:07,  1.36s/it]
+[1ALoading weights:   9%|▉         | 55/585 [01:22<08:46,  1.01it/s]
+[1ALoading weights:  10%|▉         | 58/585 [01:22<06:13,  1.41it/s]
+[1ALoading weights:  10%|█         | 59/585 [01:27<11:04,  1.26s/it]
+[1ALoading weights:  10%|█         | 60/585 [01:33<17:40,  2.02s/it]
+[1ALoading weights:  11%|█         | 62/585 [01:35<13:48,  1.58s/it]
+[1ALoading weights:  11%|█         | 63/585 [01:35<12:27,  1.43s/it]
+[1ALoading weights:  11%|█▏        | 67/585 [01:35<06:18,  1.37it/s]
+[1ALoading weights:  12%|█▏        | 68/585 [01:36<05:32,  1.55it/s]
+[1ALoading weights:  12%|█▏        | 69/585 [01:36<04:46,  1.80it/s]
+[1ALoading weights:  13%|█▎        | 76/585 [01:36<01:51,  4.58it/s]
+[1ALoading weights:  13%|█▎        | 78/585 [01:36<01:44,  4.85it/s]
+[1ALoading weights:  15%|█▍        | 85/585 [01:37<00:58,  8.60it/s]
+[1ALoading weights:  15%|█▍        | 87/585 [01:37<01:00,  8.27it/s]
+[1ALoading weights:  16%|█▌        | 94/585 [01:37<00:38, 12.90it/s]
+[1ALoading weights:  17%|█▋        | 97/585 [01:37<00:39, 12.24it/s]
+[1ALoading weights:  18%|█▊        | 103/585 [01:37<00:30, 15.81it/s]
+[1ALoading weights:  18%|█▊        | 106/585 [01:38<00:33, 14.27it/s]
+[1ALoading weights:  19%|█▉        | 112/585 [01:38<00:25, 18.49it/s]
+[1ALoading weights:  20%|█▉        | 115/585 [01:38<00:29, 15.85it/s]
+[1ALoading weights:  21%|██        | 121/585 [01:38<00:23, 19.42it/s]
+[1ALoading weights:  21%|██        | 124/585 [01:39<00:28, 16.27it/s]
+[1ALoading weights:  22%|██▏       | 130/585 [01:39<00:23, 19.75it/s]
+[1ALoading weights:  23%|██▎       | 133/585 [01:39<00:27, 16.50it/s]
+[1ALoading weights:  24%|██▍       | 139/585 [01:39<00:22, 19.73it/s]
+[1ALoading weights:  24%|██▍       | 142/585 [01:40<00:26, 16.42it/s]
+[1ALoading weights:  25%|██▌       | 148/585 [01:40<00:21, 20.43it/s]
+[1ALoading weights:  26%|██▌       | 151/585 [01:40<00:25, 17.10it/s]
+[1ALoading weights:  27%|██▋       | 157/585 [01:40<00:20, 20.43it/s]
+[1ALoading weights:  27%|██▋       | 160/585 [01:41<00:25, 16.97it/s]
+[1ALoading weights:  28%|██▊       | 166/585 [01:41<00:20, 20.45it/s]
+[1ALoading weights:  29%|██▉       | 169/585 [01:41<00:24, 17.25it/s]
+[1ALoading weights:  30%|██▉       | 175/585 [01:41<00:20, 20.19it/s]
+[1ALoading weights:  30%|███       | 178/585 [01:42<00:23, 17.00it/s]
+[1ALoading weights:  31%|███▏      | 184/585 [01:42<00:19, 20.76it/s]
+[1ALoading weights:  32%|███▏      | 187/585 [01:42<00:22, 17.41it/s]
+[1ALoading weights:  33%|███▎      | 193/585 [01:42<00:18, 20.83it/s]
+[1ALoading weights:  34%|███▎      | 196/585 [01:43<00:22, 17.32it/s]
+[1ALoading weights:  35%|███▍      | 202/585 [01:43<00:18, 20.71it/s]
+[1ALoading weights:  35%|███▌      | 205/585 [01:43<00:22, 17.27it/s]
+[1ALoading weights:  36%|███▌      | 211/585 [01:43<00:18, 20.72it/s]
+[1ALoading weights:  37%|███▋      | 214/585 [01:43<00:21, 17.21it/s]
+[1ALoading weights:  38%|███▊      | 220/585 [01:44<00:17, 20.63it/s]
+[1ALoading weights:  38%|███▊      | 223/585 [01:44<00:21, 17.17it/s]
+[1ALoading weights:  39%|███▉      | 229/585 [01:44<00:16, 20.96it/s]
+[1ALoading weights:  40%|███▉      | 232/585 [01:44<00:20, 17.34it/s]
+[1ALoading weights:  41%|████      | 238/585 [01:45<00:16, 20.97it/s]
+[1ALoading weights:  41%|████      | 241/585 [01:45<00:19, 17.39it/s]
+[1ALoading weights:  42%|████▏     | 247/585 [01:45<00:16, 20.92it/s]
+[1ALoading weights:  43%|████▎     | 250/585 [01:45<00:19, 17.57it/s]
+[1ALoading weights:  44%|████▍     | 256/585 [01:46<00:15, 21.04it/s]
+[1ALoading weights:  44%|████▍     | 259/585 [01:46<00:18, 17.36it/s]
+[1ALoading weights:  45%|████▌     | 265/585 [01:46<00:14, 21.34it/s]
+[1ALoading weights:  46%|████▌     | 268/585 [01:46<00:18, 17.48it/s]
+[1ALoading weights:  47%|████▋     | 274/585 [01:46<00:14, 21.11it/s]
+[1ALoading weights:  47%|████▋     | 277/585 [01:47<00:17, 17.48it/s]
+[1ALoading weights:  48%|████▊     | 283/585 [01:47<00:14, 20.92it/s]
+[1ALoading weights:  49%|████▉     | 286/585 [01:47<00:17, 17.54it/s]
+[1ALoading weights:  50%|████▉     | 292/585 [01:47<00:14, 20.46it/s]
+[1ALoading weights:  50%|█████     | 295/585 [01:48<00:18, 15.96it/s]
+[1ALoading weights:  51%|█████▏    | 301/585 [01:48<00:14, 19.15it/s]
+[1ALoading weights:  52%|█████▏    | 304/585 [01:48<00:18, 15.33it/s]
+[1ALoading weights:  53%|█████▎    | 310/585 [01:49<00:15, 17.96it/s]
+[1ALoading weights:  53%|█████▎    | 312/585 [01:49<00:20, 13.33it/s]
+[1ALoading weights:  55%|█████▍    | 319/585 [01:49<00:15, 17.42it/s]
+[1ALoading weights:  55%|█████▍    | 321/585 [01:50<00:19, 13.30it/s]
+[1ALoading weights:  56%|█████▌    | 328/585 [01:50<00:15, 16.46it/s]
+[1ALoading weights:  56%|█████▋    | 330/585 [01:50<00:20, 12.18it/s]
+[1ALoading weights:  58%|█████▊    | 337/585 [01:50<00:15, 16.15it/s]
+[1ALoading weights:  58%|█████▊    | 339/585 [01:51<00:20, 12.05it/s]
+[1ALoading weights:  59%|█████▉    | 346/585 [01:51<00:14, 16.06it/s]
+[1ALoading weights:  59%|█████▉    | 348/585 [01:52<00:19, 12.35it/s]
+[1ALoading weights:  61%|██████    | 355/585 [01:52<00:14, 15.81it/s]
+[1ALoading weights:  61%|██████    | 357/585 [01:52<00:18, 12.38it/s]
+[1ALoading weights:  64%|██████▍   | 375/585 [01:52<00:06, 31.62it/s]
+[1ALoading weights:  68%|██████▊   | 395/585 [01:52<00:03, 55.25it/s]
+[1ALoading weights:  71%|███████   | 413/585 [01:52<00:02, 76.12it/s]
+[1ALoading weights:  76%|███████▋  | 447/585 [01:53<00:01, 126.27it/s]
+[1ALoading weights:  84%|████████▍ | 490/585 [01:53<00:00, 188.97it/s]
+[1ALoading weights:  89%|████████▊ | 519/585 [01:53<00:00, 211.06it/s]
+[1ALoading weights:  95%|█████████▌| 556/585 [01:53<00:00, 248.58it/s]
+[1ALoading weights: 100%|██████████| 585/585 [01:53<00:00,  5.16it/s] 
+[transformers] The tied weights mapping and config for this model specifies to tie model.language_model.embed_tokens.weight to lm_head.weight, but both are present in the checkpoints with different values, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning.
+[gridB] mistralai/Mistral-Small-3.2-24B-Instruct-2506 anli_r1 precision=nf4 layers=40 H=32 kv=8
+GRIDB_EXTRACT_RESULT aborted: missing smoke prompt manifest: /models/depth_grid_b/manifests/Mistral-Small-3.2-24B-Instruct-2506.anli_r1.prompts.json — run smoke first
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 946, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 172, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 225, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/modal_depth_b.py", line 848, in extract_a100
+    return _extract_body(model_key, task, "A100-80GB")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/modal_depth_b.py", line 737, in _extract_body
+    res = _run_extract(conf, task)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/modal_depth_b.py", line 562, in _run_extract
+    raise RuntimeError(f"missing smoke prompt manifest: {man_path} — run smoke first")
+RuntimeError: missing smoke prompt manifest: /models/depth_grid_b/manifests/Mistral-Small-3.2-24B-Instruct-2506.anli_r1.prompts.json — run smoke first
+Runner terminated.
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/modal_depth_ │
+│ b.py:902 in extract                                                          │
+│                                                                              │
+│   901 │   │   │   │   │   │    f"only mistral_medium_35 may fall back to H20 │
+│ ❱ 902 │   print(_fn_for(conf, "extract", gpu or None).remote(model_key, task │
+│   903                                                                        │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_object.py:339 │
+│ in wrapped                                                                   │
+│                                                                              │
+│   338 │   │   await self.hydrate()                                           │
+│ ❱ 339 │   │   return await method(self, *args, **kwargs)                     │
+│   340                                                                        │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_functions.py: │
+│ 1765 in remote                                                               │
+│                                                                              │
+│   1764 │   │                                                                 │
+│ ❱ 1765 │   │   return await self._call_function(args, kwargs)                │
+│   1766                                                                       │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_functions.py: │
+│ 1709 in _call_function                                                       │
+│                                                                              │
+│   1708 │   │                                                                 │
+│ ❱ 1709 │   │   return await invocation.run_function()                        │
+│   1710                                                                       │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_functions.py: │
+│ 494 in run_function                                                          │
+│                                                                              │
+│    493 │   │   │   # No more retries left.                                   │
+│ ❱  494 │   │   │   return await _process_result(                             │
+│    495 │   │   │   │   await_response.output.result, await_response.output.d │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_utils/functio │
+│ n_utils.py:530 in _process_result                                            │
+│                                                                              │
+│   529 │   │   │                                                              │
+│ ❱ 530 │   │   │   raise exc_with_hints(exc)                                  │
+│   531                                                                        │
+│                                                                              │
+│     ...Remote call to Modal Function (ta-01M08YFBY1WM807VYVKMZB228R)...      │
+│                                                                              │
+│ /root/modal_depth_b.py:848 in extract_a100                                   │
+│                                                                              │
+│ ❱ 848 return _extract_body(model_key, task, "A100-80GB")                     │
+│                                                                              │
+│                                                                              │
+│ /root/modal_depth_b.py:737 in _extract_body                                  │
+│                                                                              │
+│ ❱ 737 res = _run_extract(conf, task)                                         │
+│                                                                              │
+│                                                                              │
+│ /root/modal_depth_b.py:562 in _run_extract                                   │
+│                                                                              │
+│ ❱ 562 raise RuntimeError(f"missing smoke prompt manifest: {man_path} — run s │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RuntimeError: missing smoke prompt manifest: 
+/models/depth_grid_b/manifests/Mistral-Small-3.2-24B-Instruct-2506.anli_r1.promp
+ts.json — run smoke first

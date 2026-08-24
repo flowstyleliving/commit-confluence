@@ -1,0 +1,265 @@
+Note that running a local entrypoint in detached mode only keeps the last triggered Modal function alive after the parent process has been killed or disconnected.
+✓ Initialized. View run at 
+https://modal.com/apps/mys628/main/ap-Vuiwwe0J2MiMxvId76A9G3
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/modal_depth_
+│   b.py
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/seal
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/seal
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/modal_app.py
+├── 🔨 Created function extract_a100.
+├── 🔨 Created function extract_a100x4.
+├── 🔨 Created function extract_h200x2.
+├── 🔨 Created function smoke_a100.
+├── 🔨 Created function smoke_a100x4.
+└── 🔨 Created function smoke_h200x2.
+/seal/pri_v2_io_plugins.py:95: SyntaxWarning: invalid escape sequence '\s'
+  regex's anchor `(?:(?:^|\n)\s*|[\.\:]\s+)` deliberately does NOT match
+
+[1AFetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]
+[1AFetching 10 files: 100%|██████████| 10/10 [00:00<00:00, 640.32it/s]
+
+[1ALoading weights:   0%|          | 0/585 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/585 [00:02<22:26,  2.31s/it]
+[1ALoading weights:   0%|          | 2/585 [00:03<15:28,  1.59s/it]
+[1ALoading weights:   1%|          | 4/585 [00:03<07:19,  1.32it/s]
+[1ALoading weights:   1%|          | 5/585 [00:04<05:52,  1.64it/s]
+[1ALoading weights:   1%|          | 6/585 [00:04<04:53,  1.97it/s]
+[1ALoading weights:   2%|▏         | 13/585 [00:04<01:33,  6.11it/s]
+[1ALoading weights:   2%|▏         | 14/585 [00:05<01:40,  5.67it/s]
+[1ALoading weights:   3%|▎         | 15/585 [00:05<01:44,  5.45it/s]
+[1ALoading weights:   4%|▍         | 22/585 [00:05<00:55, 10.16it/s]
+[1ALoading weights:   4%|▍         | 24/585 [00:06<01:08,  8.17it/s]
+[1ALoading weights:   5%|▌         | 31/585 [00:06<00:45, 12.25it/s]
+[1ALoading weights:   6%|▌         | 33/585 [00:06<00:58,  9.44it/s]
+[1ALoading weights:   7%|▋         | 40/585 [00:07<00:41, 13.08it/s]
+[1ALoading weights:   7%|▋         | 42/585 [00:07<00:52, 10.32it/s]
+[1ALoading weights:   8%|▊         | 49/585 [00:07<00:38, 13.92it/s]
+[1ALoading weights:   9%|▊         | 51/585 [00:08<00:51, 10.38it/s]
+[1ALoading weights:  10%|▉         | 58/585 [00:08<00:39, 13.48it/s]
+[1ALoading weights:  10%|█         | 60/585 [00:08<00:49, 10.56it/s]
+[1ALoading weights:  11%|█▏        | 67/585 [00:09<00:36, 14.03it/s]
+[1ALoading weights:  12%|█▏        | 69/585 [00:09<00:47, 10.78it/s]
+[1ALoading weights:  13%|█▎        | 76/585 [00:09<00:36, 14.08it/s]
+[1ALoading weights:  13%|█▎        | 78/585 [00:10<00:46, 10.95it/s]
+[1ALoading weights:  15%|█▍        | 85/585 [00:10<00:34, 14.39it/s]
+[1ALoading weights:  15%|█▍        | 87/585 [00:11<00:44, 11.09it/s]
+[1ALoading weights:  16%|█▌        | 94/585 [00:11<00:33, 14.52it/s]
+[1ALoading weights:  16%|█▋        | 96/585 [00:11<00:45, 10.85it/s]
+[1ALoading weights:  18%|█▊        | 103/585 [00:12<00:34, 13.84it/s]
+[1ALoading weights:  18%|█▊        | 105/585 [00:12<00:44, 10.83it/s]
+[1ALoading weights:  19%|█▉        | 112/585 [00:12<00:32, 14.67it/s]
+[1ALoading weights:  19%|█▉        | 114/585 [00:13<00:42, 11.10it/s]
+[1ALoading weights:  21%|██        | 121/585 [00:13<00:32, 14.41it/s]
+[1ALoading weights:  21%|██        | 123/585 [00:13<00:41, 11.06it/s]
+[1ALoading weights:  22%|██▏       | 130/585 [00:14<00:31, 14.41it/s]
+[1ALoading weights:  23%|██▎       | 132/585 [00:14<00:41, 11.05it/s]
+[1ALoading weights:  24%|██▍       | 139/585 [00:14<00:31, 14.21it/s]
+[1ALoading weights:  24%|██▍       | 141/585 [00:15<00:40, 11.03it/s]
+[1ALoading weights:  25%|██▌       | 148/585 [00:15<00:29, 14.73it/s]
+[1ALoading weights:  26%|██▌       | 150/585 [00:16<00:38, 11.27it/s]
+[1ALoading weights:  27%|██▋       | 157/585 [00:16<00:29, 14.60it/s]
+[1ALoading weights:  27%|██▋       | 159/585 [00:16<00:38, 11.15it/s]
+[1ALoading weights:  28%|██▊       | 166/585 [00:17<00:28, 14.53it/s]
+[1ALoading weights:  29%|██▊       | 168/585 [00:17<00:37, 11.13it/s]
+[1ALoading weights:  30%|██▉       | 175/585 [00:17<00:28, 14.31it/s]
+[1ALoading weights:  30%|███       | 177/585 [00:18<00:36, 11.09it/s]
+[1ALoading weights:  31%|███▏      | 184/585 [00:18<00:27, 14.85it/s]
+[1ALoading weights:  32%|███▏      | 186/585 [00:18<00:35, 11.35it/s]
+[1ALoading weights:  33%|███▎      | 193/585 [00:19<00:26, 14.69it/s]
+[1ALoading weights:  33%|███▎      | 195/585 [00:19<00:35, 11.12it/s]
+[1ALoading weights:  35%|███▍      | 202/585 [00:19<00:26, 14.53it/s]
+[1ALoading weights:  35%|███▍      | 204/585 [00:20<00:34, 11.16it/s]
+[1ALoading weights:  36%|███▌      | 211/585 [00:20<00:25, 14.58it/s]
+[1ALoading weights:  36%|███▋      | 213/585 [00:20<00:33, 11.22it/s]
+[1ALoading weights:  38%|███▊      | 220/585 [00:21<00:25, 14.49it/s]
+[1ALoading weights:  38%|███▊      | 222/585 [00:21<00:32, 11.23it/s]
+[1ALoading weights:  39%|███▉      | 229/585 [00:21<00:23, 14.94it/s]
+[1ALoading weights:  39%|███▉      | 231/585 [00:22<00:30, 11.46it/s]
+[1ALoading weights:  41%|████      | 238/585 [00:22<00:23, 15.02it/s]
+[1ALoading weights:  41%|████      | 240/585 [00:23<00:29, 11.53it/s]
+[1ALoading weights:  42%|████▏     | 247/585 [00:23<00:22, 14.90it/s]
+[1ALoading weights:  43%|████▎     | 249/585 [00:23<00:29, 11.45it/s]
+[1ALoading weights:  44%|████▍     | 256/585 [00:24<00:22, 14.82it/s]
+[1ALoading weights:  44%|████▍     | 258/585 [00:24<00:28, 11.46it/s]
+[1ALoading weights:  45%|████▌     | 265/585 [00:24<00:21, 15.13it/s]
+[1ALoading weights:  46%|████▌     | 267/585 [00:25<00:27, 11.51it/s]
+[1ALoading weights:  47%|████▋     | 274/585 [00:25<00:20, 14.96it/s]
+[1ALoading weights:  47%|████▋     | 276/585 [00:25<00:27, 11.43it/s]
+[1ALoading weights:  48%|████▊     | 283/585 [00:26<00:20, 14.96it/s]
+[1ALoading weights:  49%|████▊     | 285/585 [00:26<00:26, 11.45it/s]
+[1ALoading weights:  50%|████▉     | 292/585 [00:26<00:19, 14.66it/s]
+[1ALoading weights:  50%|█████     | 294/585 [00:27<00:25, 11.25it/s]
+[1ALoading weights:  51%|█████▏    | 301/585 [00:27<00:18, 15.14it/s]
+[1ALoading weights:  52%|█████▏    | 303/585 [00:27<00:24, 11.50it/s]
+[1ALoading weights:  53%|█████▎    | 310/585 [00:28<00:18, 15.10it/s]
+[1ALoading weights:  53%|█████▎    | 312/585 [00:28<00:23, 11.58it/s]
+[1ALoading weights:  55%|█████▍    | 319/585 [00:28<00:17, 15.06it/s]
+[1ALoading weights:  55%|█████▍    | 321/585 [00:29<00:23, 11.40it/s]
+[1ALoading weights:  56%|█████▌    | 328/585 [00:29<00:17, 14.86it/s]
+[1ALoading weights:  56%|█████▋    | 330/585 [00:29<00:22, 11.42it/s]
+[1ALoading weights:  58%|█████▊    | 337/585 [00:30<00:19, 12.69it/s]
+[1ALoading weights:  58%|█████▊    | 339/585 [00:30<00:27,  9.00it/s]
+[1ALoading weights:  59%|█████▉    | 346/585 [00:31<00:20, 11.84it/s]
+[1ALoading weights:  59%|█████▉    | 348/585 [00:31<00:27,  8.73it/s]
+[1ALoading weights:  61%|██████    | 355/585 [00:32<00:20, 11.24it/s]
+[1ALoading weights:  61%|██████    | 357/585 [00:32<00:26,  8.49it/s]
+[1ALoading weights:  62%|██████▏   | 365/585 [00:32<00:15, 14.09it/s]
+[1ALoading weights:  67%|██████▋   | 391/585 [00:33<00:04, 39.19it/s]
+[1ALoading weights:  70%|███████   | 411/585 [00:33<00:02, 59.25it/s]
+[1ALoading weights:  76%|███████▌  | 445/585 [00:33<00:01, 102.23it/s]
+[1ALoading weights:  83%|████████▎ | 483/585 [00:33<00:00, 149.97it/s]
+[1ALoading weights:  89%|████████▊ | 519/585 [00:33<00:00, 187.39it/s]
+[1ALoading weights:  96%|█████████▌| 562/585 [00:33<00:00, 239.52it/s]
+[1ALoading weights: 100%|██████████| 585/585 [00:33<00:00, 17.39it/s] 
+[transformers] The tied weights mapping and config for this model specifies to tie model.language_model.embed_tokens.weight to lm_head.weight, but both are present in the checkpoints with different values, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning.
+[smoke] mistral_small_32 anli_r1: FAILED — SMOKE GATE FAIL mistral_small_32/anli_r1: commit not YES/NO ('YES'/'To')
+[smoke] mistral_small_32 halueval_qa: cos=1.00000/1.00000 yes_no=True/True commit='NO'/'YES' manifest_sha=cdf8712562d397c6…
+SMOKE_RESULT
+{
+  "model_key": "mistral_small_32",
+  "model_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "revision": "95a6d26c4bfb886c58daf9d3f7332c857cb27b43",
+  "precision": "nf4",
+  "load_notes": {
+    "gpu_names": [
+      "NVIDIA A100-SXM4-80GB"
+    ],
+    "param_dtype_hist": {
+      "torch.bfloat16": 134,
+      "torch.uint8": 451
+    },
+    "decoder_linear_types": {
+      "Linear4bit": 280
+    }
+  },
+  "wrapper_class": "Mistral3ForConditionalGeneration",
+  "n_layers": 40,
+  "n_heads": 32,
+  "n_kv": 8,
+  "tasks": {
+    "anli_r1": {
+      "gate": [
+        {
+          "row": 0,
+          "cos": 1.0,
+          "yes_no": true,
+          "commit": "'YES'"
+        },
+        {
+          "row": 1,
+          "cos": 1.0,
+          "yes_no": false,
+          "commit": "'To'"
+        }
+      ],
+      "n_rows": 200,
+      "max_tokens_ok": true,
+      "mistral_xcheck": {
+        "mismatches": 0,
+        "first": null
+      },
+      "smoke_failure": "RuntimeError: SMOKE GATE FAIL mistral_small_32/anli_r1: commit not YES/NO ('YES'/'To')"
+    },
+    "halueval_qa": {
+      "gate": [
+        {
+          "row": 0,
+          "cos": 1.0,
+          "yes_no": true,
+          "commit": "'NO'"
+        },
+        {
+          "row": 1,
+          "cos": 1.0,
+          "yes_no": true,
+          "commit": "'YES'"
+        }
+      ],
+      "n_rows": 200,
+      "max_tokens_ok": true,
+      "mistral_xcheck": {
+        "mismatches": 0,
+        "first": null
+      },
+      "manifest_sha256": "cdf8712562d397c6fd15858de1d25af278606ed9d54f6062e5a2fa58469bcd3f"
+    }
+  },
+  "failed_tasks": {
+    "anli_r1": "RuntimeError: SMOKE GATE FAIL mistral_small_32/anli_r1: commit not YES/NO ('YES'/'To')"
+  }
+}
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 946, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 172, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 225, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/modal_depth_b.py", line 834, in smoke_a100
+    return _smoke_body(model_key)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/modal_depth_b.py", line 807, in _smoke_body
+    raise RuntimeError(f"SMOKE completed with failed task(s) {list(failed_tasks)} "
+RuntimeError: SMOKE completed with failed task(s) ['anli_r1'] — report + passing manifests written; failing cells will abort at extraction into registered failures
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/modal_depth_ │
+│ b.py:861 in smoke                                                            │
+│                                                                              │
+│   860 │   conf = REGISTRY[model_key]                                         │
+│ ❱ 861 │   print(_fn_for(conf, "smoke", gpu or None).remote(model_key))       │
+│   862                                                                        │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_object.py:339 │
+│ in wrapped                                                                   │
+│                                                                              │
+│   338 │   │   await self.hydrate()                                           │
+│ ❱ 339 │   │   return await method(self, *args, **kwargs)                     │
+│   340                                                                        │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_functions.py: │
+│ 1765 in remote                                                               │
+│                                                                              │
+│   1764 │   │                                                                 │
+│ ❱ 1765 │   │   return await self._call_function(args, kwargs)                │
+│   1766                                                                       │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_functions.py: │
+│ 1709 in _call_function                                                       │
+│                                                                              │
+│   1708 │   │                                                                 │
+│ ❱ 1709 │   │   return await invocation.run_function()                        │
+│   1710                                                                       │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_functions.py: │
+│ 494 in run_function                                                          │
+│                                                                              │
+│    493 │   │   │   # No more retries left.                                   │
+│ ❱  494 │   │   │   return await _process_result(                             │
+│    495 │   │   │   │   await_response.output.result, await_response.output.d │
+│                                                                              │
+│ /Users/msrk/Library/Python/3.9/lib/python/site-packages/modal/_utils/functio │
+│ n_utils.py:530 in _process_result                                            │
+│                                                                              │
+│   529 │   │   │                                                              │
+│ ❱ 530 │   │   │   raise exc_with_hints(exc)                                  │
+│   531                                                                        │
+│                                                                              │
+│     ...Remote call to Modal Function (ta-01M08XXJ9VD9KCHKT568QVJ6MR)...      │
+│                                                                              │
+│ /root/modal_depth_b.py:834 in smoke_a100                                     │
+│                                                                              │
+│ ❱ 834 return _smoke_body(model_key)                                          │
+│                                                                              │
+│                                                                              │
+│ /root/modal_depth_b.py:807 in _smoke_body                                    │
+│                                                                              │
+│ ❱ 807 raise RuntimeError(f"SMOKE completed with failed task(s) {list(failed_ │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RuntimeError: SMOKE completed with failed task(s) ['anli_r1'] — report + passing
+manifests written; failing cells will abort at extraction into registered 
+failures

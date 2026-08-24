@@ -572,12 +572,12 @@ def table_t2(check_only=False):
         tex.append(" & ".join(r) + " \\\\")
     tex += ["\\bottomrule", "\\end{tabular}",
             "% Denominator is ALWAYS 12, including the 3 aborted cells.",
-            "% Sensitivity (registered): leave-Medium-out E5 %s; evaluable-only E5 %s."
+            "%% Sensitivity (registered): leave-Medium-out E5 %s; evaluable-only E5 %s."
             % (sens["leave_medium_out"]["e5_of_10"], sens["evaluable_only"]["e5"]),
             "% Reported as written: a registered miss is a miss."]
     txt = ["REGISTERED ENDPOINT LEDGER (denominator always 12, aborted cells included)", ""]
     for i, e, bar, act, out in rows:
-        txt += ["%-5s %s" % (i, e), "      bar    : %s" % bar.replace("$", "").replace("\\geq", ">="),
+        txt += ["%-5s %s" % (i, e), "      bar    : %s" % bar.replace("$", "").replace("\\geq", ">=").replace("\\leq", "<=").replace("_{grid}", "_grid").replace("--", "-"),
                 "      actual : %s" % act.replace("$", "").replace("_{grid}", "_grid"),
                 "      OUTCOME: %s" % out, ""]
     txt += ["Sensitivity (registered): leave-Medium-out E5 %s; evaluable-only E5 %s."
