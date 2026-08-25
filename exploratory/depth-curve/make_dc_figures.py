@@ -554,12 +554,13 @@ def table_t2(check_only=False):
         ("E6", "cliff onset",
          "gatekept on E5 == CONFIRM; then $\\geq$9/12 AND $\\geq$4/6 per task AND "
          r"$\geq$2/4 per family AND $p_{grid}<0.05$",
-         "gate closed (E5 did not CONFIRM); descriptive 2/12",
+         "gate closed (E5 did not CONFIRM); descriptive-only count 2/12 carries no verdict",
          "NOT TESTED -- no cliff endpoint was ever evaluated"),
         ("E7", "cross-task peak distance", "descriptive-registered, no bar, no verdict vocabulary",
          "6 models reported", "descriptive"),
         ("E8", "Llama mid-stack band context", "descriptive-registered, no bar",
-         "P8 hit (band replicates at 3.1-70B); P9 hit (absent at 8B)", "descriptive"),
+         "P8 hit on ANLI ($\\geq$10 qualifying mid-blocks, majority of folds, 3.1-70B); "
+         "P9 hit on ANLI ($<$5, 3.1-8B)", "descriptive"),
         ("E1''", "peak-fraction panel", "descriptive-registered, no bar",
          "no transferable placement rule fired", "descriptive -- no rule established"),
     ]

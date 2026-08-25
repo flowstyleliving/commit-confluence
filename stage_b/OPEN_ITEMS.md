@@ -4,7 +4,7 @@ This is the one place open threads live, so no session has to remember which han
 file to reopen. Newest concerns first. When an item closes, move it to CLOSED at the
 bottom with the commit that closed it. Every item names its own detail file.
 
-Last touched: 2026-07-14.
+Last touched: 2026-08-24 (O4 executed).
 
 ---
 
@@ -58,7 +58,7 @@ Last touched: 2026-07-14.
 - **Detail:** `wiki/results/e3-stem-aware-2026-07-14.md` (vault).
 - **Owner:** executor. REGEN DONE + VALIDATED; awaiting commit alongside strict Phase-4 checkpoint.
 
-### O4 — Scoped adversarial audit of the reviewer packet + A2/A3 logic
+### O4 — Scoped adversarial audit of the reviewer packet + A2/A3 logic  ⟶ EXECUTED 2026-08-24
 - **What:** Codex authored A2/A3, so it has not been adversarially reviewed by fresh eyes — only
   executionally verified (endpoints reproduce, E3 draws stems). Audit scope: (a) the
   reviewer-facing packet (README construct box, 5-tier status table, claim→artifact map,
@@ -70,7 +70,20 @@ Last touched: 2026-07-14.
 - **Explicitly OUT of scope:** the manifest / hash-chain and smoke provenance — those move under
   O1+O2 and get ONE clean audit after A4. Auditing them now is wasted.
 - **Detail / work order:** `stage_b/CODEX_WORKORDER_AUDIT_REVIEWER_PACKET.md`
-- **Owner:** fresh reviewer (NOT Codex — it wrote the code). NOT STARTED.
+- **EXECUTED 2026-08-24** by fresh eyes (Claude Code, read-only; not Codex). Report:
+  `stage_b/O4_AUDIT_REPORT.md`.
+- **Outcome (one line):** no published number is wrong and four of the work order's own
+  suspicions were refuted, but 8 MAJOR / 24 MINOR / 9 NIT findings stand (union of both passes;
+  probes L1 and L4 were executed twice after a spend-limit interruption and returned
+  overlapping but non-identical findings — see the counting note in the report) — headed by the A3
+  exclusion gate being self-referential (it hashes the files it checks, so substituted sealed
+  references cannot fail it, and it is strictly weaker than the pre-A3 path check) and by
+  `README.md`'s "raw geometry 18/18", which re-commits the denominator leak `SELF_REVIEW.md`
+  C1 already caught and fixed in code.
+- **Owner:** MK / executor — every finding is a FORWARD-ONLY work order; **nothing was applied.**
+  The gate-hardening items touch `run_bench.py` / `check_fresh_data.py` and are therefore
+  Amendments: batch them with A4's re-stamp (O1) rather than triggering a second one. The
+  documentation and LICENSE/CITATION items are independent and can land now.
 
 ---
 
