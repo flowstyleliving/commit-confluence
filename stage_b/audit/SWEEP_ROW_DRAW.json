@@ -1,0 +1,386 @@
+{
+ "schema": "cc-sweep-row-draw/1",
+ "purpose": "Pre-fixed ACE row indices for the sealed-cell reproducibility sweep. Drawn BEFORE any cell ran. Re-picking rows after a mismatch is cherry-picking and is forbidden.",
+ "seed": 20260823,
+ "rows_per_cell": 4,
+ "readout_prefix": 4,
+ "cell_order": "task ascending, then model slug ascending; one shared Generator consumed in that order",
+ "rng": "numpy.random.default_rng(SEED).choice(n, size=4, replace=False), numpy 2.0.2",
+ "drawing_code": "#!/usr/bin/env python3\n\"\"\"Fix the ACE row draw for the commit-confluence sealed reproducibility sweep.\n\nRun ONCE, BEFORE any cell is verified. Writes stage_b/audit/SWEEP_ROW_DRAW.json.\nRe-running reproduces byte-identical output (pure function of SEED + the cohort).\n\nDraw protocol\n-------------\nSEED = 20260823 (single global seed, stated in the sweep report).\nCells are ordered canonically: task ascending, then model slug ascending (Python\nsort on the exact profile basenames found on disk). One numpy Generator is created\nfrom SEED and consumed in that order, so cell k's draw depends on the whole prefix\n-> the draw cannot be re-rolled per cell without changing every later cell.\nFor each cell: n = number of lines in that cell's data jsonl (asserted == the\nprofile's n_aligned, which is what verify_cell.py requires), and 4 DISTINCT indices\nare drawn uniformly without replacement from range(n). Order as drawn is preserved.\n\"\"\"\nimport glob\nimport hashlib\nimport json\nimport os\n\nimport numpy as np\n\nSEED = 20260823\nK = 4  # ACE rows per cell\nREADOUT_PREFIX = 4  # fixed by protocol (RNG-aligned prefix), not drawn\nCC_ROOT = \"/Users/msrk/Documents/commit-confluence\"\nTASKS = [\"anli_r1\", \"triviaqa_paired\"]\nOUT = os.path.join(CC_ROOT, \"stage_b\", \"audit\", \"SWEEP_ROW_DRAW.json\")\n\n# already-executed audit cells and the rows those runs actually used (historical,\n# NOT re-drawn; recorded so the sweep can never silently re-pick them)\nALREADY = {\n    (\"anli_r1\", \"Qwen2.5-7B-Instruct-4bit\"): [168, 21, 0, 100],\n    (\"triviaqa_paired\", \"Llama-3.2-3B-Instruct-4bit\"): [7, 42, 123, 199],\n}\n\ncells = []\nfor task in TASKS:\n    for p in sorted(glob.glob(os.path.join(CC_ROOT, \"stage_b\", \"profiles\", task, \"*.profile.json\"))):\n        slug = os.path.basename(p)[: -len(\".profile.json\")]\n        prof = json.load(open(p))\n        data_path = os.path.join(CC_ROOT, prof[\"data_path\"])\n        n = len(open(data_path).read().splitlines())\n        assert n == prof[\"n_aligned\"], (task, slug, n, prof[\"n_aligned\"])\n        cells.append({\"task\": task, \"model_slug\": slug, \"model_id\": prof[\"model\"],\n                      \"n_rows\": n, \"data_path\": prof[\"data_path\"],\n                      \"geom_deployable\": prof[\"secondary_geometric_only\"][\"deployable\"],\n                      \"geom_winner\": prof[\"secondary_geometric_only\"][\"winner\"],\n                      \"primary_winner\": prof[\"primary_full_panel\"][\"winner\"]})\n\nrng = np.random.default_rng(SEED)\nfor c in cells:\n    c[\"ace_rows\"] = [int(x) for x in rng.choice(c[\"n_rows\"], size=K, replace=False)]\n    c[\"readout_prefix\"] = READOUT_PREFIX\n    key = (c[\"task\"], c[\"model_slug\"])\n    c[\"already_audited\"] = key in ALREADY\n    if key in ALREADY:\n        c[\"historical_ace_rows_used\"] = ALREADY[key]\n\ndoc = {\n    \"schema\": \"cc-sweep-row-draw/1\",\n    \"purpose\": \"Pre-fixed ACE row indices for the sealed-cell reproducibility sweep. \"\n               \"Drawn BEFORE any cell ran. Re-picking rows after a mismatch is \"\n               \"cherry-picking and is forbidden.\",\n    \"seed\": SEED,\n    \"rows_per_cell\": K,\n    \"readout_prefix\": READOUT_PREFIX,\n    \"cell_order\": \"task ascending, then model slug ascending; one shared Generator \"\n                  \"consumed in that order\",\n    \"rng\": \"numpy.random.default_rng(SEED).choice(n, size=4, replace=False), numpy \"\n           + np.__version__,\n    \"drawing_code\": open(os.path.abspath(__file__)).read(),\n    \"drawing_code_sha256\": hashlib.sha256(open(os.path.abspath(__file__), \"rb\").read()).hexdigest(),\n    \"n_cells\": len(cells),\n    \"cells\": cells,\n}\nwith open(OUT, \"w\") as f:\n    json.dump(doc, f, indent=1)\nprint(f\"wrote {OUT}  ({len(cells)} cells, seed {SEED})\")\nfor c in cells:\n    flag = \"  [ALREADY AUDITED]\" if c[\"already_audited\"] else \"\"\n    print(f\"  {c['task']:16s} {c['model_slug']:32s} n={c['n_rows']} rows={c['ace_rows']}{flag}\")\n",
+ "drawing_code_sha256": "e8d59e1b2b29c311a8b78f7fa51d782ac3b8a1668780474134776bc3e20900fd",
+ "n_cells": 20,
+ "cells": [
+  {
+   "task": "anli_r1",
+   "model_slug": "Llama-3.1-8B-Instruct-4bit",
+   "model_id": "mlx-community/Llama-3.1-8B-Instruct-4bit",
+   "n_rows": 200,
+   "data_path": "stage_b/data/anli_R1_seed20260612_n200.jsonl",
+   "geom_deployable": false,
+   "geom_winner": "attention[mid_v_norm_lastq_weighted] @ step 0",
+   "primary_winner": "attention[mid_v_norm_lastq_weighted] @ step 0",
+   "ace_rows": [
+    8,
+    35,
+    170,
+    3
+   ],
+   "readout_prefix": 4,
+   "already_audited": false
+  },
+  {
+   "task": "anli_r1",
+   "model_slug": "Llama-3.2-3B-Instruct-4bit",
+   "model_id": "mlx-community/Llama-3.2-3B-Instruct-4bit",
+   "n_rows": 200,
+   "data_path": "stage_b/data/anli_R1_seed20260612_n200.jsonl",
+   "geom_deployable": true,
+   "geom_winner": "Readout spectral_entropy @ step 0",
+   "primary_winner": "Readout spectral_entropy @ step 0",
+   "ace_rows": [
+    74,
+    185,
+    191,
+    92
+   ],
+   "readout_prefix": 4,
+   "already_audited": false
+  },
+  {
+   "task": "anli_r1",
+   "model_slug": "Mistral-7B-Instruct-v0.3-4bit",
+   "model_id": "mlx-community/Mistral-7B-Instruct-v0.3-4bit",
+   "n_rows": 200,
+   "data_path": "stage_b/data/anli_R1_seed20260612_n200.jsonl",
+   "geom_deployable": true,
+   "geom_winner": "Readout fisher_eff_rank @ step 0",
+   "primary_winner": "Readout fisher_eff_rank @ step 0",
+   "ace_rows": [
+    58,
+    139,
+    190,
+    165
+   ],
+   "readout_prefix": 4,
+   "already_audited": false
+  },
+  {
+   "task": "anli_r1",
+   "model_slug": "Mistral-Nemo-Instruct-2407-4bit",
+   "model_id": "mlx-community/Mistral-Nemo-Instruct-2407-4bit",
+   "n_rows": 200,
+   "data_path": "stage_b/data/anli_R1_seed20260612_n200.jsonl",
+   "geom_deployable": true,
+   "geom_winner": "attention[last_minus_1_bos_mass] @ step 0",
+   "primary_winner": "attention[last_minus_1_bos_mass] @ step 0",
+   "ace_rows": [
+    148,
+    128,
+    193,
+    192
+   ],
+   "readout_prefix": 4,
+   "already_audited": false
+  },
+  {
+   "task": "anli_r1",
+   "model_slug": "Phi-3.5-mini-instruct-4bit",
+   "model_id": "mlx-community/Phi-3.5-mini-instruct-4bit",
+   "n_rows": 200,
+   "data_path": "stage_b/data/anli_R1_seed20260612_n200.jsonl",
+   "geom_deployable": true,
+   "geom_winner": "attention[final_bos_mass] @ step 0",
+   "primary_winner": "attention[final_bos_mass] @ step 0",
+   "ace_rows": [
+    73,
+    181,
+    52,
+    83
+   ],
+   "readout_prefix": 4,
+   "already_audited": false
+  },
+  {
+   "task": "anli_r1",
+   "model_slug": "Phi-4-mini-instruct-4bit",
+   "model_id": "mlx-community/Phi-4-mini-instruct-4bit",
+   "n_rows": 200,
+   "data_path": "stage_b/data/anli_R1_seed20260612_n200.jsonl",
+   "geom_deployable": true,
+   "geom_winner": "Fusion fusion_rank_mean_geom @ step 0",
+   "primary_winner": "Fusion fusion_rank_mean_geom @ step 0",
+   "ace_rows": [
+    22,
+    161,
+    48,
+    129
+   ],
+   "readout_prefix": 4,
+   "already_audited": false
+  },
+  {
+   "task": "anli_r1",
+   "model_slug": "Qwen2.5-7B-Instruct-4bit",
+   "model_id": "mlx-community/Qwen2.5-7B-Instruct-4bit",
+   "n_rows": 200,
+   "data_path": "stage_b/data/anli_R1_seed20260612_n200.jsonl",
+   "geom_deployable": true,
+   "geom_winner": "attention[final_bos_mass] @ step 0",
+   "primary_winner": "attention[final_bos_mass] @ step 0",
+   "ace_rows": [
+    36,
+    171,
+    3,
+    62
+   ],
+   "readout_prefix": 4,
+   "already_audited": true,
+   "historical_ace_rows_used": [
+    168,
+    21,
+    0,
+    100
+   ]
+  },
+  {
+   "task": "anli_r1",
+   "model_slug": "Qwen3-1.7B-4bit",
+   "model_id": "mlx-community/Qwen3-1.7B-4bit",
+   "n_rows": 200,
+   "data_path": "stage_b/data/anli_R1_seed20260612_n200.jsonl",
+   "geom_deployable": true,
+   "geom_winner": "attention[final_js_kv_groups] @ step 0",
+   "primary_winner": "attention[final_js_kv_groups] @ step 0",
+   "ace_rows": [
+    95,
+    127,
+    32,
+    158
+   ],
+   "readout_prefix": 4,
+   "already_audited": false
+  },
+  {
+   "task": "anli_r1",
+   "model_slug": "Qwen3-8B-4bit",
+   "model_id": "mlx-community/Qwen3-8B-4bit",
+   "n_rows": 200,
+   "data_path": "stage_b/data/anli_R1_seed20260612_n200.jsonl",
+   "geom_deployable": true,
+   "geom_winner": "attention[last_minus_1_v_norm_lastq_weighted] @ step 0",
+   "primary_winner": "attention[last_minus_1_v_norm_lastq_weighted] @ step 0",
+   "ace_rows": [
+    29,
+    171,
+    7,
+    99
+   ],
+   "readout_prefix": 4,
+   "already_audited": false
+  },
+  {
+   "task": "anli_r1",
+   "model_slug": "gemma-3-4b-it-4bit",
+   "model_id": "mlx-community/gemma-3-4b-it-4bit",
+   "n_rows": 200,
+   "data_path": "stage_b/data/anli_R1_seed20260612_n200.jsonl",
+   "geom_deployable": false,
+   "geom_winner": "attention[last_minus_1_js] @ step 0",
+   "primary_winner": "attention[last_minus_1_js] @ step 0",
+   "ace_rows": [
+    35,
+    111,
+    26,
+    175
+   ],
+   "readout_prefix": 4,
+   "already_audited": false
+  },
+  {
+   "task": "triviaqa_paired",
+   "model_slug": "Llama-3.1-8B-Instruct-4bit",
+   "model_id": "mlx-community/Llama-3.1-8B-Instruct-4bit",
+   "n_rows": 200,
+   "data_path": "stage_b/data/triviaqa_paired_seed20260612_n200.jsonl",
+   "geom_deployable": true,
+   "geom_winner": "Readout fisher_eff_rank @ step 0",
+   "primary_winner": "Readout fisher_eff_rank @ step 0",
+   "ace_rows": [
+    104,
+    11,
+    186,
+    102
+   ],
+   "readout_prefix": 4,
+   "already_audited": false
+  },
+  {
+   "task": "triviaqa_paired",
+   "model_slug": "Llama-3.2-3B-Instruct-4bit",
+   "model_id": "mlx-community/Llama-3.2-3B-Instruct-4bit",
+   "n_rows": 200,
+   "data_path": "stage_b/data/triviaqa_paired_seed20260612_n200.jsonl",
+   "geom_deployable": true,
+   "geom_winner": "Readout neg_shadow_logvol_r1 @ step 0",
+   "primary_winner": "Readout neg_shadow_logvol_r1 @ step 0",
+   "ace_rows": [
+    117,
+    116,
+    189,
+    31
+   ],
+   "readout_prefix": 4,
+   "already_audited": true,
+   "historical_ace_rows_used": [
+    7,
+    42,
+    123,
+    199
+   ]
+  },
+  {
+   "task": "triviaqa_paired",
+   "model_slug": "Mistral-7B-Instruct-v0.3-4bit",
+   "model_id": "mlx-community/Mistral-7B-Instruct-v0.3-4bit",
+   "n_rows": 200,
+   "data_path": "stage_b/data/triviaqa_paired_seed20260612_n200.jsonl",
+   "geom_deployable": true,
+   "geom_winner": "attention[last_minus_1_js] @ step 0",
+   "primary_winner": "Readout p_max @ step 0",
+   "ace_rows": [
+    107,
+    154,
+    51,
+    42
+   ],
+   "readout_prefix": 4,
+   "already_audited": false
+  },
+  {
+   "task": "triviaqa_paired",
+   "model_slug": "Mistral-Nemo-Instruct-2407-4bit",
+   "model_id": "mlx-community/Mistral-Nemo-Instruct-2407-4bit",
+   "n_rows": 200,
+   "data_path": "stage_b/data/triviaqa_paired_seed20260612_n200.jsonl",
+   "geom_deployable": true,
+   "geom_winner": "attention[final_v_norm_lastq_weighted] @ step 0",
+   "primary_winner": "attention[final_v_norm_lastq_weighted] @ step 0",
+   "ace_rows": [
+    24,
+    113,
+    197,
+    58
+   ],
+   "readout_prefix": 4,
+   "already_audited": false
+  },
+  {
+   "task": "triviaqa_paired",
+   "model_slug": "Phi-3.5-mini-instruct-4bit",
+   "model_id": "mlx-community/Phi-3.5-mini-instruct-4bit",
+   "n_rows": 200,
+   "data_path": "stage_b/data/triviaqa_paired_seed20260612_n200.jsonl",
+   "geom_deployable": true,
+   "geom_winner": "attention[final_js_no_bos] @ step 0",
+   "primary_winner": "attention[final_js_no_bos] @ step 0",
+   "ace_rows": [
+    50,
+    118,
+    80,
+    156
+   ],
+   "readout_prefix": 4,
+   "already_audited": false
+  },
+  {
+   "task": "triviaqa_paired",
+   "model_slug": "Phi-4-mini-instruct-4bit",
+   "model_id": "mlx-community/Phi-4-mini-instruct-4bit",
+   "n_rows": 200,
+   "data_path": "stage_b/data/triviaqa_paired_seed20260612_n200.jsonl",
+   "geom_deployable": true,
+   "geom_winner": "attention[mid_v_norm_lastq_weighted] @ step 0",
+   "primary_winner": "attention[mid_v_norm_lastq_weighted] @ step 0",
+   "ace_rows": [
+    161,
+    164,
+    73,
+    20
+   ],
+   "readout_prefix": 4,
+   "already_audited": false
+  },
+  {
+   "task": "triviaqa_paired",
+   "model_slug": "Qwen2.5-7B-Instruct-4bit",
+   "model_id": "mlx-community/Qwen2.5-7B-Instruct-4bit",
+   "n_rows": 200,
+   "data_path": "stage_b/data/triviaqa_paired_seed20260612_n200.jsonl",
+   "geom_deployable": true,
+   "geom_winner": "attention[final_v_norm_lastq_weighted] @ step 0",
+   "primary_winner": "attention[final_v_norm_lastq_weighted] @ step 0",
+   "ace_rows": [
+    145,
+    45,
+    198,
+    156
+   ],
+   "readout_prefix": 4,
+   "already_audited": false
+  },
+  {
+   "task": "triviaqa_paired",
+   "model_slug": "Qwen3-1.7B-4bit",
+   "model_id": "mlx-community/Qwen3-1.7B-4bit",
+   "n_rows": 200,
+   "data_path": "stage_b/data/triviaqa_paired_seed20260612_n200.jsonl",
+   "geom_deployable": true,
+   "geom_winner": "attention[final_bos_mass] @ step 0",
+   "primary_winner": "Readout surprise @ step 0",
+   "ace_rows": [
+    47,
+    129,
+    29,
+    146
+   ],
+   "readout_prefix": 4,
+   "already_audited": false
+  },
+  {
+   "task": "triviaqa_paired",
+   "model_slug": "Qwen3-8B-4bit",
+   "model_id": "mlx-community/Qwen3-8B-4bit",
+   "n_rows": 200,
+   "data_path": "stage_b/data/triviaqa_paired_seed20260612_n200.jsonl",
+   "geom_deployable": true,
+   "geom_winner": "Fusion fusion_rank_mean_geom @ step 0",
+   "primary_winner": "Fusion fusion_rank_mean_geom @ step 0",
+   "ace_rows": [
+    160,
+    63,
+    52,
+    62
+   ],
+   "readout_prefix": 4,
+   "already_audited": false
+  },
+  {
+   "task": "triviaqa_paired",
+   "model_slug": "gemma-3-4b-it-4bit",
+   "model_id": "mlx-community/gemma-3-4b-it-4bit",
+   "n_rows": 200,
+   "data_path": "stage_b/data/triviaqa_paired_seed20260612_n200.jsonl",
+   "geom_deployable": true,
+   "geom_winner": "attention[final_js_kv_groups] @ step 0",
+   "primary_winner": "Fusion fusion_rank_mean_full @ step 0",
+   "ace_rows": [
+    24,
+    118,
+    92,
+    64
+   ],
+   "readout_prefix": 4,
+   "already_audited": false
+  }
+ ]
+}
