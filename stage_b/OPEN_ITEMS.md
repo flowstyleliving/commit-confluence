@@ -72,6 +72,12 @@ Last touched: 2026-08-24 (O4 executed).
 - **Detail / work order:** `stage_b/CODEX_WORKORDER_AUDIT_REVIEWER_PACKET.md`
 - **EXECUTED 2026-08-24** by fresh eyes (Claude Code, read-only; not Codex). Report:
   `stage_b/O4_AUDIT_REPORT.md`.
+- **Follow-up filed 2026-08-25:** `stage_b/CODEX_WORKORDER_A3_EXCLUSION_PIN.md` — patch order for
+  the L1/L2 self-referential exclusion gate (pin the four sealed digests as constants instead of
+  recomputing them from the files under test). Assigned to Codex, authoring only. Carries the
+  mandatory manifest-era disclosure: `run_bench.py` is in `MANIFEST_FILES`, so the patch bumps
+  `extension_manifest_sha256` to a third era across 117 recorded artifacts. Forward-only; rescues
+  nothing already scored. **Findings L1/L2 stay OPEN until MK closes them.**
 - **Outcome (one line):** no published number is wrong and four of the work order's own
   suspicions were refuted, but 8 MAJOR / 24 MINOR / 9 NIT findings stand (union of both passes;
   probes L1 and L4 were executed twice after a spend-limit interruption and returned
