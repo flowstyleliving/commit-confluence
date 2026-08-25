@@ -691,6 +691,60 @@ replaced before Phase 4 by a dependency-free shared spec leaf, and that the fina
 manifest and smoke provenance were re-audited in that order. Runtime verification and all
 numerical checks are executor-owned and were not run by Codex.
 
+### A5 — 2026-08-25 — Pin the A3 exclusion-reference digests
+
+**Timing and status:** filed after BENCH strict Phase 4 closed on 2026-07-22. This is a
+forward-only gate-hardening amendment for any future registered BENCH run; Phase 4 remains
+closed. It does not rescue, re-bless, re-attest, or require re-scoring any completed run.
+**Defect:** the O4 fresh-eyes audit (findings L1/L2) found that A3 derived each expected
+exclusion-reference sha256 by hashing the current file under test. Because resolution could
+then fall through to that same current file, the sha256 multiset comparison enforced basename
+enumeration but could not reject substituted content.
+**Repair:** `run_bench.py` now carries four frozen, basename-keyed exclusion-reference sha256
+constants. `validate_data_manifest()` constructs its expected digest map only from those
+constants and fails closed on an unregistered basename. `resolve_exclusion_reference()`
+continues to try the recorded provenance path and current/vendored path, but accepts neither
+unless its bytes match the frozen digest; a mismatch reports the actual digest observed for
+each available candidate. The existing digest-multiset comparison is unchanged and now has
+an independent content anchor. No override, skip path, or alternate environment variable is
+introduced.
+**Scope and result status:** no registered datum, source byte, exclusion union, sampling frame,
+seed, RNG, task, model, panel, bar, denominator, endpoint, estimator, control, or reported result
+changes. O4 independently found the committed exclusion files to be the intended files; the
+defect weakened the prospective guarantee but did not identify a corrupted registered result.
+This amendment makes no new attestation about the bytes used during the closed Phase-4 run.
+**Manifest-era consequence:** because `run_bench.py` and this preregistration are members of
+`MANIFEST_FILES`, this patch changes `extension_manifest_sha256` and creates the third manifest
+era. Profiles written under manifest eras one and two remain valid exactly as written and must
+not be re-validated against, or rewritten to carry, the third-era manifest. Any future registered
+run is governed by this amendment and must use a newly emitted and executor-attested third-era
+extension manifest after the four frozen digest literals have been independently verified.
+**Verification ownership:** digest substitution and all behavioral verification are
+executor-owned; not run by Codex.
+
+### A5 — 2026-08-25 — Pin the A3 exclusion-reference digests
+
+**Defect and discovery:** the O4 fresh-eyes audit (findings L1/L2) found that A3 derived each
+expected exclusion-reference sha256 by hashing the same current file it was about to verify.
+The resolver's current-file candidate therefore matched by construction, and the subsequent
+digest-multiset comparison enforced basename multiplicity rather than frozen content.
+**Repair:** `run_bench.py` now takes the four expected exclusion-reference digests from a
+module-level frozen basename-to-sha256 map. An unregistered basename and any candidate whose
+bytes do not match the pinned digest fail closed; no override, skip path, or runtime
+recomputation fallback is introduced.
+**Registered-results scope:** no registered result changes. The O4 audit found a weakened
+prospective guarantee, not a corrupted result, and this amendment does not rescue, re-bless,
+re-attest, recompute, or otherwise alter anything already scored. BENCH strict Phase 4 closed
+on 2026-07-22 and remains closed.
+**Manifest-era consequence:** because `run_bench.py` and this pre-registration are members of
+`MANIFEST_FILES`, this patch bumps `extension_manifest_sha256` to a third era. The 117 committed
+artifacts carrying the first two recorded values remain valid exactly as written and must not
+be re-validated, rewritten, or re-stamped against the third-era manifest.
+**Forward-only rule:** this repair governs only a future registered BENCH run. Such a run must
+substitute executor-verified 64-hex digests for the authored placeholders, freeze the new
+extension manifest, and satisfy the amended exclusion gate before execution; it confers no new
+attestation on any existing profile, matrix, summary, gate report, or scored artifact.
+
 ## 10. Audit tables
 
 ### 10.1 v2-review (proposal-level) required fixes — status after v1.2

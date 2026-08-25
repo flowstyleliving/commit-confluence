@@ -81,6 +81,24 @@ SEALED_REFERENCES = [
     STAGE_B / "data/anli_R1_seed20260612_n200.jsonl",
     STAGE_B / "data/triviaqa_paired_seed20260612_n200.jsonl",
 ]
+# Frozen 2026-08-25 (O4 findings L1/L2). These digests are the registration's record of
+# the sealed exclusion corpus. They are NOT recomputed from the files under test -- that
+# self-referential derivation was the defect this constant exists to close. Changing a
+# value here is an Amendments entry, never an edit.
+# Digests computed and cross-verified 2026-08-25: the two stage_b/data entries are
+# independently corroborated by 34 and 16 other committed artifacts respectively; the two
+# vendor/t0_core entries have no other pin in this repository, which is precisely why they
+# are pinned here.
+SEALED_REFERENCE_SHA256 = {
+    "anli_R1_seed20260526_n200.jsonl":
+        "d1a3aed5e86af05c4b7bd459bb5938bbcca7ab6c758c855e1bce3f938b62f48e",
+    "triviaqa_paired_seed20260526_n100.jsonl":
+        "f2f870a7e2feb2c711b2a782f6aa6040233c8915bb066e87421e85f4778b3149",
+    "anli_R1_seed20260612_n200.jsonl":
+        "57ad341f2c29c886a726b7c62b7371be8c064b04b9b96e98324c931157d4f55b",
+    "triviaqa_paired_seed20260612_n200.jsonl":
+        "7e0a2e2e049c83d5fe1aaccffa52c25885c0e5457362e91055c680905a68b6c7",
+}
 MANIFEST_FILES = [
     STAGE_B / "run_bench.py", STAGE_B / "bench_spec.py",
     STAGE_B / "generate_bench_data.py",
@@ -135,12 +153,19 @@ def resolve_exclusion_reference(recorded_path: Path,
         raise ValueError(f"unregistered exclusion reference: {recorded_path.name}")
     current_path, expected_sha256 = expected
     candidates = [recorded_path.expanduser(), current_path]
+    actual_sha256 = {}
+    actual_sha256_by_path = {}
     for candidate in candidates:
-        if candidate.is_file() and sha256_file(candidate) == expected_sha256:
-            return candidate.resolve(), expected_sha256
+        if candidate.is_file():
+            resolved = candidate.resolve()
+            actual_sha256 = sha256_file(candidate)
+            actual_sha256_by_path[str(resolved)] = actual_sha256
+            if actual_sha256 == expected_sha256:
+                return resolved, expected_sha256
     raise FileNotFoundError(
         f"exclusion reference {recorded_path.name} unavailable/mismatched; "
-        f"expected sha256={expected_sha256} (vendored path: {current_path})")
+        f"expected sha256={expected_sha256}; actual sha256 by candidate="
+        f"{actual_sha256_by_path} (vendored path: {current_path})")
 
 
 def sha256_json(value: Any) -> str:
@@ -942,13 +967,20 @@ def validate_data_manifest(task: str, data_path: Path) -> Dict[str, Any]:
     effective_n = len({str(row.get("stem_id")) for row in rows})
     if manifest.get("effective_n_stems") != effective_n:
         raise ValueError("manifest effective stem n mismatch")
+    unregistered = sorted(
+        path.name for path in SEALED_REFERENCES
+        if path.name not in SEALED_REFERENCE_SHA256
+    )
+    if unregistered:
+        raise ValueError(f"unregistered sealed exclusion reference basenames: {unregistered}")
     if any(not path.is_file() for path in SEALED_REFERENCES):
         missing = [str(path) for path in SEALED_REFERENCES if not path.is_file()]
         raise FileNotFoundError(
             "sealed exclusion references unavailable; set CONFLUENCE_T0_REPO to the "
             f"byte-pinned extraction core (missing: {missing})")
     expected_by_name = {
-        path.name: (path.resolve(), sha256_file(path)) for path in SEALED_REFERENCES
+        path.name: (path.resolve(), SEALED_REFERENCE_SHA256[path.name])
+        for path in SEALED_REFERENCES
     }
     if len(expected_by_name) != len(SEALED_REFERENCES):
         raise ValueError("sealed exclusion reference basenames are not unique")
