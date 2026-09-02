@@ -1,0 +1,2683 @@
+{
+  "config": {
+    "instruments": [
+      "js_no_bos",
+      "bos_mass",
+      "v_norm_lastq_weighted"
+    ],
+    "depths": [
+      "mid",
+      "last_minus_1",
+      "final"
+    ],
+    "unique_bar": 0.6,
+    "archive": "/Users/msrk/Documents/furnace-guard/artifacts/modal_profiles_ext/profiles_ext",
+    "note": "in-sample sign fit per instrument; n=200; torch/Modal panel, NON-byte-comparable"
+  },
+  "cells": [
+    {
+      "model": "Llama-3.3-70B-Instruct",
+      "task": "anli_r1",
+      "depth": "mid",
+      "precision": null,
+      "is_variant": false,
+      "spearman": {
+        "js~bos": -0.7842,
+        "js~vnorm": -0.8384,
+        "bos~vnorm": 0.9682
+      },
+      "pc1_var_frac": 0.9099,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.6196,
+          "sign": 1,
+          "r2_from_others": 0.7151,
+          "residual_auc": 0.8135
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5981,
+          "sign": 1,
+          "r2_from_others": 0.94,
+          "residual_auc": 0.5917
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5679,
+          "sign": -1,
+          "r2_from_others": 0.9537,
+          "residual_auc": 0.5407
+        }
+      ],
+      "n_unique_above_bar": 1
+    },
+    {
+      "model": "Llama-3.3-70B-Instruct",
+      "task": "anli_r1",
+      "depth": "last_minus_1",
+      "precision": null,
+      "is_variant": false,
+      "spearman": {
+        "js~bos": -0.8078,
+        "js~vnorm": -0.845,
+        "bos~vnorm": 0.9685
+      },
+      "pc1_var_frac": 0.9165,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5712,
+          "sign": 1,
+          "r2_from_others": 0.7158,
+          "residual_auc": 0.6375
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.563,
+          "sign": 1,
+          "r2_from_others": 0.9384,
+          "residual_auc": 0.6969
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5128,
+          "sign": -1,
+          "r2_from_others": 0.9493,
+          "residual_auc": 0.6126
+        }
+      ],
+      "n_unique_above_bar": 3
+    },
+    {
+      "model": "Llama-3.3-70B-Instruct",
+      "task": "anli_r1",
+      "depth": "final",
+      "precision": null,
+      "is_variant": false,
+      "spearman": {
+        "js~bos": -0.6493,
+        "js~vnorm": -0.6611,
+        "bos~vnorm": 0.9764
+      },
+      "pc1_var_frac": 0.8452,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5512,
+          "sign": 1,
+          "r2_from_others": 0.4374,
+          "residual_auc": 0.7378
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.7035,
+          "sign": 1,
+          "r2_from_others": 0.9535,
+          "residual_auc": 0.5452
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.7028,
+          "sign": -1,
+          "r2_from_others": 0.9547,
+          "residual_auc": 0.5612
+        }
+      ],
+      "n_unique_above_bar": 1
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "anli_r1",
+      "depth": "mid",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": -0.001,
+        "js~vnorm": 0.7309,
+        "bos~vnorm": 0.0069
+      },
+      "pc1_var_frac": 0.577,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5492,
+          "sign": -1,
+          "r2_from_others": 0.5343,
+          "residual_auc": 0.5001
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5583,
+          "sign": -1,
+          "r2_from_others": 0.0001,
+          "residual_auc": 0.5576
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5709,
+          "sign": -1,
+          "r2_from_others": 0.5343,
+          "residual_auc": 0.5545
+        }
+      ],
+      "n_unique_above_bar": 0
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "anli_r1",
+      "depth": "last_minus_1",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.5092,
+        "js~vnorm": 0.8674,
+        "bos~vnorm": 0.4021
+      },
+      "pc1_var_frac": 0.737,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.8622,
+          "sign": -1,
+          "r2_from_others": 0.7831,
+          "residual_auc": 0.6413
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.8456,
+          "sign": 1,
+          "r2_from_others": 0.2655,
+          "residual_auc": 0.6985
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.7907,
+          "sign": -1,
+          "r2_from_others": 0.7545,
+          "residual_auc": 0.5166
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "anli_r1",
+      "depth": "final",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.0483,
+        "js~vnorm": 0.2589,
+        "bos~vnorm": 0.1285
+      },
+      "pc1_var_frac": 0.4367,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.6852,
+          "sign": -1,
+          "r2_from_others": 0.0673,
+          "residual_auc": 0.6243
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.7154,
+          "sign": 1,
+          "r2_from_others": 0.0168,
+          "residual_auc": 0.6866
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.7336,
+          "sign": -1,
+          "r2_from_others": 0.0805,
+          "residual_auc": 0.6967
+        }
+      ],
+      "n_unique_above_bar": 3
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct__bf16",
+      "task": "anli_r1",
+      "depth": "mid",
+      "precision": "bf16",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.0559,
+        "js~vnorm": 0.806,
+        "bos~vnorm": 0.0378
+      },
+      "pc1_var_frac": 0.6038,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5555,
+          "sign": -1,
+          "r2_from_others": 0.6503,
+          "residual_auc": 0.5138
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5169,
+          "sign": -1,
+          "r2_from_others": 0.0033,
+          "residual_auc": 0.5168
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5808,
+          "sign": -1,
+          "r2_from_others": 0.6497,
+          "residual_auc": 0.5616
+        }
+      ],
+      "n_unique_above_bar": 0
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct__bf16",
+      "task": "anli_r1",
+      "depth": "last_minus_1",
+      "precision": "bf16",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.5797,
+        "js~vnorm": 0.8797,
+        "bos~vnorm": 0.4388
+      },
+      "pc1_var_frac": 0.7616,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.8636,
+          "sign": -1,
+          "r2_from_others": 0.8204,
+          "residual_auc": 0.6243
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.8839,
+          "sign": 1,
+          "r2_from_others": 0.3584,
+          "residual_auc": 0.7115
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.7763,
+          "sign": -1,
+          "r2_from_others": 0.7816,
+          "residual_auc": 0.5334
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct__bf16",
+      "task": "anli_r1",
+      "depth": "final",
+      "precision": "bf16",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.2114,
+        "js~vnorm": 0.2653,
+        "bos~vnorm": 0.0877
+      },
+      "pc1_var_frac": 0.4617,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.741,
+          "sign": -1,
+          "r2_from_others": 0.1061,
+          "residual_auc": 0.6392
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.783,
+          "sign": 1,
+          "r2_from_others": 0.0458,
+          "residual_auc": 0.7319
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.7349,
+          "sign": -1,
+          "r2_from_others": 0.0714,
+          "residual_auc": 0.6946
+        }
+      ],
+      "n_unique_above_bar": 3
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct__int8",
+      "task": "anli_r1",
+      "depth": "mid",
+      "precision": "int8",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.068,
+        "js~vnorm": 0.8011,
+        "bos~vnorm": 0.0452
+      },
+      "pc1_var_frac": 0.603,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5578,
+          "sign": -1,
+          "r2_from_others": 0.6428,
+          "residual_auc": 0.5021
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5245,
+          "sign": -1,
+          "r2_from_others": 0.0049,
+          "residual_auc": 0.5235
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5676,
+          "sign": -1,
+          "r2_from_others": 0.6419,
+          "residual_auc": 0.5444
+        }
+      ],
+      "n_unique_above_bar": 0
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct__int8",
+      "task": "anli_r1",
+      "depth": "last_minus_1",
+      "precision": "int8",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.5914,
+        "js~vnorm": 0.8796,
+        "bos~vnorm": 0.4552
+      },
+      "pc1_var_frac": 0.7672,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.8606,
+          "sign": -1,
+          "r2_from_others": 0.8197,
+          "residual_auc": 0.6177
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.8864,
+          "sign": 1,
+          "r2_from_others": 0.3684,
+          "residual_auc": 0.7068
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.7739,
+          "sign": -1,
+          "r2_from_others": 0.7801,
+          "residual_auc": 0.5429
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct__int8",
+      "task": "anli_r1",
+      "depth": "final",
+      "precision": "int8",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.2446,
+        "js~vnorm": 0.3282,
+        "bos~vnorm": 0.139
+      },
+      "pc1_var_frac": 0.4943,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.7574,
+          "sign": -1,
+          "r2_from_others": 0.1481,
+          "residual_auc": 0.6437
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.8001,
+          "sign": 1,
+          "r2_from_others": 0.0637,
+          "residual_auc": 0.7341
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.7261,
+          "sign": -1,
+          "r2_from_others": 0.1114,
+          "residual_auc": 0.6691
+        }
+      ],
+      "n_unique_above_bar": 3
+    },
+    {
+      "model": "Qwen2.5-72B-Instruct",
+      "task": "anli_r1",
+      "depth": "mid",
+      "precision": null,
+      "is_variant": false,
+      "spearman": {
+        "js~bos": -0.3888,
+        "js~vnorm": -0.4413,
+        "bos~vnorm": 0.9861
+      },
+      "pc1_var_frac": 0.7532,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5201,
+          "sign": 1,
+          "r2_from_others": 0.2729,
+          "residual_auc": 0.5251
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5536,
+          "sign": 1,
+          "r2_from_others": 0.9751,
+          "residual_auc": 0.5673
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5395,
+          "sign": -1,
+          "r2_from_others": 0.9764,
+          "residual_auc": 0.5464
+        }
+      ],
+      "n_unique_above_bar": 0
+    },
+    {
+      "model": "Qwen2.5-72B-Instruct",
+      "task": "anli_r1",
+      "depth": "last_minus_1",
+      "precision": null,
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.2888,
+        "js~vnorm": 0.657,
+        "bos~vnorm": 0.7446
+      },
+      "pc1_var_frac": 0.7157,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.7922,
+          "sign": -1,
+          "r2_from_others": 0.5218,
+          "residual_auc": 0.7118
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.6564,
+          "sign": 1,
+          "r2_from_others": 0.625,
+          "residual_auc": 0.592
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.734,
+          "sign": -1,
+          "r2_from_others": 0.7675,
+          "residual_auc": 0.5079
+        }
+      ],
+      "n_unique_above_bar": 1
+    },
+    {
+      "model": "Qwen2.5-72B-Instruct",
+      "task": "anli_r1",
+      "depth": "final",
+      "precision": null,
+      "is_variant": false,
+      "spearman": {
+        "js~bos": -0.0395,
+        "js~vnorm": 0.0353,
+        "bos~vnorm": -0.1806
+      },
+      "pc1_var_frac": 0.3983,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5962,
+          "sign": -1,
+          "r2_from_others": 0.0024,
+          "residual_auc": 0.591
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5086,
+          "sign": -1,
+          "r2_from_others": 0.0337,
+          "residual_auc": 0.5459
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.6989,
+          "sign": 1,
+          "r2_from_others": 0.0334,
+          "residual_auc": 0.703
+        }
+      ],
+      "n_unique_above_bar": 1
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct",
+      "task": "anli_r1",
+      "depth": "mid",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": -0.0209,
+        "js~vnorm": 0.827,
+        "bos~vnorm": -0.0932
+      },
+      "pc1_var_frac": 0.6116,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.546,
+          "sign": 1,
+          "r2_from_others": 0.6871,
+          "residual_auc": 0.5416
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5323,
+          "sign": 1,
+          "r2_from_others": 0.0187,
+          "residual_auc": 0.533
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5367,
+          "sign": 1,
+          "r2_from_others": 0.6897,
+          "residual_auc": 0.5158
+        }
+      ],
+      "n_unique_above_bar": 0
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct",
+      "task": "anli_r1",
+      "depth": "last_minus_1",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": -0.0532,
+        "js~vnorm": -0.6587,
+        "bos~vnorm": 0.2945
+      },
+      "pc1_var_frac": 0.5808,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5731,
+          "sign": -1,
+          "r2_from_others": 0.4556,
+          "residual_auc": 0.6859
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.673,
+          "sign": 1,
+          "r2_from_others": 0.1217,
+          "residual_auc": 0.6031
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.6334,
+          "sign": 1,
+          "r2_from_others": 0.5014,
+          "residual_auc": 0.6805
+        }
+      ],
+      "n_unique_above_bar": 3
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct",
+      "task": "anli_r1",
+      "depth": "final",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.204,
+        "js~vnorm": 0.2485,
+        "bos~vnorm": 0.0821
+      },
+      "pc1_var_frac": 0.4549,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5986,
+          "sign": 1,
+          "r2_from_others": 0.0957,
+          "residual_auc": 0.5978
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5106,
+          "sign": 1,
+          "r2_from_others": 0.0427,
+          "residual_auc": 0.5071
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5173,
+          "sign": 1,
+          "r2_from_others": 0.0628,
+          "residual_auc": 0.5055
+        }
+      ],
+      "n_unique_above_bar": 0
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct__bf16",
+      "task": "anli_r1",
+      "depth": "mid",
+      "precision": "bf16",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.0435,
+        "js~vnorm": 0.7998,
+        "bos~vnorm": 0.015
+      },
+      "pc1_var_frac": 0.6007,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5223,
+          "sign": 1,
+          "r2_from_others": 0.6407,
+          "residual_auc": 0.5265
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5196,
+          "sign": 1,
+          "r2_from_others": 0.003,
+          "residual_auc": 0.5191
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5097,
+          "sign": 1,
+          "r2_from_others": 0.6401,
+          "residual_auc": 0.5085
+        }
+      ],
+      "n_unique_above_bar": 0
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct__bf16",
+      "task": "anli_r1",
+      "depth": "last_minus_1",
+      "precision": "bf16",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.0247,
+        "js~vnorm": -0.7419,
+        "bos~vnorm": 0.2344
+      },
+      "pc1_var_frac": 0.5904,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5677,
+          "sign": -1,
+          "r2_from_others": 0.5922,
+          "residual_auc": 0.6859
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.6601,
+          "sign": 1,
+          "r2_from_others": 0.1427,
+          "residual_auc": 0.5832
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.6039,
+          "sign": 1,
+          "r2_from_others": 0.6143,
+          "residual_auc": 0.6889
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct__bf16",
+      "task": "anli_r1",
+      "depth": "final",
+      "precision": "bf16",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": -0.2222,
+        "js~vnorm": 0.4496,
+        "bos~vnorm": -0.1035
+      },
+      "pc1_var_frac": 0.5159,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5569,
+          "sign": -1,
+          "r2_from_others": 0.2333,
+          "residual_auc": 0.5508
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.6073,
+          "sign": 1,
+          "r2_from_others": 0.0494,
+          "residual_auc": 0.6211
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5799,
+          "sign": -1,
+          "r2_from_others": 0.2022,
+          "residual_auc": 0.5679
+        }
+      ],
+      "n_unique_above_bar": 1
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct__fp32",
+      "task": "anli_r1",
+      "depth": "mid",
+      "precision": "fp32",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.0866,
+        "js~vnorm": -0.6768,
+        "bos~vnorm": 0.0469
+      },
+      "pc1_var_frac": 0.5593,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5218,
+          "sign": 1,
+          "r2_from_others": 0.4721,
+          "residual_auc": 0.5427
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5288,
+          "sign": 1,
+          "r2_from_others": 0.028,
+          "residual_auc": 0.5205
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.515,
+          "sign": -1,
+          "r2_from_others": 0.4692,
+          "residual_auc": 0.5282
+        }
+      ],
+      "n_unique_above_bar": 0
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct__fp32",
+      "task": "anli_r1",
+      "depth": "last_minus_1",
+      "precision": "fp32",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": -0.103,
+        "js~vnorm": -0.6946,
+        "bos~vnorm": 0.3771
+      },
+      "pc1_var_frac": 0.6122,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5422,
+          "sign": -1,
+          "r2_from_others": 0.5119,
+          "residual_auc": 0.6825
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.6903,
+          "sign": 1,
+          "r2_from_others": 0.191,
+          "residual_auc": 0.598
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.6598,
+          "sign": 1,
+          "r2_from_others": 0.5768,
+          "residual_auc": 0.7006
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct__fp32",
+      "task": "anli_r1",
+      "depth": "final",
+      "precision": "fp32",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": -0.1922,
+        "js~vnorm": 0.4506,
+        "bos~vnorm": -0.0867
+      },
+      "pc1_var_frac": 0.5085,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5268,
+          "sign": -1,
+          "r2_from_others": 0.2267,
+          "residual_auc": 0.5487
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.6519,
+          "sign": 1,
+          "r2_from_others": 0.0369,
+          "residual_auc": 0.6586
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5264,
+          "sign": -1,
+          "r2_from_others": 0.2031,
+          "residual_auc": 0.5165
+        }
+      ],
+      "n_unique_above_bar": 1
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct__int8",
+      "task": "anli_r1",
+      "depth": "mid",
+      "precision": "int8",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.4014,
+        "js~vnorm": 0.3645,
+        "bos~vnorm": -0.141
+      },
+      "pc1_var_frac": 0.4923,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5682,
+          "sign": 1,
+          "r2_from_others": 0.3421,
+          "residual_auc": 0.5342
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5746,
+          "sign": 1,
+          "r2_from_others": 0.2564,
+          "residual_auc": 0.5529
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5126,
+          "sign": 1,
+          "r2_from_others": 0.2313,
+          "residual_auc": 0.5114
+        }
+      ],
+      "n_unique_above_bar": 0
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct__int8",
+      "task": "anli_r1",
+      "depth": "last_minus_1",
+      "precision": "int8",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": -0.0616,
+        "js~vnorm": -0.7521,
+        "bos~vnorm": 0.2424
+      },
+      "pc1_var_frac": 0.6033,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5576,
+          "sign": -1,
+          "r2_from_others": 0.5811,
+          "residual_auc": 0.6876
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.6441,
+          "sign": 1,
+          "r2_from_others": 0.0923,
+          "residual_auc": 0.5904
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.6021,
+          "sign": 1,
+          "r2_from_others": 0.6042,
+          "residual_auc": 0.6911
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct__int8",
+      "task": "anli_r1",
+      "depth": "final",
+      "precision": "int8",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": -0.1937,
+        "js~vnorm": 0.3329,
+        "bos~vnorm": -0.1151
+      },
+      "pc1_var_frac": 0.4806,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5241,
+          "sign": -1,
+          "r2_from_others": 0.1353,
+          "residual_auc": 0.5188
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.6049,
+          "sign": 1,
+          "r2_from_others": 0.0404,
+          "residual_auc": 0.6147
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5626,
+          "sign": -1,
+          "r2_from_others": 0.1135,
+          "residual_auc": 0.562
+        }
+      ],
+      "n_unique_above_bar": 1
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "anli_r2",
+      "depth": "mid",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.2051,
+        "js~vnorm": 0.6552,
+        "bos~vnorm": 0.2575
+      },
+      "pc1_var_frac": 0.5969,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5562,
+          "sign": -1,
+          "r2_from_others": 0.4307,
+          "residual_auc": 0.5474
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5136,
+          "sign": -1,
+          "r2_from_others": 0.0686,
+          "residual_auc": 0.5027
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5259,
+          "sign": -1,
+          "r2_from_others": 0.4451,
+          "residual_auc": 0.5163
+        }
+      ],
+      "n_unique_above_bar": 0
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "anli_r2",
+      "depth": "last_minus_1",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.4931,
+        "js~vnorm": 0.9022,
+        "bos~vnorm": 0.3797
+      },
+      "pc1_var_frac": 0.7387,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.8178,
+          "sign": -1,
+          "r2_from_others": 0.8404,
+          "residual_auc": 0.6263
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.8579,
+          "sign": 1,
+          "r2_from_others": 0.2659,
+          "residual_auc": 0.7294
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.7428,
+          "sign": -1,
+          "r2_from_others": 0.8196,
+          "residual_auc": 0.5386
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "anli_r2",
+      "depth": "final",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.163,
+        "js~vnorm": 0.2466,
+        "bos~vnorm": 0.1829
+      },
+      "pc1_var_frac": 0.4658,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.6584,
+          "sign": -1,
+          "r2_from_others": 0.0752,
+          "residual_auc": 0.5996
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.7589,
+          "sign": 1,
+          "r2_from_others": 0.0482,
+          "residual_auc": 0.7233
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.6629,
+          "sign": -1,
+          "r2_from_others": 0.0817,
+          "residual_auc": 0.611
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "anli_r3",
+      "depth": "mid",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": -0.0739,
+        "js~vnorm": -0.7592,
+        "bos~vnorm": 0.0761
+      },
+      "pc1_var_frac": 0.5913,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5097,
+          "sign": 1,
+          "r2_from_others": 0.5767,
+          "residual_auc": 0.5405
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5704,
+          "sign": -1,
+          "r2_from_others": 0.0064,
+          "residual_auc": 0.5685
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5252,
+          "sign": -1,
+          "r2_from_others": 0.5768,
+          "residual_auc": 0.5396
+        }
+      ],
+      "n_unique_above_bar": 0
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "anli_r3",
+      "depth": "last_minus_1",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.5162,
+        "js~vnorm": 0.8723,
+        "bos~vnorm": 0.3907
+      },
+      "pc1_var_frac": 0.7375,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.7784,
+          "sign": -1,
+          "r2_from_others": 0.7971,
+          "residual_auc": 0.5842
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.8131,
+          "sign": 1,
+          "r2_from_others": 0.2813,
+          "residual_auc": 0.6942
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.7149,
+          "sign": -1,
+          "r2_from_others": 0.7657,
+          "residual_auc": 0.5017
+        }
+      ],
+      "n_unique_above_bar": 1
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "anli_r3",
+      "depth": "final",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.0286,
+        "js~vnorm": 0.2034,
+        "bos~vnorm": 0.0152
+      },
+      "pc1_var_frac": 0.4027,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.552,
+          "sign": -1,
+          "r2_from_others": 0.042,
+          "residual_auc": 0.5132
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.6415,
+          "sign": 1,
+          "r2_from_others": 0.0009,
+          "residual_auc": 0.6396
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.6828,
+          "sign": -1,
+          "r2_from_others": 0.0414,
+          "residual_auc": 0.6753
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "halueval_dialogue",
+      "depth": "mid",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": -0.0668,
+        "js~vnorm": 0.6675,
+        "bos~vnorm": 0.1155
+      },
+      "pc1_var_frac": 0.5564,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5893,
+          "sign": -1,
+          "r2_from_others": 0.4665,
+          "residual_auc": 0.5354
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5414,
+          "sign": -1,
+          "r2_from_others": 0.0507,
+          "residual_auc": 0.5372
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.6087,
+          "sign": -1,
+          "r2_from_others": 0.4713,
+          "residual_auc": 0.563
+        }
+      ],
+      "n_unique_above_bar": 0
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "halueval_dialogue",
+      "depth": "last_minus_1",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.2741,
+        "js~vnorm": 0.6863,
+        "bos~vnorm": 0.0954
+      },
+      "pc1_var_frac": 0.5919,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.6838,
+          "sign": -1,
+          "r2_from_others": 0.515,
+          "residual_auc": 0.6587
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.6781,
+          "sign": 1,
+          "r2_from_others": 0.0914,
+          "residual_auc": 0.6264
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5563,
+          "sign": -1,
+          "r2_from_others": 0.4804,
+          "residual_auc": 0.5703
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "halueval_dialogue",
+      "depth": "final",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": -0.1458,
+        "js~vnorm": 0.0294,
+        "bos~vnorm": 0.2721
+      },
+      "pc1_var_frac": 0.4324,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5423,
+          "sign": 1,
+          "r2_from_others": 0.0264,
+          "residual_auc": 0.5712
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.7026,
+          "sign": 1,
+          "r2_from_others": 0.0977,
+          "residual_auc": 0.7054
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5408,
+          "sign": 1,
+          "r2_from_others": 0.0789,
+          "residual_auc": 0.51
+        }
+      ],
+      "n_unique_above_bar": 1
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "halueval_qa",
+      "depth": "mid",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": -0.0336,
+        "js~vnorm": -0.4478,
+        "bos~vnorm": -0.0319
+      },
+      "pc1_var_frac": 0.4826,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5163,
+          "sign": 1,
+          "r2_from_others": 0.2028,
+          "residual_auc": 0.5723
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5062,
+          "sign": 1,
+          "r2_from_others": 0.0039,
+          "residual_auc": 0.5132
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.6082,
+          "sign": -1,
+          "r2_from_others": 0.2027,
+          "residual_auc": 0.6349
+        }
+      ],
+      "n_unique_above_bar": 1
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "halueval_qa",
+      "depth": "last_minus_1",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.6874,
+        "js~vnorm": 0.8771,
+        "bos~vnorm": 0.6087
+      },
+      "pc1_var_frac": 0.8183,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.8829,
+          "sign": -1,
+          "r2_from_others": 0.8068,
+          "residual_auc": 0.561
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.8489,
+          "sign": 1,
+          "r2_from_others": 0.4726,
+          "residual_auc": 0.6379
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.8738,
+          "sign": -1,
+          "r2_from_others": 0.7694,
+          "residual_auc": 0.5747
+        }
+      ],
+      "n_unique_above_bar": 1
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "halueval_qa",
+      "depth": "final",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.1871,
+        "js~vnorm": 0.0462,
+        "bos~vnorm": 0.2568
+      },
+      "pc1_var_frac": 0.4469,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.6517,
+          "sign": -1,
+          "r2_from_others": 0.035,
+          "residual_auc": 0.6255
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.679,
+          "sign": 1,
+          "r2_from_others": 0.0967,
+          "residual_auc": 0.5792
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.8282,
+          "sign": -1,
+          "r2_from_others": 0.0659,
+          "residual_auc": 0.8009
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "halueval_summarization",
+      "depth": "mid",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.4139,
+        "js~vnorm": 0.8112,
+        "bos~vnorm": 0.3781
+      },
+      "pc1_var_frac": 0.699,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.561,
+          "sign": 1,
+          "r2_from_others": 0.6715,
+          "residual_auc": 0.5176
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5545,
+          "sign": -1,
+          "r2_from_others": 0.1765,
+          "residual_auc": 0.5337
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5603,
+          "sign": 1,
+          "r2_from_others": 0.6602,
+          "residual_auc": 0.5185
+        }
+      ],
+      "n_unique_above_bar": 0
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "halueval_summarization",
+      "depth": "last_minus_1",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.4378,
+        "js~vnorm": 0.8212,
+        "bos~vnorm": 0.2326
+      },
+      "pc1_var_frac": 0.6799,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.6839,
+          "sign": -1,
+          "r2_from_others": 0.7387,
+          "residual_auc": 0.5266
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.6863,
+          "sign": 1,
+          "r2_from_others": 0.2411,
+          "residual_auc": 0.6365
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.6691,
+          "sign": -1,
+          "r2_from_others": 0.6942,
+          "residual_auc": 0.5772
+        }
+      ],
+      "n_unique_above_bar": 1
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "halueval_summarization",
+      "depth": "final",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": -0.1313,
+        "js~vnorm": 0.1236,
+        "bos~vnorm": -0.255
+      },
+      "pc1_var_frac": 0.4494,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5641,
+          "sign": -1,
+          "r2_from_others": 0.0259,
+          "residual_auc": 0.5686
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.6258,
+          "sign": 1,
+          "r2_from_others": 0.0751,
+          "residual_auc": 0.6602
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.597,
+          "sign": -1,
+          "r2_from_others": 0.0733,
+          "residual_auc": 0.6262
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Llama-3.3-70B-Instruct",
+      "task": "triviaqa_paired",
+      "depth": "mid",
+      "precision": null,
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.8531,
+        "js~vnorm": 0.9061,
+        "bos~vnorm": 0.9677
+      },
+      "pc1_var_frac": 0.9396,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.6802,
+          "sign": 1,
+          "r2_from_others": 0.8298,
+          "residual_auc": 0.6068
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.6658,
+          "sign": -1,
+          "r2_from_others": 0.9396,
+          "residual_auc": 0.5774
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.6592,
+          "sign": 1,
+          "r2_from_others": 0.9603,
+          "residual_auc": 0.5664
+        }
+      ],
+      "n_unique_above_bar": 1
+    },
+    {
+      "model": "Llama-3.3-70B-Instruct",
+      "task": "triviaqa_paired",
+      "depth": "last_minus_1",
+      "precision": null,
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.8625,
+        "js~vnorm": 0.8401,
+        "bos~vnorm": 0.9791
+      },
+      "pc1_var_frac": 0.9298,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.6178,
+          "sign": 1,
+          "r2_from_others": 0.7444,
+          "residual_auc": 0.538
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.6206,
+          "sign": -1,
+          "r2_from_others": 0.9641,
+          "residual_auc": 0.697
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.6659,
+          "sign": 1,
+          "r2_from_others": 0.9588,
+          "residual_auc": 0.7464
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Llama-3.3-70B-Instruct",
+      "task": "triviaqa_paired",
+      "depth": "final",
+      "precision": null,
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.8009,
+        "js~vnorm": 0.8188,
+        "bos~vnorm": 0.989
+      },
+      "pc1_var_frac": 0.914,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.6056,
+          "sign": 1,
+          "r2_from_others": 0.674,
+          "residual_auc": 0.6316
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5473,
+          "sign": -1,
+          "r2_from_others": 0.9784,
+          "residual_auc": 0.5138
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5487,
+          "sign": 1,
+          "r2_from_others": 0.9801,
+          "residual_auc": 0.5196
+        }
+      ],
+      "n_unique_above_bar": 1
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "triviaqa_paired",
+      "depth": "mid",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.2095,
+        "js~vnorm": 0.5841,
+        "bos~vnorm": 0.1442
+      },
+      "pc1_var_frac": 0.5589,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.7487,
+          "sign": -1,
+          "r2_from_others": 0.3572,
+          "residual_auc": 0.767
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5471,
+          "sign": -1,
+          "r2_from_others": 0.0446,
+          "residual_auc": 0.5022
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5589,
+          "sign": -1,
+          "r2_from_others": 0.3417,
+          "residual_auc": 0.6023
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "triviaqa_paired",
+      "depth": "last_minus_1",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.5152,
+        "js~vnorm": 0.8085,
+        "bos~vnorm": 0.4089
+      },
+      "pc1_var_frac": 0.7244,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.8625,
+          "sign": -1,
+          "r2_from_others": 0.6945,
+          "residual_auc": 0.5874
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.7668,
+          "sign": 1,
+          "r2_from_others": 0.2656,
+          "residual_auc": 0.6048
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.852,
+          "sign": -1,
+          "r2_from_others": 0.6537,
+          "residual_auc": 0.6208
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "triviaqa_paired",
+      "depth": "final",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.0908,
+        "js~vnorm": 0.3556,
+        "bos~vnorm": 0.1439
+      },
+      "pc1_var_frac": 0.4738,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.6174,
+          "sign": -1,
+          "r2_from_others": 0.1281,
+          "residual_auc": 0.544
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.8859,
+          "sign": 1,
+          "r2_from_others": 0.0225,
+          "residual_auc": 0.8569
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.7075,
+          "sign": -1,
+          "r2_from_others": 0.1391,
+          "residual_auc": 0.6389
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct__bf16",
+      "task": "triviaqa_paired",
+      "depth": "mid",
+      "precision": "bf16",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.3343,
+        "js~vnorm": -0.5921,
+        "bos~vnorm": -0.2202
+      },
+      "pc1_var_frac": 0.5961,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.6827,
+          "sign": -1,
+          "r2_from_others": 0.3943,
+          "residual_auc": 0.7377
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5425,
+          "sign": -1,
+          "r2_from_others": 0.1125,
+          "residual_auc": 0.5064
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5198,
+          "sign": 1,
+          "r2_from_others": 0.3511,
+          "residual_auc": 0.6513
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct__bf16",
+      "task": "triviaqa_paired",
+      "depth": "last_minus_1",
+      "precision": "bf16",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.5463,
+        "js~vnorm": 0.7998,
+        "bos~vnorm": 0.465
+      },
+      "pc1_var_frac": 0.7399,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.7947,
+          "sign": -1,
+          "r2_from_others": 0.6786,
+          "residual_auc": 0.579
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.7975,
+          "sign": 1,
+          "r2_from_others": 0.3006,
+          "residual_auc": 0.65
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.9087,
+          "sign": -1,
+          "r2_from_others": 0.6409,
+          "residual_auc": 0.782
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct__bf16",
+      "task": "triviaqa_paired",
+      "depth": "final",
+      "precision": "bf16",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.045,
+        "js~vnorm": -0.1303,
+        "bos~vnorm": 0.1763
+      },
+      "pc1_var_frac": 0.3998,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5219,
+          "sign": 1,
+          "r2_from_others": 0.0218,
+          "residual_auc": 0.5388
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.8738,
+          "sign": 1,
+          "r2_from_others": 0.0358,
+          "residual_auc": 0.827
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.7729,
+          "sign": -1,
+          "r2_from_others": 0.0502,
+          "residual_auc": 0.7304
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct__int8",
+      "task": "triviaqa_paired",
+      "depth": "mid",
+      "precision": "int8",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.3289,
+        "js~vnorm": 0.6705,
+        "bos~vnorm": 0.2638
+      },
+      "pc1_var_frac": 0.6241,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.6462,
+          "sign": -1,
+          "r2_from_others": 0.4745,
+          "residual_auc": 0.6793
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5305,
+          "sign": -1,
+          "r2_from_others": 0.1116,
+          "residual_auc": 0.5072
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.514,
+          "sign": -1,
+          "r2_from_others": 0.4517,
+          "residual_auc": 0.6088
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct__int8",
+      "task": "triviaqa_paired",
+      "depth": "last_minus_1",
+      "precision": "int8",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.5897,
+        "js~vnorm": 0.8374,
+        "bos~vnorm": 0.5523
+      },
+      "pc1_var_frac": 0.7761,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.7961,
+          "sign": -1,
+          "r2_from_others": 0.7246,
+          "residual_auc": 0.5758
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.8187,
+          "sign": 1,
+          "r2_from_others": 0.3592,
+          "residual_auc": 0.6568
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.9014,
+          "sign": -1,
+          "r2_from_others": 0.7065,
+          "residual_auc": 0.7674
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct__int8",
+      "task": "triviaqa_paired",
+      "depth": "final",
+      "precision": "int8",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.0416,
+        "js~vnorm": 0.3781,
+        "bos~vnorm": 0.327
+      },
+      "pc1_var_frac": 0.507,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.567,
+          "sign": -1,
+          "r2_from_others": 0.1505,
+          "residual_auc": 0.525
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.8833,
+          "sign": 1,
+          "r2_from_others": 0.1148,
+          "residual_auc": 0.7916
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.817,
+          "sign": -1,
+          "r2_from_others": 0.24,
+          "residual_auc": 0.7079
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-72B-Instruct",
+      "task": "triviaqa_paired",
+      "depth": "mid",
+      "precision": null,
+      "is_variant": false,
+      "spearman": {
+        "js~bos": -0.0481,
+        "js~vnorm": -0.1132,
+        "bos~vnorm": 0.9926
+      },
+      "pc1_var_frac": 0.6685,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5291,
+          "sign": -1,
+          "r2_from_others": 0.2921,
+          "residual_auc": 0.5577
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.7258,
+          "sign": -1,
+          "r2_from_others": 0.9894,
+          "residual_auc": 0.6837
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.7054,
+          "sign": 1,
+          "r2_from_others": 0.9895,
+          "residual_auc": 0.6561
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-72B-Instruct",
+      "task": "triviaqa_paired",
+      "depth": "last_minus_1",
+      "precision": null,
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.3435,
+        "js~vnorm": 0.6039,
+        "bos~vnorm": 0.8407
+      },
+      "pc1_var_frac": 0.7384,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.9567,
+          "sign": -1,
+          "r2_from_others": 0.4566,
+          "residual_auc": 0.8854
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.6925,
+          "sign": 1,
+          "r2_from_others": 0.7492,
+          "residual_auc": 0.6213
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.7728,
+          "sign": -1,
+          "r2_from_others": 0.8194,
+          "residual_auc": 0.5721
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-72B-Instruct",
+      "task": "triviaqa_paired",
+      "depth": "final",
+      "precision": null,
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.5577,
+        "js~vnorm": 0.3872,
+        "bos~vnorm": 0.4246
+      },
+      "pc1_var_frac": 0.6391,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.8764,
+          "sign": -1,
+          "r2_from_others": 0.3387,
+          "residual_auc": 0.726
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.7488,
+          "sign": 1,
+          "r2_from_others": 0.3622,
+          "residual_auc": 0.5193
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.9382,
+          "sign": 1,
+          "r2_from_others": 0.2131,
+          "residual_auc": 0.8297
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct",
+      "task": "triviaqa_paired",
+      "depth": "mid",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.128,
+        "js~vnorm": 0.6102,
+        "bos~vnorm": 0.1311
+      },
+      "pc1_var_frac": 0.5537,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.7441,
+          "sign": 1,
+          "r2_from_others": 0.3747,
+          "residual_auc": 0.6265
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5564,
+          "sign": -1,
+          "r2_from_others": 0.0209,
+          "residual_auc": 0.5194
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.7496,
+          "sign": 1,
+          "r2_from_others": 0.3752,
+          "residual_auc": 0.6338
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct",
+      "task": "triviaqa_paired",
+      "depth": "last_minus_1",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": -0.0954,
+        "js~vnorm": -0.2992,
+        "bos~vnorm": 0.5171
+      },
+      "pc1_var_frac": 0.5473,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.8862,
+          "sign": -1,
+          "r2_from_others": 0.0943,
+          "residual_auc": 0.9155
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5453,
+          "sign": 1,
+          "r2_from_others": 0.2713,
+          "residual_auc": 0.5051
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5496,
+          "sign": 1,
+          "r2_from_others": 0.3304,
+          "residual_auc": 0.644
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct",
+      "task": "triviaqa_paired",
+      "depth": "final",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": -0.0044,
+        "js~vnorm": 0.3719,
+        "bos~vnorm": 0.1806
+      },
+      "pc1_var_frac": 0.4706,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.657,
+          "sign": -1,
+          "r2_from_others": 0.1436,
+          "residual_auc": 0.6253
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.6638,
+          "sign": -1,
+          "r2_from_others": 0.0385,
+          "residual_auc": 0.6591
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.6278,
+          "sign": -1,
+          "r2_from_others": 0.1715,
+          "residual_auc": 0.5539
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct__bf16",
+      "task": "triviaqa_paired",
+      "depth": "mid",
+      "precision": "bf16",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.132,
+        "js~vnorm": 0.5889,
+        "bos~vnorm": 0.0533
+      },
+      "pc1_var_frac": 0.539,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.7675,
+          "sign": 1,
+          "r2_from_others": 0.357,
+          "residual_auc": 0.6644
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5355,
+          "sign": 1,
+          "r2_from_others": 0.0183,
+          "residual_auc": 0.5062
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.7464,
+          "sign": 1,
+          "r2_from_others": 0.3474,
+          "residual_auc": 0.6109
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct__bf16",
+      "task": "triviaqa_paired",
+      "depth": "last_minus_1",
+      "precision": "bf16",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": -0.0274,
+        "js~vnorm": -0.5048,
+        "bos~vnorm": 0.5165
+      },
+      "pc1_var_frac": 0.5787,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.7021,
+          "sign": -1,
+          "r2_from_others": 0.3291,
+          "residual_auc": 0.7698
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.7045,
+          "sign": 1,
+          "r2_from_others": 0.3398,
+          "residual_auc": 0.5833
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.6101,
+          "sign": 1,
+          "r2_from_others": 0.5077,
+          "residual_auc": 0.6716
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct__bf16",
+      "task": "triviaqa_paired",
+      "depth": "final",
+      "precision": "bf16",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.1214,
+        "js~vnorm": -0.2574,
+        "bos~vnorm": 0.3856
+      },
+      "pc1_var_frac": 0.4714,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5625,
+          "sign": -1,
+          "r2_from_others": 0.1235,
+          "residual_auc": 0.5734
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.6676,
+          "sign": 1,
+          "r2_from_others": 0.2008,
+          "residual_auc": 0.6104
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.6247,
+          "sign": 1,
+          "r2_from_others": 0.2426,
+          "residual_auc": 0.603
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct__fp32",
+      "task": "triviaqa_paired",
+      "depth": "mid",
+      "precision": "fp32",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.1736,
+        "js~vnorm": 0.656,
+        "bos~vnorm": -0.0857
+      },
+      "pc1_var_frac": 0.554,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.7603,
+          "sign": 1,
+          "r2_from_others": 0.4836,
+          "residual_auc": 0.6166
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5258,
+          "sign": 1,
+          "r2_from_others": 0.1,
+          "residual_auc": 0.5129
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.771,
+          "sign": 1,
+          "r2_from_others": 0.4714,
+          "residual_auc": 0.634
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct__fp32",
+      "task": "triviaqa_paired",
+      "depth": "last_minus_1",
+      "precision": "fp32",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": -0.1228,
+        "js~vnorm": -0.5663,
+        "bos~vnorm": 0.5626
+      },
+      "pc1_var_frac": 0.6207,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.523,
+          "sign": -1,
+          "r2_from_others": 0.3768,
+          "residual_auc": 0.65
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.7757,
+          "sign": 1,
+          "r2_from_others": 0.3729,
+          "residual_auc": 0.6271
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.7323,
+          "sign": 1,
+          "r2_from_others": 0.5675,
+          "residual_auc": 0.6809
+        }
+      ],
+      "n_unique_above_bar": 3
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct__fp32",
+      "task": "triviaqa_paired",
+      "depth": "final",
+      "precision": "fp32",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.1052,
+        "js~vnorm": -0.1612,
+        "bos~vnorm": 0.3259
+      },
+      "pc1_var_frac": 0.4439,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5832,
+          "sign": -1,
+          "r2_from_others": 0.0538,
+          "residual_auc": 0.589
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.7322,
+          "sign": 1,
+          "r2_from_others": 0.1318,
+          "residual_auc": 0.671
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.6803,
+          "sign": 1,
+          "r2_from_others": 0.1449,
+          "residual_auc": 0.642
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct__int8",
+      "task": "triviaqa_paired",
+      "depth": "mid",
+      "precision": "int8",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.3989,
+        "js~vnorm": 0.4421,
+        "bos~vnorm": 0.1149
+      },
+      "pc1_var_frac": 0.5518,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.6409,
+          "sign": 1,
+          "r2_from_others": 0.3182,
+          "residual_auc": 0.6176
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5284,
+          "sign": 1,
+          "r2_from_others": 0.1638,
+          "residual_auc": 0.525
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5943,
+          "sign": 1,
+          "r2_from_others": 0.1999,
+          "residual_auc": 0.5342
+        }
+      ],
+      "n_unique_above_bar": 1
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct__int8",
+      "task": "triviaqa_paired",
+      "depth": "last_minus_1",
+      "precision": "int8",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": -0.1614,
+        "js~vnorm": -0.6918,
+        "bos~vnorm": 0.4924
+      },
+      "pc1_var_frac": 0.6434,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5309,
+          "sign": -1,
+          "r2_from_others": 0.5211,
+          "residual_auc": 0.7054
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.7265,
+          "sign": 1,
+          "r2_from_others": 0.3041,
+          "residual_auc": 0.5905
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.7083,
+          "sign": 1,
+          "r2_from_others": 0.6275,
+          "residual_auc": 0.7371
+        }
+      ],
+      "n_unique_above_bar": 2
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct__int8",
+      "task": "triviaqa_paired",
+      "depth": "final",
+      "precision": "int8",
+      "is_variant": true,
+      "spearman": {
+        "js~bos": 0.1818,
+        "js~vnorm": -0.1861,
+        "bos~vnorm": 0.2899
+      },
+      "pc1_var_frac": 0.43,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.6182,
+          "sign": -1,
+          "r2_from_others": 0.0953,
+          "residual_auc": 0.6243
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.6836,
+          "sign": 1,
+          "r2_from_others": 0.1416,
+          "residual_auc": 0.6068
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.685,
+          "sign": 1,
+          "r2_from_others": 0.143,
+          "residual_auc": 0.6696
+        }
+      ],
+      "n_unique_above_bar": 3
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "truthfulqa_mc",
+      "depth": "mid",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": -0.2427,
+        "js~vnorm": -0.4151,
+        "bos~vnorm": 0.0366
+      },
+      "pc1_var_frac": 0.4991,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.5188,
+          "sign": 1,
+          "r2_from_others": 0.2241,
+          "residual_auc": 0.5461
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.5533,
+          "sign": -1,
+          "r2_from_others": 0.0639,
+          "residual_auc": 0.565
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.5315,
+          "sign": -1,
+          "r2_from_others": 0.1767,
+          "residual_auc": 0.5398
+        }
+      ],
+      "n_unique_above_bar": 0
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "truthfulqa_mc",
+      "depth": "last_minus_1",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.4085,
+        "js~vnorm": 0.8354,
+        "bos~vnorm": 0.4222
+      },
+      "pc1_var_frac": 0.7128,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.8144,
+          "sign": -1,
+          "r2_from_others": 0.7017,
+          "residual_auc": 0.5768
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.6221,
+          "sign": 1,
+          "r2_from_others": 0.1886,
+          "residual_auc": 0.509
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.8237,
+          "sign": -1,
+          "r2_from_others": 0.7058,
+          "residual_auc": 0.6342
+        }
+      ],
+      "n_unique_above_bar": 1
+    },
+    {
+      "model": "Qwen2.5-32B-Instruct",
+      "task": "truthfulqa_mc",
+      "depth": "final",
+      "precision": "nf4",
+      "is_variant": false,
+      "spearman": {
+        "js~bos": 0.2763,
+        "js~vnorm": 0.2948,
+        "bos~vnorm": -0.0657
+      },
+      "pc1_var_frac": 0.4575,
+      "instruments": [
+        {
+          "instrument": "js_no_bos",
+          "solo_auc": 0.6963,
+          "sign": -1,
+          "r2_from_others": 0.1747,
+          "residual_auc": 0.6004
+        },
+        {
+          "instrument": "bos_mass",
+          "solo_auc": 0.6526,
+          "sign": 1,
+          "r2_from_others": 0.1001,
+          "residual_auc": 0.6278
+        },
+        {
+          "instrument": "v_norm_lastq_weighted",
+          "solo_auc": 0.7066,
+          "sign": -1,
+          "r2_from_others": 0.1104,
+          "residual_auc": 0.6763
+        }
+      ],
+      "n_unique_above_bar": 3
+    }
+  ]
+}

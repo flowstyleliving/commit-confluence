@@ -1,0 +1,225 @@
+{
+ "provenance": {
+  "diagnostic_sha256": "9283ecd2a85d69ffbe2f1b8bdea9ac75993a5e3198181bfe4069859a16d546c7",
+  "depth_coverage_json_sha256": "a807fa02fb2a28fe8d35bbfd0a0e7df8b09b912adeb8024b26e34f1ab2f97e26",
+  "numpy": "2.4.6"
+ },
+ "threshold_reported": "4/5",
+ "threshold_sensitivity": {
+  "3/5": {
+   "stable_n": 14,
+   "stable_median": 0.0617,
+   "stable_min": -0.015,
+   "stable_all_nonneg": false,
+   "unstable_n": 3,
+   "unstable_median": -0.038
+  },
+  "4/5": {
+   "stable_n": 10,
+   "stable_median": 0.1195,
+   "stable_min": 0.0,
+   "stable_all_nonneg": true,
+   "unstable_n": 7,
+   "unstable_median": -0.009
+  },
+  "5/5": {
+   "stable_n": 5,
+   "stable_median": 0.065,
+   "stable_min": 0.0,
+   "stable_all_nonneg": true,
+   "unstable_n": 12,
+   "unstable_median": 0.0198
+  }
+ },
+ "spearman_stability_delta_midrank": 0.6011,
+ "caveats": "post-hoc, threshold-sensitive, partly mechanical, endogenous, grid-confounded, one degenerate member; see module docstring",
+ "cells": [
+  {
+   "grid": "A",
+   "task": "anli_r1",
+   "model": "Llama-3.3-70B-Instruct",
+   "stability": 0.8,
+   "delta": 0.1915,
+   "ci": [
+    0.1225,
+    0.264
+   ]
+  },
+  {
+   "grid": "A",
+   "task": "anli_r1",
+   "model": "Qwen2.5-32B-Instruct",
+   "stability": 0.4,
+   "delta": -0.038,
+   "ci": [
+    -0.087,
+    0.009
+   ]
+  },
+  {
+   "grid": "A",
+   "task": "anli_r1",
+   "model": "Qwen2.5-72B-Instruct",
+   "stability": 0.8,
+   "delta": 0.0965,
+   "ci": [
+    0.0545,
+    0.1465
+   ]
+  },
+  {
+   "grid": "A",
+   "task": "anli_r1",
+   "model": "Qwen2.5-7B-Instruct",
+   "stability": 0.8,
+   "delta": 0.1425,
+   "ci": [
+    0.0769,
+    0.211
+   ]
+  },
+  {
+   "grid": "A",
+   "task": "halueval_qa",
+   "model": "Llama-3.3-70B-Instruct",
+   "stability": 1.0,
+   "delta": 0.198,
+   "ci": [
+    0.1385,
+    0.2575
+   ]
+  },
+  {
+   "grid": "A",
+   "task": "halueval_qa",
+   "model": "Qwen2.5-32B-Instruct",
+   "stability": 1.0,
+   "delta": 0.032,
+   "ci": [
+    0.008,
+    0.061
+   ]
+  },
+  {
+   "grid": "A",
+   "task": "halueval_qa",
+   "model": "Qwen2.5-72B-Instruct",
+   "stability": 1.0,
+   "delta": 0.182,
+   "ci": [
+    0.1154,
+    0.2515
+   ]
+  },
+  {
+   "grid": "A",
+   "task": "halueval_qa",
+   "model": "Qwen2.5-7B-Instruct",
+   "stability": 1.0,
+   "delta": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "grid": "B",
+   "task": "anli_r1",
+   "model": "Llama-3.1-70B-Instruct",
+   "stability": 0.4,
+   "delta": 0.0285,
+   "ci": [
+    -0.005,
+    0.065
+   ]
+  },
+  {
+   "grid": "B",
+   "task": "anli_r1",
+   "model": "Llama-3.1-8B-Instruct",
+   "stability": 0.4,
+   "delta": -0.075,
+   "ci": [
+    -0.1245,
+    -0.0265
+   ]
+  },
+  {
+   "grid": "B",
+   "task": "anli_r1",
+   "model": "Mistral-Medium-3.5-128B",
+   "stability": 0.8,
+   "delta": 0.006,
+   "ci": [
+    -0.048,
+    0.058
+   ]
+  },
+  {
+   "grid": "B",
+   "task": "anli_r1",
+   "model": "gemma-3-12b-it",
+   "stability": 0.6,
+   "delta": -0.015,
+   "ci": [
+    -0.041,
+    0.009
+   ]
+  },
+  {
+   "grid": "B",
+   "task": "halueval_qa",
+   "model": "Llama-3.1-70B-Instruct",
+   "stability": 0.8,
+   "delta": 0.195,
+   "ci": [
+    0.1275,
+    0.26
+   ]
+  },
+  {
+   "grid": "B",
+   "task": "halueval_qa",
+   "model": "Llama-3.1-8B-Instruct",
+   "stability": 0.6,
+   "delta": 0.011,
+   "ci": [
+    -0.039,
+    0.066
+   ]
+  },
+  {
+   "grid": "B",
+   "task": "halueval_qa",
+   "model": "Mistral-Medium-3.5-128B",
+   "stability": 0.6,
+   "delta": -0.009,
+   "ci": [
+    -0.039,
+    0.024
+   ]
+  },
+  {
+   "grid": "B",
+   "task": "halueval_qa",
+   "model": "Mistral-Small-3.2-24B-Instruct-2506",
+   "stability": 1.0,
+   "delta": 0.065,
+   "ci": [
+    0.02,
+    0.1135
+   ]
+  },
+  {
+   "grid": "B",
+   "task": "halueval_qa",
+   "model": "gemma-3-12b-it",
+   "stability": 0.6,
+   "delta": 0.0585,
+   "ci": [
+    0.0025,
+    0.112
+   ]
+  }
+ ]
+}
