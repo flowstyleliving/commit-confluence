@@ -6,6 +6,11 @@ set -u
 MODAL=/Users/msrk/Library/Python/3.9/bin/modal
 CD=/Users/msrk/Documents/commit-confluence
 LOGD=$CD/exploratory/depth-curve/_gridb_logs
+# Volume namespace for this run's npz + status files. Defaults to the REGISTERED
+# grid-B tree, so an unmodified invocation still targets the frozen cells (and is
+# correctly refused by the terminal-state immutability guard). Override for an
+# unregistered lane, e.g. OUT_DIR=depth_grid_b_vnorm ./run_grid_b.sh
+OUT_DIR=${OUT_DIR:-depth_grid_b}
 cd "$CD" || exit 1
 
 slug_of() {
@@ -22,7 +27,8 @@ slug_of() {
 launch_cell() { # key task
   local key=$1 task=$2
   nohup "$MODAL" run --detach exploratory/depth-curve/modal_depth_b.py::extract \
-    --model-key "$key" --task "$task" > "$LOGD/ex_${key}_${task}.log" 2>&1 &
+    --model-key "$key" --task "$task" --out-dir "$OUT_DIR" \
+    > "$LOGD/ex_${key}_${task}.log" 2>&1 &
   echo "$(date +%H:%M:%S) launched $key/$task"
 }
 
@@ -33,7 +39,7 @@ wait_stage() { # "key:task key:task ..."  max_minutes
     for ct in $cells; do
       local key="${ct%%:*}" task="${ct##*:}"
       local slug; slug=$(slug_of "$key")
-      if ! "$MODAL" volume ls model-cache "depth_grid_b/$task" 2>/dev/null \
+      if ! "$MODAL" volume ls model-cache "$OUT_DIR/$task" 2>/dev/null \
           | grep -q "$slug.status.json"; then
         missing=$((missing+1))
       fi
