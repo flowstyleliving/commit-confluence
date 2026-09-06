@@ -1,0 +1,2149 @@
+{
+ "config": {
+  "instruments": [
+   "js",
+   "bos",
+   "vnorm"
+  ],
+  "third_instrument_metric": "final_v_norm_lastq_weighted",
+  "k_folds": 5,
+  "n_boot": 1000,
+  "seed": 20260831,
+  "qualifying_bar": 0.65,
+  "row_identity": "ENFORCED: labels+gen_token_ids+yes_no bit-exact; commit_p at atol 1e-12 (only column with row-level resolution, 200 distinct values; artifact 2.2e-16 vs smallest real gap 5.9e-8); sample_idx deliberately NOT used (vacuous)",
+  "commit_p_atol": 1e-12,
+  "note": "descriptive, NOT registered; grids never pooled; v-norm channel unregistered"
+ },
+ "provenance": {
+  "script_sha256": "ccec4cb6d8570871e69c8706414c6e4cd7139042742c53109fec50e232a45450",
+  "depth_coverage_sha256": "b72cb01f9b0b2985cfbd20ab7014e4398177f26aaa0ea36dba8c4f198499888f",
+  "numpy": "2.4.6"
+ },
+ "refused_cells": [],
+ "cells": [
+  {
+   "grid": "A",
+   "task": "anli_r1",
+   "model": "Llama-3.3-70B-Instruct",
+   "n_layers": 80,
+   "n_rows": 200,
+   "rungs": [
+    40,
+    78,
+    79
+   ],
+   "vnorm_cells_scored": 48000,
+   "capture_mode": "per_block_v_proj_hook",
+   "commit_p_max_delta": 2.220446049250313e-16,
+   "peak_block": {
+    "js": 48,
+    "bos": 70,
+    "vnorm": 70
+   },
+   "peak_auroc": {
+    "js": 0.8975,
+    "bos": 0.9148,
+    "vnorm": 0.9143
+   },
+   "curve_pearson": {
+    "js~bos": 0.7997,
+    "js~vnorm": 0.8357,
+    "bos~vnorm": 0.9706
+   },
+   "cross_eval": {
+    "js@bospeak": 0.8794,
+    "bos@jspeak": 0.9081,
+    "js@vnormpeak": 0.8794,
+    "vnorm@jspeak": 0.9102,
+    "bos@vnormpeak": 0.9148,
+    "vnorm@bospeak": 0.9143
+   },
+   "mutually_blind_pairs": [],
+   "arms_foldmean": {
+    "fixed9": 0.7925,
+    "fixed6_2i": 0.8828,
+    "rung_best1_3i": 0.705,
+    "rung_best1_2i": 0.707,
+    "target1_3i": 0.898,
+    "target1_2i": 0.8985,
+    "target3": 0.8978,
+    "target2_2i": 0.8842,
+    "target1_vnorm": 0.903
+   },
+   "contrasts": {
+    "target1_3i-target1_2i": {
+     "delta": -0.0005,
+     "ci90_conditional": [
+      -0.0055,
+      0.005
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "target1_3i-rung_best1_3i": {
+     "delta": 0.193,
+     "ci90_conditional": [
+      0.125,
+      0.2655
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "rung_best1_3i-rung_best1_2i": {
+     "delta": -0.002,
+     "ci90_conditional": [
+      -0.0135,
+      0.009
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "fixed9-fixed6_2i": {
+     "delta": -0.0903,
+     "ci90_conditional": [
+      -0.1265,
+      -0.0585
+     ],
+     "excludes_zero": true,
+     "winner": "b"
+    },
+    "fixed9-rung_best1_3i": {
+     "delta": 0.0875,
+     "ci90_conditional": [
+      0.0277,
+      0.1472
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target3-target2_2i": {
+     "delta": 0.0135,
+     "ci90_conditional": [
+      0.0022,
+      0.026
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target3-rung_best1_3i": {
+     "delta": 0.1927,
+     "ci90_conditional": [
+      0.126,
+      0.2653
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target1_vnorm-rung_best1_2i": {
+     "delta": 0.196,
+     "ci90_conditional": [
+      0.13,
+      0.2666
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    }
+   }
+  },
+  {
+   "grid": "A",
+   "task": "anli_r1",
+   "model": "Qwen2.5-32B-Instruct",
+   "n_layers": 64,
+   "n_rows": 200,
+   "rungs": [
+    32,
+    62,
+    63
+   ],
+   "vnorm_cells_scored": 38400,
+   "capture_mode": "per_block_v_proj_hook",
+   "commit_p_max_delta": 0.0,
+   "peak_block": {
+    "js": 56,
+    "bos": 55,
+    "vnorm": 56
+   },
+   "peak_auroc": {
+    "js": 0.8655,
+    "bos": 0.8675,
+    "vnorm": 0.8638
+   },
+   "curve_pearson": {
+    "js~bos": 0.43,
+    "js~vnorm": 0.7812,
+    "bos~vnorm": 0.5829
+   },
+   "cross_eval": {
+    "js@bospeak": 0.621,
+    "bos@jspeak": 0.5561,
+    "js@vnormpeak": 0.8655,
+    "vnorm@jspeak": 0.8638,
+    "bos@vnormpeak": 0.5561,
+    "vnorm@bospeak": 0.7896
+   },
+   "mutually_blind_pairs": [
+    "js~bos"
+   ],
+   "arms_foldmean": {
+    "fixed9": 0.8725,
+    "fixed6_2i": 0.8783,
+    "rung_best1_3i": 0.8395,
+    "rung_best1_2i": 0.8395,
+    "target1_3i": 0.8015,
+    "target1_2i": 0.8015,
+    "target3": 0.8608,
+    "target2_2i": 0.8525,
+    "target1_vnorm": 0.8395
+   },
+   "contrasts": {
+    "target1_3i-target1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      0.0,
+      0.0
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "target1_3i-rung_best1_3i": {
+     "delta": -0.038,
+     "ci90_conditional": [
+      -0.087,
+      0.009
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "rung_best1_3i-rung_best1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      0.0,
+      0.0
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "fixed9-fixed6_2i": {
+     "delta": -0.0057,
+     "ci90_conditional": [
+      -0.03,
+      0.0175
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "fixed9-rung_best1_3i": {
+     "delta": 0.033,
+     "ci90_conditional": [
+      -0.012,
+      0.079
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "target3-target2_2i": {
+     "delta": 0.0082,
+     "ci90_conditional": [
+      -0.0123,
+      0.0283
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "target3-rung_best1_3i": {
+     "delta": 0.0213,
+     "ci90_conditional": [
+      -0.0238,
+      0.0658
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "target1_vnorm-rung_best1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      -0.0495,
+      0.053
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    }
+   }
+  },
+  {
+   "grid": "A",
+   "task": "anli_r1",
+   "model": "Qwen2.5-72B-Instruct",
+   "n_layers": 80,
+   "n_rows": 200,
+   "rungs": [
+    40,
+    78,
+    79
+   ],
+   "vnorm_cells_scored": 48000,
+   "capture_mode": "per_block_v_proj_hook",
+   "commit_p_max_delta": 1.1102230246251565e-16,
+   "peak_block": {
+    "js": 66,
+    "bos": 77,
+    "vnorm": 77
+   },
+   "peak_auroc": {
+    "js": 0.8376,
+    "bos": 0.9037,
+    "vnorm": 0.9324
+   },
+   "curve_pearson": {
+    "js~bos": 0.6035,
+    "js~vnorm": 0.6608,
+    "bos~vnorm": 0.8953
+   },
+   "cross_eval": {
+    "js@bospeak": 0.7944,
+    "bos@jspeak": 0.888,
+    "js@vnormpeak": 0.7944,
+    "vnorm@jspeak": 0.8736,
+    "bos@vnormpeak": 0.9037,
+    "vnorm@bospeak": 0.9324
+   },
+   "mutually_blind_pairs": [],
+   "arms_foldmean": {
+    "fixed9": 0.75,
+    "fixed6_2i": 0.7265,
+    "rung_best1_3i": 0.7955,
+    "rung_best1_2i": 0.7955,
+    "target1_3i": 0.9365,
+    "target1_2i": 0.892,
+    "target3": 0.9175,
+    "target2_2i": 0.892,
+    "target1_vnorm": 0.9365
+   },
+   "contrasts": {
+    "target1_3i-target1_2i": {
+     "delta": 0.0445,
+     "ci90_conditional": [
+      0.022,
+      0.069
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target1_3i-rung_best1_3i": {
+     "delta": 0.141,
+     "ci90_conditional": [
+      0.0995,
+      0.1895
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "rung_best1_3i-rung_best1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      0.0,
+      0.0
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "fixed9-fixed6_2i": {
+     "delta": 0.0235,
+     "ci90_conditional": [
+      -0.0033,
+      0.052
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "fixed9-rung_best1_3i": {
+     "delta": -0.0455,
+     "ci90_conditional": [
+      -0.0965,
+      0.0086
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "target3-target2_2i": {
+     "delta": 0.0255,
+     "ci90_conditional": [
+      0.0108,
+      0.0405
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target3-rung_best1_3i": {
+     "delta": 0.122,
+     "ci90_conditional": [
+      0.0777,
+      0.1695
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target1_vnorm-rung_best1_2i": {
+     "delta": 0.141,
+     "ci90_conditional": [
+      0.0995,
+      0.1895
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    }
+   }
+  },
+  {
+   "grid": "A",
+   "task": "anli_r1",
+   "model": "Qwen2.5-7B-Instruct",
+   "n_layers": 28,
+   "n_rows": 200,
+   "rungs": [
+    14,
+    26,
+    27
+   ],
+   "vnorm_cells_scored": 16800,
+   "capture_mode": "per_block_v_proj_hook",
+   "commit_p_max_delta": 2.220446049250313e-16,
+   "peak_block": {
+    "js": 22,
+    "bos": 22,
+    "vnorm": 24
+   },
+   "peak_auroc": {
+    "js": 0.8336,
+    "bos": 0.7381,
+    "vnorm": 0.8279
+   },
+   "curve_pearson": {
+    "js~bos": 0.777,
+    "js~vnorm": 0.9045,
+    "bos~vnorm": 0.7208
+   },
+   "cross_eval": {
+    "js@bospeak": 0.8336,
+    "bos@jspeak": 0.7381,
+    "js@vnormpeak": 0.7619,
+    "vnorm@jspeak": 0.8048,
+    "bos@vnormpeak": 0.6148,
+    "vnorm@bospeak": 0.8048
+   },
+   "mutually_blind_pairs": [],
+   "arms_foldmean": {
+    "fixed9": 0.6595,
+    "fixed6_2i": 0.6305,
+    "rung_best1_3i": 0.6765,
+    "rung_best1_2i": 0.6765,
+    "target1_3i": 0.819,
+    "target1_2i": 0.819,
+    "target3": 0.8155,
+    "target2_2i": 0.7995,
+    "target1_vnorm": 0.8325
+   },
+   "contrasts": {
+    "target1_3i-target1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      0.0,
+      0.0
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "target1_3i-rung_best1_3i": {
+     "delta": 0.1425,
+     "ci90_conditional": [
+      0.0769,
+      0.211
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "rung_best1_3i-rung_best1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      0.0,
+      0.0
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "fixed9-fixed6_2i": {
+     "delta": 0.029,
+     "ci90_conditional": [
+      -0.015,
+      0.0765
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "fixed9-rung_best1_3i": {
+     "delta": -0.017,
+     "ci90_conditional": [
+      -0.0875,
+      0.054
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "target3-target2_2i": {
+     "delta": 0.016,
+     "ci90_conditional": [
+      0.0,
+      0.0335
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "target3-rung_best1_3i": {
+     "delta": 0.139,
+     "ci90_conditional": [
+      0.0695,
+      0.213
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target1_vnorm-rung_best1_2i": {
+     "delta": 0.156,
+     "ci90_conditional": [
+      0.0855,
+      0.229
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    }
+   }
+  },
+  {
+   "grid": "A",
+   "task": "halueval_qa",
+   "model": "Llama-3.3-70B-Instruct",
+   "n_layers": 80,
+   "n_rows": 200,
+   "rungs": [
+    40,
+    78,
+    79
+   ],
+   "vnorm_cells_scored": 48000,
+   "capture_mode": "per_block_v_proj_hook",
+   "commit_p_max_delta": 0.0,
+   "peak_block": {
+    "js": 26,
+    "bos": 26,
+    "vnorm": 26
+   },
+   "peak_auroc": {
+    "js": 0.8621,
+    "bos": 0.9103,
+    "vnorm": 0.9141
+   },
+   "curve_pearson": {
+    "js~bos": 0.7417,
+    "js~vnorm": 0.7695,
+    "bos~vnorm": 0.9441
+   },
+   "cross_eval": {
+    "js@bospeak": 0.8621,
+    "bos@jspeak": 0.9103,
+    "js@vnormpeak": 0.8621,
+    "vnorm@jspeak": 0.9141,
+    "bos@vnormpeak": 0.9103,
+    "vnorm@bospeak": 0.9141
+   },
+   "mutually_blind_pairs": [],
+   "arms_foldmean": {
+    "fixed9": 0.7532,
+    "fixed6_2i": 0.7738,
+    "rung_best1_3i": 0.71,
+    "rung_best1_2i": 0.71,
+    "target1_3i": 0.908,
+    "target1_2i": 0.908,
+    "target3": 0.9035,
+    "target2_2i": 0.893,
+    "target1_vnorm": 0.908
+   },
+   "contrasts": {
+    "target1_3i-target1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      -0.0155,
+      0.0145
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "target1_3i-rung_best1_3i": {
+     "delta": 0.198,
+     "ci90_conditional": [
+      0.1364,
+      0.2595
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "rung_best1_3i-rung_best1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      0.0,
+      0.0
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "fixed9-fixed6_2i": {
+     "delta": -0.0205,
+     "ci90_conditional": [
+      -0.0397,
+      -0.0008
+     ],
+     "excludes_zero": true,
+     "winner": "b"
+    },
+    "fixed9-rung_best1_3i": {
+     "delta": 0.0432,
+     "ci90_conditional": [
+      0.0047,
+      0.084
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target3-target2_2i": {
+     "delta": 0.0105,
+     "ci90_conditional": [
+      -0.0002,
+      0.0217
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "target3-rung_best1_3i": {
+     "delta": 0.1935,
+     "ci90_conditional": [
+      0.1355,
+      0.2525
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target1_vnorm-rung_best1_2i": {
+     "delta": 0.198,
+     "ci90_conditional": [
+      0.1364,
+      0.2595
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    }
+   }
+  },
+  {
+   "grid": "A",
+   "task": "halueval_qa",
+   "model": "Qwen2.5-32B-Instruct",
+   "n_layers": 64,
+   "n_rows": 200,
+   "rungs": [
+    32,
+    62,
+    63
+   ],
+   "vnorm_cells_scored": 38400,
+   "capture_mode": "per_block_v_proj_hook",
+   "commit_p_max_delta": 0.0,
+   "peak_block": {
+    "js": 56,
+    "bos": 62,
+    "vnorm": 56
+   },
+   "peak_auroc": {
+    "js": 0.9106,
+    "bos": 0.8489,
+    "vnorm": 0.9155
+   },
+   "curve_pearson": {
+    "js~bos": 0.3286,
+    "js~vnorm": 0.7274,
+    "bos~vnorm": 0.4078
+   },
+   "cross_eval": {
+    "js@bospeak": 0.8829,
+    "bos@jspeak": 0.6368,
+    "js@vnormpeak": 0.9106,
+    "vnorm@jspeak": 0.9155,
+    "bos@vnormpeak": 0.6368,
+    "vnorm@bospeak": 0.8738
+   },
+   "mutually_blind_pairs": [],
+   "arms_foldmean": {
+    "fixed9": 0.8785,
+    "fixed6_2i": 0.812,
+    "rung_best1_3i": 0.861,
+    "rung_best1_2i": 0.8775,
+    "target1_3i": 0.907,
+    "target1_2i": 0.9095,
+    "target3": 0.8985,
+    "target2_2i": 0.874,
+    "target1_vnorm": 0.914
+   },
+   "contrasts": {
+    "target1_3i-target1_2i": {
+     "delta": -0.0025,
+     "ci90_conditional": [
+      -0.012,
+      0.007
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "target1_3i-rung_best1_3i": {
+     "delta": 0.046,
+     "ci90_conditional": [
+      0.016,
+      0.079
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "rung_best1_3i-rung_best1_2i": {
+     "delta": -0.0165,
+     "ci90_conditional": [
+      -0.032,
+      -0.004
+     ],
+     "excludes_zero": true,
+     "winner": "b"
+    },
+    "fixed9-fixed6_2i": {
+     "delta": 0.0665,
+     "ci90_conditional": [
+      0.033,
+      0.0985
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "fixed9-rung_best1_3i": {
+     "delta": 0.0175,
+     "ci90_conditional": [
+      -0.017,
+      0.054
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "target3-target2_2i": {
+     "delta": 0.0245,
+     "ci90_conditional": [
+      0.01,
+      0.0393
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target3-rung_best1_3i": {
+     "delta": 0.0375,
+     "ci90_conditional": [
+      0.0038,
+      0.073
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target1_vnorm-rung_best1_2i": {
+     "delta": 0.0365,
+     "ci90_conditional": [
+      0.012,
+      0.063
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    }
+   }
+  },
+  {
+   "grid": "A",
+   "task": "halueval_qa",
+   "model": "Qwen2.5-72B-Instruct",
+   "n_layers": 80,
+   "n_rows": 200,
+   "rungs": [
+    40,
+    78,
+    79
+   ],
+   "vnorm_cells_scored": 48000,
+   "capture_mode": "per_block_v_proj_hook",
+   "commit_p_max_delta": 0.0,
+   "peak_block": {
+    "js": 63,
+    "bos": 70,
+    "vnorm": 76
+   },
+   "peak_auroc": {
+    "js": 0.8961,
+    "bos": 0.8532,
+    "vnorm": 0.8659
+   },
+   "curve_pearson": {
+    "js~bos": 0.1162,
+    "js~vnorm": 0.2902,
+    "bos~vnorm": 0.8472
+   },
+   "cross_eval": {
+    "js@bospeak": 0.5362,
+    "bos@jspeak": 0.5237,
+    "js@vnormpeak": 0.6405,
+    "vnorm@jspeak": 0.7035,
+    "bos@vnormpeak": 0.6932,
+    "vnorm@bospeak": 0.8331
+   },
+   "mutually_blind_pairs": [
+    "js~bos"
+   ],
+   "arms_foldmean": {
+    "fixed9": 0.7047,
+    "fixed6_2i": 0.668,
+    "rung_best1_3i": 0.764,
+    "rung_best1_2i": 0.709,
+    "target1_3i": 0.891,
+    "target1_2i": 0.891,
+    "target3": 0.9223,
+    "target2_2i": 0.897,
+    "target1_vnorm": 0.8655
+   },
+   "contrasts": {
+    "target1_3i-target1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      0.0,
+      0.0
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "target1_3i-rung_best1_3i": {
+     "delta": 0.127,
+     "ci90_conditional": [
+      0.064,
+      0.1915
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "rung_best1_3i-rung_best1_2i": {
+     "delta": 0.055,
+     "ci90_conditional": [
+      0.016,
+      0.095
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "fixed9-fixed6_2i": {
+     "delta": 0.0368,
+     "ci90_conditional": [
+      0.0113,
+      0.0628
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "fixed9-rung_best1_3i": {
+     "delta": -0.0593,
+     "ci90_conditional": [
+      -0.1258,
+      0.0015
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "target3-target2_2i": {
+     "delta": 0.0252,
+     "ci90_conditional": [
+      0.0065,
+      0.048
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target3-rung_best1_3i": {
+     "delta": 0.1583,
+     "ci90_conditional": [
+      0.109,
+      0.2085
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target1_vnorm-rung_best1_2i": {
+     "delta": 0.1565,
+     "ci90_conditional": [
+      0.1055,
+      0.212
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    }
+   }
+  },
+  {
+   "grid": "A",
+   "task": "halueval_qa",
+   "model": "Qwen2.5-7B-Instruct",
+   "n_layers": 28,
+   "n_rows": 200,
+   "rungs": [
+    14,
+    26,
+    27
+   ],
+   "vnorm_cells_scored": 16800,
+   "capture_mode": "per_block_v_proj_hook",
+   "commit_p_max_delta": 0.0,
+   "peak_block": {
+    "js": 26,
+    "bos": 22,
+    "vnorm": 22
+   },
+   "peak_auroc": {
+    "js": 0.8713,
+    "bos": 0.737,
+    "vnorm": 0.7465
+   },
+   "curve_pearson": {
+    "js~bos": 0.2169,
+    "js~vnorm": 0.2685,
+    "bos~vnorm": 0.5203
+   },
+   "cross_eval": {
+    "js@bospeak": 0.7548,
+    "bos@jspeak": 0.5846,
+    "js@vnormpeak": 0.7548,
+    "vnorm@jspeak": 0.5582,
+    "bos@vnormpeak": 0.737,
+    "vnorm@bospeak": 0.7465
+   },
+   "mutually_blind_pairs": [],
+   "arms_foldmean": {
+    "fixed9": 0.7857,
+    "fixed6_2i": 0.7442,
+    "rung_best1_3i": 0.872,
+    "rung_best1_2i": 0.872,
+    "target1_3i": 0.872,
+    "target1_2i": 0.872,
+    "target3": 0.8585,
+    "target2_2i": 0.8755,
+    "target1_vnorm": 0.624
+   },
+   "contrasts": {
+    "target1_3i-target1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      0.0,
+      0.0
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "target1_3i-rung_best1_3i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      0.0,
+      0.0
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "rung_best1_3i-rung_best1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      0.0,
+      0.0
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "fixed9-fixed6_2i": {
+     "delta": 0.0415,
+     "ci90_conditional": [
+      0.008,
+      0.0733
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "fixed9-rung_best1_3i": {
+     "delta": -0.0863,
+     "ci90_conditional": [
+      -0.141,
+      -0.0305
+     ],
+     "excludes_zero": true,
+     "winner": "b"
+    },
+    "target3-target2_2i": {
+     "delta": -0.017,
+     "ci90_conditional": [
+      -0.0448,
+      0.0108
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "target3-rung_best1_3i": {
+     "delta": -0.0135,
+     "ci90_conditional": [
+      -0.06,
+      0.0368
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "target1_vnorm-rung_best1_2i": {
+     "delta": -0.248,
+     "ci90_conditional": [
+      -0.327,
+      -0.164
+     ],
+     "excludes_zero": true,
+     "winner": "b"
+    }
+   }
+  },
+  {
+   "grid": "B",
+   "task": "anli_r1",
+   "model": "Llama-3.1-70B-Instruct",
+   "n_layers": 80,
+   "n_rows": 200,
+   "rungs": [
+    40,
+    78,
+    79
+   ],
+   "vnorm_cells_scored": 48000,
+   "capture_mode": "per_block_v_proj_hook",
+   "commit_p_max_delta": 1.1102230246251565e-16,
+   "peak_block": {
+    "js": 45,
+    "bos": 61,
+    "vnorm": 45
+   },
+   "peak_auroc": {
+    "js": 0.9018,
+    "bos": 0.9148,
+    "vnorm": 0.9116
+   },
+   "curve_pearson": {
+    "js~bos": 0.3342,
+    "js~vnorm": 0.3844,
+    "bos~vnorm": 0.9594
+   },
+   "cross_eval": {
+    "js@bospeak": 0.5642,
+    "bos@jspeak": 0.91,
+    "js@vnormpeak": 0.9018,
+    "vnorm@jspeak": 0.9116,
+    "bos@vnormpeak": 0.91,
+    "vnorm@bospeak": 0.9071
+   },
+   "mutually_blind_pairs": [],
+   "arms_foldmean": {
+    "fixed9": 0.7682,
+    "fixed6_2i": 0.7688,
+    "rung_best1_3i": 0.866,
+    "rung_best1_2i": 0.866,
+    "target1_3i": 0.8945,
+    "target1_2i": 0.8945,
+    "target3": 0.9125,
+    "target2_2i": 0.9133,
+    "target1_vnorm": 0.899
+   },
+   "contrasts": {
+    "target1_3i-target1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      0.0,
+      0.0
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "target1_3i-rung_best1_3i": {
+     "delta": 0.0285,
+     "ci90_conditional": [
+      -0.005,
+      0.065
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "rung_best1_3i-rung_best1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      0.0,
+      0.0
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "fixed9-fixed6_2i": {
+     "delta": -0.0005,
+     "ci90_conditional": [
+      -0.0273,
+      0.026
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "fixed9-rung_best1_3i": {
+     "delta": -0.0978,
+     "ci90_conditional": [
+      -0.1477,
+      -0.0475
+     ],
+     "excludes_zero": true,
+     "winner": "b"
+    },
+    "target3-target2_2i": {
+     "delta": -0.0008,
+     "ci90_conditional": [
+      -0.0095,
+      0.008
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "target3-rung_best1_3i": {
+     "delta": 0.0465,
+     "ci90_conditional": [
+      0.0103,
+      0.0865
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target1_vnorm-rung_best1_2i": {
+     "delta": 0.033,
+     "ci90_conditional": [
+      -0.004,
+      0.0755
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    }
+   }
+  },
+  {
+   "grid": "B",
+   "task": "anli_r1",
+   "model": "Llama-3.1-8B-Instruct",
+   "n_layers": 32,
+   "n_rows": 200,
+   "rungs": [
+    16,
+    30,
+    31
+   ],
+   "vnorm_cells_scored": 19200,
+   "capture_mode": "per_block_v_proj_hook",
+   "commit_p_max_delta": 0.0,
+   "peak_block": {
+    "js": 18,
+    "bos": 30,
+    "vnorm": 30
+   },
+   "peak_auroc": {
+    "js": 0.744,
+    "bos": 0.7506,
+    "vnorm": 0.7518
+   },
+   "curve_pearson": {
+    "js~bos": 0.4085,
+    "js~vnorm": 0.5184,
+    "bos~vnorm": 0.9308
+   },
+   "cross_eval": {
+    "js@bospeak": 0.636,
+    "bos@jspeak": 0.6149,
+    "js@vnormpeak": 0.636,
+    "vnorm@jspeak": 0.6127,
+    "bos@vnormpeak": 0.7506,
+    "vnorm@bospeak": 0.7518
+   },
+   "mutually_blind_pairs": [
+    "js~bos",
+    "js~vnorm"
+   ],
+   "arms_foldmean": {
+    "fixed9": 0.7263,
+    "fixed6_2i": 0.7208,
+    "rung_best1_3i": 0.7545,
+    "rung_best1_2i": 0.764,
+    "target1_3i": 0.6945,
+    "target1_2i": 0.689,
+    "target3": 0.7488,
+    "target2_2i": 0.754,
+    "target1_vnorm": 0.718
+   },
+   "contrasts": {
+    "target1_3i-target1_2i": {
+     "delta": 0.0055,
+     "ci90_conditional": [
+      -0.01,
+      0.023
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "target1_3i-rung_best1_3i": {
+     "delta": -0.06,
+     "ci90_conditional": [
+      -0.109,
+      -0.012
+     ],
+     "excludes_zero": true,
+     "winner": "b"
+    },
+    "rung_best1_3i-rung_best1_2i": {
+     "delta": -0.0095,
+     "ci90_conditional": [
+      -0.027,
+      0.006
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "fixed9-fixed6_2i": {
+     "delta": 0.0055,
+     "ci90_conditional": [
+      -0.008,
+      0.019
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "fixed9-rung_best1_3i": {
+     "delta": -0.0282,
+     "ci90_conditional": [
+      -0.063,
+      0.0085
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "target3-target2_2i": {
+     "delta": -0.0052,
+     "ci90_conditional": [
+      -0.0242,
+      0.0137
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "target3-rung_best1_3i": {
+     "delta": -0.0057,
+     "ci90_conditional": [
+      -0.046,
+      0.0335
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "target1_vnorm-rung_best1_2i": {
+     "delta": -0.046,
+     "ci90_conditional": [
+      -0.089,
+      -0.005
+     ],
+     "excludes_zero": true,
+     "winner": "b"
+    }
+   }
+  },
+  {
+   "grid": "B",
+   "task": "anli_r1",
+   "model": "Mistral-Medium-3.5-128B",
+   "n_layers": 88,
+   "n_rows": 200,
+   "rungs": [
+    44,
+    86,
+    87
+   ],
+   "vnorm_cells_scored": 52800,
+   "capture_mode": "per_block_v_proj_hook",
+   "commit_p_max_delta": 1.1102230246251565e-16,
+   "peak_block": {
+    "js": 83,
+    "bos": 70,
+    "vnorm": 70
+   },
+   "peak_auroc": {
+    "js": 0.867,
+    "bos": 0.8803,
+    "vnorm": 0.8798
+   },
+   "curve_pearson": {
+    "js~bos": 0.2181,
+    "js~vnorm": 0.2803,
+    "bos~vnorm": 0.8958
+   },
+   "cross_eval": {
+    "js@bospeak": 0.5496,
+    "bos@jspeak": 0.5519,
+    "js@vnormpeak": 0.5496,
+    "vnorm@jspeak": 0.6306,
+    "bos@vnormpeak": 0.8803,
+    "vnorm@bospeak": 0.8798
+   },
+   "mutually_blind_pairs": [
+    "js~bos",
+    "js~vnorm"
+   ],
+   "arms_foldmean": {
+    "fixed9": 0.8837,
+    "fixed6_2i": 0.887,
+    "rung_best1_3i": 0.8575,
+    "rung_best1_2i": 0.8575,
+    "target1_3i": 0.859,
+    "target1_2i": 0.8635,
+    "target3": 0.9158,
+    "target2_2i": 0.9135,
+    "target1_vnorm": 0.881
+   },
+   "contrasts": {
+    "target1_3i-target1_2i": {
+     "delta": -0.0045,
+     "ci90_conditional": [
+      -0.0095,
+      -0.0005
+     ],
+     "excludes_zero": true,
+     "winner": "b"
+    },
+    "target1_3i-rung_best1_3i": {
+     "delta": 0.0015,
+     "ci90_conditional": [
+      -0.0535,
+      0.0545
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "rung_best1_3i-rung_best1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      0.0,
+      0.0
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "fixed9-fixed6_2i": {
+     "delta": -0.0033,
+     "ci90_conditional": [
+      -0.021,
+      0.015
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "fixed9-rung_best1_3i": {
+     "delta": 0.0262,
+     "ci90_conditional": [
+      -0.017,
+      0.0685
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "target3-target2_2i": {
+     "delta": 0.0023,
+     "ci90_conditional": [
+      -0.0105,
+      0.014
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "target3-rung_best1_3i": {
+     "delta": 0.0583,
+     "ci90_conditional": [
+      0.008,
+      0.1065
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target1_vnorm-rung_best1_2i": {
+     "delta": 0.0235,
+     "ci90_conditional": [
+      -0.0315,
+      0.0785
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    }
+   }
+  },
+  {
+   "grid": "B",
+   "task": "anli_r1",
+   "model": "gemma-3-12b-it",
+   "n_layers": 48,
+   "n_rows": 200,
+   "rungs": [
+    24,
+    46,
+    47
+   ],
+   "vnorm_cells_scored": 28800,
+   "capture_mode": "per_block_v_proj_hook",
+   "commit_p_max_delta": 0.0,
+   "peak_block": {
+    "js": 39,
+    "bos": 46,
+    "vnorm": 34
+   },
+   "peak_auroc": {
+    "js": 0.7934,
+    "bos": 0.8405,
+    "vnorm": 0.8465
+   },
+   "curve_pearson": {
+    "js~bos": 0.4597,
+    "js~vnorm": 0.3467,
+    "bos~vnorm": 0.7958
+   },
+   "cross_eval": {
+    "js@bospeak": 0.7799,
+    "bos@jspeak": 0.5484,
+    "js@vnormpeak": 0.6612,
+    "vnorm@jspeak": 0.5557,
+    "bos@vnormpeak": 0.8301,
+    "vnorm@bospeak": 0.5628
+   },
+   "mutually_blind_pairs": [],
+   "arms_foldmean": {
+    "fixed9": 0.7775,
+    "fixed6_2i": 0.8097,
+    "rung_best1_3i": 0.848,
+    "rung_best1_2i": 0.848,
+    "target1_3i": 0.849,
+    "target1_2i": 0.833,
+    "target3": 0.8445,
+    "target2_2i": 0.812,
+    "target1_vnorm": 0.857
+   },
+   "contrasts": {
+    "target1_3i-target1_2i": {
+     "delta": 0.016,
+     "ci90_conditional": [
+      -0.0075,
+      0.0405
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "target1_3i-rung_best1_3i": {
+     "delta": 0.001,
+     "ci90_conditional": [
+      -0.029,
+      0.0315
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "rung_best1_3i-rung_best1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      0.0,
+      0.0
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "fixed9-fixed6_2i": {
+     "delta": -0.0323,
+     "ci90_conditional": [
+      -0.0607,
+      -0.0042
+     ],
+     "excludes_zero": true,
+     "winner": "b"
+    },
+    "fixed9-rung_best1_3i": {
+     "delta": -0.0705,
+     "ci90_conditional": [
+      -0.1145,
+      -0.0255
+     ],
+     "excludes_zero": true,
+     "winner": "b"
+    },
+    "target3-target2_2i": {
+     "delta": 0.0325,
+     "ci90_conditional": [
+      0.0142,
+      0.054
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target3-rung_best1_3i": {
+     "delta": -0.0035,
+     "ci90_conditional": [
+      -0.0355,
+      0.0268
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "target1_vnorm-rung_best1_2i": {
+     "delta": 0.009,
+     "ci90_conditional": [
+      -0.023,
+      0.0415
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    }
+   }
+  },
+  {
+   "grid": "B",
+   "task": "halueval_qa",
+   "model": "Llama-3.1-70B-Instruct",
+   "n_layers": 80,
+   "n_rows": 200,
+   "rungs": [
+    40,
+    78,
+    79
+   ],
+   "vnorm_cells_scored": 48000,
+   "capture_mode": "per_block_v_proj_hook",
+   "commit_p_max_delta": 0.0,
+   "peak_block": {
+    "js": 38,
+    "bos": 26,
+    "vnorm": 26
+   },
+   "peak_auroc": {
+    "js": 0.8984,
+    "bos": 0.9044,
+    "vnorm": 0.903
+   },
+   "curve_pearson": {
+    "js~bos": 0.1101,
+    "js~vnorm": 0.0974,
+    "bos~vnorm": 0.9249
+   },
+   "cross_eval": {
+    "js@bospeak": 0.6483,
+    "bos@jspeak": 0.6023,
+    "js@vnormpeak": 0.6483,
+    "vnorm@jspeak": 0.6457,
+    "bos@vnormpeak": 0.9044,
+    "vnorm@bospeak": 0.903
+   },
+   "mutually_blind_pairs": [
+    "js~bos",
+    "js~vnorm"
+   ],
+   "arms_foldmean": {
+    "fixed9": 0.667,
+    "fixed6_2i": 0.7023,
+    "rung_best1_3i": 0.695,
+    "rung_best1_2i": 0.695,
+    "target1_3i": 0.889,
+    "target1_2i": 0.89,
+    "target3": 0.9505,
+    "target2_2i": 0.9617,
+    "target1_vnorm": 0.899
+   },
+   "contrasts": {
+    "target1_3i-target1_2i": {
+     "delta": -0.001,
+     "ci90_conditional": [
+      -0.005,
+      0.002
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "target1_3i-rung_best1_3i": {
+     "delta": 0.194,
+     "ci90_conditional": [
+      0.126,
+      0.2595
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "rung_best1_3i-rung_best1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      0.0,
+      0.0
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "fixed9-fixed6_2i": {
+     "delta": -0.0353,
+     "ci90_conditional": [
+      -0.058,
+      -0.0147
+     ],
+     "excludes_zero": true,
+     "winner": "b"
+    },
+    "fixed9-rung_best1_3i": {
+     "delta": -0.028,
+     "ci90_conditional": [
+      -0.085,
+      0.031
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "target3-target2_2i": {
+     "delta": -0.0112,
+     "ci90_conditional": [
+      -0.0278,
+      0.0037
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "target3-rung_best1_3i": {
+     "delta": 0.2555,
+     "ci90_conditional": [
+      0.1935,
+      0.313
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target1_vnorm-rung_best1_2i": {
+     "delta": 0.204,
+     "ci90_conditional": [
+      0.1345,
+      0.267
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    }
+   }
+  },
+  {
+   "grid": "B",
+   "task": "halueval_qa",
+   "model": "Llama-3.1-8B-Instruct",
+   "n_layers": 32,
+   "n_rows": 200,
+   "rungs": [
+    16,
+    30,
+    31
+   ],
+   "vnorm_cells_scored": 19200,
+   "capture_mode": "per_block_v_proj_hook",
+   "commit_p_max_delta": 0.0,
+   "peak_block": {
+    "js": 1,
+    "bos": 29,
+    "vnorm": 29
+   },
+   "peak_auroc": {
+    "js": 0.8915,
+    "bos": 0.8857,
+    "vnorm": 0.8744
+   },
+   "curve_pearson": {
+    "js~bos": 0.0158,
+    "js~vnorm": 0.0293,
+    "bos~vnorm": 0.9593
+   },
+   "cross_eval": {
+    "js@bospeak": 0.5598,
+    "bos@jspeak": 0.5672,
+    "js@vnormpeak": 0.5598,
+    "vnorm@jspeak": 0.5103,
+    "bos@vnormpeak": 0.8857,
+    "vnorm@bospeak": 0.8744
+   },
+   "mutually_blind_pairs": [
+    "js~bos",
+    "js~vnorm"
+   ],
+   "arms_foldmean": {
+    "fixed9": 0.8345,
+    "fixed6_2i": 0.8415,
+    "rung_best1_3i": 0.839,
+    "rung_best1_2i": 0.8505,
+    "target1_3i": 0.8615,
+    "target1_2i": 0.8615,
+    "target3": 0.9292,
+    "target2_2i": 0.9485,
+    "target1_vnorm": 0.8585
+   },
+   "contrasts": {
+    "target1_3i-target1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      0.0,
+      0.0
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "target1_3i-rung_best1_3i": {
+     "delta": 0.0225,
+     "ci90_conditional": [
+      -0.029,
+      0.077
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "rung_best1_3i-rung_best1_2i": {
+     "delta": -0.0115,
+     "ci90_conditional": [
+      -0.0285,
+      0.007
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "fixed9-fixed6_2i": {
+     "delta": -0.007,
+     "ci90_conditional": [
+      -0.0185,
+      0.004
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "fixed9-rung_best1_3i": {
+     "delta": -0.0045,
+     "ci90_conditional": [
+      -0.0335,
+      0.024
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "target3-target2_2i": {
+     "delta": -0.0192,
+     "ci90_conditional": [
+      -0.0353,
+      -0.0053
+     ],
+     "excludes_zero": true,
+     "winner": "b"
+    },
+    "target3-rung_best1_3i": {
+     "delta": 0.0903,
+     "ci90_conditional": [
+      0.0515,
+      0.1312
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target1_vnorm-rung_best1_2i": {
+     "delta": 0.008,
+     "ci90_conditional": [
+      -0.0345,
+      0.051
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    }
+   }
+  },
+  {
+   "grid": "B",
+   "task": "halueval_qa",
+   "model": "Mistral-Medium-3.5-128B",
+   "n_layers": 88,
+   "n_rows": 200,
+   "rungs": [
+    44,
+    86,
+    87
+   ],
+   "vnorm_cells_scored": 52800,
+   "capture_mode": "per_block_v_proj_hook",
+   "commit_p_max_delta": 0.0,
+   "peak_block": {
+    "js": 85,
+    "bos": 87,
+    "vnorm": 58
+   },
+   "peak_auroc": {
+    "js": 0.848,
+    "bos": 0.8913,
+    "vnorm": 0.8749
+   },
+   "curve_pearson": {
+    "js~bos": 0.1268,
+    "js~vnorm": 0.0787,
+    "bos~vnorm": 0.9175
+   },
+   "cross_eval": {
+    "js@bospeak": 0.693,
+    "bos@jspeak": 0.6966,
+    "js@vnormpeak": 0.7663,
+    "vnorm@jspeak": 0.594,
+    "bos@vnormpeak": 0.8465,
+    "vnorm@bospeak": 0.8544
+   },
+   "mutually_blind_pairs": [],
+   "arms_foldmean": {
+    "fixed9": 0.868,
+    "fixed6_2i": 0.8285,
+    "rung_best1_3i": 0.8865,
+    "rung_best1_2i": 0.8865,
+    "target1_3i": 0.8775,
+    "target1_2i": 0.8775,
+    "target3": 0.9277,
+    "target2_2i": 0.9115,
+    "target1_vnorm": 0.83
+   },
+   "contrasts": {
+    "target1_3i-target1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      0.0,
+      0.0
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "target1_3i-rung_best1_3i": {
+     "delta": -0.009,
+     "ci90_conditional": [
+      -0.039,
+      0.024
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "rung_best1_3i-rung_best1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      0.0,
+      0.0
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "fixed9-fixed6_2i": {
+     "delta": 0.0395,
+     "ci90_conditional": [
+      0.0205,
+      0.0625
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "fixed9-rung_best1_3i": {
+     "delta": -0.0185,
+     "ci90_conditional": [
+      -0.0577,
+      0.022
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "target3-target2_2i": {
+     "delta": 0.0162,
+     "ci90_conditional": [
+      -0.0025,
+      0.036
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "target3-rung_best1_3i": {
+     "delta": 0.0413,
+     "ci90_conditional": [
+      0.009,
+      0.078
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target1_vnorm-rung_best1_2i": {
+     "delta": -0.0565,
+     "ci90_conditional": [
+      -0.116,
+      -0.005
+     ],
+     "excludes_zero": true,
+     "winner": "b"
+    }
+   }
+  },
+  {
+   "grid": "B",
+   "task": "halueval_qa",
+   "model": "Mistral-Small-3.2-24B-Instruct-2506",
+   "n_layers": 40,
+   "n_rows": 200,
+   "rungs": [
+    20,
+    38,
+    39
+   ],
+   "vnorm_cells_scored": 24000,
+   "capture_mode": "per_block_v_proj_hook",
+   "commit_p_max_delta": 0.0,
+   "peak_block": {
+    "js": 37,
+    "bos": 33,
+    "vnorm": 29
+   },
+   "peak_auroc": {
+    "js": 0.8787,
+    "bos": 0.9046,
+    "vnorm": 0.8954
+   },
+   "curve_pearson": {
+    "js~bos": 0.2404,
+    "js~vnorm": 0.3849,
+    "bos~vnorm": 0.9289
+   },
+   "cross_eval": {
+    "js@bospeak": 0.6774,
+    "bos@jspeak": 0.8673,
+    "js@vnormpeak": 0.875,
+    "vnorm@jspeak": 0.8762,
+    "bos@vnormpeak": 0.8481,
+    "vnorm@bospeak": 0.8775
+   },
+   "mutually_blind_pairs": [],
+   "arms_foldmean": {
+    "fixed9": 0.801,
+    "fixed6_2i": 0.7955,
+    "rung_best1_3i": 0.8415,
+    "rung_best1_2i": 0.8415,
+    "target1_3i": 0.8825,
+    "target1_2i": 0.9065,
+    "target3": 0.9138,
+    "target2_2i": 0.9032,
+    "target1_vnorm": 0.8805
+   },
+   "contrasts": {
+    "target1_3i-target1_2i": {
+     "delta": -0.024,
+     "ci90_conditional": [
+      -0.0495,
+      -0.002
+     ],
+     "excludes_zero": true,
+     "winner": "b"
+    },
+    "target1_3i-rung_best1_3i": {
+     "delta": 0.041,
+     "ci90_conditional": [
+      -0.0015,
+      0.09
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "rung_best1_3i-rung_best1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      0.0,
+      0.0
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "fixed9-fixed6_2i": {
+     "delta": 0.0055,
+     "ci90_conditional": [
+      -0.0203,
+      0.0333
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "fixed9-rung_best1_3i": {
+     "delta": -0.0405,
+     "ci90_conditional": [
+      -0.0885,
+      0.0115
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "target3-target2_2i": {
+     "delta": 0.0105,
+     "ci90_conditional": [
+      -0.0015,
+      0.0235
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "target3-rung_best1_3i": {
+     "delta": 0.0723,
+     "ci90_conditional": [
+      0.034,
+      0.1135
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target1_vnorm-rung_best1_2i": {
+     "delta": 0.039,
+     "ci90_conditional": [
+      -0.0041,
+      0.0885
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    }
+   }
+  },
+  {
+   "grid": "B",
+   "task": "halueval_qa",
+   "model": "gemma-3-12b-it",
+   "n_layers": 48,
+   "n_rows": 200,
+   "rungs": [
+    24,
+    46,
+    47
+   ],
+   "vnorm_cells_scored": 28800,
+   "capture_mode": "per_block_v_proj_hook",
+   "commit_p_max_delta": 0.0,
+   "peak_block": {
+    "js": 22,
+    "bos": 43,
+    "vnorm": 41
+   },
+   "peak_auroc": {
+    "js": 0.8998,
+    "bos": 0.8863,
+    "vnorm": 0.8958
+   },
+   "curve_pearson": {
+    "js~bos": 0.027,
+    "js~vnorm": 0.0135,
+    "bos~vnorm": 0.5159
+   },
+   "cross_eval": {
+    "js@bospeak": 0.5726,
+    "bos@jspeak": 0.7798,
+    "js@vnormpeak": 0.6582,
+    "vnorm@jspeak": 0.6619,
+    "bos@vnormpeak": 0.8216,
+    "vnorm@bospeak": 0.8834
+   },
+   "mutually_blind_pairs": [],
+   "arms_foldmean": {
+    "fixed9": 0.8322,
+    "fixed6_2i": 0.7863,
+    "rung_best1_3i": 0.782,
+    "rung_best1_2i": 0.782,
+    "target1_3i": 0.836,
+    "target1_2i": 0.8405,
+    "target3": 0.9475,
+    "target2_2i": 0.934,
+    "target1_vnorm": 0.8945
+   },
+   "contrasts": {
+    "target1_3i-target1_2i": {
+     "delta": -0.0045,
+     "ci90_conditional": [
+      -0.039,
+      0.0325
+     ],
+     "excludes_zero": false,
+     "winner": "b"
+    },
+    "target1_3i-rung_best1_3i": {
+     "delta": 0.054,
+     "ci90_conditional": [
+      -0.003,
+      0.11
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "rung_best1_3i-rung_best1_2i": {
+     "delta": 0.0,
+     "ci90_conditional": [
+      0.0,
+      0.0
+     ],
+     "excludes_zero": false,
+     "winner": "tie"
+    },
+    "fixed9-fixed6_2i": {
+     "delta": 0.046,
+     "ci90_conditional": [
+      0.0165,
+      0.0738
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "fixed9-rung_best1_3i": {
+     "delta": 0.0503,
+     "ci90_conditional": [
+      0.0065,
+      0.094
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target3-target2_2i": {
+     "delta": 0.0135,
+     "ci90_conditional": [
+      -0.0027,
+      0.0305
+     ],
+     "excludes_zero": false,
+     "winner": "a"
+    },
+    "target3-rung_best1_3i": {
+     "delta": 0.1655,
+     "ci90_conditional": [
+      0.1187,
+      0.2188
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    },
+    "target1_vnorm-rung_best1_2i": {
+     "delta": 0.1125,
+     "ci90_conditional": [
+      0.0525,
+      0.1775
+     ],
+     "excludes_zero": true,
+     "winner": "a"
+    }
+   }
+  }
+ ]
+}

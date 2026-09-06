@@ -11,3 +11,5 @@ stage_b/data_bench_preview/
 
 # transient run-lifecycle pid files
 *.pid
+exploratory/depth-curve/npz_vnorm/
+exploratory/depth-curve/_vnorm_logs/
