@@ -21,7 +21,7 @@ from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import GroupKFold
 from sklearn.pipeline import make_pipeline
 
-DATA = "/Users/msrk/Documents/commit-confluence/stage_b/data_bench"
+DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data_bench")
 SEED = 20260711
 FOLDS = 5
 
