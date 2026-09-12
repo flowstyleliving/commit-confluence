@@ -44,7 +44,7 @@ identifiers:
 
 preferred-citation:
   type: article
-  title: "No Universal Detector, but a Universal Floor: A Pre-Registered Study of Calibrated Early-Response Geometry for Input-Label Discrimination Across Ten Language Models, with a Registered Six-Task Extension"
+  title: "No Universal Detector, but a Cohort-Level Floor: A Pre-Registered Study of Calibrated Early-Response Geometry for Input-Label Discrimination Across Ten Language Models, with a Registered Six-Task Extension"
   authors:
     - family-names: Kitti
       given-names: Michael S. R.

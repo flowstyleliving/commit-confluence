@@ -4,9 +4,12 @@ A pre-registered study of whether four families of **commit-moment** internal si
 unified into one calibrated detector, and whether that detector is **universal or must be
 calibrated per deployment**.
 
-**Companion paper:** *Decoder LLM Hallucination: No Universal Detector, but a Universal Floor —
-A Pre-Registered Study of Commit-Moment Hallucination Monitoring Across Ten Language Models*
-(M. S. R. Kitti, Furnace Research, June 2026). This repository is the paper's reproducibility
+**Companion paper:** *No Universal Detector, but a Cohort-Level Floor —
+A Pre-Registered Study of Calibrated Early-Response Geometry for Input-Label Discrimination
+Across Ten Language Models, with a Registered Six-Task Extension*
+(M. S. R. Kitti, Furnace Research, 2026). Note the scope: every task supplies the candidate under
+judgement in the prompt, so the label discriminated is a property of the **supplied input**, not
+whether the model hallucinated in its own free generation. This repository is the paper's reproducibility
 artifact: the pre-registration, the gated fresh data, the registered per-deployment score matrices
 and profiles, and the analysis code. Citation metadata in [`CITATION.cff`](CITATION.cff);
 code MIT, artifacts CC BY 4.0 ([`LICENSE`](LICENSE)).
