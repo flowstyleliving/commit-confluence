@@ -1,0 +1,33 @@
+{
+  "upload_type": "software",
+  "title": "commit-confluence: reproducibility artifact for a pre-registered study of calibrated early-response geometry",
+  "version": "1.1.0",
+  "creators": [
+    {
+      "name": "Kitti, Michael S. R.",
+      "affiliation": "Furnace Research (independent)"
+    }
+  ],
+  "license": "mit",
+  "access_right": "open",
+  "description": "<p>Pre-registrations, gated evaluation data, registered per-deployment score matrices and calibration profiles, provenance manifests, and analysis code for a study of whether four families of internal signals read near the start of a model's response (attention morphology, residual-stream motion, readout geometry, and the model's own confidence) combine into one calibrated discriminator, and whether that discriminator transfers across models or must be calibrated per deployment.</p><p><strong>What is measured, stated first.</strong> Every task supplies the candidate under judgement in the prompt: the HaluEval families pair a correct against a hallucinated answer, summary or response; ANLI supplies a premise and hypothesis; TriviaQA pairs a question with either its answer or a distractor. The label discriminated is therefore a property of the <em>supplied input</em>, not whether the model under test hallucinated in its own free generation. This artifact does not contain evidence about free-generation hallucination detection.</p><p><strong>Registered outcomes, including the failures.</strong> The confidence-free geometric dispatcher clears its registered discrimination criterion on 18/20 sealed deployments (bar 17/20) while the stricter all-signals claim is falsified (18/20 against a 19/20 bar). No single signal is best (12 distinct winners). On a third construct, per-model calibration passes 10/10 but one frozen cell with one frozen sign fails at 6/10, because four models read the shared signal in the opposite direction; both replication endpoints miss their bar at 7/20.</p><p><strong>Not peer reviewed.</strong> Research artifact and supporting code. Analysis code is MIT; data and results artifacts are CC BY 4.0 (see LICENSE for the split and for upstream dataset terms: ANLI CC BY-NC 4.0, TriviaQA Apache-2.0, HaluEval MIT).</p>",
+  "keywords": [
+    "large language models",
+    "input-label discrimination",
+    "pre-registration",
+    "calibration",
+    "interpretability",
+    "uncertainty quantification",
+    "attention morphology",
+    "reproducibility artifact"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/flowstyleliving/commit-confluence/releases/tag/prereg-seal-20260612",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "url"
+    }
+  ],
+  "notes": "The tag prereg-seal-20260612 is the commit from which the registered run was executed (seed 20260612). Every registered endpoint and descriptive probe re-runs from this repository alone, with no model inference. ORCID for the creator is to be added by the author before publishing."
+}
