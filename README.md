@@ -4,10 +4,14 @@ A pre-registered study of whether four families of **commit-moment** internal si
 unified into one calibrated detector, and whether that detector is **universal or must be
 calibrated per deployment**.
 
-**Companion paper:** *No Universal Detector, but a Cohort-Level Floor —
+**Companion paper:** *A Cohort-Level Floor with Limits to Fixed-Detector Transfer —
 A Pre-Registered Study of Calibrated Early-Response Geometry for Input-Label Discrimination
 Across Ten Language Models, with a Registered Six-Task Extension*
-(M. S. R. Kitti, Furnace Research, 2026). Note the scope: every task supplies the candidate under
+(M. S. R. Kitti, Furnace Research, 2026).
+Published September 12, 2026 (version 1.0): [paper and source archive on Zenodo](https://doi.org/10.5281/zenodo.22003459).
+Original manuscript: July 26, 2026; revised manuscript: September 12, 2026. Not peer reviewed.
+
+Note the scope: every task supplies the candidate under
 judgement in the prompt, so the label discriminated is a property of the **supplied input**, not
 whether the model hallucinated in its own free generation. This repository is the paper's reproducibility
 artifact: the pre-registration, the gated fresh data, the registered per-deployment score matrices

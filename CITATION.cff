@@ -44,16 +44,17 @@ identifiers:
 
 preferred-citation:
   type: article
-  title: "No Universal Detector, but a Cohort-Level Floor: A Pre-Registered Study of Calibrated Early-Response Geometry for Input-Label Discrimination Across Ten Language Models, with a Registered Six-Task Extension"
+  title: "A Cohort-Level Floor with Limits to Fixed-Detector Transfer: A Pre-Registered Study of Calibrated Early-Response Geometry for Input-Label Discrimination Across Ten Language Models, with a Registered Six-Task Extension"
   authors:
     - family-names: Kitti
       given-names: Michael S. R.
       email: msrkittty@proton.me
       affiliation: "Furnace Research"
   year: 2026
-  month: 6
+  month: 9
+  day: 12
+  version: "1.0"
+  doi: "10.5281/zenodo.22003459"
+  url: "https://zenodo.org/records/22003459"
   institution:
     name: "Furnace Research"
-  # TODO(pre-review): add DOI / arXiv id / venue once the companion paper is posted.
-  # Until then the paper is cited by title only, which is not sufficient for an
-  # external review packet.

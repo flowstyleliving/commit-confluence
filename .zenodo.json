@@ -23,6 +23,12 @@
   ],
   "related_identifiers": [
     {
+      "identifier": "10.5281/zenodo.22003459",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    },
+    {
       "identifier": "https://github.com/flowstyleliving/commit-confluence/releases/tag/prereg-seal-20260612",
       "relation": "isSupplementTo",
       "resource_type": "software",
