@@ -1,0 +1,7 @@
+RPV pass-one pre-registration freeze
+frozen_utc: 2026-09-17
+PRE_REGISTRATION_RPV_PASS1.md sha256: 53501734e9e0c48df1a0460ad7310b382f5344b2dec91dd1c6275113bdf89456
+panel/PANEL_MANIFEST.json  sha256: b7e56f7cd81bf7eb00c9d93fd9bf3db68afc5e5ebc5fda70da81b925b2580afc
+A3: SATISFIED. Label-linked analysis permitted under this document only.
+Data captured 2026-09-16, before freeze; capture is label-blind; no label
+relationship and no correlation with surprise had been computed at freeze time.

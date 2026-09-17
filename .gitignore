@@ -13,3 +13,10 @@ stage_b/data_bench_preview/
 *.pid
 exploratory/depth-curve/npz_vnorm/
 exploratory/depth-curve/_vnorm_logs/
+
+# RPV pass-one lane: bulk per-row artifacts (~986 MB). Code, pre-registration,
+# freeze record and the frozen panel manifest ARE tracked; the row banks are not.
+exploratory/rpv-pass1/panel/pass1__*.json
+exploratory/rpv-pass1/audit_*.json
+exploratory/rpv-pass1/postfix_*.json
+exploratory/rpv-pass1/controls/*.json

@@ -1,0 +1,236 @@
+{
+  "schema": "rpv-pass1-panel-manifest/v1",
+  "frozen_utc": "2026-09-16T23:24:11.488586+00:00",
+  "temperature_grid": [
+    0.5,
+    0.7,
+    1.0,
+    1.4,
+    2.0
+  ],
+  "a4_accept_ratio": 0.0001,
+  "reference_hashes": {
+    "pri_runtime.py": "cf56a2607b94666ab092647a764b1b73c7974b38445caa6a4b252a9cdf240784",
+    "exploratory/shadow-ambiguity/comprehensive_run.py": "f6f5958bae5b035f07f034b9f4f5784b1a86c1ab00ab0f9c9ef4a5584776e8f8",
+    "exploratory/shadow-ambiguity/test_shadow_ambiguity.py": "12046a3ff98ddaba207396b943415dd5360f4cb4a942462994889d0aa8771961"
+  },
+  "overlay_hashes": {
+    "rpv_pass1_run.py": "96a48bb5db7c0cfc80376d3a91140f3c5a5e5dc33912144de78bde60cc203c17",
+    "rpv_pass1_temperature.py": "59f83cb1e1524098c50fe7270993a2ad16e376116403c83d5ca7cdfffb744b56",
+    "PRE_REGISTRATION_RPV_PASS1.md": "2d6367487be7b8cf13f71a6f5ca9636d1d1970743902bfc614fab5f781f78a58",
+    "run_panel.py": "76cf6b3d1ab3b55bba3bdca28bf4214a0d34813bce027d0a72b9d2c7c2e58c0d"
+  },
+  "n_cells": 26,
+  "n_models": 13,
+  "total_banked_rows": 3900,
+  "cells": [
+    {
+      "model_id": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit",
+      "benchmark": "anli_r1",
+      "banked_rows": 200,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
+      "data_sha256": "d1a3aed5e86af05c4b7bd459bb5938bbcca7ab6c758c855e1bce3f938b62f48e",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--DeepSeek-R1-Distill-Qwen-7B-4bit/snapshots/21848dbf533d2518a1ef895104820d5ee51317ea"
+    },
+    {
+      "model_id": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit",
+      "benchmark": "triviaqa_paired",
+      "banked_rows": 100,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
+      "data_sha256": "f2f870a7e2feb2c711b2a782f6aa6040233c8915bb066e87421e85f4778b3149",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--DeepSeek-R1-Distill-Qwen-7B-4bit/snapshots/21848dbf533d2518a1ef895104820d5ee51317ea"
+    },
+    {
+      "model_id": "mlx-community/Llama-3.1-8B-Instruct-4bit",
+      "benchmark": "anli_r1",
+      "banked_rows": 200,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
+      "data_sha256": "d1a3aed5e86af05c4b7bd459bb5938bbcca7ab6c758c855e1bce3f938b62f48e",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--Llama-3.1-8B-Instruct-4bit/snapshots/90215b22ec18e72f623dde2ea7af4097025160e2"
+    },
+    {
+      "model_id": "mlx-community/Llama-3.1-8B-Instruct-4bit",
+      "benchmark": "triviaqa_paired",
+      "banked_rows": 100,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
+      "data_sha256": "f2f870a7e2feb2c711b2a782f6aa6040233c8915bb066e87421e85f4778b3149",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--Llama-3.1-8B-Instruct-4bit/snapshots/90215b22ec18e72f623dde2ea7af4097025160e2"
+    },
+    {
+      "model_id": "mlx-community/Llama-3.2-3B-Instruct-4bit",
+      "benchmark": "anli_r1",
+      "banked_rows": 200,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
+      "data_sha256": "d1a3aed5e86af05c4b7bd459bb5938bbcca7ab6c758c855e1bce3f938b62f48e",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--Llama-3.2-3B-Instruct-4bit/snapshots/7f0dc925e0d0afb0322d96f9255cfddf2ba5636e"
+    },
+    {
+      "model_id": "mlx-community/Llama-3.2-3B-Instruct-4bit",
+      "benchmark": "triviaqa_paired",
+      "banked_rows": 100,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
+      "data_sha256": "f2f870a7e2feb2c711b2a782f6aa6040233c8915bb066e87421e85f4778b3149",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--Llama-3.2-3B-Instruct-4bit/snapshots/7f0dc925e0d0afb0322d96f9255cfddf2ba5636e"
+    },
+    {
+      "model_id": "mlx-community/Mistral-7B-Instruct-v0.3-4bit",
+      "benchmark": "anli_r1",
+      "banked_rows": 200,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
+      "data_sha256": "d1a3aed5e86af05c4b7bd459bb5938bbcca7ab6c758c855e1bce3f938b62f48e",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--Mistral-7B-Instruct-v0.3-4bit/snapshots/a4b8f870474b0eb527f466a03fbc187830d271f5"
+    },
+    {
+      "model_id": "mlx-community/Mistral-7B-Instruct-v0.3-4bit",
+      "benchmark": "triviaqa_paired",
+      "banked_rows": 100,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
+      "data_sha256": "f2f870a7e2feb2c711b2a782f6aa6040233c8915bb066e87421e85f4778b3149",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--Mistral-7B-Instruct-v0.3-4bit/snapshots/a4b8f870474b0eb527f466a03fbc187830d271f5"
+    },
+    {
+      "model_id": "mlx-community/Mistral-Nemo-Instruct-2407-4bit",
+      "benchmark": "anli_r1",
+      "banked_rows": 200,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
+      "data_sha256": "d1a3aed5e86af05c4b7bd459bb5938bbcca7ab6c758c855e1bce3f938b62f48e",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--Mistral-Nemo-Instruct-2407-4bit/snapshots/647ca0751669b21a364c86ccc5df54c4d7e4e91c"
+    },
+    {
+      "model_id": "mlx-community/Mistral-Nemo-Instruct-2407-4bit",
+      "benchmark": "triviaqa_paired",
+      "banked_rows": 100,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
+      "data_sha256": "f2f870a7e2feb2c711b2a782f6aa6040233c8915bb066e87421e85f4778b3149",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--Mistral-Nemo-Instruct-2407-4bit/snapshots/647ca0751669b21a364c86ccc5df54c4d7e4e91c"
+    },
+    {
+      "model_id": "mlx-community/Phi-3.5-mini-instruct-4bit",
+      "benchmark": "anli_r1",
+      "banked_rows": 200,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
+      "data_sha256": "d1a3aed5e86af05c4b7bd459bb5938bbcca7ab6c758c855e1bce3f938b62f48e",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--Phi-3.5-mini-instruct-4bit/snapshots/7b2052fd882fe017300d4d42a4eb06a27b816af4"
+    },
+    {
+      "model_id": "mlx-community/Phi-3.5-mini-instruct-4bit",
+      "benchmark": "triviaqa_paired",
+      "banked_rows": 100,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
+      "data_sha256": "f2f870a7e2feb2c711b2a782f6aa6040233c8915bb066e87421e85f4778b3149",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--Phi-3.5-mini-instruct-4bit/snapshots/7b2052fd882fe017300d4d42a4eb06a27b816af4"
+    },
+    {
+      "model_id": "mlx-community/Phi-4-mini-instruct-4bit",
+      "benchmark": "anli_r1",
+      "banked_rows": 200,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
+      "data_sha256": "d1a3aed5e86af05c4b7bd459bb5938bbcca7ab6c758c855e1bce3f938b62f48e",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--Phi-4-mini-instruct-4bit/snapshots/ac1c269cb4222a4e136a3d09edad301056c1f36a"
+    },
+    {
+      "model_id": "mlx-community/Phi-4-mini-instruct-4bit",
+      "benchmark": "triviaqa_paired",
+      "banked_rows": 100,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
+      "data_sha256": "f2f870a7e2feb2c711b2a782f6aa6040233c8915bb066e87421e85f4778b3149",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--Phi-4-mini-instruct-4bit/snapshots/ac1c269cb4222a4e136a3d09edad301056c1f36a"
+    },
+    {
+      "model_id": "mlx-community/Qwen2.5-7B-Instruct-4bit",
+      "benchmark": "anli_r1",
+      "banked_rows": 200,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
+      "data_sha256": "d1a3aed5e86af05c4b7bd459bb5938bbcca7ab6c758c855e1bce3f938b62f48e",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--Qwen2.5-7B-Instruct-4bit/snapshots/c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed"
+    },
+    {
+      "model_id": "mlx-community/Qwen2.5-7B-Instruct-4bit",
+      "benchmark": "triviaqa_paired",
+      "banked_rows": 100,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
+      "data_sha256": "f2f870a7e2feb2c711b2a782f6aa6040233c8915bb066e87421e85f4778b3149",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--Qwen2.5-7B-Instruct-4bit/snapshots/c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed"
+    },
+    {
+      "model_id": "mlx-community/Qwen3-1.7B-4bit",
+      "benchmark": "anli_r1",
+      "banked_rows": 200,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
+      "data_sha256": "d1a3aed5e86af05c4b7bd459bb5938bbcca7ab6c758c855e1bce3f938b62f48e",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--Qwen3-1.7B-4bit/snapshots/3b1b1768f8f8cf8351c712464f906e86c2b8269e"
+    },
+    {
+      "model_id": "mlx-community/Qwen3-1.7B-4bit",
+      "benchmark": "triviaqa_paired",
+      "banked_rows": 100,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
+      "data_sha256": "f2f870a7e2feb2c711b2a782f6aa6040233c8915bb066e87421e85f4778b3149",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--Qwen3-1.7B-4bit/snapshots/3b1b1768f8f8cf8351c712464f906e86c2b8269e"
+    },
+    {
+      "model_id": "mlx-community/Qwen3-8B-4bit",
+      "benchmark": "anli_r1",
+      "banked_rows": 200,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
+      "data_sha256": "d1a3aed5e86af05c4b7bd459bb5938bbcca7ab6c758c855e1bce3f938b62f48e",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--Qwen3-8B-4bit/snapshots/545dc4251c05440727734bcd94334791f6ab0192"
+    },
+    {
+      "model_id": "mlx-community/Qwen3-8B-4bit",
+      "benchmark": "triviaqa_paired",
+      "banked_rows": 100,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
+      "data_sha256": "f2f870a7e2feb2c711b2a782f6aa6040233c8915bb066e87421e85f4778b3149",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--Qwen3-8B-4bit/snapshots/545dc4251c05440727734bcd94334791f6ab0192"
+    },
+    {
+      "model_id": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit",
+      "benchmark": "anli_r1",
+      "banked_rows": 200,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
+      "data_sha256": "d1a3aed5e86af05c4b7bd459bb5938bbcca7ab6c758c855e1bce3f938b62f48e",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--dolphin-2.9.3-mistral-nemo-12b-4bit/snapshots/ffc2ddd04859a1b51ca149e9e2c2e623cc30fefc"
+    },
+    {
+      "model_id": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit",
+      "benchmark": "triviaqa_paired",
+      "banked_rows": 100,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
+      "data_sha256": "f2f870a7e2feb2c711b2a782f6aa6040233c8915bb066e87421e85f4778b3149",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--dolphin-2.9.3-mistral-nemo-12b-4bit/snapshots/ffc2ddd04859a1b51ca149e9e2c2e623cc30fefc"
+    },
+    {
+      "model_id": "mlx-community/gemma-3-1b-it-4bit",
+      "benchmark": "anli_r1",
+      "banked_rows": 200,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
+      "data_sha256": "d1a3aed5e86af05c4b7bd459bb5938bbcca7ab6c758c855e1bce3f938b62f48e",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--gemma-3-1b-it-4bit/snapshots/2d44e83dc9e80843d22fb941d3d699a0b1351aa6"
+    },
+    {
+      "model_id": "mlx-community/gemma-3-1b-it-4bit",
+      "benchmark": "triviaqa_paired",
+      "banked_rows": 100,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
+      "data_sha256": "f2f870a7e2feb2c711b2a782f6aa6040233c8915bb066e87421e85f4778b3149",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--gemma-3-1b-it-4bit/snapshots/2d44e83dc9e80843d22fb941d3d699a0b1351aa6"
+    },
+    {
+      "model_id": "mlx-community/gemma-3-4b-it-4bit",
+      "benchmark": "anli_r1",
+      "banked_rows": 200,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
+      "data_sha256": "d1a3aed5e86af05c4b7bd459bb5938bbcca7ab6c758c855e1bce3f938b62f48e",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--gemma-3-4b-it-4bit/snapshots/93724907d4ed1745d2fe50baadf3b0b01a65abf2"
+    },
+    {
+      "model_id": "mlx-community/gemma-3-4b-it-4bit",
+      "benchmark": "triviaqa_paired",
+      "banked_rows": 100,
+      "data_path": "experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
+      "data_sha256": "f2f870a7e2feb2c711b2a782f6aa6040233c8915bb066e87421e85f4778b3149",
+      "snapshot": "/Users/msrk/.cache/huggingface/hub/models--mlx-community--gemma-3-4b-it-4bit/snapshots/93724907d4ed1745d2fe50baadf3b0b01a65abf2"
+    }
+  ]
+}

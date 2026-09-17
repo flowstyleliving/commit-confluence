@@ -1,0 +1,215 @@
+{
+  "completed": 26,
+  "of": 26,
+  "elapsed_min": 258.6,
+  "results": [
+    {
+      "cell": "DeepSeek-R1-Distill-Qwen-7B-4bit__anli_r1",
+      "status": "ok",
+      "rows": 200,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 13.7
+    },
+    {
+      "cell": "DeepSeek-R1-Distill-Qwen-7B-4bit__triviaqa_paired",
+      "status": "ok",
+      "rows": 100,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 5.97
+    },
+    {
+      "cell": "Llama-3.1-8B-Instruct-4bit__anli_r1",
+      "status": "ok",
+      "rows": 200,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 14.0
+    },
+    {
+      "cell": "Llama-3.1-8B-Instruct-4bit__triviaqa_paired",
+      "status": "ok",
+      "rows": 100,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 6.57
+    },
+    {
+      "cell": "Llama-3.2-3B-Instruct-4bit__anli_r1",
+      "status": "ok",
+      "rows": 200,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 8.8
+    },
+    {
+      "cell": "Llama-3.2-3B-Instruct-4bit__triviaqa_paired",
+      "status": "ok",
+      "rows": 100,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 4.02
+    },
+    {
+      "cell": "Mistral-7B-Instruct-v0.3-4bit__anli_r1",
+      "status": "ok",
+      "rows": 200,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 14.15
+    },
+    {
+      "cell": "Mistral-7B-Instruct-v0.3-4bit__triviaqa_paired",
+      "status": "ok",
+      "rows": 100,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 6.84
+    },
+    {
+      "cell": "Mistral-Nemo-Instruct-2407-4bit__anli_r1",
+      "status": "ok",
+      "rows": 200,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 27.16
+    },
+    {
+      "cell": "Mistral-Nemo-Instruct-2407-4bit__triviaqa_paired",
+      "status": "ok",
+      "rows": 100,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 10.98
+    },
+    {
+      "cell": "Phi-3.5-mini-instruct-4bit__anli_r1",
+      "status": "ok",
+      "rows": 200,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 9.78
+    },
+    {
+      "cell": "Phi-3.5-mini-instruct-4bit__triviaqa_paired",
+      "status": "ok",
+      "rows": 100,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 3.89
+    },
+    {
+      "cell": "Phi-4-mini-instruct-4bit__anli_r1",
+      "status": "ok",
+      "rows": 200,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 2,
+      "minutes": 10.38
+    },
+    {
+      "cell": "Phi-4-mini-instruct-4bit__triviaqa_paired",
+      "status": "ok",
+      "rows": 100,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 1,
+      "minutes": 4.79
+    },
+    {
+      "cell": "Qwen2.5-7B-Instruct-4bit__anli_r1",
+      "status": "ok",
+      "rows": 200,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 13.34
+    },
+    {
+      "cell": "Qwen2.5-7B-Instruct-4bit__triviaqa_paired",
+      "status": "ok",
+      "rows": 100,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 5.94
+    },
+    {
+      "cell": "Qwen3-1.7B-4bit__anli_r1",
+      "status": "ok",
+      "rows": 200,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 7.35
+    },
+    {
+      "cell": "Qwen3-1.7B-4bit__triviaqa_paired",
+      "status": "ok",
+      "rows": 100,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 3.23
+    },
+    {
+      "cell": "Qwen3-8B-4bit__anli_r1",
+      "status": "ok",
+      "rows": 200,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 15.98
+    },
+    {
+      "cell": "Qwen3-8B-4bit__triviaqa_paired",
+      "status": "ok",
+      "rows": 100,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 6.92
+    },
+    {
+      "cell": "dolphin-2.9.3-mistral-nemo-12b-4bit__anli_r1",
+      "status": "ok",
+      "rows": 200,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 25.27
+    },
+    {
+      "cell": "dolphin-2.9.3-mistral-nemo-12b-4bit__triviaqa_paired",
+      "status": "ok",
+      "rows": 100,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 11.4
+    },
+    {
+      "cell": "gemma-3-1b-it-4bit__anli_r1",
+      "status": "ok",
+      "rows": 200,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 2,
+      "minutes": 6.86
+    },
+    {
+      "cell": "gemma-3-1b-it-4bit__triviaqa_paired",
+      "status": "ok",
+      "rows": 100,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 2,
+      "minutes": 3.19
+    },
+    {
+      "cell": "gemma-3-4b-it-4bit__anli_r1",
+      "status": "ok",
+      "rows": 200,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 12.37
+    },
+    {
+      "cell": "gemma-3-4b-it-4bit__triviaqa_paired",
+      "status": "ok",
+      "rows": 100,
+      "pass_one_failures": 0,
+      "a4_failing_keys": 0,
+      "minutes": 5.65
+    }
+  ]
+}
