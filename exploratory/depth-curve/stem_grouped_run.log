@@ -1,0 +1,29 @@
+loaded 17 cells; units: anli_r1: 5 pairs / 95+95 singletons, halueval_qa: 100 pairs / 0+0 singletons
+Part A passed: 17 cells reproduce the banked Delta_cf
+Part B anli_r1: 50/200 draws (7s)
+Part B anli_r1: 100/200 draws (13s)
+Part B anli_r1: 150/200 draws (20s)
+Part B anli_r1: 200/200 draws (27s)
+Part B halueval_qa: 50/200 draws (34s)
+Part B halueval_qa: 100/200 draws (41s)
+Part B halueval_qa: 150/200 draws (48s)
+Part B halueval_qa: 200/200 draws (56s)
+Part C perm anli_r1: 500/2000 (57s)
+Part C perm anli_r1: 1000/2000 (57s)
+Part C perm anli_r1: 1500/2000 (58s)
+Part C perm anli_r1: 2000/2000 (59s)
+Part C perm halueval_qa: 500/2000 (60s)
+Part C perm halueval_qa: 1000/2000 (61s)
+Part C perm halueval_qa: 1500/2000 (62s)
+Part C perm halueval_qa: 2000/2000 (63s)
+Part C boot anli_r1: 250/1000 (81s)
+Part C boot anli_r1: 500/1000 (99s)
+Part C boot anli_r1: 750/1000 (118s)
+Part C boot anli_r1: 1000/1000 (136s)
+Part C boot halueval_qa: 250/1000 (156s)
+Part C boot halueval_qa: 500/1000 (176s)
+Part C boot halueval_qa: 750/1000 (196s)
+Part C boot halueval_qa: 1000/1000 (216s)
+wrote /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/STEM_GROUPED_SENSITIVITY.json
+wrote /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/STEM_GROUPED_SENSITIVITY.md
+runtime 216s

@@ -1,0 +1,41 @@
+{
+ "n_maps_per_arm": 100,
+ "P9_llama31_8b_anli": {
+  "row": {
+   "hits": 37,
+   "count_median": 5.0,
+   "count_range": [
+    3,
+    6
+   ]
+  },
+  "group": {
+   "hits": 39,
+   "count_median": 5.0,
+   "count_range": [
+    3,
+    7
+   ]
+  }
+ },
+ "peak_cf_llama33_70b_anli": {
+  "row": {
+   "n_defined": 100,
+   "median": 48.0,
+   "p5_p95": [
+    48.0,
+    69.0
+   ],
+   "share_ge_60": 0.33
+  },
+  "group": {
+   "n_defined": 100,
+   "median": 48.0,
+   "p5_p95": [
+    48.0,
+    69.0
+   ],
+   "share_ge_60": 0.34
+  }
+ }
+}

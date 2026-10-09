@@ -1,0 +1,2004 @@
+{
+ "banner": "GRID-B REGISTERED RESULTS \u2014 PRE_REGISTRATION_EXPANSION.md; single look; failures counted per \u00a75.",
+ "config": {
+  "rs_seed": 20260817,
+  "k_folds": 5,
+  "nperm_inner": 200,
+  "nperm_outer": 2000,
+  "nboot": 1000,
+  "e5_dip": 0.05,
+  "e6_j": 0.15,
+  "e6_rise_frac": 0.5,
+  "e6_null_q": 95.0,
+  "primary": "final_js_no_bos"
+ },
+ "provenance": {
+  "rescore_machinery_sha256": "522cd5301f4f783faaec13f2c90a58f68c6247f2d0dd5b9f5b86b522ca81a958",
+  "scorer_sha256": "0a8b03450f91d212f0b09bb3916e30d1c656d7d83a0f4e8d14675a011b2f6358",
+  "extractor_sha256": "19feb9e0b5b3c12e6e3e304a3635f0c827e8663a302f02b6259fba315c40d573",
+  "prereg_sha256": "dcf806a83e1648a89248562729b12f35c2f12b244508940bf641077f772cd363",
+  "numpy_version": "2.0.2",
+  "fold_map_sha256": {
+   "anli_r1": "1d9d9d01998bc772f8be98dbf34e435c6a2b0df82a9de4c28b4562c9028eb6de",
+   "halueval_qa": "49627bcd2542961733ce93234c69dfe35a46473df069cbb30845bbb438bd0d04"
+  },
+  "npz_sha256": {
+   "anli_r1/Llama-3.1-8B-Instruct": "d2fdc7f801b4a4030369b2a6581f343e4bd12088c6a00ce94584d9e58ffe73c4",
+   "anli_r1/Llama-3.1-70B-Instruct": "7c4d926c491bc02d177d5dc7e0b25cfc5948ff97a4bac5bb2de83e97739c0a9a",
+   "anli_r1/Mistral-Medium-3.5-128B": "08fd3cd02d864ee9deb13cf2ce8571520feaf869488a625a4954fd9616c9f91d",
+   "anli_r1/gemma-3-12b-it": "cf8537c286c782c6b0b2c1aa4b0d0187a53259a7f2ccb0452a1056801f265506",
+   "halueval_qa/Llama-3.1-8B-Instruct": "f7f38c9f03b5afb5541069ee97c603ebe2a9ab1f9d06b909d2aeff2939cf7805",
+   "halueval_qa/Llama-3.1-70B-Instruct": "f346a1a60893076af79c82b4257085d04e5160b100a962429caa75d4742100ac",
+   "halueval_qa/Mistral-Small-3.2-24B-Instruct-2506": "1e711c15a4bf22118c9879ac2d3eedde0621e9cbd22c4ed7df511f07cb587f38",
+   "halueval_qa/Mistral-Medium-3.5-128B": "e77b94c05c4686eefe6154f9f119b5cd543ac5d173d25a9c1d2d9579b8cf7d7e",
+   "halueval_qa/gemma-3-12b-it": "ac21a42d2144272d61b98e8f70dc143fdffb5e44549e875149761ea0bea4a9fe"
+  },
+  "status_sha256": {
+   "anli_r1/Llama-3.1-8B-Instruct": "6a684524710d1c2b1cfec21bdd2717ce8f4d924241a1f68776fbd7c7ee6cfc50",
+   "anli_r1/Llama-3.1-70B-Instruct": "d85adf552548bdeafcf7bb3290979e0ea07faac04c24e9f95d929532eaa5130f",
+   "anli_r1/Mistral-Small-3.2-24B-Instruct-2506": "3d7e7be83807e95b08947fda3f0b7d6150253042c16e2829bd8396555b66499b",
+   "anli_r1/Mistral-Medium-3.5-128B": "c51a95b05f3bcaef568437dc6f9c95376740fd54f7d8c62bcf44632931e3f386",
+   "anli_r1/gemma-3-12b-it": "f97e44b2c19ca213f9807ae769bbe63dfef4c6ec97ed4690972150d110d670a8",
+   "anli_r1/gemma-3-27b-it": "99a3e85a8806e844a52ca11364efbc3f2ab38e119790e97187b3dcbbaa700d86",
+   "halueval_qa/Llama-3.1-8B-Instruct": "cd418d5660d7999fc69450cf1c4a4d674935e50c05d0647d4c589aa484209d35",
+   "halueval_qa/Llama-3.1-70B-Instruct": "b20b23f698dee151ac1bec1918597ae0698c8e047ea2a5a890e5d3862e39c695",
+   "halueval_qa/Mistral-Small-3.2-24B-Instruct-2506": "e64e04c37e8a7396d97c766a4799cc401420d3639049ad9c7f88dcff5b753aad",
+   "halueval_qa/Mistral-Medium-3.5-128B": "1f27421e0491a476a7afd379fe7426d9f94b74ead183b5d5031e3fdab1c196e7",
+   "halueval_qa/gemma-3-12b-it": "03287e3c2efebf2368b17c18d85a04264ca378b6986aeeeb5daf883c1ba54ac2",
+   "halueval_qa/gemma-3-27b-it": "76981890cff5ee99655f643f130ca46965a67bcf50fcf3708db66de1f266b691"
+  }
+ },
+ "cell_failures": {
+  "anli_r1/Mistral-Small-3.2-24B-Instruct-2506": "aborted: RuntimeError: missing smoke prompt manifest: /models/depth_grid_b/manifests/Mistral-Small-3.2-24B-Instruct-2506.anli_r1.prompts.json \u2014 run smoke first",
+  "anli_r1/gemma-3-27b-it": "aborted: RuntimeError: row 0 block 3 cell (0, 'Attention', 'final_js_no_bos'): bad score None",
+  "halueval_qa/gemma-3-27b-it": "aborted: RuntimeError: row 0 block 3 cell (0, 'Attention', 'final_js_no_bos'): bad score None"
+ },
+ "n_evaluable_of_12": 9,
+ "E5": {
+  "decision": "WEAKEN",
+  "count_of_12": 8,
+  "per_task": {
+   "anli_r1": 4,
+   "halueval_qa": 4
+  },
+  "per_family": {
+   "llama31": 4,
+   "mistral": 2,
+   "gemma": 2
+  },
+  "p_grid_pooled": 0.0004997501249375312,
+  "guards": {
+   "count_ge_10": false,
+   "families_ge_3of4": false,
+   "p_grid_lt_0.05": true
+  }
+ },
+ "E6": {
+  "decision": "NOT TESTED \u2014 gate closed",
+  "count_of_12": 3,
+  "per_task": {
+   "anli_r1": 2,
+   "halueval_qa": 1
+  },
+  "per_family": {
+   "llama31": 0,
+   "mistral": 2,
+   "gemma": 1
+  },
+  "p_grid_pooled": 0.0004997501249375312,
+  "guards": null
+ },
+ "sensitivity": {
+  "leave_medium_out": {
+   "e5_of_10": 6,
+   "e6_of_10": 1
+  },
+  "evaluable_only": {
+   "e5": "8/9",
+   "e6": "3/9"
+  }
+ },
+ "bootstrap_aggregates": {
+  "anli_r1": {
+   "designated_cells": [
+    "Llama-3.1-8B-Instruct",
+    "Llama-3.1-70B-Instruct",
+    "Mistral-Medium-3.5-128B",
+    "gemma-3-12b-it"
+   ],
+   "excluded_failed_cells": [
+    "Mistral-Small-3.2-24B-Instruct-2506",
+    "gemma-3-27b-it"
+   ],
+   "ci_5_95_alldef": [
+    0.125825,
+    0.2698749999999998
+   ],
+   "joint_undefined_frac": 0.003
+  },
+  "halueval_qa": {
+   "designated_cells": [
+    "Llama-3.1-8B-Instruct",
+    "Llama-3.1-70B-Instruct",
+    "Mistral-Small-3.2-24B-Instruct-2506",
+    "Mistral-Medium-3.5-128B",
+    "gemma-3-12b-it"
+   ],
+   "excluded_failed_cells": [
+    "gemma-3-27b-it"
+   ],
+   "ci_5_95_alldef": [
+    0.10209,
+    0.19829999999999998
+   ],
+   "joint_undefined_frac": 0.0
+  },
+  "pooled": {
+   "designated_cells": [
+    "anli_r1/Llama-3.1-8B-Instruct",
+    "anli_r1/Llama-3.1-70B-Instruct",
+    "anli_r1/Mistral-Medium-3.5-128B",
+    "anli_r1/gemma-3-12b-it",
+    "halueval_qa/Llama-3.1-8B-Instruct",
+    "halueval_qa/Llama-3.1-70B-Instruct",
+    "halueval_qa/Mistral-Small-3.2-24B-Instruct-2506",
+    "halueval_qa/Mistral-Medium-3.5-128B",
+    "halueval_qa/gemma-3-12b-it"
+   ],
+   "ci_5_95_alldef": [
+    0.12985555555555556,
+    0.21326666666666663
+   ],
+   "joint_undefined_frac": 0.003
+  }
+ },
+ "E7_peak_distance": {
+  "Llama-3.1-8B-Instruct": {
+   "defined": true,
+   "peak_anli": 18.0,
+   "peak_halueval": 1.0,
+   "distance_blocks": 17.0,
+   "distance_frac": 0.53125,
+   "distance_boot_ci_5_95_blocks": [
+    2.0,
+    17.0
+   ],
+   "distance_boot_ci_5_95_frac": [
+    0.0625,
+    0.53125
+   ],
+   "boot_pair_undefined_frac": 0.003
+  },
+  "Llama-3.1-70B-Instruct": {
+   "defined": true,
+   "peak_anli": 45.0,
+   "peak_halueval": 38.0,
+   "distance_blocks": 7.0,
+   "distance_frac": 0.0875,
+   "distance_boot_ci_5_95_blocks": [
+    0.0,
+    39.0
+   ],
+   "distance_boot_ci_5_95_frac": [
+    0.0,
+    0.4875
+   ],
+   "boot_pair_undefined_frac": 0.0
+  },
+  "Mistral-Small-3.2-24B-Instruct-2506": {
+   "defined": false,
+   "why": "one or both cells lack a defined cross-fit",
+   "distance_blocks": null,
+   "distance_frac": null,
+   "distance_boot_ci_5_95_blocks": null,
+   "distance_boot_ci_5_95_frac": null,
+   "boot_pair_undefined_frac": 1.0
+  },
+  "Mistral-Medium-3.5-128B": {
+   "defined": true,
+   "peak_anli": 83.0,
+   "peak_halueval": 85.0,
+   "distance_blocks": 2.0,
+   "distance_frac": 0.022727272727272728,
+   "distance_boot_ci_5_95_blocks": [
+    0.0,
+    48.0
+   ],
+   "distance_boot_ci_5_95_frac": [
+    0.0,
+    0.5454545454545454
+   ],
+   "boot_pair_undefined_frac": 0.0
+  },
+  "gemma-3-12b-it": {
+   "defined": true,
+   "peak_anli": 39.0,
+   "peak_halueval": 22.0,
+   "distance_blocks": 17.0,
+   "distance_frac": 0.3541666666666667,
+   "distance_boot_ci_5_95_blocks": [
+    0.0,
+    26.0
+   ],
+   "distance_boot_ci_5_95_frac": [
+    0.0,
+    0.5416666666666666
+   ],
+   "boot_pair_undefined_frac": 0.0
+  },
+  "gemma-3-27b-it": {
+   "defined": false,
+   "why": "one or both cells lack a defined cross-fit",
+   "distance_blocks": null,
+   "distance_frac": null,
+   "distance_boot_ci_5_95_blocks": null,
+   "distance_boot_ci_5_95_frac": null,
+   "boot_pair_undefined_frac": 1.0
+  }
+ },
+ "E8_llama_context": {
+  "anli_r1/Llama-3.1-8B-Instruct": {
+   "defined": true,
+   "window": [
+    13,
+    28
+   ],
+   "qualifying_blocks_per_fold": [
+    [
+     14,
+     17,
+     18,
+     19
+    ],
+    [
+     14,
+     16,
+     17,
+     18,
+     19
+    ],
+    [
+     14,
+     16,
+     17,
+     18
+    ],
+    [
+     14,
+     16,
+     17,
+     18,
+     19
+    ],
+    [
+     14,
+     17,
+     18,
+     19,
+     25
+    ]
+   ],
+   "counts_per_fold": [
+    4,
+    5,
+    4,
+    5,
+    5
+   ],
+   "majority_ge_10": false,
+   "majority_lt_5": false,
+   "median_train_curve": [
+    0.5322,
+    0.5109,
+    0.517,
+    0.5416,
+    0.5233,
+    0.5125,
+    0.5228,
+    0.558,
+    0.5897,
+    0.5137,
+    0.5267,
+    0.5387,
+    0.5131,
+    0.5528,
+    0.705,
+    0.5152,
+    0.6628,
+    0.7341,
+    0.7442,
+    0.6719,
+    0.6123,
+    0.5609,
+    0.5289,
+    0.5325,
+    0.552,
+    0.633,
+    0.61,
+    0.5547,
+    0.5473,
+    0.6414,
+    0.632,
+    0.5864
+   ]
+  },
+  "halueval_qa/Llama-3.1-8B-Instruct": {
+   "defined": true,
+   "window": [
+    13,
+    28
+   ],
+   "qualifying_blocks_per_fold": [
+    [
+     13,
+     16,
+     17,
+     18,
+     20,
+     22,
+     23,
+     27
+    ],
+    [
+     13,
+     16,
+     17,
+     18,
+     20,
+     22,
+     23
+    ],
+    [
+     13,
+     16,
+     17,
+     18,
+     20,
+     22,
+     23
+    ],
+    [
+     13,
+     16,
+     17,
+     18,
+     20,
+     22,
+     23
+    ],
+    [
+     13,
+     16,
+     17,
+     18,
+     20,
+     22,
+     23,
+     27
+    ]
+   ],
+   "counts_per_fold": [
+    8,
+    7,
+    7,
+    7,
+    8
+   ],
+   "majority_ge_10": false,
+   "majority_lt_5": false,
+   "median_train_curve": [
+    0.6419,
+    0.8911,
+    0.7825,
+    0.6386,
+    0.7567,
+    0.6017,
+    0.6395,
+    0.5998,
+    0.6947,
+    0.6073,
+    0.6184,
+    0.5494,
+    0.6323,
+    0.7352,
+    0.5752,
+    0.6127,
+    0.8183,
+    0.808,
+    0.7064,
+    0.5477,
+    0.8416,
+    0.6013,
+    0.8381,
+    0.85,
+    0.612,
+    0.6289,
+    0.5991,
+    0.6458,
+    0.5423,
+    0.5561,
+    0.8459,
+    0.7939
+   ]
+  },
+  "anli_r1/Llama-3.1-70B-Instruct": {
+   "defined": true,
+   "window": [
+    32,
+    72
+   ],
+   "qualifying_blocks_per_fold": [
+    [
+     32,
+     33,
+     36,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     56,
+     59,
+     62,
+     68,
+     70,
+     71
+    ],
+    [
+     32,
+     33,
+     36,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     49,
+     50,
+     51,
+     56,
+     59,
+     62,
+     64,
+     68,
+     70,
+     71
+    ],
+    [
+     32,
+     33,
+     36,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     49,
+     50,
+     51,
+     52,
+     56,
+     57,
+     62,
+     66,
+     68,
+     70,
+     71
+    ],
+    [
+     32,
+     33,
+     36,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     49,
+     50,
+     51,
+     53,
+     56,
+     59,
+     62,
+     68,
+     70,
+     71
+    ],
+    [
+     32,
+     33,
+     36,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     49,
+     50,
+     51,
+     53,
+     56,
+     59,
+     62,
+     64,
+     68,
+     70,
+     71
+    ]
+   ],
+   "counts_per_fold": [
+    24,
+    23,
+    24,
+    23,
+    24
+   ],
+   "majority_ge_10": true,
+   "majority_lt_5": false,
+   "median_train_curve": [
+    0.5398,
+    0.5212,
+    0.5231,
+    0.507,
+    0.5184,
+    0.5205,
+    0.5469,
+    0.538,
+    0.5067,
+    0.5105,
+    0.5383,
+    0.5542,
+    0.5262,
+    0.5189,
+    0.5402,
+    0.593,
+    0.5553,
+    0.5872,
+    0.5084,
+    0.5908,
+    0.5273,
+    0.5192,
+    0.5277,
+    0.515,
+    0.5405,
+    0.5167,
+    0.5205,
+    0.6014,
+    0.5656,
+    0.642,
+    0.6675,
+    0.6798,
+    0.6953,
+    0.7823,
+    0.5309,
+    0.5102,
+    0.7006,
+    0.5798,
+    0.5453,
+    0.715,
+    0.6836,
+    0.6948,
+    0.7105,
+    0.7628,
+    0.7767,
+    0.9047,
+    0.8166,
+    0.7955,
+    0.6906,
+    0.7312,
+    0.7298,
+    0.8197,
+    0.6342,
+    0.6589,
+    0.582,
+    0.5672,
+    0.7409,
+    0.6423,
+    0.6155,
+    0.6633,
+    0.5658,
+    0.5638,
+    0.8053,
+    0.5194,
+    0.6472,
+    0.5236,
+    0.6161,
+    0.6153,
+    0.8119,
+    0.5309,
+    0.7837,
+    0.7616,
+    0.6016,
+    0.6173,
+    0.6788,
+    0.6684,
+    0.8359,
+    0.8609,
+    0.8588,
+    0.7689
+   ]
+  },
+  "halueval_qa/Llama-3.1-70B-Instruct": {
+   "defined": true,
+   "window": [
+    32,
+    72
+   ],
+   "qualifying_blocks_per_fold": [
+    [
+     32,
+     33,
+     38,
+     39,
+     40,
+     43,
+     45,
+     47,
+     49,
+     50,
+     51,
+     52,
+     57,
+     60,
+     61,
+     62,
+     66,
+     68,
+     70
+    ],
+    [
+     32,
+     33,
+     38,
+     39,
+     43,
+     45,
+     47,
+     49,
+     50,
+     51,
+     52,
+     57,
+     60,
+     61,
+     66,
+     68,
+     70
+    ],
+    [
+     32,
+     33,
+     38,
+     39,
+     40,
+     43,
+     45,
+     47,
+     49,
+     50,
+     51,
+     52,
+     60,
+     61,
+     66,
+     68,
+     70
+    ],
+    [
+     32,
+     33,
+     38,
+     39,
+     43,
+     45,
+     47,
+     49,
+     50,
+     51,
+     52,
+     57,
+     60,
+     61,
+     62,
+     66,
+     68,
+     70
+    ],
+    [
+     32,
+     33,
+     38,
+     39,
+     40,
+     43,
+     45,
+     47,
+     49,
+     50,
+     51,
+     52,
+     57,
+     60,
+     61,
+     63,
+     66,
+     68,
+     70
+    ]
+   ],
+   "counts_per_fold": [
+    19,
+    17,
+    17,
+    18,
+    19
+   ],
+   "majority_ge_10": true,
+   "majority_lt_5": false,
+   "median_train_curve": [
+    0.7073,
+    0.5358,
+    0.6547,
+    0.8061,
+    0.7452,
+    0.7488,
+    0.7981,
+    0.6308,
+    0.5305,
+    0.5438,
+    0.5478,
+    0.5364,
+    0.6792,
+    0.7122,
+    0.5506,
+    0.5042,
+    0.5702,
+    0.5264,
+    0.5514,
+    0.7198,
+    0.5714,
+    0.5331,
+    0.5719,
+    0.7298,
+    0.6553,
+    0.5444,
+    0.6405,
+    0.6844,
+    0.6316,
+    0.6848,
+    0.6827,
+    0.5691,
+    0.7641,
+    0.8083,
+    0.5702,
+    0.5259,
+    0.5886,
+    0.5092,
+    0.9069,
+    0.6816,
+    0.6512,
+    0.5845,
+    0.5059,
+    0.6727,
+    0.5697,
+    0.8783,
+    0.5805,
+    0.753,
+    0.5577,
+    0.8558,
+    0.7975,
+    0.8155,
+    0.7909,
+    0.6233,
+    0.6203,
+    0.5308,
+    0.5755,
+    0.6653,
+    0.5356,
+    0.555,
+    0.6778,
+    0.7938,
+    0.6388,
+    0.6425,
+    0.6097,
+    0.5709,
+    0.7589,
+    0.5705,
+    0.7295,
+    0.5784,
+    0.665,
+    0.51,
+    0.5045,
+    0.5473,
+    0.6178,
+    0.5055,
+    0.5856,
+    0.8066,
+    0.6814,
+    0.6912
+   ]
+  },
+  "anli_r1/Llama-3.3-70B-Instruct(grid-A context)": {
+   "defined": true,
+   "window": [
+    32,
+    72
+   ],
+   "grid": "A (context)",
+   "qualifying_blocks_per_fold": [
+    [
+     33,
+     36,
+     38,
+     41,
+     44,
+     45,
+     46,
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     55,
+     58,
+     59,
+     60,
+     61,
+     62,
+     63,
+     64,
+     65,
+     67,
+     68,
+     69,
+     70
+    ],
+    [
+     33,
+     36,
+     38,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     54,
+     55,
+     58,
+     59,
+     60,
+     61,
+     62,
+     63,
+     64,
+     65,
+     66,
+     67,
+     68,
+     69,
+     70
+    ],
+    [
+     33,
+     36,
+     38,
+     44,
+     45,
+     46,
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     55,
+     58,
+     59,
+     60,
+     61,
+     62,
+     63,
+     64,
+     65,
+     67,
+     68,
+     69,
+     70
+    ],
+    [
+     33,
+     36,
+     38,
+     41,
+     42,
+     44,
+     45,
+     46,
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     54,
+     55,
+     56,
+     58,
+     59,
+     60,
+     61,
+     62,
+     63,
+     65,
+     67,
+     68,
+     69,
+     70,
+     71
+    ],
+    [
+     33,
+     36,
+     38,
+     41,
+     44,
+     45,
+     46,
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     55,
+     56,
+     58,
+     59,
+     60,
+     61,
+     62,
+     63,
+     65,
+     66,
+     67,
+     68,
+     69,
+     70,
+     71
+    ]
+   ],
+   "counts_per_fold": [
+    26,
+    30,
+    25,
+    29,
+    28
+   ],
+   "median_train_curve": [
+    0.5053,
+    0.5072,
+    0.575,
+    0.5267,
+    0.5467,
+    0.5144,
+    0.5492,
+    0.5289,
+    0.5353,
+    0.5811,
+    0.5125,
+    0.5228,
+    0.5184,
+    0.552,
+    0.5708,
+    0.5384,
+    0.6034,
+    0.5538,
+    0.5414,
+    0.5669,
+    0.5245,
+    0.5336,
+    0.533,
+    0.5312,
+    0.5592,
+    0.5075,
+    0.548,
+    0.5856,
+    0.5505,
+    0.6302,
+    0.5942,
+    0.6878,
+    0.6044,
+    0.7592,
+    0.5709,
+    0.5238,
+    0.7648,
+    0.5655,
+    0.7438,
+    0.5306,
+    0.6184,
+    0.6536,
+    0.6495,
+    0.6373,
+    0.7816,
+    0.773,
+    0.7719,
+    0.6441,
+    0.8875,
+    0.7098,
+    0.7344,
+    0.8098,
+    0.7448,
+    0.8545,
+    0.6397,
+    0.8384,
+    0.6431,
+    0.6277,
+    0.7347,
+    0.7847,
+    0.8591,
+    0.7988,
+    0.8619,
+    0.8727,
+    0.6516,
+    0.7475,
+    0.6478,
+    0.7122,
+    0.6859,
+    0.8972,
+    0.8842,
+    0.6441,
+    0.5931,
+    0.5386,
+    0.8778,
+    0.523,
+    0.7202,
+    0.6106,
+    0.5797,
+    0.5616
+   ]
+  },
+  "halueval_qa/Llama-3.3-70B-Instruct(grid-A context)": {
+   "defined": true,
+   "window": [
+    32,
+    72
+   ],
+   "grid": "A (context)",
+   "qualifying_blocks_per_fold": [
+    [
+     32,
+     33,
+     35,
+     36,
+     37,
+     38,
+     39,
+     41,
+     44,
+     45,
+     46,
+     47,
+     48,
+     49,
+     51,
+     52,
+     53,
+     54,
+     55,
+     58,
+     60,
+     61,
+     62,
+     63,
+     64,
+     66,
+     67,
+     68,
+     71
+    ],
+    [
+     32,
+     33,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     44,
+     45,
+     46,
+     48,
+     49,
+     51,
+     52,
+     53,
+     54,
+     55,
+     58,
+     60,
+     61,
+     62,
+     63,
+     64,
+     66,
+     67,
+     68,
+     71
+    ],
+    [
+     32,
+     33,
+     35,
+     36,
+     37,
+     38,
+     39,
+     41,
+     42,
+     44,
+     45,
+     46,
+     48,
+     49,
+     51,
+     52,
+     53,
+     54,
+     58,
+     60,
+     61,
+     62,
+     63,
+     64,
+     66,
+     67,
+     68,
+     71
+    ],
+    [
+     32,
+     33,
+     35,
+     36,
+     37,
+     38,
+     39,
+     41,
+     44,
+     45,
+     46,
+     48,
+     49,
+     51,
+     52,
+     53,
+     54,
+     58,
+     60,
+     61,
+     62,
+     63,
+     64,
+     66,
+     67,
+     68,
+     71
+    ],
+    [
+     32,
+     33,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     49,
+     51,
+     52,
+     53,
+     54,
+     55,
+     58,
+     60,
+     61,
+     62,
+     63,
+     64,
+     66,
+     67,
+     68,
+     71
+    ]
+   ],
+   "counts_per_fold": [
+    29,
+    29,
+    28,
+    27,
+    32
+   ],
+   "median_train_curve": [
+    0.6973,
+    0.5064,
+    0.6889,
+    0.5294,
+    0.5172,
+    0.6717,
+    0.6103,
+    0.5141,
+    0.5447,
+    0.5098,
+    0.6655,
+    0.5375,
+    0.7122,
+    0.7261,
+    0.5234,
+    0.6012,
+    0.5152,
+    0.6147,
+    0.5522,
+    0.7178,
+    0.5106,
+    0.557,
+    0.6388,
+    0.552,
+    0.5547,
+    0.6097,
+    0.8702,
+    0.7252,
+    0.5277,
+    0.6558,
+    0.6948,
+    0.5147,
+    0.7533,
+    0.8417,
+    0.5455,
+    0.7673,
+    0.7422,
+    0.7742,
+    0.8467,
+    0.7105,
+    0.6386,
+    0.668,
+    0.6497,
+    0.6328,
+    0.7191,
+    0.8275,
+    0.7088,
+    0.6436,
+    0.842,
+    0.7431,
+    0.6358,
+    0.8114,
+    0.7483,
+    0.7827,
+    0.6953,
+    0.6564,
+    0.5223,
+    0.5245,
+    0.7116,
+    0.5786,
+    0.81,
+    0.7953,
+    0.7969,
+    0.7311,
+    0.7288,
+    0.5634,
+    0.6636,
+    0.7447,
+    0.7709,
+    0.5161,
+    0.6255,
+    0.6856,
+    0.5608,
+    0.5359,
+    0.7469,
+    0.5062,
+    0.6298,
+    0.5186,
+    0.7392,
+    0.705
+   ]
+  }
+ },
+ "E1pp_panel": {
+  "grid_b": {
+   "anli_r1/Llama-3.1-8B-Instruct": {
+    "N": 32,
+    "peak_cf": 18.0,
+    "frac": 0.5625
+   },
+   "halueval_qa/Llama-3.1-8B-Instruct": {
+    "N": 32,
+    "peak_cf": 1.0,
+    "frac": 0.0312
+   },
+   "anli_r1/Llama-3.1-70B-Instruct": {
+    "N": 80,
+    "peak_cf": 45.0,
+    "frac": 0.5625
+   },
+   "halueval_qa/Llama-3.1-70B-Instruct": {
+    "N": 80,
+    "peak_cf": 38.0,
+    "frac": 0.475
+   },
+   "halueval_qa/Mistral-Small-3.2-24B-Instruct-2506": {
+    "N": 40,
+    "peak_cf": 29.0,
+    "frac": 0.725
+   },
+   "anli_r1/Mistral-Medium-3.5-128B": {
+    "N": 88,
+    "peak_cf": 83.0,
+    "frac": 0.9432
+   },
+   "halueval_qa/Mistral-Medium-3.5-128B": {
+    "N": 88,
+    "peak_cf": 85.0,
+    "frac": 0.9659
+   },
+   "anli_r1/gemma-3-12b-it": {
+    "N": 48,
+    "peak_cf": 39.0,
+    "frac": 0.8125
+   },
+   "halueval_qa/gemma-3-12b-it": {
+    "N": 48,
+    "peak_cf": 22.0,
+    "frac": 0.4583
+   }
+  },
+  "grid_a_separate": {
+   "anli_r1/Qwen2.5-7B-Instruct": {
+    "N": 28,
+    "peak_cf": 22.0,
+    "frac": 0.7857
+   },
+   "anli_r1/Qwen2.5-32B-Instruct": {
+    "N": 64,
+    "peak_cf": 61.0,
+    "frac": 0.9531
+   },
+   "anli_r1/Qwen2.5-72B-Instruct": {
+    "N": 80,
+    "peak_cf": 66.0,
+    "frac": 0.825
+   },
+   "anli_r1/Llama-3.3-70B-Instruct": {
+    "N": 80,
+    "peak_cf": 69.0,
+    "frac": 0.8625
+   },
+   "halueval_qa/Qwen2.5-7B-Instruct": {
+    "N": 28,
+    "peak_cf": 26.0,
+    "frac": 0.9286
+   },
+   "halueval_qa/Qwen2.5-32B-Instruct": {
+    "N": 64,
+    "peak_cf": 56.0,
+    "frac": 0.875
+   },
+   "halueval_qa/Qwen2.5-72B-Instruct": {
+    "N": 80,
+    "peak_cf": 63.0,
+    "frac": 0.7875
+   },
+   "halueval_qa/Llama-3.3-70B-Instruct": {
+    "N": 80,
+    "peak_cf": 26.0,
+    "frac": 0.325
+   }
+  },
+  "family_summary": {
+   "llama31": {
+    "n": 4,
+    "mean_frac": 0.4078125,
+    "sd_frac": 0.25440775792350884
+   },
+   "mistral": {
+    "n": 3,
+    "mean_frac": 0.878030303030303,
+    "sd_frac": 0.13301442577993092
+   },
+   "gemma": {
+    "n": 2,
+    "mean_frac": 0.6354166666666666,
+    "sd_frac": 0.25043365167023557
+   },
+   "qwen(A)": {
+    "n": 6,
+    "mean_frac": 0.8591517857142857,
+    "sd_frac": 0.07154663791320788
+   },
+   "llama33(A)": {
+    "n": 2,
+    "mean_frac": 0.59375,
+    "sd_frac": 0.3800698948877693
+   }
+  }
+ },
+ "predictions_as_registered": {
+  "P6_e5_confirms": false,
+  "P7_e6_ge_9_if_tested": null,
+  "P8_llama70b_anli_band_majority_ge_10": true,
+  "P9_llama8b_anli_band_majority_lt_5": false,
+  "P10_no_obvious_placement_rule": "see E1'' panel (descriptive)"
+ },
+ "cells": {
+  "anli_r1/Llama-3.1-8B-Instruct": {
+   "L": 32,
+   "failed": false,
+   "e5": {
+    "defined": true,
+    "delta": 0.13649999999999998,
+    "fold_contrasts": [
+     0.1775,
+     0.10999999999999999,
+     0.09999999999999998,
+     0.1499999999999999,
+     0.14500000000000002
+    ],
+    "fold_peaks": [
+     17,
+     17,
+     18,
+     18,
+     18
+    ],
+    "success": true,
+    "perm_p": 0.0004997501249375312,
+    "null_undefined_frac": 1.0,
+    "boot_ci_5_95_conditional": [
+     0.0229,
+     0.2697999999999999
+    ],
+    "boot_undefined_frac": 0.003
+   },
+   "e6": {
+    "defined": true,
+    "J": 0.08749999999999998,
+    "R": 0.02849999999999999,
+    "fold_J": [
+     -0.07750000000000001,
+     0.12,
+     0.19499999999999995,
+     0.19499999999999995,
+     0.0050000000000000044
+    ],
+    "fold_R": [
+     0.0,
+     0.040000000000000036,
+     0.0,
+     0.0774999999999999,
+     0.025000000000000022
+    ],
+    "fold_jstar": [
+     16,
+     16,
+     16,
+     16,
+     16
+    ],
+    "null_undefined_frac": 1.0,
+    "perm_p_J": 0.0004997501249375312,
+    "success": false,
+    "null_q95_is_neginf": true,
+    "null_q95": null
+   }
+  },
+  "anli_r1/Llama-3.1-70B-Instruct": {
+   "L": 80,
+   "failed": false,
+   "e5": {
+    "defined": true,
+    "delta": 0.13799999999999996,
+    "fold_contrasts": [
+     0.0774999999999999,
+     0.18999999999999995,
+     0.1499999999999999,
+     0.14250000000000007,
+     0.13
+    ],
+    "fold_peaks": [
+     45,
+     45,
+     45,
+     45,
+     45
+    ],
+    "success": true,
+    "perm_p": 0.0004997501249375312,
+    "null_undefined_frac": 0.998,
+    "boot_ci_5_95_conditional": [
+     0.05449999999999997,
+     0.18357499999999996
+    ],
+    "boot_undefined_frac": 0.0
+   },
+   "e6": {
+    "defined": true,
+    "J": 0.12999999999999998,
+    "R": 0.19049999999999997,
+    "fold_J": [
+     0.0674999999999999,
+     0.14250000000000007,
+     0.11749999999999994,
+     0.19999999999999996,
+     0.12250000000000005
+    ],
+    "fold_R": [
+     0.20999999999999996,
+     0.15000000000000002,
+     0.15999999999999992,
+     0.1975,
+     0.235
+    ],
+    "fold_jstar": [
+     44,
+     44,
+     44,
+     44,
+     44
+    ],
+    "null_undefined_frac": 0.9995,
+    "perm_p_J": 0.0004997501249375312,
+    "success": false,
+    "null_q95_is_neginf": true,
+    "null_q95": null
+   }
+  },
+  "anli_r1/Mistral-Small-3.2-24B-Instruct-2506": {
+   "L": 40,
+   "failed": true,
+   "reason": "aborted: RuntimeError: missing smoke prompt manifest: /models/depth_grid_b/manifests/Mistral-Small-3.2-24B-Instruct-2506.anli_r1.prompts.json \u2014 run smoke first",
+   "e5": {
+    "defined": false,
+    "why": "aborted: RuntimeError: missing smoke prompt manifest: /models/depth_grid_b/manifests/Mistral-Small-3.2-24B-Instruct-2506.anli_r1.prompts.json \u2014 run smoke first",
+    "delta": null,
+    "success": false
+   },
+   "e6": {
+    "defined": false,
+    "why": "aborted: RuntimeError: missing smoke prompt manifest: /models/depth_grid_b/manifests/Mistral-Small-3.2-24B-Instruct-2506.anli_r1.prompts.json \u2014 run smoke first",
+    "J": null,
+    "R": null,
+    "success": false
+   }
+  },
+  "anli_r1/Mistral-Medium-3.5-128B": {
+   "L": 88,
+   "failed": false,
+   "e5": {
+    "defined": true,
+    "delta": 0.28200000000000003,
+    "fold_contrasts": [
+     0.15000000000000002,
+     0.4075000000000001,
+     0.2025,
+     0.36,
+     0.29000000000000004
+    ],
+    "fold_peaks": [
+     83,
+     83,
+     83,
+     83,
+     83
+    ],
+    "success": true,
+    "perm_p": 0.0004997501249375312,
+    "null_undefined_frac": 0.9965,
+    "boot_ci_5_95_conditional": [
+     0.14635000000000004,
+     0.4535
+    ],
+    "boot_undefined_frac": 0.0
+   },
+   "e6": {
+    "defined": true,
+    "J": 0.1835,
+    "R": 0.24400000000000005,
+    "fold_J": [
+     0.1725,
+     0.11749999999999994,
+     0.22750000000000004,
+     0.26749999999999996,
+     0.13250000000000006
+    ],
+    "fold_R": [
+     0.17999999999999994,
+     0.30000000000000004,
+     0.26750000000000007,
+     0.2875,
+     0.18500000000000005
+    ],
+    "fold_jstar": [
+     52,
+     46,
+     52,
+     46,
+     46
+    ],
+    "null_undefined_frac": 0.999,
+    "perm_p_J": 0.0004997501249375312,
+    "success": true,
+    "null_q95_is_neginf": true,
+    "null_q95": null
+   }
+  },
+  "anli_r1/gemma-3-12b-it": {
+   "L": 48,
+   "failed": false,
+   "e5": {
+    "defined": true,
+    "delta": 0.26749999999999996,
+    "fold_contrasts": [
+     0.52,
+     0.08500000000000008,
+     0.3425,
+     0.26,
+     0.13
+    ],
+    "fold_peaks": [
+     39,
+     39,
+     38,
+     46,
+     46
+    ],
+    "success": true,
+    "perm_p": 0.0009995002498750624,
+    "null_undefined_frac": 0.9995,
+    "boot_ci_5_95_conditional": [
+     0.093975,
+     0.41600000000000004
+    ],
+    "boot_undefined_frac": 0.0
+   },
+   "e6": {
+    "defined": true,
+    "J": 0.27599999999999997,
+    "R": 0.13999999999999999,
+    "fold_J": [
+     0.335,
+     0.25500000000000006,
+     0.21499999999999997,
+     0.285,
+     0.2899999999999999
+    ],
+    "fold_R": [
+     0.1875,
+     -0.020000000000000018,
+     0.10999999999999999,
+     0.20999999999999996,
+     0.21250000000000002
+    ],
+    "fold_jstar": [
+     37,
+     37,
+     37,
+     45,
+     37
+    ],
+    "null_undefined_frac": 1.0,
+    "perm_p_J": 0.0004997501249375312,
+    "success": true,
+    "null_q95_is_neginf": true,
+    "null_q95": null
+   }
+  },
+  "anli_r1/gemma-3-27b-it": {
+   "L": 62,
+   "failed": true,
+   "reason": "aborted: RuntimeError: row 0 block 3 cell (0, 'Attention', 'final_js_no_bos'): bad score None",
+   "e5": {
+    "defined": false,
+    "why": "aborted: RuntimeError: row 0 block 3 cell (0, 'Attention', 'final_js_no_bos'): bad score None",
+    "delta": null,
+    "success": false
+   },
+   "e6": {
+    "defined": false,
+    "why": "aborted: RuntimeError: row 0 block 3 cell (0, 'Attention', 'final_js_no_bos'): bad score None",
+    "J": null,
+    "R": null,
+    "success": false
+   }
+  },
+  "halueval_qa/Llama-3.1-8B-Instruct": {
+   "L": 32,
+   "failed": false,
+   "e5": {
+    "defined": true,
+    "delta": 0.10500000000000001,
+    "fold_contrasts": [
+     0.14250000000000007,
+     0.1725,
+     -0.0050000000000000044,
+     0.14249999999999996,
+     0.07250000000000001
+    ],
+    "fold_peaks": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "success": true,
+    "perm_p": 0.0004997501249375312,
+    "null_undefined_frac": 0.999,
+    "boot_ci_5_95_conditional": [
+     -0.006024999999999984,
+     0.16502499999999998
+    ],
+    "boot_undefined_frac": 0.0
+   },
+   "e6": {
+    "defined": false,
+    "why": "empty E6 window (peak 1 < 17)",
+    "J": null,
+    "R": null,
+    "null_undefined_frac": 1.0,
+    "perm_p_J": null,
+    "success": false,
+    "null_q95_is_neginf": true,
+    "null_q95": null
+   }
+  },
+  "halueval_qa/Llama-3.1-70B-Instruct": {
+   "L": 80,
+   "failed": false,
+   "e5": {
+    "defined": true,
+    "delta": 0.186,
+    "fold_contrasts": [
+     0.1775,
+     0.31499999999999995,
+     0.16249999999999998,
+     0.13750000000000007,
+     0.13750000000000007
+    ],
+    "fold_peaks": [
+     38,
+     38,
+     45,
+     38,
+     38
+    ],
+    "success": true,
+    "perm_p": 0.0014992503748125937,
+    "null_undefined_frac": 0.997,
+    "boot_ci_5_95_conditional": [
+     0.09900000000000002,
+     0.274025
+    ],
+    "boot_undefined_frac": 0.0
+   },
+   "e6": {
+    "defined": false,
+    "why": "empty E6 window (peak 38 < 41)",
+    "J": null,
+    "R": null,
+    "null_undefined_frac": 0.999,
+    "perm_p_J": null,
+    "success": false,
+    "null_q95_is_neginf": true,
+    "null_q95": null
+   }
+  },
+  "halueval_qa/Mistral-Small-3.2-24B-Instruct-2506": {
+   "L": 40,
+   "failed": false,
+   "e5": {
+    "defined": true,
+    "delta": -0.0005000000000000115,
+    "fold_contrasts": [
+     -0.0625,
+     -0.025000000000000022,
+     0.0525000000000001,
+     0.04499999999999993,
+     -0.012500000000000067
+    ],
+    "fold_peaks": [
+     29,
+     18,
+     37,
+     37,
+     29
+    ],
+    "success": false,
+    "perm_p": 0.0024987506246876563,
+    "null_undefined_frac": 0.998,
+    "boot_ci_5_95_conditional": [
+     -0.05054999999999999,
+     0.07849999999999999
+    ],
+    "boot_undefined_frac": 0.0
+   },
+   "e6": {
+    "defined": false,
+    "why": "empty E6 window (peak 18 < 21)",
+    "J": null,
+    "R": null,
+    "null_undefined_frac": 1.0,
+    "perm_p_J": null,
+    "success": false,
+    "null_q95_is_neginf": true,
+    "null_q95": null
+   }
+  },
+  "halueval_qa/Mistral-Medium-3.5-128B": {
+   "L": 88,
+   "failed": false,
+   "e5": {
+    "defined": true,
+    "delta": 0.17150000000000004,
+    "fold_contrasts": [
+     0.09750000000000003,
+     0.24250000000000005,
+     0.16749999999999998,
+     0.24250000000000005,
+     0.10750000000000004
+    ],
+    "fold_peaks": [
+     85,
+     85,
+     85,
+     85,
+     85
+    ],
+    "success": true,
+    "perm_p": 0.0014992503748125937,
+    "null_undefined_frac": 0.9965,
+    "boot_ci_5_95_conditional": [
+     0.029475000000000015,
+     0.24149999999999996
+    ],
+    "boot_undefined_frac": 0.0
+   },
+   "e6": {
+    "defined": true,
+    "J": 0.20999999999999996,
+    "R": 0.23600000000000004,
+    "fold_J": [
+     0.12750000000000006,
+     0.2074999999999999,
+     0.2350000000000001,
+     0.2525,
+     0.22749999999999992
+    ],
+    "fold_R": [
+     0.15500000000000003,
+     0.25750000000000006,
+     0.2925,
+     0.25,
+     0.2250000000000001
+    ],
+    "fold_jstar": [
+     56,
+     56,
+     81,
+     81,
+     81
+    ],
+    "null_undefined_frac": 0.999,
+    "perm_p_J": 0.0004997501249375312,
+    "success": true,
+    "null_q95_is_neginf": true,
+    "null_q95": null
+   }
+  },
+  "halueval_qa/gemma-3-12b-it": {
+   "L": 48,
+   "failed": false,
+   "e5": {
+    "defined": true,
+    "delta": 0.3155,
+    "fold_contrasts": [
+     0.24750000000000005,
+     0.4675,
+     0.3225,
+     0.1875,
+     0.3525
+    ],
+    "fold_peaks": [
+     22,
+     22,
+     22,
+     22,
+     22
+    ],
+    "success": true,
+    "perm_p": 0.0004997501249375312,
+    "null_undefined_frac": 0.998,
+    "boot_ci_5_95_conditional": [
+     0.221,
+     0.492
+    ],
+    "boot_undefined_frac": 0.0
+   },
+   "e6": {
+    "defined": false,
+    "why": "empty E6 window (peak 22 < 25)",
+    "J": null,
+    "R": null,
+    "null_undefined_frac": 0.9995,
+    "perm_p_J": null,
+    "success": false,
+    "null_q95_is_neginf": true,
+    "null_q95": null
+   }
+  },
+  "halueval_qa/gemma-3-27b-it": {
+   "L": 62,
+   "failed": true,
+   "reason": "aborted: RuntimeError: row 0 block 3 cell (0, 'Attention', 'final_js_no_bos'): bad score None",
+   "e5": {
+    "defined": false,
+    "why": "aborted: RuntimeError: row 0 block 3 cell (0, 'Attention', 'final_js_no_bos'): bad score None",
+    "delta": null,
+    "success": false
+   },
+   "e6": {
+    "defined": false,
+    "why": "aborted: RuntimeError: row 0 block 3 cell (0, 'Attention', 'final_js_no_bos'): bad score None",
+    "J": null,
+    "R": null,
+    "success": false
+   }
+  }
+ }
+}

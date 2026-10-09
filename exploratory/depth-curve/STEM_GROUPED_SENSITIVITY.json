@@ -1,0 +1,1391 @@
+{
+ "banner": "UNREGISTERED stem-grouped sensitivity rescore. Cannot move any registered verdict. Grids A and B are never pooled.",
+ "config": {
+  "m_draws": 200,
+  "k_folds": 5,
+  "nperm_inner": 200,
+  "nperm_outer": 2000,
+  "nboot": 1000,
+  "e5_dip": 0.05,
+  "primary": "final_js_no_bos",
+  "part_a_tol": 1e-12
+ },
+ "provenance": {
+  "script_sha256": "04b8e4943dc02bf235b4c6bc3b7f72a7b0cd574ef7ff530e1f9a95751b0d892d",
+  "rescore_machinery_sha256": "522cd5301f4f783faaec13f2c90a58f68c6247f2d0dd5b9f5b86b522ca81a958",
+  "numpy_version": "2.0.2",
+  "designated_group_fold_map_sha256": {
+   "anli_r1": "35c83332ffc54221f90e4aa6e0d2daeadd13111495d37d31203284e8a6176385",
+   "halueval_qa": "03ab6ddbc73fc79349add46e312a0cc66d7520075219a7f706f76b81362bdef2"
+  },
+  "runtime_s": 215.9
+ },
+ "groups": {
+  "anli_r1": {
+   "pairs": 5,
+   "pos_singletons": 95,
+   "neg_singletons": 95,
+   "pairs_split_by_registered_fold_map": 4,
+   "pairs_split_row_draws_median": 4.0
+  },
+  "halueval_qa": {
+   "pairs": 100,
+   "pos_singletons": 0,
+   "neg_singletons": 0,
+   "pairs_split_by_registered_fold_map": 74,
+   "pairs_split_row_draws_median": 81.0
+  }
+ },
+ "part_b_fold_draws": {
+  "cells": {
+   "A/anli_r1/Llama-3.3-70B-Instruct": {
+    "row_defined_frac": 1.0,
+    "group_defined_frac": 1.0,
+    "row_success_frac": 1.0,
+    "group_success_frac": 1.0,
+    "row_mean": 0.32378749999999995,
+    "group_mean": 0.32610999999999996,
+    "row_sd": 0.02325143522343833,
+    "group_sd": 0.023740068539735874,
+    "registered_delta": 0.41600000000000004,
+    "group_minus_row": 0.002322500000000005,
+    "diff_mc_se": 0.0023497022090268223,
+    "registered_pctile_in_row_arm": 97.5
+   },
+   "A/anli_r1/Qwen2.5-32B-Instruct": {
+    "row_defined_frac": 1.0,
+    "group_defined_frac": 1.0,
+    "row_success_frac": 1.0,
+    "group_success_frac": 1.0,
+    "row_mean": 0.1495725,
+    "group_mean": 0.150985,
+    "row_sd": 0.0130493263558587,
+    "group_sd": 0.012739357564484126,
+    "registered_delta": 0.146,
+    "group_minus_row": 0.001412500000000011,
+    "diff_mc_se": 0.0012895273349128498,
+    "registered_pctile_in_row_arm": 35.0
+   },
+   "A/anli_r1/Qwen2.5-72B-Instruct": {
+    "row_defined_frac": 1.0,
+    "group_defined_frac": 1.0,
+    "row_success_frac": 1.0,
+    "group_success_frac": 1.0,
+    "row_mean": 0.2122725,
+    "group_mean": 0.21181750000000002,
+    "row_sd": 0.01742830233734224,
+    "group_sd": 0.01631059845190533,
+    "registered_delta": 0.21149999999999997,
+    "group_minus_row": -0.0004549999999999832,
+    "diff_mc_se": 0.0016878704692912688,
+    "registered_pctile_in_row_arm": 43.0
+   },
+   "A/anli_r1/Qwen2.5-7B-Instruct": {
+    "row_defined_frac": 1.0,
+    "group_defined_frac": 1.0,
+    "row_success_frac": 1.0,
+    "group_success_frac": 1.0,
+    "row_mean": 0.2230725,
+    "group_mean": 0.222105,
+    "row_sd": 0.010116953965383474,
+    "group_sd": 0.010649461495810655,
+    "registered_delta": 0.242,
+    "group_minus_row": -0.00096750000000001,
+    "diff_mc_se": 0.0010386620905964608,
+    "registered_pctile_in_row_arm": 97.5
+   },
+   "A/halueval_qa/Llama-3.3-70B-Instruct": {
+    "row_defined_frac": 1.0,
+    "group_defined_frac": 1.0,
+    "row_success_frac": 0.985,
+    "group_success_frac": 1.0,
+    "row_mean": 0.113315,
+    "group_mean": 0.1227525,
+    "row_sd": 0.02332236994172103,
+    "group_sd": 0.021382317725319972,
+    "registered_delta": 0.11050000000000004,
+    "group_minus_row": 0.009437500000000001,
+    "diff_mc_se": 0.0022373382075638734,
+    "registered_pctile_in_row_arm": 43.5
+   },
+   "A/halueval_qa/Qwen2.5-32B-Instruct": {
+    "row_defined_frac": 1.0,
+    "group_defined_frac": 1.0,
+    "row_success_frac": 1.0,
+    "group_success_frac": 1.0,
+    "row_mean": 0.25848,
+    "group_mean": 0.2584825,
+    "row_sd": 0.00854853715188663,
+    "group_sd": 0.008271823199587027,
+    "registered_delta": 0.261,
+    "group_minus_row": 2.500000000016378e-06,
+    "diff_mc_se": 0.0008411318163118435,
+    "registered_pctile_in_row_arm": 63.5
+   },
+   "A/halueval_qa/Qwen2.5-72B-Instruct": {
+    "row_defined_frac": 1.0,
+    "group_defined_frac": 1.0,
+    "row_success_frac": 1.0,
+    "group_success_frac": 1.0,
+    "row_mean": 0.2566975,
+    "group_mean": 0.25880000000000003,
+    "row_sd": 0.006946474739501516,
+    "group_sd": 0.006798240978518635,
+    "registered_delta": 0.26400000000000007,
+    "group_minus_row": 0.002102500000000007,
+    "diff_mc_se": 0.0006872757514584035,
+    "registered_pctile_in_row_arm": 86.0
+   },
+   "A/halueval_qa/Qwen2.5-7B-Instruct": {
+    "row_defined_frac": 1.0,
+    "group_defined_frac": 1.0,
+    "row_success_frac": 1.0,
+    "group_success_frac": 1.0,
+    "row_mean": 0.18975,
+    "group_mean": 0.1897475,
+    "row_sd": 0.007557318659857685,
+    "group_sd": 0.00760025083889146,
+    "registered_delta": 0.20199999999999996,
+    "group_minus_row": -2.4999999999886224e-06,
+    "diff_mc_se": 0.0007578815149504027,
+    "registered_pctile_in_row_arm": 95.5
+   },
+   "B/anli_r1/Llama-3.1-70B-Instruct": {
+    "row_defined_frac": 1.0,
+    "group_defined_frac": 1.0,
+    "row_success_frac": 1.0,
+    "group_success_frac": 1.0,
+    "row_mean": 0.1355075,
+    "group_mean": 0.135135,
+    "row_sd": 0.007167850735810161,
+    "group_sd": 0.007680116924884639,
+    "registered_delta": 0.1405,
+    "group_minus_row": -0.00037249999999999783,
+    "diff_mc_se": 0.0007428400909709766,
+    "registered_pctile_in_row_arm": 78.0
+   },
+   "B/anli_r1/Llama-3.1-8B-Instruct": {
+    "row_defined_frac": 1.0,
+    "group_defined_frac": 1.0,
+    "row_success_frac": 1.0,
+    "group_success_frac": 1.0,
+    "row_mean": 0.13713,
+    "group_mean": 0.1387425,
+    "row_sd": 0.019299037911813324,
+    "group_sd": 0.018829036268060022,
+    "registered_delta": 0.1405,
+    "group_minus_row": 0.001612499999999989,
+    "diff_mc_se": 0.0019065485452848133,
+    "registered_pctile_in_row_arm": 50.5
+   },
+   "B/anli_r1/Mistral-Medium-3.5-128B": {
+    "row_defined_frac": 1.0,
+    "group_defined_frac": 1.0,
+    "row_success_frac": 1.0,
+    "group_success_frac": 1.0,
+    "row_mean": 0.287395,
+    "group_mean": 0.2887875,
+    "row_sd": 0.012059587190948136,
+    "group_sd": 0.011234418299254,
+    "registered_delta": 0.29300000000000004,
+    "group_minus_row": 0.0013924999999999632,
+    "diff_mc_se": 0.0011654308167769838,
+    "registered_pctile_in_row_arm": 70.0
+   },
+   "B/anli_r1/gemma-3-12b-it": {
+    "row_defined_frac": 1.0,
+    "group_defined_frac": 1.0,
+    "row_success_frac": 1.0,
+    "group_success_frac": 1.0,
+    "row_mean": 0.2079475,
+    "group_mean": 0.20396250000000002,
+    "row_sd": 0.038374293816035195,
+    "group_sd": 0.036454657507924836,
+    "registered_delta": 0.21799999999999997,
+    "group_minus_row": -0.0039849999999999886,
+    "diff_mc_se": 0.003742678506029804,
+    "registered_pctile_in_row_arm": 71.0
+   },
+   "B/halueval_qa/Llama-3.1-70B-Instruct": {
+    "row_defined_frac": 1.0,
+    "group_defined_frac": 1.0,
+    "row_success_frac": 1.0,
+    "group_success_frac": 1.0,
+    "row_mean": 0.19523249999999998,
+    "group_mean": 0.19788499999999998,
+    "row_sd": 0.014890123324306797,
+    "group_sd": 0.014034837309048412,
+    "registered_delta": 0.20099999999999998,
+    "group_minus_row": 0.002652500000000002,
+    "diff_mc_se": 0.0014468801451822514,
+    "registered_pctile_in_row_arm": 60.0
+   },
+   "B/halueval_qa/Llama-3.1-8B-Instruct": {
+    "row_defined_frac": 1.0,
+    "group_defined_frac": 1.0,
+    "row_success_frac": 0.97,
+    "group_success_frac": 0.99,
+    "row_mean": 0.0985825,
+    "group_mean": 0.0988175,
+    "row_sd": 0.0139490077725692,
+    "group_sd": 0.008888643522402151,
+    "registered_delta": 0.10599999999999998,
+    "group_minus_row": 0.0002349999999999991,
+    "diff_mc_se": 0.0011695785597973694,
+    "registered_pctile_in_row_arm": 75.5
+   },
+   "B/halueval_qa/Mistral-Medium-3.5-128B": {
+    "row_defined_frac": 1.0,
+    "group_defined_frac": 1.0,
+    "row_success_frac": 1.0,
+    "group_success_frac": 1.0,
+    "row_mean": 0.14950500000000003,
+    "group_mean": 0.15249,
+    "row_sd": 0.016495620707101716,
+    "group_sd": 0.008191023398917138,
+    "registered_delta": 0.15099999999999997,
+    "group_minus_row": 0.00298499999999996,
+    "diff_mc_se": 0.0013023025125410972,
+    "registered_pctile_in_row_arm": 41.5
+   },
+   "B/halueval_qa/Mistral-Small-3.2-24B-Instruct-2506": {
+    "row_defined_frac": 1.0,
+    "group_defined_frac": 1.0,
+    "row_success_frac": 0.0,
+    "group_success_frac": 0.0,
+    "row_mean": 0.0072475000000000005,
+    "group_mean": 0.008017499999999997,
+    "row_sd": 0.012411900342030728,
+    "group_sd": 0.010853683984258558,
+    "registered_delta": 0.004499999999999971,
+    "group_minus_row": 0.0007699999999999964,
+    "diff_mc_se": 0.0011658853419840504,
+    "registered_pctile_in_row_arm": 38.5
+   },
+   "B/halueval_qa/gemma-3-12b-it": {
+    "row_defined_frac": 1.0,
+    "group_defined_frac": 1.0,
+    "row_success_frac": 1.0,
+    "group_success_frac": 1.0,
+    "row_mean": 0.2984375,
+    "group_mean": 0.297365,
+    "row_sd": 0.015821073782399876,
+    "group_sd": 0.014201679955830545,
+    "registered_delta": 0.3055,
+    "group_minus_row": -0.0010725000000000318,
+    "diff_mc_se": 0.0015033198082842847,
+    "registered_pctile_in_row_arm": 56.00000000000001
+   }
+  },
+  "by_grid": {
+   "A": {
+    "n_cells": 8,
+    "median_group_minus_row": 0.0007075000000000137,
+    "mean_group_minus_row": 0.0017315625000000074,
+    "n_negative": 3
+   },
+   "B": {
+    "n_cells": 9,
+    "median_group_minus_row": 0.0007699999999999964,
+    "mean_group_minus_row": 0.00046861111111109907,
+    "n_negative": 3
+   }
+  }
+ },
+ "part_c_grouped_inference": {
+  "cells": {
+   "A/anli_r1/Llama-3.3-70B-Instruct": {
+    "L": 80,
+    "e5": {
+     "defined": true,
+     "delta": 0.3225,
+     "fold_contrasts": [
+      0.24,
+      0.29000000000000004,
+      0.39749999999999996,
+      0.36250000000000004,
+      0.3225
+     ],
+     "fold_peaks": [
+      69,
+      69,
+      48,
+      48,
+      48
+     ],
+     "success": true,
+     "perm_p": 0.0004997501249375312,
+     "null_undefined_frac": 0.9945,
+     "boot_ci_5_95_conditional": [
+      0.22597499999999998,
+      0.47907500000000003
+     ],
+     "boot_undefined_frac": 0.0,
+     "registered_delta": 0.41600000000000004,
+     "registered_perm_p": 0.0004997501249375312,
+     "registered_boot_ci": [
+      0.23145,
+      0.541
+     ],
+     "registered_success": true
+    },
+    "e6": {
+     "defined": true,
+     "J": 0.26999999999999996,
+     "R": 0.2,
+     "fold_J": [
+      0.25,
+      0.1825,
+      0.37749999999999995,
+      0.31999999999999995,
+      0.21999999999999997
+     ],
+     "fold_R": [
+      0.11250000000000004,
+      0.1975,
+      0.1875,
+      0.27,
+      0.23250000000000004
+     ],
+     "fold_jstar": [
+      47,
+      47,
+      47,
+      47,
+      47
+     ],
+     "success": true,
+     "null_q95_is_neginf": true,
+     "null_q95": null,
+     "null_undefined_frac": 0.9985
+    }
+   },
+   "A/anli_r1/Qwen2.5-32B-Instruct": {
+    "L": 64,
+    "e5": {
+     "defined": true,
+     "delta": 0.1565,
+     "fold_contrasts": [
+      0.09499999999999997,
+      0.1825,
+      0.11750000000000005,
+      0.15749999999999997,
+      0.22999999999999998
+     ],
+     "fold_peaks": [
+      57,
+      61,
+      62,
+      61,
+      62
+     ],
+     "success": true,
+     "perm_p": 0.0004997501249375312,
+     "null_undefined_frac": 0.997,
+     "boot_ci_5_95_conditional": [
+      0.07550000000000001,
+      0.23899999999999996
+     ],
+     "boot_undefined_frac": 0.0,
+     "registered_delta": 0.146,
+     "registered_perm_p": 0.0009995002498750624,
+     "registered_boot_ci": [
+      0.08400000000000003,
+      0.2425
+     ],
+     "registered_success": true
+    },
+    "e6": {
+     "defined": true,
+     "J": 0.2455,
+     "R": 0.31449999999999995,
+     "fold_J": [
+      0.1925,
+      0.22000000000000008,
+      0.1349999999999999,
+      0.375,
+      0.30500000000000005
+     ],
+     "fold_R": [
+      0.2725000000000001,
+      0.29499999999999993,
+      0.36250000000000004,
+      0.345,
+      0.2974999999999999
+     ],
+     "fold_jstar": [
+      55,
+      55,
+      55,
+      55,
+      55
+     ],
+     "success": true,
+     "null_q95_is_neginf": true,
+     "null_q95": null,
+     "null_undefined_frac": 0.9985
+    }
+   },
+   "A/anli_r1/Qwen2.5-72B-Instruct": {
+    "L": 80,
+    "e5": {
+     "defined": true,
+     "delta": 0.21549999999999997,
+     "fold_contrasts": [
+      0.20999999999999996,
+      0.255,
+      0.245,
+      0.1825,
+      0.18499999999999994
+     ],
+     "fold_peaks": [
+      66,
+      66,
+      73,
+      66,
+      73
+     ],
+     "success": true,
+     "perm_p": 0.0009995002498750624,
+     "null_undefined_frac": 0.9985,
+     "boot_ci_5_95_conditional": [
+      0.11900000000000002,
+      0.328525
+     ],
+     "boot_undefined_frac": 0.0,
+     "registered_delta": 0.21149999999999997,
+     "registered_perm_p": 0.0009995002498750624,
+     "registered_boot_ci": [
+      0.10400000000000002,
+      0.3235499999999999
+     ],
+     "registered_success": true
+    },
+    "e6": {
+     "defined": true,
+     "J": 0.324,
+     "R": 0.2955,
+     "fold_J": [
+      0.30500000000000005,
+      0.22749999999999992,
+      0.4,
+      0.2925,
+      0.395
+     ],
+     "fold_R": [
+      0.28,
+      0.2825,
+      0.36,
+      0.20750000000000002,
+      0.34750000000000003
+     ],
+     "fold_jstar": [
+      61,
+      61,
+      61,
+      61,
+      61
+     ],
+     "success": true,
+     "null_q95_is_neginf": true,
+     "null_q95": null,
+     "null_undefined_frac": 0.999
+    }
+   },
+   "A/anli_r1/Qwen2.5-7B-Instruct": {
+    "L": 28,
+    "e5": {
+     "defined": true,
+     "delta": 0.2085,
+     "fold_contrasts": [
+      0.14500000000000002,
+      0.09750000000000003,
+      0.39,
+      0.20750000000000002,
+      0.2025
+     ],
+     "fold_peaks": [
+      25,
+      25,
+      22,
+      25,
+      22
+     ],
+     "success": true,
+     "perm_p": 0.0004997501249375312,
+     "null_undefined_frac": 0.999,
+     "boot_ci_5_95_conditional": [
+      0.134975,
+      0.3200499999999999
+     ],
+     "boot_undefined_frac": 0.0,
+     "registered_delta": 0.242,
+     "registered_perm_p": 0.0004997501249375312,
+     "registered_boot_ci": [
+      0.14997500000000002,
+      0.34554999999999997
+     ],
+     "registered_success": true
+    },
+    "e6": {
+     "defined": true,
+     "J": 0.19049999999999995,
+     "R": 0.26749999999999996,
+     "fold_J": [
+      0.28,
+      0.1825,
+      0.15999999999999992,
+      0.1974999999999999,
+      0.13249999999999995
+     ],
+     "fold_R": [
+      0.19999999999999996,
+      0.1925,
+      0.37,
+      0.27,
+      0.30500000000000005
+     ],
+     "fold_jstar": [
+      20,
+      20,
+      20,
+      20,
+      20
+     ],
+     "success": true,
+     "null_q95_is_neginf": true,
+     "null_q95": null,
+     "null_undefined_frac": 0.9995
+    }
+   },
+   "A/halueval_qa/Llama-3.3-70B-Instruct": {
+    "L": 80,
+    "e5": {
+     "defined": true,
+     "delta": 0.12150000000000001,
+     "fold_contrasts": [
+      0.16000000000000003,
+      0.19499999999999995,
+      -0.0024999999999999467,
+      0.16000000000000003,
+      0.09499999999999997
+     ],
+     "fold_peaks": [
+      26,
+      26,
+      26,
+      26,
+      48
+     ],
+     "success": true,
+     "perm_p": 0.0004997501249375312,
+     "null_undefined_frac": 0.9995,
+     "boot_ci_5_95_conditional": [
+      0.03550000000000002,
+      0.197
+     ],
+     "boot_undefined_frac": 0.0,
+     "registered_delta": 0.11050000000000004,
+     "registered_perm_p": 0.0009995002498750624,
+     "registered_boot_ci": [
+      0.02150000000000001,
+      0.20152499999999998
+     ],
+     "registered_success": true
+    },
+    "e6": {
+     "defined": false,
+     "why": "empty E6 window (peak 26 < 41)",
+     "J": null,
+     "R": null,
+     "success": false,
+     "null_q95_is_neginf": true,
+     "null_q95": null,
+     "null_undefined_frac": 1.0
+    }
+   },
+   "A/halueval_qa/Qwen2.5-32B-Instruct": {
+    "L": 64,
+    "e5": {
+     "defined": true,
+     "delta": 0.265,
+     "fold_contrasts": [
+      0.2775000000000001,
+      0.21750000000000003,
+      0.31000000000000005,
+      0.24249999999999994,
+      0.27749999999999997
+     ],
+     "fold_peaks": [
+      56,
+      56,
+      56,
+      56,
+      56
+     ],
+     "success": true,
+     "perm_p": 0.0004997501249375312,
+     "null_undefined_frac": 0.999,
+     "boot_ci_5_95_conditional": [
+      0.17095000000000007,
+      0.321025
+     ],
+     "boot_undefined_frac": 0.0,
+     "registered_delta": 0.261,
+     "registered_perm_p": 0.0004997501249375312,
+     "registered_boot_ci": [
+      0.14250000000000002,
+      0.33199999999999996
+     ],
+     "registered_success": true
+    },
+    "e6": {
+     "defined": true,
+     "J": 0.35200000000000004,
+     "R": 0.309,
+     "fold_J": [
+      0.36750000000000005,
+      0.3275,
+      0.33499999999999996,
+      0.41500000000000004,
+      0.31500000000000006
+     ],
+     "fold_R": [
+      0.255,
+      0.355,
+      0.245,
+      0.35749999999999993,
+      0.3324999999999999
+     ],
+     "fold_jstar": [
+      34,
+      34,
+      34,
+      34,
+      34
+     ],
+     "success": true,
+     "null_q95_is_neginf": true,
+     "null_q95": null,
+     "null_undefined_frac": 0.9995
+    }
+   },
+   "A/halueval_qa/Qwen2.5-72B-Instruct": {
+    "L": 80,
+    "e5": {
+     "defined": true,
+     "delta": 0.261,
+     "fold_contrasts": [
+      0.35,
+      0.1725,
+      0.20750000000000002,
+      0.1675000000000001,
+      0.4075
+     ],
+     "fold_peaks": [
+      63,
+      63,
+      63,
+      63,
+      63
+     ],
+     "success": true,
+     "perm_p": 0.0004997501249375312,
+     "null_undefined_frac": 1.0,
+     "boot_ci_5_95_conditional": [
+      0.20145000000000002,
+      0.325525
+     ],
+     "boot_undefined_frac": 0.0,
+     "registered_delta": 0.26400000000000007,
+     "registered_perm_p": 0.0004997501249375312,
+     "registered_boot_ci": [
+      0.15645,
+      0.3340749999999999
+     ],
+     "registered_success": true
+    },
+    "e6": {
+     "defined": true,
+     "J": 0.3085,
+     "R": 0.30700000000000005,
+     "fold_J": [
+      0.27,
+      0.36250000000000004,
+      0.3275000000000001,
+      0.30499999999999994,
+      0.27749999999999997
+     ],
+     "fold_R": [
+      0.25749999999999995,
+      0.31499999999999995,
+      0.25,
+      0.3350000000000001,
+      0.37750000000000006
+     ],
+     "fold_jstar": [
+      57,
+      57,
+      57,
+      57,
+      57
+     ],
+     "success": true,
+     "null_q95_is_neginf": true,
+     "null_q95": null,
+     "null_undefined_frac": 1.0
+    }
+   },
+   "A/halueval_qa/Qwen2.5-7B-Instruct": {
+    "L": 28,
+    "e5": {
+     "defined": true,
+     "delta": 0.18950000000000006,
+     "fold_contrasts": [
+      0.25249999999999995,
+      0.14,
+      0.14000000000000012,
+      0.2550000000000001,
+      0.16000000000000003
+     ],
+     "fold_peaks": [
+      26,
+      26,
+      26,
+      26,
+      26
+     ],
+     "success": true,
+     "perm_p": 0.0004997501249375312,
+     "null_undefined_frac": 0.999,
+     "boot_ci_5_95_conditional": [
+      0.11694999999999997,
+      0.244525
+     ],
+     "boot_undefined_frac": 0.0,
+     "registered_delta": 0.20199999999999996,
+     "registered_perm_p": 0.0004997501249375312,
+     "registered_boot_ci": [
+      0.12250000000000001,
+      0.259525
+     ],
+     "registered_success": true
+    },
+    "e6": {
+     "defined": true,
+     "J": 0.23500000000000001,
+     "R": 0.315,
+     "fold_J": [
+      0.11499999999999999,
+      0.355,
+      0.1349999999999999,
+      0.2400000000000001,
+      0.33000000000000007
+     ],
+     "fold_R": [
+      0.3075,
+      0.36,
+      0.2775000000000001,
+      0.39,
+      0.24
+     ],
+     "fold_jstar": [
+      18,
+      18,
+      18,
+      18,
+      18
+     ],
+     "success": true,
+     "null_q95_is_neginf": true,
+     "null_q95": null,
+     "null_undefined_frac": 0.999
+    }
+   },
+   "B/anli_r1/Llama-3.1-70B-Instruct": {
+    "L": 80,
+    "e5": {
+     "defined": true,
+     "delta": 0.13199999999999998,
+     "fold_contrasts": [
+      0.039999999999999925,
+      0.15500000000000003,
+      0.25,
+      0.07499999999999996,
+      0.14
+     ],
+     "fold_peaks": [
+      45,
+      45,
+      45,
+      45,
+      45
+     ],
+     "success": true,
+     "perm_p": 0.001999000499750125,
+     "null_undefined_frac": 0.9965,
+     "boot_ci_5_95_conditional": [
+      0.058974999999999965,
+      0.17957499999999996
+     ],
+     "boot_undefined_frac": 0.0,
+     "registered_delta": 0.1405,
+     "registered_perm_p": 0.0024987506246876563,
+     "registered_boot_ci": [
+      0.04997499999999998,
+      0.18804999999999997
+     ],
+     "registered_success": true
+    },
+    "e6": {
+     "defined": true,
+     "J": 0.119,
+     "R": 0.18199999999999997,
+     "fold_J": [
+      0.15749999999999997,
+      0.20750000000000002,
+      0.11249999999999993,
+      -0.06999999999999995,
+      0.1875
+     ],
+     "fold_R": [
+      0.1499999999999999,
+      0.22999999999999998,
+      0.13249999999999995,
+      0.18999999999999995,
+      0.20750000000000002
+     ],
+     "fold_jstar": [
+      44,
+      44,
+      44,
+      44,
+      44
+     ],
+     "success": false,
+     "null_q95_is_neginf": true,
+     "null_q95": null,
+     "null_undefined_frac": 0.9985
+    }
+   },
+   "B/anli_r1/Llama-3.1-8B-Instruct": {
+    "L": 32,
+    "e5": {
+     "defined": true,
+     "delta": 0.1765,
+     "fold_contrasts": [
+      -0.05249999999999999,
+      0.235,
+      0.27249999999999996,
+      0.1975,
+      0.22999999999999998
+     ],
+     "fold_peaks": [
+      18,
+      18,
+      18,
+      18,
+      18
+     ],
+     "success": true,
+     "perm_p": 0.0004997501249375312,
+     "null_undefined_frac": 0.9985,
+     "boot_ci_5_95_conditional": [
+      0.023925000000000002,
+      0.292
+     ],
+     "boot_undefined_frac": 0.002,
+     "registered_delta": 0.1405,
+     "registered_perm_p": 0.0009995002498750624,
+     "registered_boot_ci": [
+      0.018800000000000004,
+      0.28509999999999996
+     ],
+     "registered_success": true
+    },
+    "e6": {
+     "defined": true,
+     "J": 0.06949999999999998,
+     "R": 0.07799999999999999,
+     "fold_J": [
+      -0.007499999999999951,
+      0.0774999999999999,
+      0.11250000000000004,
+      -0.03249999999999997,
+      0.1974999999999999
+     ],
+     "fold_R": [
+      0.0,
+      0.08999999999999997,
+      0.11249999999999993,
+      0.05249999999999999,
+      0.135
+     ],
+     "fold_jstar": [
+      16,
+      16,
+      16,
+      16,
+      16
+     ],
+     "success": false,
+     "null_q95_is_neginf": true,
+     "null_q95": null,
+     "null_undefined_frac": 0.999
+    }
+   },
+   "B/anli_r1/Mistral-Medium-3.5-128B": {
+    "L": 88,
+    "e5": {
+     "defined": true,
+     "delta": 0.28700000000000003,
+     "fold_contrasts": [
+      0.25750000000000006,
+      0.30500000000000005,
+      0.28,
+      0.265,
+      0.3274999999999999
+     ],
+     "fold_peaks": [
+      83,
+      83,
+      83,
+      83,
+      83
+     ],
+     "success": true,
+     "perm_p": 0.0004997501249375312,
+     "null_undefined_frac": 0.9985,
+     "boot_ci_5_95_conditional": [
+      0.16250000000000003,
+      0.430525
+     ],
+     "boot_undefined_frac": 0.0,
+     "registered_delta": 0.29300000000000004,
+     "registered_perm_p": 0.0004997501249375312,
+     "registered_boot_ci": [
+      0.14800000000000005,
+      0.46509999999999996
+     ],
+     "registered_success": true
+    },
+    "e6": {
+     "defined": true,
+     "J": 0.1735,
+     "R": 0.242,
+     "fold_J": [
+      0.09749999999999992,
+      0.02749999999999997,
+      0.28500000000000003,
+      0.2025,
+      0.25500000000000006
+     ],
+     "fold_R": [
+      0.13250000000000006,
+      0.2975,
+      0.27249999999999996,
+      0.19000000000000006,
+      0.3174999999999999
+     ],
+     "fold_jstar": [
+      46,
+      60,
+      46,
+      46,
+      52
+     ],
+     "success": true,
+     "null_q95_is_neginf": true,
+     "null_q95": null,
+     "null_undefined_frac": 1.0
+    }
+   },
+   "B/anli_r1/gemma-3-12b-it": {
+    "L": 48,
+    "e5": {
+     "defined": true,
+     "delta": 0.16349999999999998,
+     "fold_contrasts": [
+      0.245,
+      0.01749999999999996,
+      0.09750000000000003,
+      0.12749999999999995,
+      0.32999999999999996
+     ],
+     "fold_peaks": [
+      39,
+      46,
+      22,
+      42,
+      39
+     ],
+     "success": true,
+     "perm_p": 0.0004997501249375312,
+     "null_undefined_frac": 0.9995,
+     "boot_ci_5_95_conditional": [
+      0.09747499999999996,
+      0.382525
+     ],
+     "boot_undefined_frac": 0.0,
+     "registered_delta": 0.21799999999999997,
+     "registered_perm_p": 0.0004997501249375312,
+     "registered_boot_ci": [
+      0.092975,
+      0.36252500000000004
+     ],
+     "registered_success": true
+    },
+    "e6": {
+     "defined": false,
+     "why": "empty E6 window (peak 22 < 25)",
+     "J": null,
+     "R": null,
+     "success": false,
+     "null_q95_is_neginf": true,
+     "null_q95": null,
+     "null_undefined_frac": 0.9995
+    }
+   },
+   "B/halueval_qa/Llama-3.1-70B-Instruct": {
+    "L": 80,
+    "e5": {
+     "defined": true,
+     "delta": 0.21600000000000003,
+     "fold_contrasts": [
+      0.35750000000000004,
+      0.21250000000000002,
+      0.10999999999999988,
+      0.08500000000000008,
+      0.31499999999999995
+     ],
+     "fold_peaks": [
+      38,
+      38,
+      38,
+      38,
+      38
+     ],
+     "success": true,
+     "perm_p": 0.0004997501249375312,
+     "null_undefined_frac": 0.9995,
+     "boot_ci_5_95_conditional": [
+      0.15047500000000003,
+      0.2655
+     ],
+     "boot_undefined_frac": 0.0,
+     "registered_delta": 0.20099999999999998,
+     "registered_perm_p": 0.0014992503748125937,
+     "registered_boot_ci": [
+      0.09650000000000003,
+      0.26352500000000006
+     ],
+     "registered_success": true
+    },
+    "e6": {
+     "defined": false,
+     "why": "empty E6 window (peak 38 < 41)",
+     "J": null,
+     "R": null,
+     "success": false,
+     "null_q95_is_neginf": true,
+     "null_q95": null,
+     "null_undefined_frac": 1.0
+    }
+   },
+   "B/halueval_qa/Llama-3.1-8B-Instruct": {
+    "L": 32,
+    "e5": {
+     "defined": true,
+     "delta": 0.057500000000000016,
+     "fold_contrasts": [
+      0.12,
+      -0.04749999999999999,
+      0.08000000000000007,
+      0.03500000000000003,
+      0.09999999999999998
+     ],
+     "fold_peaks": [
+      1,
+      1,
+      23,
+      1,
+      1
+     ],
+     "success": true,
+     "perm_p": 0.0009995002498750624,
+     "null_undefined_frac": 0.999,
+     "boot_ci_5_95_conditional": [
+      -0.016525,
+      0.142
+     ],
+     "boot_undefined_frac": 0.0,
+     "registered_delta": 0.10599999999999998,
+     "registered_perm_p": 0.0009995002498750624,
+     "registered_boot_ci": [
+      -0.030624999999999965,
+      0.16757499999999997
+     ],
+     "registered_success": true
+    },
+    "e6": {
+     "defined": false,
+     "why": "empty E6 window (peak 1 < 17)",
+     "J": null,
+     "R": null,
+     "success": false,
+     "null_q95_is_neginf": true,
+     "null_q95": null,
+     "null_undefined_frac": 1.0
+    }
+   },
+   "B/halueval_qa/Mistral-Medium-3.5-128B": {
+    "L": 88,
+    "e5": {
+     "defined": true,
+     "delta": 0.14250000000000002,
+     "fold_contrasts": [
+      0.18000000000000005,
+      0.1975,
+      0.08750000000000002,
+      0.09999999999999998,
+      0.14749999999999996
+     ],
+     "fold_peaks": [
+      85,
+      85,
+      85,
+      85,
+      85
+     ],
+     "success": true,
+     "perm_p": 0.0004997501249375312,
+     "null_undefined_frac": 1.0,
+     "boot_ci_5_95_conditional": [
+      0.05250000000000001,
+      0.20149999999999996
+     ],
+     "boot_undefined_frac": 0.0,
+     "registered_delta": 0.15099999999999997,
+     "registered_perm_p": 0.001999000499750125,
+     "registered_boot_ci": [
+      -0.010525,
+      0.21955
+     ],
+     "registered_success": true
+    },
+    "e6": {
+     "defined": true,
+     "J": 0.24300000000000002,
+     "R": 0.2125,
+     "fold_J": [
+      0.25750000000000006,
+      0.3175,
+      0.2975,
+      0.20999999999999996,
+      0.13250000000000006
+     ],
+     "fold_R": [
+      0.1875,
+      0.24750000000000005,
+      0.21999999999999997,
+      0.19499999999999995,
+      0.21250000000000002
+     ],
+     "fold_jstar": [
+      81,
+      81,
+      81,
+      81,
+      84
+     ],
+     "success": true,
+     "null_q95_is_neginf": true,
+     "null_q95": null,
+     "null_undefined_frac": 1.0
+    }
+   },
+   "B/halueval_qa/Mistral-Small-3.2-24B-Instruct-2506": {
+    "L": 40,
+    "e5": {
+     "defined": true,
+     "delta": 0.01200000000000001,
+     "fold_contrasts": [
+      -0.12,
+      0.05249999999999999,
+      0.10499999999999998,
+      -0.039999999999999925,
+      0.0625
+     ],
+     "fold_peaks": [
+      18,
+      37,
+      37,
+      29,
+      37
+     ],
+     "success": false,
+     "perm_p": 0.0004997501249375312,
+     "null_undefined_frac": 1.0,
+     "boot_ci_5_95_conditional": [
+      -0.045549999999999966,
+      0.07302499999999998
+     ],
+     "boot_undefined_frac": 0.0,
+     "registered_delta": 0.004499999999999971,
+     "registered_perm_p": 0.0004997501249375312,
+     "registered_boot_ci": [
+      -0.06257500000000002,
+      0.07202499999999996
+     ],
+     "registered_success": false
+    },
+    "e6": {
+     "defined": false,
+     "why": "empty E6 window (peak 18 < 21)",
+     "J": null,
+     "R": null,
+     "success": false,
+     "null_q95_is_neginf": true,
+     "null_q95": null,
+     "null_undefined_frac": 1.0
+    }
+   },
+   "B/halueval_qa/gemma-3-12b-it": {
+    "L": 48,
+    "e5": {
+     "defined": true,
+     "delta": 0.3045,
+     "fold_contrasts": [
+      0.46749999999999997,
+      0.355,
+      0.1675000000000001,
+      0.2124999999999999,
+      0.31999999999999995
+     ],
+     "fold_peaks": [
+      22,
+      22,
+      22,
+      22,
+      22
+     ],
+     "success": true,
+     "perm_p": 0.0004997501249375312,
+     "null_undefined_frac": 0.9995,
+     "boot_ci_5_95_conditional": [
+      0.22000000000000003,
+      0.46799999999999997
+     ],
+     "boot_undefined_frac": 0.0,
+     "registered_delta": 0.3055,
+     "registered_perm_p": 0.0004997501249375312,
+     "registered_boot_ci": [
+      0.19595,
+      0.452525
+     ],
+     "registered_success": true
+    },
+    "e6": {
+     "defined": false,
+     "why": "empty E6 window (peak 22 < 25)",
+     "J": null,
+     "R": null,
+     "success": false,
+     "null_q95_is_neginf": true,
+     "null_q95": null,
+     "null_undefined_frac": 0.9995
+    }
+   }
+  },
+  "by_grid": {
+   "A": {
+    "per_task": {
+     "anli_r1": {
+      "e5_success": 4,
+      "evaluable": 4,
+      "p_grid_e5": 0.0004997501249375312,
+      "e6_success": 4,
+      "p_grid_e6": 0.0004997501249375312,
+      "aggregate_delta_ci_5_95_alldef": [
+       0.18236875000000002,
+       0.28788125
+      ],
+      "aggregate_joint_undefined_frac": 0.0
+     },
+     "halueval_qa": {
+      "e5_success": 4,
+      "evaluable": 4,
+      "p_grid_e5": 0.0004997501249375312,
+      "e6_success": 3,
+      "p_grid_e6": 0.0004997501249375312,
+      "aggregate_delta_ci_5_95_alldef": [
+       0.16511875,
+       0.2368875
+      ],
+      "aggregate_joint_undefined_frac": 0.0
+     }
+    },
+    "e5_success_evaluable": "8/8",
+    "e6_success_evaluable": "7/8",
+    "p_grid_e5_pooled": 0.0004997501249375312,
+    "p_grid_e6_pooled": 0.0004997501249375312,
+    "aggregate_delta_ci_5_95_alldef": [
+     0.188309375,
+     0.25115
+    ],
+    "aggregate_joint_undefined_frac": 0.0
+   },
+   "B": {
+    "per_task": {
+     "anli_r1": {
+      "e5_success": 4,
+      "evaluable": 4,
+      "p_grid_e5": 0.0004997501249375312,
+      "e6_success": 1,
+      "p_grid_e6": 0.0009995002498750624,
+      "aggregate_delta_ci_5_95_alldef": [
+       0.1363375,
+       0.25876875
+      ],
+      "aggregate_joint_undefined_frac": 0.002
+     },
+     "halueval_qa": {
+      "e5_success": 4,
+      "evaluable": 5,
+      "p_grid_e5": 0.0004997501249375312,
+      "e6_success": 1,
+      "p_grid_e6": 0.0009995002498750624,
+      "aggregate_delta_ci_5_95_alldef": [
+       0.11099000000000002,
+       0.18580500000000003
+      ],
+      "aggregate_joint_undefined_frac": 0.0
+     }
+    },
+    "e5_success_evaluable": "8/9",
+    "e6_success_evaluable": "2/9",
+    "p_grid_e5_pooled": 0.0004997501249375312,
+    "p_grid_e6_pooled": 0.0004997501249375312,
+    "aggregate_delta_ci_5_95_alldef": [
+     0.13437222222222223,
+     0.20354166666666668
+    ],
+    "aggregate_joint_undefined_frac": 0.002,
+    "counterfactual_s5_rule_NON_VERDICT": {
+     "count_of_12": 8,
+     "per_family": {
+      "llama31": 4,
+      "mistral": 2,
+      "gemma": 2
+     },
+     "guards": {
+      "count_ge_10": false,
+      "families_ge_3of4": false,
+      "p_grid_lt_0.05": true
+     },
+     "decision": "WEAKEN"
+    }
+   }
+  }
+ }
+}
