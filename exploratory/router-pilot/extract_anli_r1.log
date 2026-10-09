@@ -1,0 +1,51 @@
+✓ Initialized. View run at 
+https://modal.com/apps/mys628/main/ap-qJgziPmHt7PszkwMdQ8Htm
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/msrk/Documents/commit-confluence/exploratory/router-pilot/modal_route
+│   r_pilot.py
+├── 🔨 Created mount /Users/msrk/Documents/commit-confluence/modal/seal
+├── 🔨 Created mount 
+│   /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/data
+├── 🔨 Created mount 
+│   /Users/msrk/Documents/commit-confluence/exploratory/router-pilot/PRE_REGISTR
+│   ATION.md
+├── 🔨 Created mount 
+│   /Users/msrk/Documents/commit-confluence/exploratory/router-pilot/modal_route
+│   r_pilot.py
+├── 🔨 Created mount 
+│   /Users/msrk/Documents/commit-confluence/exploratory/router-pilot/score_route
+│   r_pilot.py
+├── 🔨 Created mount 
+│   /Users/msrk/Documents/commit-confluence/exploratory/router-pilot/make_freeze
+│   .py
+├── 🔨 Created mount 
+│   /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/stem_grouped
+│   _sensitivity.py
+├── 🔨 Created mount 
+│   /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/rescore_grid
+│   _a.py
+├── 🔨 Created mount 
+│   /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/depth_score.
+│   py
+├── 🔨 Created mount 
+│   /Users/msrk/Documents/commit-confluence/exploratory/depth-curve/score_grid_b
+│   .py
+├── 🔨 Created function GPUWorker.*.
+└── 🔨 Created function coordinate.
+
+[1AFetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]
+[1AFetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 1594.14it/s]
+`torch_dtype` is deprecated! Use `dtype` instead!
+
+[1ALoading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]
+[1ALoading checkpoint shards:  33%|███▎      | 1/3 [00:03<00:07,  3.70s/it]
+[1ALoading checkpoint shards:  67%|██████▋   | 2/3 [00:07<00:03,  3.70s/it]
+[1ALoading checkpoint shards: 100%|██████████| 3/3 [00:10<00:00,  3.26s/it]
+[1ALoading checkpoint shards: 100%|██████████| 3/3 [00:10<00:00,  3.38s/it]
+/payload/modal/seal/pri_v2_io_plugins.py:95: SyntaxWarning: invalid escape sequence '\s'
+  regex's anchor `(?:(?:^|\n)\s*|[\.\:]\s+)` deliberately does NOT match
+Stopping app - local entrypoint completed.
+Runner terminated.
+✓ App completed. View run at 
+https://modal.com/apps/mys628/main/ap-qJgziPmHt7PszkwMdQ8Htm

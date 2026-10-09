@@ -1,0 +1,5 @@
+.executor/
+__pycache__/
+.freeze-writing
+.results-complete.*
+.*.write-claim

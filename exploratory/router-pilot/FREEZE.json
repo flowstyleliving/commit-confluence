@@ -1,0 +1,59 @@
+{
+  "entries": [
+    {
+      "design_sha256": "ee9d8ce06b33213658af76929be0db5a144e47e7d9d4013797a2b3f297074752",
+      "entry": "1",
+      "files": {
+        "exploratory/depth-curve/depth_score.py": "f0bd575ee3277a77d9d4bfeb631ed8691df3b352aad2045b4ce2137e43588dab",
+        "exploratory/depth-curve/rescore_grid_a.py": "522cd5301f4f783faaec13f2c90a58f68c6247f2d0dd5b9f5b86b522ca81a958",
+        "exploratory/depth-curve/score_grid_b.py": "0a8b03450f91d212f0b09bb3916e30d1c656d7d83a0f4e8d14675a011b2f6358",
+        "exploratory/depth-curve/stem_grouped_sensitivity.py": "04b8e4943dc02bf235b4c6bc3b7f72a7b0cd574ef7ff530e1f9a95751b0d892d",
+        "exploratory/router-pilot/PRE_REGISTRATION.md": "ce90418a5e6f9060c6d8d5d59bfb571587896a271f605d80f6d06d476817b234",
+        "exploratory/router-pilot/make_freeze.py": "f1b6d0d354241a167e74aea07b0821a5d09f268b3b41846460465018837b4c50",
+        "exploratory/router-pilot/modal_router_pilot.py": "9c30fd20f3ac5725115e22c47c6447a9572e7d1894e7c1c528a08573ec48a582",
+        "exploratory/router-pilot/score_router_pilot.py": "0df3ee7caedec6d5f5b5c3b0aca3f735d7072a004edcbee4c56985d8d0a3fa78",
+        "modal/seal/analyze_adaptive_step.py": "2dffb7f03fa4876e1c4098402a9c322773d4cd246fdf66d4ec8ac71a1d79cb69",
+        "modal/seal/comprehensive_run.py": "f6f5958bae5b035f07f034b9f4f5784b1a86c1ab00ab0f9c9ef4a5584776e8f8",
+        "modal/seal/confluence_calibrator.py": "6142217f7608dc7c790649e7d26fe99c115f439c5390d70c5128cf4c89808aa6",
+        "modal/seal/diagnose_inter_head_disagreement.py": "b996ed923ac3eefeb0550901b2bf8ce5c5e0ae6486c8d41efdc2de9fb9567c99",
+        "modal/seal/pri_calibrator.py": "78c4f098295fe600cc4f6f1a14cc7b496ac93d8d70dd65743c1504eb20931101",
+        "modal/seal/pri_runtime.py": "cf56a2607b94666ab092647a764b1b73c7974b38445caa6a4b252a9cdf240784",
+        "modal/seal/pri_v2_io_plugins.py": "6c56be1888abc6ad44150583b869bac06366fa70a7d8e13230da3703064eb7b7",
+        "modal/seal/test_shadow_ambiguity.py": "12046a3ff98ddaba207396b943415dd5360f4cb4a942462994889d0aa8771961"
+      },
+      "stage": 1,
+      "utc": "2026-10-08T22:35:10.695188+00:00"
+    },
+    {
+      "design_sha256": "ee9d8ce06b33213658af76929be0db5a144e47e7d9d4013797a2b3f297074752",
+      "entry": "2",
+      "files": {
+        "exploratory/depth-curve/depth_score.py": "f0bd575ee3277a77d9d4bfeb631ed8691df3b352aad2045b4ce2137e43588dab",
+        "exploratory/depth-curve/rescore_grid_a.py": "522cd5301f4f783faaec13f2c90a58f68c6247f2d0dd5b9f5b86b522ca81a958",
+        "exploratory/depth-curve/score_grid_b.py": "0a8b03450f91d212f0b09bb3916e30d1c656d7d83a0f4e8d14675a011b2f6358",
+        "exploratory/depth-curve/stem_grouped_sensitivity.py": "04b8e4943dc02bf235b4c6bc3b7f72a7b0cd574ef7ff530e1f9a95751b0d892d",
+        "exploratory/router-pilot/PRE_REGISTRATION.md": "ce90418a5e6f9060c6d8d5d59bfb571587896a271f605d80f6d06d476817b234",
+        "exploratory/router-pilot/make_freeze.py": "f1b6d0d354241a167e74aea07b0821a5d09f268b3b41846460465018837b4c50",
+        "exploratory/router-pilot/modal_router_pilot.py": "9c30fd20f3ac5725115e22c47c6447a9572e7d1894e7c1c528a08573ec48a582",
+        "exploratory/router-pilot/score_router_pilot.py": "0df3ee7caedec6d5f5b5c3b0aca3f735d7072a004edcbee4c56985d8d0a3fa78",
+        "modal/seal/analyze_adaptive_step.py": "2dffb7f03fa4876e1c4098402a9c322773d4cd246fdf66d4ec8ac71a1d79cb69",
+        "modal/seal/comprehensive_run.py": "f6f5958bae5b035f07f034b9f4f5784b1a86c1ab00ab0f9c9ef4a5584776e8f8",
+        "modal/seal/confluence_calibrator.py": "6142217f7608dc7c790649e7d26fe99c115f439c5390d70c5128cf4c89808aa6",
+        "modal/seal/diagnose_inter_head_disagreement.py": "b996ed923ac3eefeb0550901b2bf8ce5c5e0ae6486c8d41efdc2de9fb9567c99",
+        "modal/seal/pri_calibrator.py": "78c4f098295fe600cc4f6f1a14cc7b496ac93d8d70dd65743c1504eb20931101",
+        "modal/seal/pri_runtime.py": "cf56a2607b94666ab092647a764b1b73c7974b38445caa6a4b252a9cdf240784",
+        "modal/seal/pri_v2_io_plugins.py": "6c56be1888abc6ad44150583b869bac06366fa70a7d8e13230da3703064eb7b7",
+        "modal/seal/test_shadow_ambiguity.py": "12046a3ff98ddaba207396b943415dd5360f4cb4a942462994889d0aa8771961"
+      },
+      "manifests": {
+        "anli_r1.manifest.json": "12b54bf76a24bcf2863f81c50544c7427af31d9598dbff9fb863525099f20452",
+        "halueval_qa.manifest.json": "6561a44c7a760329108b28dd3620ba19081988d40324efcff585c7d6f11b55df"
+      },
+      "stage": 2,
+      "utc": "2026-10-08T22:40:54.902105+00:00"
+    }
+  ],
+  "schema": "router-pilot-freeze/1",
+  "stage": 2,
+  "utc": "2026-10-08T22:40:54.902105+00:00"
+}

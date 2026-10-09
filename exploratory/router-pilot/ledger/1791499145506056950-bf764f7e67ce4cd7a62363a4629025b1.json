@@ -1,0 +1,14 @@
+{
+  "deadline": 1791505715.3997536,
+  "gpu": "NVIDIA A10G",
+  "image_id": "im-LJFAclCL71IjBoDXddR0fG",
+  "image_recipe_sha256": "f9898e53f5cfb6e26c36b0b58afcebd1f39482b4a55d8543515febef2f504406",
+  "invocation": "af20c4ef264b46d0a728aca8ecc431b1-gpu",
+  "kind": "smoke",
+  "modal_timeout_seconds": 6570,
+  "phase": "start",
+  "reserved_seconds": 6600,
+  "task": "",
+  "unix": 1791499145.5061662,
+  "utc": "2026-10-08T22:39:05.506143+00:00"
+}

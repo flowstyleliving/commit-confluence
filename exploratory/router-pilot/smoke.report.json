@@ -1,0 +1,964 @@
+{
+  "checks": {
+    "anli_r1": {
+      "determinism": true,
+      "longest_row": 60,
+      "repeats_reserved_bytes": [
+        14040432640,
+        14040432640,
+        14040432640
+      ],
+      "rows": [
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [
+            {
+              "block": 0,
+              "moe": {
+                "cosine": 0.9999935626983643,
+                "relative_l2": 0.003607646794989705
+              },
+              "o_proj": {
+                "cosine": 0.9999998807907104,
+                "relative_l2": 8.237169026870106e-07
+              }
+            },
+            {
+              "block": 1,
+              "moe": {
+                "cosine": 0.9999884366989136,
+                "relative_l2": 0.004819158464670181
+              },
+              "o_proj": {
+                "cosine": 0.9999999403953552,
+                "relative_l2": 0.00023553622304461896
+              }
+            },
+            {
+              "block": 2,
+              "moe": {
+                "cosine": 0.9999905824661255,
+                "relative_l2": 0.004387988708913326
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 0.00011245749919908121
+              }
+            },
+            {
+              "block": 3,
+              "moe": {
+                "cosine": 0.9999884963035583,
+                "relative_l2": 0.004820512142032385
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 1.047723344527185e-05
+              }
+            },
+            {
+              "block": 4,
+              "moe": {
+                "cosine": 0.9999891519546509,
+                "relative_l2": 0.004661541432142258
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 0.0002602431923151016
+              }
+            },
+            {
+              "block": 5,
+              "moe": {
+                "cosine": 0.9999872446060181,
+                "relative_l2": 0.005056231282651424
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 0.00012671727745328099
+              }
+            },
+            {
+              "block": 6,
+              "moe": {
+                "cosine": 0.9999859929084778,
+                "relative_l2": 0.005287651438266039
+              },
+              "o_proj": {
+                "cosine": 0.9999999403953552,
+                "relative_l2": 1.461798433410877e-06
+              }
+            },
+            {
+              "block": 7,
+              "moe": {
+                "cosine": 0.9999842643737793,
+                "relative_l2": 0.005631407722830772
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 7.480556632799562e-06
+              }
+            },
+            {
+              "block": 8,
+              "moe": {
+                "cosine": 0.9999850988388062,
+                "relative_l2": 0.0054676285944879055
+              },
+              "o_proj": {
+                "cosine": 1.0000001192092896,
+                "relative_l2": 0.0
+              }
+            },
+            {
+              "block": 9,
+              "moe": {
+                "cosine": 0.9999845027923584,
+                "relative_l2": 0.005556066054850817
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 6.213038432179019e-05
+              }
+            },
+            {
+              "block": 10,
+              "moe": {
+                "cosine": 0.9999844431877136,
+                "relative_l2": 0.005610407330095768
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 7.125274350983091e-06
+              }
+            },
+            {
+              "block": 11,
+              "moe": {
+                "cosine": 0.9999843835830688,
+                "relative_l2": 0.005604186095297337
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 4.457589966477826e-05
+              }
+            },
+            {
+              "block": 12,
+              "moe": {
+                "cosine": 0.9999856948852539,
+                "relative_l2": 0.005349835846573114
+              },
+              "o_proj": {
+                "cosine": 0.9999999403953552,
+                "relative_l2": 0.0005312708672136068
+              }
+            },
+            {
+              "block": 13,
+              "moe": {
+                "cosine": 0.9999840259552002,
+                "relative_l2": 0.0056613413617014885
+              },
+              "o_proj": {
+                "cosine": 0.9999999403953552,
+                "relative_l2": 2.5775554604479112e-05
+              }
+            },
+            {
+              "block": 14,
+              "moe": {
+                "cosine": 0.9999867677688599,
+                "relative_l2": 0.005145443603396416
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 0.0003742577391676605
+              }
+            },
+            {
+              "block": 15,
+              "moe": {
+                "cosine": 0.9999886751174927,
+                "relative_l2": 0.004746606573462486
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 5.438868174678646e-05
+              }
+            }
+          ],
+          "row": 0
+        },
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [
+            {
+              "block": 0,
+              "moe": {
+                "cosine": 0.9999948740005493,
+                "relative_l2": 0.003174654208123684
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 5.4086744057713076e-05
+              }
+            },
+            {
+              "block": 1,
+              "moe": {
+                "cosine": 0.9999905228614807,
+                "relative_l2": 0.004387525841593742
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 0.0003430855867918581
+              }
+            },
+            {
+              "block": 2,
+              "moe": {
+                "cosine": 0.9999905824661255,
+                "relative_l2": 0.00434170151129365
+              },
+              "o_proj": {
+                "cosine": 1.0000001192092896,
+                "relative_l2": 3.3026492474164115e-06
+              }
+            },
+            {
+              "block": 3,
+              "moe": {
+                "cosine": 0.9999871253967285,
+                "relative_l2": 0.005075437482446432
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 0.0001553985639475286
+              }
+            },
+            {
+              "block": 4,
+              "moe": {
+                "cosine": 0.9999880194664001,
+                "relative_l2": 0.0049077048897743225
+              },
+              "o_proj": {
+                "cosine": 1.0000001192092896,
+                "relative_l2": 3.6165678807265067e-07
+              }
+            },
+            {
+              "block": 5,
+              "moe": {
+                "cosine": 0.9999868869781494,
+                "relative_l2": 0.005128555465489626
+              },
+              "o_proj": {
+                "cosine": 0.9999998807907104,
+                "relative_l2": 0.00019115333270747215
+              }
+            },
+            {
+              "block": 6,
+              "moe": {
+                "cosine": 0.9999854564666748,
+                "relative_l2": 0.0053993635810911655
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 6.750856846338138e-05
+              }
+            },
+            {
+              "block": 7,
+              "moe": {
+                "cosine": 0.9999853372573853,
+                "relative_l2": 0.005452596582472324
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 6.720949022565037e-05
+              }
+            },
+            {
+              "block": 8,
+              "moe": {
+                "cosine": 0.9999853372573853,
+                "relative_l2": 0.005430176388472319
+              },
+              "o_proj": {
+                "cosine": 0.9999998807907104,
+                "relative_l2": 8.087714320481609e-08
+              }
+            },
+            {
+              "block": 9,
+              "moe": {
+                "cosine": 0.9999846816062927,
+                "relative_l2": 0.005537781398743391
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 3.5421201971530536e-08
+              }
+            },
+            {
+              "block": 10,
+              "moe": {
+                "cosine": 0.999985933303833,
+                "relative_l2": 0.005314862821251154
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 2.1766478397466926e-08
+              }
+            },
+            {
+              "block": 11,
+              "moe": {
+                "cosine": 0.9999822378158569,
+                "relative_l2": 0.005958366207778454
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 2.4132001271937042e-05
+              }
+            },
+            {
+              "block": 12,
+              "moe": {
+                "cosine": 0.9999857544898987,
+                "relative_l2": 0.0053609516471624374
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 9.092425170820206e-05
+              }
+            },
+            {
+              "block": 13,
+              "moe": {
+                "cosine": 0.9999853372573853,
+                "relative_l2": 0.00543926190584898
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 0.00011250811803620309
+              }
+            },
+            {
+              "block": 14,
+              "moe": {
+                "cosine": 0.9999842047691345,
+                "relative_l2": 0.005659420043230057
+              },
+              "o_proj": {
+                "cosine": 0.9999999403953552,
+                "relative_l2": 9.91386768873781e-05
+              }
+            },
+            {
+              "block": 15,
+              "moe": {
+                "cosine": 0.9999858736991882,
+                "relative_l2": 0.00532129593193531
+              },
+              "o_proj": {
+                "cosine": 0.9999999403953552,
+                "relative_l2": 0.0001925089309224859
+              }
+            }
+          ],
+          "row": 1
+        },
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [],
+          "row": 2
+        },
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [],
+          "row": 3
+        },
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [],
+          "row": 4
+        },
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [],
+          "row": 5
+        },
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [],
+          "row": 6
+        },
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [],
+          "row": 7
+        },
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [],
+          "row": 8
+        },
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [],
+          "row": 9
+        },
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [],
+          "row": 60
+        }
+      ]
+    },
+    "halueval_qa": {
+      "determinism": true,
+      "longest_row": 101,
+      "repeats_reserved_bytes": [
+        14071889920,
+        14071889920,
+        14071889920
+      ],
+      "rows": [
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [
+            {
+              "block": 0,
+              "moe": {
+                "cosine": 0.9999940395355225,
+                "relative_l2": 0.003439316526055336
+              },
+              "o_proj": {
+                "cosine": 0.9999998807907104,
+                "relative_l2": 0.00012590056576300412
+              }
+            },
+            {
+              "block": 1,
+              "moe": {
+                "cosine": 0.9999926686286926,
+                "relative_l2": 0.003857034258544445
+              },
+              "o_proj": {
+                "cosine": 0.9999999403953552,
+                "relative_l2": 0.00011890335008502007
+              }
+            },
+            {
+              "block": 2,
+              "moe": {
+                "cosine": 0.9999907612800598,
+                "relative_l2": 0.004283801652491093
+              },
+              "o_proj": {
+                "cosine": 0.9999999403953552,
+                "relative_l2": 0.00027917721308767796
+              }
+            },
+            {
+              "block": 3,
+              "moe": {
+                "cosine": 0.9999892711639404,
+                "relative_l2": 0.004645013716071844
+              },
+              "o_proj": {
+                "cosine": 0.9999999403953552,
+                "relative_l2": 0.0001717609993647784
+              }
+            },
+            {
+              "block": 4,
+              "moe": {
+                "cosine": 0.9999889135360718,
+                "relative_l2": 0.004728655330836773
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 0.0002832397585734725
+              }
+            },
+            {
+              "block": 5,
+              "moe": {
+                "cosine": 0.9999877214431763,
+                "relative_l2": 0.004967108368873596
+              },
+              "o_proj": {
+                "cosine": 0.9999998807907104,
+                "relative_l2": 0.0006717037758789957
+              }
+            },
+            {
+              "block": 6,
+              "moe": {
+                "cosine": 0.9999836683273315,
+                "relative_l2": 0.005723472684621811
+              },
+              "o_proj": {
+                "cosine": 0.9999999403953552,
+                "relative_l2": 0.0002475897781550884
+              }
+            },
+            {
+              "block": 7,
+              "moe": {
+                "cosine": 0.9999833106994629,
+                "relative_l2": 0.0057623544707894325
+              },
+              "o_proj": {
+                "cosine": 0.9999999403953552,
+                "relative_l2": 0.0002682225313037634
+              }
+            },
+            {
+              "block": 8,
+              "moe": {
+                "cosine": 0.999986469745636,
+                "relative_l2": 0.005235104355961084
+              },
+              "o_proj": {
+                "cosine": 1.0000001192092896,
+                "relative_l2": 8.966284070766051e-08
+              }
+            },
+            {
+              "block": 9,
+              "moe": {
+                "cosine": 0.9999814033508301,
+                "relative_l2": 0.006104073487222195
+              },
+              "o_proj": {
+                "cosine": 0.9999998807907104,
+                "relative_l2": 0.0004168612649664283
+              }
+            },
+            {
+              "block": 10,
+              "moe": {
+                "cosine": 0.99998539686203,
+                "relative_l2": 0.005417115055024624
+              },
+              "o_proj": {
+                "cosine": 0.9999999403953552,
+                "relative_l2": 3.790651703639014e-07
+              }
+            },
+            {
+              "block": 11,
+              "moe": {
+                "cosine": 0.9999837875366211,
+                "relative_l2": 0.005702161695808172
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 8.593466191086918e-05
+              }
+            },
+            {
+              "block": 12,
+              "moe": {
+                "cosine": 0.9999812841415405,
+                "relative_l2": 0.006134993862360716
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 5.050963409303222e-06
+              }
+            },
+            {
+              "block": 13,
+              "moe": {
+                "cosine": 0.9999866485595703,
+                "relative_l2": 0.005174731370061636
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 3.4867967769969255e-05
+              }
+            },
+            {
+              "block": 14,
+              "moe": {
+                "cosine": 0.9999879598617554,
+                "relative_l2": 0.004906775895506144
+              },
+              "o_proj": {
+                "cosine": 0.9999999403953552,
+                "relative_l2": 7.156766201887876e-08
+              }
+            },
+            {
+              "block": 15,
+              "moe": {
+                "cosine": 0.9999898076057434,
+                "relative_l2": 0.004526211880147457
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 0.00010450213449075818
+              }
+            }
+          ],
+          "row": 0
+        },
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [
+            {
+              "block": 0,
+              "moe": {
+                "cosine": 0.9999923706054688,
+                "relative_l2": 0.00393789354711771
+              },
+              "o_proj": {
+                "cosine": 0.9999999403953552,
+                "relative_l2": 2.687102278287057e-05
+              }
+            },
+            {
+              "block": 1,
+              "moe": {
+                "cosine": 0.999991238117218,
+                "relative_l2": 0.004203928168863058
+              },
+              "o_proj": {
+                "cosine": 0.9999998807907104,
+                "relative_l2": 0.00013227056479081511
+              }
+            },
+            {
+              "block": 2,
+              "moe": {
+                "cosine": 0.9999910593032837,
+                "relative_l2": 0.004231874831020832
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 0.0
+              }
+            },
+            {
+              "block": 3,
+              "moe": {
+                "cosine": 0.9999880790710449,
+                "relative_l2": 0.004900628700852394
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 8.126932516461238e-05
+              }
+            },
+            {
+              "block": 4,
+              "moe": {
+                "cosine": 0.9999877214431763,
+                "relative_l2": 0.004959574900567532
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 7.256870594574139e-05
+              }
+            },
+            {
+              "block": 5,
+              "moe": {
+                "cosine": 0.9999879002571106,
+                "relative_l2": 0.004902849905192852
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 7.343875768128783e-05
+              }
+            },
+            {
+              "block": 6,
+              "moe": {
+                "cosine": 0.9999865293502808,
+                "relative_l2": 0.005190330557525158
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 2.9749626762054504e-08
+              }
+            },
+            {
+              "block": 7,
+              "moe": {
+                "cosine": 0.9999858736991882,
+                "relative_l2": 0.005324463825672865
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 2.9014345273026265e-05
+              }
+            },
+            {
+              "block": 8,
+              "moe": {
+                "cosine": 0.9999842643737793,
+                "relative_l2": 0.005634695291519165
+              },
+              "o_proj": {
+                "cosine": 1.0000001192092896,
+                "relative_l2": 2.3718455850030296e-05
+              }
+            },
+            {
+              "block": 9,
+              "moe": {
+                "cosine": 0.9999834299087524,
+                "relative_l2": 0.0057587227784097195
+              },
+              "o_proj": {
+                "cosine": 1.0000001192092896,
+                "relative_l2": 0.0
+              }
+            },
+            {
+              "block": 10,
+              "moe": {
+                "cosine": 0.9999849796295166,
+                "relative_l2": 0.005463221576064825
+              },
+              "o_proj": {
+                "cosine": 0.9999999403953552,
+                "relative_l2": 6.407875389413675e-06
+              }
+            },
+            {
+              "block": 11,
+              "moe": {
+                "cosine": 0.9999830722808838,
+                "relative_l2": 0.0058119287714362144
+              },
+              "o_proj": {
+                "cosine": 0.9999999403953552,
+                "relative_l2": 0.0001516911870567128
+              }
+            },
+            {
+              "block": 12,
+              "moe": {
+                "cosine": 0.9999814033508301,
+                "relative_l2": 0.006088100839406252
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 9.498938197793905e-06
+              }
+            },
+            {
+              "block": 13,
+              "moe": {
+                "cosine": 0.9999829530715942,
+                "relative_l2": 0.005841000005602837
+              },
+              "o_proj": {
+                "cosine": 1.0,
+                "relative_l2": 1.824073842726648e-05
+              }
+            },
+            {
+              "block": 14,
+              "moe": {
+                "cosine": 0.9999867677688599,
+                "relative_l2": 0.005149825010448694
+              },
+              "o_proj": {
+                "cosine": 0.9999998807907104,
+                "relative_l2": 1.7444804711885809e-07
+              }
+            },
+            {
+              "block": 15,
+              "moe": {
+                "cosine": 0.9999897480010986,
+                "relative_l2": 0.00463185366243124
+              },
+              "o_proj": {
+                "cosine": 0.9999998807907104,
+                "relative_l2": 8.611038356320933e-05
+              }
+            }
+          ],
+          "row": 1
+        },
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [],
+          "row": 2
+        },
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [],
+          "row": 3
+        },
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [],
+          "row": 4
+        },
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [],
+          "row": 5
+        },
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [],
+          "row": 6
+        },
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [],
+          "row": 7
+        },
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [],
+          "row": 8
+        },
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [],
+          "row": 9
+        },
+        {
+          "finite": true,
+          "hooks_once": true,
+          "neutrality_max_abs": 0.0,
+          "reconstruction": [],
+          "row": 101
+        }
+      ]
+    }
+  },
+  "freeze_entry": {
+    "design_sha256": "ee9d8ce06b33213658af76929be0db5a144e47e7d9d4013797a2b3f297074752",
+    "entry": "1",
+    "files": {
+      "exploratory/depth-curve/depth_score.py": "f0bd575ee3277a77d9d4bfeb631ed8691df3b352aad2045b4ce2137e43588dab",
+      "exploratory/depth-curve/rescore_grid_a.py": "522cd5301f4f783faaec13f2c90a58f68c6247f2d0dd5b9f5b86b522ca81a958",
+      "exploratory/depth-curve/score_grid_b.py": "0a8b03450f91d212f0b09bb3916e30d1c656d7d83a0f4e8d14675a011b2f6358",
+      "exploratory/depth-curve/stem_grouped_sensitivity.py": "04b8e4943dc02bf235b4c6bc3b7f72a7b0cd574ef7ff530e1f9a95751b0d892d",
+      "exploratory/router-pilot/PRE_REGISTRATION.md": "ce90418a5e6f9060c6d8d5d59bfb571587896a271f605d80f6d06d476817b234",
+      "exploratory/router-pilot/make_freeze.py": "f1b6d0d354241a167e74aea07b0821a5d09f268b3b41846460465018837b4c50",
+      "exploratory/router-pilot/modal_router_pilot.py": "9c30fd20f3ac5725115e22c47c6447a9572e7d1894e7c1c528a08573ec48a582",
+      "exploratory/router-pilot/score_router_pilot.py": "0df3ee7caedec6d5f5b5c3b0aca3f735d7072a004edcbee4c56985d8d0a3fa78",
+      "modal/seal/analyze_adaptive_step.py": "2dffb7f03fa4876e1c4098402a9c322773d4cd246fdf66d4ec8ac71a1d79cb69",
+      "modal/seal/comprehensive_run.py": "f6f5958bae5b035f07f034b9f4f5784b1a86c1ab00ab0f9c9ef4a5584776e8f8",
+      "modal/seal/confluence_calibrator.py": "6142217f7608dc7c790649e7d26fe99c115f439c5390d70c5128cf4c89808aa6",
+      "modal/seal/diagnose_inter_head_disagreement.py": "b996ed923ac3eefeb0550901b2bf8ce5c5e0ae6486c8d41efdc2de9fb9567c99",
+      "modal/seal/pri_calibrator.py": "78c4f098295fe600cc4f6f1a14cc7b496ac93d8d70dd65743c1504eb20931101",
+      "modal/seal/pri_runtime.py": "cf56a2607b94666ab092647a764b1b73c7974b38445caa6a4b252a9cdf240784",
+      "modal/seal/pri_v2_io_plugins.py": "6c56be1888abc6ad44150583b869bac06366fa70a7d8e13230da3703064eb7b7",
+      "modal/seal/test_shadow_ambiguity.py": "12046a3ff98ddaba207396b943415dd5360f4cb4a942462994889d0aa8771961"
+    },
+    "stage": 1,
+    "utc": "2026-10-08T22:35:10.695188+00:00"
+  },
+  "load_seconds": 21.015729412,
+  "manifests": {
+    "anli_r1.manifest.json": "12b54bf76a24bcf2863f81c50544c7427af31d9598dbff9fb863525099f20452",
+    "halueval_qa.manifest.json": "6561a44c7a760329108b28dd3620ba19081988d40324efcff585c7d6f11b55df"
+  },
+  "p95_forward_seconds": 0.9359342303500003,
+  "passed": true,
+  "peak_reserved_bytes": 14071889920,
+  "projected_seconds": 470.2641599800001,
+  "projected_with_two_loads_seconds": 491.2798893920001,
+  "provenance": {
+    "cuda": "12.6",
+    "gpu": "NVIDIA A10G",
+    "gpu_bytes": 23684186112,
+    "image_recipe": {
+      "base": "debian_slim",
+      "pins": [
+        "transformers==4.57.6",
+        "huggingface_hub==0.36.0",
+        "accelerate==1.11.0",
+        "safetensors==0.6.2",
+        "numpy==2.2.6",
+        "tokenizers==0.22.1",
+        "pandas==2.3.3",
+        "scikit-learn==1.7.2",
+        "scipy==1.15.3"
+      ],
+      "python": "3.12",
+      "torch": "torch==2.8.0+cu126",
+      "torch_index": "https://download.pytorch.org/whl/cu126"
+    },
+    "image_recipe_sha256": "f9898e53f5cfb6e26c36b0b58afcebd1f39482b4a55d8543515febef2f504406",
+    "modal_image_id": "im-LJFAclCL71IjBoDXddR0fG",
+    "parameter_dtype_histogram": {
+      "torch.bfloat16": 3219
+    },
+    "python": "3.12.10 (main, May 21 2025, 23:34:56) [GCC 12.2.0]",
+    "versions": {
+      "accelerate": "1.11.0",
+      "huggingface_hub": "0.36.0",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "safetensors": "0.6.2",
+      "scikit-learn": "1.7.2",
+      "scipy": "1.15.3",
+      "tokenizers": "0.22.1",
+      "torch": "2.8.0+cu126",
+      "transformers": "4.57.6"
+    }
+  },
+  "remaining_seconds_at_gate": 6499.299012184143,
+  "utc": "2026-10-08T22:40:17.673107+00:00"
+}

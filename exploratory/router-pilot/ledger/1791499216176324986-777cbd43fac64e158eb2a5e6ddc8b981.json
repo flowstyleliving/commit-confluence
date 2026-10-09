@@ -1,0 +1,9 @@
+{
+  "charged_seconds": 99.184365853,
+  "completed": true,
+  "gpu": "NVIDIA A10G",
+  "invocation": "af20c4ef264b46d0a728aca8ecc431b1-gpu",
+  "phase": "end",
+  "unix": 1791499216.1765225,
+  "utc": "2026-10-08T22:40:16.176498+00:00"
+}

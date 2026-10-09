@@ -1,0 +1,14 @@
+{
+  "deadline": 1791505789.0049183,
+  "gpu": "NVIDIA A10G",
+  "image_id": "im-LJFAclCL71IjBoDXddR0fG",
+  "image_recipe_sha256": "f9898e53f5cfb6e26c36b0b58afcebd1f39482b4a55d8543515febef2f504406",
+  "invocation": "81327cd9d84646c3b9674fd42be7076b-gpu",
+  "kind": "extract",
+  "modal_timeout_seconds": 6251,
+  "phase": "start",
+  "reserved_seconds": 6281,
+  "task": "halueval_qa",
+  "unix": 1791499538.128465,
+  "utc": "2026-10-08T22:45:38.128438+00:00"
+}

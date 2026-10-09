@@ -1,0 +1,9 @@
+{
+  "gpu": "CPU",
+  "invocation": "af20c4ef264b46d0a728aca8ecc431b1",
+  "kind": "smoke",
+  "phase": "start",
+  "task": "",
+  "unix": 1791499077.0579135,
+  "utc": "2026-10-08T22:37:57.057866+00:00"
+}

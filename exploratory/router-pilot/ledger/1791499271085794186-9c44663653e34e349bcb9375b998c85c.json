@@ -1,0 +1,9 @@
+{
+  "gpu": "CPU",
+  "invocation": "09799b60ef3e4953a599793ae82098f4",
+  "kind": "extract",
+  "phase": "start",
+  "task": "anli_r1",
+  "unix": 1791499271.0859332,
+  "utc": "2026-10-08T22:41:11.085909+00:00"
+}
