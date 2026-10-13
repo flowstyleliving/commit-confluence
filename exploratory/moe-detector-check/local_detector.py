@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Local CPU adapter for the real torch capture and sealed commit-moment panel."""
+"""Single-device torch adapter for the real capture and sealed commit-moment panel."""
 import argparse
 import ast
 import hashlib
+import importlib.metadata
 import json
 import math
 import os
@@ -24,6 +25,7 @@ REFERENCE = REPO / "modal" / "refs_upload" / "anli_r1.matrix.npz"
 SEED = 20260612
 NBOOT = 2000
 TRANSFORMERS_VERSION = "5.19.0"
+QWEN3_FAMILY = ("qwen3", "qwen3_moe")
 
 # bf16 reconstruction accumulates in fp32 then rounds before o_proj; tolerate that
 # rounding, but require amplitude as well as direction (cosine alone misses gains).
@@ -113,6 +115,25 @@ def load_model(args, report):
 
     report["provenance"].update({"transformers_version": transformers.__version__,
                                  "torch_version": torch.__version__})
+    report["provenance"]["packages"] = {
+        name: importlib.metadata.version(name) for name in (
+            "torch", "transformers", "accelerate", "numpy", "scipy", "scikit-learn",
+            "pandas", "safetensors", "tokenizers", "huggingface_hub")}
+    device = "cuda:0" if args.device == "cuda" else "cpu"
+    if args.device == "cuda" and not torch.cuda.is_available():
+        raise RuntimeError("CUDA requested but unavailable; CPU/offload fallback forbidden")
+    # Keep the fp32 reconstruction einsum in fp32; leave bf16 reduction settings unchanged.
+    torch.backends.cuda.matmul.allow_tf32 = False
+    gpu = torch.cuda.get_device_properties(0) if args.device == "cuda" else None
+    report["provenance"].update({
+        "device": device, "gpu_name": gpu.name if gpu else None,
+        "gpu_memory_bytes": gpu.total_memory if gpu else None,
+        "cuda_runtime_version": torch.version.cuda,
+        "torch.backends.cuda.matmul.allow_tf32": torch.backends.cuda.matmul.allow_tf32,
+        "allow_bf16_reduced_precision_reduction":
+            torch.backends.cuda.matmul.allow_bf16_reduced_precision_reduction,
+        "torch.backends.cudnn.allow_tf32": torch.backends.cudnn.allow_tf32,
+    })
     if transformers.__version__ != TRANSFORMERS_VERSION:
         raise RuntimeError(f"this audited adapter requires Transformers=={TRANSFORMERS_VERSION}; "
                            f"found {transformers.__version__}")
@@ -130,18 +151,19 @@ def load_model(args, report):
         "model_snapshot_sha": snapshot.name, "tokenizer_snapshot_sha": snapshot.name,
         "snapshot_path": str(snapshot), "config_sha256": sha256(cached),
         "transformers_version": transformers.__version__, "torch_version": torch.__version__,
-        "dtype": str(dtype), "device": "cpu", "attention_implementation": "eager",
+        "dtype": str(dtype), "device": device, "attention_implementation": "eager",
         "python_version": sys.version, "local_files_only": True,
     })
     tok = AutoTokenizer.from_pretrained(str(snapshot), local_files_only=True, trust_remote_code=False)
     # Explicit placement also avoids automatic offload/meta parameters on a 16-GB machine.
     model = AutoModelForCausalLM.from_pretrained(
         str(snapshot), local_files_only=True, trust_remote_code=False,
-        torch_dtype=dtype, device_map="cpu", attn_implementation="eager")
+        torch_dtype=dtype, device_map=device, attn_implementation="eager")
     model.eval()
     for name, tensor in (*model.named_parameters(), *model.named_buffers()):
-        if tensor.device.type != "cpu":
-            raise RuntimeError(f"single-device CPU load failed: {name} is on {tensor.device}")
+        if tensor.device != torch.device(device):
+            raise RuntimeError(f"single-device {device} load failed: {name} is on {tensor.device}; "
+                               "multi-GPU/offload fallback forbidden")
     actual_dtypes = sorted({str(p.dtype) for p in model.parameters()})
     report["provenance"]["parameter_dtypes"] = actual_dtypes
     if actual_dtypes != [str(dtype)]:
@@ -179,10 +201,17 @@ def assert_structure(model, target_layer_map):
     return tags
 
 
-def prompt_ids(tok, prompt, model_type):
+def prompt_ids(tok, prompt, model_type, report=None):
     if not tok.chat_template:
         raise RuntimeError("tokenizer.chat_template is required by the torch detector prompt policy")
-    kwargs = {"enable_thinking": False} if model_type == "qwen3" else {}
+    kwargs = {"enable_thinking": False} if model_type in QWEN3_FAMILY else {}
+    rendered = tok.apply_chat_template(
+        [{"role": "user", "content": prompt}], tokenize=False, return_dict=False,
+        add_generation_prompt=True, **kwargs)
+    if report is not None:
+        report["prompt_policy"]["rendered_prompt_row_0"] = rendered
+    if model_type in QWEN3_FAMILY and not rendered.endswith("<think>\n\n</think>\n\n"):
+        raise RuntimeError("Qwen3-family template did not end with the required empty think block")
     # tokenize=True avoids adding special tokens a second time to an already-rendered template.
     # Transformers 5 returns a BatchEncoding unless return_dict=False.
     return [int(t) for t in tok.apply_chat_template(
@@ -265,13 +294,13 @@ def checked_forward(source, model, ids, cap, probe, tags, pri, scale, thresholds
         for tag, idx in tags.items():
             stats = dict(probe.probabilities[tag])
             record["layers"][tag] = {"index": idx, **stats}
-            w = torch.as_tensor(caps[tag][0], dtype=torch.float32, device="cpu")
-            v = torch.as_tensor(cap.values[tag], dtype=torch.float32, device="cpu")
+            o_proj = model.model.layers[idx].self_attn.o_proj
+            w = torch.as_tensor(caps[tag][0], dtype=torch.float32, device=o_proj.weight.device)
+            v = torch.as_tensor(cap.values[tag], dtype=torch.float32, device=o_proj.weight.device)
             if w.shape[0] % v.shape[0] or w.shape[1] != v.shape[1]:
                 raise RuntimeError(f"GQA reconstruction shape mismatch at {tag}")
             # ctx[h,d] = sum_t A[h,t] V[KV(h),t,d]; o_proj tests the native contribution.
             repeated = v.repeat_interleave(w.shape[0] // v.shape[0], dim=0)
-            o_proj = model.model.layers[idx].self_attn.o_proj
             ctx = torch.einsum("ht,htd->hd", w, repeated).reshape(1, -1).to(o_proj.weight.dtype)
             reconstructed = o_proj(ctx)[0].detach().float().cpu().numpy()
             g = gap(reconstructed, probe.native[tag])
@@ -370,12 +399,12 @@ def run(args, report, out):
         raise RuntimeError("calibration requires at least two selected rows of each label; increase --n")
     report["prompt_policy"] = {"chat_template": tok.chat_template, "tokenize": True,
                                "add_generation_prompt": True, "truncation": False,
-                               "enable_thinking": False if model.config.model_type == "qwen3" else None,
+                               "enable_thinking": False if model.config.model_type in QWEN3_FAMILY else None,
                                "batch_size": 1, "padding": False, "use_cache": False}
     encoded = []
     context_limit = int(model.config.max_position_embeddings)
     for i, prompt in enumerate(prompts):
-        ids = prompt_ids(tok, prompt, model.config.model_type)
+        ids = prompt_ids(tok, prompt, model.config.model_type, report if i == 0 else None)
         encoded.append(ids)
         if len(ids) < 2 or len(ids) > args.max_prompt_tokens or len(ids) + 1 > context_limit:
             report["rejections"].append({"sample_idx": i, "reason": "prompt_length",
@@ -478,7 +507,7 @@ def run(args, report, out):
                  panel=json.dumps([str(c) for c in panel]),
                  meta=json.dumps({"complete": len(keep) == args.n, "planned_n": args.n,
                                   "model_snapshot_sha": report["provenance"]["model_snapshot_sha"],
-                                  "backend": "local-torch-cpu", "precision": args.precision,
+                                  "backend": f"local-torch-{args.device}", "precision": args.precision,
                                   "comparable": False, "data_hash": selected_hash}))
         report["matrix_path"] = str(out / "matrix.npz")
     if len(keep) != args.n or not np.isfinite(matrix).all():
@@ -523,7 +552,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model-id", required=True)
     parser.add_argument("--revision", default="main", help="cached HF revision; resolved SHA is recorded")
-    parser.add_argument("--device", choices=["cpu"], default="cpu")
+    parser.add_argument("--device", choices=["cpu", "cuda"], default="cpu")
     parser.add_argument("--precision", choices=["bf16", "fp32"], default="bf16")
     parser.add_argument("--task", choices=["anli_r1"], default="anli_r1")
     parser.add_argument("--n", type=int, default=200, help="first N rows of the fixed 200-row dataset")
