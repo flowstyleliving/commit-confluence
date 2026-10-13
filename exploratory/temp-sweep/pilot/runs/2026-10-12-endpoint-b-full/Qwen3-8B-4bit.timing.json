@@ -1,0 +1,9 @@
+{
+  "model": "mlx-community/Qwen3-8B-4bit",
+  "records": 19200,
+  "load_s": 117.63897585868835,
+  "total_s": 1350.9709498882294,
+  "prefix_attempts": 1200,
+  "vocab_probe_forwards": 1,
+  "post_commit_forwards": 0
+}

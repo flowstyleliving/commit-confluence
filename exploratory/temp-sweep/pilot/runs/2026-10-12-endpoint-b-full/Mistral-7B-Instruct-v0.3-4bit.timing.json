@@ -1,0 +1,9 @@
+{
+  "model": "mlx-community/Mistral-7B-Instruct-v0.3-4bit",
+  "records": 19200,
+  "load_s": 102.49532508850098,
+  "total_s": 1303.8190033435822,
+  "prefix_attempts": 1200,
+  "vocab_probe_forwards": 1,
+  "post_commit_forwards": 0
+}

@@ -1,0 +1,9 @@
+{
+  "model": "mlx-community/Phi-3.5-mini-instruct-4bit",
+  "records": 19200,
+  "load_s": 53.32899785041809,
+  "total_s": 711.6433598995209,
+  "prefix_attempts": 1200,
+  "vocab_probe_forwards": 1,
+  "post_commit_forwards": 0
+}

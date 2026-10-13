@@ -1,0 +1,9 @@
+{
+  "model": "mlx-community/Llama-3.1-8B-Instruct-4bit",
+  "records": 19200,
+  "load_s": 112.11634612083435,
+  "total_s": 1206.1212139129639,
+  "prefix_attempts": 1200,
+  "vocab_probe_forwards": 1,
+  "post_commit_forwards": 0
+}

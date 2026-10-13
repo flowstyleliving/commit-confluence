@@ -1,0 +1,108 @@
+{
+  "protocol": "TEMP-v1.3-A1-behavioural/1-pre-output-audit-2026-10-12",
+  "amendment_commit": "ee61a5d2f4dc96d8be3ce654b59cfb8f577eb2ef",
+  "amendment_tree": "40eca562ded765409c6d623e0cad145c861c729d",
+  "launch_files_sha256": {
+    "exploratory/temp-sweep/AMENDMENT_A1_ENDPOINT_B_2026-10-12.md": "92d4e9a45a332623daa89ae43f617c4ce2de8cf56923be3a46a99e9a3201d511",
+    "exploratory/temp-sweep/pilot/sampling_endpoint_b.py": "997ff2678e7dd0fc5fff8de9c8d4531f5c4c3d83af643aa115937e8980d69def",
+    "exploratory/temp-sweep/pilot/sampling_pilot.py": "b9f90a74ef7db64372838c1e03d90ff9d796aab42caaeb2ec5d4864c2da80641",
+    "stage_b/run_bench.py": "4e6ae7dc5fadd1003fb10529e2c26f8a94ec429700d814dc69af5d8121f0dec6",
+    "stage_b/data/anli_R1_seed20260612_n200.jsonl": "57ad341f2c29c886a726b7c62b7371be8c064b04b9b96e98324c931157d4f55b",
+    "stage_b/data_bench/halueval_qa_seed20260711_n1000.jsonl": "460019e12d25c33e9f842f52bb0e3fd70274256290dc7784101ebaa95b2163e7",
+    "stage_b/profiles_bench/halueval_qa/Qwen3-8B-4bit.matrix.npz": "2e60b521e33b219ddc162b4d6a8672b8357f8fa3a339443890b9d27cfe277b94",
+    "stage_b/profiles_bench/halueval_qa/Llama-3.1-8B-Instruct-4bit.matrix.npz": "80c6da24a1d166e866c6fe7e39231fb2b30a97a0341ecfc71a0b5a42bca658ce",
+    "stage_b/profiles_bench/halueval_qa/Phi-3.5-mini-instruct-4bit.matrix.npz": "89a29c2f2ac0b2b7957ea7d2ab2fdf436cd84a15d0c7ac356149021979b2ed66",
+    "stage_b/profiles_bench/halueval_qa/Mistral-7B-Instruct-v0.3-4bit.matrix.npz": "0bd53934e48aca43bb5a6bff4f72c6b8f47234ae86b2ac9c4edf73fc41103322"
+  },
+  "analysis_files_sha256_at_launch": {
+    "exploratory/temp-sweep/pilot/summarize_endpoint_b.py": "da5290f21a9f8e03498d959961818a6da0060a7ba896659f69008cc99276b333"
+  },
+  "seed": 20260826,
+  "temps": [
+    0.7,
+    1.0,
+    1.5
+  ],
+  "K": 5,
+  "n_anli": 200,
+  "n_halueval_stems": 500,
+  "models": [
+    [
+      "mlx-community/Qwen3-8B-4bit",
+      "545dc4251c05440727734bcd94334791f6ab0192"
+    ],
+    [
+      "mlx-community/Llama-3.1-8B-Instruct-4bit",
+      "90215b22ec18e72f623dde2ea7af4097025160e2"
+    ],
+    [
+      "mlx-community/Phi-3.5-mini-instruct-4bit",
+      "7b2052fd882fe017300d4d42a4eb06a27b816af4"
+    ],
+    [
+      "mlx-community/Mistral-7B-Instruct-v0.3-4bit",
+      "a4b8f870474b0eb527f466a03fbc187830d271f5"
+    ]
+  ],
+  "near_tie_margin": 0.15,
+  "gates": {
+    "infrastructure_fraction": 0.01,
+    "historical_mismatches": 0,
+    "sampling_verification_failures": 0,
+    "observed_min": 1,
+    "anli_greedy_canonical_min": 190
+  },
+  "format_flags": {
+    "sampled_invalid": 0.25,
+    "greedy_invalid": 0.05
+  },
+  "uniforms_sha256": "d3b9cdb288ff9ecb9746f76edd1dea53ffe28ba4eeccc7d7eba0aee58a31ada6",
+  "data_sha256": {
+    "anli_r1": "57ad341f2c29c886a726b7c62b7371be8c064b04b9b96e98324c931157d4f55b",
+    "halueval_qa": "460019e12d25c33e9f842f52bb0e3fd70274256290dc7784101ebaa95b2163e7"
+  },
+  "historical_sha256": [
+    "2e60b521e33b219ddc162b4d6a8672b8357f8fa3a339443890b9d27cfe277b94",
+    "80c6da24a1d166e866c6fe7e39231fb2b30a97a0341ecfc71a0b5a42bca658ce",
+    "89a29c2f2ac0b2b7957ea7d2ab2fdf436cd84a15d0c7ac356149021979b2ed66",
+    "0bd53934e48aca43bb5a6bff4f72c6b8f47234ae86b2ac9c4edf73fc41103322"
+  ],
+  "host": "Mac16,10",
+  "platform": "macOS-15.6.1-arm64-arm-64bit",
+  "python": "3.9.6 (default, Apr 30 2025, 02:07:17) \n[Clang 17.0.0 (clang-1700.0.13.5)]",
+  "started": 1791867313.992137,
+  "model_runs": [
+    {
+      "model": "mlx-community/Qwen3-8B-4bit",
+      "free_memory_pct_before": 78,
+      "status": "exit 0",
+      "wall_s": 1354.9131808280945
+    },
+    {
+      "model": "mlx-community/Llama-3.1-8B-Instruct-4bit",
+      "free_memory_pct_before": 62,
+      "status": "exit 0",
+      "wall_s": 1209.3307702541351
+    },
+    {
+      "model": "mlx-community/Phi-3.5-mini-instruct-4bit",
+      "free_memory_pct_before": 85,
+      "status": "exit 0",
+      "wall_s": 714.6655130386353
+    },
+    {
+      "model": "mlx-community/Mistral-7B-Instruct-v0.3-4bit",
+      "free_memory_pct_before": 88,
+      "status": "exit 0",
+      "wall_s": 1306.69571518898
+    }
+  ],
+  "packages": {
+    "numpy": "2.0.2",
+    "mlx": "0.29.3",
+    "mlx-lm": "0.29.1",
+    "transformers": "4.57.6"
+  },
+  "execution_status": "complete",
+  "finished": 1791871899.769054
+}
